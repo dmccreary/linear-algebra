@@ -1,0 +1,894 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-20/chapter-20/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Chapter 20: Kernel Methods and Collaborative Filtering - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Chapter 20: Kernel Methods and Collaborative Filtering - Linear Algebra" >
+      
+        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-5/chapter-20/chapter-20.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-20/chapter-20/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Chapter 20: Kernel Methods and Collaborative Filtering - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-5/chapter-20/chapter-20.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="navy" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-20-kernel-methods-and-collaborative-filtering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 20: Kernel Methods and Collaborative Filtering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-support-vector-machines-svms-and-the-kernel-trick" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Support Vector Machines (SVMs) and the Kernel Trick
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Support Vector Machines (SVMs) and the Kernel Trick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-svms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear SVMs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-data-is-nonlinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      When Data is Nonlinear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enter-the-kernel-trick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter the Kernel Trick
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-positive-semidefinite-kernels-and-gram-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Positive Semidefinite Kernels and Gram Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Positive Semidefinite Kernels and Gram Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#positive-semidefinite-psd-kernels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positive Semidefinite (PSD) Kernels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-psd-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why PSD Matters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-collaborative-filtering-and-matrix-factorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Collaborative Filtering and Matrix Factorization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Collaborative Filtering and Matrix Factorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-collaborative-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Collaborative Filtering?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-factorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Factorization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-eigenfaces-for-face-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Eigenfaces for Face Recognition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Eigenfaces for Face Recognition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eigenfaces-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigenfaces Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz Question
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/old-sections/section-5/chapter-20/chapter-20.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-20-kernel-methods-and-collaborative-filtering">Chapter 20: Kernel Methods and Collaborative Filtering</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Suppose you want to classify data that isn’t neatly separated by a straight line (like distinguishing spirals or circles). What if we could "lift" the data into a higher dimension where it <strong>is</strong> separable by a line? <strong>Kernel methods</strong> make this possible — and they rely on clever applications of linear algebra!</p>
+<p>This chapter also introduces <strong>collaborative filtering</strong>, which uses matrix factorization to build recommendation systems, and explores real-world applications like <strong>Eigenfaces</strong> for facial recognition.</p>
+<h2 id="1-support-vector-machines-svms-and-the-kernel-trick">1. Support Vector Machines (SVMs) and the Kernel Trick</h2>
+<h3 id="linear-svms">Linear SVMs</h3>
+<p>In simple SVMs, we seek a hyperplane (a line in 2D, a plane in 3D, etc.) that best separates data into two classes by maximizing the margin between them.</p>
+<p>Mathematically, the hyperplane is defined as:</p>
+<div class="arithmatex">\[
+w^T x + b = 0
+\]</div>
+<p>where:
+- <span class="arithmatex">\(w\)</span> = weight vector (normal to the hyperplane)
+- <span class="arithmatex">\(b\)</span> = bias</p>
+<p>Optimization aims to maximize the margin while correctly classifying as many points as possible.</p>
+<h3 id="when-data-is-nonlinear">When Data is Nonlinear</h3>
+<p>Often, data isn't linearly separable. To fix this, we can map data into a <strong>higher-dimensional space</strong> where separation is easier. But computing these higher-dimensional vectors explicitly is expensive!</p>
+<h3 id="enter-the-kernel-trick">Enter the Kernel Trick</h3>
+<p>Rather than computing transformations explicitly, the <strong>kernel trick</strong> computes the <strong>inner products</strong> in the higher-dimensional space directly using a <strong>kernel function</strong> <span class="arithmatex">\(k(x, y)\)</span>.</p>
+<p>Examples of kernels:
+- <strong>Linear Kernel</strong>: <span class="arithmatex">\(k(x,y) = x^T y\)</span>
+- <strong>Polynomial Kernel</strong>: <span class="arithmatex">\(k(x,y) = (x^T y + c)^d\)</span>
+- <strong>RBF (Gaussian) Kernel</strong>: <span class="arithmatex">\(k(x,y) = \exp\left(-\gamma \|x-y\|^2\right)\)</span></p>
+<p><strong>Key Insight:</strong>
+You never need to know the mapping explicitly; you only need the inner products!</p>
+<div class="admonition example">
+<p class="admonition-title">Analogy</p>
+<p>Imagine trying to separate intertwined spaghetti noodles (complex data) on a plate. Instead of untangling them manually, you freeze them into ice, making them rigid and easier to separate. The kernel trick "freezes" complexity into manageable pieces.</p>
+</div>
+<h2 id="2-positive-semidefinite-kernels-and-gram-matrices">2. Positive Semidefinite Kernels and Gram Matrices</h2>
+<h3 id="positive-semidefinite-psd-kernels">Positive Semidefinite (PSD) Kernels</h3>
+<p>A kernel function must generate a <strong>positive semidefinite Gram matrix</strong>:
+- A matrix <span class="arithmatex">\(K\)</span> where each entry <span class="arithmatex">\(K_{ij} = k(x_i, x_j)\)</span>.
+- Positive semidefinite means that for any vector <span class="arithmatex">\(z\)</span>:</p>
+<div class="arithmatex">\[
+z^T K z \geq 0
+\]</div>
+<h3 id="why-psd-matters">Why PSD Matters</h3>
+<ul>
+<li>Ensures the kernel represents a valid inner product.</li>
+<li>Guarantees convexity in SVM optimization (critical for finding global minima).</li>
+</ul>
+<p><strong>Important Reminder:</strong>
+PSD matrices have <strong>non-negative eigenvalues</strong>, linking back to your earlier understanding of eigenvalues from Chapters 5 and 6!</p>
+<h2 id="3-collaborative-filtering-and-matrix-factorization">3. Collaborative Filtering and Matrix Factorization</h2>
+<h3 id="what-is-collaborative-filtering">What is Collaborative Filtering?</h3>
+<p>Imagine a movie platform like Netflix. How do we recommend movies you haven't seen yet?
+- <strong>Collaborative Filtering</strong> predicts your preferences based on patterns in your and others' ratings.</p>
+<p>This leads to a large, partially-filled <strong>user-item matrix</strong> where entries are known ratings.</p>
+<h3 id="matrix-factorization">Matrix Factorization</h3>
+<p>The idea is to factorize the user-item matrix <span class="arithmatex">\(M\)</span> into two low-rank matrices:</p>
+<div class="arithmatex">\[
+M \approx U V^T
+\]</div>
+<p>where:
+- <span class="arithmatex">\(U\)</span> = user factors (preferences)
+- <span class="arithmatex">\(V\)</span> = item factors (attributes)</p>
+<p>The product <span class="arithmatex">\(U V^T\)</span> reconstructs known ratings and fills in the missing ones.</p>
+<p>Optimization typically minimizes the reconstruction error:</p>
+<div class="arithmatex">\[
+\min_{U, V} \sum_{(i,j) \in \text{known}} (M_{ij} - U_i^T V_j)^2
+\]</div>
+<h2 id="4-eigenfaces-for-face-recognition">4. Eigenfaces for Face Recognition</h2>
+<h3 id="eigenfaces-method">Eigenfaces Method</h3>
+<ul>
+<li>Treat grayscale face images as large vectors.</li>
+<li>Compute the <strong>covariance matrix</strong> of the training faces.</li>
+<li>Perform <strong>eigen decomposition</strong> to find principal components ("Eigenfaces").</li>
+<li>Represent each face as a linear combination of a few Eigenfaces.</li>
+</ul>
+<p><strong>Key Intuition:</strong>
+Faces live in a much smaller "face space" than the full pixel space!</p>
+<p>This is a direct application of PCA (Chapter 17) to image classification.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>SVMs maximize margins for classification and use the <strong>kernel trick</strong> to handle nonlinear data.</li>
+<li>Kernels must create <strong>positive semidefinite Gram matrices</strong> to guarantee valid optimization.</li>
+<li><strong>Collaborative filtering</strong> uses <strong>low-rank matrix factorization</strong> for recommendation systems.</li>
+<li><strong>Eigenfaces</strong> apply PCA concepts to facial recognition by finding a lower-dimensional "face space."</li>
+</ul>
+<p>These techniques are foundational for modern machine learning applications ranging from Netflix recommendations to facial ID systems!</p>
+<hr />
+<h2 id="quiz-question">Quiz Question</h2>
+<p><strong>Which concept allows Support Vector Machines to operate in a higher-dimensional space without explicitly computing the mapping?</strong></p>
+<div class="upper-alpha">
+<p>A. Matrix decomposition<br />
+B. Kernel trick<br />
+C. Eigen decomposition<br />
+D. SVD factorization</p>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>. The kernel trick enables operations in higher-dimensional feature spaces without explicitly computing the transformations.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/extra.js"></script>
+      
+        <script src="../../../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

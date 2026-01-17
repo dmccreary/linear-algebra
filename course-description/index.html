@@ -1,0 +1,1767 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/course-description/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../chapters/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Course Description - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Course Description - Linear Algebra" >
+      
+        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/course-description.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/course-description/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Course Description - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/course-description.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="navy" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#course-description-applied-linear-algebra-for-ai-and-machine-learning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Course Description
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-foundations-of-linear-algebra-weeks-1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Foundations of Linear Algebra (Weeks 1-4)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Foundations of Linear Algebra (Weeks 1-4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-1-vectors-and-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Vectors and Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-2-matrices-and-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Matrices and Matrix Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-3-systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Systems of Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-4-linear-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Linear Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-advanced-matrix-theory-weeks-5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Advanced Matrix Theory (Weeks 5-8)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Advanced Matrix Theory (Weeks 5-8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-5-determinants-and-matrix-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Determinants and Matrix Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-6-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Eigenvalues and Eigenvectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-7-matrix-decompositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Matrix Decompositions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-8-vector-spaces-and-inner-product-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Vector Spaces and Inner Product Spaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-linear-algebra-in-machine-learning-weeks-9-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Linear Algebra in Machine Learning (Weeks 9-12)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Linear Algebra in Machine Learning (Weeks 9-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-9-linear-algebra-foundations-of-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Linear Algebra Foundations of Machine Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-10-neural-networks-and-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Neural Networks and Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-11-generative-ai-and-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Generative AI and Large Language Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-12-optimization-and-learning-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Optimization and Learning Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-computer-vision-and-autonomous-systems-weeks-13-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Computer Vision and Autonomous Systems (Weeks 13-15)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Computer Vision and Autonomous Systems (Weeks 13-15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-13-image-processing-and-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: Image Processing and Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-14-3d-geometry-and-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 14: 3D Geometry and Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-15-autonomous-driving-and-sensor-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 15: Autonomous Driving and Sensor Fusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-microsimulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Microsimulations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-course-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Course Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-sorted-by-blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives Sorted by Bloom's Taxonomy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives Sorted by Bloom's Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#course-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-foundations-of-linear-algebra-weeks-1-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Foundations of Linear Algebra (Weeks 1-4)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Foundations of Linear Algebra (Weeks 1-4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-1-vectors-and-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Vectors and Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-2-matrices-and-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: Matrices and Matrix Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-3-systems-of-linear-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Systems of Linear Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-4-linear-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Linear Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-advanced-matrix-theory-weeks-5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Advanced Matrix Theory (Weeks 5-8)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Advanced Matrix Theory (Weeks 5-8)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-5-determinants-and-matrix-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Determinants and Matrix Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-6-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Eigenvalues and Eigenvectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-7-matrix-decompositions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 7: Matrix Decompositions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-8-vector-spaces-and-inner-product-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 8: Vector Spaces and Inner Product Spaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-linear-algebra-in-machine-learning-weeks-9-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Linear Algebra in Machine Learning (Weeks 9-12)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Linear Algebra in Machine Learning (Weeks 9-12)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-9-linear-algebra-foundations-of-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 9: Linear Algebra Foundations of Machine Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-10-neural-networks-and-deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 10: Neural Networks and Deep Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-11-generative-ai-and-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 11: Generative AI and Large Language Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-12-optimization-and-learning-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 12: Optimization and Learning Algorithms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-computer-vision-and-autonomous-systems-weeks-13-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Computer Vision and Autonomous Systems (Weeks 13-15)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Computer Vision and Autonomous Systems (Weeks 13-15)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-13-image-processing-and-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 13: Image Processing and Computer Vision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-14-3d-geometry-and-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 14: 3D Geometry and Transformations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapter-15-autonomous-driving-and-sensor-fusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 15: Autonomous Driving and Sensor Fusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-microsimulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Microsimulations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Target Audience
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-course-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Course Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives-sorted-by-blooms-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives Sorted by Bloom's Taxonomy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Objectives Sorted by Bloom's Taxonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/course-description.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="course-description-applied-linear-algebra-for-ai-and-machine-learning">Course Description: Applied Linear Algebra for AI and Machine Learning</h1>
+<h2 id="course-overview">Course Overview</h2>
+<p>This one-semester college course provides a comprehensive introduction to linear algebra with a strong emphasis on practical applications in artificial intelligence, machine learning, and computer vision. Students will develop both theoretical understanding and hands-on skills through interactive microsimulations that bring abstract mathematical concepts to life.</p>
+<p>Linear algebra forms the mathematical backbone of modern AI systems. From the matrix operations that power neural networks to the transformations that enable computer vision, understanding linear algebra is essential for anyone working in data science, machine learning, or AI engineering. This course bridges the gap between abstract mathematics and real-world applications, showing students exactly how vectors, matrices, and linear transformations drive the technologies shaping our world.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>College Algebra or equivalent</li>
+<li>Basic programming experience (Python recommended)</li>
+<li>Familiarity with calculus concepts (derivatives and integrals)</li>
+</ul>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this course, students will be able to:</p>
+<ol>
+<li>Perform fundamental vector and matrix operations with confidence</li>
+<li>Understand and apply linear transformations in multiple contexts</li>
+<li>Decompose matrices using eigenvalue, SVD, and other factorization techniques</li>
+<li>Apply linear algebra concepts to solve machine learning problems</li>
+<li>Understand how neural networks use matrix operations for learning</li>
+<li>Implement linear algebra algorithms for image processing and computer vision</li>
+<li>Analyze real-world applications in autonomous systems and genertic AI</li>
+</ol>
+<h2 id="course-structure">Course Structure</h2>
+<p>The course is divided into four major parts spanning 15 weeks, with each chapter containing interactive microsimulations to reinforce concepts.</p>
+<h2 id="part-1-foundations-of-linear-algebra-weeks-1-4">Part 1: Foundations of Linear Algebra (Weeks 1-4)</h2>
+<h3 id="chapter-1-vectors-and-vector-spaces">Chapter 1: Vectors and Vector Spaces</h3>
+<p>An introduction to vectors as the fundamental building blocks of linear algebra. Students explore vector operations, geometric interpretations, and the concept of vector spaces.</p>
+<p><strong>Topics:</strong>
+- Vectors in 2D and 3D space
+- Vector addition and scalar multiplication
+- Dot products and cross products
+- Vector norms and distances
+- Linear combinations and span
+- Linear independence
+- Basis vectors and coordinate systems</p>
+<p><strong>Applications:</strong> Feature vectors in machine learning, word embeddings, representing data points in high-dimensional spaces.</p>
+<h3 id="chapter-2-matrices-and-matrix-operations">Chapter 2: Matrices and Matrix Operations</h3>
+<p>Building on vectors, this chapter introduces matrices as collections of vectors and explores the rich algebra of matrix operations.</p>
+<p><strong>Topics:</strong>
+- Matrix notation and terminology
+- Matrix addition and scalar multiplication
+- Matrix-vector multiplication
+- Matrix-matrix multiplication
+- Transpose and symmetric matrices
+- Special matrices (identity, diagonal, triangular, orthogonal)
+- Matrix inverses</p>
+<p><strong>Applications:</strong> Data representation, adjacency matrices in graphs, transformation matrices in computer graphics.</p>
+<h3 id="chapter-3-systems-of-linear-equations">Chapter 3: Systems of Linear Equations</h3>
+<p>Students learn to formulate and solve systems of linear equations, a fundamental skill with applications across all quantitative fields.</p>
+<p><strong>Topics:</strong>
+- Representing systems as matrix equations
+- Gaussian elimination
+- Row echelon form and reduced row echelon form
+- Existence and uniqueness of solutions
+- Homogeneous systems
+- Computational considerations and numerical stability</p>
+<p><strong>Applications:</strong> Solving optimization problems, balancing chemical equations, network flow analysis.</p>
+<h3 id="chapter-4-linear-transformations">Chapter 4: Linear Transformations</h3>
+<p>This chapter reveals how matrices represent transformations, connecting algebraic operations to geometric intuition.</p>
+<p><strong>Topics:</strong>
+- Functions between vector spaces
+- Matrix representation of transformations
+- Rotation, scaling, shearing, and projection
+- Composition of transformations
+- Kernel and range of a transformation
+- Invertible transformations
+- Change of basis</p>
+<p><strong>Applications:</strong> Computer graphics transformations, coordinate system changes, feature transformations in ML pipelines.</p>
+<h2 id="part-2-advanced-matrix-theory-weeks-5-8">Part 2: Advanced Matrix Theory (Weeks 5-8)</h2>
+<h3 id="chapter-5-determinants-and-matrix-properties">Chapter 5: Determinants and Matrix Properties</h3>
+<p>Determinants reveal fundamental properties of matrices and transformations, with applications in solving systems and computing volumes.</p>
+<p><strong>Topics:</strong>
+- Definition and computation of determinants
+- Properties of determinants
+- Geometric interpretation (area and volume scaling)
+- Cramer's rule
+- Determinants and invertibility
+- Computational methods for large matrices</p>
+<p><strong>Applications:</strong> Computing volumes in higher dimensions, checking matrix invertibility, understanding transformation behavior.</p>
+<h3 id="chapter-6-eigenvalues-and-eigenvectors">Chapter 6: Eigenvalues and Eigenvectors</h3>
+<p>One of the most important topics in linear algebra, eigenanalysis reveals the intrinsic structure of linear transformations.</p>
+<p><strong>Topics:</strong>
+- Definition of eigenvalues and eigenvectors
+- Characteristic polynomial
+- Finding eigenvalues and eigenvectors
+- Diagonalization
+- Complex eigenvalues
+- Spectral theorem for symmetric matrices
+- Power iteration method</p>
+<p><strong>Applications:</strong> Principal Component Analysis (PCA), Google's PageRank algorithm, stability analysis of dynamical systems.</p>
+<h3 id="chapter-7-matrix-decompositions">Chapter 7: Matrix Decompositions</h3>
+<p>Matrix factorizations provide powerful tools for analysis, computation, and dimensionality reduction.</p>
+<p><strong>Topics:</strong>
+- LU decomposition
+- QR decomposition
+- Cholesky decomposition
+- Singular Value Decomposition (SVD)
+- Low-rank approximations
+- Numerical considerations</p>
+<p><strong>Applications:</strong> Recommender systems, image compression, solving least squares problems, noise reduction.</p>
+<h3 id="chapter-8-vector-spaces-and-inner-product-spaces">Chapter 8: Vector Spaces and Inner Product Spaces</h3>
+<p>Generalizing concepts from earlier chapters, this section develops the abstract framework underlying all applications.</p>
+<p><strong>Topics:</strong>
+- Abstract vector spaces
+- Subspaces and their properties
+- Inner products and norms
+- Orthogonality and orthonormal bases
+- Gram-Schmidt orthogonalization
+- Projections and least squares
+- Fundamental subspaces of a matrix</p>
+<p><strong>Applications:</strong> Signal processing, function approximation, optimization in machine learning.</p>
+<h2 id="part-3-linear-algebra-in-machine-learning-weeks-9-12">Part 3: Linear Algebra in Machine Learning (Weeks 9-12)</h2>
+<h3 id="chapter-9-linear-algebra-foundations-of-machine-learning">Chapter 9: Linear Algebra Foundations of Machine Learning</h3>
+<p>This chapter explicitly connects linear algebra concepts to core machine learning algorithms and techniques.</p>
+<p><strong>Topics:</strong>
+- Data as matrices: features and observations
+- Covariance matrices and correlation
+- Principal Component Analysis (PCA) in depth
+- Linear regression as matrix equations
+- Regularization: Ridge and Lasso
+- Gradient descent in matrix form
+- Batch processing with matrix operations</p>
+<p><strong>Applications:</strong> Feature extraction, dimensionality reduction, predictive modeling, data preprocessing.</p>
+<h3 id="chapter-10-neural-networks-and-deep-learning">Chapter 10: Neural Networks and Deep Learning</h3>
+<p>Neural networks are fundamentally sequences of linear transformations interleaved with nonlinearities. This chapter reveals the matrix mathematics powering deep learning.</p>
+<p><strong>Topics:</strong>
+- Neurons as linear functions with activation
+- Weight matrices and bias vectors
+- Forward propagation as matrix multiplication
+- Backpropagation and the chain rule with matrices
+- Convolutional layers as structured matrix operations
+- Batch normalization and layer normalization
+- Attention mechanisms and transformer architecture
+- Tensor operations and higher-order arrays</p>
+<p><strong>Applications:</strong> Image classification, natural language processing, speech recognition, recommendation systems.</p>
+<h3 id="chapter-11-generative-ai-and-large-language-models">Chapter 11: Generative AI and Large Language Models</h3>
+<p>Modern generative AI systems rely heavily on sophisticated linear algebra. This chapter explores the mathematical foundations of these transformative technologies.</p>
+<p><strong>Topics:</strong>
+- Embedding spaces and semantic similarity
+- Attention mechanisms as matrix operations
+- Key, Query, and Value matrices in transformers
+- Self-attention and cross-attention
+- Position encodings
+- Linear projections in multi-head attention
+- Low-rank adaptations (LoRA) for fine-tuning
+- Matrix factorization in generative models
+- Latent spaces and interpolation</p>
+<p><strong>Applications:</strong> Large language models (GPT, Claude), image generation (Stable Diffusion, DALL-E), text-to-speech systems.</p>
+<h3 id="chapter-12-optimization-and-learning-algorithms">Chapter 12: Optimization and Learning Algorithms</h3>
+<p>Optimization is the engine of machine learning, and linear algebra provides the tools to understand and improve optimization algorithms.</p>
+<p><strong>Topics:</strong>
+- Gradient vectors and Hessian matrices
+- Convexity and positive definite matrices
+- Newton's method and quasi-Newton methods
+- Stochastic gradient descent
+- Momentum and adaptive learning rates (Adam, RMSprop)
+- Second-order optimization methods
+- Constrained optimization with Lagrange multipliers
+- Conditioning and numerical stability</p>
+<p><strong>Applications:</strong> Training neural networks, hyperparameter optimization, constrained learning problems.</p>
+<hr />
+<h2 id="part-4-computer-vision-and-autonomous-systems-weeks-13-15">Part 4: Computer Vision and Autonomous Systems (Weeks 13-15)</h2>
+<h3 id="chapter-13-image-processing-and-computer-vision">Chapter 13: Image Processing and Computer Vision</h3>
+<p>Images are matrices of pixel values, making linear algebra the natural language for image processing and computer vision.</p>
+<p><strong>Topics:</strong>
+- Images as matrices and tensors
+- Convolution as matrix operations
+- Image filtering (blur, sharpen, edge detection)
+- Fourier transforms and frequency domain
+- Image compression using SVD
+- Color spaces and transformations
+- Feature detection and description
+- Homography and perspective transformations</p>
+<p><strong>Applications:</strong> Photo editing, medical imaging, satellite imagery analysis, facial recognition.</p>
+<h3 id="chapter-14-3d-geometry-and-transformations">Chapter 14: 3D Geometry and Transformations</h3>
+<p>Understanding 3D geometry is essential for robotics, augmented reality, and autonomous vehicles. This chapter covers the linear algebra of 3D transformations.</p>
+<p><strong>Topics:</strong>
+- 3D coordinate systems
+- Rotation matrices and Euler angles
+- Quaternions and rotation representation
+- Homogeneous coordinates
+- Rigid body transformations
+- Camera models and projection matrices
+- Stereo vision and triangulation
+- Point cloud processing</p>
+<p><strong>Applications:</strong> Robotics, augmented reality, 3D reconstruction, motion capture.</p>
+<h3 id="chapter-15-autonomous-driving-and-sensor-fusion">Chapter 15: Autonomous Driving and Sensor Fusion</h3>
+<p>The capstone chapter applies all course concepts to the complex, safety-critical domain of autonomous vehicles.</p>
+<p><strong>Topics:</strong>
+- LIDAR point cloud processing
+- Camera calibration and rectification
+- Sensor fusion with Kalman filters
+- State estimation and prediction
+- Simultaneous Localization and Mapping (SLAM)
+- Object detection and tracking
+- Path planning with linear constraints
+- Safety-critical computation considerations</p>
+<p><strong>Applications:</strong> Self-driving cars, drone navigation, warehouse robots, autonomous delivery systems.</p>
+<hr />
+<h2 id="interactive-microsimulations">Interactive Microsimulations</h2>
+<p>Each chapter includes interactive microsimulations that allow students to:</p>
+<ul>
+<li>Visualize abstract concepts in 2D and 3D</li>
+<li>Experiment with parameters and see immediate results</li>
+<li>Build intuition through hands-on exploration</li>
+<li>Connect mathematical formulas to visual representations</li>
+<li>Practice computational skills in a forgiving environment</li>
+</ul>
+<p>Example microsimulations include:</p>
+<ul>
+<li><strong>Vector Operations Playground:</strong> Add, subtract, and scale vectors interactively</li>
+<li><strong>Matrix Transformation Visualizer:</strong> See how matrices transform shapes in 2D</li>
+<li><strong>Eigenvalue Explorer:</strong> Watch eigenvectors remain on their span during transformation</li>
+<li><strong>SVD Image Compressor:</strong> Adjust rank and see image quality vs. compression tradeoffs</li>
+<li><strong>Neural Network Forward Pass:</strong> Step through matrix multiplications in a simple network</li>
+<li><strong>Attention Mechanism Visualizer:</strong> See how attention weights are computed</li>
+<li><strong>Kalman Filter Tracker:</strong> Fuse noisy sensor measurements in real-time</li>
+<li><strong>PCA Dimension Reducer:</strong> Project high-dimensional data and see variance preserved</li>
+</ul>
+<h2 id="assessment">Assessment</h2>
+<ul>
+<li><strong>Weekly Problem Sets (30%):</strong> Analytical and computational problems</li>
+<li><strong>Microsimulation Labs (20%):</strong> Hands-on exploration with written reflections</li>
+<li><strong>Midterm Exam (20%):</strong> Covering Parts 1 and 2</li>
+<li><strong>Final Project (30%):</strong> Apply linear algebra to a real-world problem in ML, computer vision, or autonomous systems</li>
+</ul>
+<h2 id="required-materials">Required Materials</h2>
+<ul>
+<li><strong>Textbook:</strong> This interactive intelligent textbook with embedded microsimulations</li>
+<li><strong>Software:</strong> Python with NumPy, Matplotlib, and scikit-learn</li>
+<li><strong>Optional:</strong> GPU access for deep learning exercises</li>
+</ul>
+<h2 id="target-audience">Target Audience</h2>
+<p>This course is designed for:</p>
+<ul>
+<li>Computer Science majors pursuing AI/ML specializations</li>
+<li>Data Science students seeking mathematical foundations</li>
+<li>Engineering students interested in robotics and autonomous systems</li>
+<li>Applied Mathematics students wanting practical applications</li>
+<li>Graduate students needing linear algebra foundations for research</li>
+</ul>
+<h2 id="why-this-course-matters">Why This Course Matters</h2>
+<p>Linear algebra is not just a prerequisite checkbox—it is the language in which modern AI systems are written. Understanding matrices and transformations at a deep level enables you to:</p>
+<ul>
+<li><strong>Debug ML models</strong> by understanding what's happening mathematically</li>
+<li><strong>Optimize performance</strong> by choosing efficient matrix operations</li>
+<li><strong>Innovate</strong> by seeing new ways to apply linear algebra concepts</li>
+<li><strong>Communicate</strong> with researchers and engineers using shared mathematical vocabulary</li>
+<li><strong>Adapt</strong> to new techniques that build on these foundations</li>
+</ul>
+<p>The future of technology is built on linear algebra. This course gives you the tools to be part of building that future.</p>
+<h2 id="learning-objectives-sorted-by-blooms-taxonomy">Learning Objectives Sorted by Bloom's Taxonomy</h2>
+<p>The following learning objectives are organized according to the 2001 revised Bloom's Taxonomy, progressing from foundational cognitive skills to higher-order thinking. Each level builds upon the previous, ensuring students develop comprehensive mastery of applied linear algebra.</p>
+<h3 id="remember">Remember</h3>
+<p>At this foundational level, students will retrieve and recall essential facts, terminology, and procedures.</p>
+<ul>
+<li>Define key terms including vector, matrix, scalar, transpose, determinant, eigenvalue, and eigenvector</li>
+<li>List the properties of matrix operations (associativity, distributivity, non-commutativity of multiplication)</li>
+<li>Identify special matrix types: identity, diagonal, symmetric, orthogonal, positive definite, and sparse</li>
+<li>Recall the conditions for matrix invertibility</li>
+<li>State the definition of linear independence and span</li>
+<li>Recognize the notation for vector norms (L1, L2, L-infinity)</li>
+<li>Name the four fundamental subspaces of a matrix</li>
+<li>List the steps of Gaussian elimination</li>
+<li>Identify the components of SVD: U, Σ, and V matrices</li>
+<li>Recall the structure of neural network layers (weights, biases, activations)</li>
+<li>State the formula for computing attention scores in transformers</li>
+<li>Recognize common matrix decomposition types (LU, QR, Cholesky, SVD)</li>
+</ul>
+<h3 id="understand">Understand</h3>
+<p>At this level, students will demonstrate comprehension by explaining concepts and interpreting mathematical relationships.</p>
+<ul>
+<li>Explain the geometric interpretation of the dot product as projection</li>
+<li>Describe how matrix multiplication represents composition of linear transformations</li>
+<li>Interpret the meaning of eigenvalues as scaling factors along eigenvector directions</li>
+<li>Summarize how SVD decomposes a matrix into rotations and scaling</li>
+<li>Explain why the determinant represents the volume scaling factor of a transformation</li>
+<li>Describe the relationship between the rank of a matrix and its solution space</li>
+<li>Interpret covariance matrices in terms of data spread and correlation</li>
+<li>Explain how PCA uses eigenvectors to find principal components</li>
+<li>Describe how gradient descent uses the gradient vector to minimize loss functions</li>
+<li>Summarize the role of weight matrices in neural network forward propagation</li>
+<li>Explain how attention mechanisms compute relevance between tokens using dot products</li>
+<li>Describe the purpose of the Kalman filter in combining predictions with measurements</li>
+<li>Interpret homogeneous coordinates and their role in projective geometry</li>
+</ul>
+<h3 id="apply">Apply</h3>
+<p>Students will use learned procedures and concepts to solve problems in familiar and new contexts.</p>
+<ul>
+<li>Perform matrix-vector and matrix-matrix multiplication by hand and programmatically</li>
+<li>Solve systems of linear equations using Gaussian elimination and matrix inverses</li>
+<li>Compute eigenvalues and eigenvectors for 2×2 and 3×3 matrices</li>
+<li>Apply the Gram-Schmidt process to orthogonalize a set of vectors</li>
+<li>Calculate the SVD of a matrix and use it for low-rank approximation</li>
+<li>Implement PCA to reduce dimensionality of a dataset</li>
+<li>Use matrix calculus to compute gradients for optimization problems</li>
+<li>Apply linear regression using the normal equations</li>
+<li>Implement forward propagation through a neural network layer</li>
+<li>Construct rotation and transformation matrices for 2D and 3D graphics</li>
+<li>Apply convolution kernels to perform image filtering operations</li>
+<li>Use homography matrices to correct perspective in images</li>
+<li>Implement the power iteration method to find dominant eigenvalues</li>
+</ul>
+<h3 id="analyze">Analyze</h3>
+<p>Students will break down complex systems into components and examine relationships between parts.</p>
+<ul>
+<li>Analyze the conditioning of a matrix and its impact on numerical stability</li>
+<li>Decompose the behavior of a linear transformation into its action on eigenspaces</li>
+<li>Examine the tradeoffs between different matrix decomposition methods for specific applications</li>
+<li>Analyze how the choice of basis affects the representation of linear transformations</li>
+<li>Compare the computational complexity of direct vs. iterative methods for solving linear systems</li>
+<li>Investigate how regularization terms modify the solution space in linear regression</li>
+<li>Analyze the information flow through neural network layers using matrix dimensions</li>
+<li>Examine how attention patterns reveal relationships in transformer models</li>
+<li>Analyze the effect of different kernel sizes and strides on convolutional layer outputs</li>
+<li>Decompose a camera projection matrix into intrinsic and extrinsic parameters</li>
+<li>Analyze sensor fusion algorithms to understand how different data sources are weighted</li>
+<li>Examine the stability of dynamical systems through eigenvalue analysis</li>
+<li>Investigate the relationship between matrix rank and the information preserved in compression</li>
+</ul>
+<h3 id="evaluate">Evaluate</h3>
+<p>Students will make judgments and decisions based on criteria, standards, and evidence.</p>
+<ul>
+<li>Assess the numerical stability of different algorithms for computing matrix inverses</li>
+<li>Evaluate the appropriate rank for SVD truncation based on reconstruction error and compression ratio</li>
+<li>Judge the suitability of different dimensionality reduction techniques for specific datasets</li>
+<li>Critique the choice of optimization algorithms based on problem characteristics (convexity, scale, sparsity)</li>
+<li>Evaluate the effectiveness of different regularization strategies for preventing overfitting</li>
+<li>Assess the tradeoffs between model complexity and interpretability in linear models</li>
+<li>Judge the quality of learned embeddings based on semantic similarity measures</li>
+<li>Evaluate different attention mechanisms for computational efficiency and performance</li>
+<li>Assess the accuracy of camera calibration by analyzing reprojection errors</li>
+<li>Critique sensor fusion approaches based on noise characteristics and update rates</li>
+<li>Evaluate path planning solutions based on optimality and computational constraints</li>
+<li>Judge the robustness of SLAM algorithms under different environmental conditions</li>
+<li>Assess when to use dense vs. sparse matrix representations based on memory and speed requirements</li>
+</ul>
+<h3 id="create">Create</h3>
+<p>At the highest cognitive level, students will synthesize knowledge to design, construct, and develop novel solutions.</p>
+<ul>
+<li>Design a complete data preprocessing pipeline using linear algebra operations</li>
+<li>Develop a custom dimensionality reduction approach for a specific application domain</li>
+<li>Construct a neural network architecture with appropriate layer dimensions for a given task</li>
+<li>Create novel image filters by designing custom convolution kernels</li>
+<li>Design a feature extraction system using learned linear projections</li>
+<li>Develop a recommendation system using matrix factorization techniques</li>
+<li>Construct a real-time object tracking system using Kalman filtering</li>
+<li>Design a camera calibration procedure for a multi-camera autonomous vehicle system</li>
+<li>Create a 3D reconstruction pipeline from stereo image pairs</li>
+<li>Develop a sensor fusion algorithm that combines LIDAR, camera, and IMU data</li>
+<li>Design an efficient batched matrix computation strategy for GPU acceleration</li>
+<li>Construct an interpretable linear model that balances accuracy with explainability</li>
+<li>Create an interactive visualization tool demonstrating linear algebra concepts</li>
+<li>Design a complete autonomous navigation system integrating perception, localization, and planning</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapters/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

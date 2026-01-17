@@ -1,0 +1,45 @@
+{
+    "title": "Vector Space Axiom Explorer",
+    "description": "Interactive infographic for exploring the ten vector space axioms with hover definitions and concrete examples.",
+    "creator": "Claude AI",
+    "subject": ["Linear Algebra", "Vector Spaces", "Axioms"],
+    "date": "2026-01-17",
+    "type": "Interactive Infographic",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Vector Space Axioms",
+        "learningObjectives": [
+            "Identify and list the ten vector space axioms",
+            "Recognize axioms organized by addition and scalar multiplication",
+            "Understand each axiom through concrete examples",
+            "Verify whether a set satisfies vector space axioms"
+        ],
+        "bloomsLevel": ["Remember", "Understand"],
+        "duration": "15-20 minutes",
+        "prerequisites": ["Vector addition", "Scalar multiplication", "R² as example"]
+    },
+    "technical": {
+        "framework": "HTML/CSS/JavaScript",
+        "canvasDimensions": "responsive x 750",
+        "responsive": true,
+        "dependencies": ["None (vanilla HTML/CSS/JS)"],
+        "features": ["Click to expand", "Progress tracking", "Hover tooltips"]
+    },
+    "controls": [
+        {
+            "type": "click",
+            "name": "Axiom cards",
+            "description": "Click to expand and see definition and example"
+        },
+        {
+            "type": "hover",
+            "name": "Central hub",
+            "description": "Hover to see vector space definition and examples"
+        }
+    ],
+    "keywords": ["vector space", "axioms", "closure", "commutativity", "associativity", "identity", "inverse", "distributivity", "linear algebra"]
+}

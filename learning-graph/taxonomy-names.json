@@ -1,0 +1,17 @@
+{
+  "FOUND": "Foundation Concepts",
+  "MATOP": "Matrix Operations",
+  "LINSYS": "Linear Systems",
+  "TRANS": "Transformations",
+  "DETERM": "Determinants",
+  "EIGEN": "Eigentheory",
+  "DECOMP": "Decompositions",
+  "INPROD": "Inner Products",
+  "MLBASE": "ML Foundations",
+  "NEURAL": "Neural Networks",
+  "GENAI": "Generative AI",
+  "OPTIM": "Optimization",
+  "IMGPROC": "Image Processing",
+  "GEOM3D": "3D Geometry",
+  "AUTON": "Autonomous Systems"
+}

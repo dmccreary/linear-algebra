@@ -1,0 +1,874 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-3/chapter-3/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>📘 Chapter 3: Vector Spaces and Subspaces - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="📘 Chapter 3: Vector Spaces and Subspaces - Linear Algebra" >
+      
+        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-1/chapter-3/chapter-3.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-3/chapter-3/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="📘 Chapter 3: Vector Spaces and Subspaces - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-1/chapter-3/chapter-3.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="navy" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-vector-spaces-and-subspaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📘 Chapter 3: Vector Spaces and Subspaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-what-is-a-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 What is a Vector Space?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Subspaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Span
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-basis-and-dimension" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Basis and Dimension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-row-space-column-space-and-null-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Row Space, Column Space, and Null Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Row Space, Column Space, and Null Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#column-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Column Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-space-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Null Space (Kernel)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-why-this-chapter-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Why This Chapter Matters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/old-sections/section-1/chapter-3/chapter-3.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-3-vector-spaces-and-subspaces">📘 Chapter 3: Vector Spaces and Subspaces</h1>
+<p>In Chapters 1 and 2, we explored <strong>scalars</strong>, <strong>vectors</strong>, <strong>matrices</strong>, and how to operate on them.<br />
+Now, we shift our focus to something deeper: <strong>spaces</strong> built from vectors.</p>
+<p>This chapter unlocks a profound idea: <strong>vectors aren't isolated — they live in vast, structured universes called vector spaces</strong>. Understanding these spaces is essential for everything from solving systems of equations to building machine learning models.</p>
+<hr />
+<h2 id="31-what-is-a-vector-space">3.1 What is a Vector Space?</h2>
+<p>A <strong>vector space</strong> is a <strong>collection of vectors</strong> where you can:
+- <strong>Add</strong> any two vectors and stay inside the space.
+- <strong>Scale</strong> any vector by a scalar and stay inside the space.</p>
+<p>In short: <strong>add and stretch without leaving</strong>.</p>
+<p><strong>Formal Definition:</strong><br />
+A set <span class="arithmatex">\(V\)</span> is a vector space over a field (like <span class="arithmatex">\(\mathbb{R}\)</span> for real numbers) if it satisfies:
+- <strong>Closure under addition and scalar multiplication</strong>,
+- <strong>Existence of a zero vector</strong> (an "origin"),
+- <strong>Existence of additive inverses</strong> (every vector has a "negative" vector),
+- and other technical properties (like associativity, distributivity).</p>
+<p><strong>Example 1:</strong><br />
+All 2D vectors <span class="arithmatex">\((x, y)\)</span> where <span class="arithmatex">\(x, y\in\mathbb{R}\)</span> form a vector space: <span class="arithmatex">\(\mathbb{R}^2\)</span>.</p>
+<p><strong>Example 2:</strong><br />
+All 3D vectors <span class="arithmatex">\((x, y, z)\)</span> where <span class="arithmatex">\(x, y, z\in\mathbb{R}\)</span> form <span class="arithmatex">\(\mathbb{R}^3\)</span>.</p>
+<hr />
+<h2 id="32-subspaces">3.2 Subspaces</h2>
+<p>A <strong>subspace</strong> is simply a <strong>vector space within another vector space</strong>.</p>
+<p><strong>Criteria for a Subspace:</strong><br />
+A subset <span class="arithmatex">\(W\)</span> of a vector space <span class="arithmatex">\(V\)</span> is a subspace if:
+1. The <strong>zero vector</strong> is in <span class="arithmatex">\(W\)</span>,
+2. <span class="arithmatex">\(W\)</span> is <strong>closed under addition</strong>,
+3. <span class="arithmatex">\(W\)</span> is <strong>closed under scalar multiplication</strong>.</p>
+<p><strong>Example:</strong><br />
+In <span class="arithmatex">\(\mathbb{R}^3\)</span>, the set of all vectors of the form <span class="arithmatex">\((x, 0, 0)\)</span> (i.e., lying on the <span class="arithmatex">\(x\)</span>-axis) is a subspace.</p>
+<p><strong>Why Subspaces Matter:</strong><br />
+Subspaces capture <strong>constrained movement</strong>: movement along a line, inside a plane, or through a lower-dimensional world embedded inside a bigger space.</p>
+<p><strong>Creative Analogy:</strong><br />
+Imagine a vector space like a <strong>giant 3D room</strong>.<br />
+Subspaces are like <strong>wires, sheets, or corners</strong> inside the room where all action is confined!</p>
+<hr />
+<h2 id="33-span">3.3 Span</h2>
+<p>The <strong>span</strong> of a set of vectors is the <strong>smallest subspace</strong> containing them — it's <strong>everything you can build</strong> by adding and scaling those vectors.</p>
+<p><strong>Example:</strong><br />
+If you have vectors:
+$$
+\mathbf{v}_1 =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+, \quad
+\mathbf{v}_2 =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+$$
+in <span class="arithmatex">\(\mathbb{R}^2\)</span>, then their span is the <strong>entire plane</strong> <span class="arithmatex">\(\mathbb{R}^2\)</span>.</p>
+<p><strong>Why Span?</strong><br />
+When you ask, "What directions can I move using just these vectors?" — you are really asking about the span.</p>
+<hr />
+<h2 id="34-basis-and-dimension">3.4 Basis and Dimension</h2>
+<p>A <strong>basis</strong> is a <strong>minimal set of vectors</strong> that:
+- <strong>Span</strong> the space,
+- Are <strong>linearly independent</strong> (none of them is redundant).</p>
+<p><strong>Example:</strong><br />
+$$
+{
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix},
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+}
+$$
+is a basis for <span class="arithmatex">\(\mathbb{R}^2\)</span>.</p>
+<p><strong>Dimension:</strong><br />
+The <strong>dimension</strong> of a vector space is the <strong>number of vectors in any basis</strong>.</p>
+<p>Thus:
+- <span class="arithmatex">\(\mathbb{R}^2\)</span> has dimension 2,
+- <span class="arithmatex">\(\mathbb{R}^3\)</span> has dimension 3,
+- A line through the origin in <span class="arithmatex">\(\mathbb{R}^3\)</span> has dimension 1.</p>
+<p><strong>Creative Analogy:</strong><br />
+If the vector space is a world, the basis vectors are its <strong>fundamental directions</strong> — the minimum GPS instructions you need to navigate everywhere!</p>
+<hr />
+<h2 id="35-row-space-column-space-and-null-space">3.5 Row Space, Column Space, and Null Space</h2>
+<p>When dealing with a matrix <span class="arithmatex">\(A\)</span>, we encounter three critical subspaces:</p>
+<h3 id="row-space">Row Space</h3>
+<p>The space spanned by the <strong>rows</strong> of <span class="arithmatex">\(A\)</span>.</p>
+<ul>
+<li>It tells us about <strong>relationships among equations</strong>.</li>
+<li>Lives in <span class="arithmatex">\(\mathbb{R}^n\)</span> if <span class="arithmatex">\(A\)</span> has <span class="arithmatex">\(n\)</span> columns.</li>
+</ul>
+<h3 id="column-space">Column Space</h3>
+<p>The space spanned by the <strong>columns</strong> of <span class="arithmatex">\(A\)</span>.</p>
+<ul>
+<li>It represents all <strong>possible outputs</strong> of the system <span class="arithmatex">\(A\mathbf{x}\)</span>.</li>
+<li>Lives in <span class="arithmatex">\(\mathbb{R}^m\)</span> if <span class="arithmatex">\(A\)</span> has <span class="arithmatex">\(m\)</span> rows.</li>
+</ul>
+<h3 id="null-space-kernel">Null Space (Kernel)</h3>
+<p>The set of all vectors <span class="arithmatex">\(\mathbf{x}\)</span> such that:
+$$
+A\mathbf{x} = \mathbf{0}
+$$</p>
+<ul>
+<li>It captures all the <strong>"invisible" directions</strong> — inputs that produce zero output.</li>
+<li>Tells us about <strong>solutions to homogeneous systems</strong>.</li>
+</ul>
+<hr />
+<h2 id="36-why-this-chapter-matters">3.6 Why This Chapter Matters</h2>
+<p>Understanding vector spaces and subspaces helps you:</p>
+<ul>
+<li><strong>Solve systems more intelligently</strong> (using dimensions and bases),</li>
+<li><strong>Analyze models</strong> (like feature spaces in machine learning),</li>
+<li><strong>Simplify problems</strong> (by recognizing redundancies and patterns).</li>
+</ul>
+<p><strong>Link to Previous Chapters:</strong><br />
+Everything we've learned about vectors and matrices now deepens:<br />
+Instead of just manipulating individual objects, you begin to <strong>analyze entire worlds</strong> formed by them.</p>
+<p><strong>Forward Connection:</strong><br />
+In the next chapter, we'll ask <strong>how to tell</strong> if vectors are <strong>independent</strong> or <strong>redundant</strong> — leading us into <strong>linear independence and rank</strong>.</p>
+<hr />
+<h1 id="summary">📚 Summary</h1>
+<p>In this chapter, you learned:</p>
+<ul>
+<li><strong>Vector spaces</strong> are collections of vectors closed under addition and scaling.</li>
+<li><strong>Subspaces</strong> are smaller spaces inside vector spaces, satisfying similar rules.</li>
+<li>The <strong>span</strong> of a set of vectors is all combinations you can build from them.</li>
+<li>A <strong>basis</strong> is a minimal spanning set; the <strong>dimension</strong> counts its vectors.</li>
+<li>Matrices naturally give rise to <strong>row space</strong>, <strong>column space</strong>, and <strong>null space</strong>.</li>
+</ul>
+<p>These ideas create a bridge from basic matrix operations to the beautiful architecture of linear systems and transformations.</p>
+<hr />
+<h1 id="quiz">🧠 Quiz</h1>
+<p>Which of the following sets is a subspace of ℝ³?</p>
+<div class="upper-alpha">
+<p>A. All vectors with <span class="arithmatex">\(x + y + z = 1\)</span></p>
+<p>B. All vectors with <span class="arithmatex">\(x = y = z\)</span></p>
+<p>C. All vectors with <span class="arithmatex">\(x^2 + y^2 + z^2 &lt; 1\)</span></p>
+<p>D. All unit vectors in ℝ³</p>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>B</strong>.<br />
+The set of all vectors where <span class="arithmatex">\(x = y = z\)</span> is a subspace: it contains the zero vector, is closed under addition, and is closed under scalar multiplication.<br />
+Sets defined by non-homogeneous conditions (like <span class="arithmatex">\(x + y + z = 1\)</span>) or norm constraints (like unit vectors) are <strong>not subspaces</strong>.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/extra.js"></script>
+      
+        <script src="../../../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

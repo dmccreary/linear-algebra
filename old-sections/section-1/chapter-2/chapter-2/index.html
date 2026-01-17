@@ -1,0 +1,966 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-2/chapter-2/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>📘 Chapter 2: Matrix Operations and Properties - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="📘 Chapter 2: Matrix Operations and Properties - Linear Algebra" >
+      
+        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-1/chapter-2/chapter-2.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-2/chapter-2/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="📘 Chapter 2: Matrix Operations and Properties - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/old-sections/section-1/chapter-2/chapter-2.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="navy" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-matrix-operations-and-properties" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📘 Chapter 2: Matrix Operations and Properties
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-matrix-addition-and-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Matrix Addition and Subtraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Matrix Multiplication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-the-transpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 The Transpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-special-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Special Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Special Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-matrix-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Matrix \(I\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zero Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagonal Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangular-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangular Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Matrices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/old-sections/section-1/chapter-2/chapter-2.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-2-matrix-operations-and-properties">📘 Chapter 2: Matrix Operations and Properties</h1>
+<p>In Chapter 1, we discovered <strong>scalars</strong>, <strong>vectors</strong>, <strong>matrices</strong>, and <strong>systems of linear equations</strong>.<br />
+Now, we dive into how <strong>matrices</strong> interact with each other through operations like <strong>addition</strong>, <strong>multiplication</strong>, and <strong>transposition</strong>, and learn about <strong>special types of matrices</strong> that have unique, powerful properties.</p>
+<p>Mastering these operations gives you the toolkit to manipulate data structures, solve complex systems, and build mathematical models of the real world!</p>
+<hr />
+<h2 id="21-matrix-addition-and-subtraction">2.1 Matrix Addition and Subtraction</h2>
+<p>Matrices of the <strong>same dimensions</strong> can be <strong>added</strong> or <strong>subtracted</strong> by simply combining their corresponding entries.</p>
+<p><strong>Example:</strong>
+$$
+A = 
+\begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{bmatrix}
+$$</p>
+<p>Then:
+$$
+A + B =
+\begin{bmatrix}
+1+5 &amp; 2+6 \\
+3+7 &amp; 4+8
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 &amp; 8 \\
+10 &amp; 12
+\end{bmatrix}
+$$</p>
+<p><strong>Important:</strong><br />
+- <strong>Dimensions must match!</strong> You can't add a <span class="arithmatex">\(2 \times 3\)</span> matrix to a <span class="arithmatex">\(3 \times 2\)</span> matrix.</p>
+<p><strong>Why Addition/Subtraction?</strong><br />
+When combining two datasets (e.g., overlaying two images or merging network connections), matrix addition and subtraction help <strong>accumulate or compare</strong> their contents.</p>
+<hr />
+<h2 id="22-scalar-multiplication">2.2 Scalar Multiplication</h2>
+<p>Multiplying a matrix by a <strong>scalar</strong> means multiplying <strong>every entry</strong> by that scalar.</p>
+<p><strong>Example:</strong>
+$$
+3A =
+\begin{bmatrix}
+3\times1 &amp; 3\times2 \\
+3\times3 &amp; 3\times4
+\end{bmatrix}
+=
+\begin{bmatrix}
+3 &amp; 6 \\
+9 &amp; 12
+\end{bmatrix}
+$$</p>
+<p><strong>Analogy:</strong><br />
+Imagine <strong>brightening an image</strong>: multiplying every pixel's intensity by 3. Scalar multiplication <strong>scales the entire matrix</strong>.</p>
+<hr />
+<h2 id="23-matrix-multiplication">2.3 Matrix Multiplication</h2>
+<p>Matrix multiplication is more involved — but much more powerful.</p>
+<p>To multiply <span class="arithmatex">\(A\)</span> (<span class="arithmatex">\(m\times n\)</span>) by <span class="arithmatex">\(B\)</span> (<span class="arithmatex">\(n\times p\)</span>):
+- <strong>The number of columns of <span class="arithmatex">\(A\)</span> must equal the number of rows of <span class="arithmatex">\(B\)</span></strong>.
+- The result is an <span class="arithmatex">\(m\times p\)</span> matrix.</p>
+<p><strong>How to Multiply:</strong><br />
+Each entry in the product matrix is the <strong>dot product</strong> of a row of <span class="arithmatex">\(A\)</span> and a column of <span class="arithmatex">\(B\)</span>.</p>
+<p><strong>Example:</strong>
+$$
+A =
+\begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{bmatrix}
+$$</p>
+<p>Compute:
+$$
+AB =
+\begin{bmatrix}
+(1)(5)+(2)(7) &amp; (1)(6)+(2)(8) \\
+(3)(5)+(4)(7) &amp; (3)(6)+(4)(8)
+\end{bmatrix}
+=
+\begin{bmatrix}
+19 &amp; 22 \\
+43 &amp; 50
+\end{bmatrix}
+$$</p>
+<p><strong>Key Observations:</strong>
+- <strong>Matrix multiplication is not commutative</strong>: <span class="arithmatex">\( AB \neq BA \)</span> generally.
+- <strong>Associative</strong>: <span class="arithmatex">\( (AB)C = A(BC) \)</span>.
+- <strong>Distributive</strong>: <span class="arithmatex">\( A(B+C) = AB + AC \)</span>.</p>
+<p><strong>Creative Analogy:</strong><br />
+Think of matrices as <strong>machines</strong>: passing a vector through matrix <span class="arithmatex">\(A\)</span> and then matrix <span class="arithmatex">\(B\)</span> is different from passing it through matrix <span class="arithmatex">\(B\)</span> first!</p>
+<hr />
+<h2 id="24-the-transpose">2.4 The Transpose</h2>
+<p>The <strong>transpose</strong> of a matrix <span class="arithmatex">\(A\)</span>, denoted <span class="arithmatex">\(A^T\)</span>, is created by flipping rows into columns.</p>
+<p><strong>Example:</strong>
+$$
+A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6
+\end{bmatrix}
+\quad \Rightarrow \quad
+A^T =
+\begin{bmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6
+\end{bmatrix}
+$$</p>
+<p><strong>Why Transpose?</strong><br />
+- It rearranges information.
+- Essential for symmetries, simplifying matrix equations, and working with inner products.</p>
+<p><strong>Tip:</strong><br />
+If <span class="arithmatex">\(A\)</span> is a <span class="arithmatex">\(m\times n\)</span> matrix, then <span class="arithmatex">\(A^T\)</span> is <span class="arithmatex">\(n\times m\)</span>.</p>
+<hr />
+<h2 id="25-special-matrices">2.5 Special Matrices</h2>
+<p>Certain matrices are particularly important because of their simplicity and properties:</p>
+<h3 id="identity-matrix-i">Identity Matrix <span class="arithmatex">\(I\)</span></h3>
+<p>An identity matrix acts like the number 1 in multiplication.</p>
+<p><strong>Example:</strong>
+$$
+I_3 =
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+$$</p>
+<p><strong>Properties:</strong>
+- <span class="arithmatex">\(AI = IA = A\)</span> for any compatible matrix <span class="arithmatex">\(A\)</span>.
+- Solving systems often involves creating or approximating <span class="arithmatex">\(I\)</span>.</p>
+<hr />
+<h3 id="zero-matrix">Zero Matrix</h3>
+<p>All entries are 0. It's the additive identity:
+$$
+(A + 0 = A)
+$$
+$$
+(A - 0 = A)
+$$</p>
+<hr />
+<h3 id="diagonal-matrix">Diagonal Matrix</h3>
+<p>Only nonzero entries are on the main diagonal.</p>
+<p><strong>Example:</strong>
+$$
+D =
+\begin{bmatrix}
+2 &amp; 0 &amp; 0 \\
+0 &amp; 5 &amp; 0 \\
+0 &amp; 0 &amp; 7
+\end{bmatrix}
+$$</p>
+<p><strong>Why Important?</strong><br />
+Diagonal matrices are incredibly easy to compute with:
+- Multiplying a diagonal matrix by a vector just scales each coordinate.
+- Finding powers of a diagonal matrix is just raising diagonal entries to powers.</p>
+<hr />
+<h3 id="symmetric-matrix">Symmetric Matrix</h3>
+<p>A matrix <span class="arithmatex">\(A\)</span> is <strong>symmetric</strong> if:
+$$
+A^T = A
+$$</p>
+<p><strong>Example:</strong>
+$$
+\begin{bmatrix}
+1 &amp; 3 \\
+3 &amp; 2
+\end{bmatrix}
+$$</p>
+<p>Symmetric matrices arise naturally when modeling undirected relationships (like undirected graphs).</p>
+<hr />
+<h3 id="triangular-matrices">Triangular Matrices</h3>
+<ul>
+<li><strong>Upper Triangular:</strong> All entries below the main diagonal are zero.</li>
+<li><strong>Lower Triangular:</strong> All entries above the main diagonal are zero.</li>
+</ul>
+<p><strong>Uses:</strong><br />
+Critical for simplifying solving systems (e.g., in LU decomposition).</p>
+<hr />
+<h3 id="block-matrices">Block Matrices</h3>
+<p>Sometimes matrices are better thought of as <strong>blocks</strong> of smaller matrices.</p>
+<p><strong>Example:</strong>
+$$
+\begin{bmatrix}
+A &amp; B \\
+C &amp; D
+\end{bmatrix}
+$$</p>
+<p>where <span class="arithmatex">\(A, B, C, D\)</span> themselves are matrices.</p>
+<p><strong>Why Blocks?</strong><br />
+When dealing with large systems, breaking them into blocks makes operations manageable and efficient.</p>
+<hr />
+<h1 id="summary">📚 Summary</h1>
+<p>In this chapter, you learned:</p>
+<ul>
+<li>How matrices add, subtract, and multiply.</li>
+<li>That matrix multiplication follows specific dimension rules and is <strong>not</strong> commutative.</li>
+<li>What the transpose of a matrix is and why it's important.</li>
+<li>Key special matrices: <strong>identity</strong>, <strong>zero</strong>, <strong>diagonal</strong>, <strong>symmetric</strong>, <strong>triangular</strong>, and <strong>block</strong> matrices.</li>
+</ul>
+<p>These operations are the essential "verbs" of linear algebra — they let us <em>speak</em> the language of systems, transformations, and data flows.</p>
+<hr />
+<h1 id="quiz">🧠 Quiz</h1>
+<p>Which property does matrix multiplication NOT generally satisfy?</p>
+<div class="upper-alpha">
+<p>A. Associativity</p>
+<p>B. Distributivity over addition</p>
+<p>C. Commutativity</p>
+<p>D. Compatibility with scalar multiplication</p>
+</div>
+<details class="question">
+<summary>Show Answer</summary>
+<p>The correct answer is <strong>C</strong>.<br />
+Matrix multiplication is <strong>not commutative</strong> — that is, in general, <span class="arithmatex">\( AB \neq BA \)</span>.<br />
+However, it <strong>is</strong> associative and distributive, and scalar multiplication is compatible.</p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../../js/extra.js"></script>
+      
+        <script src="../../../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1988 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "label": "Scalars",
+            "group": 1
+        },
+        {
+            "id": 2,
+            "label": "Vectors",
+            "group": 1
+        },
+        {
+            "id": 3,
+            "label": "Matrices",
+            "group": 1
+        },
+        {
+            "id": 4,
+            "label": "Systems of Linear Equations",
+            "group": 1
+        },
+        {
+            "id": 5,
+            "label": "Matrix Notation",
+            "group": 1
+        },
+        {
+            "id": 6,
+            "label": "Vector Notation",
+            "group": 2
+        },
+        {
+            "id": 7,
+            "label": "Matrix Addition",
+            "group": 2
+        },
+        {
+            "id": 8,
+            "label": "Matrix Subtraction",
+            "group": 2
+        },
+        {
+            "id": 9,
+            "label": "Scalar Multiplication",
+            "group": 3
+        },
+        {
+            "id": 10,
+            "label": "Matrix Multiplication",
+            "group": 2
+        },
+        {
+            "id": 11,
+            "label": "Transpose of a Matrix",
+            "group": 2
+        },
+        {
+            "id": 12,
+            "label": "Identity Matrix",
+            "group": 2
+        },
+        {
+            "id": 13,
+            "label": "Diagonal Matrix",
+            "group": 2
+        },
+        {
+            "id": 14,
+            "label": "Symmetric Matrix",
+            "group": 2
+        },
+        {
+            "id": 15,
+            "label": "Upper Triangular Matrix",
+            "group": 2
+        },
+        {
+            "id": 16,
+            "label": "Lower Triangular Matrix",
+            "group": 2
+        },
+        {
+            "id": 17,
+            "label": "Zero Matrix",
+            "group": 2
+        },
+        {
+            "id": 18,
+            "label": "Block Matrices",
+            "group": 11
+        },
+        {
+            "id": 23,
+            "label": "Vector Spaces",
+            "group": 4
+        },
+        {
+            "id": 24,
+            "label": "Subspaces",
+            "group": 4
+        },
+        {
+            "id": 25,
+            "label": "Basis of a Vector Space",
+            "group": 4
+        },
+        {
+            "id": 26,
+            "label": "Dimension of a Vector Space",
+            "group": 11
+        },
+        {
+            "id": 27,
+            "label": "Row Space",
+            "group": 11
+        },
+        {
+            "id": 28,
+            "label": "Column Space",
+            "group": 11
+        },
+        {
+            "id": 29,
+            "label": "Null Space",
+            "group": 11
+        },
+        {
+            "id": 34,
+            "label": "Span of Vectors",
+            "group": 4
+        },
+        {
+            "id": 91,
+            "label": "Affine Spaces",
+            "group": 11
+        },
+        {
+            "id": 92,
+            "label": "Hyperplanes",
+            "group": 11
+        },
+        {
+            "id": 30,
+            "label": "Rank of a Matrix",
+            "group": 2
+        },
+        {
+            "id": 31,
+            "label": "Row Rank = Column Rank Theorem",
+            "group": 11
+        },
+        {
+            "id": 32,
+            "label": "Linear Independence",
+            "group": 11
+        },
+        {
+            "id": 33,
+            "label": "Linear Dependence",
+            "group": 11
+        },
+        {
+            "id": 35,
+            "label": "Rank-Nullity Theorem",
+            "group": 11
+        },
+        {
+            "id": 89,
+            "label": "Consistency of Linear Systems",
+            "group": 7
+        },
+        {
+            "id": 90,
+            "label": "Dimension Theorem",
+            "group": 11
+        },
+        {
+            "id": 36,
+            "label": "Inner Product",
+            "group": 11
+        },
+        {
+            "id": 37,
+            "label": "Norm of a Vector",
+            "group": 11
+        },
+        {
+            "id": 38,
+            "label": "Distance between Vectors",
+            "group": 11
+        },
+        {
+            "id": 39,
+            "label": "Orthogonality",
+            "group": 4
+        },
+        {
+            "id": 40,
+            "label": "Orthogonal Projections",
+            "group": 4
+        },
+        {
+            "id": 41,
+            "label": "Orthogonal Complement",
+            "group": 4
+        },
+        {
+            "id": 42,
+            "label": "Orthonormal Basis",
+            "group": 4
+        },
+        {
+            "id": 43,
+            "label": "Gram-Schmidt Process",
+            "group": 11
+        },
+        {
+            "id": 44,
+            "label": "Least Squares Problems",
+            "group": 11
+        },
+        {
+            "id": 47,
+            "label": "Linear Transformations",
+            "group": 11
+        },
+        {
+            "id": 48,
+            "label": "Matrix Representation of Transformations",
+            "group": 2
+        },
+        {
+            "id": 49,
+            "label": "Kernel of a Transformation",
+            "group": 11
+        },
+        {
+            "id": 50,
+            "label": "Image of a Transformation",
+            "group": 11
+        },
+        {
+            "id": 51,
+            "label": "Change of Basis",
+            "group": 4
+        },
+        {
+            "id": 52,
+            "label": "Similar Matrices",
+            "group": 11
+        },
+        {
+            "id": 53,
+            "label": "Eigenvalues",
+            "group": 6
+        },
+        {
+            "id": 54,
+            "label": "Eigenvectors",
+            "group": 6
+        },
+        {
+            "id": 55,
+            "label": "Characteristic Polynomial",
+            "group": 11
+        },
+        {
+            "id": 56,
+            "label": "Diagonalization",
+            "group": 11
+        },
+        {
+            "id": 57,
+            "label": "Defective Matrices",
+            "group": 11
+        },
+        {
+            "id": 58,
+            "label": "Eigenspaces",
+            "group": 6
+        },
+        {
+            "id": 59,
+            "label": "Algebraic Multiplicity",
+            "group": 11
+        },
+        {
+            "id": 60,
+            "label": "Geometric Multiplicity",
+            "group": 11
+        },
+        {
+            "id": 61,
+            "label": "Jordan Form (Overview)",
+            "group": 11
+        },
+        {
+            "id": 19,
+            "label": "Inverse of a Matrix",
+            "group": 2
+        },
+        {
+            "id": 20,
+            "label": "Matrix Determinant",
+            "group": 2
+        },
+        {
+            "id": 21,
+            "label": "Properties of Determinants",
+            "group": 11
+        },
+        {
+            "id": 22,
+            "label": "Cramer's Rule",
+            "group": 11
+        },
+        {
+            "id": 67,
+            "label": "QR Factorization",
+            "group": 5
+        },
+        {
+            "id": 68,
+            "label": "LU Factorization",
+            "group": 5
+        },
+        {
+            "id": 69,
+            "label": "Cholesky Decomposition",
+            "group": 5
+        },
+        {
+            "id": 77,
+            "label": "Solving Ax = b via Matrix Inverses",
+            "group": 3
+        },
+        {
+            "id": 78,
+            "label": "Solving Ax = b via LU Decomposition",
+            "group": 5
+        },
+        {
+            "id": 85,
+            "label": "Row Reduction (Gaussian Elimination)",
+            "group": 3
+        },
+        {
+            "id": 86,
+            "label": "Reduced Row Echelon Form (RREF)",
+            "group": 11
+        },
+        {
+            "id": 87,
+            "label": "Pivot Positions",
+            "group": 11
+        },
+        {
+            "id": 88,
+            "label": "Free Variables",
+            "group": 11
+        },
+        {
+            "id": 98,
+            "label": "Determinant Interpretation (Volume)",
+            "group": 11
+        },
+        {
+            "id": 45,
+            "label": "Overdetermined Systems",
+            "group": 7
+        },
+        {
+            "id": 74,
+            "label": "Matrix Norms",
+            "group": 11
+        },
+        {
+            "id": 75,
+            "label": "Condition Number",
+            "group": 11
+        },
+        {
+            "id": 76,
+            "label": "Stability of Linear Systems",
+            "group": 7
+        },
+        {
+            "id": 79,
+            "label": "Iterative Methods Overview",
+            "group": 11
+        },
+        {
+            "id": 80,
+            "label": "Jacobi Method",
+            "group": 11
+        },
+        {
+            "id": 81,
+            "label": "Gauss-Seidel Method",
+            "group": 11
+        },
+        {
+            "id": 82,
+            "label": "Conjugate Gradient Method",
+            "group": 9
+        },
+        {
+            "id": 46,
+            "label": "Underdetermined Systems",
+            "group": 7
+        },
+        {
+            "id": 65,
+            "label": "Singular Value Decomposition (SVD)",
+            "group": 5
+        },
+        {
+            "id": 66,
+            "label": "Moore-Penrose Pseudoinverse",
+            "group": 11
+        },
+        {
+            "id": 70,
+            "label": "Schur Decomposition",
+            "group": 5
+        },
+        {
+            "id": 83,
+            "label": "Householder Transformations",
+            "group": 11
+        },
+        {
+            "id": 84,
+            "label": "Givens Rotations",
+            "group": 11
+        },
+        {
+            "id": 71,
+            "label": "Hermitian Matrices",
+            "group": 11
+        },
+        {
+            "id": 72,
+            "label": "Unitary Matrices",
+            "group": 11
+        },
+        {
+            "id": 73,
+            "label": "Positive Definite Matrices",
+            "group": 11
+        },
+        {
+            "id": 145,
+            "label": "Kronecker Product",
+            "group": 10
+        },
+        {
+            "id": 147,
+            "label": "Block Matrix Operations",
+            "group": 10
+        },
+        {
+            "id": 148,
+            "label": "Sparse Matrices",
+            "group": 10
+        },
+        {
+            "id": 149,
+            "label": "Sparse Matrix Solvers",
+            "group": 10
+        },
+        {
+            "id": 113,
+            "label": "State-Space Representation",
+            "group": 8
+        },
+        {
+            "id": 114,
+            "label": "Controllability Matrix",
+            "group": 8
+        },
+        {
+            "id": 115,
+            "label": "Observability Matrix",
+            "group": 11
+        },
+        {
+            "id": 116,
+            "label": "Kalman Decomposition",
+            "group": 5
+        },
+        {
+            "id": 117,
+            "label": "Transfer Function Representation",
+            "group": 11
+        },
+        {
+            "id": 118,
+            "label": "Stability of State-Space Systems",
+            "group": 7
+        },
+        {
+            "id": 119,
+            "label": "Feedback Control and Linear Algebra",
+            "group": 8
+        },
+        {
+            "id": 120,
+            "label": "Pole Placement",
+            "group": 11
+        },
+        {
+            "id": 121,
+            "label": "Linear Quadratic Regulator (LQR)",
+            "group": 11
+        },
+        {
+            "id": 122,
+            "label": "Singular Value Decomposition in Control",
+            "group": 5
+        },
+        {
+            "id": 62,
+            "label": "Matrix Exponentiation",
+            "group": 11
+        },
+        {
+            "id": 63,
+            "label": "Markov Chains (Basic)",
+            "group": 11
+        },
+        {
+            "id": 64,
+            "label": "Matrix Powers",
+            "group": 11
+        },
+        {
+            "id": 123,
+            "label": "Model Reduction",
+            "group": 3
+        },
+        {
+            "id": 107,
+            "label": "Fourier Transform and Matrices",
+            "group": 11
+        },
+        {
+            "id": 108,
+            "label": "Discrete Cosine Transform (DCT)",
+            "group": 11
+        },
+        {
+            "id": 109,
+            "label": "Fast Fourier Transform (FFT) Matrix View",
+            "group": 11
+        },
+        {
+            "id": 105,
+            "label": "Graph Laplacian Matrices",
+            "group": 11
+        },
+        {
+            "id": 106,
+            "label": "Spectral Clustering",
+            "group": 6
+        },
+        {
+            "id": 110,
+            "label": "Graph Adjacency Matrices",
+            "group": 11
+        },
+        {
+            "id": 111,
+            "label": "Incidence Matrices",
+            "group": 11
+        },
+        {
+            "id": 93,
+            "label": "Projections onto Subspaces",
+            "group": 4
+        },
+        {
+            "id": 94,
+            "label": "Reflection Transformations",
+            "group": 11
+        },
+        {
+            "id": 95,
+            "label": "Rotation Matrices in 2D",
+            "group": 11
+        },
+        {
+            "id": 96,
+            "label": "Rotation Matrices in 3D",
+            "group": 11
+        },
+        {
+            "id": 97,
+            "label": "Cross Product (3D Vectors)",
+            "group": 11
+        },
+        {
+            "id": 112,
+            "label": "Network Flow Problems",
+            "group": 11
+        },
+        {
+            "id": 124,
+            "label": "Convolution as Matrix Multiplication",
+            "group": 3
+        },
+        {
+            "id": 99,
+            "label": "Covariance Matrices",
+            "group": 11
+        },
+        {
+            "id": 100,
+            "label": "Principal Component Analysis (PCA)",
+            "group": 8
+        },
+        {
+            "id": 101,
+            "label": "Data Compression using PCA",
+            "group": 8
+        },
+        {
+            "id": 102,
+            "label": "Whitening Transformations",
+            "group": 11
+        },
+        {
+            "id": 103,
+            "label": "Low-rank Matrix Approximation",
+            "group": 11
+        },
+        {
+            "id": 104,
+            "label": "Matrix Completion Problem",
+            "group": 11
+        },
+        {
+            "id": 125,
+            "label": "Neural Networks and Linear Layers",
+            "group": 8
+        },
+        {
+            "id": 126,
+            "label": "Weight Initialization via SVD",
+            "group": 5
+        },
+        {
+            "id": 127,
+            "label": "Backpropagation Linear Algebra",
+            "group": 11
+        },
+        {
+            "id": 128,
+            "label": "Gradient Descent and Linear Systems",
+            "group": 7
+        },
+        {
+            "id": 129,
+            "label": "Batch vs. Stochastic Methods",
+            "group": 11
+        },
+        {
+            "id": 130,
+            "label": "Optimization Landscapes",
+            "group": 9
+        },
+        {
+            "id": 131,
+            "label": "Hessians in Optimization",
+            "group": 9
+        },
+        {
+            "id": 132,
+            "label": "Newton\u2019s Method and Matrices",
+            "group": 9
+        },
+        {
+            "id": 133,
+            "label": "Convexity and Linear Functions",
+            "group": 11
+        },
+        {
+            "id": 134,
+            "label": "Support Vector Machines (SVMs)",
+            "group": 11
+        },
+        {
+            "id": 135,
+            "label": "Kernel Trick (Intro to Kernels)",
+            "group": 11
+        },
+        {
+            "id": 136,
+            "label": "Positive Semidefinite Kernels",
+            "group": 11
+        },
+        {
+            "id": 137,
+            "label": "Gram Matrix",
+            "group": 11
+        },
+        {
+            "id": 138,
+            "label": "Collaborative Filtering (Matrix Factorization)",
+            "group": 5
+        },
+        {
+            "id": 139,
+            "label": "Eigenfaces for Face Recognition",
+            "group": 6
+        },
+        {
+            "id": 140,
+            "label": "Spectral Theorem",
+            "group": 6
+        },
+        {
+            "id": 141,
+            "label": "Matrix Perturbation Theory",
+            "group": 10
+        },
+        {
+            "id": 142,
+            "label": "Tensor Basics",
+            "group": 10
+        },
+        {
+            "id": 143,
+            "label": "Matrix Calculus Fundamentals",
+            "group": 10
+        },
+        {
+            "id": 144,
+            "label": "Differentiation of Matrix Functions",
+            "group": 10
+        },
+        {
+            "id": 146,
+            "label": "Vectorization of Matrices",
+            "group": 10
+        },
+        {
+            "id": 150,
+            "label": "AI-driven Linear Algebra Applications",
+            "group": 10
+        }
+    ],
+    "edges": [
+        {
+            "from": 6,
+            "to": 2
+        },
+        {
+            "from": 6,
+            "to": 4
+        },
+        {
+            "from": 6,
+            "to": 5
+        },
+        {
+            "from": 7,
+            "to": 3
+        },
+        {
+            "from": 7,
+            "to": 4
+        },
+        {
+            "from": 7,
+            "to": 5
+        },
+        {
+            "from": 8,
+            "to": 3
+        },
+        {
+            "from": 8,
+            "to": 4
+        },
+        {
+            "from": 8,
+            "to": 5
+        },
+        {
+            "from": 9,
+            "to": 1
+        },
+        {
+            "from": 9,
+            "to": 7
+        },
+        {
+            "from": 9,
+            "to": 8
+        },
+        {
+            "from": 10,
+            "to": 3
+        },
+        {
+            "from": 10,
+            "to": 4
+        },
+        {
+            "from": 10,
+            "to": 5
+        },
+        {
+            "from": 11,
+            "to": 3
+        },
+        {
+            "from": 11,
+            "to": 4
+        },
+        {
+            "from": 11,
+            "to": 5
+        },
+        {
+            "from": 12,
+            "to": 3
+        },
+        {
+            "from": 12,
+            "to": 4
+        },
+        {
+            "from": 12,
+            "to": 5
+        },
+        {
+            "from": 13,
+            "to": 3
+        },
+        {
+            "from": 13,
+            "to": 4
+        },
+        {
+            "from": 13,
+            "to": 5
+        },
+        {
+            "from": 14,
+            "to": 3
+        },
+        {
+            "from": 14,
+            "to": 4
+        },
+        {
+            "from": 14,
+            "to": 5
+        },
+        {
+            "from": 15,
+            "to": 3
+        },
+        {
+            "from": 15,
+            "to": 4
+        },
+        {
+            "from": 15,
+            "to": 5
+        },
+        {
+            "from": 16,
+            "to": 3
+        },
+        {
+            "from": 16,
+            "to": 4
+        },
+        {
+            "from": 16,
+            "to": 5
+        },
+        {
+            "from": 17,
+            "to": 3
+        },
+        {
+            "from": 17,
+            "to": 4
+        },
+        {
+            "from": 17,
+            "to": 5
+        },
+        {
+            "from": 18,
+            "to": 16
+        },
+        {
+            "from": 18,
+            "to": 17
+        },
+        {
+            "from": 23,
+            "to": 2
+        },
+        {
+            "from": 23,
+            "to": 16
+        },
+        {
+            "from": 23,
+            "to": 17
+        },
+        {
+            "from": 24,
+            "to": 16
+        },
+        {
+            "from": 24,
+            "to": 17
+        },
+        {
+            "from": 25,
+            "to": 2
+        },
+        {
+            "from": 25,
+            "to": 16
+        },
+        {
+            "from": 25,
+            "to": 17
+        },
+        {
+            "from": 26,
+            "to": 24
+        },
+        {
+            "from": 26,
+            "to": 25
+        },
+        {
+            "from": 27,
+            "to": 24
+        },
+        {
+            "from": 27,
+            "to": 25
+        },
+        {
+            "from": 28,
+            "to": 24
+        },
+        {
+            "from": 28,
+            "to": 25
+        },
+        {
+            "from": 29,
+            "to": 24
+        },
+        {
+            "from": 29,
+            "to": 25
+        },
+        {
+            "from": 34,
+            "to": 2
+        },
+        {
+            "from": 34,
+            "to": 16
+        },
+        {
+            "from": 34,
+            "to": 17
+        },
+        {
+            "from": 91,
+            "to": 25
+        },
+        {
+            "from": 91,
+            "to": 34
+        },
+        {
+            "from": 92,
+            "to": 25
+        },
+        {
+            "from": 92,
+            "to": 34
+        },
+        {
+            "from": 30,
+            "to": 3
+        },
+        {
+            "from": 30,
+            "to": 4
+        },
+        {
+            "from": 30,
+            "to": 5
+        },
+        {
+            "from": 31,
+            "to": 34
+        },
+        {
+            "from": 31,
+            "to": 30
+        },
+        {
+            "from": 32,
+            "to": 34
+        },
+        {
+            "from": 32,
+            "to": 30
+        },
+        {
+            "from": 33,
+            "to": 34
+        },
+        {
+            "from": 33,
+            "to": 30
+        },
+        {
+            "from": 35,
+            "to": 34
+        },
+        {
+            "from": 35,
+            "to": 30
+        },
+        {
+            "from": 89,
+            "to": 34
+        },
+        {
+            "from": 89,
+            "to": 30
+        },
+        {
+            "from": 90,
+            "to": 30
+        },
+        {
+            "from": 90,
+            "to": 89
+        },
+        {
+            "from": 36,
+            "to": 30
+        },
+        {
+            "from": 36,
+            "to": 89
+        },
+        {
+            "from": 37,
+            "to": 30
+        },
+        {
+            "from": 37,
+            "to": 89
+        },
+        {
+            "from": 38,
+            "to": 30
+        },
+        {
+            "from": 38,
+            "to": 89
+        },
+        {
+            "from": 39,
+            "to": 17
+        },
+        {
+            "from": 39,
+            "to": 30
+        },
+        {
+            "from": 40,
+            "to": 17
+        },
+        {
+            "from": 40,
+            "to": 30
+        },
+        {
+            "from": 41,
+            "to": 17
+        },
+        {
+            "from": 41,
+            "to": 30
+        },
+        {
+            "from": 42,
+            "to": 17
+        },
+        {
+            "from": 42,
+            "to": 30
+        },
+        {
+            "from": 43,
+            "to": 41
+        },
+        {
+            "from": 43,
+            "to": 42
+        },
+        {
+            "from": 44,
+            "to": 41
+        },
+        {
+            "from": 44,
+            "to": 42
+        },
+        {
+            "from": 47,
+            "to": 41
+        },
+        {
+            "from": 47,
+            "to": 42
+        },
+        {
+            "from": 48,
+            "to": 4
+        },
+        {
+            "from": 48,
+            "to": 5
+        },
+        {
+            "from": 49,
+            "to": 42
+        },
+        {
+            "from": 49,
+            "to": 48
+        },
+        {
+            "from": 50,
+            "to": 42
+        },
+        {
+            "from": 50,
+            "to": 48
+        },
+        {
+            "from": 51,
+            "to": 30
+        },
+        {
+            "from": 51,
+            "to": 48
+        },
+        {
+            "from": 52,
+            "to": 48
+        },
+        {
+            "from": 52,
+            "to": 51
+        },
+        {
+            "from": 53,
+            "to": 48
+        },
+        {
+            "from": 53,
+            "to": 51
+        },
+        {
+            "from": 54,
+            "to": 48
+        },
+        {
+            "from": 54,
+            "to": 51
+        },
+        {
+            "from": 55,
+            "to": 53
+        },
+        {
+            "from": 55,
+            "to": 54
+        },
+        {
+            "from": 56,
+            "to": 53
+        },
+        {
+            "from": 56,
+            "to": 54
+        },
+        {
+            "from": 57,
+            "to": 53
+        },
+        {
+            "from": 57,
+            "to": 54
+        },
+        {
+            "from": 58,
+            "to": 48
+        },
+        {
+            "from": 58,
+            "to": 51
+        },
+        {
+            "from": 59,
+            "to": 54
+        },
+        {
+            "from": 59,
+            "to": 58
+        },
+        {
+            "from": 60,
+            "to": 54
+        },
+        {
+            "from": 60,
+            "to": 58
+        },
+        {
+            "from": 61,
+            "to": 54
+        },
+        {
+            "from": 61,
+            "to": 58
+        },
+        {
+            "from": 19,
+            "to": 3
+        },
+        {
+            "from": 19,
+            "to": 4
+        },
+        {
+            "from": 19,
+            "to": 5
+        },
+        {
+            "from": 20,
+            "to": 3
+        },
+        {
+            "from": 20,
+            "to": 4
+        },
+        {
+            "from": 20,
+            "to": 5
+        },
+        {
+            "from": 21,
+            "to": 19
+        },
+        {
+            "from": 21,
+            "to": 20
+        },
+        {
+            "from": 22,
+            "to": 19
+        },
+        {
+            "from": 22,
+            "to": 20
+        },
+        {
+            "from": 67,
+            "to": 19
+        },
+        {
+            "from": 67,
+            "to": 20
+        },
+        {
+            "from": 68,
+            "to": 19
+        },
+        {
+            "from": 68,
+            "to": 20
+        },
+        {
+            "from": 69,
+            "to": 19
+        },
+        {
+            "from": 69,
+            "to": 20
+        },
+        {
+            "from": 77,
+            "to": 19
+        },
+        {
+            "from": 77,
+            "to": 20
+        },
+        {
+            "from": 78,
+            "to": 20
+        },
+        {
+            "from": 78,
+            "to": 77
+        },
+        {
+            "from": 85,
+            "to": 19
+        },
+        {
+            "from": 85,
+            "to": 20
+        },
+        {
+            "from": 86,
+            "to": 78
+        },
+        {
+            "from": 86,
+            "to": 85
+        },
+        {
+            "from": 87,
+            "to": 78
+        },
+        {
+            "from": 87,
+            "to": 85
+        },
+        {
+            "from": 88,
+            "to": 78
+        },
+        {
+            "from": 88,
+            "to": 85
+        },
+        {
+            "from": 98,
+            "to": 78
+        },
+        {
+            "from": 98,
+            "to": 85
+        },
+        {
+            "from": 45,
+            "to": 78
+        },
+        {
+            "from": 45,
+            "to": 85
+        },
+        {
+            "from": 74,
+            "to": 85
+        },
+        {
+            "from": 74,
+            "to": 45
+        },
+        {
+            "from": 75,
+            "to": 85
+        },
+        {
+            "from": 75,
+            "to": 45
+        },
+        {
+            "from": 76,
+            "to": 78
+        },
+        {
+            "from": 76,
+            "to": 85
+        },
+        {
+            "from": 79,
+            "to": 45
+        },
+        {
+            "from": 79,
+            "to": 76
+        },
+        {
+            "from": 80,
+            "to": 45
+        },
+        {
+            "from": 80,
+            "to": 76
+        },
+        {
+            "from": 81,
+            "to": 45
+        },
+        {
+            "from": 81,
+            "to": 76
+        },
+        {
+            "from": 82,
+            "to": 45
+        },
+        {
+            "from": 82,
+            "to": 76
+        },
+        {
+            "from": 46,
+            "to": 78
+        },
+        {
+            "from": 46,
+            "to": 85
+        },
+        {
+            "from": 65,
+            "to": 77
+        },
+        {
+            "from": 65,
+            "to": 85
+        },
+        {
+            "from": 66,
+            "to": 46
+        },
+        {
+            "from": 66,
+            "to": 65
+        },
+        {
+            "from": 70,
+            "to": 77
+        },
+        {
+            "from": 70,
+            "to": 85
+        },
+        {
+            "from": 83,
+            "to": 65
+        },
+        {
+            "from": 83,
+            "to": 70
+        },
+        {
+            "from": 84,
+            "to": 65
+        },
+        {
+            "from": 84,
+            "to": 70
+        },
+        {
+            "from": 71,
+            "to": 65
+        },
+        {
+            "from": 71,
+            "to": 70
+        },
+        {
+            "from": 72,
+            "to": 65
+        },
+        {
+            "from": 72,
+            "to": 70
+        },
+        {
+            "from": 73,
+            "to": 65
+        },
+        {
+            "from": 73,
+            "to": 70
+        },
+        {
+            "from": 145,
+            "to": 65
+        },
+        {
+            "from": 145,
+            "to": 70
+        },
+        {
+            "from": 147,
+            "to": 65
+        },
+        {
+            "from": 147,
+            "to": 70
+        },
+        {
+            "from": 148,
+            "to": 65
+        },
+        {
+            "from": 148,
+            "to": 70
+        },
+        {
+            "from": 149,
+            "to": 65
+        },
+        {
+            "from": 149,
+            "to": 70
+        },
+        {
+            "from": 113,
+            "to": 65
+        },
+        {
+            "from": 113,
+            "to": 70
+        },
+        {
+            "from": 114,
+            "to": 65
+        },
+        {
+            "from": 114,
+            "to": 70
+        },
+        {
+            "from": 115,
+            "to": 65
+        },
+        {
+            "from": 115,
+            "to": 70
+        },
+        {
+            "from": 116,
+            "to": 77
+        },
+        {
+            "from": 116,
+            "to": 85
+        },
+        {
+            "from": 117,
+            "to": 116
+        },
+        {
+            "from": 117,
+            "to": 70
+        },
+        {
+            "from": 118,
+            "to": 116
+        },
+        {
+            "from": 118,
+            "to": 70
+        },
+        {
+            "from": 119,
+            "to": 116
+        },
+        {
+            "from": 119,
+            "to": 118
+        },
+        {
+            "from": 120,
+            "to": 116
+        },
+        {
+            "from": 120,
+            "to": 118
+        },
+        {
+            "from": 121,
+            "to": 116
+        },
+        {
+            "from": 121,
+            "to": 118
+        },
+        {
+            "from": 122,
+            "to": 77
+        },
+        {
+            "from": 122,
+            "to": 85
+        },
+        {
+            "from": 62,
+            "to": 118
+        },
+        {
+            "from": 62,
+            "to": 122
+        },
+        {
+            "from": 63,
+            "to": 118
+        },
+        {
+            "from": 63,
+            "to": 122
+        },
+        {
+            "from": 64,
+            "to": 118
+        },
+        {
+            "from": 64,
+            "to": 122
+        },
+        {
+            "from": 123,
+            "to": 19
+        },
+        {
+            "from": 123,
+            "to": 20
+        },
+        {
+            "from": 107,
+            "to": 65
+        },
+        {
+            "from": 107,
+            "to": 70
+        },
+        {
+            "from": 108,
+            "to": 65
+        },
+        {
+            "from": 108,
+            "to": 70
+        },
+        {
+            "from": 109,
+            "to": 65
+        },
+        {
+            "from": 109,
+            "to": 70
+        },
+        {
+            "from": 105,
+            "to": 65
+        },
+        {
+            "from": 105,
+            "to": 70
+        },
+        {
+            "from": 106,
+            "to": 77
+        },
+        {
+            "from": 106,
+            "to": 85
+        },
+        {
+            "from": 110,
+            "to": 106
+        },
+        {
+            "from": 110,
+            "to": 70
+        },
+        {
+            "from": 111,
+            "to": 106
+        },
+        {
+            "from": 111,
+            "to": 70
+        },
+        {
+            "from": 93,
+            "to": 77
+        },
+        {
+            "from": 93,
+            "to": 85
+        },
+        {
+            "from": 94,
+            "to": 106
+        },
+        {
+            "from": 94,
+            "to": 93
+        },
+        {
+            "from": 95,
+            "to": 106
+        },
+        {
+            "from": 95,
+            "to": 93
+        },
+        {
+            "from": 96,
+            "to": 106
+        },
+        {
+            "from": 96,
+            "to": 93
+        },
+        {
+            "from": 97,
+            "to": 106
+        },
+        {
+            "from": 97,
+            "to": 93
+        },
+        {
+            "from": 112,
+            "to": 106
+        },
+        {
+            "from": 112,
+            "to": 93
+        },
+        {
+            "from": 124,
+            "to": 19
+        },
+        {
+            "from": 124,
+            "to": 20
+        },
+        {
+            "from": 99,
+            "to": 65
+        },
+        {
+            "from": 99,
+            "to": 70
+        },
+        {
+            "from": 100,
+            "to": 65
+        },
+        {
+            "from": 100,
+            "to": 70
+        },
+        {
+            "from": 101,
+            "to": 65
+        },
+        {
+            "from": 101,
+            "to": 70
+        },
+        {
+            "from": 102,
+            "to": 65
+        },
+        {
+            "from": 102,
+            "to": 70
+        },
+        {
+            "from": 103,
+            "to": 65
+        },
+        {
+            "from": 103,
+            "to": 70
+        },
+        {
+            "from": 104,
+            "to": 65
+        },
+        {
+            "from": 104,
+            "to": 70
+        },
+        {
+            "from": 125,
+            "to": 65
+        },
+        {
+            "from": 125,
+            "to": 70
+        },
+        {
+            "from": 126,
+            "to": 77
+        },
+        {
+            "from": 126,
+            "to": 85
+        },
+        {
+            "from": 127,
+            "to": 126
+        },
+        {
+            "from": 127,
+            "to": 70
+        },
+        {
+            "from": 128,
+            "to": 126
+        },
+        {
+            "from": 128,
+            "to": 70
+        },
+        {
+            "from": 129,
+            "to": 126
+        },
+        {
+            "from": 129,
+            "to": 128
+        },
+        {
+            "from": 130,
+            "to": 126
+        },
+        {
+            "from": 130,
+            "to": 128
+        },
+        {
+            "from": 131,
+            "to": 126
+        },
+        {
+            "from": 131,
+            "to": 128
+        },
+        {
+            "from": 132,
+            "to": 126
+        },
+        {
+            "from": 132,
+            "to": 128
+        },
+        {
+            "from": 133,
+            "to": 131
+        },
+        {
+            "from": 133,
+            "to": 132
+        },
+        {
+            "from": 134,
+            "to": 131
+        },
+        {
+            "from": 134,
+            "to": 132
+        },
+        {
+            "from": 135,
+            "to": 131
+        },
+        {
+            "from": 135,
+            "to": 132
+        },
+        {
+            "from": 136,
+            "to": 131
+        },
+        {
+            "from": 136,
+            "to": 132
+        },
+        {
+            "from": 137,
+            "to": 131
+        },
+        {
+            "from": 137,
+            "to": 132
+        },
+        {
+            "from": 138,
+            "to": 77
+        },
+        {
+            "from": 138,
+            "to": 85
+        },
+        {
+            "from": 139,
+            "to": 77
+        },
+        {
+            "from": 139,
+            "to": 85
+        },
+        {
+            "from": 140,
+            "to": 77
+        },
+        {
+            "from": 140,
+            "to": 85
+        },
+        {
+            "from": 141,
+            "to": 139
+        },
+        {
+            "from": 141,
+            "to": 140
+        },
+        {
+            "from": 142,
+            "to": 139
+        },
+        {
+            "from": 142,
+            "to": 140
+        },
+        {
+            "from": 143,
+            "to": 139
+        },
+        {
+            "from": 143,
+            "to": 140
+        },
+        {
+            "from": 144,
+            "to": 139
+        },
+        {
+            "from": 144,
+            "to": 140
+        },
+        {
+            "from": 146,
+            "to": 139
+        },
+        {
+            "from": 146,
+            "to": 140
+        },
+        {
+            "from": 150,
+            "to": 139
+        },
+        {
+            "from": 150,
+            "to": 140
+        }
+    ]
+}

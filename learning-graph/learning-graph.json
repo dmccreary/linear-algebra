@@ -1,0 +1,3661 @@
+{
+  "metadata": {
+    "title": "Applied Linear Algebra for AI and Machine Learning",
+    "description": "A comprehensive one-semester college course providing a comprehensive introduction to linear algebra with a strong emphasis on practical applications in artificial intelligence, machine learning, and computer vision. Students develop both theoretical understanding and hands-on skills through interactive microsimulations.",
+    "creator": "Dan McCreary",
+    "date": "2026-01-17",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundation Concepts",
+      "color": "MistyRose",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MATOP": {
+      "classifierName": "Matrix Operations",
+      "color": "PeachPuff",
+      "font": {
+        "color": "black"
+      }
+    },
+    "LINSYS": {
+      "classifierName": "Linear Systems",
+      "color": "LightYellow",
+      "font": {
+        "color": "black"
+      }
+    },
+    "TRANS": {
+      "classifierName": "Transformations",
+      "color": "Honeydew",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DETERM": {
+      "classifierName": "Determinants",
+      "color": "PaleTurquoise",
+      "font": {
+        "color": "black"
+      }
+    },
+    "EIGEN": {
+      "classifierName": "Eigentheory",
+      "color": "LightSteelBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DECOMP": {
+      "classifierName": "Decompositions",
+      "color": "Lavender",
+      "font": {
+        "color": "black"
+      }
+    },
+    "INPROD": {
+      "classifierName": "Inner Products",
+      "color": "LavenderBlush",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MLBASE": {
+      "classifierName": "ML Foundations",
+      "color": "Thistle",
+      "font": {
+        "color": "black"
+      }
+    },
+    "NEURAL": {
+      "classifierName": "Neural Networks",
+      "color": "PaleGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "GENAI": {
+      "classifierName": "Generative AI",
+      "color": "Aquamarine",
+      "font": {
+        "color": "black"
+      }
+    },
+    "OPTIM": {
+      "classifierName": "Optimization",
+      "color": "LightPink",
+      "font": {
+        "color": "black"
+      }
+    },
+    "IMGPROC": {
+      "classifierName": "Image Processing",
+      "color": "PowderBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "GEOM3D": {
+      "classifierName": "3D Geometry",
+      "color": "Plum",
+      "font": {
+        "color": "white"
+      }
+    },
+    "AUTON": {
+      "classifierName": "Autonomous Systems",
+      "color": "LightCoral",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Scalar",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Vector Notation",
+      "group": "FOUND"
+    },
+    {
+      "id": 4,
+      "label": "2D Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "3D Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "N-Dimensional Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Vector Addition",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Scalar Multiplication",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Vector Subtraction",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Dot Product",
+      "group": "FOUND"
+    },
+    {
+      "id": 11,
+      "label": "Cross Product",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Vector Magnitude",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "Unit Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 14,
+      "label": "Vector Normalization",
+      "group": "FOUND"
+    },
+    {
+      "id": 15,
+      "label": "Euclidean Distance",
+      "group": "FOUND"
+    },
+    {
+      "id": 16,
+      "label": "L1 Norm",
+      "group": "FOUND"
+    },
+    {
+      "id": 17,
+      "label": "L2 Norm",
+      "group": "FOUND"
+    },
+    {
+      "id": 18,
+      "label": "L-Infinity Norm",
+      "group": "FOUND"
+    },
+    {
+      "id": 19,
+      "label": "Linear Combination",
+      "group": "FOUND"
+    },
+    {
+      "id": 20,
+      "label": "Span",
+      "group": "FOUND"
+    },
+    {
+      "id": 21,
+      "label": "Linear Independence",
+      "group": "FOUND"
+    },
+    {
+      "id": 22,
+      "label": "Linear Dependence",
+      "group": "FOUND"
+    },
+    {
+      "id": 23,
+      "label": "Basis Vector",
+      "group": "FOUND"
+    },
+    {
+      "id": 24,
+      "label": "Standard Basis",
+      "group": "FOUND"
+    },
+    {
+      "id": 25,
+      "label": "Coordinate System",
+      "group": "FOUND"
+    },
+    {
+      "id": 26,
+      "label": "Vector Space",
+      "group": "FOUND"
+    },
+    {
+      "id": 27,
+      "label": "Dimension of Space",
+      "group": "FOUND"
+    },
+    {
+      "id": 28,
+      "label": "Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 29,
+      "label": "Matrix Notation",
+      "group": "MATOP"
+    },
+    {
+      "id": 30,
+      "label": "Matrix Dimensions",
+      "group": "MATOP"
+    },
+    {
+      "id": 31,
+      "label": "Row Vector",
+      "group": "MATOP"
+    },
+    {
+      "id": 32,
+      "label": "Column Vector",
+      "group": "MATOP"
+    },
+    {
+      "id": 33,
+      "label": "Matrix Entry",
+      "group": "MATOP"
+    },
+    {
+      "id": 34,
+      "label": "Matrix Addition",
+      "group": "MATOP"
+    },
+    {
+      "id": 35,
+      "label": "Matrix Scalar Multiply",
+      "group": "MATOP"
+    },
+    {
+      "id": 36,
+      "label": "Matrix-Vector Product",
+      "group": "MATOP"
+    },
+    {
+      "id": 37,
+      "label": "Matrix Multiplication",
+      "group": "MATOP"
+    },
+    {
+      "id": 38,
+      "label": "Matrix Transpose",
+      "group": "MATOP"
+    },
+    {
+      "id": 39,
+      "label": "Symmetric Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 40,
+      "label": "Identity Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 41,
+      "label": "Diagonal Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 42,
+      "label": "Triangular Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 43,
+      "label": "Upper Triangular",
+      "group": "MATOP"
+    },
+    {
+      "id": 44,
+      "label": "Lower Triangular",
+      "group": "MATOP"
+    },
+    {
+      "id": 45,
+      "label": "Orthogonal Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 46,
+      "label": "Matrix Inverse",
+      "group": "MATOP"
+    },
+    {
+      "id": 47,
+      "label": "Invertible Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 48,
+      "label": "Sparse Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 49,
+      "label": "Dense Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 50,
+      "label": "Block Matrix",
+      "group": "MATOP"
+    },
+    {
+      "id": 51,
+      "label": "Linear Equation",
+      "group": "LINSYS"
+    },
+    {
+      "id": 52,
+      "label": "System of Equations",
+      "group": "LINSYS"
+    },
+    {
+      "id": 53,
+      "label": "Matrix Equation Form",
+      "group": "LINSYS"
+    },
+    {
+      "id": 54,
+      "label": "Augmented Matrix",
+      "group": "LINSYS"
+    },
+    {
+      "id": 55,
+      "label": "Gaussian Elimination",
+      "group": "LINSYS"
+    },
+    {
+      "id": 56,
+      "label": "Row Operations",
+      "group": "LINSYS"
+    },
+    {
+      "id": 57,
+      "label": "Row Swap",
+      "group": "LINSYS"
+    },
+    {
+      "id": 58,
+      "label": "Row Scaling",
+      "group": "LINSYS"
+    },
+    {
+      "id": 59,
+      "label": "Row Addition",
+      "group": "LINSYS"
+    },
+    {
+      "id": 60,
+      "label": "Row Echelon Form",
+      "group": "LINSYS"
+    },
+    {
+      "id": 61,
+      "label": "Reduced Row Echelon Form",
+      "group": "LINSYS"
+    },
+    {
+      "id": 62,
+      "label": "Pivot Position",
+      "group": "LINSYS"
+    },
+    {
+      "id": 63,
+      "label": "Pivot Column",
+      "group": "LINSYS"
+    },
+    {
+      "id": 64,
+      "label": "Free Variable",
+      "group": "LINSYS"
+    },
+    {
+      "id": 65,
+      "label": "Basic Variable",
+      "group": "LINSYS"
+    },
+    {
+      "id": 66,
+      "label": "Solution Set",
+      "group": "LINSYS"
+    },
+    {
+      "id": 67,
+      "label": "Unique Solution",
+      "group": "LINSYS"
+    },
+    {
+      "id": 68,
+      "label": "Infinite Solutions",
+      "group": "LINSYS"
+    },
+    {
+      "id": 69,
+      "label": "No Solution",
+      "group": "LINSYS"
+    },
+    {
+      "id": 70,
+      "label": "Homogeneous System",
+      "group": "LINSYS"
+    },
+    {
+      "id": 71,
+      "label": "Trivial Solution",
+      "group": "LINSYS"
+    },
+    {
+      "id": 72,
+      "label": "Numerical Stability",
+      "group": "LINSYS"
+    },
+    {
+      "id": 73,
+      "label": "Back Substitution",
+      "group": "LINSYS"
+    },
+    {
+      "id": 74,
+      "label": "Function",
+      "group": "TRANS",
+      "shape": "box"
+    },
+    {
+      "id": 75,
+      "label": "Linear Transformation",
+      "group": "TRANS"
+    },
+    {
+      "id": 76,
+      "label": "Transformation Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 77,
+      "label": "Domain",
+      "group": "TRANS"
+    },
+    {
+      "id": 78,
+      "label": "Codomain",
+      "group": "TRANS"
+    },
+    {
+      "id": 79,
+      "label": "Image",
+      "group": "TRANS"
+    },
+    {
+      "id": 80,
+      "label": "Rotation Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 81,
+      "label": "2D Rotation",
+      "group": "TRANS"
+    },
+    {
+      "id": 82,
+      "label": "3D Rotation",
+      "group": "TRANS"
+    },
+    {
+      "id": 83,
+      "label": "Scaling Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 84,
+      "label": "Uniform Scaling",
+      "group": "TRANS"
+    },
+    {
+      "id": 85,
+      "label": "Non-Uniform Scaling",
+      "group": "TRANS"
+    },
+    {
+      "id": 86,
+      "label": "Shear Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 87,
+      "label": "Reflection Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 88,
+      "label": "Projection",
+      "group": "TRANS"
+    },
+    {
+      "id": 89,
+      "label": "Orthogonal Projection",
+      "group": "TRANS"
+    },
+    {
+      "id": 90,
+      "label": "Composition of Transforms",
+      "group": "TRANS"
+    },
+    {
+      "id": 91,
+      "label": "Kernel",
+      "group": "TRANS"
+    },
+    {
+      "id": 92,
+      "label": "Null Space",
+      "group": "TRANS"
+    },
+    {
+      "id": 93,
+      "label": "Range",
+      "group": "TRANS"
+    },
+    {
+      "id": 94,
+      "label": "Column Space",
+      "group": "TRANS"
+    },
+    {
+      "id": 95,
+      "label": "Rank",
+      "group": "TRANS"
+    },
+    {
+      "id": 96,
+      "label": "Nullity",
+      "group": "TRANS"
+    },
+    {
+      "id": 97,
+      "label": "Rank-Nullity Theorem",
+      "group": "TRANS"
+    },
+    {
+      "id": 98,
+      "label": "Invertible Transform",
+      "group": "TRANS"
+    },
+    {
+      "id": 99,
+      "label": "Change of Basis",
+      "group": "TRANS"
+    },
+    {
+      "id": 100,
+      "label": "Basis Transition Matrix",
+      "group": "TRANS"
+    },
+    {
+      "id": 101,
+      "label": "Determinant",
+      "group": "DETERM"
+    },
+    {
+      "id": 102,
+      "label": "2x2 Determinant",
+      "group": "DETERM"
+    },
+    {
+      "id": 103,
+      "label": "3x3 Determinant",
+      "group": "DETERM"
+    },
+    {
+      "id": 104,
+      "label": "Cofactor Expansion",
+      "group": "DETERM"
+    },
+    {
+      "id": 105,
+      "label": "Minor",
+      "group": "DETERM"
+    },
+    {
+      "id": 106,
+      "label": "Cofactor",
+      "group": "DETERM"
+    },
+    {
+      "id": 107,
+      "label": "Determinant Properties",
+      "group": "DETERM"
+    },
+    {
+      "id": 108,
+      "label": "Multiplicative Property",
+      "group": "DETERM"
+    },
+    {
+      "id": 109,
+      "label": "Transpose Determinant",
+      "group": "DETERM"
+    },
+    {
+      "id": 110,
+      "label": "Singular Matrix",
+      "group": "DETERM"
+    },
+    {
+      "id": 111,
+      "label": "Volume Scaling Factor",
+      "group": "DETERM"
+    },
+    {
+      "id": 112,
+      "label": "Signed Area",
+      "group": "DETERM"
+    },
+    {
+      "id": 113,
+      "label": "Cramers Rule",
+      "group": "DETERM"
+    },
+    {
+      "id": 114,
+      "label": "Eigenvalue",
+      "group": "EIGEN"
+    },
+    {
+      "id": 115,
+      "label": "Eigenvector",
+      "group": "EIGEN"
+    },
+    {
+      "id": 116,
+      "label": "Eigen Equation",
+      "group": "EIGEN"
+    },
+    {
+      "id": 117,
+      "label": "Characteristic Polynomial",
+      "group": "EIGEN"
+    },
+    {
+      "id": 118,
+      "label": "Characteristic Equation",
+      "group": "EIGEN"
+    },
+    {
+      "id": 119,
+      "label": "Eigenspace",
+      "group": "EIGEN"
+    },
+    {
+      "id": 120,
+      "label": "Algebraic Multiplicity",
+      "group": "EIGEN"
+    },
+    {
+      "id": 121,
+      "label": "Geometric Multiplicity",
+      "group": "EIGEN"
+    },
+    {
+      "id": 122,
+      "label": "Diagonalization",
+      "group": "EIGEN"
+    },
+    {
+      "id": 123,
+      "label": "Diagonal Form",
+      "group": "EIGEN"
+    },
+    {
+      "id": 124,
+      "label": "Similar Matrices",
+      "group": "EIGEN"
+    },
+    {
+      "id": 125,
+      "label": "Complex Eigenvalue",
+      "group": "EIGEN"
+    },
+    {
+      "id": 126,
+      "label": "Spectral Theorem",
+      "group": "EIGEN"
+    },
+    {
+      "id": 127,
+      "label": "Symmetric Eigenvalues",
+      "group": "EIGEN"
+    },
+    {
+      "id": 128,
+      "label": "Power Iteration",
+      "group": "EIGEN"
+    },
+    {
+      "id": 129,
+      "label": "Dominant Eigenvalue",
+      "group": "EIGEN"
+    },
+    {
+      "id": 130,
+      "label": "Eigendecomposition",
+      "group": "EIGEN"
+    },
+    {
+      "id": 131,
+      "label": "Matrix Factorization",
+      "group": "DECOMP"
+    },
+    {
+      "id": 132,
+      "label": "LU Decomposition",
+      "group": "DECOMP"
+    },
+    {
+      "id": 133,
+      "label": "Partial Pivoting",
+      "group": "DECOMP"
+    },
+    {
+      "id": 134,
+      "label": "QR Decomposition",
+      "group": "DECOMP"
+    },
+    {
+      "id": 135,
+      "label": "Gram-Schmidt QR",
+      "group": "DECOMP"
+    },
+    {
+      "id": 136,
+      "label": "Householder QR",
+      "group": "DECOMP"
+    },
+    {
+      "id": 137,
+      "label": "Cholesky Decomposition",
+      "group": "DECOMP"
+    },
+    {
+      "id": 138,
+      "label": "Positive Definite Matrix",
+      "group": "DECOMP"
+    },
+    {
+      "id": 139,
+      "label": "SVD",
+      "group": "DECOMP"
+    },
+    {
+      "id": 140,
+      "label": "Singular Value",
+      "group": "DECOMP"
+    },
+    {
+      "id": 141,
+      "label": "Left Singular Vector",
+      "group": "DECOMP"
+    },
+    {
+      "id": 142,
+      "label": "Right Singular Vector",
+      "group": "DECOMP"
+    },
+    {
+      "id": 143,
+      "label": "Full SVD",
+      "group": "DECOMP"
+    },
+    {
+      "id": 144,
+      "label": "Compact SVD",
+      "group": "DECOMP"
+    },
+    {
+      "id": 145,
+      "label": "Truncated SVD",
+      "group": "DECOMP"
+    },
+    {
+      "id": 146,
+      "label": "Low-Rank Approximation",
+      "group": "DECOMP"
+    },
+    {
+      "id": 147,
+      "label": "Matrix Rank",
+      "group": "DECOMP"
+    },
+    {
+      "id": 148,
+      "label": "Numerical Rank",
+      "group": "DECOMP"
+    },
+    {
+      "id": 149,
+      "label": "Condition Number",
+      "group": "DECOMP"
+    },
+    {
+      "id": 150,
+      "label": "Abstract Vector Space",
+      "group": "INPROD"
+    },
+    {
+      "id": 151,
+      "label": "Subspace",
+      "group": "INPROD"
+    },
+    {
+      "id": 152,
+      "label": "Vector Space Axioms",
+      "group": "INPROD"
+    },
+    {
+      "id": 153,
+      "label": "Inner Product",
+      "group": "INPROD"
+    },
+    {
+      "id": 154,
+      "label": "Inner Product Space",
+      "group": "INPROD"
+    },
+    {
+      "id": 155,
+      "label": "Norm from Inner Product",
+      "group": "INPROD"
+    },
+    {
+      "id": 156,
+      "label": "Cauchy-Schwarz Inequality",
+      "group": "INPROD"
+    },
+    {
+      "id": 157,
+      "label": "Orthogonality",
+      "group": "INPROD"
+    },
+    {
+      "id": 158,
+      "label": "Orthogonal Vectors",
+      "group": "INPROD"
+    },
+    {
+      "id": 159,
+      "label": "Orthonormal Set",
+      "group": "INPROD"
+    },
+    {
+      "id": 160,
+      "label": "Orthonormal Basis",
+      "group": "INPROD"
+    },
+    {
+      "id": 161,
+      "label": "Gram-Schmidt Process",
+      "group": "INPROD"
+    },
+    {
+      "id": 162,
+      "label": "Projection onto Subspace",
+      "group": "INPROD"
+    },
+    {
+      "id": 163,
+      "label": "Least Squares Problem",
+      "group": "INPROD"
+    },
+    {
+      "id": 164,
+      "label": "Normal Equations",
+      "group": "INPROD"
+    },
+    {
+      "id": 165,
+      "label": "Row Space",
+      "group": "INPROD"
+    },
+    {
+      "id": 166,
+      "label": "Left Null Space",
+      "group": "INPROD"
+    },
+    {
+      "id": 167,
+      "label": "Four Subspaces",
+      "group": "INPROD"
+    },
+    {
+      "id": 168,
+      "label": "Pseudoinverse",
+      "group": "INPROD"
+    },
+    {
+      "id": 169,
+      "label": "Feature Vector",
+      "group": "MLBASE"
+    },
+    {
+      "id": 170,
+      "label": "Feature Matrix",
+      "group": "MLBASE"
+    },
+    {
+      "id": 171,
+      "label": "Data Matrix",
+      "group": "MLBASE"
+    },
+    {
+      "id": 172,
+      "label": "Covariance Matrix",
+      "group": "MLBASE"
+    },
+    {
+      "id": 173,
+      "label": "Correlation Matrix",
+      "group": "MLBASE"
+    },
+    {
+      "id": 174,
+      "label": "Standardization",
+      "group": "MLBASE"
+    },
+    {
+      "id": 175,
+      "label": "PCA",
+      "group": "MLBASE"
+    },
+    {
+      "id": 176,
+      "label": "Principal Component",
+      "group": "MLBASE"
+    },
+    {
+      "id": 177,
+      "label": "Variance Explained",
+      "group": "MLBASE"
+    },
+    {
+      "id": 178,
+      "label": "Scree Plot",
+      "group": "MLBASE"
+    },
+    {
+      "id": 179,
+      "label": "Dimensionality Reduction",
+      "group": "MLBASE"
+    },
+    {
+      "id": 180,
+      "label": "Linear Regression",
+      "group": "MLBASE"
+    },
+    {
+      "id": 181,
+      "label": "Design Matrix",
+      "group": "MLBASE"
+    },
+    {
+      "id": 182,
+      "label": "Ridge Regression",
+      "group": "MLBASE"
+    },
+    {
+      "id": 183,
+      "label": "Lasso Regression",
+      "group": "MLBASE"
+    },
+    {
+      "id": 184,
+      "label": "Regularization",
+      "group": "MLBASE"
+    },
+    {
+      "id": 185,
+      "label": "Gradient Vector",
+      "group": "MLBASE"
+    },
+    {
+      "id": 186,
+      "label": "Gradient Descent",
+      "group": "MLBASE"
+    },
+    {
+      "id": 187,
+      "label": "Batch Gradient Descent",
+      "group": "MLBASE"
+    },
+    {
+      "id": 188,
+      "label": "Learning Rate",
+      "group": "MLBASE"
+    },
+    {
+      "id": 189,
+      "label": "Perceptron",
+      "group": "NEURAL"
+    },
+    {
+      "id": 190,
+      "label": "Neuron Model",
+      "group": "NEURAL"
+    },
+    {
+      "id": 191,
+      "label": "Activation Function",
+      "group": "NEURAL"
+    },
+    {
+      "id": 192,
+      "label": "ReLU",
+      "group": "NEURAL"
+    },
+    {
+      "id": 193,
+      "label": "Sigmoid",
+      "group": "NEURAL"
+    },
+    {
+      "id": 194,
+      "label": "Tanh",
+      "group": "NEURAL"
+    },
+    {
+      "id": 195,
+      "label": "Softmax",
+      "group": "NEURAL"
+    },
+    {
+      "id": 196,
+      "label": "Weight Matrix",
+      "group": "NEURAL"
+    },
+    {
+      "id": 197,
+      "label": "Bias Vector",
+      "group": "NEURAL"
+    },
+    {
+      "id": 198,
+      "label": "Forward Propagation",
+      "group": "NEURAL"
+    },
+    {
+      "id": 199,
+      "label": "Backpropagation",
+      "group": "NEURAL"
+    },
+    {
+      "id": 200,
+      "label": "Chain Rule Matrices",
+      "group": "NEURAL"
+    },
+    {
+      "id": 201,
+      "label": "Loss Function",
+      "group": "NEURAL"
+    },
+    {
+      "id": 202,
+      "label": "Cross-Entropy Loss",
+      "group": "NEURAL"
+    },
+    {
+      "id": 203,
+      "label": "Neural Network Layer",
+      "group": "NEURAL"
+    },
+    {
+      "id": 204,
+      "label": "Hidden Layer",
+      "group": "NEURAL"
+    },
+    {
+      "id": 205,
+      "label": "Deep Network",
+      "group": "NEURAL"
+    },
+    {
+      "id": 206,
+      "label": "Convolutional Layer",
+      "group": "NEURAL"
+    },
+    {
+      "id": 207,
+      "label": "Convolution Kernel",
+      "group": "NEURAL"
+    },
+    {
+      "id": 208,
+      "label": "Stride",
+      "group": "NEURAL"
+    },
+    {
+      "id": 209,
+      "label": "Padding",
+      "group": "NEURAL"
+    },
+    {
+      "id": 210,
+      "label": "Pooling Layer",
+      "group": "NEURAL"
+    },
+    {
+      "id": 211,
+      "label": "Batch Normalization",
+      "group": "NEURAL"
+    },
+    {
+      "id": 212,
+      "label": "Layer Normalization",
+      "group": "NEURAL"
+    },
+    {
+      "id": 213,
+      "label": "Tensor",
+      "group": "NEURAL"
+    },
+    {
+      "id": 214,
+      "label": "Tensor Operations",
+      "group": "NEURAL"
+    },
+    {
+      "id": 215,
+      "label": "Embedding",
+      "group": "GENAI"
+    },
+    {
+      "id": 216,
+      "label": "Embedding Space",
+      "group": "GENAI"
+    },
+    {
+      "id": 217,
+      "label": "Word Embedding",
+      "group": "GENAI"
+    },
+    {
+      "id": 218,
+      "label": "Semantic Similarity",
+      "group": "GENAI"
+    },
+    {
+      "id": 219,
+      "label": "Cosine Similarity",
+      "group": "GENAI"
+    },
+    {
+      "id": 220,
+      "label": "Attention Mechanism",
+      "group": "GENAI"
+    },
+    {
+      "id": 221,
+      "label": "Self-Attention",
+      "group": "GENAI"
+    },
+    {
+      "id": 222,
+      "label": "Cross-Attention",
+      "group": "GENAI"
+    },
+    {
+      "id": 223,
+      "label": "Query Matrix",
+      "group": "GENAI"
+    },
+    {
+      "id": 224,
+      "label": "Key Matrix",
+      "group": "GENAI"
+    },
+    {
+      "id": 225,
+      "label": "Value Matrix",
+      "group": "GENAI"
+    },
+    {
+      "id": 226,
+      "label": "Attention Score",
+      "group": "GENAI"
+    },
+    {
+      "id": 227,
+      "label": "Attention Weights",
+      "group": "GENAI"
+    },
+    {
+      "id": 228,
+      "label": "Multi-Head Attention",
+      "group": "GENAI"
+    },
+    {
+      "id": 229,
+      "label": "Transformer Architecture",
+      "group": "GENAI"
+    },
+    {
+      "id": 230,
+      "label": "Position Encoding",
+      "group": "GENAI"
+    },
+    {
+      "id": 231,
+      "label": "LoRA",
+      "group": "GENAI"
+    },
+    {
+      "id": 232,
+      "label": "Latent Space",
+      "group": "GENAI"
+    },
+    {
+      "id": 233,
+      "label": "Interpolation",
+      "group": "GENAI"
+    },
+    {
+      "id": 234,
+      "label": "Hessian Matrix",
+      "group": "OPTIM"
+    },
+    {
+      "id": 235,
+      "label": "Convexity",
+      "group": "OPTIM"
+    },
+    {
+      "id": 236,
+      "label": "Convex Function",
+      "group": "OPTIM"
+    },
+    {
+      "id": 237,
+      "label": "Newtons Method",
+      "group": "OPTIM"
+    },
+    {
+      "id": 238,
+      "label": "Quasi-Newton Method",
+      "group": "OPTIM"
+    },
+    {
+      "id": 239,
+      "label": "BFGS Algorithm",
+      "group": "OPTIM"
+    },
+    {
+      "id": 240,
+      "label": "SGD",
+      "group": "OPTIM"
+    },
+    {
+      "id": 241,
+      "label": "Mini-Batch SGD",
+      "group": "OPTIM"
+    },
+    {
+      "id": 242,
+      "label": "Momentum",
+      "group": "OPTIM"
+    },
+    {
+      "id": 243,
+      "label": "Adam Optimizer",
+      "group": "OPTIM"
+    },
+    {
+      "id": 244,
+      "label": "RMSprop",
+      "group": "OPTIM"
+    },
+    {
+      "id": 245,
+      "label": "Lagrange Multiplier",
+      "group": "OPTIM"
+    },
+    {
+      "id": 246,
+      "label": "Constrained Optimization",
+      "group": "OPTIM"
+    },
+    {
+      "id": 247,
+      "label": "KKT Conditions",
+      "group": "OPTIM"
+    },
+    {
+      "id": 248,
+      "label": "Image Matrix",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 249,
+      "label": "Grayscale Image",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 250,
+      "label": "RGB Image",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 251,
+      "label": "Image Tensor",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 252,
+      "label": "Image Convolution",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 253,
+      "label": "Image Filter",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 254,
+      "label": "Blur Filter",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 255,
+      "label": "Sharpen Filter",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 256,
+      "label": "Edge Detection",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 257,
+      "label": "Sobel Operator",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 258,
+      "label": "Fourier Transform",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 259,
+      "label": "Frequency Domain",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 260,
+      "label": "Image Compression",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 261,
+      "label": "Color Space Transform",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 262,
+      "label": "Feature Detection",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 263,
+      "label": "Homography",
+      "group": "IMGPROC"
+    },
+    {
+      "id": 264,
+      "label": "3D Coordinate System",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 265,
+      "label": "Euler Angles",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 266,
+      "label": "Gimbal Lock",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 267,
+      "label": "Quaternion",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 268,
+      "label": "Quaternion Rotation",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 269,
+      "label": "Homogeneous Coordinates",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 270,
+      "label": "Rigid Body Transform",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 271,
+      "label": "SE3 Transform",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 272,
+      "label": "Camera Matrix",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 273,
+      "label": "Intrinsic Parameters",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 274,
+      "label": "Extrinsic Parameters",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 275,
+      "label": "Projection Matrix",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 276,
+      "label": "Perspective Projection",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 277,
+      "label": "Stereo Vision",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 278,
+      "label": "Triangulation",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 279,
+      "label": "Epipolar Geometry",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 280,
+      "label": "Point Cloud",
+      "group": "GEOM3D"
+    },
+    {
+      "id": 281,
+      "label": "LIDAR Point Cloud",
+      "group": "AUTON"
+    },
+    {
+      "id": 282,
+      "label": "Camera Calibration",
+      "group": "AUTON"
+    },
+    {
+      "id": 283,
+      "label": "Sensor Fusion",
+      "group": "AUTON"
+    },
+    {
+      "id": 284,
+      "label": "Kalman Filter",
+      "group": "AUTON"
+    },
+    {
+      "id": 285,
+      "label": "State Vector",
+      "group": "AUTON"
+    },
+    {
+      "id": 286,
+      "label": "Measurement Vector",
+      "group": "AUTON"
+    },
+    {
+      "id": 287,
+      "label": "Prediction Step",
+      "group": "AUTON"
+    },
+    {
+      "id": 288,
+      "label": "Update Step",
+      "group": "AUTON"
+    },
+    {
+      "id": 289,
+      "label": "Kalman Gain",
+      "group": "AUTON"
+    },
+    {
+      "id": 290,
+      "label": "Extended Kalman Filter",
+      "group": "AUTON"
+    },
+    {
+      "id": 291,
+      "label": "State Estimation",
+      "group": "AUTON"
+    },
+    {
+      "id": 292,
+      "label": "SLAM",
+      "group": "AUTON"
+    },
+    {
+      "id": 293,
+      "label": "Localization",
+      "group": "AUTON"
+    },
+    {
+      "id": 294,
+      "label": "Mapping",
+      "group": "AUTON"
+    },
+    {
+      "id": 295,
+      "label": "Object Detection",
+      "group": "AUTON"
+    },
+    {
+      "id": 296,
+      "label": "Object Tracking",
+      "group": "AUTON"
+    },
+    {
+      "id": 297,
+      "label": "Bounding Box",
+      "group": "AUTON"
+    },
+    {
+      "id": 298,
+      "label": "Path Planning",
+      "group": "AUTON"
+    },
+    {
+      "id": 299,
+      "label": "Motion Planning",
+      "group": "AUTON"
+    },
+    {
+      "id": 300,
+      "label": "Trajectory Optimization",
+      "group": "AUTON"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 3,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 2
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 2
+    },
+    {
+      "from": 5,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 2
+    },
+    {
+      "from": 6,
+      "to": 5
+    },
+    {
+      "from": 7,
+      "to": 2
+    },
+    {
+      "from": 7,
+      "to": 3
+    },
+    {
+      "from": 8,
+      "to": 1
+    },
+    {
+      "from": 8,
+      "to": 2
+    },
+    {
+      "from": 9,
+      "to": 7
+    },
+    {
+      "from": 10,
+      "to": 2
+    },
+    {
+      "from": 10,
+      "to": 8
+    },
+    {
+      "from": 11,
+      "to": 5
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 2
+    },
+    {
+      "from": 12,
+      "to": 10
+    },
+    {
+      "from": 13,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 12
+    },
+    {
+      "from": 16,
+      "to": 2
+    },
+    {
+      "from": 16,
+      "to": 12
+    },
+    {
+      "from": 17,
+      "to": 12
+    },
+    {
+      "from": 17,
+      "to": 15
+    },
+    {
+      "from": 18,
+      "to": 2
+    },
+    {
+      "from": 18,
+      "to": 12
+    },
+    {
+      "from": 19,
+      "to": 7
+    },
+    {
+      "from": 19,
+      "to": 8
+    },
+    {
+      "from": 20,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 19
+    },
+    {
+      "from": 21,
+      "to": 20
+    },
+    {
+      "from": 22,
+      "to": 21
+    },
+    {
+      "from": 23,
+      "to": 20
+    },
+    {
+      "from": 23,
+      "to": 21
+    },
+    {
+      "from": 24,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 23
+    },
+    {
+      "from": 25,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 19
+    },
+    {
+      "from": 26,
+      "to": 21
+    },
+    {
+      "from": 26,
+      "to": 23
+    },
+    {
+      "from": 27,
+      "to": 23
+    },
+    {
+      "from": 27,
+      "to": 26
+    },
+    {
+      "from": 28,
+      "to": 2
+    },
+    {
+      "from": 29,
+      "to": 28
+    },
+    {
+      "from": 30,
+      "to": 28
+    },
+    {
+      "from": 30,
+      "to": 29
+    },
+    {
+      "from": 31,
+      "to": 2
+    },
+    {
+      "from": 31,
+      "to": 28
+    },
+    {
+      "from": 32,
+      "to": 2
+    },
+    {
+      "from": 32,
+      "to": 28
+    },
+    {
+      "from": 33,
+      "to": 28
+    },
+    {
+      "from": 33,
+      "to": 29
+    },
+    {
+      "from": 34,
+      "to": 28
+    },
+    {
+      "from": 34,
+      "to": 33
+    },
+    {
+      "from": 35,
+      "to": 1
+    },
+    {
+      "from": 35,
+      "to": 28
+    },
+    {
+      "from": 36,
+      "to": 28
+    },
+    {
+      "from": 36,
+      "to": 32
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 36
+    },
+    {
+      "from": 38,
+      "to": 28
+    },
+    {
+      "from": 38,
+      "to": 31
+    },
+    {
+      "from": 38,
+      "to": 32
+    },
+    {
+      "from": 39,
+      "to": 38
+    },
+    {
+      "from": 40,
+      "to": 28
+    },
+    {
+      "from": 40,
+      "to": 37
+    },
+    {
+      "from": 41,
+      "to": 28
+    },
+    {
+      "from": 41,
+      "to": 33
+    },
+    {
+      "from": 42,
+      "to": 28
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 42
+    },
+    {
+      "from": 44,
+      "to": 42
+    },
+    {
+      "from": 45,
+      "to": 38
+    },
+    {
+      "from": 45,
+      "to": 40
+    },
+    {
+      "from": 46,
+      "to": 37
+    },
+    {
+      "from": 46,
+      "to": 40
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 28
+    },
+    {
+      "from": 48,
+      "to": 33
+    },
+    {
+      "from": 49,
+      "to": 28
+    },
+    {
+      "from": 49,
+      "to": 48
+    },
+    {
+      "from": 50,
+      "to": 28
+    },
+    {
+      "from": 50,
+      "to": 30
+    },
+    {
+      "from": 51,
+      "to": 1
+    },
+    {
+      "from": 51,
+      "to": 2
+    },
+    {
+      "from": 52,
+      "to": 51
+    },
+    {
+      "from": 53,
+      "to": 36
+    },
+    {
+      "from": 53,
+      "to": 52
+    },
+    {
+      "from": 54,
+      "to": 28
+    },
+    {
+      "from": 54,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 52
+    },
+    {
+      "from": 55,
+      "to": 54
+    },
+    {
+      "from": 56,
+      "to": 54
+    },
+    {
+      "from": 56,
+      "to": 55
+    },
+    {
+      "from": 57,
+      "to": 56
+    },
+    {
+      "from": 58,
+      "to": 56
+    },
+    {
+      "from": 59,
+      "to": 56
+    },
+    {
+      "from": 60,
+      "to": 55
+    },
+    {
+      "from": 60,
+      "to": 56
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 62,
+      "to": 60
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 61
+    },
+    {
+      "from": 64,
+      "to": 63
+    },
+    {
+      "from": 65,
+      "to": 61
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 52
+    },
+    {
+      "from": 66,
+      "to": 61
+    },
+    {
+      "from": 67,
+      "to": 66
+    },
+    {
+      "from": 68,
+      "to": 64
+    },
+    {
+      "from": 68,
+      "to": 66
+    },
+    {
+      "from": 69,
+      "to": 66
+    },
+    {
+      "from": 70,
+      "to": 52
+    },
+    {
+      "from": 70,
+      "to": 53
+    },
+    {
+      "from": 71,
+      "to": 70
+    },
+    {
+      "from": 72,
+      "to": 55
+    },
+    {
+      "from": 72,
+      "to": 60
+    },
+    {
+      "from": 73,
+      "to": 60
+    },
+    {
+      "from": 73,
+      "to": 43
+    },
+    {
+      "from": 75,
+      "to": 26
+    },
+    {
+      "from": 75,
+      "to": 74
+    },
+    {
+      "from": 76,
+      "to": 37
+    },
+    {
+      "from": 76,
+      "to": 75
+    },
+    {
+      "from": 77,
+      "to": 74
+    },
+    {
+      "from": 78,
+      "to": 74
+    },
+    {
+      "from": 78,
+      "to": 77
+    },
+    {
+      "from": 79,
+      "to": 75
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 76
+    },
+    {
+      "from": 80,
+      "to": 45
+    },
+    {
+      "from": 81,
+      "to": 4
+    },
+    {
+      "from": 81,
+      "to": 80
+    },
+    {
+      "from": 82,
+      "to": 5
+    },
+    {
+      "from": 82,
+      "to": 80
+    },
+    {
+      "from": 83,
+      "to": 76
+    },
+    {
+      "from": 83,
+      "to": 41
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 85,
+      "to": 83
+    },
+    {
+      "from": 86,
+      "to": 76
+    },
+    {
+      "from": 87,
+      "to": 76
+    },
+    {
+      "from": 87,
+      "to": 45
+    },
+    {
+      "from": 88,
+      "to": 75
+    },
+    {
+      "from": 88,
+      "to": 10
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 89,
+      "to": 45
+    },
+    {
+      "from": 90,
+      "to": 75
+    },
+    {
+      "from": 90,
+      "to": 37
+    },
+    {
+      "from": 91,
+      "to": 75
+    },
+    {
+      "from": 92,
+      "to": 91
+    },
+    {
+      "from": 92,
+      "to": 70
+    },
+    {
+      "from": 93,
+      "to": 75
+    },
+    {
+      "from": 93,
+      "to": 79
+    },
+    {
+      "from": 94,
+      "to": 32
+    },
+    {
+      "from": 94,
+      "to": 93
+    },
+    {
+      "from": 95,
+      "to": 94
+    },
+    {
+      "from": 96,
+      "to": 92
+    },
+    {
+      "from": 97,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 96
+    },
+    {
+      "from": 98,
+      "to": 75
+    },
+    {
+      "from": 98,
+      "to": 47
+    },
+    {
+      "from": 99,
+      "to": 23
+    },
+    {
+      "from": 99,
+      "to": 76
+    },
+    {
+      "from": 100,
+      "to": 99
+    },
+    {
+      "from": 101,
+      "to": 28
+    },
+    {
+      "from": 101,
+      "to": 37
+    },
+    {
+      "from": 102,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 101
+    },
+    {
+      "from": 103,
+      "to": 102
+    },
+    {
+      "from": 104,
+      "to": 103
+    },
+    {
+      "from": 105,
+      "to": 103
+    },
+    {
+      "from": 105,
+      "to": 104
+    },
+    {
+      "from": 106,
+      "to": 105
+    },
+    {
+      "from": 107,
+      "to": 101
+    },
+    {
+      "from": 108,
+      "to": 101
+    },
+    {
+      "from": 108,
+      "to": 107
+    },
+    {
+      "from": 109,
+      "to": 38
+    },
+    {
+      "from": 109,
+      "to": 107
+    },
+    {
+      "from": 110,
+      "to": 47
+    },
+    {
+      "from": 110,
+      "to": 101
+    },
+    {
+      "from": 111,
+      "to": 101
+    },
+    {
+      "from": 111,
+      "to": 103
+    },
+    {
+      "from": 112,
+      "to": 102
+    },
+    {
+      "from": 112,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 101
+    },
+    {
+      "from": 113,
+      "to": 52
+    },
+    {
+      "from": 114,
+      "to": 76
+    },
+    {
+      "from": 114,
+      "to": 101
+    },
+    {
+      "from": 115,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 114
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 117,
+      "to": 114
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 115
+    },
+    {
+      "from": 119,
+      "to": 92
+    },
+    {
+      "from": 120,
+      "to": 117
+    },
+    {
+      "from": 120,
+      "to": 118
+    },
+    {
+      "from": 121,
+      "to": 119
+    },
+    {
+      "from": 121,
+      "to": 120
+    },
+    {
+      "from": 122,
+      "to": 41
+    },
+    {
+      "from": 122,
+      "to": 115
+    },
+    {
+      "from": 122,
+      "to": 119
+    },
+    {
+      "from": 123,
+      "to": 122
+    },
+    {
+      "from": 124,
+      "to": 99
+    },
+    {
+      "from": 124,
+      "to": 122
+    },
+    {
+      "from": 125,
+      "to": 114
+    },
+    {
+      "from": 126,
+      "to": 39
+    },
+    {
+      "from": 126,
+      "to": 122
+    },
+    {
+      "from": 127,
+      "to": 39
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 128,
+      "to": 115
+    },
+    {
+      "from": 128,
+      "to": 37
+    },
+    {
+      "from": 129,
+      "to": 128
+    },
+    {
+      "from": 130,
+      "to": 122
+    },
+    {
+      "from": 130,
+      "to": 123
+    },
+    {
+      "from": 131,
+      "to": 37
+    },
+    {
+      "from": 131,
+      "to": 46
+    },
+    {
+      "from": 132,
+      "to": 43
+    },
+    {
+      "from": 132,
+      "to": 44
+    },
+    {
+      "from": 132,
+      "to": 131
+    },
+    {
+      "from": 133,
+      "to": 57
+    },
+    {
+      "from": 133,
+      "to": 132
+    },
+    {
+      "from": 134,
+      "to": 45
+    },
+    {
+      "from": 134,
+      "to": 131
+    },
+    {
+      "from": 135,
+      "to": 134
+    },
+    {
+      "from": 135,
+      "to": 161
+    },
+    {
+      "from": 136,
+      "to": 134
+    },
+    {
+      "from": 136,
+      "to": 87
+    },
+    {
+      "from": 137,
+      "to": 44
+    },
+    {
+      "from": 137,
+      "to": 131
+    },
+    {
+      "from": 137,
+      "to": 138
+    },
+    {
+      "from": 138,
+      "to": 39
+    },
+    {
+      "from": 138,
+      "to": 114
+    },
+    {
+      "from": 139,
+      "to": 131
+    },
+    {
+      "from": 139,
+      "to": 134
+    },
+    {
+      "from": 140,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 139
+    },
+    {
+      "from": 142,
+      "to": 140
+    },
+    {
+      "from": 143,
+      "to": 139
+    },
+    {
+      "from": 143,
+      "to": 141
+    },
+    {
+      "from": 143,
+      "to": 142
+    },
+    {
+      "from": 144,
+      "to": 143
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 146,
+      "to": 95
+    },
+    {
+      "from": 146,
+      "to": 145
+    },
+    {
+      "from": 147,
+      "to": 95
+    },
+    {
+      "from": 148,
+      "to": 147
+    },
+    {
+      "from": 148,
+      "to": 72
+    },
+    {
+      "from": 149,
+      "to": 46
+    },
+    {
+      "from": 149,
+      "to": 148
+    },
+    {
+      "from": 150,
+      "to": 26
+    },
+    {
+      "from": 151,
+      "to": 150
+    },
+    {
+      "from": 152,
+      "to": 150
+    },
+    {
+      "from": 153,
+      "to": 10
+    },
+    {
+      "from": 153,
+      "to": 150
+    },
+    {
+      "from": 154,
+      "to": 153
+    },
+    {
+      "from": 155,
+      "to": 153
+    },
+    {
+      "from": 155,
+      "to": 12
+    },
+    {
+      "from": 156,
+      "to": 153
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 10
+    },
+    {
+      "from": 157,
+      "to": 153
+    },
+    {
+      "from": 158,
+      "to": 157
+    },
+    {
+      "from": 159,
+      "to": 13
+    },
+    {
+      "from": 159,
+      "to": 158
+    },
+    {
+      "from": 160,
+      "to": 23
+    },
+    {
+      "from": 160,
+      "to": 159
+    },
+    {
+      "from": 161,
+      "to": 160
+    },
+    {
+      "from": 162,
+      "to": 89
+    },
+    {
+      "from": 162,
+      "to": 151
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 164,
+      "to": 38
+    },
+    {
+      "from": 164,
+      "to": 163
+    },
+    {
+      "from": 165,
+      "to": 31
+    },
+    {
+      "from": 165,
+      "to": 94
+    },
+    {
+      "from": 166,
+      "to": 38
+    },
+    {
+      "from": 166,
+      "to": 92
+    },
+    {
+      "from": 167,
+      "to": 92
+    },
+    {
+      "from": 167,
+      "to": 94
+    },
+    {
+      "from": 167,
+      "to": 165
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 168,
+      "to": 46
+    },
+    {
+      "from": 168,
+      "to": 139
+    },
+    {
+      "from": 168,
+      "to": 163
+    },
+    {
+      "from": 169,
+      "to": 6
+    },
+    {
+      "from": 169,
+      "to": 171
+    },
+    {
+      "from": 170,
+      "to": 28
+    },
+    {
+      "from": 170,
+      "to": 169
+    },
+    {
+      "from": 171,
+      "to": 28
+    },
+    {
+      "from": 172,
+      "to": 39
+    },
+    {
+      "from": 172,
+      "to": 171
+    },
+    {
+      "from": 173,
+      "to": 172
+    },
+    {
+      "from": 174,
+      "to": 171
+    },
+    {
+      "from": 174,
+      "to": 173
+    },
+    {
+      "from": 175,
+      "to": 122
+    },
+    {
+      "from": 175,
+      "to": 172
+    },
+    {
+      "from": 176,
+      "to": 175
+    },
+    {
+      "from": 177,
+      "to": 175
+    },
+    {
+      "from": 177,
+      "to": 176
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 179,
+      "to": 145
+    },
+    {
+      "from": 179,
+      "to": 175
+    },
+    {
+      "from": 180,
+      "to": 163
+    },
+    {
+      "from": 180,
+      "to": 171
+    },
+    {
+      "from": 181,
+      "to": 170
+    },
+    {
+      "from": 181,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 180
+    },
+    {
+      "from": 182,
+      "to": 184
+    },
+    {
+      "from": 183,
+      "to": 180
+    },
+    {
+      "from": 183,
+      "to": 184
+    },
+    {
+      "from": 184,
+      "to": 180
+    },
+    {
+      "from": 185,
+      "to": 6
+    },
+    {
+      "from": 186,
+      "to": 185
+    },
+    {
+      "from": 187,
+      "to": 186
+    },
+    {
+      "from": 187,
+      "to": 37
+    },
+    {
+      "from": 188,
+      "to": 186
+    },
+    {
+      "from": 189,
+      "to": 10
+    },
+    {
+      "from": 189,
+      "to": 190
+    },
+    {
+      "from": 190,
+      "to": 185
+    },
+    {
+      "from": 190,
+      "to": 191
+    },
+    {
+      "from": 191,
+      "to": 74
+    },
+    {
+      "from": 192,
+      "to": 191
+    },
+    {
+      "from": 193,
+      "to": 191
+    },
+    {
+      "from": 194,
+      "to": 191
+    },
+    {
+      "from": 195,
+      "to": 191
+    },
+    {
+      "from": 195,
+      "to": 194
+    },
+    {
+      "from": 196,
+      "to": 28
+    },
+    {
+      "from": 196,
+      "to": 190
+    },
+    {
+      "from": 197,
+      "to": 2
+    },
+    {
+      "from": 197,
+      "to": 190
+    },
+    {
+      "from": 198,
+      "to": 37
+    },
+    {
+      "from": 198,
+      "to": 196
+    },
+    {
+      "from": 198,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 186
+    },
+    {
+      "from": 199,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 37
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 201,
+      "to": 74
+    },
+    {
+      "from": 201,
+      "to": 198
+    },
+    {
+      "from": 202,
+      "to": 195
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 203,
+      "to": 196
+    },
+    {
+      "from": 203,
+      "to": 197
+    },
+    {
+      "from": 203,
+      "to": 198
+    },
+    {
+      "from": 204,
+      "to": 203
+    },
+    {
+      "from": 205,
+      "to": 204
+    },
+    {
+      "from": 206,
+      "to": 203
+    },
+    {
+      "from": 206,
+      "to": 252
+    },
+    {
+      "from": 207,
+      "to": 206
+    },
+    {
+      "from": 208,
+      "to": 206
+    },
+    {
+      "from": 208,
+      "to": 207
+    },
+    {
+      "from": 209,
+      "to": 206
+    },
+    {
+      "from": 209,
+      "to": 208
+    },
+    {
+      "from": 210,
+      "to": 206
+    },
+    {
+      "from": 211,
+      "to": 174
+    },
+    {
+      "from": 211,
+      "to": 203
+    },
+    {
+      "from": 212,
+      "to": 211
+    },
+    {
+      "from": 213,
+      "to": 6
+    },
+    {
+      "from": 213,
+      "to": 28
+    },
+    {
+      "from": 214,
+      "to": 37
+    },
+    {
+      "from": 214,
+      "to": 213
+    },
+    {
+      "from": 215,
+      "to": 6
+    },
+    {
+      "from": 216,
+      "to": 26
+    },
+    {
+      "from": 216,
+      "to": 215
+    },
+    {
+      "from": 217,
+      "to": 215
+    },
+    {
+      "from": 218,
+      "to": 10
+    },
+    {
+      "from": 218,
+      "to": 216
+    },
+    {
+      "from": 219,
+      "to": 13
+    },
+    {
+      "from": 219,
+      "to": 218
+    },
+    {
+      "from": 220,
+      "to": 10
+    },
+    {
+      "from": 220,
+      "to": 196
+    },
+    {
+      "from": 221,
+      "to": 220
+    },
+    {
+      "from": 222,
+      "to": 220
+    },
+    {
+      "from": 222,
+      "to": 221
+    },
+    {
+      "from": 223,
+      "to": 220
+    },
+    {
+      "from": 223,
+      "to": 196
+    },
+    {
+      "from": 224,
+      "to": 220
+    },
+    {
+      "from": 224,
+      "to": 196
+    },
+    {
+      "from": 225,
+      "to": 220
+    },
+    {
+      "from": 225,
+      "to": 196
+    },
+    {
+      "from": 226,
+      "to": 10
+    },
+    {
+      "from": 226,
+      "to": 223
+    },
+    {
+      "from": 226,
+      "to": 224
+    },
+    {
+      "from": 227,
+      "to": 195
+    },
+    {
+      "from": 227,
+      "to": 226
+    },
+    {
+      "from": 228,
+      "to": 221
+    },
+    {
+      "from": 228,
+      "to": 227
+    },
+    {
+      "from": 229,
+      "to": 228
+    },
+    {
+      "from": 229,
+      "to": 230
+    },
+    {
+      "from": 230,
+      "to": 2
+    },
+    {
+      "from": 230,
+      "to": 215
+    },
+    {
+      "from": 231,
+      "to": 146
+    },
+    {
+      "from": 231,
+      "to": 229
+    },
+    {
+      "from": 232,
+      "to": 26
+    },
+    {
+      "from": 232,
+      "to": 179
+    },
+    {
+      "from": 233,
+      "to": 232
+    },
+    {
+      "from": 234,
+      "to": 28
+    },
+    {
+      "from": 234,
+      "to": 185
+    },
+    {
+      "from": 235,
+      "to": 234
+    },
+    {
+      "from": 236,
+      "to": 235
+    },
+    {
+      "from": 237,
+      "to": 186
+    },
+    {
+      "from": 237,
+      "to": 234
+    },
+    {
+      "from": 238,
+      "to": 237
+    },
+    {
+      "from": 239,
+      "to": 238
+    },
+    {
+      "from": 240,
+      "to": 186
+    },
+    {
+      "from": 240,
+      "to": 187
+    },
+    {
+      "from": 241,
+      "to": 240
+    },
+    {
+      "from": 242,
+      "to": 186
+    },
+    {
+      "from": 242,
+      "to": 240
+    },
+    {
+      "from": 243,
+      "to": 242
+    },
+    {
+      "from": 243,
+      "to": 244
+    },
+    {
+      "from": 244,
+      "to": 186
+    },
+    {
+      "from": 244,
+      "to": 240
+    },
+    {
+      "from": 245,
+      "to": 185
+    },
+    {
+      "from": 246,
+      "to": 186
+    },
+    {
+      "from": 246,
+      "to": 245
+    },
+    {
+      "from": 247,
+      "to": 245
+    },
+    {
+      "from": 247,
+      "to": 246
+    },
+    {
+      "from": 248,
+      "to": 28
+    },
+    {
+      "from": 249,
+      "to": 248
+    },
+    {
+      "from": 250,
+      "to": 213
+    },
+    {
+      "from": 250,
+      "to": 249
+    },
+    {
+      "from": 251,
+      "to": 213
+    },
+    {
+      "from": 251,
+      "to": 250
+    },
+    {
+      "from": 252,
+      "to": 37
+    },
+    {
+      "from": 252,
+      "to": 248
+    },
+    {
+      "from": 253,
+      "to": 252
+    },
+    {
+      "from": 254,
+      "to": 253
+    },
+    {
+      "from": 255,
+      "to": 253
+    },
+    {
+      "from": 256,
+      "to": 253
+    },
+    {
+      "from": 257,
+      "to": 252
+    },
+    {
+      "from": 257,
+      "to": 256
+    },
+    {
+      "from": 258,
+      "to": 28
+    },
+    {
+      "from": 258,
+      "to": 37
+    },
+    {
+      "from": 259,
+      "to": 258
+    },
+    {
+      "from": 260,
+      "to": 145
+    },
+    {
+      "from": 260,
+      "to": 248
+    },
+    {
+      "from": 261,
+      "to": 76
+    },
+    {
+      "from": 261,
+      "to": 250
+    },
+    {
+      "from": 262,
+      "to": 256
+    },
+    {
+      "from": 263,
+      "to": 76
+    },
+    {
+      "from": 263,
+      "to": 269
+    },
+    {
+      "from": 264,
+      "to": 5
+    },
+    {
+      "from": 264,
+      "to": 25
+    },
+    {
+      "from": 265,
+      "to": 82
+    },
+    {
+      "from": 265,
+      "to": 264
+    },
+    {
+      "from": 266,
+      "to": 265
+    },
+    {
+      "from": 267,
+      "to": 5
+    },
+    {
+      "from": 267,
+      "to": 80
+    },
+    {
+      "from": 268,
+      "to": 267
+    },
+    {
+      "from": 269,
+      "to": 6
+    },
+    {
+      "from": 269,
+      "to": 264
+    },
+    {
+      "from": 270,
+      "to": 80
+    },
+    {
+      "from": 270,
+      "to": 269
+    },
+    {
+      "from": 271,
+      "to": 270
+    },
+    {
+      "from": 272,
+      "to": 28
+    },
+    {
+      "from": 272,
+      "to": 275
+    },
+    {
+      "from": 273,
+      "to": 272
+    },
+    {
+      "from": 274,
+      "to": 270
+    },
+    {
+      "from": 274,
+      "to": 272
+    },
+    {
+      "from": 275,
+      "to": 88
+    },
+    {
+      "from": 275,
+      "to": 269
+    },
+    {
+      "from": 276,
+      "to": 275
+    },
+    {
+      "from": 277,
+      "to": 272
+    },
+    {
+      "from": 277,
+      "to": 276
+    },
+    {
+      "from": 278,
+      "to": 5
+    },
+    {
+      "from": 278,
+      "to": 277
+    },
+    {
+      "from": 279,
+      "to": 277
+    },
+    {
+      "from": 279,
+      "to": 278
+    },
+    {
+      "from": 280,
+      "to": 5
+    },
+    {
+      "from": 280,
+      "to": 264
+    },
+    {
+      "from": 281,
+      "to": 280
+    },
+    {
+      "from": 282,
+      "to": 272
+    },
+    {
+      "from": 282,
+      "to": 273
+    },
+    {
+      "from": 282,
+      "to": 274
+    },
+    {
+      "from": 283,
+      "to": 284
+    },
+    {
+      "from": 284,
+      "to": 285
+    },
+    {
+      "from": 284,
+      "to": 286
+    },
+    {
+      "from": 285,
+      "to": 2
+    },
+    {
+      "from": 286,
+      "to": 2
+    },
+    {
+      "from": 286,
+      "to": 285
+    },
+    {
+      "from": 287,
+      "to": 284
+    },
+    {
+      "from": 288,
+      "to": 284
+    },
+    {
+      "from": 288,
+      "to": 287
+    },
+    {
+      "from": 289,
+      "to": 288
+    },
+    {
+      "from": 290,
+      "to": 284
+    },
+    {
+      "from": 290,
+      "to": 237
+    },
+    {
+      "from": 291,
+      "to": 284
+    },
+    {
+      "from": 292,
+      "to": 291
+    },
+    {
+      "from": 292,
+      "to": 293
+    },
+    {
+      "from": 292,
+      "to": 294
+    },
+    {
+      "from": 293,
+      "to": 291
+    },
+    {
+      "from": 294,
+      "to": 280
+    },
+    {
+      "from": 294,
+      "to": 293
+    },
+    {
+      "from": 295,
+      "to": 206
+    },
+    {
+      "from": 296,
+      "to": 284
+    },
+    {
+      "from": 296,
+      "to": 295
+    },
+    {
+      "from": 297,
+      "to": 248
+    },
+    {
+      "from": 297,
+      "to": 295
+    },
+    {
+      "from": 298,
+      "to": 292
+    },
+    {
+      "from": 299,
+      "to": 298
+    },
+    {
+      "from": 300,
+      "to": 186
+    },
+    {
+      "from": 300,
+      "to": 299
+    }
+  ]
+}

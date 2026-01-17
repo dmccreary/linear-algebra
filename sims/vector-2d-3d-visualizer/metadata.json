@@ -1,0 +1,79 @@
+{
+    "title": "2D and 3D Vector Visualization",
+    "description": "Interactive visualization of vectors in 2D and 3D coordinate systems with adjustable components, projection lines, and component labels.",
+    "creator": "Claude AI",
+    "subject": ["Linear Algebra", "Vectors", "Coordinate Systems"],
+    "date": "2026-01-17",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Vectors and Vector Spaces",
+        "learningObjectives": [
+            "Interpret vectors geometrically in 2D and 3D",
+            "Understand how component values determine vector position and direction",
+            "Visualize vector projections onto coordinate axes",
+            "Calculate and understand vector magnitude"
+        ],
+        "bloomsLevel": ["Understand", "Apply", "Analyze"],
+        "duration": "15-20 minutes",
+        "prerequisites": ["Cartesian coordinate systems", "Basic vector concepts"]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 560",
+        "responsive": true,
+        "dependencies": ["p5.js 1.11.10"],
+        "features": ["WEBGL 3D rendering", "Mouse-drag rotation"]
+    },
+    "controls": [
+        {
+            "type": "slider",
+            "name": "X Component",
+            "min": -5,
+            "max": 5,
+            "default": 3,
+            "step": 0.1,
+            "description": "Controls the x-component of the vector"
+        },
+        {
+            "type": "slider",
+            "name": "Y Component",
+            "min": -5,
+            "max": 5,
+            "default": 4,
+            "step": 0.1,
+            "description": "Controls the y-component of the vector"
+        },
+        {
+            "type": "slider",
+            "name": "Z Component",
+            "min": -5,
+            "max": 5,
+            "default": 2,
+            "step": 0.1,
+            "description": "Controls the z-component of the vector (visible in 3D mode)"
+        },
+        {
+            "type": "button",
+            "name": "Toggle View",
+            "description": "Switches between 2D and 3D visualization modes"
+        },
+        {
+            "type": "checkbox",
+            "name": "Show Projections",
+            "default": true,
+            "description": "Toggles visibility of projection lines to axes"
+        },
+        {
+            "type": "checkbox",
+            "name": "Show Labels",
+            "default": true,
+            "description": "Toggles visibility of component and axis labels"
+        }
+    ],
+    "keywords": ["vector", "2D", "3D", "components", "magnitude", "projection", "coordinate system", "linear algebra"]
+}

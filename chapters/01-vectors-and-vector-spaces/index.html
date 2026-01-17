@@ -1,0 +1,2930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduction to vectors as the fundamental building blocks of linear algebra">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-matrices-and-matrix-operations/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Vectors and Vector Spaces - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Vectors and Vector Spaces - Linear Algebra" >
+      
+        <meta  property="og:description"  content="Introduction to vectors as the fundamental building blocks of linear algebra" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Vectors and Vector Spaces - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="Introduction to vectors as the fundamental building blocks of linear algebra" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="navy" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vectors-and-vector-spaces" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vectors and Vector Spaces
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1.Vectors and Vector Spaces
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1.Vectors and Vector Spaces
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalars-and-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalars and Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars and Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-scalars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Scalars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Vector?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-in-different-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors in Different Dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vectors in Different Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3D Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-2d-and-3d-vector-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 2D and 3D Vector Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-dimensional-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      N-Dimensional Vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-vector-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Vector Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Vector Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Addition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Subtraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Subtraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-operations-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Operations Playground
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Products
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dot-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Dot Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cross-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cross Product
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cross Product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dot-product-and-cross-product-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dot Product and Cross Product Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnitude-and-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magnitude and Norms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnitude and Norms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-magnitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Magnitude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Norms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Norms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l2-norm-euclidean-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L2 Norm (Euclidean Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l1-norm-manhattan-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L1 Norm (Manhattan Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-infinity-norm-maximum-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L-Infinity Norm (Maximum Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-norm-comparison-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Norm Comparison Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euclidean Distance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-vectors-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Vectors and Normalization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-combinations-and-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Combinations and Span
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Combinations and Span">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Combinations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-span-of-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Span of Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Span of Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-combination-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Combination Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-independence-and-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Independence and Dependence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Independence and Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Independence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Dependence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basis-and-coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis and Coordinate Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basis and Coordinate Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basis-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Standard Basis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-basis-and-coordinate-system-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Basis and Coordinate System Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-a-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition of a Vector Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimension-of-a-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimension of a Vector Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimension of a Vector Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-space-axiom-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Space Axiom Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in AI and Machine Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in AI and Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Matrices and Matrix Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.Systems of Linear Equations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linear-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Linear Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Determinants and Matrix Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Eigenvalues and Eigenvectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-matrix-decompositions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Matrix Decompositions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Vector Spaces and Inner Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-machine-learning-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Machine Learning Foundations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Neural Networks and Deep Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.Generative AI and LLMs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.Optimization and Learning Algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Image Processing and Computer Vision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. 3D Geometry and Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Autonomous Systems and Sensor Fusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalars-and-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalars and Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalars and Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-scalars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Scalars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Vector?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Notation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-in-different-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectors in Different Dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vectors in Different Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3D Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-2d-and-3d-vector-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 2D and 3D Vector Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-dimensional-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      N-Dimensional Vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-vector-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Vector Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Vector Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Addition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vector-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Subtraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Subtraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-operations-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Operations Playground
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Products
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dot-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Dot Product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cross-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Cross Product
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Cross Product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-dot-product-and-cross-product-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Dot Product and Cross Product Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magnitude-and-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Magnitude and Norms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magnitude and Norms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-magnitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Magnitude
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Norms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Norms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l2-norm-euclidean-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L2 Norm (Euclidean Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l1-norm-manhattan-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L1 Norm (Manhattan Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l-infinity-norm-maximum-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      L-Infinity Norm (Maximum Norm)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-norm-comparison-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Norm Comparison Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euclidean Distance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-vectors-and-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Vectors and Normalization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-combinations-and-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Combinations and Span
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Combinations and Span">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Combinations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-span-of-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Span of Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Span of Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-combination-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Combination Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-independence-and-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Independence and Dependence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Independence and Dependence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Independence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-dependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Dependence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basis-and-coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis and Coordinate Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basis and Coordinate Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basis-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-standard-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Standard Basis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinate Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinate Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-basis-and-coordinate-system-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Basis and Coordinate System Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Spaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-of-a-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition of a Vector Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimension-of-a-vector-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dimension of a Vector Space
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dimension of a Vector Space">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-space-axiom-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Vector Space Axiom Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in AI and Machine Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in AI and Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#word-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embeddings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/01-vectors-and-vector-spaces/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="vectors-and-vector-spaces">Vectors and Vector Spaces</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter introduces vectors as the fundamental building blocks of linear algebra. Students explore vector operations, geometric interpretations, and the concept of vector spaces. By the end of this chapter, you will understand how to perform vector operations, compute norms and distances, and work with the abstract concepts of span, linear independence, and basis vectors that form the foundation for all subsequent topics.</p>
+<h2 id="concepts-covered">Concepts Covered</h2>
+<p>This chapter covers the following 27 concepts from the learning graph:</p>
+<ol>
+<li>Scalar</li>
+<li>Vector</li>
+<li>Vector Notation</li>
+<li>2D Vector</li>
+<li>3D Vector</li>
+<li>N-Dimensional Vector</li>
+<li>Vector Addition</li>
+<li>Scalar Multiplication</li>
+<li>Vector Subtraction</li>
+<li>Dot Product</li>
+<li>Cross Product</li>
+<li>Vector Magnitude</li>
+<li>Unit Vector</li>
+<li>Vector Normalization</li>
+<li>Euclidean Distance</li>
+<li>L1 Norm</li>
+<li>L2 Norm</li>
+<li>L-Infinity Norm</li>
+<li>Linear Combination</li>
+<li>Span</li>
+<li>Linear Independence</li>
+<li>Linear Dependence</li>
+<li>Basis Vector</li>
+<li>Standard Basis</li>
+<li>Coordinate System</li>
+<li>Vector Space</li>
+<li>Dimension of Space</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>: College Algebra and familiarity with basic calculus concepts.</p>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Linear algebra provides the mathematical foundation for modern artificial intelligence, machine learning, and computer vision. At the heart of this mathematical framework lies the vector—an elegant structure that represents both magnitude and direction. Whether you're representing a data point in a machine learning model, describing the velocity of an autonomous vehicle, or encoding the semantic meaning of a word, vectors serve as your fundamental tool.</p>
+<p>This chapter establishes the foundational concepts you'll build upon throughout this course. We begin with the simple distinction between scalars and vectors, then progressively develop your understanding through vector operations, norms, and the powerful abstractions of vector spaces.</p>
+<h2 id="scalars-and-vectors">Scalars and Vectors</h2>
+<h3 id="understanding-scalars">Understanding Scalars</h3>
+<p>A <strong>scalar</strong> is a single numerical value that represents a quantity with magnitude only. Scalars are the numbers you've worked with throughout your mathematical education—they can be positive, negative, or zero. In the context of linear algebra, scalars typically come from a field (usually the real numbers <span class="arithmatex">\(\mathbb{R}\)</span> or complex numbers <span class="arithmatex">\(\mathbb{C}\)</span>).</p>
+<p>Examples of scalars include:</p>
+<ul>
+<li>Temperature: 72°F</li>
+<li>Mass: 5.2 kg</li>
+<li>Speed: 60 mph</li>
+<li>Count: 42 items</li>
+</ul>
+<h3 id="what-is-a-vector">What is a Vector?</h3>
+<p>A <strong>vector</strong> is an ordered collection of scalars that represents both magnitude and direction. While scalars tell us "how much," vectors tell us "how much and in which direction." Geometrically, we can visualize a vector as an arrow in space—the length represents magnitude, and the arrowhead indicates direction.</p>
+<p>More formally, a vector in <span class="arithmatex">\(n\)</span>-dimensional space is an ordered <span class="arithmatex">\(n\)</span>-tuple of real numbers:</p>
+<div class="arithmatex">\[\mathbf{v} = (v_1, v_2, \ldots, v_n)\]</div>
+<p>where each <span class="arithmatex">\(v_i\)</span> is a scalar component of the vector.</p>
+<h3 id="vector-notation">Vector Notation</h3>
+<p>Mathematical texts use several conventions for denoting vectors. Throughout this course, we use the following:</p>
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold lowercase</td>
+<td>Standard textbook notation</td>
+<td><span class="arithmatex">\(\mathbf{v}\)</span>, <span class="arithmatex">\(\mathbf{u}\)</span>, <span class="arithmatex">\(\mathbf{w}\)</span></td>
+</tr>
+<tr>
+<td>Arrow above</td>
+<td>Handwritten notation</td>
+<td><span class="arithmatex">\(\vec{v}\)</span>, <span class="arithmatex">\(\vec{u}\)</span></td>
+</tr>
+<tr>
+<td>Column matrix</td>
+<td>Computational notation</td>
+<td><span class="arithmatex">\(\begin{bmatrix} v_1 \\ v_2 \end{bmatrix}\)</span></td>
+</tr>
+<tr>
+<td>Row matrix</td>
+<td>Alternative notation</td>
+<td><span class="arithmatex">\([v_1 \quad v_2]\)</span></td>
+</tr>
+<tr>
+<td>Component form</td>
+<td>Explicit values</td>
+<td><span class="arithmatex">\((3, 4)\)</span> or <span class="arithmatex">\(\langle 3, 4 \rangle\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Notation in Code</p>
+<p>In programming contexts like NumPy, vectors are typically represented as one-dimensional arrays: <code>v = np.array([3, 4, 5])</code>.</p>
+</div>
+<h2 id="vectors-in-different-dimensions">Vectors in Different Dimensions</h2>
+<h3 id="2d-vectors">2D Vectors</h3>
+<p>A <strong>2D vector</strong> exists in a two-dimensional plane and consists of two components. We write a 2D vector as:</p>
+<div class="arithmatex">\[\mathbf{v} = \begin{bmatrix} v_x \\ v_y \end{bmatrix}\]</div>
+<p>where <span class="arithmatex">\(v_x\)</span> is the horizontal component and <span class="arithmatex">\(v_y\)</span> is the vertical component. Geometrically, this represents an arrow from the origin to the point <span class="arithmatex">\((v_x, v_y)\)</span>.</p>
+<p>Common applications of 2D vectors include:</p>
+<ul>
+<li>Position coordinates on a screen</li>
+<li>Velocity in a plane</li>
+<li>Force components in 2D physics simulations</li>
+</ul>
+<h3 id="3d-vectors">3D Vectors</h3>
+<p>A <strong>3D vector</strong> extends into three-dimensional space with three components:</p>
+<div class="arithmatex">\[\mathbf{v} = \begin{bmatrix} v_x \\ v_y \\ v_z \end{bmatrix}\]</div>
+<p>The additional <span class="arithmatex">\(z\)</span>-component allows us to represent quantities in our three-dimensional world, such as the position of a drone or the direction of a camera in virtual reality.</p>
+<h4 id="diagram-2d-and-3d-vector-visualization">Diagram: 2D and 3D Vector Visualization</h4>
+<iframe src="../../sims/vector-2d-3d-visualizer" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>2D and 3D Vector Visualization MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: interpret, visualize</p>
+<p>Learning Objective: Students will interpret vectors geometrically by visualizing how component values determine position and direction in 2D and 3D coordinate systems.</p>
+<p>Canvas layout:
+- Left panel (500px): 2D vector visualization with coordinate grid
+- Right panel (400px): 3D vector visualization with rotatable axes
+- Bottom controls: Component sliders and toggle switches</p>
+<p>Visual elements:
+- 2D coordinate grid with x and y axes, grid lines at unit intervals
+- 3D coordinate system with x, y, z axes (perspective view)
+- Vector arrow from origin to point, with distinct arrowhead
+- Dashed projection lines from vector tip to each axis
+- Component labels showing current values
+- Origin point clearly marked</p>
+<p>Interactive controls:
+- Slider: x-component (-5 to 5, default 3)
+- Slider: y-component (-5 to 5, default 4)
+- Slider: z-component (-5 to 5, default 2) for 3D view
+- Toggle: Show/hide projection lines
+- Toggle: Show/hide component labels
+- Button: Switch between 2D and 3D views
+- For 3D: Mouse drag to rotate view</p>
+<p>Default parameters:
+- 2D vector: (3, 4)
+- 3D vector: (3, 4, 2)
+- Projection lines: visible
+- Component labels: visible</p>
+<p>Behavior:
+- As sliders change, vector arrow updates in real-time
+- Projection lines dynamically connect to axis intersections
+- Magnitude value updates and displays
+- 3D view allows full rotation with mouse drag</p>
+<p>Implementation: p5.js with WEBGL for 3D rendering</p>
+</details>
+<h3 id="n-dimensional-vectors">N-Dimensional Vectors</h3>
+<p>An <strong>N-dimensional vector</strong> generalizes to any number of dimensions:</p>
+<div class="arithmatex">\[\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}\]</div>
+<p>While we cannot visualize vectors beyond three dimensions geometrically, the mathematical operations extend naturally. In machine learning, it's common to work with vectors having hundreds or thousands of dimensions:</p>
+<ul>
+<li>Word embeddings: 300-dimensional vectors representing word meanings</li>
+<li>Image features: 2048-dimensional vectors from convolutional neural networks</li>
+<li>User preference vectors: 100+ dimensions in recommendation systems</li>
+</ul>
+<p>The power of linear algebra is that the same operations and theorems apply regardless of dimensionality.</p>
+<h2 id="basic-vector-operations">Basic Vector Operations</h2>
+<h3 id="vector-addition">Vector Addition</h3>
+<p><strong>Vector addition</strong> combines two vectors of the same dimension by adding their corresponding components:</p>
+<div class="arithmatex">\[\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix} + \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}\]</div>
+<p>Geometrically, vector addition follows the <strong>parallelogram rule</strong> or the <strong>tip-to-tail method</strong>. If you place the tail of <span class="arithmatex">\(\mathbf{v}\)</span> at the tip of <span class="arithmatex">\(\mathbf{u}\)</span>, the sum <span class="arithmatex">\(\mathbf{u} + \mathbf{v}\)</span> points from the tail of <span class="arithmatex">\(\mathbf{u}\)</span> to the tip of <span class="arithmatex">\(\mathbf{v}\)</span>.</p>
+<p>Vector addition has the following properties:</p>
+<ul>
+<li><strong>Commutative:</strong> <span class="arithmatex">\(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\)</span></li>
+<li><strong>Associative:</strong> <span class="arithmatex">\((\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})\)</span></li>
+<li><strong>Identity:</strong> <span class="arithmatex">\(\mathbf{v} + \mathbf{0} = \mathbf{v}\)</span></li>
+<li><strong>Inverse:</strong> <span class="arithmatex">\(\mathbf{v} + (-\mathbf{v}) = \mathbf{0}\)</span></li>
+</ul>
+<h3 id="scalar-multiplication">Scalar Multiplication</h3>
+<p><strong>Scalar multiplication</strong> multiplies each component of a vector by a scalar value:</p>
+<div class="arithmatex">\[c \cdot \mathbf{v} = c \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} = \begin{bmatrix} c \cdot v_1 \\ c \cdot v_2 \\ \vdots \\ c \cdot v_n \end{bmatrix}\]</div>
+<p>The geometric effect of scalar multiplication:</p>
+<ul>
+<li><span class="arithmatex">\(c &gt; 1\)</span>: Stretches the vector (increases magnitude)</li>
+<li><span class="arithmatex">\(0 &lt; c &lt; 1\)</span>: Shrinks the vector (decreases magnitude)</li>
+<li><span class="arithmatex">\(c = 0\)</span>: Produces the zero vector</li>
+<li><span class="arithmatex">\(c &lt; 0\)</span>: Reverses direction and scales magnitude</li>
+</ul>
+<h3 id="vector-subtraction">Vector Subtraction</h3>
+<p><strong>Vector subtraction</strong> is defined in terms of addition and scalar multiplication:</p>
+<div class="arithmatex">\[\mathbf{u} - \mathbf{v} = \mathbf{u} + (-1)\mathbf{v}\]</div>
+<p>This yields component-wise subtraction:</p>
+<div class="arithmatex">\[\mathbf{u} - \mathbf{v} = \begin{bmatrix} u_1 - v_1 \\ u_2 - v_2 \\ \vdots \\ u_n - v_n \end{bmatrix}\]</div>
+<h4 id="diagram-vector-operations-playground">Diagram: Vector Operations Playground</h4>
+<iframe src="../../sims/vector-operations-playground" width="100%" height="550px" scrolling="no"></iframe>
+
+<details>
+<summary>Vector Operations Playground MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute, practice, demonstrate</p>
+<p>Learning Objective: Students will apply vector addition, subtraction, and scalar multiplication by manipulating vectors interactively and predicting results before seeing them visualized.</p>
+<p>Canvas layout:
+- Main area (600px): Coordinate grid showing vectors
+- Right panel (200px): Controls and result display
+- Bottom: Operation selector and calculation display</p>
+<p>Visual elements:
+- Coordinate grid with axes from -10 to 10
+- Vector u (blue arrow) with adjustable endpoint
+- Vector v (red arrow) with adjustable endpoint
+- Result vector (green arrow) showing operation result
+- Parallelogram outline when showing addition (dashed lines)
+- Component labels on each vector
+- Magnitude display for each vector</p>
+<p>Interactive controls:
+- Draggable endpoints for vectors u and v
+- Radio buttons: Addition, Subtraction, Scalar Multiply
+- Slider: Scalar value c (-3 to 3, default 2) for scalar multiplication
+- Checkbox: Show parallelogram construction
+- Checkbox: Show component breakdown
+- Button: Animate operation step-by-step
+- Button: Reset to defaults</p>
+<p>Default parameters:
+- Vector u: (3, 2)
+- Vector v: (1, 4)
+- Operation: Addition
+- Scalar: 2
+- Show parallelogram: true</p>
+<p>Behavior:
+- Dragging vector endpoints updates all calculations in real-time
+- Operation result vector updates immediately
+- Step-by-step animation shows geometric construction
+- Component breakdown displays numerical computation
+- Parallelogram appears for addition to show geometric interpretation</p>
+<p>Implementation: p5.js with drag-and-drop interaction</p>
+</details>
+<h2 id="vector-products">Vector Products</h2>
+<h3 id="the-dot-product">The Dot Product</h3>
+<p>The <strong>dot product</strong> (also called the inner product or scalar product) takes two vectors of the same dimension and returns a scalar. For vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span>:</p>
+<div class="arithmatex">\[\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n\]</div>
+<p>The geometric interpretation reveals the dot product's significance:</p>
+<div class="arithmatex">\[\mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \|\mathbf{v}\| \cos\theta\]</div>
+<p>where <span class="arithmatex">\(\theta\)</span> is the angle between the vectors and <span class="arithmatex">\(\|\cdot\|\)</span> denotes magnitude. This relationship connects algebraic computation with geometric meaning.</p>
+<p>Key properties and insights:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Geometric Meaning</th>
+<th>Dot Product Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta = 0°\)</span></td>
+<td>Vectors point same direction</td>
+<td>Maximum positive</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta = 90°\)</span></td>
+<td>Vectors are perpendicular</td>
+<td>Zero</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta = 180°\)</span></td>
+<td>Vectors point opposite directions</td>
+<td>Maximum negative</td>
+</tr>
+</tbody>
+</table>
+<p>The dot product has important applications:</p>
+<ul>
+<li>Computing angles between vectors</li>
+<li>Projecting one vector onto another</li>
+<li>Calculating work in physics (force · displacement)</li>
+<li>Measuring similarity between feature vectors</li>
+</ul>
+<h3 id="the-cross-product">The Cross Product</h3>
+<p>The <strong>cross product</strong> is defined only for 3D vectors and produces a vector perpendicular to both input vectors:</p>
+<div class="arithmatex">\[\mathbf{u} \times \mathbf{v} = \begin{bmatrix} u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1 \end{bmatrix}\]</div>
+<p>The magnitude of the cross product equals the area of the parallelogram formed by the two vectors:</p>
+<div class="arithmatex">\[\|\mathbf{u} \times \mathbf{v}\| = \|\mathbf{u}\| \|\mathbf{v}\| \sin\theta\]</div>
+<p>The direction follows the <strong>right-hand rule</strong>: if you curl your fingers from <span class="arithmatex">\(\mathbf{u}\)</span> toward <span class="arithmatex">\(\mathbf{v}\)</span>, your thumb points in the direction of <span class="arithmatex">\(\mathbf{u} \times \mathbf{v}\)</span>.</p>
+<p>Important properties of the cross product:</p>
+<ul>
+<li><strong>Anti-commutative:</strong> <span class="arithmatex">\(\mathbf{u} \times \mathbf{v} = -(\mathbf{v} \times \mathbf{u})\)</span></li>
+<li><strong>Not associative:</strong> <span class="arithmatex">\((\mathbf{u} \times \mathbf{v}) \times \mathbf{w} \neq \mathbf{u} \times (\mathbf{v} \times \mathbf{w})\)</span></li>
+<li><strong>Self-cross is zero:</strong> <span class="arithmatex">\(\mathbf{v} \times \mathbf{v} = \mathbf{0}\)</span></li>
+</ul>
+<h4 id="diagram-dot-product-and-cross-product-visualizer">Diagram: Dot Product and Cross Product Visualizer</h4>
+<iframe src="../../sims/dot-cross-product-visualizer" width="100%" height="550px" scrolling="no"></iframe>
+
+<details>
+<summary>Dot Product and Cross Product Visualizer MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine, compare, differentiate</p>
+<p>Learning Objective: Students will analyze the geometric relationship between dot product (projection and angle) and cross product (perpendicular vector and area) by manipulating vectors and observing how the products change.</p>
+<p>Canvas layout:
+- Left panel (400px): 2D view for dot product with projection visualization
+- Right panel (400px): 3D view for cross product with parallelogram and result vector
+- Bottom panel: Numerical results and formulas</p>
+<p>Visual elements:
+- 2D panel: Two vectors, projection line, angle arc, shaded projection component
+- 3D panel: Two vectors, cross product result vector (perpendicular), parallelogram surface
+- Angle measurement display with theta symbol
+- Area calculation display for parallelogram
+- Formula display showing computation steps</p>
+<p>Interactive controls:
+- Draggable vector endpoints in both panels
+- Slider: Angle between vectors (0° to 180°)
+- Toggle: Show projection in 2D
+- Toggle: Show parallelogram in 3D
+- Toggle: Show right-hand rule animation
+- Button: Animate angle sweep from 0° to 180°
+- 3D rotation via mouse drag</p>
+<p>Default parameters:
+- Vector u: (3, 2) in 2D, (3, 2, 0) in 3D
+- Vector v: (4, 1) in 2D, (1, 4, 0) in 3D
+- Show projection: true
+- Show parallelogram: true</p>
+<p>Behavior:
+- Dot product value updates with cos(theta) relationship visible
+- When vectors perpendicular, dot product display highlights zero
+- Cross product vector length changes with parallelogram area
+- Right-hand rule animation shows finger curl and thumb direction
+- Numerical display shows step-by-step calculation</p>
+<p>Implementation: p5.js with WEBGL for 3D panel</p>
+</details>
+<h2 id="magnitude-and-norms">Magnitude and Norms</h2>
+<h3 id="vector-magnitude">Vector Magnitude</h3>
+<p>The <strong>magnitude</strong> (or length) of a vector measures how far the vector extends from the origin. For a vector <span class="arithmatex">\(\mathbf{v} = (v_1, v_2, \ldots, v_n)\)</span>, the magnitude is:</p>
+<div class="arithmatex">\[\|\mathbf{v}\| = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} = \sqrt{\sum_{i=1}^{n} v_i^2}\]</div>
+<p>This formula is the generalization of the Pythagorean theorem to <span class="arithmatex">\(n\)</span> dimensions. For a 2D vector <span class="arithmatex">\((3, 4)\)</span>, the magnitude is <span class="arithmatex">\(\sqrt{9 + 16} = 5\)</span>.</p>
+<h3 id="understanding-norms">Understanding Norms</h3>
+<p>A <strong>norm</strong> is a function that assigns a non-negative length to each vector in a vector space. Different norms measure "length" differently, and each has applications in machine learning and optimization.</p>
+<h4 id="l2-norm-euclidean-norm">L2 Norm (Euclidean Norm)</h4>
+<p>The <strong>L2 norm</strong> is the standard Euclidean distance from the origin:</p>
+<div class="arithmatex">\[\|\mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{n} v_i^2}\]</div>
+<p>This is the magnitude we computed above. It's the "straight-line" distance and is used extensively in:</p>
+<ul>
+<li>Least squares regression</li>
+<li>Euclidean distance calculations</li>
+<li>Ridge regularization (L2 regularization)</li>
+</ul>
+<h4 id="l1-norm-manhattan-norm">L1 Norm (Manhattan Norm)</h4>
+<p>The <strong>L1 norm</strong> sums the absolute values of components:</p>
+<div class="arithmatex">\[\|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|\]</div>
+<p>Named after the grid-like street layout of Manhattan, this norm measures distance as if you could only travel along axes. It's used in:</p>
+<ul>
+<li>Lasso regularization (L1 regularization)</li>
+<li>Robust statistics</li>
+<li>Sparse signal recovery</li>
+</ul>
+<h4 id="l-infinity-norm-maximum-norm">L-Infinity Norm (Maximum Norm)</h4>
+<p>The <strong>L-infinity norm</strong> returns the maximum absolute component value:</p>
+<div class="arithmatex">\[\|\mathbf{v}\|_\infty = \max(|v_1|, |v_2|, \ldots, |v_n|)\]</div>
+<p>This norm is useful when you need to constrain the maximum deviation in any single dimension.</p>
+<h4 id="diagram-norm-comparison-visualizer">Diagram: Norm Comparison Visualizer</h4>
+<iframe src="../../sims/norm-comparison-visualizer" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Norm Comparison Visualizer MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare, contrast, differentiate</p>
+<p>Learning Objective: Students will compare and contrast L1, L2, and L-infinity norms by observing unit circles and distance measurements for each norm type.</p>
+<p>Canvas layout:
+- Main area (600px): Coordinate grid with unit "circles" for each norm
+- Right panel (200px): Numerical values and controls</p>
+<p>Visual elements:
+- Coordinate grid from -2 to 2 on both axes
+- Unit circle for L2 norm (actual circle, blue)
+- Unit "circle" for L1 norm (diamond/rhombus shape, green)
+- Unit "circle" for L-infinity norm (square, orange)
+- Point showing selected vector with lines to origin
+- Distance measurements for each norm displayed</p>
+<p>Interactive controls:
+- Draggable point to select vector
+- Checkboxes: Show L1, L2, L-infinity unit shapes (all on by default)
+- Slider: Adjust norm "radius" to see scaled shapes
+- Toggle: Animate point around each unit shape
+- Display: Current coordinates and all three norm values</p>
+<p>Default parameters:
+- Selected point: (0.6, 0.8)
+- All three norm shapes visible
+- Radius: 1</p>
+<p>Behavior:
+- As point is dragged, all three norm values update
+- Unit shapes clearly show different "distance = 1" definitions
+- Points on each unit shape highlight when norm equals 1
+- Animation moves point around each shape showing equal norm path</p>
+<p>Implementation: p5.js with parametric curve drawing</p>
+</details>
+<h3 id="euclidean-distance">Euclidean Distance</h3>
+<p>The <strong>Euclidean distance</strong> between two vectors measures the straight-line separation:</p>
+<div class="arithmatex">\[d(\mathbf{u}, \mathbf{v}) = \|\mathbf{u} - \mathbf{v}\|_2 = \sqrt{\sum_{i=1}^{n} (u_i - v_i)^2}\]</div>
+<p>This fundamental metric appears throughout machine learning:</p>
+<ul>
+<li>k-Nearest Neighbors classification</li>
+<li>K-means clustering</li>
+<li>Distance-based similarity measures</li>
+</ul>
+<h3 id="unit-vectors-and-normalization">Unit Vectors and Normalization</h3>
+<p>A <strong>unit vector</strong> has magnitude exactly 1. Any non-zero vector can be converted to a unit vector through <strong>normalization</strong>:</p>
+<div class="arithmatex">\[\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}\]</div>
+<p>The resulting vector <span class="arithmatex">\(\hat{\mathbf{v}}\)</span> (pronounced "v-hat") points in the same direction as <span class="arithmatex">\(\mathbf{v}\)</span> but has unit length. Normalization is essential for:</p>
+<ul>
+<li>Comparing vector directions without magnitude bias</li>
+<li>Creating orthonormal bases</li>
+<li>Preparing features for machine learning algorithms</li>
+</ul>
+<h2 id="linear-combinations-and-span">Linear Combinations and Span</h2>
+<h3 id="linear-combinations">Linear Combinations</h3>
+<p>A <strong>linear combination</strong> of vectors <span class="arithmatex">\(\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_k\)</span> is a sum of scalar multiples:</p>
+<div class="arithmatex">\[c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_k\mathbf{v}_k\]</div>
+<p>where <span class="arithmatex">\(c_1, c_2, \ldots, c_k\)</span> are scalars. Linear combinations allow us to create new vectors from existing ones and form the foundation for understanding vector spaces.</p>
+<p><strong>Example:</strong> Given <span class="arithmatex">\(\mathbf{v}_1 = (1, 0)\)</span> and <span class="arithmatex">\(\mathbf{v}_2 = (0, 1)\)</span>, the linear combination <span class="arithmatex">\(3\mathbf{v}_1 + 2\mathbf{v}_2 = (3, 2)\)</span>.</p>
+<h3 id="the-span-of-vectors">The Span of Vectors</h3>
+<p>The <strong>span</strong> of a set of vectors is the collection of all possible linear combinations of those vectors:</p>
+<div class="arithmatex">\[\text{span}\{\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_k\} = \{c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_k\mathbf{v}_k : c_i \in \mathbb{R}\}\]</div>
+<p>Geometrically, the span represents all points reachable by combining the vectors:</p>
+<ul>
+<li>The span of one non-zero vector is a line through the origin</li>
+<li>The span of two non-parallel vectors in 3D is a plane through the origin</li>
+<li>The span of three non-coplanar vectors in 3D is all of <span class="arithmatex">\(\mathbb{R}^3\)</span></li>
+</ul>
+<h4 id="diagram-linear-combination-explorer">Diagram: Linear Combination Explorer</h4>
+<iframe src="../../sims/linear-combination-explorer" width="100%" height="550px" scrolling="no"></iframe>
+
+<details>
+<summary>Linear Combination Explorer MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: use, demonstrate, calculate</p>
+<p>Learning Objective: Students will apply their understanding of linear combinations by adjusting scalar coefficients to reach target points and observe how span is generated.</p>
+<p>Canvas layout:
+- Main area (550px): 2D coordinate grid with vectors and span visualization
+- Right panel (250px): Controls for coefficients and target challenges</p>
+<p>Visual elements:
+- Coordinate grid from -6 to 6
+- Two basis vectors v1 (red) and v2 (blue) with adjustable directions
+- Scaled versions c1<em>v1 (light red) and c2</em>v2 (light blue)
+- Result vector as sum (green, thick arrow)
+- Shaded region showing span (when two vectors span a plane)
+- Target point for challenges (yellow star)
+- Trail showing path as coefficients change</p>
+<p>Interactive controls:
+- Slider: Coefficient c1 (-3 to 3, step 0.1)
+- Slider: Coefficient c2 (-3 to 3, step 0.1)
+- Draggable endpoints to adjust v1 and v2 directions
+- Toggle: Show span region (shaded area)
+- Toggle: Show component arrows tip-to-tail
+- Button: Random target challenge
+- Button: Show solution for current target
+- Display: Current linear combination equation</p>
+<p>Default parameters:
+- v1: (2, 1)
+- v2: (1, 2)
+- c1: 1, c2: 1
+- Show span: true
+- Show components: true</p>
+<p>Behavior:
+- Adjusting c1/c2 sliders moves result vector smoothly
+- Target challenges require finding correct coefficients
+- When vectors are parallel, span collapses to a line (visual feedback)
+- Component arrows show tip-to-tail construction of sum</p>
+<p>Implementation: p5.js with slider controls</p>
+</details>
+<h2 id="linear-independence-and-dependence">Linear Independence and Dependence</h2>
+<h3 id="linear-independence">Linear Independence</h3>
+<p>A set of vectors <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_k\}\)</span> is <strong>linearly independent</strong> if the only solution to:</p>
+<div class="arithmatex">\[c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_k\mathbf{v}_k = \mathbf{0}\]</div>
+<p>is <span class="arithmatex">\(c_1 = c_2 = \cdots = c_k = 0\)</span>. In other words, no vector in the set can be written as a linear combination of the others.</p>
+<p>Geometric interpretation:</p>
+<ul>
+<li>Two vectors are linearly independent if they are not parallel</li>
+<li>Three vectors in 3D are linearly independent if they don't all lie in the same plane</li>
+<li>Linearly independent vectors point in "genuinely different" directions</li>
+</ul>
+<h3 id="linear-dependence">Linear Dependence</h3>
+<p>Vectors are <strong>linearly dependent</strong> if at least one can be expressed as a linear combination of the others. This occurs when there exist scalars, not all zero, such that:</p>
+<div class="arithmatex">\[c_1\mathbf{v}_1 + c_2\mathbf{v}_2 + \cdots + c_k\mathbf{v}_k = \mathbf{0}\]</div>
+<p><strong>Example of dependence:</strong> The vectors <span class="arithmatex">\(\mathbf{v}_1 = (1, 2)\)</span>, <span class="arithmatex">\(\mathbf{v}_2 = (2, 4)\)</span>, and <span class="arithmatex">\(\mathbf{v}_3 = (3, 6)\)</span> are linearly dependent because <span class="arithmatex">\(\mathbf{v}_2 = 2\mathbf{v}_1\)</span> and <span class="arithmatex">\(\mathbf{v}_3 = 3\mathbf{v}_1\)</span>. They all lie on the same line.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Linearly Independent</th>
+<th>Linearly Dependent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unique representation</td>
+<td>Each point in span has unique coefficients</td>
+<td>Multiple ways to reach same point</td>
+</tr>
+<tr>
+<td>Redundancy</td>
+<td>No redundant vectors</td>
+<td>At least one vector is redundant</td>
+</tr>
+<tr>
+<td>Span efficiency</td>
+<td>Minimal set to span a subspace</td>
+<td>Could remove vectors without reducing span</td>
+</tr>
+</tbody>
+</table>
+<h2 id="basis-and-coordinate-systems">Basis and Coordinate Systems</h2>
+<h3 id="basis-vectors">Basis Vectors</h3>
+<p>A <strong>basis</strong> for a vector space is a set of linearly independent vectors that span the entire space. Every vector in the space can be written uniquely as a linear combination of basis vectors.</p>
+<p>A basis provides:</p>
+<ul>
+<li>A coordinate system for the space</li>
+<li>A way to represent any vector as a list of coefficients</li>
+<li>The minimum number of vectors needed to describe the space</li>
+</ul>
+<h3 id="the-standard-basis">The Standard Basis</h3>
+<p>The <strong>standard basis</strong> for <span class="arithmatex">\(\mathbb{R}^n\)</span> consists of vectors with a single 1 and all other components 0:</p>
+<p>For <span class="arithmatex">\(\mathbb{R}^2\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>\)</span></p>
+<p>For <span class="arithmatex">\(\mathbb{R}^3\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\)</span>\)</span></p>
+<p>The standard basis vectors align with the coordinate axes, making them intuitive for visualization and computation.</p>
+<h3 id="coordinate-systems">Coordinate Systems</h3>
+<p>A <strong>coordinate system</strong> assigns a unique tuple of numbers to each point in space. When we choose a basis <span class="arithmatex">\(\{\mathbf{b}_1, \mathbf{b}_2, \ldots, \mathbf{b}_n\}\)</span>, any vector <span class="arithmatex">\(\mathbf{v}\)</span> can be written as:</p>
+<div class="arithmatex">\[\mathbf{v} = c_1\mathbf{b}_1 + c_2\mathbf{b}_2 + \cdots + c_n\mathbf{b}_n\]</div>
+<p>The coefficients <span class="arithmatex">\((c_1, c_2, \ldots, c_n)\)</span> are the <strong>coordinates</strong> of <span class="arithmatex">\(\mathbf{v}\)</span> with respect to this basis. Different bases give different coordinate representations of the same vector.</p>
+<h4 id="diagram-basis-and-coordinate-system-visualizer">Diagram: Basis and Coordinate System Visualizer</h4>
+<iframe src="../../sims/basis-coordinate-visualizer" width="100%" height="550px" scrolling="no"></iframe>
+
+<details>
+<summary>Basis and Coordinate System Visualizer MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret, compare</p>
+<p>Learning Objective: Students will interpret how the same point has different coordinate representations in different bases by visualizing standard and custom basis vectors simultaneously.</p>
+<p>Canvas layout:
+- Left panel (400px): Standard basis grid with vector
+- Right panel (400px): Custom basis grid with same vector
+- Bottom: Coordinate comparison display</p>
+<p>Visual elements:
+- Standard basis: Traditional x-y grid with e1, e2 as unit vectors
+- Custom basis: Skewed grid based on chosen basis vectors b1, b2
+- Same geometric vector shown in both coordinate systems
+- Grid lines parallel to basis vectors in each panel
+- Coordinate labels showing (x,y) in standard and (c1,c2) in custom
+- Dashed lines from vector tip to axes showing coordinates</p>
+<p>Interactive controls:
+- Draggable point to select vector (synced between panels)
+- Draggable endpoints for custom basis vectors b1 and b2
+- Preset buttons: Standard, Rotated 45°, Skewed, Stretched
+- Toggle: Show grid lines
+- Toggle: Show coordinate projections
+- Animation: Morph from standard to custom basis</p>
+<p>Default parameters:
+- Vector: (3, 2) in standard basis
+- Custom basis: b1 = (2, 0), b2 = (1, 1)
+- Grid lines: visible
+- Projections: visible</p>
+<p>Behavior:
+- Moving point updates coordinates in both systems
+- Changing custom basis redraws right panel grid
+- Coordinates update in real-time showing transformation
+- Morph animation shows how grid deforms between bases</p>
+<p>Implementation: p5.js with matrix transformation for grid rendering</p>
+</details>
+<h2 id="vector-spaces">Vector Spaces</h2>
+<h3 id="definition-of-a-vector-space">Definition of a Vector Space</h3>
+<p>A <strong>vector space</strong> is a collection of objects called vectors that satisfies ten axioms regarding addition and scalar multiplication. For a set <span class="arithmatex">\(V\)</span> to be a vector space over a field <span class="arithmatex">\(F\)</span> (typically <span class="arithmatex">\(\mathbb{R}\)</span>), it must satisfy:</p>
+<p><strong>Addition axioms:</strong></p>
+<ol>
+<li>Closure: <span class="arithmatex">\(\mathbf{u} + \mathbf{v} \in V\)</span></li>
+<li>Commutativity: <span class="arithmatex">\(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\)</span></li>
+<li>Associativity: <span class="arithmatex">\((\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})\)</span></li>
+<li>Identity: There exists <span class="arithmatex">\(\mathbf{0}\)</span> such that <span class="arithmatex">\(\mathbf{v} + \mathbf{0} = \mathbf{v}\)</span></li>
+<li>Inverse: For each <span class="arithmatex">\(\mathbf{v}\)</span>, there exists <span class="arithmatex">\(-\mathbf{v}\)</span> such that <span class="arithmatex">\(\mathbf{v} + (-\mathbf{v}) = \mathbf{0}\)</span></li>
+</ol>
+<p><strong>Scalar multiplication axioms:</strong></p>
+<ol>
+<li>Closure: <span class="arithmatex">\(c\mathbf{v} \in V\)</span></li>
+<li>Distributivity (vectors): <span class="arithmatex">\(c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}\)</span></li>
+<li>Distributivity (scalars): <span class="arithmatex">\((c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}\)</span></li>
+<li>Associativity: <span class="arithmatex">\(c(d\mathbf{v}) = (cd)\mathbf{v}\)</span></li>
+<li>Identity: <span class="arithmatex">\(1\mathbf{v} = \mathbf{v}\)</span></li>
+</ol>
+<h3 id="examples-of-vector-spaces">Examples of Vector Spaces</h3>
+<p>The most familiar vector space is <span class="arithmatex">\(\mathbb{R}^n\)</span>, but vector spaces are more general:</p>
+<table>
+<thead>
+<tr>
+<th>Vector Space</th>
+<th>Elements</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>n-tuples of real numbers</td>
+<td>Component-wise addition/scaling</td>
+</tr>
+<tr>
+<td>Polynomials of degree ≤ n</td>
+<td>Polynomials <span class="arithmatex">\(a_0 + a_1x + \cdots + a_nx^n\)</span></td>
+<td>Add coefficients, scale coefficients</td>
+</tr>
+<tr>
+<td>Continuous functions on <span class="arithmatex">\([a,b]\)</span></td>
+<td>Functions <span class="arithmatex">\(f: [a,b] \to \mathbb{R}\)</span></td>
+<td><span class="arithmatex">\((f+g)(x) = f(x) + g(x)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m \times n\)</span> matrices</td>
+<td>Matrices with <span class="arithmatex">\(m\)</span> rows, <span class="arithmatex">\(n\)</span> columns</td>
+<td>Matrix addition, scalar multiplication</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dimension-of-a-vector-space">Dimension of a Vector Space</h3>
+<p>The <strong>dimension</strong> of a vector space is the number of vectors in any basis. This count is always the same regardless of which basis you choose—a fundamental theorem of linear algebra.</p>
+<ul>
+<li><span class="arithmatex">\(\mathbb{R}^2\)</span> has dimension 2</li>
+<li><span class="arithmatex">\(\mathbb{R}^3\)</span> has dimension 3</li>
+<li>The space of polynomials of degree ≤ 3 has dimension 4 (basis: <span class="arithmatex">\(\{1, x, x^2, x^3\}\)</span>)</li>
+</ul>
+<p>Dimension tells us the "degrees of freedom" in a vector space—how many independent directions exist.</p>
+<h4 id="diagram-vector-space-axiom-explorer">Diagram: Vector Space Axiom Explorer</h4>
+<iframe src="../../sims/vector-space-axiom-explorer" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Vector Space Axiom Explorer Infographic</summary>
+<p>Type: infographic</p>
+<p>Bloom Level: Remember (L1)
+Bloom Verb: identify, recognize, list</p>
+<p>Learning Objective: Students will identify and recognize the ten vector space axioms through an interactive concept map with hover definitions and example demonstrations.</p>
+<p>Layout: Central hub showing "Vector Space" with two branches for Addition and Scalar Multiplication axioms</p>
+<p>Visual elements:
+- Central node: "Vector Space V over field F"
+- Left branch (blue theme): Five addition axiom nodes
+- Right branch (green theme): Five scalar multiplication axiom nodes
+- Each axiom node shows: name, symbolic form, geometric mini-visualization
+- Connection lines showing axiom groupings</p>
+<p>Interactive elements:
+- Hover over axiom node: Tooltip shows full definition and concrete example
+- Click axiom node: Animates a 2D example demonstrating the axiom
+- Hover over "V": Shows examples of vector spaces
+- Hover over "F": Shows examples of fields (R, C)
+- Progress tracker: Checkmarks for viewed axioms</p>
+<p>Hover text content:
+- Closure (add): "For any u, v in V, the sum u + v is also in V"
+- Commutativity: "Order doesn't matter: u + v = v + u"
+- Associativity (add): "Grouping doesn't matter: (u + v) + w = u + (v + w)"
+- Additive identity: "The zero vector 0 exists: v + 0 = v"
+- Additive inverse: "Every vector has an opposite: v + (-v) = 0"
+- Closure (scalar): "For any scalar c and v in V, cv is also in V"
+- Distributivity (vectors): "c(u + v) = cu + cv"
+- Distributivity (scalars): "(c + d)v = cv + dv"
+- Associativity (scalar): "c(dv) = (cd)v"
+- Scalar identity: "1v = v"</p>
+<p>Visual style: Modern node-and-edge layout with pastel colors</p>
+<p>Implementation: HTML/CSS/JavaScript with SVG nodes and CSS transitions</p>
+</details>
+<h2 id="applications-in-ai-and-machine-learning">Applications in AI and Machine Learning</h2>
+<p>The concepts introduced in this chapter form the foundation for understanding machine learning algorithms:</p>
+<h3 id="feature-vectors">Feature Vectors</h3>
+<p>Machine learning represents data points as vectors. A sample with features <span class="arithmatex">\((x_1, x_2, \ldots, x_n)\)</span> becomes a vector in <span class="arithmatex">\(\mathbb{R}^n\)</span>. Vector operations enable:</p>
+<ul>
+<li><strong>Distance-based classification:</strong> k-NN uses Euclidean distance between feature vectors</li>
+<li><strong>Similarity measures:</strong> Cosine similarity uses the dot product to compare vectors</li>
+<li><strong>Centering data:</strong> Subtracting the mean vector centers the dataset at the origin</li>
+</ul>
+<h3 id="word-embeddings">Word Embeddings</h3>
+<p>Natural language processing represents words as dense vectors (typically 100-300 dimensions). These embedding vectors capture semantic meaning:</p>
+<ul>
+<li>Similar words have nearby vectors (small Euclidean distance)</li>
+<li>Analogies appear as vector arithmetic: <span class="arithmatex">\(\vec{king} - \vec{man} + \vec{woman} \approx \vec{queen}\)</span></li>
+<li>The dot product measures semantic similarity</li>
+</ul>
+<h3 id="neural-network-parameters">Neural Network Parameters</h3>
+<p>Neural networks store learned knowledge in weight matrices and bias vectors. Forward propagation consists of:</p>
+<ol>
+<li>Linear combination: <span class="arithmatex">\(\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}\)</span></li>
+<li>Nonlinear activation: <span class="arithmatex">\(\mathbf{a} = \sigma(\mathbf{z})\)</span></li>
+</ol>
+<p>Understanding vector spaces helps interpret what neural networks learn and how they transform data.</p>
+<h2 id="summary_1">Summary</h2>
+<p>This chapter established the fundamental concepts of linear algebra that underpin all subsequent topics:</p>
+<p><strong>Core Concepts:</strong></p>
+<ul>
+<li><strong>Scalars</strong> are single numbers; <strong>vectors</strong> are ordered collections with magnitude and direction</li>
+<li>Vectors exist in spaces of any dimension, from 2D and 3D to high-dimensional feature spaces</li>
+<li>Basic operations include <strong>addition</strong>, <strong>scalar multiplication</strong>, and <strong>subtraction</strong></li>
+</ul>
+<p><strong>Products and Measurements:</strong></p>
+<ul>
+<li>The <strong>dot product</strong> returns a scalar measuring projection and angle</li>
+<li>The <strong>cross product</strong> (3D only) returns a perpendicular vector</li>
+<li><strong>Norms</strong> (L1, L2, L-infinity) measure vector length in different ways</li>
+<li><strong>Normalization</strong> creates unit vectors for direction comparison</li>
+</ul>
+<p><strong>Abstract Structures:</strong></p>
+<ul>
+<li><strong>Linear combinations</strong> create new vectors from scaled sums</li>
+<li>The <strong>span</strong> is all reachable points through linear combinations</li>
+<li><strong>Linear independence</strong> means no vector is redundant</li>
+<li>A <strong>basis</strong> provides a coordinate system for a vector space</li>
+<li>The <strong>dimension</strong> counts basis vectors (degrees of freedom)</li>
+</ul>
+<p>These concepts provide the vocabulary and tools for the matrix operations, transformations, and decompositions explored in subsequent chapters.</p>
+<details class="question">
+<summary>Self-Check: Can you answer these questions?</summary>
+<ol>
+<li>What is the geometric interpretation of the dot product <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = 0\)</span>?</li>
+<li>If vectors <span class="arithmatex">\(\mathbf{v}_1\)</span>, <span class="arithmatex">\(\mathbf{v}_2\)</span>, <span class="arithmatex">\(\mathbf{v}_3\)</span> are linearly dependent, what does this mean geometrically in 3D?</li>
+<li>Why must a basis for <span class="arithmatex">\(\mathbb{R}^3\)</span> contain exactly three vectors?</li>
+<li>How does the L1 norm differ from the L2 norm when measuring the vector <span class="arithmatex">\((3, 4)\)</span>?</li>
+</ol>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-matrices-and-matrix-operations/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Matrices and Matrix Operations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Matrices and Matrix Operations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
