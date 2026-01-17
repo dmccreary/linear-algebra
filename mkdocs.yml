@@ -1,3 +1,44 @@
+site_name: Linear Algebra
+repo_url: https://github.com/dmccreary/linear-Algebra
+site_url: https://dmccreary.github.io/linear-Algebra/
+site_description: An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.
+site_author: Dan McCreary
+
+nav:
+  - Home: index.md
+  - Course Description: course-description.md
+  
+  - Chapters:
+    - Overview: chapters/index.md
+    - 1.Vectors and Vector Spaces: chapters/01-vectors-and-vector-spaces/index.md
+    - 2. Matrices and Matrix Operations: chapters/02-matrices-and-matrix-operations/index.md
+    - 3.Systems of Linear Equations: chapters/03-systems-of-linear-equations/index.md
+    - 4. Linear Transformations: chapters/04-linear-transformations/index.md
+    - 5. Determinants and Matrix Properties: chapters/05-determinants-and-matrix-properties/index.md
+    - 6. Eigenvalues and Eigenvectors: chapters/06-eigenvalues-and-eigenvectors/index.md
+    - 7. Matrix Decompositions: chapters/07-matrix-decompositions/index.md
+    - 8. Vector Spaces and Inner Products: chapters/08-vector-spaces-and-inner-products/index.md
+    - 9. Machine Learning Foundations: chapters/09-machine-learning-foundations/index.md
+    - 10. Neural Networks and Deep Learning: chapters/10-neural-networks-and-deep-learning/index.md
+    - 11.Generative AI and LLMs: chapters/11-generative-ai-and-llms/index.md
+    - 12.Optimization and Learning Algorithms: chapters/12-optimization-and-learning-algorithms/index.md
+    - 13. Image Processing and Computer Vision: chapters/13-image-processing-and-computer-vision/index.md
+    - 14. 3D Geometry and Transformations: chapters/14-3d-geometry-and-transformations/index.md
+    - 15. Autonomous Systems and Sensor Fusion: chapters/15-autonomous-systems-and-sensor-fusion/index.md
+ 
+  - Learning Graph:
+    - Introduction: learning-graph/index.md
+    - Course Description Assessment: learning-graph/course-description-assessment.md
+    - Concept List: learning-graph/concept-list.md
+    - Quality Metrics: learning-graph/quality-metrics.md
+    - Concept Taxonomy: learning-graph/concept-taxonomy.md
+    - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+  
+  - MicroSims:
+    - Graph Viewer: sims/graph-viewer/index.md
+
+theme:
+  name: material
 markdown_extensions:
   - md_in_html
   - admonition
@@ -11,35 +52,3 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
-site_name: Intelligent Textbook for Applied Linear Algebra
-repo_url: https://github.com/ArtemisPearson/learning-graphs
-nav:
-  - Home: index.md
-  - Course Description: course-description.md
-  - Chapters:
-    - Overview: chapters/index.md
-    - Vectors and Vector Spaces: chapters/01-vectors-and-vector-spaces/index.md
-    - Matrices and Matrix Operations: chapters/02-matrices-and-matrix-operations/index.md
-    - Systems of Linear Equations: chapters/03-systems-of-linear-equations/index.md
-    - Linear Transformations: chapters/04-linear-transformations/index.md
-    - Determinants and Matrix Properties: chapters/05-determinants-and-matrix-properties/index.md
-    - Eigenvalues and Eigenvectors: chapters/06-eigenvalues-and-eigenvectors/index.md
-    - Matrix Decompositions: chapters/07-matrix-decompositions/index.md
-    - Vector Spaces and Inner Products: chapters/08-vector-spaces-and-inner-products/index.md
-    - Machine Learning Foundations: chapters/09-machine-learning-foundations/index.md
-    - Neural Networks and Deep Learning: chapters/10-neural-networks-and-deep-learning/index.md
-    - Generative AI and LLMs: chapters/11-generative-ai-and-llms/index.md
-    - Optimization and Learning Algorithms: chapters/12-optimization-and-learning-algorithms/index.md
-    - Image Processing and Computer Vision: chapters/13-image-processing-and-computer-vision/index.md
-    - 3D Geometry and Transformations: chapters/14-3d-geometry-and-transformations/index.md
-    - Autonomous Systems and Sensor Fusion: chapters/15-autonomous-systems-and-sensor-fusion/index.md
-  - Learning Graph:
-    - Introduction: learning-graph/index.md
-    - Course Description Assessment: learning-graph/course-description-assessment.md
-    - Concept List: learning-graph/concept-list.md
-    - Quality Metrics: learning-graph/quality-metrics.md
-    - Concept Taxonomy: learning-graph/concept-taxonomy.md
-    - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
-
-theme:
-  name: material
