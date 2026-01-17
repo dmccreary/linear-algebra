@@ -1,0 +1,17 @@
+{
+  "FOUND": "MistyRose",
+  "MATOP": "PeachPuff",
+  "LINSYS": "LightYellow",
+  "TRANS": "Honeydew",
+  "DETERM": "PaleTurquoise",
+  "EIGEN": "LightSteelBlue",
+  "DECOMP": "Lavender",
+  "INPROD": "LavenderBlush",
+  "MLBASE": "Thistle",
+  "NEURAL": "PaleGreen",
+  "GENAI": "Aquamarine",
+  "OPTIM": "LightPink",
+  "IMGPROC": "PowderBlue",
+  "GEOM3D": "Plum",
+  "AUTON": "LightCoral"
+}
