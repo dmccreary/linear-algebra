@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Space Axiom Explorer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .branch {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+        }
+
+        .branch-title {
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .branch-title:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .addition-branch .branch-title {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+
+        .scalar-branch .branch-title {
+            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+            color: white;
+        }
+
+        .axiom-card {
+            background: white;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .axiom-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .addition-branch .axiom-card {
+            border-left-color: #3498db;
+        }
+
+        .scalar-branch .axiom-card {
+            border-left-color: #27ae60;
+        }
+
+        .axiom-card.viewed {
+            background: #f8fffe;
+        }
+
+        .axiom-card.viewed::after {
+            content: '✓';
+            float: right;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .axiom-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .axiom-formula {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .axiom-details {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .axiom-card.expanded .axiom-details {
+            display: block;
+        }
+
+        .axiom-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .axiom-example {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .axiom-example strong {
+            color: #2c3e50;
+        }
+
+        .center-hub {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .hub-node {
+            display: inline-block;
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .hub-node:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+        }
+
+        .hub-tooltip {
+            display: none;
+            position: absolute;
+            background: white;
+            color: #333;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 280px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 13px;
+            text-align: left;
+            z-index: 100;
+        }
+
+        .hub-node:hover .hub-tooltip {
+            display: block;
+        }
+
+        .progress-bar {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .progress-fill {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .branch {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="title">Vector Space Axiom Explorer</h1>
+        <p class="subtitle">Click axioms to explore definitions and examples</p>
+
+        <div class="center-hub">
+            <div class="hub-node">
+                Vector Space V over Field F
+                <div class="hub-tooltip">
+                    <strong>Vector Space:</strong> A set V of objects (vectors) with two operations (addition and scalar multiplication) satisfying 10 axioms.<br><br>
+                    <strong>Examples of V:</strong> R², R³, polynomials, matrices, functions<br><br>
+                    <strong>Examples of F:</strong> Real numbers (R), Complex numbers (C)
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="branch addition-branch">
+                <div class="branch-title">Addition Axioms (5)</div>
+
+                <div class="axiom-card" data-axiom="closure-add">
+                    <div class="axiom-name">1. Closure under Addition</div>
+                    <div class="axiom-formula">u + v ∈ V</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            For any two vectors u and v in V, their sum u + v is also in V.
+                            The space is "closed" under addition.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example in R²:</strong><br>
+                            (1, 2) + (3, 4) = (4, 6) ∈ R²
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="commutative">
+                    <div class="axiom-name">2. Commutativity</div>
+                    <div class="axiom-formula">u + v = v + u</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            The order of addition doesn't matter. You can add vectors in any order and get the same result.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            (1, 2) + (3, 4) = (3, 4) + (1, 2) = (4, 6)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="associative-add">
+                    <div class="axiom-name">3. Associativity</div>
+                    <div class="axiom-formula">(u + v) + w = u + (v + w)</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            Grouping doesn't matter when adding three or more vectors.
+                            You can add them in any grouping.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            ((1,0) + (0,1)) + (1,1) = (1,0) + ((0,1) + (1,1))<br>
+                            = (2, 2)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="identity-add">
+                    <div class="axiom-name">4. Additive Identity</div>
+                    <div class="axiom-formula">v + 0 = v</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            There exists a zero vector 0 such that adding it to any vector v leaves v unchanged.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example in R²:</strong><br>
+                            (3, 4) + (0, 0) = (3, 4)<br>
+                            The zero vector is (0, 0).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="inverse-add">
+                    <div class="axiom-name">5. Additive Inverse</div>
+                    <div class="axiom-formula">v + (-v) = 0</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            Every vector v has an opposite -v such that their sum is the zero vector.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            (3, 4) + (-3, -4) = (0, 0)<br>
+                            The inverse of (3, 4) is (-3, -4).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="branch scalar-branch">
+                <div class="branch-title">Scalar Multiplication Axioms (5)</div>
+
+                <div class="axiom-card" data-axiom="closure-scalar">
+                    <div class="axiom-name">6. Closure under Scalar Multiplication</div>
+                    <div class="axiom-formula">cv ∈ V</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            For any scalar c and vector v in V, the product cv is also in V.
+                            Scaling a vector keeps it in the space.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            3 · (1, 2) = (3, 6) ∈ R²
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="distributive-vec">
+                    <div class="axiom-name">7. Distributivity (Vectors)</div>
+                    <div class="axiom-formula">c(u + v) = cu + cv</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            A scalar multiplied by a sum of vectors equals the sum of the scalar times each vector.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            2·((1,0) + (0,1)) = 2·(1,0) + 2·(0,1)<br>
+                            2·(1,1) = (2,0) + (0,2) = (2, 2) ✓
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="distributive-scalar">
+                    <div class="axiom-name">8. Distributivity (Scalars)</div>
+                    <div class="axiom-formula">(c + d)v = cv + dv</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            A sum of scalars times a vector equals the sum of each scalar times the vector.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            (2 + 3)·(1, 2) = 2·(1, 2) + 3·(1, 2)<br>
+                            5·(1, 2) = (2, 4) + (3, 6) = (5, 10) ✓
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="associative-scalar">
+                    <div class="axiom-name">9. Associativity (Scalars)</div>
+                    <div class="axiom-formula">c(dv) = (cd)v</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            Scaling by c then d is the same as scaling by their product cd.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            2·(3·(1, 2)) = (2·3)·(1, 2)<br>
+                            2·(3, 6) = 6·(1, 2) = (6, 12) ✓
+                        </div>
+                    </div>
+                </div>
+
+                <div class="axiom-card" data-axiom="identity-scalar">
+                    <div class="axiom-name">10. Scalar Identity</div>
+                    <div class="axiom-formula">1 · v = v</div>
+                    <div class="axiom-details">
+                        <div class="axiom-description">
+                            Multiplying any vector by the scalar 1 leaves the vector unchanged.
+                        </div>
+                        <div class="axiom-example">
+                            <strong>Example:</strong><br>
+                            1 · (3, 4) = (3, 4)<br>
+                            The identity scalar is 1.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <span class="progress-fill" id="progress">0 / 10 axioms viewed</span>
+        </div>
+    </main>
+
+    <script>
+        const viewedAxioms = new Set();
+
+        document.querySelectorAll('.axiom-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle expanded state
+                const wasExpanded = card.classList.contains('expanded');
+
+                // Close all other cards
+                document.querySelectorAll('.axiom-card').forEach(c => {
+                    c.classList.remove('expanded');
+                });
+
+                // Toggle this card
+                if (!wasExpanded) {
+                    card.classList.add('expanded');
+                    card.classList.add('viewed');
+
+                    // Track viewed
+                    const axiom = card.dataset.axiom;
+                    viewedAxioms.add(axiom);
+                    updateProgress();
+                }
+            });
+        });
+
+        function updateProgress() {
+            const progress = document.getElementById('progress');
+            progress.textContent = `${viewedAxioms.size} / 10 axioms viewed`;
+
+            if (viewedAxioms.size === 10) {
+                progress.style.background = '#27ae60';
+                progress.textContent = '✓ All 10 axioms viewed!';
+            }
+        }
+    </script>
+</body>
+</html>

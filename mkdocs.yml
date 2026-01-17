@@ -36,19 +36,52 @@ nav:
   
   - MicroSims:
     - Graph Viewer: sims/graph-viewer/index.md
+    - 2D and 3D Vector Visualization: sims/vector-2d-3d-visualizer/index.md
+    - Vector Operations Playground: sims/vector-operations-playground/index.md
+    - Dot Product and Cross Product Visualizer: sims/dot-cross-product-visualizer/index.md
+    - Norm Comparison Visualizer: sims/norm-comparison-visualizer/index.md
+    - Linear Combination Explorer: sims/linear-combination-explorer/index.md
+    - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
+    - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
 
 theme:
   name: material
+  logo: img/logo.png
+  favicon: img/favicon.ico
+  palette:
+    primary: 'navy'
+    accent: 'yellow'
+  include_sidebar: true
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+    - navigation.footer
+    - content.action.edit
+
+plugins:
+  - search
+  - social
+
 markdown_extensions:
   - md_in_html
+  - attr_list
   - admonition
   - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
   - pymdownx.arithmatex:
       generic: true
+
 extra_css:
   - css/extra.css
+
 extra_javascript:
-  - javascripts/config.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - js/extra.js
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
