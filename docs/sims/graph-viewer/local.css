@@ -97,7 +97,7 @@ body {
 
 /* ================================
    SIDEBAR CONTENT
-   Scrollable area containing search, legend, stats
+   containing search, legend, stats
    ================================ */
 .sidebar-content {
     flex: 1;
@@ -220,10 +220,8 @@ body {
     border-color: #bbb;
 }
 
-/* Legend items container - scrollable for many categories */
+/* Legend items container */
 #legend {
-    max-height: 400px;
-    overflow-y: auto;
 }
 
 /* Individual legend item (checkbox + color + label) */
