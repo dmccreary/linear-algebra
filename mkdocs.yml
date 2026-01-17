@@ -49,8 +49,8 @@ theme:
   logo: img/logo.png
   favicon: img/favicon.ico
   palette:
-    primary: 'navy'
-    accent: 'yellow'
+    primary: 'blue'
+    accent: 'green'
   include_sidebar: true
   features:
     - content.code.copy
