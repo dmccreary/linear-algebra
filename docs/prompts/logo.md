@@ -1,0 +1,1 @@
+Create a logo using minimalistic geometry for my new textbook on linear algebra. It should be usable as a favicon.

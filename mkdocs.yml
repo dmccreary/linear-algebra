@@ -46,8 +46,8 @@ nav:
 
 theme:
   name: material
-  # logo: img/logo.png  # TODO: add logo.png
-  # favicon: img/favicon.ico  # TODO: add favicon.ico
+  logo: img/logo.png
+  favicon: img/favicon.ico
   palette:
     primary: 'navy'
     accent: 'yellow'
