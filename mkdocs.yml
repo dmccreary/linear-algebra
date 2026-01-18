@@ -10,21 +10,51 @@ nav:
   
   - Chapters:
     - Overview: chapters/index.md
-    - 1.Vectors and Vector Spaces: chapters/01-vectors-and-vector-spaces/index.md
-    - 2. Matrices and Matrix Operations: chapters/02-matrices-and-matrix-operations/index.md
-    - 3.Systems of Linear Equations: chapters/03-systems-of-linear-equations/index.md
-    - 4. Linear Transformations: chapters/04-linear-transformations/index.md
-    - 5. Determinants and Matrix Properties: chapters/05-determinants-and-matrix-properties/index.md
-    - 6. Eigenvalues and Eigenvectors: chapters/06-eigenvalues-and-eigenvectors/index.md
-    - 7. Matrix Decompositions: chapters/07-matrix-decompositions/index.md
-    - 8. Vector Spaces and Inner Products: chapters/08-vector-spaces-and-inner-products/index.md
-    - 9. Machine Learning Foundations: chapters/09-machine-learning-foundations/index.md
-    - 10. Neural Networks and Deep Learning: chapters/10-neural-networks-and-deep-learning/index.md
-    - 11.Generative AI and LLMs: chapters/11-generative-ai-and-llms/index.md
-    - 12.Optimization and Learning Algorithms: chapters/12-optimization-and-learning-algorithms/index.md
-    - 13. Image Processing and Computer Vision: chapters/13-image-processing-and-computer-vision/index.md
-    - 14. 3D Geometry and Transformations: chapters/14-3d-geometry-and-transformations/index.md
-    - 15. Autonomous Systems and Sensor Fusion: chapters/15-autonomous-systems-and-sensor-fusion/index.md
+    - 1. Vectors and Vector Spaces:
+      - Content: chapters/01-vectors-and-vector-spaces/index.md
+      - Quiz: chapters/01-vectors-and-vector-spaces/quiz.md
+    - 2. Matrices and Matrix Operations:
+      - Content: chapters/02-matrices-and-matrix-operations/index.md
+      - Quiz: chapters/02-matrices-and-matrix-operations/quiz.md
+    - 3. Systems of Linear Equations:
+      - Content: chapters/03-systems-of-linear-equations/index.md
+      - Quiz: chapters/03-systems-of-linear-equations/quiz.md
+    - 4. Linear Transformations:
+      - Content: chapters/04-linear-transformations/index.md
+      - Quiz: chapters/04-linear-transformations/quiz.md
+    - 5. Determinants and Matrix Properties:
+      - Content: chapters/05-determinants-and-matrix-properties/index.md
+      - Quiz: chapters/05-determinants-and-matrix-properties/quiz.md
+    - 6. Eigenvalues and Eigenvectors:
+      - Content: chapters/06-eigenvalues-and-eigenvectors/index.md
+      - Quiz: chapters/06-eigenvalues-and-eigenvectors/quiz.md
+    - 7. Matrix Decompositions:
+      - Content: chapters/07-matrix-decompositions/index.md
+      - Quiz: chapters/07-matrix-decompositions/quiz.md
+    - 8. Vector Spaces and Inner Products:
+      - Content: chapters/08-vector-spaces-and-inner-products/index.md
+      - Quiz: chapters/08-vector-spaces-and-inner-products/quiz.md
+    - 9. Machine Learning Foundations:
+      - Content: chapters/09-machine-learning-foundations/index.md
+      - Quiz: chapters/09-machine-learning-foundations/quiz.md
+    - 10. Neural Networks and Deep Learning:
+      - Content: chapters/10-neural-networks-and-deep-learning/index.md
+      - Quiz: chapters/10-neural-networks-and-deep-learning/quiz.md
+    - 11. Generative AI and LLMs:
+      - Content: chapters/11-generative-ai-and-llms/index.md
+      - Quiz: chapters/11-generative-ai-and-llms/quiz.md
+    - 12. Optimization and Learning Algorithms:
+      - Content: chapters/12-optimization-and-learning-algorithms/index.md
+      - Quiz: chapters/12-optimization-and-learning-algorithms/quiz.md
+    - 13. Image Processing and Computer Vision:
+      - Content: chapters/13-image-processing-and-computer-vision/index.md
+      - Quiz: chapters/13-image-processing-and-computer-vision/quiz.md
+    - 14. 3D Geometry and Transformations:
+      - Content: chapters/14-3d-geometry-and-transformations/index.md
+      - Quiz: chapters/14-3d-geometry-and-transformations/quiz.md
+    - 15. Autonomous Systems and Sensor Fusion:
+      - Content: chapters/15-autonomous-systems-and-sensor-fusion/index.md
+      - Quiz: chapters/15-autonomous-systems-and-sensor-fusion/quiz.md
  
   - Learning Graph:
     - Introduction: learning-graph/index.md
@@ -34,8 +64,11 @@ nav:
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
     - Glossary Quality Report: learning-graph/glossary-quality-report.md
+    - FAQ Quality Report: learning-graph/faq-quality-report.md
+    - Quiz Generation Report: learning-graph/quiz-generation-report.md
   
   - Glossary: glossary.md
+  - FAQ: faq.md
 
   - MicroSims:
     - Graph Viewer: sims/graph-viewer/index.md
