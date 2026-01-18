@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>3.Systems of Linear Equations - Linear Algebra</title>
+        <title>Systems of Linear Equations - Linear Algebra</title>
       
     
     
@@ -73,9 +73,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="3.Systems of Linear Equations - Linear Algebra" >
+        <meta  property="og:title"  content="Systems of Linear Equations - Linear Algebra" >
       
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  property="og:description"  content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" >
       
         <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" >
       
@@ -89,9 +89,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="3.Systems of Linear Equations - Linear Algebra" >
+        <meta  name="twitter:title"  content="Systems of Linear Equations - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  name="twitter:description"  content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" >
       
         <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" >
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3.Systems of Linear Equations
+              Systems of Linear Equations
             
           </span>
         </div>
@@ -448,6 +448,13 @@
     2. Matrices and Matrix Operations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
@@ -478,6 +485,13 @@
     3.Systems of Linear Equations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -488,6 +502,13 @@
   <span class="md-ellipsis">
     3.Systems of Linear Equations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -534,6 +555,534 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-equations-and-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equations and Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Equations and Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-linear-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Linear Equation?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Linear Equation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-equation-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equation Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems-of-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systems of Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems of Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-system-of-equations-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: System of Equations Geometry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Representation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Representation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-equation-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Equation Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Equation Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-equation-form_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Equation Form
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-augmented-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Augmented Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-elementary-row-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Elementary Row Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Elementary Row Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-row-operations-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Row Operations Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussian-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Elimination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gaussian Elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Echelon Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Back Substitution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Back Substitution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-gaussian-elimination-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Gaussian Elimination Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduced-row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduced Row Echelon Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reduced Row Echelon Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition and Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-ref-and-rref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing REF and RREF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing REF and RREF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ref-vs-rref-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: REF vs RREF Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-solution-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Solution Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-and-free-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic and Free Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic and Free Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solution-set-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solution Set Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homogeneous-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homogeneous Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homogeneous Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-trivial-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Trivial Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existence-of-nontrivial-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Existence of Nontrivial Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-space-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Space Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution Space Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-homogeneous-system-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Homogeneous System Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Stability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Stability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources-of-numerical-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources of Numerical Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-pivoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partial Pivoting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condition Number
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condition Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-numerical-stability-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Numerical Stability Demonstration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balancing-chemical-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Chemical Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-flow-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Flow Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning: Linear Regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -556,6 +1105,13 @@
   <span class="md-ellipsis">
     4. Linear Transformations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -983,6 +1539,534 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-equations-and-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equations and Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Equations and Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-linear-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Linear Equation?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Linear Equation?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-equation-standard-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Equation Standard Form
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems-of-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systems of Equations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Systems of Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-system-of-equations-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: System of Equations Geometry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Representation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Representation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-equation-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Equation Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Equation Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-equation-form_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Equation Form
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-augmented-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Augmented Matrix
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-three-elementary-row-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Three Elementary Row Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Elementary Row Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-row-operations-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Row Operations Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaussian-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gaussian Elimination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gaussian Elimination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Echelon Form
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Back Substitution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Back Substitution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-gaussian-elimination-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Gaussian Elimination Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduced-row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reduced Row Echelon Form
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reduced Row Echelon Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition and Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-ref-and-rref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing REF and RREF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing REF and RREF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ref-vs-rref-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: REF vs RREF Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-solution-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Solution Sets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-and-free-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic and Free Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic and Free Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-solution-set-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Solution Set Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homogeneous-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Homogeneous Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homogeneous Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-trivial-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Trivial Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existence-of-nontrivial-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Existence of Nontrivial Solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-space-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution Space Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution Space Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-homogeneous-system-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Homogeneous System Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numerical Stability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Stability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources-of-numerical-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sources of Numerical Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-pivoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partial Pivoting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condition Number
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Condition Number">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-numerical-stability-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Numerical Stability Demonstration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balancing-chemical-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balancing Chemical Equations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-flow-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Flow Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning: Linear Regression
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1043,7 +2127,790 @@
 <li><a href="../02-matrices-and-matrix-operations/">Chapter 2: Matrices and Matrix Operations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Systems of linear equations appear everywhere in science, engineering, and data analysis. Whether you're balancing chemical reactions, analyzing electrical circuits, fitting models to data, or training neural networks, you're solving linear systems. This chapter develops the systematic methods for solving these systems and—equally important—understanding when solutions exist and what form they take.</p>
+<p>The power of linear algebra lies in its ability to represent complex systems compactly and solve them efficiently. A problem that might involve dozens or thousands of equations becomes a single matrix equation, and the solution emerges through systematic elimination procedures that computers execute with remarkable speed.</p>
+<h2 id="linear-equations-and-systems">Linear Equations and Systems</h2>
+<h3 id="what-is-a-linear-equation">What is a Linear Equation?</h3>
+<p>A <strong>linear equation</strong> in variables <span class="arithmatex">\(x_1, x_2, \ldots, x_n\)</span> has the form:</p>
+<h4 id="linear-equation-standard-form">Linear Equation Standard Form</h4>
+<p><span class="arithmatex">\(a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = b\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(a_1, a_2, \ldots, a_n\)</span> are the coefficients (constants)</li>
+<li><span class="arithmatex">\(x_1, x_2, \ldots, x_n\)</span> are the variables (unknowns)</li>
+<li><span class="arithmatex">\(b\)</span> is the constant term (right-hand side)</li>
+</ul>
+<p>The equation is "linear" because each variable appears only to the first power and is not multiplied by other variables. The graph of a linear equation in two variables is a line; in three variables, it's a plane.</p>
+<p>Examples of linear equations:</p>
+<ul>
+<li><span class="arithmatex">\(3x + 2y = 7\)</span></li>
+<li><span class="arithmatex">\(x_1 - 4x_2 + x_3 = 0\)</span></li>
+<li><span class="arithmatex">\(w + 2x - y + 3z = 5\)</span></li>
+</ul>
+<p>Non-linear equations (not covered by these methods):</p>
+<ul>
+<li><span class="arithmatex">\(x^2 + y = 5\)</span> (squared term)</li>
+<li><span class="arithmatex">\(xy = 3\)</span> (product of variables)</li>
+<li><span class="arithmatex">\(\sin(x) + y = 1\)</span> (nonlinear function)</li>
+</ul>
+<h3 id="systems-of-equations">Systems of Equations</h3>
+<p>A <strong>system of equations</strong> is a collection of two or more equations involving the same variables. A solution to the system must satisfy all equations simultaneously.</p>
+<p>Consider a system of <span class="arithmatex">\(m\)</span> linear equations in <span class="arithmatex">\(n\)</span> unknowns:</p>
+<p><span class="arithmatex">\(a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1\)</span></p>
+<p><span class="arithmatex">\(a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2\)</span></p>
+<p><span class="arithmatex">\(\vdots\)</span></p>
+<p><span class="arithmatex">\(a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m\)</span></p>
+<p>Geometrically, each equation defines a hyperplane, and solving the system means finding where all hyperplanes intersect.</p>
+<table>
+<thead>
+<tr>
+<th>Equations</th>
+<th>Variables</th>
+<th>Geometric Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2 equations</td>
+<td>2 variables</td>
+<td>Intersection of two lines</td>
+</tr>
+<tr>
+<td>3 equations</td>
+<td>3 variables</td>
+<td>Intersection of three planes</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m\)</span> equations</td>
+<td><span class="arithmatex">\(n\)</span> variables</td>
+<td>Intersection of <span class="arithmatex">\(m\)</span> hyperplanes in <span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-system-of-equations-geometry">Diagram: System of Equations Geometry</h4>
+<iframe src="../../sims/system-geometry/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>System of Equations Geometric Visualization</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: interpret, explain</p>
+<p>Learning Objective: Help students visualize how the solution to a system of linear equations corresponds to the geometric intersection of lines (2D) or planes (3D).</p>
+<p>Canvas layout:
+- Main area: 2D/3D coordinate system with equations plotted
+- Right panel: Equation display and controls</p>
+<p>Visual elements:
+- 2D mode: Two or three lines with intersection point highlighted
+- 3D mode: Two or three planes with intersection shown
+- Solution point marked with a distinct marker
+- Coordinate axes with labels
+- Grid for reference</p>
+<p>Interactive controls:
+- Toggle: 2D / 3D mode
+- Sliders: Coefficients for each equation (a, b, c values)
+- Dropdown: Number of equations (2 or 3)
+- Checkbox: Show solution coordinates
+- Button: Generate random system
+- Dropdown: Solution type (unique, infinite, none)</p>
+<p>Default parameters:
+- Mode: 2D
+- Equations: 2
+- Example: x + y = 3, x - y = 1 (solution at (2, 1))</p>
+<p>Behavior:
+- Lines/planes update in real-time as coefficients change
+- Intersection point updates dynamically
+- When lines are parallel (no solution), display message
+- When lines are coincident (infinite solutions), highlight entire line
+- 3D mode allows rotation and zoom</p>
+<p>Implementation: p5.js with WEBGL for 3D mode</p>
+</details>
+<h2 id="matrix-representation">Matrix Representation</h2>
+<h3 id="matrix-equation-form">Matrix Equation Form</h3>
+<p>Any system of linear equations can be written compactly as a single <strong>matrix equation</strong>:</p>
+<h4 id="matrix-equation-form_1">Matrix Equation Form</h4>
+<p><span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\)</span> is the <span class="arithmatex">\(m \times n\)</span> coefficient matrix</li>
+<li><span class="arithmatex">\(\mathbf{x}\)</span> is the <span class="arithmatex">\(n \times 1\)</span> vector of unknowns</li>
+<li><span class="arithmatex">\(\mathbf{b}\)</span> is the <span class="arithmatex">\(m \times 1\)</span> vector of constants</li>
+</ul>
+<p>For the system:</p>
+<p><span class="arithmatex">\(2x + 3y = 8\)</span></p>
+<p><span class="arithmatex">\(x - y = 1\)</span></p>
+<p>The matrix form is:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 2 &amp; 3 \\ 1 &amp; -1 \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} 8 \\ 1 \end{bmatrix}\)</span></p>
+<p>This representation reveals the structure: the coefficient matrix <span class="arithmatex">\(\mathbf{A}\)</span> encodes how variables combine, while <span class="arithmatex">\(\mathbf{b}\)</span> specifies the targets.</p>
+<h3 id="the-augmented-matrix">The Augmented Matrix</h3>
+<p>The <strong>augmented matrix</strong> combines the coefficient matrix and the right-hand side into a single matrix for manipulation:</p>
+<p><span class="arithmatex">\([\mathbf{A} \mid \mathbf{b}] = \begin{bmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; | &amp; b_1 \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; | &amp; b_2 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; | &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; | &amp; b_m \end{bmatrix}\)</span></p>
+<p>The vertical bar separates coefficients from constants, though it's sometimes omitted. All solution procedures work on the augmented matrix, treating coefficients and constants together.</p>
+<p>For our example:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 2 &amp; 3 &amp; | &amp; 8 \\ 1 &amp; -1 &amp; | &amp; 1 \end{bmatrix}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Why Augmented Matrices?</p>
+<p>The augmented matrix is the standard data structure for solving linear systems. It keeps all relevant information together and allows us to track how row operations affect both coefficients and constants simultaneously.</p>
+</div>
+<h2 id="row-operations">Row Operations</h2>
+<p>The key to solving linear systems is transforming the augmented matrix into a simpler form while preserving the solution set. Three <strong>row operations</strong> accomplish this.</p>
+<h3 id="the-three-elementary-row-operations">The Three Elementary Row Operations</h3>
+<ol>
+<li><strong>Row Swap</strong> (Interchange): Exchange two rows</li>
+<li>Notation: <span class="arithmatex">\(R_i \leftrightarrow R_j\)</span></li>
+<li>
+<p>Swaps row <span class="arithmatex">\(i\)</span> with row <span class="arithmatex">\(j\)</span></p>
+</li>
+<li>
+<p><strong>Row Scaling</strong> (Multiplication): Multiply a row by a nonzero constant</p>
+</li>
+<li>Notation: <span class="arithmatex">\(kR_i \rightarrow R_i\)</span> (where <span class="arithmatex">\(k \neq 0\)</span>)</li>
+<li>
+<p>Multiplies every entry in row <span class="arithmatex">\(i\)</span> by <span class="arithmatex">\(k\)</span></p>
+</li>
+<li>
+<p><strong>Row Addition</strong> (Replacement): Add a multiple of one row to another</p>
+</li>
+<li>Notation: <span class="arithmatex">\(R_i + kR_j \rightarrow R_i\)</span></li>
+<li>Adds <span class="arithmatex">\(k\)</span> times row <span class="arithmatex">\(j\)</span> to row <span class="arithmatex">\(i\)</span></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Effect</th>
+<th>Preserves Solutions?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row Swap</td>
+<td>Reorders equations</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Row Scaling</td>
+<td>Scales an equation</td>
+<td>Yes (if <span class="arithmatex">\(k \neq 0\)</span>)</td>
+</tr>
+<tr>
+<td>Row Addition</td>
+<td>Combines equations</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>These operations correspond to valid algebraic manipulations of equations:</p>
+<ul>
+<li>Swapping two equations doesn't change solutions</li>
+<li>Multiplying an equation by a nonzero constant doesn't change its solutions</li>
+<li>Adding equations produces a valid new equation satisfied by the same solutions</li>
+</ul>
+<h4 id="diagram-row-operations-interactive">Diagram: Row Operations Interactive</h4>
+<iframe src="../../sims/row-operations/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Row Operations Step-by-Step Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute, demonstrate</p>
+<p>Learning Objective: Enable students to practice applying the three elementary row operations and observe how they transform the augmented matrix while preserving solutions.</p>
+<p>Canvas layout:
+- Top: Current augmented matrix (large, clear display)
+- Middle: Operation selector and parameters
+- Bottom: History of operations performed</p>
+<p>Visual elements:
+- Matrix displayed as a grid with clear row/column separation
+- Active rows highlighted during operation
+- Animation showing transformation
+- Vertical bar separating coefficients from constants
+- Operation history as a scrollable list</p>
+<p>Interactive controls:
+- Dropdown: Select operation (Swap, Scale, Add)
+- For Swap: Two row selectors
+- For Scale: Row selector + scalar input (prevent 0)
+- For Add: Target row + source row + multiplier
+- Button: Apply operation
+- Button: Undo last operation
+- Button: Reset to original
+- Toggle: Show intermediate steps with animation</p>
+<p>Default parameters:
+- Starting matrix: 3×4 augmented matrix
+- Example system: 2x + y - z = 8, -3x - y + 2z = -11, -2x + y + 2z = -3</p>
+<p>Behavior:
+- Selected rows highlight before operation
+- Animation shows values changing
+- History updates with notation (e.g., "R₁ ↔ R₂")
+- Undo restores previous state
+- Invalid operations (scaling by 0) show error</p>
+<p>Implementation: p5.js with animation states</p>
+</details>
+<h2 id="gaussian-elimination">Gaussian Elimination</h2>
+<p><strong>Gaussian elimination</strong> is the systematic procedure for reducing an augmented matrix to row echelon form using row operations. Named after Carl Friedrich Gauss, this algorithm is the workhorse of computational linear algebra.</p>
+<h3 id="the-algorithm">The Algorithm</h3>
+<p>Gaussian elimination proceeds column by column, from left to right:</p>
+<ol>
+<li><strong>Find a pivot</strong>: Locate the leftmost column with a nonzero entry</li>
+<li><strong>Position the pivot</strong>: Use row swaps to move a nonzero entry to the top of the working submatrix</li>
+<li><strong>Eliminate below</strong>: Use row addition to create zeros below the pivot</li>
+<li><strong>Move down</strong>: Repeat for the next column with the remaining rows</li>
+</ol>
+<p>The goal is to create an "upper triangular" structure where all entries below the main diagonal are zero.</p>
+<h3 id="row-echelon-form">Row Echelon Form</h3>
+<p>A matrix is in <strong>row echelon form</strong> (REF) if:</p>
+<ul>
+<li>All zero rows are at the bottom</li>
+<li>The leading entry (first nonzero entry) of each row is to the right of the leading entry of the row above</li>
+<li>All entries below a leading entry are zero</li>
+</ul>
+<p>A <strong>pivot position</strong> is the location of a leading 1 (or leading nonzero entry). A <strong>pivot column</strong> is a column containing a pivot position.</p>
+<p>Example of row echelon form:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} \boxed{2} &amp; 3 &amp; -1 &amp; | &amp; 5 \\ 0 &amp; \boxed{1} &amp; 4 &amp; | &amp; -2 \\ 0 &amp; 0 &amp; \boxed{3} &amp; | &amp; 6 \end{bmatrix}\)</span></p>
+<p>The boxed entries are pivots. Each pivot is to the right of the pivot above it.</p>
+<h3 id="back-substitution">Back Substitution</h3>
+<p>Once a matrix is in row echelon form, we solve for the variables using <strong>back substitution</strong>—working from the bottom row upward:</p>
+<ol>
+<li>Solve the last equation for its variable</li>
+<li>Substitute into the equation above and solve</li>
+<li>Continue upward until all variables are found</li>
+</ol>
+<p>For the example above:</p>
+<ul>
+<li>Row 3: <span class="arithmatex">\(3z = 6 \Rightarrow z = 2\)</span></li>
+<li>Row 2: <span class="arithmatex">\(y + 4(2) = -2 \Rightarrow y = -10\)</span></li>
+<li>Row 1: <span class="arithmatex">\(2x + 3(-10) - 2 = 5 \Rightarrow x = 18.5\)</span></li>
+</ul>
+<h4 id="diagram-gaussian-elimination-visualizer">Diagram: Gaussian Elimination Visualizer</h4>
+<iframe src="../../sims/gaussian-elimination/main.html" width="100%" height="550px" scrolling="no"></iframe>
+
+<details>
+<summary>Gaussian Elimination Step-by-Step Animator</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute, implement</p>
+<p>Learning Objective: Guide students through the complete Gaussian elimination algorithm, showing each row operation and explaining why it's performed.</p>
+<p>Canvas layout:
+- Top: Current matrix state with pivot highlighted
+- Middle: Current operation being performed with explanation
+- Bottom: Controls and solution display</p>
+<p>Visual elements:
+- Matrix with current pivot position highlighted in yellow
+- Rows being modified highlighted in blue
+- Zeros created by elimination shown in green (briefly)
+- Current column being processed indicated
+- Progress indicator showing algorithm phase
+- Final solution displayed when complete</p>
+<p>Interactive controls:
+- Button: Next Step (advances one row operation)
+- Button: Auto-solve (animates entire solution)
+- Slider: Animation speed
+- Button: Reset
+- Dropdown: Example system (2×2, 3×3, 4×4)
+- Toggle: Show explanatory text for each step
+- Checkbox: Enable back substitution phase</p>
+<p>Default parameters:
+- Matrix size: 3×3
+- Animation speed: 1 second per step
+- Show explanations: true</p>
+<p>Behavior:
+- Each step highlights the relevant rows and pivot
+- Explanation text describes the operation and purpose
+- Algorithm phases clearly labeled (Forward elimination, Back substitution)
+- Solution verified by substitution at end
+- Can step forward/backward through operations</p>
+<p>Implementation: p5.js with state machine for algorithm steps</p>
+</details>
+<h2 id="reduced-row-echelon-form">Reduced Row Echelon Form</h2>
+<p>While row echelon form allows back substitution, <strong>reduced row echelon form</strong> (RREF) goes further to directly reveal solutions.</p>
+<h3 id="definition-and-properties">Definition and Properties</h3>
+<p>A matrix is in <strong>reduced row echelon form</strong> if:</p>
+<ul>
+<li>It is in row echelon form</li>
+<li>Each pivot is 1</li>
+<li>Each pivot is the only nonzero entry in its column</li>
+</ul>
+<p>The Gauss-Jordan elimination algorithm extends Gaussian elimination to produce RREF by:</p>
+<ol>
+<li>Scaling each pivot row to make the pivot equal to 1</li>
+<li>Eliminating entries above each pivot (not just below)</li>
+</ol>
+<p>Example transformation to RREF:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 2 &amp; 3 &amp; -1 &amp; | &amp; 5 \\ 0 &amp; 1 &amp; 4 &amp; | &amp; -2 \\ 0 &amp; 0 &amp; 3 &amp; | &amp; 6 \end{bmatrix} \rightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; | &amp; 18.5 \\ 0 &amp; 1 &amp; 0 &amp; | &amp; -10 \\ 0 &amp; 0 &amp; 1 &amp; | &amp; 2 \end{bmatrix}\)</span></p>
+<p>In RREF, the solution is immediately visible: <span class="arithmatex">\(x = 18.5\)</span>, <span class="arithmatex">\(y = -10\)</span>, <span class="arithmatex">\(z = 2\)</span>.</p>
+<h3 id="comparing-ref-and-rref">Comparing REF and RREF</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Row Echelon Form</th>
+<th>Reduced Row Echelon Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zero rows</td>
+<td>At bottom</td>
+<td>At bottom</td>
+</tr>
+<tr>
+<td>Leading entries</td>
+<td>Nonzero (any value)</td>
+<td>Exactly 1</td>
+</tr>
+<tr>
+<td>Below pivots</td>
+<td>All zeros</td>
+<td>All zeros</td>
+</tr>
+<tr>
+<td>Above pivots</td>
+<td>Any value</td>
+<td>All zeros</td>
+</tr>
+<tr>
+<td>Solution method</td>
+<td>Back substitution</td>
+<td>Direct reading</td>
+</tr>
+<tr>
+<td>Uniqueness</td>
+<td>Not unique</td>
+<td>Unique</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Computational Efficiency</p>
+<p>For solving a single system, stopping at REF and using back substitution is often more efficient. RREF requires additional operations. However, RREF is valuable for understanding solution structure and for systems requiring multiple right-hand sides.</p>
+</div>
+<h4 id="diagram-ref-vs-rref-comparison">Diagram: REF vs RREF Comparison</h4>
+<iframe src="../../sims/ref-vs-rref/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>REF vs RREF Side-by-Side Comparison</summary>
+<p>Type: infographic</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare, differentiate</p>
+<p>Learning Objective: Help students understand the difference between row echelon form and reduced row echelon form, and when each is preferable.</p>
+<p>Layout: Side-by-side matrix displays with transformation arrows</p>
+<p>Visual elements:
+- Left panel: Original matrix
+- Center-left: Row echelon form with pivots highlighted
+- Center-right: Reduced row echelon form with pivots highlighted
+- Annotations showing key differences
+- Color coding: pivots (gold), zeros created (green), coefficients (blue)</p>
+<p>Interactive features:
+- Button: Generate new random system
+- Dropdown: Matrix size (2×2, 3×3, 4×4)
+- Toggle: Show step count for each form
+- Toggle: Show solution extraction method
+- Hover: Show definition of each form</p>
+<p>Information displayed:
+- Number of operations to reach each form
+- Solution method for each (back substitution vs direct)
+- Uniqueness property highlighted</p>
+<p>Color scheme:
+- Pivot positions: gold
+- Created zeros: light green
+- Original nonzero entries: blue
+- Structure indicators: gray outlines</p>
+<p>Implementation: HTML/CSS/JavaScript with matrix computation</p>
+</details>
+<h2 id="solution-analysis">Solution Analysis</h2>
+<p>Not every system of linear equations has a solution, and some have infinitely many. Understanding solution existence and uniqueness is as important as computing solutions.</p>
+<h3 id="types-of-solution-sets">Types of Solution Sets</h3>
+<p>The <strong>solution set</strong> of a system is the collection of all vectors <span class="arithmatex">\(\mathbf{x}\)</span> satisfying <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span>. Three possibilities exist:</p>
+<ol>
+<li><strong>Unique Solution</strong>: Exactly one solution exists</li>
+<li><strong>Infinite Solutions</strong>: Infinitely many solutions exist (forming a line, plane, or higher-dimensional subspace)</li>
+<li><strong>No Solution</strong>: No solution exists (the system is inconsistent)</li>
+</ol>
+<p>The row echelon form reveals which case applies:</p>
+<ul>
+<li><strong>No solution</strong>: A row of the form <span class="arithmatex">\([0 \; 0 \; \cdots \; 0 \; | \; c]\)</span> where <span class="arithmatex">\(c \neq 0\)</span> (equation <span class="arithmatex">\(0 = c\)</span>)</li>
+<li><strong>Unique solution</strong>: Every column is a pivot column (as many pivots as variables)</li>
+<li><strong>Infinite solutions</strong>: Some columns are not pivot columns (fewer pivots than variables)</li>
+</ul>
+<h3 id="basic-and-free-variables">Basic and Free Variables</h3>
+<p>In systems with infinitely many solutions, variables split into two types:</p>
+<ul>
+<li><strong>Basic variables</strong> correspond to pivot columns—they can be expressed in terms of other variables</li>
+<li><strong>Free variables</strong> correspond to non-pivot columns—they can take any value</li>
+</ul>
+<p>The number of free variables determines the "dimension" of the solution set:</p>
+<table>
+<thead>
+<tr>
+<th>Free Variables</th>
+<th>Solution Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Unique point</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Line</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Plane</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(k\)</span></td>
+<td><span class="arithmatex">\(k\)</span>-dimensional subspace</td>
+</tr>
+</tbody>
+</table>
+<p>Example with a free variable:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; | &amp; 4 \\ 0 &amp; 0 &amp; 1 &amp; | &amp; 2 \end{bmatrix}\)</span></p>
+<p>Here <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_3\)</span> are basic variables (columns 1 and 3 are pivot columns), while <span class="arithmatex">\(x_2\)</span> is free. The general solution is:</p>
+<p><span class="arithmatex">\(x_1 = 4 - 2x_2 - 3(2) = -2 - 2x_2\)</span></p>
+<p><span class="arithmatex">\(x_2 = \text{free}\)</span></p>
+<p><span class="arithmatex">\(x_3 = 2\)</span></p>
+<p>Or in vector form: <span class="arithmatex">\(\mathbf{x} = \begin{bmatrix} -2 \\ 0 \\ 2 \end{bmatrix} + x_2 \begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}\)</span></p>
+<h4 id="diagram-solution-set-visualizer">Diagram: Solution Set Visualizer</h4>
+<iframe src="../../sims/solution-sets/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Solution Set Type Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: classify, examine</p>
+<p>Learning Objective: Enable students to explore how different systems produce unique solutions, infinite solutions (lines/planes), or no solution, and to identify the determining factors.</p>
+<p>Canvas layout:
+- Left: Augmented matrix (editable or preset)
+- Center: 2D/3D geometric visualization
+- Right: Solution analysis panel</p>
+<p>Visual elements:
+- Matrix with pivot positions marked
+- Geometric view showing lines/planes
+- Solution point, line, or empty set visualized
+- Pivot columns highlighted
+- Free variable columns indicated
+- Parametric solution displayed (for infinite solutions)</p>
+<p>Interactive controls:
+- Dropdown: Preset examples (unique, infinite, none)
+- Editable matrix cells (for custom exploration)
+- Toggle: 2D / 3D visualization
+- Checkbox: Show row echelon form
+- Checkbox: Show reduced row echelon form
+- Button: Random consistent system
+- Button: Random inconsistent system</p>
+<p>Default parameters:
+- Mode: 2D
+- Example: unique solution case</p>
+<p>Behavior:
+- Matrix edits update visualization in real-time
+- Inconsistent systems show parallel lines/planes (no intersection)
+- Infinite solutions show line or plane of solutions
+- Solution type automatically detected and labeled
+- Free variables identified and highlighted</p>
+<p>Implementation: p5.js with WEBGL for 3D</p>
+</details>
+<h2 id="homogeneous-systems">Homogeneous Systems</h2>
+<p>A <strong>homogeneous system</strong> has all zero constants on the right-hand side:</p>
+<p><span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{0}\)</span></p>
+<p>Homogeneous systems have special properties that make them particularly important in linear algebra.</p>
+<h3 id="the-trivial-solution">The Trivial Solution</h3>
+<p>Every homogeneous system has at least one solution: <span class="arithmatex">\(\mathbf{x} = \mathbf{0}\)</span>. This is called the <strong>trivial solution</strong> because it's obvious—all zeros satisfy any homogeneous equation.</p>
+<p>The interesting question is whether nontrivial solutions exist.</p>
+<h3 id="existence-of-nontrivial-solutions">Existence of Nontrivial Solutions</h3>
+<p>A homogeneous system <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{0}\)</span> has nontrivial solutions if and only if it has free variables. This happens when:</p>
+<ul>
+<li>The number of variables exceeds the number of pivot columns</li>
+<li>Equivalently, the number of variables exceeds the rank of <span class="arithmatex">\(\mathbf{A}\)</span></li>
+</ul>
+<p>Important consequence: If a homogeneous system has more variables than equations, it always has nontrivial solutions.</p>
+<table>
+<thead>
+<tr>
+<th>Variables vs Equations</th>
+<th>Nontrivial Solutions?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variables &gt; Equations</td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Variables = Equations</td>
+<td>Maybe (depends on matrix)</td>
+</tr>
+<tr>
+<td>Variables &lt; Equations</td>
+<td>Maybe (depends on matrix)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="solution-space-structure">Solution Space Structure</h3>
+<p>The solution set of a homogeneous system forms a <strong>subspace</strong> called the <strong>null space</strong> of <span class="arithmatex">\(\mathbf{A}\)</span>. This subspace:</p>
+<ul>
+<li>Contains the zero vector</li>
+<li>Is closed under addition (sum of solutions is a solution)</li>
+<li>Is closed under scalar multiplication (scalar times solution is a solution)</li>
+</ul>
+<p>This structure is fundamental to understanding linear transformations and will be explored further in later chapters.</p>
+<h4 id="diagram-homogeneous-system-explorer">Diagram: Homogeneous System Explorer</h4>
+<iframe src="../../sims/homogeneous-systems/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>Homogeneous System Solution Space Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students understand that homogeneous systems always have the trivial solution and may have additional solutions forming a subspace through the origin.</p>
+<p>Canvas layout:
+- Left: Coefficient matrix A (editable)
+- Center: 2D/3D visualization of solution space
+- Right: Solution analysis</p>
+<p>Visual elements:
+- Matrix display with rank calculation
+- Coordinate axes through origin
+- Trivial solution (origin) always marked
+- Nontrivial solution space (line or plane through origin) when present
+- Basis vectors for solution space shown as arrows
+- Null space dimension displayed</p>
+<p>Interactive controls:
+- Matrix size selector (2×2, 2×3, 3×3, 3×4)
+- Editable matrix entries
+- Button: Generate random full-rank matrix (only trivial solution)
+- Button: Generate random rank-deficient matrix (nontrivial solutions)
+- Toggle: Show basis vectors for null space
+- Slider: Rotate 3D view</p>
+<p>Default parameters:
+- Size: 3×3
+- Initial matrix: rank-deficient (has null space)</p>
+<p>Behavior:
+- Real-time rank calculation
+- Solution space updates as matrix changes
+- Clear indication of trivial-only vs nontrivial solutions
+- Null space dimension shown (n - rank)
+- 3D rotation for spatial understanding</p>
+<p>Implementation: p5.js with WEBGL for 3D</p>
+</details>
+<h2 id="numerical-stability">Numerical Stability</h2>
+<p>In practice, solving linear systems on computers introduces challenges beyond the pure mathematics.</p>
+<h3 id="sources-of-numerical-error">Sources of Numerical Error</h3>
+<p><strong>Numerical stability</strong> refers to how errors propagate through a computation. In linear systems, instability can arise from:</p>
+<ul>
+<li><strong>Floating-point representation</strong>: Real numbers are stored with limited precision</li>
+<li><strong>Round-off errors</strong>: Each arithmetic operation may introduce small errors</li>
+<li><strong>Ill-conditioned systems</strong>: Some systems amplify small input errors into large output errors</li>
+</ul>
+<h3 id="partial-pivoting">Partial Pivoting</h3>
+<p>Standard Gaussian elimination can suffer from numerical instability when small pivots lead to division by near-zero values. <strong>Partial pivoting</strong> addresses this by selecting the largest available pivot:</p>
+<ol>
+<li>Before eliminating in a column, scan downward for the entry with largest absolute value</li>
+<li>Swap rows to bring this entry to the pivot position</li>
+<li>Proceed with elimination</li>
+</ol>
+<p>This strategy prevents division by small numbers and improves numerical stability.</p>
+<h3 id="condition-number">Condition Number</h3>
+<p>The <strong>condition number</strong> of a matrix quantifies its sensitivity to perturbations. A high condition number indicates an <strong>ill-conditioned</strong> system where small changes in input cause large changes in output.</p>
+<ul>
+<li>Condition number ≈ 1: Well-conditioned (stable)</li>
+<li>Condition number large (e.g., <span class="arithmatex">\(10^6\)</span>): Ill-conditioned (unstable)</li>
+<li>Condition number = ∞: Singular matrix (no unique solution)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Practical Implications</p>
+<p>When working with real data, always consider numerical stability. Libraries like NumPy use sophisticated algorithms (LU decomposition with partial pivoting) that are more stable than naive Gaussian elimination. Never compute <span class="arithmatex">\(\mathbf{A}^{-1}\mathbf{b}\)</span> explicitly—use specialized solvers instead.</p>
+</div>
+<h4 id="diagram-numerical-stability-demonstration">Diagram: Numerical Stability Demonstration</h4>
+<iframe src="../../sims/numerical-stability/main.html" width="100%" height="460px" scrolling="no"></iframe>
+
+<details>
+<summary>Numerical Stability and Condition Number Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Evaluate (L5)
+Bloom Verb: assess, judge</p>
+<p>Learning Objective: Demonstrate how small changes in matrix entries can cause large changes in solutions for ill-conditioned systems, and how partial pivoting improves stability.</p>
+<p>Canvas layout:
+- Left: Original system and computed solution
+- Center: Perturbed system and new solution
+- Right: Analysis (condition number, error magnification)</p>
+<p>Visual elements:
+- Two matrices side-by-side (original and perturbed)
+- Solutions displayed with precision indicators
+- Error visualization (bar chart showing input vs output error)
+- Condition number prominently displayed
+- Color coding: green (well-conditioned) to red (ill-conditioned)
+- 2D geometric view showing how solution moves</p>
+<p>Interactive controls:
+- Dropdown: Example type (well-conditioned, moderately ill-conditioned, severely ill-conditioned)
+- Slider: Perturbation magnitude (0.0001 to 0.1)
+- Toggle: Use partial pivoting
+- Button: Apply random perturbation
+- Checkbox: Show geometric interpretation
+- Display: Precision (decimal places shown)</p>
+<p>Default parameters:
+- Example: Hilbert matrix 3×3 (ill-conditioned)
+- Perturbation: 0.001
+- Partial pivoting: off</p>
+<p>Behavior:
+- Perturbation applied to random entries
+- Solution error calculated and displayed
+- Error magnification factor shown (output error / input error)
+- Comparison with/without partial pivoting
+- Geometric view shows solution point movement</p>
+<p>Implementation: p5.js with high-precision arithmetic library</p>
+</details>
+<h2 id="applications">Applications</h2>
+<h3 id="balancing-chemical-equations">Balancing Chemical Equations</h3>
+<p>Chemical equations must balance atoms. For the reaction:</p>
+<p><span class="arithmatex">\(a \text{CH}_4 + b \text{O}_2 \rightarrow c \text{CO}_2 + d \text{H}_2\text{O}\)</span></p>
+<p>Balancing each element gives a linear system:</p>
+<ul>
+<li>Carbon: <span class="arithmatex">\(a = c\)</span></li>
+<li>Hydrogen: <span class="arithmatex">\(4a = 2d\)</span></li>
+<li>Oxygen: <span class="arithmatex">\(2b = 2c + d\)</span></li>
+</ul>
+<p>This homogeneous system has a one-dimensional solution space. Setting <span class="arithmatex">\(a = 1\)</span> gives the balanced equation: <span class="arithmatex">\(\text{CH}_4 + 2\text{O}_2 \rightarrow \text{CO}_2 + 2\text{H}_2\text{O}\)</span>.</p>
+<h3 id="network-flow-analysis">Network Flow Analysis</h3>
+<p>In electrical circuits or traffic networks, conservation laws produce linear systems. At each node, inflow equals outflow. The resulting system determines currents or traffic flows throughout the network.</p>
+<h3 id="machine-learning-linear-regression">Machine Learning: Linear Regression</h3>
+<p>Fitting a linear model <span class="arithmatex">\(\mathbf{y} = \mathbf{X}\boldsymbol{\beta}\)</span> to data leads to the <strong>normal equations</strong>:</p>
+<p><span class="arithmatex">\(\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \mathbf{X}^T\mathbf{y}\)</span></p>
+<p>Solving this system gives the least-squares coefficients <span class="arithmatex">\(\boldsymbol{\beta}\)</span> that minimize prediction error.</p>
+<h3 id="neural-network-training">Neural Network Training</h3>
+<p>Training neural networks involves solving systems of equations (approximately) at each optimization step. The gradient computations that guide learning rely on the same matrix operations covered in this chapter.</p>
+<h2 id="computational-implementation">Computational Implementation</h2>
+<h3 id="numpy-example">NumPy Example</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the system Ax = b</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Solve using NumPy (LU decomposition with pivoting)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solution: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verify: check that Ax = b</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verification (Ax): </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Condition number: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="key-functions">Key Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>np.linalg.solve(A, b)</code></td>
+<td>Solve <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span></td>
+</tr>
+<tr>
+<td><code>np.linalg.matrix_rank(A)</code></td>
+<td>Compute rank</td>
+</tr>
+<tr>
+<td><code>np.linalg.cond(A)</code></td>
+<td>Compute condition number</td>
+</tr>
+<tr>
+<td><code>scipy.linalg.lu(A)</code></td>
+<td>LU decomposition</td>
+</tr>
+<tr>
+<td><code>np.linalg.lstsq(A, b)</code></td>
+<td>Least squares solution</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary-and-key-takeaways">Summary and Key Takeaways</h2>
+<p>This chapter developed the theory and practice of solving systems of linear equations.</p>
+<p><strong>Formulation:</strong></p>
+<ul>
+<li>A <strong>linear equation</strong> has variables appearing to the first power only</li>
+<li>A <strong>system of equations</strong> requires simultaneous satisfaction of multiple equations</li>
+<li><strong>Matrix equation form</strong> <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span> compactly represents the system</li>
+<li>The <strong>augmented matrix</strong> <span class="arithmatex">\([\mathbf{A} | \mathbf{b}]\)</span> combines coefficients and constants</li>
+</ul>
+<p><strong>Solution Methods:</strong></p>
+<ul>
+<li><strong>Row operations</strong> (swap, scale, add) transform systems while preserving solutions</li>
+<li><strong>Gaussian elimination</strong> reduces to row echelon form</li>
+<li><strong>Back substitution</strong> solves from bottom to top</li>
+<li><strong>Reduced row echelon form</strong> allows direct solution reading</li>
+</ul>
+<p><strong>Solution Analysis:</strong></p>
+<ul>
+<li><strong>Pivot positions</strong> and <strong>pivot columns</strong> determine solution structure</li>
+<li><strong>Unique solution</strong>: all columns are pivot columns</li>
+<li><strong>Infinite solutions</strong>: some columns are free (non-pivot)</li>
+<li><strong>No solution</strong>: inconsistent row <span class="arithmatex">\([0 \; 0 \; \cdots \; 0 \; | \; c]\)</span> with <span class="arithmatex">\(c \neq 0\)</span></li>
+<li><strong>Free variables</strong> can take any value; <strong>basic variables</strong> are determined by them</li>
+</ul>
+<p><strong>Special Systems:</strong></p>
+<ul>
+<li><strong>Homogeneous systems</strong> (<span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{0}\)</span>) always have the <strong>trivial solution</strong></li>
+<li>Nontrivial solutions exist when there are free variables</li>
+<li>The solution set of a homogeneous system is a subspace</li>
+</ul>
+<p><strong>Computational Considerations:</strong></p>
+<ul>
+<li><strong>Numerical stability</strong> matters for practical computation</li>
+<li><strong>Partial pivoting</strong> improves stability</li>
+<li><strong>Condition number</strong> measures sensitivity to perturbation</li>
+<li>Use library functions rather than explicit inverse computation</li>
+</ul>
+<hr />
+<h2 id="exercises">Exercises</h2>
+<details class="question">
+<summary>Exercise 1: Row Echelon Form</summary>
+<p>Reduce the following augmented matrix to row echelon form:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 &amp; -1 &amp; | &amp; 3 \\ 2 &amp; 5 &amp; 1 &amp; | &amp; 8 \\ 3 &amp; 7 &amp; 0 &amp; | &amp; 11 \end{bmatrix}\)</span></p>
+<p>Then use back substitution to find the solution.</p>
+</details>
+<details class="question">
+<summary>Exercise 2: Solution Type Identification</summary>
+<p>For each augmented matrix in row echelon form, determine whether the system has a unique solution, infinite solutions, or no solution:</p>
+<p>a) <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 3 &amp; | &amp; 5 \\ 0 &amp; 1 &amp; | &amp; 2 \end{bmatrix}\)</span></p>
+<p>b) <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; | &amp; 4 \\ 0 &amp; 0 &amp; 1 &amp; | &amp; 2 \end{bmatrix}\)</span></p>
+<p>c) <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 &amp; | &amp; 3 \\ 0 &amp; 0 &amp; | &amp; 5 \end{bmatrix}\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 3: Free and Basic Variables</summary>
+<p>Given the reduced row echelon form:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 1 &amp; 0 &amp; 2 &amp; 0 &amp; | &amp; 3 \\ 0 &amp; 1 &amp; -1 &amp; 0 &amp; | &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; | &amp; 4 \end{bmatrix}\)</span></p>
+<p>Identify the pivot columns, free variables, and basic variables. Write the general solution in parametric form.</p>
+</details>
+<details class="question">
+<summary>Exercise 4: Homogeneous System</summary>
+<p>Consider the homogeneous system with coefficient matrix:</p>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \end{bmatrix}\)</span></p>
+<p>Determine whether nontrivial solutions exist. If so, find a basis for the solution space.</p>
+</details>
+<details class="question">
+<summary>Exercise 5: Numerical Stability</summary>
+<p>The Hilbert matrix <span class="arithmatex">\(H_n\)</span> has entries <span class="arithmatex">\(h_{ij} = \frac{1}{i+j-1}\)</span>. For <span class="arithmatex">\(n = 3\)</span>:</p>
+<p><span class="arithmatex">\(H_3 = \begin{bmatrix} 1 &amp; 1/2 &amp; 1/3 \\ 1/2 &amp; 1/3 &amp; 1/4 \\ 1/3 &amp; 1/4 &amp; 1/5 \end{bmatrix}\)</span></p>
+<p>Compute the condition number of <span class="arithmatex">\(H_3\)</span>. What does this tell you about solving systems with this coefficient matrix?</p>
+</details>
 
 
 

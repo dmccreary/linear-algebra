@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Understanding matrices as geometric transformations including rotation, scaling, shearing, and projection, with applications to computer graphics and neural networks">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>4. Linear Transformations - Linear Algebra</title>
+        <title>Linear Transformations - Linear Algebra</title>
       
     
     
@@ -73,9 +73,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="4. Linear Transformations - Linear Algebra" >
+        <meta  property="og:title"  content="Linear Transformations - Linear Algebra" >
       
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  property="og:description"  content="Understanding matrices as geometric transformations including rotation, scaling, shearing, and projection, with applications to computer graphics and neural networks" >
       
         <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/04-linear-transformations/index.png" >
       
@@ -89,9 +89,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="4. Linear Transformations - Linear Algebra" >
+        <meta  name="twitter:title"  content="Linear Transformations - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  name="twitter:description"  content="Understanding matrices as geometric transformations including rotation, scaling, shearing, and projection, with applications to computer graphics and neural networks" >
       
         <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/04-linear-transformations/index.png" >
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. Linear Transformations
+              Linear Transformations
             
           </span>
         </div>
@@ -448,6 +448,13 @@
     2. Matrices and Matrix Operations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
@@ -468,6 +475,13 @@
   <span class="md-ellipsis">
     3.Systems of Linear Equations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -499,6 +513,13 @@
     4. Linear Transformations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -509,6 +530,13 @@
   <span class="md-ellipsis">
     4. Linear Transformations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -550,6 +578,546 @@
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-and-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions and Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions and Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-between-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions Between Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearity-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linearity Conditions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-transformation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Transformation Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Transformation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-transformation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Transformation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-transformations-in-2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Transformations in 2D
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Transformations in 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Rotation Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-2d-rotation-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 2D Rotation Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D Rotation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3D Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-x-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around X-Axis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-y-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around Y-Axis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-z-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around Z-Axis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shear-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shear Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reflection Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-geometric-transformations-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Geometric Transformations Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthogonal Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projection-onto-a-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection onto a Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-orthogonal-projection-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orthogonal Projection Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composition-of-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition of Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Composition of Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transformation-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transformation Composition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-and-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel and Range
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel and Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-null-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel (Null Space)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-column-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Range (Column Space)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range (Column Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-and-range-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel and Range Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rank-nullity-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rank-Nullity Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Rank-Nullity Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statement-of-the-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statement of the Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statement of the Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rank-nullity-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rank-Nullity Theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invertible-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invertible Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Invertible Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditions-for-invertibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions for Invertibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-of-geometric-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse of Geometric Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-of-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change of Basis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change of Basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basis-transition-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis Transition Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similar-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similar Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Similar Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-change-of-basis-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Change of Basis Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robotics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principal Component Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
     </span>
   </a>
   
@@ -983,6 +1551,546 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-and-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions and Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions and Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions-between-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions Between Vector Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearity-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linearity Conditions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-transformation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Transformation Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Transformation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-transformation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Linear Transformation Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-transformations-in-2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Transformations in 2D
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Transformations in 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      2D Rotation Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-2d-rotation-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 2D Rotation Interactive
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3D Rotation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3D Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-x-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around X-Axis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-y-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around Y-Axis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation-around-z-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotation Around Z-Axis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shear-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shear Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reflection-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reflection Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-geometric-transformations-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Geometric Transformations Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Projection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthogonal Projection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projection-onto-a-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projection onto a Line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-orthogonal-projection-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orthogonal Projection Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composition-of-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composition of Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Composition of Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-transformation-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Transformation Composition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-and-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel and Range
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kernel and Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-null-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel (Null Space)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-column-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Range (Column Space)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range (Column Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kernel-and-range-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Kernel and Range Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rank-nullity-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rank-Nullity Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Rank-Nullity Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statement-of-the-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statement of the Theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statement of the Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rank-nullity-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rank-Nullity Theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intuition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#invertible-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invertible Transformations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Invertible Transformations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditions-for-invertibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions for Invertibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-of-geometric-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inverse of Geometric Transformations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-of-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change of Basis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change of Basis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basis-transition-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basis Transition Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similar-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Similar Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Similar Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-change-of-basis-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Change of Basis Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Robotics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-component-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principal Component Analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1048,7 +2156,807 @@
 <li><a href="../03-systems-of-linear-equations/">Chapter 3: Systems of Linear Equations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Every matrix multiplication <span class="arithmatex">\(\mathbf{A}\mathbf{x}\)</span> can be viewed as a transformation—taking an input vector <span class="arithmatex">\(\mathbf{x}\)</span> and producing an output vector <span class="arithmatex">\(\mathbf{y}\)</span>. This perspective transforms matrices from static arrays of numbers into dynamic operators that rotate, scale, shear, project, and transform geometric objects.</p>
+<p>Understanding transformations is essential for computer graphics, where every rotation, scaling, and perspective projection is a matrix multiplication. It's equally crucial for machine learning, where neural networks apply layer after layer of linear transformations (with nonlinearities between them) to map inputs to outputs. This chapter develops the mathematical framework for understanding these transformations and their properties.</p>
+<h2 id="functions-and-transformations">Functions and Transformations</h2>
+<h3 id="functions-between-vector-spaces">Functions Between Vector Spaces</h3>
+<p>A <strong>function</strong> <span class="arithmatex">\(T\)</span> from a set <span class="arithmatex">\(V\)</span> to a set <span class="arithmatex">\(W\)</span>, written <span class="arithmatex">\(T: V \rightarrow W\)</span>, is a rule that assigns to each element <span class="arithmatex">\(\mathbf{v}\)</span> in <span class="arithmatex">\(V\)</span> exactly one element <span class="arithmatex">\(T(\mathbf{v})\)</span> in <span class="arithmatex">\(W\)</span>.</p>
+<p>Key terminology:</p>
+<ul>
+<li>The <strong>domain</strong> of <span class="arithmatex">\(T\)</span> is the set <span class="arithmatex">\(V\)</span> of all possible inputs</li>
+<li>The <strong>codomain</strong> of <span class="arithmatex">\(T\)</span> is the set <span class="arithmatex">\(W\)</span> of all possible outputs</li>
+<li>The <strong>image</strong> of a vector <span class="arithmatex">\(\mathbf{v}\)</span> is its output <span class="arithmatex">\(T(\mathbf{v})\)</span></li>
+<li>The <strong>range</strong> (or image of <span class="arithmatex">\(T\)</span>) is the set of all outputs: <span class="arithmatex">\(\{T(\mathbf{v}) : \mathbf{v} \in V\}\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Range vs Codomain</p>
+<p>The codomain is the set where outputs <em>could</em> live. The range is where outputs <em>actually</em> live. For example, <span class="arithmatex">\(T: \mathbb{R}^2 \rightarrow \mathbb{R}^3\)</span> has codomain <span class="arithmatex">\(\mathbb{R}^3\)</span>, but its range might be a plane within <span class="arithmatex">\(\mathbb{R}^3\)</span>.</p>
+</div>
+<h3 id="linear-transformations_1">Linear Transformations</h3>
+<p>A <strong>linear transformation</strong> (or linear map) is a function <span class="arithmatex">\(T: V \rightarrow W\)</span> between vector spaces that preserves vector addition and scalar multiplication:</p>
+<h4 id="linearity-conditions">Linearity Conditions</h4>
+<ol>
+<li>
+<p><span class="arithmatex">\(T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})\)</span> for all <span class="arithmatex">\(\mathbf{u}, \mathbf{v} \in V\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(T(c\mathbf{v}) = cT(\mathbf{v})\)</span> for all <span class="arithmatex">\(\mathbf{v} \in V\)</span> and scalars <span class="arithmatex">\(c\)</span></p>
+</li>
+</ol>
+<p>These two conditions can be combined into one:</p>
+<p><span class="arithmatex">\(T(c_1\mathbf{v}_1 + c_2\mathbf{v}_2) = c_1 T(\mathbf{v}_1) + c_2 T(\mathbf{v}_2)\)</span></p>
+<p>Linear transformations preserve linear combinations. They map lines to lines (or points), planes to planes (or lines or points), and the origin to the origin.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Linear</th>
+<th>Non-Linear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origin maps to origin</td>
+<td>Always</td>
+<td>Not necessarily</td>
+</tr>
+<tr>
+<td>Lines map to...</td>
+<td>Lines or points</td>
+<td>Curves possible</td>
+</tr>
+<tr>
+<td>Parallelism preserved</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Grid structure</td>
+<td>Preserved</td>
+<td>Distorted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-transformation-matrix">The Transformation Matrix</h3>
+<p>Every linear transformation <span class="arithmatex">\(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> can be represented by an <span class="arithmatex">\(m \times n\)</span> matrix <span class="arithmatex">\(\mathbf{A}\)</span>. The transformation is then:</p>
+<p><span class="arithmatex">\(T(\mathbf{x}) = \mathbf{A}\mathbf{x}\)</span></p>
+<p>To find the <strong>transformation matrix</strong>, apply <span class="arithmatex">\(T\)</span> to each standard basis vector:</p>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} T(\mathbf{e}_1) &amp; T(\mathbf{e}_2) &amp; \cdots &amp; T(\mathbf{e}_n) \end{bmatrix}\)</span></p>
+<p>The columns of <span class="arithmatex">\(\mathbf{A}\)</span> are the images of the standard basis vectors. This fundamental observation connects abstract transformations to concrete matrix computations.</p>
+<h4 id="diagram-linear-transformation-visualizer">Diagram: Linear Transformation Visualizer</h4>
+<iframe src="../../sims/linear-transform-basics/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Linear Transformation Fundamentals Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students understand that linear transformations preserve the grid structure and that the transformation is completely determined by where basis vectors map.</p>
+<p>Canvas layout:
+- Left: Original coordinate plane with basis vectors and grid
+- Right: Transformed plane showing result of applying T
+- Bottom: Matrix display and controls</p>
+<p>Visual elements:
+- Standard basis vectors e₁ (red) and e₂ (blue) in original space
+- Transformed basis vectors T(e₁) and T(e₂) in target space
+- Grid of points in original space
+- Corresponding grid in transformed space
+- Sample vector (user-controlled) showing before/after
+- 2×2 transformation matrix displayed</p>
+<p>Interactive controls:
+- Draggable endpoints for T(e₁) and T(e₂) to define transformation
+- Slider: Animation between original and transformed states
+- Button: Reset to identity
+- Dropdown: Preset transformations (rotation, scaling, shear, reflection)
+- Checkbox: Show grid lines
+- Checkbox: Show sample vector path</p>
+<p>Default parameters:
+- Initial transformation: identity
+- Grid: 5×5
+- Sample vector: (1, 1)</p>
+<p>Behavior:
+- Dragging basis vector endpoints updates matrix in real-time
+- Grid morphs smoothly during animation
+- Matrix entries update as endpoints move
+- Preset dropdown smoothly transitions to new transformation
+- Sample vector shows how arbitrary points transform</p>
+<p>Implementation: p5.js with smooth animation</p>
+</details>
+<h2 id="geometric-transformations-in-2d">Geometric Transformations in 2D</h2>
+<p>The power of linear transformations becomes vivid when we visualize their geometric effects. Each type of transformation has a characteristic matrix structure.</p>
+<h3 id="rotation-matrix">Rotation Matrix</h3>
+<p>A <strong>rotation matrix</strong> rotates vectors around the origin by a fixed angle. For <strong>2D rotation</strong> by angle <span class="arithmatex">\(\theta\)</span> counterclockwise:</p>
+<h4 id="2d-rotation-matrix">2D Rotation Matrix</h4>
+<p><span class="arithmatex">\(\mathbf{R}(\theta) = \begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\theta\)</span> is the rotation angle (positive = counterclockwise)</li>
+<li>The columns are the rotated basis vectors</li>
+</ul>
+<p>Properties of 2D rotation matrices:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{R}(\theta)^T = \mathbf{R}(-\theta) = \mathbf{R}(\theta)^{-1}\)</span> (orthogonal matrix)</li>
+<li><span class="arithmatex">\(\det(\mathbf{R}(\theta)) = 1\)</span> (preserves area and orientation)</li>
+<li><span class="arithmatex">\(\mathbf{R}(\alpha)\mathbf{R}(\beta) = \mathbf{R}(\alpha + \beta)\)</span> (rotations compose by adding angles)</li>
+</ul>
+<h4 id="diagram-2d-rotation-interactive">Diagram: 2D Rotation Interactive</h4>
+<iframe src="../../sims/2d-rotation/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>2D Rotation Matrix Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: demonstrate, calculate</p>
+<p>Learning Objective: Enable students to see how the rotation matrix transforms vectors and shapes, and verify the relationship between angle and matrix entries.</p>
+<p>Canvas layout:
+- Main area: Coordinate plane with original and rotated shapes
+- Right panel: Matrix display with cos/sin values
+- Bottom: Angle control</p>
+<p>Visual elements:
+- Unit circle for reference
+- Original shape (arrow, square, or F-shape) in blue
+- Rotated shape in red (semi-transparent)
+- Angle arc showing rotation amount
+- Basis vectors before and after rotation
+- Matrix entries updating with angle</p>
+<p>Interactive controls:
+- Slider: Rotation angle θ (-360° to 360°)
+- Dropdown: Shape to rotate (arrow, square, triangle, F-shape)
+- Checkbox: Show unit circle
+- Checkbox: Show angle arc
+- Button: Animate full rotation
+- Input: Enter specific angle in degrees</p>
+<p>Default parameters:
+- Angle: 45°
+- Shape: F-shape (to show orientation)
+- Unit circle: visible</p>
+<p>Behavior:
+- Shape rotates smoothly as angle slider moves
+- Matrix entries display cos(θ) and sin(θ) values
+- Animation shows continuous rotation
+- F-shape clearly shows orientation preservation</p>
+<p>Implementation: p5.js with trigonometric calculations</p>
+</details>
+<h3 id="3d-rotation">3D Rotation</h3>
+<p><strong>3D rotation</strong> is more complex because we must specify an axis of rotation. The three fundamental rotation matrices rotate around the coordinate axes:</p>
+<h4 id="rotation-around-x-axis">Rotation Around X-Axis</h4>
+<p><span class="arithmatex">\(\mathbf{R}_x(\theta) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\theta &amp; -\sin\theta \\ 0 &amp; \sin\theta &amp; \cos\theta \end{bmatrix}\)</span></p>
+<h4 id="rotation-around-y-axis">Rotation Around Y-Axis</h4>
+<p><span class="arithmatex">\(\mathbf{R}_y(\theta) = \begin{bmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{bmatrix}\)</span></p>
+<h4 id="rotation-around-z-axis">Rotation Around Z-Axis</h4>
+<p><span class="arithmatex">\(\mathbf{R}_z(\theta) = \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>General 3D rotations can be composed from these basic rotations, though the order matters (rotations don't commute in 3D).</p>
+<div class="admonition warning">
+<p class="admonition-title">Gimbal Lock</p>
+<p>When composing rotations using Euler angles, certain orientations cause "gimbal lock" where a degree of freedom is lost. Quaternions provide an alternative representation that avoids this problem, used extensively in robotics and game development.</p>
+</div>
+<h3 id="scaling-matrix">Scaling Matrix</h3>
+<p>A <strong>scaling matrix</strong> stretches or compresses vectors along the coordinate axes.</p>
+<p><strong>Uniform scaling</strong> scales equally in all directions:</p>
+<p><span class="arithmatex">\(\mathbf{S}_{\text{uniform}}(k) = \begin{bmatrix} k &amp; 0 \\ 0 &amp; k \end{bmatrix}\)</span></p>
+<p><strong>Non-uniform scaling</strong> scales differently along each axis:</p>
+<p><span class="arithmatex">\(\mathbf{S}(s_x, s_y) = \begin{bmatrix} s_x &amp; 0 \\ 0 &amp; s_y \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(s_x\)</span> is the scaling factor along the x-axis</li>
+<li><span class="arithmatex">\(s_y\)</span> is the scaling factor along the y-axis</li>
+<li><span class="arithmatex">\(|s| &gt; 1\)</span> stretches; <span class="arithmatex">\(|s| &lt; 1\)</span> compresses</li>
+<li><span class="arithmatex">\(s &lt; 0\)</span> also reflects</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Scaling Type</th>
+<th>Effect</th>
+<th>Determinant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uniform <span class="arithmatex">\(k &gt; 1\)</span></td>
+<td>Enlarges</td>
+<td><span class="arithmatex">\(k^2\)</span></td>
+</tr>
+<tr>
+<td>Uniform <span class="arithmatex">\(0 &lt; k &lt; 1\)</span></td>
+<td>Shrinks</td>
+<td><span class="arithmatex">\(k^2\)</span></td>
+</tr>
+<tr>
+<td>Non-uniform</td>
+<td>Stretches/compresses differently</td>
+<td><span class="arithmatex">\(s_x \cdot s_y\)</span></td>
+</tr>
+<tr>
+<td>Negative factor</td>
+<td>Also reflects</td>
+<td>Negative</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shear-matrix">Shear Matrix</h3>
+<p>A <strong>shear matrix</strong> skews shapes by shifting points parallel to an axis, proportional to their distance from that axis.</p>
+<p>Horizontal shear (shifts x based on y):</p>
+<p><span class="arithmatex">\(\mathbf{H}_x(k) = \begin{bmatrix} 1 &amp; k \\ 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Vertical shear (shifts y based on x):</p>
+<p><span class="arithmatex">\(\mathbf{H}_y(k) = \begin{bmatrix} 1 &amp; 0 \\ k &amp; 1 \end{bmatrix}\)</span></p>
+<p>Shear transformations:</p>
+<ul>
+<li>Turn rectangles into parallelograms</li>
+<li>Preserve area (<span class="arithmatex">\(\det = 1\)</span>)</li>
+<li>Are not orthogonal (don't preserve angles)</li>
+</ul>
+<h3 id="reflection-matrix">Reflection Matrix</h3>
+<p>A <strong>reflection matrix</strong> mirrors points across a line (in 2D) or plane (in 3D).</p>
+<p>Reflection across the x-axis:</p>
+<p><span class="arithmatex">\(\mathbf{F}_x = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}\)</span></p>
+<p>Reflection across the y-axis:</p>
+<p><span class="arithmatex">\(\mathbf{F}_y = \begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Reflection across a line through the origin at angle <span class="arithmatex">\(\theta\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{F}(\theta) = \begin{bmatrix} \cos 2\theta &amp; \sin 2\theta \\ \sin 2\theta &amp; -\cos 2\theta \end{bmatrix}\)</span></p>
+<p>Reflections have determinant <span class="arithmatex">\(-1\)</span>, indicating they reverse orientation (turning clockwise into counterclockwise).</p>
+<h4 id="diagram-geometric-transformations-gallery">Diagram: Geometric Transformations Gallery</h4>
+<iframe src="../../sims/transform-gallery/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details>
+<summary>Geometric Transformations Interactive Gallery</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare, differentiate</p>
+<p>Learning Objective: Enable students to compare and contrast different geometric transformations, understanding their visual effects and matrix structures.</p>
+<p>Canvas layout:
+- Main area: Split view showing original and transformed shapes
+- Right panel: Transformation type selector and parameters
+- Bottom: Matrix display</p>
+<p>Visual elements:
+- Original shape (configurable) in blue
+- Transformed shape in red
+- Grid showing deformation
+- Transformation type label
+- Matrix with current values
+- Key properties (determinant, orthogonality)</p>
+<p>Interactive controls:
+- Tabs: Rotation | Scaling | Shear | Reflection
+- For Rotation: Angle slider
+- For Scaling: sx and sy sliders (or single k for uniform)
+- For Shear: k slider, direction toggle (horizontal/vertical)
+- For Reflection: Angle slider for reflection line
+- Dropdown: Shape (square, circle of points, F-shape, arrow)
+- Toggle: Show grid deformation
+- Button: Animate transformation</p>
+<p>Default parameters:
+- Transformation: Rotation
+- Shape: F-shape
+- Show grid: true</p>
+<p>Behavior:
+- Smooth animation between original and transformed states
+- Matrix updates in real-time with parameter changes
+- Properties panel shows det, orthogonality, etc.
+- Grid clearly shows how space is warped
+- Comparisons possible by switching between tabs</p>
+<p>Implementation: p5.js with tabbed interface</p>
+</details>
+<h2 id="projection">Projection</h2>
+<p>A <strong>projection</strong> maps vectors onto a subspace (line, plane, etc.). Unlike the transformations above, projections typically reduce dimension and are not invertible.</p>
+<h3 id="orthogonal-projection">Orthogonal Projection</h3>
+<p>An <strong>orthogonal projection</strong> projects vectors perpendicularly onto a subspace. For projection onto a line through the origin with direction <span class="arithmatex">\(\mathbf{u}\)</span>:</p>
+<h4 id="projection-onto-a-line">Projection onto a Line</h4>
+<p><span class="arithmatex">\(\text{proj}_{\mathbf{u}}(\mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\mathbf{u} \cdot \mathbf{u}} \mathbf{u}\)</span></p>
+<p>The projection matrix onto the line spanned by unit vector <span class="arithmatex">\(\hat{\mathbf{u}}\)</span> is:</p>
+<p><span class="arithmatex">\(\mathbf{P} = \hat{\mathbf{u}} \hat{\mathbf{u}}^T\)</span></p>
+<p>For projection onto the x-axis:</p>
+<p><span class="arithmatex">\(\mathbf{P}_x = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{bmatrix}\)</span></p>
+<p>Properties of orthogonal projection matrices:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{P}^2 = \mathbf{P}\)</span> (applying twice gives same result)</li>
+<li><span class="arithmatex">\(\mathbf{P}^T = \mathbf{P}\)</span> (symmetric)</li>
+<li>Eigenvalues are 0 and 1</li>
+<li>Not invertible (determinant = 0)</li>
+</ul>
+<h4 id="diagram-orthogonal-projection-visualizer">Diagram: Orthogonal Projection Visualizer</h4>
+<iframe src="../../sims/orthogonal-projection/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>Orthogonal Projection Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students visualize how orthogonal projection maps vectors onto lines or planes, showing the perpendicular relationship between the original vector, its projection, and the error component.</p>
+<p>Canvas layout:
+- Main area: 2D/3D coordinate space
+- Right panel: Vector components and projection formula</p>
+<p>Visual elements:
+- Original vector v (blue arrow)
+- Projection line/plane (gray)
+- Projected vector proj(v) (red arrow on line)
+- Error vector (v - proj(v)) shown as dashed green arrow
+- Right angle indicator showing orthogonality
+- Unit direction vector u</p>
+<p>Interactive controls:
+- Draggable vector v endpoint
+- Slider: Direction of projection line (angle)
+- Toggle: 2D / 3D mode
+- Checkbox: Show error vector
+- Checkbox: Show right angle indicator
+- Checkbox: Show projection formula with values
+- Button: Animate projection process</p>
+<p>Default parameters:
+- Mode: 2D
+- Projection line: 30° from x-axis
+- Vector v: (3, 2)</p>
+<p>Behavior:
+- Vector v can be dragged to any position
+- Projection updates in real-time
+- Error vector clearly perpendicular to projection line
+- Formula shows computed values
+- 3D mode allows projection onto plane</p>
+<p>Implementation: p5.js with WEBGL for 3D</p>
+</details>
+<h2 id="composition-of-transformations">Composition of Transformations</h2>
+<p>Applying one transformation after another is called <strong>composition</strong>. If <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(T\)</span> are linear transformations, the composition <span class="arithmatex">\(S \circ T\)</span> applies <span class="arithmatex">\(T\)</span> first, then <span class="arithmatex">\(S\)</span>:</p>
+<p><span class="arithmatex">\((S \circ T)(\mathbf{x}) = S(T(\mathbf{x}))\)</span></p>
+<p>For matrix representations, composition corresponds to matrix multiplication:</p>
+<p><span class="arithmatex">\(\mathbf{A}_{S \circ T} = \mathbf{A}_S \mathbf{A}_T\)</span></p>
+<div class="admonition warning">
+<p class="admonition-title">Order Matters</p>
+<p>Matrix multiplication is not commutative, so <span class="arithmatex">\(\mathbf{A}_S \mathbf{A}_T \neq \mathbf{A}_T \mathbf{A}_S\)</span> in general. Rotating then scaling gives different results than scaling then rotating.</p>
+</div>
+<p>Common composition examples:</p>
+<ul>
+<li><strong>Rotation around a point</strong>: Translate to origin, rotate, translate back</li>
+<li><strong>Scaling about a point</strong>: Translate to origin, scale, translate back</li>
+<li><strong>Euler angles</strong>: Compose three axis-aligned rotations</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Composition</th>
+<th>Matrix Product</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotate then scale</td>
+<td><span class="arithmatex">\(\mathbf{S}\mathbf{R}\)</span></td>
+<td>Graphics, robotics</td>
+</tr>
+<tr>
+<td>Scale then rotate</td>
+<td><span class="arithmatex">\(\mathbf{R}\mathbf{S}\)</span></td>
+<td>Different result!</td>
+</tr>
+<tr>
+<td>Multiple rotations</td>
+<td><span class="arithmatex">\(\mathbf{R}_3 \mathbf{R}_2 \mathbf{R}_1\)</span></td>
+<td>3D orientation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-transformation-composition">Diagram: Transformation Composition</h4>
+<iframe src="../../sims/transform-composition/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Transformation Composition Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine, compare</p>
+<p>Learning Objective: Demonstrate that the order of transformations matters and show how composed transformations combine into a single matrix product.</p>
+<p>Canvas layout:
+- Top: Two transformation pipelines side by side (T then S vs S then T)
+- Bottom: Resulting shapes and combined matrices</p>
+<p>Visual elements:
+- Original shape in center
+- Pipeline 1: Original → T → S (with intermediate state shown)
+- Pipeline 2: Original → S → T (with intermediate state shown)
+- Final shapes for each pipeline (different unless transformations commute)
+- Matrices for T, S, and their products ST and TS</p>
+<p>Interactive controls:
+- Dropdown: First transformation type (rotation, scaling, shear)
+- Parameters for first transformation
+- Dropdown: Second transformation type
+- Parameters for second transformation
+- Checkbox: Show intermediate states
+- Button: Animate both pipelines
+- Toggle: Show matrix products</p>
+<p>Default parameters:
+- T: Rotation 45°
+- S: Scaling (2, 1)
+- Shape: unit square</p>
+<p>Behavior:
+- Both pipelines animate simultaneously for comparison
+- Intermediate shapes visible between transformations
+- Matrix products computed and displayed
+- Clear visual demonstration that order matters
+- Commutative cases (e.g., two rotations) show same result</p>
+<p>Implementation: p5.js with parallel animation</p>
+</details>
+<h2 id="kernel-and-range">Kernel and Range</h2>
+<p>Every linear transformation has two fundamental subspaces that reveal its structure.</p>
+<h3 id="kernel-null-space">Kernel (Null Space)</h3>
+<p>The <strong>kernel</strong> of a linear transformation <span class="arithmatex">\(T: V \rightarrow W\)</span> is the set of all vectors that map to zero:</p>
+<p><span class="arithmatex">\(\ker(T) = \{\mathbf{v} \in V : T(\mathbf{v}) = \mathbf{0}\}\)</span></p>
+<p>For a matrix transformation <span class="arithmatex">\(T(\mathbf{x}) = \mathbf{A}\mathbf{x}\)</span>, the kernel equals the <strong>null space</strong> of <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<p><span class="arithmatex">\(\text{Null}(\mathbf{A}) = \{\mathbf{x} : \mathbf{A}\mathbf{x} = \mathbf{0}\}\)</span></p>
+<p>The kernel is always a subspace of the domain. Its dimension is called the <strong>nullity</strong> of <span class="arithmatex">\(T\)</span>.</p>
+<h3 id="range-column-space">Range (Column Space)</h3>
+<p>The <strong>range</strong> of <span class="arithmatex">\(T\)</span> is the set of all possible outputs:</p>
+<p><span class="arithmatex">\(\text{Range}(T) = \{T(\mathbf{v}) : \mathbf{v} \in V\}\)</span></p>
+<p>For a matrix <span class="arithmatex">\(\mathbf{A}\)</span>, the range equals the <strong>column space</strong>—the span of the columns of <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<p><span class="arithmatex">\(\text{Col}(\mathbf{A}) = \text{Span}\{\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_n\}\)</span></p>
+<p>The range is always a subspace of the codomain. Its dimension is the <strong>rank</strong> of <span class="arithmatex">\(T\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Subspace</th>
+<th>Definition</th>
+<th>Dimension Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kernel / Null Space</td>
+<td>Vectors mapping to zero</td>
+<td>Nullity</td>
+</tr>
+<tr>
+<td>Range / Column Space</td>
+<td>All possible outputs</td>
+<td>Rank</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-kernel-and-range-visualizer">Diagram: Kernel and Range Visualizer</h4>
+<iframe src="../../sims/kernel-range/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Kernel and Range Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: differentiate, examine</p>
+<p>Learning Objective: Help students visualize the kernel (what maps to zero) and range (what outputs are possible) of a linear transformation, understanding their relationship to the matrix structure.</p>
+<p>Canvas layout:
+- Left: Domain space showing kernel
+- Right: Codomain space showing range
+- Center: Transformation arrow
+- Bottom: Matrix and dimension information</p>
+<p>Visual elements:
+- Domain with kernel subspace highlighted (line or plane in gray)
+- Arrows from domain to codomain
+- Codomain with range subspace highlighted (line or plane in color)
+- Zero vector in codomain marked
+- Vectors in kernel shown collapsing to zero
+- Sample vectors outside kernel shown mapping to range</p>
+<p>Interactive controls:
+- Matrix editor (2×2 or 3×2 or 2×3)
+- Button: Random full-rank matrix
+- Button: Random rank-deficient matrix
+- Checkbox: Show kernel vectors
+- Checkbox: Show how kernel maps to zero
+- Checkbox: Animate transformation
+- Display: Rank and nullity values</p>
+<p>Default parameters:
+- Matrix: 2×3 with rank 2 (nontrivial kernel)</p>
+<p>Behavior:
+- Kernel automatically computed and displayed
+- Range computed as column space
+- Arrows show transformation action
+- Rank and nullity update with matrix changes
+- Animation shows vectors transforming</p>
+<p>Implementation: p5.js with linear algebra computations</p>
+</details>
+<h2 id="the-rank-nullity-theorem">The Rank-Nullity Theorem</h2>
+<p>One of the most important theorems in linear algebra connects the dimensions of the kernel and range.</p>
+<h3 id="statement-of-the-theorem">Statement of the Theorem</h3>
+<p>For a linear transformation <span class="arithmatex">\(T: V \rightarrow W\)</span> where <span class="arithmatex">\(V\)</span> is finite-dimensional:</p>
+<h4 id="rank-nullity-theorem">Rank-Nullity Theorem</h4>
+<p><span class="arithmatex">\(\dim(V) = \text{rank}(T) + \text{nullity}(T)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\dim(V)\)</span> is the dimension of the domain (number of columns of <span class="arithmatex">\(\mathbf{A}\)</span>)</li>
+<li><span class="arithmatex">\(\text{rank}(T)\)</span> is the dimension of the range</li>
+<li><span class="arithmatex">\(\text{nullity}(T)\)</span> is the dimension of the kernel</li>
+</ul>
+<p>For an <span class="arithmatex">\(m \times n\)</span> matrix <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<p><span class="arithmatex">\(n = \text{rank}(\mathbf{A}) + \text{nullity}(\mathbf{A})\)</span></p>
+<h3 id="intuition">Intuition</h3>
+<p>The theorem says that dimension is conserved: what doesn't go into the kernel must go somewhere (the range). If more vectors collapse to zero (higher nullity), fewer independent output directions remain (lower rank).</p>
+<h3 id="consequences">Consequences</h3>
+<p>The Rank-Nullity Theorem has powerful implications:</p>
+<ul>
+<li>If <span class="arithmatex">\(\text{rank}(\mathbf{A}) = n\)</span> (full column rank), then <span class="arithmatex">\(\text{nullity} = 0\)</span>, so <span class="arithmatex">\(T\)</span> is injective (one-to-one)</li>
+<li>If <span class="arithmatex">\(\text{rank}(\mathbf{A}) = m\)</span> (full row rank), then <span class="arithmatex">\(T\)</span> is surjective (onto)</li>
+<li>If both, <span class="arithmatex">\(T\)</span> is bijective (invertible) and <span class="arithmatex">\(m = n\)</span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Matrix Size</th>
+<th>Rank</th>
+<th>Nullity</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(3 \times 3\)</span>, rank 3</td>
+<td>3</td>
+<td>0</td>
+<td>Invertible</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(3 \times 3\)</span>, rank 2</td>
+<td>2</td>
+<td>1</td>
+<td>Kernel is a line</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(3 \times 4\)</span>, rank 3</td>
+<td>3</td>
+<td>1</td>
+<td>Kernel is a line</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(4 \times 3\)</span>, rank 3</td>
+<td>3</td>
+<td>0</td>
+<td>One-to-one</td>
+</tr>
+</tbody>
+</table>
+<h2 id="invertible-transformations">Invertible Transformations</h2>
+<p>An <strong>invertible transformation</strong> is a linear transformation with an inverse—a transformation that "undoes" the original.</p>
+<h3 id="conditions-for-invertibility">Conditions for Invertibility</h3>
+<p>A linear transformation <span class="arithmatex">\(T: V \rightarrow W\)</span> is invertible if and only if:</p>
+<ul>
+<li><span class="arithmatex">\(T\)</span> is one-to-one (injective): different inputs give different outputs</li>
+<li><span class="arithmatex">\(T\)</span> is onto (surjective): every output is achieved</li>
+<li>Equivalently: <span class="arithmatex">\(\ker(T) = \{\mathbf{0}\}\)</span> and <span class="arithmatex">\(\text{Range}(T) = W\)</span></li>
+</ul>
+<p>For a matrix <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<ul>
+<li>Must be square (<span class="arithmatex">\(m = n\)</span>)</li>
+<li>Must have full rank (<span class="arithmatex">\(\text{rank}(\mathbf{A}) = n\)</span>)</li>
+<li>Must have nullity zero</li>
+<li>Must have nonzero determinant</li>
+</ul>
+<h3 id="inverse-of-geometric-transformations">Inverse of Geometric Transformations</h3>
+<table>
+<thead>
+<tr>
+<th>Transformation</th>
+<th>Matrix</th>
+<th>Inverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotation by <span class="arithmatex">\(\theta\)</span></td>
+<td><span class="arithmatex">\(\mathbf{R}(\theta)\)</span></td>
+<td><span class="arithmatex">\(\mathbf{R}(-\theta) = \mathbf{R}^T\)</span></td>
+</tr>
+<tr>
+<td>Scaling by <span class="arithmatex">\((s_x, s_y)\)</span></td>
+<td><span class="arithmatex">\(\text{diag}(s_x, s_y)\)</span></td>
+<td><span class="arithmatex">\(\text{diag}(1/s_x, 1/s_y)\)</span></td>
+</tr>
+<tr>
+<td>Shear by <span class="arithmatex">\(k\)</span></td>
+<td><span class="arithmatex">\(\mathbf{H}(k)\)</span></td>
+<td><span class="arithmatex">\(\mathbf{H}(-k)\)</span></td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td><span class="arithmatex">\(\mathbf{F}\)</span></td>
+<td><span class="arithmatex">\(\mathbf{F}\)</span> (self-inverse)</td>
+</tr>
+<tr>
+<td>Projection</td>
+<td><span class="arithmatex">\(\mathbf{P}\)</span></td>
+<td>Not invertible</td>
+</tr>
+</tbody>
+</table>
+<p>Projections are never invertible because they collapse dimension—once information is lost, it cannot be recovered.</p>
+<h2 id="change-of-basis">Change of Basis</h2>
+<p>Different bases provide different "viewpoints" on the same vector space. <strong>Change of basis</strong> allows us to translate between these viewpoints.</p>
+<h3 id="basis-transition-matrix">Basis Transition Matrix</h3>
+<p>Given two bases <span class="arithmatex">\(\mathcal{B} = \{\mathbf{b}_1, \ldots, \mathbf{b}_n\}\)</span> and <span class="arithmatex">\(\mathcal{C} = \{\mathbf{c}_1, \ldots, \mathbf{c}_n\}\)</span>, the <strong>basis transition matrix</strong> <span class="arithmatex">\(\mathbf{P}_{\mathcal{B} \leftarrow \mathcal{C}}\)</span> converts coordinates from <span class="arithmatex">\(\mathcal{C}\)</span> to <span class="arithmatex">\(\mathcal{B}\)</span>.</p>
+<p>If <span class="arithmatex">\([\mathbf{v}]_{\mathcal{C}}\)</span> are the coordinates of <span class="arithmatex">\(\mathbf{v}\)</span> in basis <span class="arithmatex">\(\mathcal{C}\)</span>, then:</p>
+<p><span class="arithmatex">\([\mathbf{v}]_{\mathcal{B}} = \mathbf{P}_{\mathcal{B} \leftarrow \mathcal{C}} [\mathbf{v}]_{\mathcal{C}}\)</span></p>
+<p>The columns of <span class="arithmatex">\(\mathbf{P}_{\mathcal{B} \leftarrow \mathcal{C}}\)</span> are the <span class="arithmatex">\(\mathcal{C}\)</span> basis vectors expressed in <span class="arithmatex">\(\mathcal{B}\)</span> coordinates.</p>
+<h3 id="similar-matrices">Similar Matrices</h3>
+<p>If <span class="arithmatex">\(\mathbf{A}\)</span> represents a transformation in the standard basis and <span class="arithmatex">\(\mathbf{P}\)</span> is the change of basis matrix, then:</p>
+<p><span class="arithmatex">\(\mathbf{A}' = \mathbf{P}^{-1}\mathbf{A}\mathbf{P}\)</span></p>
+<p>represents the same transformation in the new basis. Matrices related this way are called <strong>similar matrices</strong>—they represent the same transformation in different coordinate systems.</p>
+<p>Similar matrices have the same:</p>
+<ul>
+<li>Determinant</li>
+<li>Trace</li>
+<li>Eigenvalues</li>
+<li>Rank</li>
+</ul>
+<h4 id="diagram-change-of-basis-visualizer">Diagram: Change of Basis Visualizer</h4>
+<iframe src="../../sims/change-of-basis/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>Change of Basis Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students understand that the same vector has different coordinate representations in different bases, and how the transition matrix converts between them.</p>
+<p>Canvas layout:
+- Left: Standard basis view with vector
+- Right: Custom basis view with same vector
+- Bottom: Coordinate displays and transition matrix</p>
+<p>Visual elements:
+- Standard basis vectors (e₁, e₂) in black
+- Custom basis vectors (b₁, b₂) in purple
+- Same geometric vector shown in both views
+- Coordinates displayed in each basis
+- Transition matrix P
+- Grid lines for each basis</p>
+<p>Interactive controls:
+- Draggable endpoints for custom basis vectors
+- Draggable vector to transform
+- Button: Reset to standard basis
+- Checkbox: Show both bases overlaid
+- Checkbox: Show transition matrix calculation
+- Dropdown: Preset bases (standard, rotated, skewed)</p>
+<p>Default parameters:
+- Custom basis: rotated 30° from standard
+- Vector: (2, 1) in standard coordinates</p>
+<p>Behavior:
+- Vector stays fixed geometrically as basis changes
+- Coordinates update to reflect new basis
+- Transition matrix updates with basis
+- Overlay mode shows both grids simultaneously
+- Clear visualization that vector is unchanged, only representation</p>
+<p>Implementation: p5.js with coordinate transformation</p>
+</details>
+<h2 id="applications">Applications</h2>
+<h3 id="computer-graphics">Computer Graphics</h3>
+<p>Every transformation in computer graphics—modeling, viewing, projection—is a linear (or affine) transformation represented by matrices. The graphics pipeline applies a sequence of transformations:</p>
+<ol>
+<li><strong>Model matrix</strong>: Object space → World space</li>
+<li><strong>View matrix</strong>: World space → Camera space</li>
+<li><strong>Projection matrix</strong>: Camera space → Clip space</li>
+</ol>
+<p>GPUs are optimized for these matrix multiplications, processing millions of vertices per second.</p>
+<h3 id="robotics">Robotics</h3>
+<p>Robot arm kinematics uses transformation matrices to track how joints connect. Each joint applies a rotation or translation, and composing these gives the end-effector position:</p>
+<p><span class="arithmatex">\(\mathbf{T}_{\text{total}} = \mathbf{T}_1 \mathbf{T}_2 \cdots \mathbf{T}_n\)</span></p>
+<h3 id="neural-networks">Neural Networks</h3>
+<p>Each layer of a neural network applies a linear transformation (weights) followed by a nonlinearity:</p>
+<p><span class="arithmatex">\(\mathbf{h} = \sigma(\mathbf{W}\mathbf{x} + \mathbf{b})\)</span></p>
+<p>Understanding transformations helps interpret:</p>
+<ul>
+<li>What the network "sees" at each layer</li>
+<li>How information flows and transforms</li>
+<li>Why deep networks can learn complex mappings</li>
+</ul>
+<h3 id="principal-component-analysis">Principal Component Analysis</h3>
+<p>PCA finds a change of basis that:</p>
+<ul>
+<li>Aligns axes with directions of maximum variance</li>
+<li>Decorrelates the data</li>
+<li>Enables dimensionality reduction by projecting onto top components</li>
+</ul>
+<p>This is a change of basis to the eigenvector basis of the covariance matrix.</p>
+<h2 id="summary-and-key-takeaways">Summary and Key Takeaways</h2>
+<p>This chapter connected matrix algebra to geometric transformation.</p>
+<p><strong>Foundations:</strong></p>
+<ul>
+<li>A <strong>function</strong> maps inputs from a <strong>domain</strong> to outputs in a <strong>codomain</strong></li>
+<li>A <strong>linear transformation</strong> preserves addition and scalar multiplication</li>
+<li>Every linear transformation has a <strong>transformation matrix</strong> whose columns are images of basis vectors</li>
+</ul>
+<p><strong>Geometric Transformations:</strong></p>
+<ul>
+<li><strong>Rotation matrices</strong> rotate while preserving lengths and angles</li>
+<li><strong>Scaling matrices</strong> stretch or compress along coordinate axes</li>
+<li><strong>Shear matrices</strong> skew shapes by sliding parallel to an axis</li>
+<li><strong>Reflection matrices</strong> mirror across a line or plane</li>
+<li><strong>Projection matrices</strong> map onto lower-dimensional subspaces</li>
+</ul>
+<p><strong>Composition and Structure:</strong></p>
+<ul>
+<li><strong>Composition</strong> of transformations corresponds to matrix multiplication</li>
+<li>Order matters: <span class="arithmatex">\(\mathbf{AB} \neq \mathbf{BA}\)</span> in general</li>
+<li>The <strong>kernel</strong> contains vectors mapping to zero; its dimension is <strong>nullity</strong></li>
+<li>The <strong>range</strong> is the set of all outputs; its dimension is <strong>rank</strong></li>
+<li><strong>Rank-Nullity Theorem</strong>: <span class="arithmatex">\(n = \text{rank} + \text{nullity}\)</span></li>
+</ul>
+<p><strong>Invertibility and Basis:</strong></p>
+<ul>
+<li><strong>Invertible transformations</strong> have trivial kernel and full range</li>
+<li><strong>Change of basis</strong> provides different coordinate views of the same transformation</li>
+<li><strong>Similar matrices</strong> represent the same transformation in different bases</li>
+</ul>
+<p><strong>Key Properties:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Transformation</th>
+<th>Preserves Lengths?</th>
+<th>Preserves Angles?</th>
+<th>Invertible?</th>
+<th>Determinant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotation</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Uniform Scaling</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes (if <span class="arithmatex">\(k \neq 0\)</span>)</td>
+<td><span class="arithmatex">\(k^n\)</span></td>
+</tr>
+<tr>
+<td>Shear</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td><span class="arithmatex">\(-1\)</span></td>
+</tr>
+<tr>
+<td>Projection</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercises">Exercises</h2>
+<details class="question">
+<summary>Exercise 1: Finding Transformation Matrices</summary>
+<p>Find the 2×2 matrix for the linear transformation that:</p>
+<p>a) Reflects across the line <span class="arithmatex">\(y = x\)</span></p>
+<p>b) Rotates by 90° counterclockwise, then scales by factor 2</p>
+<p>c) Projects onto the line <span class="arithmatex">\(y = 2x\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 2: Composition Order</summary>
+<p>Let <span class="arithmatex">\(R\)</span> be rotation by 45° and <span class="arithmatex">\(S\)</span> be scaling by <span class="arithmatex">\((2, 1)\)</span>. Compute both <span class="arithmatex">\(RS\)</span> and <span class="arithmatex">\(SR\)</span>, and describe geometrically why they differ.</p>
+</details>
+<details class="question">
+<summary>Exercise 3: Kernel and Range</summary>
+<p>For the matrix <span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 6 \end{bmatrix}\)</span>:</p>
+<p>a) Find a basis for the kernel (null space)</p>
+<p>b) Find a basis for the range (column space)</p>
+<p>c) Verify the Rank-Nullity Theorem</p>
+</details>
+<details class="question">
+<summary>Exercise 4: Invertibility</summary>
+<p>Determine which transformations are invertible and find the inverse if it exists:</p>
+<p>a) <span class="arithmatex">\(T(\mathbf{x}) = \begin{bmatrix} 1 &amp; 2 \\ 3 &amp; 6 \end{bmatrix}\mathbf{x}\)</span></p>
+<p>b) <span class="arithmatex">\(T(\mathbf{x}) = \begin{bmatrix} 1 &amp; 2 \\ 2 &amp; 3 \end{bmatrix}\mathbf{x}\)</span></p>
+<p>c) Projection onto the x-axis</p>
+</details>
+<details class="question">
+<summary>Exercise 5: Change of Basis</summary>
+<p>Let <span class="arithmatex">\(\mathcal{B} = \{(1, 1), (1, -1)\}\)</span> be a basis for <span class="arithmatex">\(\mathbb{R}^2\)</span>.</p>
+<p>a) Find the change of basis matrix from standard coordinates to <span class="arithmatex">\(\mathcal{B}\)</span>-coordinates</p>
+<p>b) Express the vector <span class="arithmatex">\((3, 1)\)</span> in <span class="arithmatex">\(\mathcal{B}\)</span>-coordinates</p>
+<p>c) If a transformation is rotation by 90° in standard coordinates, what matrix represents it in <span class="arithmatex">\(\mathcal{B}\)</span>-coordinates?</p>
+</details>
 
 
 

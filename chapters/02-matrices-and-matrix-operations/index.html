@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Introduction to matrices as collections of vectors, matrix algebra, special matrix types, and fundamental operations">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>2. Matrices and Matrix Operations - Linear Algebra</title>
+        <title>Matrices and Matrix Operations - Linear Algebra</title>
       
     
     
@@ -73,9 +73,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="2. Matrices and Matrix Operations - Linear Algebra" >
+        <meta  property="og:title"  content="Matrices and Matrix Operations - Linear Algebra" >
       
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  property="og:description"  content="Introduction to matrices as collections of vectors, matrix algebra, special matrix types, and fundamental operations" >
       
         <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/02-matrices-and-matrix-operations/index.png" >
       
@@ -89,9 +89,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="2. Matrices and Matrix Operations - Linear Algebra" >
+        <meta  name="twitter:title"  content="Matrices and Matrix Operations - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  name="twitter:description"  content="Introduction to matrices as collections of vectors, matrix algebra, special matrix types, and fundamental operations" >
       
         <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/02-matrices-and-matrix-operations/index.png" >
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. Matrices and Matrix Operations
+              Matrices and Matrix Operations
             
           </span>
         </div>
@@ -457,6 +457,13 @@
     2. Matrices and Matrix Operations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -467,6 +474,13 @@
   <span class="md-ellipsis">
     2. Matrices and Matrix Operations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -513,6 +527,582 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction-to-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Matrices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Matrix?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Matrix?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-notation-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Notation and Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-and-column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row and Column Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row and Column Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-row-and-column-vector-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Row and Column Vector Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-entries-and-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Entries and Indexing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Entries and Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-matrices-as-collections-of-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Matrices as Collections of Vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Matrix Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Matrix Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Addition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Addition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-addition-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Addition Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalar Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-addition-and-scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Addition and Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-vector-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Vector Product
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix-Vector Product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-vector-product-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Vector Product Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Matrix Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix-Matrix Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-multiplication-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-multiplication-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Multiplication Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Matrix Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-matrix-transpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Matrix Transpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Matrix Transpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transpose-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transpose Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transpose-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transpose Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-matrix-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Matrix Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Matrix Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagonal Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangular-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangular Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triangular Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-special-matrix-types-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Special Matrix Types Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthogonal Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-orthogonal-matrix-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orthogonal Matrix Transformation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-inverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Inverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Inverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-inverse-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Inverse Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invertible-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invertible Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Invertible Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-matrix-inverse-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      2×2 Matrix Inverse Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-matrix-inverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Matrix Inverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties of Matrix Inverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-inverse-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Inverse Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparse-and-dense-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse and Dense Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sparse and Dense Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sparse-vs-dense-matrix-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sparse vs Dense Matrix Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Matrix Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Matrix Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-block-matrix-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Block Matrix Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-machine-learning-and-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in Machine Learning and AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in Machine Learning and AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attention Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-neural-network-layer-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Neural Network Layer Matrix Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -536,6 +1126,13 @@
     3.Systems of Linear Equations
   </span>
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
@@ -556,6 +1153,13 @@
   <span class="md-ellipsis">
     4. Linear Transformations
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -983,6 +1587,582 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction-to-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Matrices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Matrix?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a Matrix?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-notation-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Notation and Dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-and-column-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row and Column Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Row and Column Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-row-and-column-vector-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Row and Column Vector Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-entries-and-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Entries and Indexing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Entries and Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-matrices-as-collections-of-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Matrices as Collections of Vectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Matrix Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Matrix Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-addition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Addition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Addition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-addition-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Addition Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalar Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scalar-multiplication-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalar Multiplication Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-addition-and-scalar-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Addition and Scalar Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-vector-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Vector Product
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix-Vector Product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-vector-product-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Vector Product Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix-Matrix Multiplication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix-Matrix Multiplication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-multiplication-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Multiplication Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-multiplication-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Multiplication Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-matrix-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Matrix Multiplication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-matrix-transpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Matrix Transpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Matrix Transpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transpose-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transpose Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transpose-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transpose Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-matrix-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Matrix Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Matrix Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identity-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagonal Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangular-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Triangular Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triangular Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-special-matrix-types-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Special Matrix Types Gallery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Symmetric Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Matrix
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthogonal Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-orthogonal-matrix-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Orthogonal Matrix Transformation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-inverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Inverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matrix Inverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrix-inverse-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Inverse Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invertible-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invertible Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Invertible Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#22-matrix-inverse-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      2×2 Matrix Inverse Formula
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-matrix-inverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Matrix Inverse
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties of Matrix Inverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-inverse-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Matrix Inverse Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparse-and-dense-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse and Dense Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sparse and Dense Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sparse-vs-dense-matrix-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Sparse vs Dense Matrix Visualization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block Matrix Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Block Matrix Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-block-matrix-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Block Matrix Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-machine-learning-and-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications in Machine Learning and AI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in Machine Learning and AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Representation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neural Network Layers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention Mechanisms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attention Mechanisms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-neural-network-layer-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Neural Network Layer Matrix Operations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1042,7 +2222,798 @@
 <li><a href="../01-vectors-and-vector-spaces/">Chapter 1: Vectors and Vector Spaces</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction-to-matrices">Introduction to Matrices</h2>
+<p>In the previous chapter, we explored vectors as the fundamental objects of linear algebra—ordered lists of numbers representing points or directions in space. Now we extend this foundation to <strong>matrices</strong>, rectangular arrays of numbers that organize multiple vectors into a single mathematical object. Matrices are ubiquitous in modern computing: they represent images as pixel grids, encode neural network weights, store graph adjacency relationships, and transform coordinates in computer graphics.</p>
+<p>The matrix perspective transforms our understanding of linear systems. Rather than thinking of equations individually, we can represent entire systems compactly and manipulate them using matrix operations. This algebraic framework enables efficient computation on modern hardware, where matrix operations are highly optimized through libraries like NumPy, TensorFlow, and PyTorch.</p>
+<h2 id="what-is-a-matrix">What is a Matrix?</h2>
+<p>A <strong>matrix</strong> is a rectangular array of numbers arranged in rows and columns. We denote matrices with bold uppercase letters such as <span class="arithmatex">\(\mathbf{A}\)</span>, <span class="arithmatex">\(\mathbf{B}\)</span>, or <span class="arithmatex">\(\mathbf{M}\)</span>. The numbers within a matrix are called <strong>entries</strong> or <strong>elements</strong>.</p>
+<h4 id="matrix-definition">Matrix Definition</h4>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(a_{ij}\)</span> is the entry in row <span class="arithmatex">\(i\)</span> and column <span class="arithmatex">\(j\)</span></li>
+<li><span class="arithmatex">\(m\)</span> is the number of rows</li>
+<li><span class="arithmatex">\(n\)</span> is the number of columns</li>
+</ul>
+<h3 id="matrix-notation-and-dimensions">Matrix Notation and Dimensions</h3>
+<p>The <strong>dimensions</strong> of a matrix describe its shape. An <span class="arithmatex">\(m \times n\)</span> matrix (read "m by n") has <span class="arithmatex">\(m\)</span> rows and <span class="arithmatex">\(n\)</span> columns. The first number always indicates rows, and the second indicates columns.</p>
+<table>
+<thead>
+<tr>
+<th>Dimensions</th>
+<th>Description</th>
+<th>Example Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(3 \times 3\)</span></td>
+<td>Square matrix</td>
+<td>Rotation in 3D</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(28 \times 28\)</span></td>
+<td>Square matrix</td>
+<td>MNIST digit image</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m \times n\)</span></td>
+<td>Rectangular</td>
+<td>Data matrix with <span class="arithmatex">\(m\)</span> samples, <span class="arithmatex">\(n\)</span> features</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1 \times n\)</span></td>
+<td>Row vector</td>
+<td>Single observation</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m \times 1\)</span></td>
+<td>Column vector</td>
+<td>Single feature across samples</td>
+</tr>
+</tbody>
+</table>
+<p>Using standard <strong>matrix notation</strong>, we refer to individual entries with subscripts. The entry <span class="arithmatex">\(a_{ij}\)</span> (or <span class="arithmatex">\(A_{ij}\)</span>) denotes the element in row <span class="arithmatex">\(i\)</span> and column <span class="arithmatex">\(j\)</span>. This indexing convention—row first, column second—is consistent across mathematics and most programming languages.</p>
+<h3 id="row-and-column-vectors">Row and Column Vectors</h3>
+<p>Matrices with only one row or one column receive special names. A <strong>row vector</strong> is a <span class="arithmatex">\(1 \times n\)</span> matrix containing <span class="arithmatex">\(n\)</span> elements arranged horizontally:</p>
+<p><span class="arithmatex">\(\mathbf{r} = \begin{bmatrix} r_1 &amp; r_2 &amp; \cdots &amp; r_n \end{bmatrix}\)</span></p>
+<p>A <strong>column vector</strong> is an <span class="arithmatex">\(m \times 1\)</span> matrix containing <span class="arithmatex">\(m\)</span> elements arranged vertically:</p>
+<p><span class="arithmatex">\(\mathbf{c} = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_m \end{bmatrix}\)</span></p>
+<p>In machine learning contexts, column vectors typically represent individual data points or feature vectors, while row vectors represent observations in a data matrix. This distinction matters because matrix multiplication requires compatible dimensions.</p>
+<h4 id="diagram-row-and-column-vector-visualization">Diagram: Row and Column Vector Visualization</h4>
+<iframe src="../../sims/row-column-vectors/main.html" width="100%" height="400px" scrolling="no"></iframe>
+
+<details>
+<summary>Row and Column Vector Visualization</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: compare, contrast</p>
+<p>Learning Objective: Help students visually distinguish between row vectors (horizontal) and column vectors (vertical), understanding how their orientation affects matrix operations.</p>
+<p>Canvas layout:
+- Main drawing area showing both vector types side by side
+- Controls below for adjusting vector dimensions</p>
+<p>Visual elements:
+- Left side: A row vector displayed horizontally with labeled entries
+- Right side: A column vector displayed vertically with labeled entries
+- Color coding: row vector in blue, column vector in green
+- Grid background showing the row/column structure
+- Dimension labels showing "1 × n" for row and "m × 1" for column</p>
+<p>Interactive controls:
+- Slider: Number of elements (2-6)
+- Toggle: Show/hide dimension annotations
+- Button: Randomize values</p>
+<p>Default parameters:
+- Elements: 4
+- Values: random integers 1-9</p>
+<p>Behavior:
+- Adjusting element count updates both vectors simultaneously
+- Dimension labels update dynamically
+- Values displayed inside each cell</p>
+<p>Implementation: p5.js</p>
+</details>
+<h2 id="matrix-entries-and-indexing">Matrix Entries and Indexing</h2>
+<p>Each <strong>matrix entry</strong> <span class="arithmatex">\(a_{ij}\)</span> occupies a specific position determined by its row index <span class="arithmatex">\(i\)</span> and column index <span class="arithmatex">\(j\)</span>. Understanding this indexing system is essential for implementing matrix algorithms and interpreting matrix operations.</p>
+<p>Consider a <span class="arithmatex">\(3 \times 4\)</span> matrix:</p>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 7 &amp; 8 \\ 9 &amp; 10 &amp; 11 &amp; 12 \end{bmatrix}\)</span></p>
+<p>In this example:</p>
+<ul>
+<li><span class="arithmatex">\(a_{11} = 1\)</span> (first row, first column)</li>
+<li><span class="arithmatex">\(a_{23} = 7\)</span> (second row, third column)</li>
+<li><span class="arithmatex">\(a_{32} = 10\)</span> (third row, second column)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Zero-Based vs One-Based Indexing</p>
+<p>Mathematical notation uses one-based indexing (starting from 1), while programming languages like Python and JavaScript use zero-based indexing (starting from 0). In NumPy, accessing element <span class="arithmatex">\(a_{23}\)</span> requires <code>A[1, 2]</code>.</p>
+</div>
+<h3 id="viewing-matrices-as-collections-of-vectors">Viewing Matrices as Collections of Vectors</h3>
+<p>A powerful perspective views matrices as collections of vectors. An <span class="arithmatex">\(m \times n\)</span> matrix can be interpreted as:</p>
+<ul>
+<li><strong><span class="arithmatex">\(n\)</span> column vectors</strong> of dimension <span class="arithmatex">\(m\)</span>, or</li>
+<li><strong><span class="arithmatex">\(m\)</span> row vectors</strong> of dimension <span class="arithmatex">\(n\)</span></li>
+</ul>
+<p>This dual interpretation underlies many matrix operations. When we multiply a matrix by a vector, we're computing a linear combination of the matrix's column vectors. When we compute the transpose, we're swapping between row and column interpretations.</p>
+<h2 id="basic-matrix-operations">Basic Matrix Operations</h2>
+<h3 id="matrix-addition">Matrix Addition</h3>
+<p><strong>Matrix addition</strong> combines two matrices of identical dimensions by adding corresponding entries. If <span class="arithmatex">\(\mathbf{A}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> are both <span class="arithmatex">\(m \times n\)</span> matrices, their sum <span class="arithmatex">\(\mathbf{C} = \mathbf{A} + \mathbf{B}\)</span> is also an <span class="arithmatex">\(m \times n\)</span> matrix where each entry is:</p>
+<h4 id="matrix-addition-formula">Matrix Addition Formula</h4>
+<p><span class="arithmatex">\(c_{ij} = a_{ij} + b_{ij}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(c_{ij}\)</span> is the entry in the sum matrix</li>
+<li><span class="arithmatex">\(a_{ij}\)</span> is the corresponding entry in <span class="arithmatex">\(\mathbf{A}\)</span></li>
+<li><span class="arithmatex">\(b_{ij}\)</span> is the corresponding entry in <span class="arithmatex">\(\mathbf{B}\)</span></li>
+</ul>
+<p>Matrix addition is both <strong>commutative</strong> (<span class="arithmatex">\(\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}\)</span>) and <strong>associative</strong> (<span class="arithmatex">\((\mathbf{A} + \mathbf{B}) + \mathbf{C} = \mathbf{A} + (\mathbf{B} + \mathbf{C})\)</span>).</p>
+<h3 id="scalar-multiplication">Scalar Multiplication</h3>
+<p><strong>Matrix scalar multiplication</strong> multiplies every entry of a matrix by a single number (scalar). If <span class="arithmatex">\(k\)</span> is a scalar and <span class="arithmatex">\(\mathbf{A}\)</span> is a matrix, then <span class="arithmatex">\(k\mathbf{A}\)</span> has entries:</p>
+<h4 id="scalar-multiplication-formula">Scalar Multiplication Formula</h4>
+<p><span class="arithmatex">\((k\mathbf{A})_{ij} = k \cdot a_{ij}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(k\)</span> is the scalar multiplier</li>
+<li><span class="arithmatex">\(a_{ij}\)</span> is the original matrix entry</li>
+</ul>
+<p>Scalar multiplication scales all entries uniformly. In neural networks, this operation appears when applying learning rates to gradient matrices during backpropagation.</p>
+<h4 id="diagram-matrix-addition-and-scalar-multiplication">Diagram: Matrix Addition and Scalar Multiplication</h4>
+<iframe src="../../sims/matrix-basic-ops/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>Matrix Addition and Scalar Multiplication Interactive</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: calculate, demonstrate</p>
+<p>Learning Objective: Enable students to practice matrix addition and scalar multiplication interactively, reinforcing the element-wise nature of these operations.</p>
+<p>Canvas layout:
+- Top section: Two input matrices A and B displayed side by side
+- Middle: Result matrix C with operation indicator
+- Bottom: Control panel</p>
+<p>Visual elements:
+- 3×3 matrices displayed as grids with editable cells
+- Color highlighting showing corresponding entries during addition
+- Animation showing values flowing into result matrix
+- Operation symbol (+, ×) displayed between matrices</p>
+<p>Interactive controls:
+- Radio buttons: Select operation (Addition / Scalar Multiply)
+- Slider: Scalar value k (for scalar multiplication, range -3 to 3)
+- Button: Randomize matrices
+- Button: Step through calculation
+- Toggle: Show/hide calculation details</p>
+<p>Default parameters:
+- Matrix size: 3×3
+- Operation: Addition
+- Scalar: 2
+- Values: small integers (-5 to 5)</p>
+<p>Behavior:
+- Clicking a cell allows value editing
+- Result updates in real-time as inputs change
+- Step mode highlights each entry calculation sequentially
+- Animation shows entry-by-entry computation</p>
+<p>Implementation: p5.js with editable input fields</p>
+</details>
+<h2 id="matrix-multiplication">Matrix Multiplication</h2>
+<p>Matrix multiplication is the most important and nuanced matrix operation. Unlike addition, matrix multiplication has specific dimension requirements and is not commutative.</p>
+<h3 id="matrix-vector-product">Matrix-Vector Product</h3>
+<p>The <strong>matrix-vector product</strong> multiplies an <span class="arithmatex">\(m \times n\)</span> matrix by an <span class="arithmatex">\(n \times 1\)</span> column vector, producing an <span class="arithmatex">\(m \times 1\)</span> column vector. This operation represents applying a linear transformation to a vector.</p>
+<h4 id="matrix-vector-product-formula">Matrix-Vector Product Formula</h4>
+<p><span class="arithmatex">\(\mathbf{y} = \mathbf{A}\mathbf{x}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\)</span> is an <span class="arithmatex">\(m \times n\)</span> matrix</li>
+<li><span class="arithmatex">\(\mathbf{x}\)</span> is an <span class="arithmatex">\(n \times 1\)</span> column vector</li>
+<li><span class="arithmatex">\(\mathbf{y}\)</span> is the resulting <span class="arithmatex">\(m \times 1\)</span> column vector</li>
+</ul>
+<p>Each entry of the result is the dot product of a row of <span class="arithmatex">\(\mathbf{A}\)</span> with the vector <span class="arithmatex">\(\mathbf{x}\)</span>:</p>
+<p><span class="arithmatex">\(y_i = \sum_{j=1}^{n} a_{ij} x_j = a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n\)</span></p>
+<p>Alternatively, the matrix-vector product can be viewed as a linear combination of the columns of <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{A}\mathbf{x} = x_1 \mathbf{a}_1 + x_2 \mathbf{a}_2 + \cdots + x_n \mathbf{a}_n\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{a}_j\)</span> denotes the <span class="arithmatex">\(j\)</span>-th column of <span class="arithmatex">\(\mathbf{A}\)</span>.</p>
+<h3 id="matrix-matrix-multiplication">Matrix-Matrix Multiplication</h3>
+<p><strong>Matrix multiplication</strong> extends the matrix-vector product. The product of an <span class="arithmatex">\(m \times n\)</span> matrix <span class="arithmatex">\(\mathbf{A}\)</span> and an <span class="arithmatex">\(n \times p\)</span> matrix <span class="arithmatex">\(\mathbf{B}\)</span> is an <span class="arithmatex">\(m \times p\)</span> matrix <span class="arithmatex">\(\mathbf{C}\)</span>.</p>
+<h4 id="matrix-multiplication-formula">Matrix Multiplication Formula</h4>
+<p><span class="arithmatex">\(c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(c_{ij}\)</span> is the entry in row <span class="arithmatex">\(i\)</span>, column <span class="arithmatex">\(j\)</span> of the product</li>
+<li>The sum runs over the shared dimension <span class="arithmatex">\(n\)</span></li>
+<li>Each entry requires <span class="arithmatex">\(n\)</span> multiplications and <span class="arithmatex">\(n-1\)</span> additions</li>
+</ul>
+<p>The dimension compatibility rule states: the number of columns in <span class="arithmatex">\(\mathbf{A}\)</span> must equal the number of rows in <span class="arithmatex">\(\mathbf{B}\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Matrix A</th>
+<th>Matrix B</th>
+<th>Product C</th>
+<th>Valid?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(2 \times 3\)</span></td>
+<td><span class="arithmatex">\(3 \times 4\)</span></td>
+<td><span class="arithmatex">\(2 \times 4\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(3 \times 2\)</span></td>
+<td><span class="arithmatex">\(3 \times 4\)</span></td>
+<td>—</td>
+<td>No</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(4 \times 4\)</span></td>
+<td><span class="arithmatex">\(4 \times 4\)</span></td>
+<td><span class="arithmatex">\(4 \times 4\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1 \times 5\)</span></td>
+<td><span class="arithmatex">\(5 \times 1\)</span></td>
+<td><span class="arithmatex">\(1 \times 1\)</span></td>
+<td>Yes (scalar)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Matrix Multiplication is Not Commutative</p>
+<p>In general, <span class="arithmatex">\(\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}\)</span>. In fact, if <span class="arithmatex">\(\mathbf{A}\mathbf{B}\)</span> exists, <span class="arithmatex">\(\mathbf{B}\mathbf{A}\)</span> may not even be defined (different dimensions). Even for square matrices where both products exist, they typically differ.</p>
+</div>
+<h4 id="diagram-matrix-multiplication-visualizer">Diagram: Matrix Multiplication Visualizer</h4>
+<iframe src="../../sims/matrix-multiplication/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Matrix Multiplication Step-by-Step Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students understand the row-by-column computation process in matrix multiplication by animating each entry calculation.</p>
+<p>Canvas layout:
+- Left: Matrix A (highlighted rows)
+- Center: Matrix B (highlighted columns)
+- Right: Result matrix C (entries fill in as computed)
+- Bottom: Control panel and calculation display</p>
+<p>Visual elements:
+- Matrix A with current row highlighted in blue
+- Matrix B with current column highlighted in green
+- Result matrix C with current entry position highlighted in yellow
+- Dot product calculation shown step by step below matrices
+- Running sum displayed during computation</p>
+<p>Interactive controls:
+- Dropdown: Matrix A dimensions (2×2, 2×3, 3×2, 3×3)
+- Dropdown: Matrix B dimensions (matching first dimension of result)
+- Button: "Next Entry" - advance to next calculation
+- Button: "Auto Play" - animate all calculations
+- Slider: Animation speed (200ms - 2000ms per step)
+- Button: Reset
+- Toggle: Show column interpretation (linear combination view)</p>
+<p>Default parameters:
+- Matrix A: 2×3
+- Matrix B: 3×2
+- Animation speed: 800ms
+- Values: small integers (1-5)</p>
+<p>Behavior:
+- Highlight corresponding row of A and column of B
+- Show element-wise multiplication with + signs
+- Display running sum as computation proceeds
+- Fill in result entry when complete
+- Move to next entry automatically or on button click
+- Column interpretation mode shows result as linear combination</p>
+<p>Implementation: p5.js with animation states</p>
+</details>
+<h3 id="properties-of-matrix-multiplication">Properties of Matrix Multiplication</h3>
+<p>Matrix multiplication satisfies several important algebraic properties:</p>
+<ul>
+<li><strong>Associativity:</strong> <span class="arithmatex">\((\mathbf{A}\mathbf{B})\mathbf{C} = \mathbf{A}(\mathbf{B}\mathbf{C})\)</span></li>
+<li><strong>Distributivity:</strong> <span class="arithmatex">\(\mathbf{A}(\mathbf{B} + \mathbf{C}) = \mathbf{A}\mathbf{B} + \mathbf{A}\mathbf{C}\)</span></li>
+<li><strong>Scalar compatibility:</strong> <span class="arithmatex">\(k(\mathbf{A}\mathbf{B}) = (k\mathbf{A})\mathbf{B} = \mathbf{A}(k\mathbf{B})\)</span></li>
+<li><strong>Non-commutativity:</strong> <span class="arithmatex">\(\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}\)</span> in general</li>
+</ul>
+<p>These properties enable powerful algebraic manipulations while requiring careful attention to the order of operations.</p>
+<h2 id="the-matrix-transpose">The Matrix Transpose</h2>
+<p>The <strong>matrix transpose</strong> operation flips a matrix over its diagonal, converting rows to columns and vice versa. For an <span class="arithmatex">\(m \times n\)</span> matrix <span class="arithmatex">\(\mathbf{A}\)</span>, its transpose <span class="arithmatex">\(\mathbf{A}^T\)</span> is an <span class="arithmatex">\(n \times m\)</span> matrix.</p>
+<h4 id="transpose-definition">Transpose Definition</h4>
+<p><span class="arithmatex">\((\mathbf{A}^T)_{ij} = a_{ji}\)</span></p>
+<p>where:</p>
+<ul>
+<li>The entry in row <span class="arithmatex">\(i\)</span>, column <span class="arithmatex">\(j\)</span> of <span class="arithmatex">\(\mathbf{A}^T\)</span> equals the entry in row <span class="arithmatex">\(j\)</span>, column <span class="arithmatex">\(i\)</span> of <span class="arithmatex">\(\mathbf{A}\)</span></li>
+</ul>
+<p>For example:</p>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{bmatrix} \implies \mathbf{A}^T = \begin{bmatrix} 1 &amp; 4 \\ 2 &amp; 5 \\ 3 &amp; 6 \end{bmatrix}\)</span></p>
+<h3 id="transpose-properties">Transpose Properties</h3>
+<p>The transpose operation satisfies these properties:</p>
+<ul>
+<li><span class="arithmatex">\((\mathbf{A}^T)^T = \mathbf{A}\)</span> (double transpose returns original)</li>
+<li><span class="arithmatex">\((\mathbf{A} + \mathbf{B})^T = \mathbf{A}^T + \mathbf{B}^T\)</span> (transpose distributes over addition)</li>
+<li><span class="arithmatex">\((k\mathbf{A})^T = k\mathbf{A}^T\)</span> (scalars pass through)</li>
+<li><span class="arithmatex">\((\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T\)</span> (order reverses for products!)</li>
+</ul>
+<p>The last property is particularly important: when transposing a product, the order of the matrices reverses. This "reverse order law" appears frequently in derivations involving neural network backpropagation.</p>
+<h2 id="special-matrix-types">Special Matrix Types</h2>
+<p>Many matrices have special structures that simplify computation or carry geometric meaning. Recognizing these types enables algorithmic optimizations and deeper understanding.</p>
+<h3 id="identity-matrix">Identity Matrix</h3>
+<p>The <strong>identity matrix</strong> <span class="arithmatex">\(\mathbf{I}_n\)</span> is the multiplicative identity for <span class="arithmatex">\(n \times n\)</span> matrices. It has ones on the diagonal and zeros elsewhere:</p>
+<p><span class="arithmatex">\(\mathbf{I}_3 = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>For any matrix <span class="arithmatex">\(\mathbf{A}\)</span> with compatible dimensions:</p>
+<p><span class="arithmatex">\(\mathbf{I}_m \mathbf{A} = \mathbf{A} \mathbf{I}_n = \mathbf{A}\)</span></p>
+<p>The identity matrix represents the "do nothing" transformation—it maps every vector to itself.</p>
+<h3 id="diagonal-matrix">Diagonal Matrix</h3>
+<p>A <strong>diagonal matrix</strong> has nonzero entries only on its main diagonal. All off-diagonal entries are zero:</p>
+<p><span class="arithmatex">\(\mathbf{D} = \begin{bmatrix} d_1 &amp; 0 &amp; 0 \\ 0 &amp; d_2 &amp; 0 \\ 0 &amp; 0 &amp; d_3 \end{bmatrix}\)</span></p>
+<p>Diagonal matrices have special computational properties:</p>
+<ul>
+<li><strong>Multiplication:</strong> Multiplying by a diagonal matrix scales rows or columns</li>
+<li><strong>Powers:</strong> <span class="arithmatex">\(\mathbf{D}^k\)</span> has entries <span class="arithmatex">\(d_i^k\)</span></li>
+<li><strong>Inverse:</strong> <span class="arithmatex">\(\mathbf{D}^{-1}\)</span> has entries <span class="arithmatex">\(1/d_i\)</span> (if all <span class="arithmatex">\(d_i \neq 0\)</span>)</li>
+</ul>
+<p>In machine learning, diagonal matrices appear in batch normalization and as covariance matrices for independent features.</p>
+<h3 id="triangular-matrices">Triangular Matrices</h3>
+<p>A <strong>triangular matrix</strong> has zeros on one side of the diagonal.</p>
+<p>An <strong>upper triangular</strong> matrix has zeros below the diagonal:</p>
+<p><span class="arithmatex">\(\mathbf{U} = \begin{bmatrix} u_{11} &amp; u_{12} &amp; u_{13} \\ 0 &amp; u_{22} &amp; u_{23} \\ 0 &amp; 0 &amp; u_{33} \end{bmatrix}\)</span></p>
+<p>A <strong>lower triangular</strong> matrix has zeros above the diagonal:</p>
+<p><span class="arithmatex">\(\mathbf{L} = \begin{bmatrix} l_{11} &amp; 0 &amp; 0 \\ l_{21} &amp; l_{22} &amp; 0 \\ l_{31} &amp; l_{32} &amp; l_{33} \end{bmatrix}\)</span></p>
+<p>Triangular matrices are computationally advantageous:</p>
+<ul>
+<li>Solving <span class="arithmatex">\(\mathbf{L}\mathbf{x} = \mathbf{b}\)</span> uses <strong>forward substitution</strong> (start from top)</li>
+<li>Solving <span class="arithmatex">\(\mathbf{U}\mathbf{x} = \mathbf{b}\)</span> uses <strong>back substitution</strong> (start from bottom)</li>
+<li>Both require only <span class="arithmatex">\(O(n^2)\)</span> operations instead of <span class="arithmatex">\(O(n^3)\)</span></li>
+</ul>
+<p>LU decomposition factors any matrix into lower and upper triangular components, enabling efficient system solving.</p>
+<h4 id="diagram-special-matrix-types-gallery">Diagram: Special Matrix Types Gallery</h4>
+<iframe src="../../sims/special-matrices/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>Special Matrix Types Interactive Gallery</summary>
+<p>Type: infographic</p>
+<p>Bloom Level: Remember (L1)
+Bloom Verb: identify, recognize</p>
+<p>Learning Objective: Help students visually identify and distinguish between different special matrix types (identity, diagonal, upper/lower triangular) by their structural patterns.</p>
+<p>Layout: Grid of matrix visualizations with interactive selection</p>
+<p>Visual elements:
+- 4×4 grid showing four matrix types simultaneously
+- Each matrix displayed as a colored grid:
+  - Identity: ones on diagonal (gold), zeros elsewhere (light gray)
+  - Diagonal: colored diagonal entries, zeros elsewhere
+  - Upper triangular: colored upper triangle including diagonal, zeros below
+  - Lower triangular: colored lower triangle including diagonal, zeros above
+- Structural pattern highlighted with shading
+- Labels below each matrix type</p>
+<p>Interactive features:
+- Click on a matrix type to enlarge and see detailed properties
+- Hover over entries to see position (i,j) and value
+- Toggle: Show/hide zero entries
+- Slider: Matrix size (3×3 to 6×6)
+- Button: Show random example values</p>
+<p>Information panels (on click):
+- Definition of the matrix type
+- Key properties
+- Computational advantages
+- Common applications</p>
+<p>Color scheme:
+- Non-zero entries: blue gradient based on value
+- Zero entries: light gray or hidden
+- Diagonal: highlighted in gold
+- Structural regions: subtle background shading</p>
+<p>Implementation: HTML/CSS/JavaScript with SVG or Canvas</p>
+</details>
+<h3 id="symmetric-matrix">Symmetric Matrix</h3>
+<p>A <strong>symmetric matrix</strong> equals its own transpose: <span class="arithmatex">\(\mathbf{A} = \mathbf{A}^T\)</span>. This means <span class="arithmatex">\(a_{ij} = a_{ji}\)</span> for all entries—the matrix is mirror-symmetric across the diagonal.</p>
+<p><span class="arithmatex">\(\mathbf{S} = \begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 2 &amp; 4 &amp; 5 \\ 3 &amp; 5 &amp; 6 \end{bmatrix}\)</span></p>
+<p>Symmetric matrices arise naturally in many contexts:</p>
+<ul>
+<li><strong>Covariance matrices</strong> in statistics</li>
+<li><strong>Adjacency matrices</strong> for undirected graphs</li>
+<li><strong>Hessian matrices</strong> (second derivatives) in optimization</li>
+<li><strong>Gram matrices</strong> <span class="arithmatex">\(\mathbf{A}^T\mathbf{A}\)</span> from any matrix <span class="arithmatex">\(\mathbf{A}\)</span></li>
+</ul>
+<p>Symmetric matrices have remarkable spectral properties: they always have real eigenvalues and orthogonal eigenvectors, enabling powerful decomposition methods.</p>
+<h3 id="orthogonal-matrix">Orthogonal Matrix</h3>
+<p>An <strong>orthogonal matrix</strong> <span class="arithmatex">\(\mathbf{Q}\)</span> satisfies <span class="arithmatex">\(\mathbf{Q}^T\mathbf{Q} = \mathbf{Q}\mathbf{Q}^T = \mathbf{I}\)</span>. Equivalently, its inverse equals its transpose: <span class="arithmatex">\(\mathbf{Q}^{-1} = \mathbf{Q}^T\)</span>.</p>
+<p>The columns of an orthogonal matrix form an orthonormal set—they are mutually perpendicular unit vectors. Orthogonal matrices represent <strong>rotations</strong> and <strong>reflections</strong> that preserve lengths and angles.</p>
+<p>Properties of orthogonal matrices:</p>
+<ul>
+<li><strong>Length preservation:</strong> <span class="arithmatex">\(\|\mathbf{Q}\mathbf{x}\| = \|\mathbf{x}\|\)</span> for all vectors <span class="arithmatex">\(\mathbf{x}\)</span></li>
+<li><strong>Angle preservation:</strong> The angle between <span class="arithmatex">\(\mathbf{Q}\mathbf{x}\)</span> and <span class="arithmatex">\(\mathbf{Q}\mathbf{y}\)</span> equals the angle between <span class="arithmatex">\(\mathbf{x}\)</span> and <span class="arithmatex">\(\mathbf{y}\)</span></li>
+<li><strong>Determinant:</strong> <span class="arithmatex">\(\det(\mathbf{Q}) = \pm 1\)</span> (rotation if <span class="arithmatex">\(+1\)</span>, reflection if <span class="arithmatex">\(-1\)</span>)</li>
+<li><strong>Easy inversion:</strong> Computing <span class="arithmatex">\(\mathbf{Q}^{-1}\)</span> requires only a transpose</li>
+</ul>
+<h4 id="diagram-orthogonal-matrix-transformation">Diagram: Orthogonal Matrix Transformation</h4>
+<iframe src="../../sims/orthogonal-transform/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Orthogonal Matrix Transformation Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Demonstrate that orthogonal matrices preserve lengths and angles by visualizing how rotation matrices transform shapes without distortion.</p>
+<p>Canvas layout:
+- Main area: 2D coordinate plane with original and transformed shapes
+- Right panel: Matrix display and controls</p>
+<p>Visual elements:
+- Coordinate grid with x and y axes
+- Original shape (unit square or set of vectors) in blue
+- Transformed shape in red (semi-transparent overlay)
+- Length indicators showing preservation
+- Angle arc showing angle preservation between vectors
+- 2×2 rotation matrix displayed with current angle</p>
+<p>Interactive controls:
+- Slider: Rotation angle θ (0° to 360°)
+- Checkbox: Show length comparison
+- Checkbox: Show angle comparison
+- Dropdown: Shape to transform (square, triangle, circle of vectors)
+- Button: Add reflection (multiply by reflection matrix)
+- Display: Matrix values updating with angle</p>
+<p>Default parameters:
+- Angle: 45°
+- Shape: unit square
+- Show lengths: true
+- Show angles: false</p>
+<p>Behavior:
+- Shape smoothly rotates as angle slider changes
+- Length indicators show |Qx| = |x|
+- Angle arcs update to show angle preservation
+- Matrix entries update: cos(θ), -sin(θ), sin(θ), cos(θ)
+- Reflection button flips across an axis</p>
+<p>Implementation: p5.js with trigonometric calculations</p>
+</details>
+<h2 id="matrix-inverse">Matrix Inverse</h2>
+<p>The <strong>matrix inverse</strong> generalizes division to matrices. For a square matrix <span class="arithmatex">\(\mathbf{A}\)</span>, its inverse <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> (if it exists) satisfies:</p>
+<h4 id="matrix-inverse-definition">Matrix Inverse Definition</h4>
+<p><span class="arithmatex">\(\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\)</span> is an <span class="arithmatex">\(n \times n\)</span> square matrix</li>
+<li><span class="arithmatex">\(\mathbf{A}^{-1}\)</span> is the inverse matrix</li>
+<li><span class="arithmatex">\(\mathbf{I}\)</span> is the <span class="arithmatex">\(n \times n\)</span> identity matrix</li>
+</ul>
+<h3 id="invertible-matrices">Invertible Matrices</h3>
+<p>A matrix is <strong>invertible</strong> (also called <strong>nonsingular</strong> or <strong>non-degenerate</strong>) if its inverse exists. Not all matrices are invertible—those without inverses are called <strong>singular</strong>.</p>
+<p>Conditions for invertibility (all equivalent):</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}^{-1}\)</span> exists</li>
+<li><span class="arithmatex">\(\det(\mathbf{A}) \neq 0\)</span></li>
+<li>The columns of <span class="arithmatex">\(\mathbf{A}\)</span> are linearly independent</li>
+<li>The rows of <span class="arithmatex">\(\mathbf{A}\)</span> are linearly independent</li>
+<li><span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{0}\)</span> has only the trivial solution <span class="arithmatex">\(\mathbf{x} = \mathbf{0}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{A}\)</span> has full rank</li>
+</ul>
+<p>For a 2×2 matrix, the inverse has a closed form:</p>
+<h4 id="22-matrix-inverse-formula">2×2 Matrix Inverse Formula</h4>
+<p><span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} \implies \mathbf{A}^{-1} = \frac{1}{ad - bc}\begin{bmatrix} d &amp; -b \\ -c &amp; a \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(ad - bc\)</span> is the determinant of <span class="arithmatex">\(\mathbf{A}\)</span></li>
+<li>The inverse exists only if <span class="arithmatex">\(ad - bc \neq 0\)</span></li>
+</ul>
+<h3 id="properties-of-matrix-inverse">Properties of Matrix Inverse</h3>
+<p>When inverses exist, they satisfy these properties:</p>
+<ul>
+<li><span class="arithmatex">\((\mathbf{A}^{-1})^{-1} = \mathbf{A}\)</span></li>
+<li><span class="arithmatex">\((\mathbf{A}^T)^{-1} = (\mathbf{A}^{-1})^T\)</span></li>
+<li><span class="arithmatex">\((k\mathbf{A})^{-1} = \frac{1}{k}\mathbf{A}^{-1}\)</span> for <span class="arithmatex">\(k \neq 0\)</span></li>
+<li><span class="arithmatex">\((\mathbf{A}\mathbf{B})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\)</span> (order reverses!)</li>
+</ul>
+<p>The inverse enables solving linear systems: if <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span>, then <span class="arithmatex">\(\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Computational Practice</p>
+<p>While mathematically elegant, computing <span class="arithmatex">\(\mathbf{A}^{-1}\mathbf{b}\)</span> explicitly is usually avoided in practice. Instead, we solve <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span> directly using methods like LU decomposition, which are more numerically stable and efficient.</p>
+</div>
+<h4 id="diagram-matrix-inverse-explorer">Diagram: Matrix Inverse Explorer</h4>
+<iframe src="../../sims/matrix-inverse/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>Matrix Inverse Interactive Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: calculate, demonstrate</p>
+<p>Learning Objective: Enable students to explore matrix inversion for 2×2 and 3×3 matrices, verify the inverse property AA⁻¹ = I, and understand when matrices are singular.</p>
+<p>Canvas layout:
+- Left: Input matrix A (editable)
+- Center: Computed inverse A⁻¹ (or "Singular" warning)
+- Right: Verification showing AA⁻¹ = I
+- Bottom: Controls and determinant display</p>
+<p>Visual elements:
+- Editable matrix cells with color-coded entries
+- Determinant value prominently displayed
+- Color indicator: green for invertible, red for singular/near-singular
+- Verification matrix showing identity (or near-identity for numerical precision)
+- Warning icon when determinant is near zero</p>
+<p>Interactive controls:
+- Matrix size toggle: 2×2 / 3×3
+- Editable cells for matrix entries
+- Button: Randomize matrix
+- Button: Make singular (set det = 0)
+- Slider: Approach singularity (smoothly varies toward singular)
+- Toggle: Show calculation steps</p>
+<p>Default parameters:
+- Size: 2×2
+- Initial matrix: [[2, 1], [1, 1]] (invertible)</p>
+<p>Behavior:
+- Real-time inverse computation as entries change
+- Determinant updates continuously
+- Verification matrix computes A × A⁻¹
+- Near-singular matrices show numerical instability
+- Step-by-step mode shows cofactor/adjugate method for 2×2</p>
+<p>Implementation: p5.js with matrix computation library</p>
+</details>
+<h2 id="sparse-and-dense-matrices">Sparse and Dense Matrices</h2>
+<p>Matrices are classified by their distribution of zero and nonzero entries.</p>
+<p>A <strong>dense matrix</strong> has few zero entries relative to its total size. Most entries contain meaningful nonzero values. Dense matrices require <span class="arithmatex">\(O(mn)\)</span> storage and <span class="arithmatex">\(O(mn)\)</span> operations for most computations.</p>
+<p>A <strong>sparse matrix</strong> has many zero entries—typically the number of nonzero entries is <span class="arithmatex">\(O(n)\)</span> or <span class="arithmatex">\(O(n \log n)\)</span> rather than <span class="arithmatex">\(O(n^2)\)</span> for an <span class="arithmatex">\(n \times n\)</span> matrix. Sparse matrices arise naturally in:</p>
+<ul>
+<li><strong>Graph adjacency matrices:</strong> Most nodes connect to few others</li>
+<li><strong>Document-term matrices:</strong> Each document uses few of all possible words</li>
+<li><strong>Finite element methods:</strong> Local interactions produce banded structures</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Dense Matrix</th>
+<th>Sparse Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Storage</td>
+<td><span class="arithmatex">\(O(mn)\)</span></td>
+<td><span class="arithmatex">\(O(\text{nnz})\)</span></td>
+</tr>
+<tr>
+<td>Zero entries</td>
+<td>Few</td>
+<td>Many (typically &gt;90%)</td>
+</tr>
+<tr>
+<td>Storage format</td>
+<td>2D array</td>
+<td>CSR, CSC, COO</td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td>Standard algorithms</td>
+<td>Specialized sparse algorithms</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>Covariance matrices</td>
+<td>Adjacency matrices</td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="arithmatex">\(\text{nnz}\)</span> denotes the number of nonzero entries.</p>
+<p>Sparse matrix formats like Compressed Sparse Row (CSR) store only nonzero values along with their positions, dramatically reducing memory requirements and enabling faster operations by skipping zero computations.</p>
+<h4 id="diagram-sparse-vs-dense-matrix-visualization">Diagram: Sparse vs Dense Matrix Visualization</h4>
+<iframe src="../../sims/sparse-dense-matrices/main.html" width="100%" height="420px" scrolling="no"></iframe>
+
+<details>
+<summary>Sparse vs Dense Matrix Comparison</summary>
+<p>Type: infographic</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: compare, contrast, differentiate</p>
+<p>Learning Objective: Help students understand the structural difference between sparse and dense matrices and appreciate why sparsity enables computational efficiency.</p>
+<p>Layout: Side-by-side matrix visualizations with statistics</p>
+<p>Visual elements:
+- Left panel: Dense matrix (most cells filled with color)
+- Right panel: Sparse matrix (few colored cells, most white/gray)
+- Color intensity indicates value magnitude
+- Zero entries shown as white or light gray
+- Statistics overlay:
+  - Total entries
+  - Nonzero entries
+  - Sparsity percentage
+  - Memory comparison (dense vs sparse storage)</p>
+<p>Interactive features:
+- Slider: Matrix size (10×10 to 100×100)
+- Slider: Sparsity level (10% to 99% zeros)
+- Dropdown: Sparse pattern (random, diagonal, banded, block)
+- Toggle: Show storage comparison bar chart
+- Hover: Show value at position</p>
+<p>Example data:
+- Dense: Random values in most cells
+- Sparse: Graph adjacency pattern or banded structure</p>
+<p>Statistics display:
+- Memory ratio: "Sparse uses X% of dense storage"
+- Multiplication speedup estimate</p>
+<p>Implementation: HTML Canvas or p5.js with efficient rendering</p>
+</details>
+<h2 id="block-matrices">Block Matrices</h2>
+<p>A <strong>block matrix</strong> (or partitioned matrix) is a matrix viewed as an array of smaller matrices called <strong>blocks</strong> or <strong>submatrices</strong>. Block structure often reflects natural problem decomposition.</p>
+<p><span class="arithmatex">\(\mathbf{M} = \begin{bmatrix} \mathbf{A} &amp; \mathbf{B} \\ \mathbf{C} &amp; \mathbf{D} \end{bmatrix}\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{A}\)</span>, <span class="arithmatex">\(\mathbf{B}\)</span>, <span class="arithmatex">\(\mathbf{C}\)</span>, <span class="arithmatex">\(\mathbf{D}\)</span> are matrices of compatible dimensions.</p>
+<h3 id="block-matrix-operations">Block Matrix Operations</h3>
+<p>Block matrices support "block-wise" operations that mirror scalar operations:</p>
+<p><strong>Block Addition:</strong> If two matrices have the same block structure:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} \mathbf{A}_1 &amp; \mathbf{B}_1 \\ \mathbf{C}_1 &amp; \mathbf{D}_1 \end{bmatrix} + \begin{bmatrix} \mathbf{A}_2 &amp; \mathbf{B}_2 \\ \mathbf{C}_2 &amp; \mathbf{D}_2 \end{bmatrix} = \begin{bmatrix} \mathbf{A}_1 + \mathbf{A}_2 &amp; \mathbf{B}_1 + \mathbf{B}_2 \\ \mathbf{C}_1 + \mathbf{C}_2 &amp; \mathbf{D}_1 + \mathbf{D}_2 \end{bmatrix}\)</span></p>
+<p><strong>Block Multiplication:</strong> With compatible block dimensions:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} \mathbf{A} &amp; \mathbf{B} \\ \mathbf{C} &amp; \mathbf{D} \end{bmatrix} \begin{bmatrix} \mathbf{E} \\ \mathbf{F} \end{bmatrix} = \begin{bmatrix} \mathbf{A}\mathbf{E} + \mathbf{B}\mathbf{F} \\ \mathbf{C}\mathbf{E} + \mathbf{D}\mathbf{F} \end{bmatrix}\)</span></p>
+<p>Block structure enables:</p>
+<ul>
+<li>Parallel computation on independent blocks</li>
+<li>Efficient algorithms exploiting structure</li>
+<li>Conceptual clarity in complex systems</li>
+<li>Memory-efficient storage when blocks have special properties</li>
+</ul>
+<p>In deep learning, weight matrices are often organized in blocks corresponding to different layers or attention heads.</p>
+<h4 id="diagram-block-matrix-structure">Diagram: Block Matrix Structure</h4>
+<iframe src="../../sims/block-matrix/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>Block Matrix Partitioning Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, classify</p>
+<p>Learning Objective: Help students understand how matrices can be partitioned into blocks and how block operations mirror element-wise operations at a higher level.</p>
+<p>Canvas layout:
+- Main area: Large matrix with adjustable partition lines
+- Right panel: Block extraction and operation display</p>
+<p>Visual elements:
+- 8×8 matrix displayed as a grid
+- Draggable horizontal and vertical partition lines
+- Distinct colors for each block region
+- Block labels (A, B, C, D, etc.) overlaid on regions
+- Extracted blocks shown separately on right</p>
+<p>Interactive controls:
+- Drag partition lines to resize blocks
+- Dropdown: Example partitioning (2×2 blocks, row partition, column partition)
+- Toggle: Show block dimensions
+- Button: Demonstrate block multiplication
+- Checkbox: Show compatibility requirements</p>
+<p>Default parameters:
+- Matrix size: 8×8
+- Initial partition: 4×4 blocks (2×2 block structure)
+- Values: integers 1-9</p>
+<p>Behavior:
+- Partition lines snap to integer positions
+- Block colors update as partitioning changes
+- Dimension labels update dynamically
+- Block multiplication demo shows step-by-step block operations</p>
+<p>Implementation: p5.js with draggable elements</p>
+</details>
+<h2 id="applications-in-machine-learning-and-ai">Applications in Machine Learning and AI</h2>
+<p>The matrix concepts covered in this chapter form the computational foundation of modern machine learning systems.</p>
+<h3 id="data-representation">Data Representation</h3>
+<p>Machine learning datasets are naturally represented as matrices:</p>
+<ul>
+<li><strong>Design matrix <span class="arithmatex">\(\mathbf{X}\)</span>:</strong> Each row is a sample, each column is a feature</li>
+<li><strong>Weight matrix <span class="arithmatex">\(\mathbf{W}\)</span>:</strong> Neural network parameters connecting layers</li>
+<li><strong>Embedding matrix <span class="arithmatex">\(\mathbf{E}\)</span>:</strong> Word or token embeddings in NLP</li>
+</ul>
+<p>For a dataset with <span class="arithmatex">\(m\)</span> samples and <span class="arithmatex">\(n\)</span> features, the design matrix is <span class="arithmatex">\(m \times n\)</span>. Feature scaling, normalization, and transformation all use matrix operations.</p>
+<h3 id="neural-network-layers">Neural Network Layers</h3>
+<p>A fully connected neural network layer performs:</p>
+<p><span class="arithmatex">\(\mathbf{h} = \sigma(\mathbf{W}\mathbf{x} + \mathbf{b})\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{W}\)</span> is the weight matrix</li>
+<li><span class="arithmatex">\(\mathbf{x}\)</span> is the input vector</li>
+<li><span class="arithmatex">\(\mathbf{b}\)</span> is the bias vector</li>
+<li><span class="arithmatex">\(\sigma\)</span> is a nonlinear activation function</li>
+</ul>
+<p>Batch processing extends this to:</p>
+<p><span class="arithmatex">\(\mathbf{H} = \sigma(\mathbf{X}\mathbf{W}^T + \mathbf{b})\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{X}\)</span> contains multiple input vectors as rows, enabling parallel computation of many samples.</p>
+<h3 id="attention-mechanisms">Attention Mechanisms</h3>
+<p>Transformer models compute attention using three matrices:</p>
+<ul>
+<li><strong>Query matrix <span class="arithmatex">\(\mathbf{Q}\)</span>:</strong> What we're looking for</li>
+<li><strong>Key matrix <span class="arithmatex">\(\mathbf{K}\)</span>:</strong> What's available to match</li>
+<li><strong>Value matrix <span class="arithmatex">\(\mathbf{V}\)</span>:</strong> What we retrieve</li>
+</ul>
+<p>The attention computation:</p>
+<p><span class="arithmatex">\(\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V}\)</span></p>
+<p>relies entirely on matrix multiplications and transposes covered in this chapter.</p>
+<h4 id="diagram-neural-network-layer-matrix-operations">Diagram: Neural Network Layer Matrix Operations</h4>
+<iframe src="../../sims/neural-network-layer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Neural Network Layer Forward Pass Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: implement, demonstrate</p>
+<p>Learning Objective: Show how matrix-vector multiplication implements a neural network layer, connecting abstract matrix operations to concrete deep learning computations.</p>
+<p>Canvas layout:
+- Left: Input vector visualization
+- Center: Weight matrix with connection lines
+- Right: Output vector (pre and post activation)
+- Bottom: Controls and formula display</p>
+<p>Visual elements:
+- Input neurons (circles) with values
+- Weight matrix displayed as a heatmap
+- Connection lines from inputs to outputs (thickness = weight magnitude)
+- Output neurons showing weighted sums
+- Activation function visualization (ReLU, sigmoid curve)
+- Formula: h = σ(Wx + b) displayed with current values</p>
+<p>Interactive controls:
+- Slider: Number of inputs (2-6)
+- Slider: Number of outputs (2-6)
+- Dropdown: Activation function (none, ReLU, sigmoid, tanh)
+- Button: Randomize weights
+- Button: Randomize input
+- Toggle: Show bias term
+- Toggle: Show matrix multiplication step-by-step</p>
+<p>Default parameters:
+- Inputs: 3
+- Outputs: 2
+- Activation: ReLU
+- Random weights in [-1, 1]
+- Random inputs in [0, 1]</p>
+<p>Behavior:
+- Changing input values updates outputs in real-time
+- Connection line colors indicate positive (blue) vs negative (red) weights
+- Step-by-step mode highlights each row-vector dot product
+- Activation function applied visually to each output</p>
+<p>Implementation: p5.js with animation</p>
+</details>
+<h2 id="summary-and-key-takeaways">Summary and Key Takeaways</h2>
+<p>This chapter introduced matrices as the fundamental data structures of linear algebra with broad applications in AI and machine learning.</p>
+<p><strong>Core Concepts:</strong></p>
+<ul>
+<li>A <strong>matrix</strong> is a rectangular array of numbers with dimensions <span class="arithmatex">\(m \times n\)</span></li>
+<li><strong>Matrix entries</strong> are indexed by row and column: <span class="arithmatex">\(a_{ij}\)</span></li>
+<li><strong>Row vectors</strong> (<span class="arithmatex">\(1 \times n\)</span>) and <strong>column vectors</strong> (<span class="arithmatex">\(m \times 1\)</span>) are special cases</li>
+</ul>
+<p><strong>Fundamental Operations:</strong></p>
+<ul>
+<li><strong>Matrix addition</strong> adds corresponding entries (requires same dimensions)</li>
+<li><strong>Scalar multiplication</strong> scales all entries by a constant</li>
+<li><strong>Matrix-vector product</strong> <span class="arithmatex">\(\mathbf{A}\mathbf{x}\)</span> produces a linear combination of columns</li>
+<li><strong>Matrix multiplication</strong> <span class="arithmatex">\(\mathbf{A}\mathbf{B}\)</span> requires matching inner dimensions</li>
+<li><strong>Transpose</strong> <span class="arithmatex">\(\mathbf{A}^T\)</span> flips rows and columns</li>
+</ul>
+<p><strong>Special Matrix Types:</strong></p>
+<ul>
+<li><strong>Identity matrix</strong> <span class="arithmatex">\(\mathbf{I}\)</span>: multiplicative identity</li>
+<li><strong>Diagonal matrix</strong>: nonzeros only on diagonal</li>
+<li><strong>Triangular matrices</strong>: zeros above or below diagonal</li>
+<li><strong>Symmetric matrix</strong>: <span class="arithmatex">\(\mathbf{A} = \mathbf{A}^T\)</span></li>
+<li><strong>Orthogonal matrix</strong>: <span class="arithmatex">\(\mathbf{Q}^T\mathbf{Q} = \mathbf{I}\)</span> (preserves lengths/angles)</li>
+</ul>
+<p><strong>Inverse and Structure:</strong></p>
+<ul>
+<li><strong>Matrix inverse</strong> <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> satisfies <span class="arithmatex">\(\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}\)</span></li>
+<li><strong>Invertible matrices</strong> have nonzero determinant and linearly independent columns</li>
+<li><strong>Sparse matrices</strong> have few nonzero entries; <strong>dense matrices</strong> have many</li>
+<li><strong>Block matrices</strong> partition into submatrices for structured computation</li>
+</ul>
+<p><strong>Key Properties to Remember:</strong></p>
+<ul>
+<li>Matrix multiplication is NOT commutative: <span class="arithmatex">\(\mathbf{A}\mathbf{B} \neq \mathbf{B}\mathbf{A}\)</span></li>
+<li>Product transpose reverses order: <span class="arithmatex">\((\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T\)</span></li>
+<li>Inverse product reverses order: <span class="arithmatex">\((\mathbf{A}\mathbf{B})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\)</span></li>
+</ul>
+<p>These operations form the computational vocabulary of machine learning, from basic linear regression to advanced transformer architectures.</p>
+<hr />
+<h2 id="exercises">Exercises</h2>
+<details class="question">
+<summary>Exercise 1: Matrix Dimensions</summary>
+<p>Given matrices <span class="arithmatex">\(\mathbf{A}\)</span> (3×4), <span class="arithmatex">\(\mathbf{B}\)</span> (4×2), and <span class="arithmatex">\(\mathbf{C}\)</span> (3×2), which products are defined? What are their dimensions?</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\mathbf{B}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{B}\mathbf{A}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{A}\mathbf{C}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{A}\mathbf{B} + \mathbf{C}\)</span></li>
+</ul>
+</details>
+<details class="question">
+<summary>Exercise 2: Transpose Properties</summary>
+<p>Prove that <span class="arithmatex">\((\mathbf{A}\mathbf{B})^T = \mathbf{B}^T\mathbf{A}^T\)</span> for 2×2 matrices by computing both sides with generic entries.</p>
+</details>
+<details class="question">
+<summary>Exercise 3: Symmetric Matrices</summary>
+<p>Show that for any matrix <span class="arithmatex">\(\mathbf{A}\)</span>, both <span class="arithmatex">\(\mathbf{A}^T\mathbf{A}\)</span> and <span class="arithmatex">\(\mathbf{A}\mathbf{A}^T\)</span> are symmetric matrices.</p>
+</details>
+<details class="question">
+<summary>Exercise 4: Orthogonal Matrix Verification</summary>
+<p>Verify that the following matrix is orthogonal and determine if it represents a rotation or reflection:</p>
+<p><span class="arithmatex">\(\mathbf{Q} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 &amp; 1 \\ -1 &amp; 1 \end{bmatrix}\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 5: Block Multiplication</summary>
+<p>Compute the product of the following block matrices:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} \mathbf{I}_2 &amp; \mathbf{0} \\ \mathbf{A} &amp; \mathbf{I}_2 \end{bmatrix} \begin{bmatrix} \mathbf{I}_2 &amp; \mathbf{0} \\ -\mathbf{A} &amp; \mathbf{I}_2 \end{bmatrix}\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{A}\)</span> is any 2×2 matrix.</p>
+</details>
 
 
 
