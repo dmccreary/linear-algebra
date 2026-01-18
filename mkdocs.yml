@@ -80,6 +80,9 @@ nav:
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
 
+  - License: license.md
+  - Contact: contact.md
+
 theme:
   name: material
   logo: img/logo.png
