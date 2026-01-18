@@ -33,7 +33,10 @@ nav:
     - Quality Metrics: learning-graph/quality-metrics.md
     - Concept Taxonomy: learning-graph/concept-taxonomy.md
     - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+    - Glossary Quality Report: learning-graph/glossary-quality-report.md
   
+  - Glossary: glossary.md
+
   - MicroSims:
     - Graph Viewer: sims/graph-viewer/index.md
     - 2D and 3D Vector Visualization: sims/vector-2d-3d-visualizer/index.md
