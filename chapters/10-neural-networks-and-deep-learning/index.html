@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="The matrix mathematics powering deep learning, from neurons to convolutional architectures">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/10-neural-networks-and-deep-learning/">
       
       
-        <link rel="prev" href="../09-machine-learning-foundations/">
+        <link rel="prev" href="../09-machine-learning-foundations/quiz/">
       
       
-        <link rel="next" href="../11-generative-ai-and-llms/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>10. Neural Networks and Deep Learning - Linear Algebra</title>
+        <title>Neural Networks and Deep Learning - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="10. Neural Networks and Deep Learning - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/10-neural-networks-and-deep-learning/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/10-neural-networks-and-deep-learning/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="10. Neural Networks and Deep Learning - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/10-neural-networks-and-deep-learning/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Neural Networks and Deep Learning - Linear Algebra" />
+<meta property="og:description" content="The matrix mathematics powering deep learning, from neurons to convolutional architectures" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/10-neural-networks-and-deep-learning/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/10-neural-networks-and-deep-learning/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Neural Networks and Deep Learning - Linear Algebra" />
+<meta property="twitter:description" content="The matrix mathematics powering deep learning, from neurons to convolutional architectures" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/10-neural-networks-and-deep-learning/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. Neural Networks and Deep Learning
+              Neural Networks and Deep Learning
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,592 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Neural Networks and Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    10. Neural Networks and Deep Learning
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +988,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,211 +1021,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Generative AI and LLMs
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
+    
+  
+    12. Optimization and Learning Algorithms
+  
+
+    
   </span>
   
+  
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -738,37 +1137,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -780,16 +1194,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -801,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,650 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-perceptron-where-it-began" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Perceptron: Where It Began
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Perceptron: Where It Began">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perceptron-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perceptron Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric Interpretation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-perceptron-decision-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Perceptron Decision Boundary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-neuron-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Neuron Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activation Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activation Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relu-rectified-linear-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReLU (Rectified Linear Unit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sigmoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sigmoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tanh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tanh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Softmax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Softmax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-activation-function-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Activation Function Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-architecture-layers-and-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Architecture: Layers and Matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Architecture: Layers and Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weight-matrix-and-bias-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight Matrix and Bias Vector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Network Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden-layers-and-deep-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden Layers and Deep Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hidden Layers and Deep Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-network-architecture-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Network Architecture Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forward-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward Propagation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Forward Propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix-form-for-batches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matrix Form for Batches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-nonlinearity-is-essential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Nonlinearity Is Essential
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Nonlinearity Is Essential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-forward-propagation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Forward Propagation Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loss Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loss Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-loss-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Loss Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-cross-entropy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Cross-Entropy?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backpropagation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backpropagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-chain-rule-for-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Chain Rule for Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chain-rule-matrices-jacobians" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chain Rule Matrices (Jacobians)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backpropagation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backpropagation Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backpropagation Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-backpropagation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Backpropagation Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-flow-and-vanishingexploding-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient Flow and Vanishing/Exploding Gradients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convolutional-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convolutional Neural Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convolutional Neural Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convolution-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convolution Kernel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolutional-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convolutional Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stride-and-padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stride and Padding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pooling-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pooling Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pooling Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-convolution-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Convolution Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization Techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normalization Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Normalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer Normalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-normalization-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Normalization Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensors-and-tensor-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensors and Tensor Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tensors and Tensor Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensor-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-tensor-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Tensor Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensor-operations-in-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tensor Operations in Neural Networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tensor Operations in Neural Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-tensor-shape-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Tensor Shape Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1014,12 +2211,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    10. Neural Networks and Deep Learning
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/10-neural-networks-and-deep-learning/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/10-neural-networks-and-deep-learning/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1070,7 +2335,952 @@
 <li><a href="../13-image-processing-and-computer-vision/">Chapter 13: Image Processing</a> (for convolution concepts)</li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Deep learning has revolutionized artificial intelligence, powering breakthroughs in image recognition, natural language processing, and game playing. Behind the impressive applications lies elegant mathematics: neural networks are compositions of linear transformations (matrix multiplications) and elementwise nonlinearities.</p>
+<p>Understanding neural networks through the lens of linear algebra provides crucial insights:</p>
+<ul>
+<li>Why networks need nonlinear activation functions</li>
+<li>How gradients flow backward through matrix operations</li>
+<li>Why certain architectures are more effective than others</li>
+<li>How to debug and optimize network training</li>
+</ul>
+<p>This chapter develops neural networks from first principles, revealing the matrix operations at every step. You'll see that deep learning is not magic—it's linear algebra with a few clever twists.</p>
+<h2 id="the-perceptron-where-it-began">The Perceptron: Where It Began</h2>
+<p>The <strong>perceptron</strong>, invented by Frank Rosenblatt in 1958, is the simplest neural network—a single artificial neuron that performs binary classification.</p>
+<h3 id="perceptron-model">Perceptron Model</h3>
+<p>Given input vector <span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^d\)</span>, the perceptron computes:</p>
+<p><span class="arithmatex">\(y = \text{sign}(\mathbf{w}^T\mathbf{x} + b)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{w} \in \mathbb{R}^d\)</span> is the weight vector</li>
+<li><span class="arithmatex">\(b \in \mathbb{R}\)</span> is the bias</li>
+<li><span class="arithmatex">\(\text{sign}(z) = +1\)</span> if <span class="arithmatex">\(z \geq 0\)</span>, else <span class="arithmatex">\(-1\)</span></li>
+</ul>
+<p>The perceptron defines a hyperplane <span class="arithmatex">\(\mathbf{w}^T\mathbf{x} + b = 0\)</span> that separates the input space into two half-spaces.</p>
+<h3 id="geometric-interpretation">Geometric Interpretation</h3>
+<p>The weight vector <span class="arithmatex">\(\mathbf{w}\)</span> is perpendicular to the decision boundary, and the bias <span class="arithmatex">\(b\)</span> controls the boundary's offset from the origin. Points on one side of the hyperplane are classified as <span class="arithmatex">\(+1\)</span>, points on the other side as <span class="arithmatex">\(-1\)</span>.</p>
+<h4 id="diagram-perceptron-decision-boundary">Diagram: Perceptron Decision Boundary</h4>
+<details>
+<summary>Perceptron Decision Boundary Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize how perceptron weights and bias define a linear decision boundary</p>
+<p>Visual elements:
+- 2D input space with data points (two classes, different colors)
+- Decision boundary line
+- Weight vector shown perpendicular to boundary
+- Shaded regions for each class
+- Misclassified points highlighted</p>
+<p>Interactive controls:
+- Draggable weight vector (changes boundary orientation)
+- Bias slider (shifts boundary)
+- "Add Point" mode to create custom datasets
+- "Run Perceptron Learning" button
+- Preset datasets: linearly separable, XOR (not separable)</p>
+<p>Default parameters:
+- Linearly separable 2D dataset
+- Initial random weights
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time boundary update as weights change
+- Show classification accuracy
+- Highlight that XOR cannot be solved
+- Animate perceptron learning algorithm steps
+- Display weight update rule</p>
+<p>Implementation: p5.js with interactive geometry</p>
+</details>
+<h3 id="limitations">Limitations</h3>
+<p>The perceptron can only learn linearly separable functions. The famous XOR problem demonstrated that a single perceptron cannot compute XOR—motivating multilayer networks.</p>
+<h2 id="the-neuron-model">The Neuron Model</h2>
+<p>A <strong>neuron</strong> (or unit) generalizes the perceptron with a continuous activation function:</p>
+<p><span class="arithmatex">\(a = \sigma(\mathbf{w}^T\mathbf{x} + b) = \sigma(z)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(z = \mathbf{w}^T\mathbf{x} + b\)</span> is the pre-activation (weighted sum)</li>
+<li><span class="arithmatex">\(\sigma\)</span> is the activation function</li>
+<li><span class="arithmatex">\(a\)</span> is the activation (output)</li>
+</ul>
+<p>This two-step process—linear combination followed by nonlinearity—is the fundamental building block of all neural networks.</p>
+<h2 id="activation-functions">Activation Functions</h2>
+<p><strong>Activation functions</strong> introduce nonlinearity, enabling neural networks to learn complex patterns. Without them, any depth of linear layers would collapse to a single linear transformation.</p>
+<h3 id="relu-rectified-linear-unit">ReLU (Rectified Linear Unit)</h3>
+<p>The <strong>ReLU</strong> activation is the most widely used in modern deep learning:</p>
+<p><span class="arithmatex">\(\text{ReLU}(z) = \max(0, z) = \begin{cases} z &amp; \text{if } z &gt; 0 \\ 0 &amp; \text{if } z \leq 0 \end{cases}\)</span></p>
+<p>Properties:</p>
+<ul>
+<li>Computationally efficient (just a threshold)</li>
+<li>Sparse activations (many zeros)</li>
+<li>Avoids vanishing gradients for positive inputs</li>
+<li>"Dead ReLU" problem: neurons can get stuck at zero</li>
+</ul>
+<p>Derivative: <span class="arithmatex">\(\frac{d}{dz}\text{ReLU}(z) = \begin{cases} 1 &amp; \text{if } z &gt; 0 \\ 0 &amp; \text{if } z &lt; 0 \end{cases}\)</span></p>
+<h3 id="sigmoid">Sigmoid</h3>
+<p>The <strong>sigmoid</strong> function squashes inputs to the range <span class="arithmatex">\((0, 1)\)</span>:</p>
+<p><span class="arithmatex">\(\sigma(z) = \frac{1}{1 + e^{-z}}\)</span></p>
+<p>Properties:</p>
+<ul>
+<li>Output interpretable as probability</li>
+<li>Smooth and differentiable everywhere</li>
+<li>Saturates for large <span class="arithmatex">\(|z|\)</span> (vanishing gradients)</li>
+<li>Outputs not zero-centered</li>
+</ul>
+<p>Derivative: <span class="arithmatex">\(\sigma'(z) = \sigma(z)(1 - \sigma(z))\)</span></p>
+<h3 id="tanh">Tanh</h3>
+<p>The <strong>tanh</strong> function maps inputs to <span class="arithmatex">\((-1, 1)\)</span>:</p>
+<p><span class="arithmatex">\(\tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} = 2\sigma(2z) - 1\)</span></p>
+<p>Properties:</p>
+<ul>
+<li>Zero-centered outputs (often better than sigmoid)</li>
+<li>Still suffers from vanishing gradients at extremes</li>
+<li>Commonly used in RNNs and LSTMs</li>
+</ul>
+<p>Derivative: <span class="arithmatex">\(\tanh'(z) = 1 - \tanh^2(z)\)</span></p>
+<h3 id="softmax">Softmax</h3>
+<p>The <strong>softmax</strong> function converts a vector of scores to a probability distribution:</p>
+<p><span class="arithmatex">\(\text{softmax}(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}\)</span></p>
+<p>where:</p>
+<ul>
+<li>Input: <span class="arithmatex">\(\mathbf{z} \in \mathbb{R}^K\)</span> (logits for <span class="arithmatex">\(K\)</span> classes)</li>
+<li>Output: probability vector with <span class="arithmatex">\(\sum_i \text{softmax}(\mathbf{z})_i = 1\)</span></li>
+</ul>
+<p>Properties:</p>
+<ul>
+<li>Used for multi-class classification output layer</li>
+<li>Exponential amplifies differences between scores</li>
+<li>Numerically stabilized by subtracting <span class="arithmatex">\(\max(\mathbf{z})\)</span> before exponentiating</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>Range</th>
+<th>Use Case</th>
+<th>Gradient Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ReLU</td>
+<td><span class="arithmatex">\([0, \infty)\)</span></td>
+<td>Hidden layers</td>
+<td>Dead neurons</td>
+</tr>
+<tr>
+<td>Sigmoid</td>
+<td><span class="arithmatex">\((0, 1)\)</span></td>
+<td>Binary output</td>
+<td>Vanishing</td>
+</tr>
+<tr>
+<td>Tanh</td>
+<td><span class="arithmatex">\((-1, 1)\)</span></td>
+<td>Hidden layers, RNNs</td>
+<td>Vanishing</td>
+</tr>
+<tr>
+<td>Softmax</td>
+<td><span class="arithmatex">\((0, 1)^K\)</span>, sums to 1</td>
+<td>Multi-class output</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-activation-function-comparison">Diagram: Activation Function Comparison</h4>
+<details>
+<summary>Activation Functions Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Compare activation functions by their shape, range, and gradient behavior</p>
+<p>Visual elements:
+- Main panel: Graph showing selected activation function
+- Derivative overlay (toggleable)
+- Gradient magnitude heatmap for different input values
+- Side panel: Function properties summary</p>
+<p>Interactive controls:
+- Activation selector: ReLU, Sigmoid, Tanh, Leaky ReLU, Softplus
+- Input range slider
+- "Show Derivative" toggle
+- "Compare All" mode showing functions overlaid
+- Input value slider to trace along curve</p>
+<p>Default parameters:
+- ReLU selected
+- Input range: [-5, 5]
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time function and derivative plotting
+- Highlight saturation regions (near-zero gradient)
+- Show numerical values at traced point
+- For softmax: show 3-class probability bar chart
+- Display gradient flow implications</p>
+<p>Implementation: p5.js with function plotting</p>
+</details>
+<h2 id="network-architecture-layers-and-matrices">Network Architecture: Layers and Matrices</h2>
+<p>A neural network organizes neurons into layers, with each layer performing a matrix operation.</p>
+<h3 id="weight-matrix-and-bias-vector">Weight Matrix and Bias Vector</h3>
+<p>For a layer with <span class="arithmatex">\(n_{in}\)</span> inputs and <span class="arithmatex">\(n_{out}\)</span> outputs:</p>
+<ul>
+<li><strong>Weight matrix</strong> <span class="arithmatex">\(W \in \mathbb{R}^{n_{out} \times n_{in}}\)</span> contains connection strengths</li>
+<li><strong>Bias vector</strong> <span class="arithmatex">\(\mathbf{b} \in \mathbb{R}^{n_{out}}\)</span> provides learnable offsets</li>
+</ul>
+<p>The layer computes:</p>
+<p><span class="arithmatex">\(\mathbf{z} = W\mathbf{x} + \mathbf{b}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^{n_{in}}\)</span> is the input</li>
+<li><span class="arithmatex">\(\mathbf{z} \in \mathbb{R}^{n_{out}}\)</span> is the pre-activation</li>
+</ul>
+<p>Each row of <span class="arithmatex">\(W\)</span> contains the weights for one output neuron.</p>
+<h3 id="neural-network-layer">Neural Network Layer</h3>
+<p>A complete <strong>neural network layer</strong> combines the linear transformation with an activation:</p>
+<p><span class="arithmatex">\(\mathbf{a} = \sigma(W\mathbf{x} + \mathbf{b})\)</span></p>
+<p>where <span class="arithmatex">\(\sigma\)</span> is applied elementwise.</p>
+<p>For a batch of <span class="arithmatex">\(m\)</span> inputs (stored as columns of <span class="arithmatex">\(X \in \mathbb{R}^{n_{in} \times m}\)</span>):</p>
+<p><span class="arithmatex">\(A = \sigma(WX + \mathbf{b}\mathbf{1}^T)\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{1}^T = [1, 1, \ldots, 1]\)</span> broadcasts the bias to all samples.</p>
+<h3 id="hidden-layers-and-deep-networks">Hidden Layers and Deep Networks</h3>
+<ul>
+<li><strong>Hidden layers</strong> are layers between input and output—their activations are not directly observed</li>
+<li>A <strong>deep network</strong> has multiple hidden layers, enabling hierarchical feature learning</li>
+</ul>
+<p>A network with <span class="arithmatex">\(L\)</span> layers computes:</p>
+<p><span class="arithmatex">\(\mathbf{a}^{[0]} = \mathbf{x}\)</span> (input)</p>
+<p><span class="arithmatex">\(\mathbf{z}^{[l]} = W^{[l]}\mathbf{a}^{[l-1]} + \mathbf{b}^{[l]}\)</span> for <span class="arithmatex">\(l = 1, \ldots, L\)</span></p>
+<p><span class="arithmatex">\(\mathbf{a}^{[l]} = \sigma^{[l]}(\mathbf{z}^{[l]})\)</span> for <span class="arithmatex">\(l = 1, \ldots, L\)</span></p>
+<p>The output is <span class="arithmatex">\(\mathbf{a}^{[L]}\)</span>.</p>
+<h4 id="diagram-network-architecture-visualizer">Diagram: Network Architecture Visualizer</h4>
+<details>
+<summary>Neural Network Architecture Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize neural network architecture and understand the dimensions of weight matrices at each layer</p>
+<p>Visual elements:
+- Node-and-edge diagram of network
+- Layer labels with dimensions
+- Weight matrix dimensions displayed on connections
+- Activation function icons at each layer
+- Parameter count summary</p>
+<p>Interactive controls:
+- Layer count slider (1-5 hidden layers)
+- Neurons per layer sliders
+- Activation function selector per layer
+- "Show Dimensions" toggle
+- "Show Weight Matrices" toggle (expands to show matrix shapes)
+- Input/output dimension selectors</p>
+<p>Default parameters:
+- 2 hidden layers
+- Architecture: 4 → 8 → 8 → 2
+- ReLU hidden, Softmax output
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time architecture update
+- Calculate and display total parameters
+- Show data flow animation
+- Highlight one layer at a time with matrix equation
+- Demonstrate dimension matching requirements</p>
+<p>Implementation: p5.js with network diagram rendering</p>
+</details>
+<h2 id="forward-propagation">Forward Propagation</h2>
+<p><strong>Forward propagation</strong> computes the network output by passing input through all layers sequentially.</p>
+<h3 id="algorithm">Algorithm</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Input: x, weights {W[l], b[l]} for l = 1,...,L
+
+a[0] = x
+For l = 1 to L:
+    z[l] = W[l] @ a[l-1] + b[l]
+    a[l] = activation[l](z[l])
+
+Output: a[L]
+</code></pre></div></td></tr></table></div>
+<h3 id="matrix-form-for-batches">Matrix Form for Batches</h3>
+<p>For a batch of <span class="arithmatex">\(m\)</span> samples (columns of <span class="arithmatex">\(X\)</span>):</p>
+<p><span class="arithmatex">\(A^{[0]} = X\)</span></p>
+<p><span class="arithmatex">\(Z^{[l]} = W^{[l]}A^{[l-1]} + \mathbf{b}^{[l]}\mathbf{1}^T\)</span></p>
+<p><span class="arithmatex">\(A^{[l]} = \sigma^{[l]}(Z^{[l]})\)</span></p>
+<p>The output <span class="arithmatex">\(A^{[L]}\)</span> has shape <span class="arithmatex">\(n_L \times m\)</span>.</p>
+<h3 id="why-nonlinearity-is-essential">Why Nonlinearity Is Essential</h3>
+<p>Consider a 2-layer network without activations:</p>
+<p><span class="arithmatex">\(\mathbf{y} = W^{[2]}(W^{[1]}\mathbf{x}) = (W^{[2]}W^{[1]})\mathbf{x} = W'\mathbf{x}\)</span></p>
+<p>The composition of linear functions is linear! Without nonlinear activations, deep networks would have no more expressive power than a single layer.</p>
+<h4 id="diagram-forward-propagation-visualizer">Diagram: Forward Propagation Visualizer</h4>
+<details>
+<summary>Forward Propagation Step-by-Step</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Trace data flow through a neural network and see the matrix operations at each layer</p>
+<p>Visual elements:
+- Network diagram with numerical values
+- Current layer highlighted
+- Matrix multiplication visualization
+- Activation function application shown
+- Values flowing through connections</p>
+<p>Interactive controls:
+- "Next Step" button
+- "Auto Run" with speed slider
+- Input vector editor
+- Weight matrix display (expandable)
+- "Show Matrix Multiplication" detail toggle</p>
+<p>Default parameters:
+- 3-layer network: 2 → 3 → 2
+- Random initialized weights
+- Input: [1.0, 0.5]
+- Canvas: responsive</p>
+<p>Behavior:
+- Step through z = Wa + b computation
+- Show activation function application
+- Display intermediate values at each neuron
+- Animate data flow
+- Verify dimensions at each step</p>
+<p>Implementation: p5.js with matrix computation display</p>
+</details>
+<h2 id="loss-functions">Loss Functions</h2>
+<p><strong>Loss functions</strong> measure how well the network's predictions match the targets, providing the signal for learning.</p>
+<h3 id="common-loss-functions">Common Loss Functions</h3>
+<p><strong>Mean Squared Error (MSE)</strong> for regression:</p>
+<p><span class="arithmatex">\(\mathcal{L}_{MSE} = \frac{1}{m}\sum_{i=1}^m \|\mathbf{y}_i - \hat{\mathbf{y}}_i\|^2\)</span></p>
+<p><strong>Cross-Entropy Loss</strong> for classification:</p>
+<p>For binary classification with sigmoid output <span class="arithmatex">\(\hat{y} \in (0, 1)\)</span>:</p>
+<p><span class="arithmatex">\(\mathcal{L}_{BCE} = -\frac{1}{m}\sum_{i=1}^m [y_i \log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)]\)</span></p>
+<p>For multi-class with softmax output <span class="arithmatex">\(\hat{\mathbf{y}} \in \mathbb{R}^K\)</span>:</p>
+<p><span class="arithmatex">\(\mathcal{L}_{CE} = -\frac{1}{m}\sum_{i=1}^m \sum_{k=1}^K y_{ik} \log(\hat{y}_{ik})\)</span></p>
+<p>where <span class="arithmatex">\(y_{ik}\)</span> is the one-hot encoded true label.</p>
+<h3 id="why-cross-entropy">Why Cross-Entropy?</h3>
+<p>Cross-entropy loss has favorable gradient properties:</p>
+<ul>
+<li>Combined with softmax, the gradient simplifies to <span class="arithmatex">\(\hat{\mathbf{y}} - \mathbf{y}\)</span></li>
+<li>Penalizes confident wrong predictions heavily</li>
+<li>Derived from maximum likelihood estimation</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Loss Function</th>
+<th>Output Layer</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSE</td>
+<td>Linear</td>
+<td>Regression</td>
+</tr>
+<tr>
+<td>Binary Cross-Entropy</td>
+<td>Sigmoid</td>
+<td>Binary classification</td>
+</tr>
+<tr>
+<td>Categorical Cross-Entropy</td>
+<td>Softmax</td>
+<td>Multi-class classification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="backpropagation">Backpropagation</h2>
+<p><strong>Backpropagation</strong> efficiently computes gradients of the loss with respect to all parameters using the chain rule.</p>
+<h3 id="the-chain-rule-for-matrices">The Chain Rule for Matrices</h3>
+<p>For composed functions <span class="arithmatex">\(\mathcal{L} = f(g(h(\theta)))\)</span>, the chain rule gives:</p>
+<p><span class="arithmatex">\(\frac{\partial \mathcal{L}}{\partial \theta} = \frac{\partial \mathcal{L}}{\partial f} \cdot \frac{\partial f}{\partial g} \cdot \frac{\partial g}{\partial h} \cdot \frac{\partial h}{\partial \theta}\)</span></p>
+<p>In neural networks, this chain extends through all layers.</p>
+<h3 id="chain-rule-matrices-jacobians">Chain Rule Matrices (Jacobians)</h3>
+<p>For vector-valued functions, derivatives become Jacobian matrices. If <span class="arithmatex">\(\mathbf{z} = f(\mathbf{a})\)</span> where <span class="arithmatex">\(\mathbf{z} \in \mathbb{R}^n\)</span> and <span class="arithmatex">\(\mathbf{a} \in \mathbb{R}^m\)</span>:</p>
+<p><span class="arithmatex">\(\frac{\partial \mathbf{z}}{\partial \mathbf{a}} = \begin{bmatrix} \frac{\partial z_1}{\partial a_1} &amp; \cdots &amp; \frac{\partial z_1}{\partial a_m} \\ \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial z_n}{\partial a_1} &amp; \cdots &amp; \frac{\partial z_n}{\partial a_m} \end{bmatrix}\)</span></p>
+<p>For scalar loss <span class="arithmatex">\(\mathcal{L}\)</span>, we work with gradient vectors and propagate them backward.</p>
+<h3 id="backpropagation-algorithm">Backpropagation Algorithm</h3>
+<p>Starting from the output layer and moving backward:</p>
+<p><strong>Output layer gradient:</strong></p>
+<p><span class="arithmatex">\(\delta^{[L]} = \nabla_{\mathbf{a}^{[L]}} \mathcal{L} \odot \sigma'^{[L]}(\mathbf{z}^{[L]})\)</span></p>
+<p><strong>Propagate backward:</strong> For <span class="arithmatex">\(l = L-1, \ldots, 1\)</span>:</p>
+<p><span class="arithmatex">\(\delta^{[l]} = (W^{[l+1]})^T \delta^{[l+1]} \odot \sigma'^{[l]}(\mathbf{z}^{[l]})\)</span></p>
+<p><strong>Parameter gradients:</strong></p>
+<p><span class="arithmatex">\(\frac{\partial \mathcal{L}}{\partial W^{[l]}} = \delta^{[l]} (\mathbf{a}^{[l-1]})^T\)</span></p>
+<p><span class="arithmatex">\(\frac{\partial \mathcal{L}}{\partial \mathbf{b}^{[l]}} = \delta^{[l]}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\delta^{[l]}\)</span> is the error signal at layer <span class="arithmatex">\(l\)</span></li>
+<li><span class="arithmatex">\(\odot\)</span> is elementwise multiplication</li>
+<li><span class="arithmatex">\(\sigma'\)</span> is the derivative of the activation function</li>
+</ul>
+<h4 id="diagram-backpropagation-visualizer">Diagram: Backpropagation Visualizer</h4>
+<details>
+<summary>Backpropagation Step-by-Step</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Understand how gradients flow backward through a network via the chain rule</p>
+<p>Visual elements:
+- Network diagram with forward values
+- Backward arrows showing gradient flow
+- Current layer highlighted
+- Gradient values displayed at each node
+- Matrix transpose visualization for weight gradients</p>
+<p>Interactive controls:
+- "Forward Pass" button (must run first)
+- "Backward Step" button
+- "Auto Backprop" with speed slider
+- Target value input
+- Loss function selector (MSE, Cross-Entropy)
+- "Show Chain Rule" detail toggle</p>
+<p>Default parameters:
+- 3-layer network: 2 → 3 → 1
+- MSE loss
+- Single training example
+- Canvas: responsive</p>
+<p>Behavior:
+- Compute and display output error
+- Show gradient flowing backward through each layer
+- Display δ values at each neuron
+- Show weight gradient computation
+- Verify gradient dimensions match weight dimensions</p>
+<p>Implementation: p5.js with gradient computation display</p>
+</details>
+<h3 id="gradient-flow-and-vanishingexploding-gradients">Gradient Flow and Vanishing/Exploding Gradients</h3>
+<p>Gradients are multiplied by weight matrices at each layer during backpropagation. If weights are:</p>
+<ul>
+<li>Too small: gradients shrink exponentially → <strong>vanishing gradients</strong></li>
+<li>Too large: gradients grow exponentially → <strong>exploding gradients</strong></li>
+</ul>
+<p>This motivates careful weight initialization and architectural choices like residual connections.</p>
+<h2 id="convolutional-neural-networks">Convolutional Neural Networks</h2>
+<p><strong>Convolutional layers</strong> exploit spatial structure in images and sequences through weight sharing.</p>
+<h3 id="convolution-kernel">Convolution Kernel</h3>
+<p>A <strong>convolution kernel</strong> (or filter) is a small matrix of learnable weights that slides across the input:</p>
+<p><span class="arithmatex">\((\mathbf{I} * \mathbf{K})_{i,j} = \sum_{m}\sum_{n} I_{i+m, j+n} \cdot K_{m,n}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{I}\)</span> is the input (e.g., image)</li>
+<li><span class="arithmatex">\(\mathbf{K}\)</span> is the kernel (e.g., <span class="arithmatex">\(3 \times 3\)</span>)</li>
+<li>The sum is over all kernel positions</li>
+</ul>
+<p>A <span class="arithmatex">\(3 \times 3\)</span> kernel has only 9 parameters but processes arbitrarily large inputs—this is <strong>weight sharing</strong>.</p>
+<h3 id="convolutional-layer">Convolutional Layer</h3>
+<p>A <strong>convolutional layer</strong> applies multiple kernels to produce multiple output channels:</p>
+<p><span class="arithmatex">\(\text{Output}_{c_{out}, i, j} = \sum_{c_{in}} (\mathbf{I}_{c_{in}} * \mathbf{K}_{c_{out}, c_{in}})_{i,j} + b_{c_{out}}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(c_{in}\)</span> input channels, <span class="arithmatex">\(c_{out}\)</span> output channels</li>
+<li>Each output channel has its own set of kernels (one per input channel)</li>
+<li>Total parameters: <span class="arithmatex">\(c_{out} \times c_{in} \times k_h \times k_w + c_{out}\)</span></li>
+</ul>
+<h3 id="stride-and-padding">Stride and Padding</h3>
+<p><strong>Stride</strong> controls how many pixels the kernel moves between applications:</p>
+<ul>
+<li>Stride 1: kernel moves one pixel at a time (full resolution)</li>
+<li>Stride 2: kernel moves two pixels (halves spatial dimensions)</li>
+</ul>
+<p><strong>Padding</strong> adds zeros around the input border:</p>
+<ul>
+<li>"Valid" padding: no padding, output shrinks</li>
+<li>"Same" padding: pad to keep output size equal to input</li>
+</ul>
+<p>Output dimension formula:</p>
+<p><span class="arithmatex">\(\text{out\_size} = \frac{\text{in\_size} - \text{kernel\_size} + 2 \times \text{padding}}{\text{stride}} + 1\)</span></p>
+<h3 id="pooling-layer">Pooling Layer</h3>
+<p><strong>Pooling layers</strong> downsample spatial dimensions:</p>
+<ul>
+<li><strong>Max pooling:</strong> takes maximum value in each window</li>
+<li><strong>Average pooling:</strong> takes average value in each window</li>
+</ul>
+<p>Common configuration: <span class="arithmatex">\(2 \times 2\)</span> pool with stride 2 halves each spatial dimension.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Effect</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Convolution</td>
+<td>Feature extraction</td>
+<td>Kernel weights</td>
+</tr>
+<tr>
+<td>Stride &gt; 1</td>
+<td>Downsampling</td>
+<td>None (hyperparameter)</td>
+</tr>
+<tr>
+<td>Padding</td>
+<td>Preserve dimensions</td>
+<td>None (hyperparameter)</td>
+</tr>
+<tr>
+<td>Pooling</td>
+<td>Downsample, invariance</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-convolution-visualizer">Diagram: Convolution Visualizer</h4>
+<details>
+<summary>Convolution Operation Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand how convolution kernels slide across images and the effect of stride and padding</p>
+<p>Visual elements:
+- Input image (grayscale, small e.g., 7×7)
+- Kernel overlay showing current position
+- Output feature map being built
+- Kernel weights displayed
+- Highlighted multiplication-addition operation</p>
+<p>Interactive controls:
+- Step through kernel positions manually
+- Kernel size selector (3×3, 5×5)
+- Stride selector (1, 2)
+- Padding selector (valid, same)
+- "Animate Convolution" button
+- Preset kernels: edge detection, blur, sharpen</p>
+<p>Default parameters:
+- 7×7 grayscale input
+- 3×3 kernel
+- Stride 1, valid padding
+- Edge detection kernel</p>
+<p>Behavior:
+- Show kernel sliding across input
+- Display element-wise multiplication
+- Show sum being placed in output
+- Output dimensions update with settings
+- Visualize different kernel effects on sample image</p>
+<p>Implementation: p5.js with image processing</p>
+</details>
+<h2 id="normalization-techniques">Normalization Techniques</h2>
+<p>Normalization stabilizes training by controlling activation distributions.</p>
+<h3 id="batch-normalization">Batch Normalization</h3>
+<p><strong>Batch normalization</strong> normalizes activations across the batch dimension:</p>
+<p>For a mini-batch <span class="arithmatex">\(\{x_i\}_{i=1}^m\)</span>:</p>
+<p><span class="arithmatex">\(\mu_B = \frac{1}{m}\sum_{i=1}^m x_i\)</span></p>
+<p><span class="arithmatex">\(\sigma_B^2 = \frac{1}{m}\sum_{i=1}^m (x_i - \mu_B)^2\)</span></p>
+<p><span class="arithmatex">\(\hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}\)</span></p>
+<p><span class="arithmatex">\(y_i = \gamma \hat{x}_i + \beta\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\gamma\)</span> and <span class="arithmatex">\(\beta\)</span> are learnable scale and shift parameters</li>
+<li><span class="arithmatex">\(\epsilon\)</span> is a small constant for numerical stability</li>
+<li>During inference, running averages of <span class="arithmatex">\(\mu\)</span> and <span class="arithmatex">\(\sigma\)</span> are used</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>Enables higher learning rates</li>
+<li>Reduces sensitivity to initialization</li>
+<li>Acts as regularization (due to batch statistics noise)</li>
+</ul>
+<h3 id="layer-normalization">Layer Normalization</h3>
+<p><strong>Layer normalization</strong> normalizes across the feature dimension instead of batch:</p>
+<p><span class="arithmatex">\(\mu_l = \frac{1}{d}\sum_{j=1}^d x_j\)</span></p>
+<p><span class="arithmatex">\(\sigma_l^2 = \frac{1}{d}\sum_{j=1}^d (x_j - \mu_l)^2\)</span></p>
+<p>Benefits:</p>
+<ul>
+<li>Works with batch size 1</li>
+<li>Preferred in transformers and RNNs</li>
+<li>No difference between training and inference</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Normalization</th>
+<th>Normalize Over</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch Norm</td>
+<td>Batch dimension</td>
+<td>CNNs, large batches</td>
+</tr>
+<tr>
+<td>Layer Norm</td>
+<td>Feature dimension</td>
+<td>Transformers, RNNs</td>
+</tr>
+<tr>
+<td>Instance Norm</td>
+<td>Spatial dimensions</td>
+<td>Style transfer</td>
+</tr>
+<tr>
+<td>Group Norm</td>
+<td>Channel groups</td>
+<td>Small batch CNNs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-normalization-comparison">Diagram: Normalization Comparison</h4>
+<details>
+<summary>Batch vs Layer Normalization</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Understand the difference between normalization techniques by visualizing which dimensions they operate over</p>
+<p>Layout: Side-by-side comparison with 3D tensor diagrams</p>
+<p>Visual elements:
+- 3D tensor representation (batch × channels × spatial)
+- Highlighted region showing normalization scope
+- Before/after distribution plots
+- Learnable parameter display</p>
+<p>Sections:
+1. Batch Normalization
+   - Normalize across batch (vertical slice)
+   - Show statistics computed per channel
+   - Training vs inference difference noted</p>
+<ol>
+<li>Layer Normalization</li>
+<li>Normalize across features (horizontal slice)</li>
+<li>Show statistics computed per sample</li>
+<li>
+<p>Same computation in training and inference</p>
+</li>
+<li>
+<p>Comparison table</p>
+</li>
+<li>Batch dependency</li>
+<li>Use cases</li>
+<li>Computational considerations</li>
+</ol>
+<p>Interactive elements:
+- Toggle to highlight normalization region
+- Slider to show effect on activation distribution
+- Animation of statistics computation</p>
+<p>Implementation: HTML/CSS/JavaScript with 3D tensor SVG</p>
+</details>
+<h2 id="tensors-and-tensor-operations">Tensors and Tensor Operations</h2>
+<p>Modern deep learning operates on <strong>tensors</strong>—multi-dimensional arrays that generalize vectors and matrices.</p>
+<h3 id="tensor-definition">Tensor Definition</h3>
+<p>A <strong>tensor</strong> is a multi-dimensional array:</p>
+<ul>
+<li>0D tensor: scalar (e.g., <span class="arithmatex">\(3.14\)</span>)</li>
+<li>1D tensor: vector (e.g., <span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^n\)</span>)</li>
+<li>2D tensor: matrix (e.g., <span class="arithmatex">\(A \in \mathbb{R}^{m \times n}\)</span>)</li>
+<li>3D tensor: e.g., RGB image <span class="arithmatex">\(\in \mathbb{R}^{H \times W \times 3}\)</span></li>
+<li>4D tensor: batch of images <span class="arithmatex">\(\in \mathbb{R}^{B \times H \times W \times C}\)</span></li>
+</ul>
+<h3 id="common-tensor-operations">Common Tensor Operations</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reshape</td>
+<td>Change shape, preserve elements</td>
+<td><span class="arithmatex">\((6,) \to (2, 3)\)</span></td>
+</tr>
+<tr>
+<td>Transpose</td>
+<td>Permute axes</td>
+<td><span class="arithmatex">\((B, H, W, C) \to (B, C, H, W)\)</span></td>
+</tr>
+<tr>
+<td>Broadcasting</td>
+<td>Expand dimensions for elementwise ops</td>
+<td><span class="arithmatex">\((3,) + (2, 3) \to (2, 3)\)</span></td>
+</tr>
+<tr>
+<td>Concatenate</td>
+<td>Join along axis</td>
+<td>Two <span class="arithmatex">\((B, 10) \to (B, 20)\)</span></td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Create new axis</td>
+<td>Two <span class="arithmatex">\((H, W) \to (2, H, W)\)</span></td>
+</tr>
+<tr>
+<td>Squeeze/Unsqueeze</td>
+<td>Remove/add size-1 dimensions</td>
+<td><span class="arithmatex">\((1, 3, 1) \to (3,)\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tensor-operations-in-neural-networks">Tensor Operations in Neural Networks</h3>
+<p><strong>Batched matrix multiplication:</strong></p>
+<p>For batched inputs <span class="arithmatex">\(A \in \mathbb{R}^{B \times M \times K}\)</span> and <span class="arithmatex">\(B \in \mathbb{R}^{B \times K \times N}\)</span>:</p>
+<p><span class="arithmatex">\((A @ B)_{b,i,j} = \sum_k A_{b,i,k} \cdot B_{b,k,j}\)</span></p>
+<p>Result has shape <span class="arithmatex">\(B \times M \times N\)</span>.</p>
+<p><strong>Einsum notation</strong> provides a powerful way to express tensor operations:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Batched matrix multiply</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;bik,bkj-&gt;bij&#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="c1"># Attention: Q @ K^T</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;bqd,bkd-&gt;bqk&#39;</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-tensor-shape-visualizer">Diagram: Tensor Shape Visualizer</h4>
+<details>
+<summary>Tensor Operations Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand tensor shapes and how common operations transform them</p>
+<p>Visual elements:
+- 3D/4D tensor visualization as nested boxes
+- Shape annotation on each dimension
+- Operation selector showing input → output shapes
+- Animated transformation between shapes</p>
+<p>Interactive controls:
+- Input tensor shape editor
+- Operation selector: reshape, transpose, squeeze, concatenate, broadcast
+- Target shape input (for reshape)
+- Axis selector (for operations that need it)
+- "Apply Operation" button</p>
+<p>Default parameters:
+- Input tensor shape: (2, 3, 4)
+- Operation: reshape to (6, 4)
+- Canvas: responsive</p>
+<p>Behavior:
+- Visualize tensor as nested rectangles
+- Show valid reshape targets
+- Animate element rearrangement
+- Error message for invalid operations
+- Display resulting shape</p>
+<p>Implementation: p5.js with 3D tensor rendering</p>
+</details>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>Here's a complete neural network implementation using these concepts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">NeuralNetwork</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer_sizes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize network with given layer sizes.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layer_sizes</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># number of layers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Xavier initialization</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">):</span>
+            <span class="n">n_in</span><span class="p">,</span> <span class="n">n_out</span> <span class="o">=</span> <span class="n">layer_sizes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layer_sizes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_out</span><span class="p">,</span> <span class="n">n_in</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="n">n_in</span><span class="p">)</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_out</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">relu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">relu_derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">softmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="n">exp_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">exp_z</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">exp_z</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Forward propagation.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activations</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pre_activations</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="n">X</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">):</span>
+            <span class="n">Z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">@</span> <span class="n">A</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pre_activations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># output layer</span>
+                <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># hidden layers</span>
+                <span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">activations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">A</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Backpropagation with cross-entropy loss.&quot;&quot;&quot;</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight_grads</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias_grads</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Output layer gradient (softmax + cross-entropy)</span>
+        <span class="n">dA</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">activations</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Y</span>  <span class="c1"># simplified gradient</span>
+
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">dZ</span> <span class="o">=</span> <span class="n">dA</span>  <span class="c1"># softmax-CE gradient</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dZ</span> <span class="o">=</span> <span class="n">dA</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu_derivative</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pre_activations</span><span class="p">[</span><span class="n">l</span><span class="p">])</span>
+
+            <span class="n">dW</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">dZ</span> <span class="o">@</span> <span class="bp">self</span><span class="o">.</span><span class="n">activations</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dZ</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">weight_grads</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dW</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bias_grads</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">dA</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">dZ</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gradient descent update.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">L</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight_grads</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">biases</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">-=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias_grads</span><span class="p">[</span><span class="n">l</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Training loop.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+            <span class="c1"># Forward pass</span>
+            <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+            <span class="c1"># Compute loss</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">predictions</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">))</span>
+
+            <span class="c1"># Backward pass</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+            <span class="c1"># Update weights</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">learning_rate</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">, Loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">([</span><span class="mi">784</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>  <span class="c1"># MNIST-like</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary_1">Summary</h2>
+<p>This chapter revealed the linear algebra powering neural networks:</p>
+<p><strong>Foundations:</strong></p>
+<ul>
+<li><strong>Perceptrons</strong> compute linear decision boundaries: <span class="arithmatex">\(y = \text{sign}(\mathbf{w}^T\mathbf{x} + b)\)</span></li>
+<li><strong>Neurons</strong> add nonlinear activations: <span class="arithmatex">\(a = \sigma(\mathbf{w}^T\mathbf{x} + b)\)</span></li>
+</ul>
+<p><strong>Activation Functions:</strong></p>
+<ul>
+<li><strong>ReLU:</strong> <span class="arithmatex">\(\max(0, z)\)</span> — efficient, sparse, avoids vanishing gradients</li>
+<li><strong>Sigmoid:</strong> <span class="arithmatex">\((0, 1)\)</span> output for probabilities</li>
+<li><strong>Softmax:</strong> probability distribution over <span class="arithmatex">\(K\)</span> classes</li>
+</ul>
+<p><strong>Network Architecture:</strong></p>
+<ul>
+<li><strong>Weight matrices</strong> <span class="arithmatex">\(W^{[l]}\)</span> transform between layers</li>
+<li><strong>Hidden layers</strong> enable hierarchical feature learning</li>
+<li><strong>Deep networks</strong> compose multiple transformations</li>
+</ul>
+<p><strong>Training:</strong></p>
+<ul>
+<li><strong>Forward propagation:</strong> sequential matrix operations through layers</li>
+<li><strong>Loss functions:</strong> MSE for regression, cross-entropy for classification</li>
+<li><strong>Backpropagation:</strong> chain rule computes gradients via matrix transposes</li>
+</ul>
+<p><strong>Convolutional Networks:</strong></p>
+<ul>
+<li><strong>Kernels</strong> slide across spatial dimensions with weight sharing</li>
+<li><strong>Stride</strong> and <strong>padding</strong> control output dimensions</li>
+<li><strong>Pooling</strong> provides downsampling and translation invariance</li>
+</ul>
+<p><strong>Normalization and Tensors:</strong></p>
+<ul>
+<li><strong>Batch normalization:</strong> normalize across batch dimension</li>
+<li><strong>Layer normalization:</strong> normalize across feature dimension</li>
+<li><strong>Tensors:</strong> multi-dimensional arrays with reshape, transpose, broadcast operations</li>
+</ul>
+<details class="question">
+<summary>Self-Check: Why does backpropagation use the transpose of the weight matrix when propagating gradients?</summary>
+<p>When propagating gradients backward from layer <span class="arithmatex">\(l+1\)</span> to layer <span class="arithmatex">\(l\)</span>, we need to compute how changes in <span class="arithmatex">\(\mathbf{a}^{[l]}\)</span> affect the loss. During forward propagation, we computed <span class="arithmatex">\(\mathbf{z}^{[l+1]} = W^{[l+1]}\mathbf{a}^{[l]}\)</span>. The Jacobian <span class="arithmatex">\(\frac{\partial \mathbf{z}^{[l+1]}}{\partial \mathbf{a}^{[l]}} = W^{[l+1]}\)</span>. By the chain rule, the gradient with respect to <span class="arithmatex">\(\mathbf{a}^{[l]}\)</span> is <span class="arithmatex">\((W^{[l+1]})^T \delta^{[l+1]}\)</span>, where the transpose distributes the error from each output neuron back to the input neurons that contributed to it.</p>
+</details>
 
 
 
@@ -1111,7 +3321,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../09-machine-learning-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Machine Learning Foundations">
+          <a href="../09-machine-learning-foundations/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1121,20 +3331,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                9. Machine Learning Foundations
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../11-generative-ai-and-llms/" class="md-footer__link md-footer__link--next" aria-label="Next: 11.Generative AI and LLMs">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                11.Generative AI and LLMs
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1168,10 +3378,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

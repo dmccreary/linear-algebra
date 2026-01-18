@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Linear algebra foundations for robotics, AR/VR, and 3D computer vision">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/14-3d-geometry-and-transformations/">
       
       
-        <link rel="prev" href="../13-image-processing-and-computer-vision/">
+        <link rel="prev" href="../13-image-processing-and-computer-vision/quiz/">
       
       
-        <link rel="next" href="../15-autonomous-systems-and-sensor-fusion/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>14. 3D Geometry and Transformations - Linear Algebra</title>
+        <title>3D Geometry and Transformations - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="14. 3D Geometry and Transformations - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/14-3d-geometry-and-transformations/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/14-3d-geometry-and-transformations/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="14. 3D Geometry and Transformations - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/14-3d-geometry-and-transformations/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="3D Geometry and Transformations - Linear Algebra" />
+<meta property="og:description" content="Linear algebra foundations for robotics, AR/VR, and 3D computer vision" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/14-3d-geometry-and-transformations/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/14-3d-geometry-and-transformations/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="3D Geometry and Transformations - Linear Algebra" />
+<meta property="twitter:description" content="Linear algebra foundations for robotics, AR/VR, and 3D computer vision" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/14-3d-geometry-and-transformations/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              14. 3D Geometry and Transformations
+              3D Geometry and Transformations
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,820 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Neural Networks and Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Generative AI and LLMs
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Optimization and Learning Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Image Processing and Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_15" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 3D Geometry and Transformations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_15" id="__nav_3_15_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    14. 3D Geometry and Transformations
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +1216,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,295 +1249,54 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    13. Image Processing and Computer Vision
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    14. 3D Geometry and Transformations
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    14. 3D Geometry and Transformations
-  </span>
-  
-
-      </a>
       
         
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
   
   
   
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
     
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
+    15. Autonomous Systems and Sensor Fusion
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    15. Autonomous Systems and Sensor Fusion
+    
   </span>
   
+  
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,740 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3d-coordinate-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D Coordinate Systems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3D Coordinate Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#right-hand-vs-left-hand-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Right-Hand vs Left-Hand Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-coordinate-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Coordinate Frames
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Coordinate Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-3d-coordinate-system-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: 3D Coordinate System Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homogeneous Coordinates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homogeneous Coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-cartesian-to-homogeneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Cartesian to Homogeneous
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Homogeneous Coordinates?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation Representations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotation Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euler-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Euler Angles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euler-angle-rotation-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler Angle Rotation Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-euler-angles-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Euler Angles Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gimbal-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gimbal Lock
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gimbal Lock">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-gimbal-lock-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Gimbal Lock Demonstration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quaternions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternion Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-from-axis-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternion from Axis-Angle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternion from Axis-Angle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-angle-to-quaternion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis-Angle to Quaternion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternion Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternion-multiplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quaternion Multiplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-rotation-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison of Rotation Representations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison of Rotation Representations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-quaternion-rotation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Quaternion Rotation Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rigid-body-transforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rigid Body Transforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rigid Body Transforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#se3-the-special-euclidean-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SE(3): The Special Euclidean Group
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SE(3): The Special Euclidean Group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#se3-transformation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SE(3) Transformation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composing-transforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composing Transforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inverse Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inverse Transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rigid-body-transform-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Rigid Body Transform Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camera Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-pinhole-camera-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Pinhole Camera Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intrinsic-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intrinsic Parameters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intrinsic Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-intrinsic-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camera Intrinsic Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extrinsic-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extrinsic Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-camera-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Full Camera Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Full Camera Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projection-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projection Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-camera-model-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Camera Model Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perspective-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perspective Projection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stereo-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stereo Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stereo Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-stereo-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Stereo Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Stereo Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#depth-from-disparity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth from Disparity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epipolar-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epipolar Geometry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epipolar Geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-fundamental-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fundamental Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-epipolar-geometry-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Epipolar Geometry Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triangulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triangulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-triangulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Triangulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-triangulation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Triangulation Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-clouds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Clouds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Clouds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point-cloud-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Cloud Representation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sources-of-point-clouds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources of Point Clouds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-cloud-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Cloud Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Point Cloud Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-point-cloud-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Point Cloud Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-cloud-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Cloud Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
     </span>
   </a>
   
@@ -1014,12 +2301,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    14. 3D Geometry and Transformations
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/14-3d-geometry-and-transformations/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/14-3d-geometry-and-transformations/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1060,7 +2415,985 @@
 <li><a href="../13-image-processing-and-computer-vision/">Chapter 13: Image Processing and Computer Vision</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>From robot arms assembling cars to AR headsets overlaying digital content on the physical world, systems that interact with 3D space require precise mathematical representations of position, orientation, and motion. Linear algebra provides the essential tools:</p>
+<ul>
+<li><strong>Coordinate systems</strong> establish frames of reference</li>
+<li><strong>Rotation matrices and quaternions</strong> represent orientation</li>
+<li><strong>Homogeneous coordinates</strong> unify rotation and translation</li>
+<li><strong>Camera models</strong> project 3D scenes onto 2D images</li>
+<li><strong>Stereo vision</strong> recovers 3D structure from multiple views</li>
+</ul>
+<p>This chapter develops the geometric foundations needed for robotics, computer vision, augmented reality, and autonomous systems.</p>
+<h2 id="3d-coordinate-systems">3D Coordinate Systems</h2>
+<p>A <strong>3D coordinate system</strong> defines how we specify positions in three-dimensional space using three numbers <span class="arithmatex">\((x, y, z)\)</span>.</p>
+<h3 id="right-hand-vs-left-hand-systems">Right-Hand vs Left-Hand Systems</h3>
+<p>Two conventions exist for orienting the axes:</p>
+<table>
+<thead>
+<tr>
+<th>Convention</th>
+<th>X Direction</th>
+<th>Y Direction</th>
+<th>Z Direction</th>
+<th>Used By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Right-hand</td>
+<td>Right/East</td>
+<td>Up/North</td>
+<td>Out of screen</td>
+<td>OpenGL, ROS, most math</td>
+</tr>
+<tr>
+<td>Left-hand</td>
+<td>Right</td>
+<td>Up</td>
+<td>Into screen</td>
+<td>DirectX, Unity</td>
+</tr>
+</tbody>
+</table>
+<p>In a <strong>right-hand system</strong>, if you curl your right hand's fingers from X toward Y, your thumb points in the Z direction.</p>
+<h3 id="common-coordinate-frames">Common Coordinate Frames</h3>
+<p>Different applications use different conventions:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>X</th>
+<th>Y</th>
+<th>Z</th>
+<th>Origin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Computer graphics</td>
+<td>Right</td>
+<td>Up</td>
+<td>Out (toward viewer)</td>
+<td>Screen center</td>
+</tr>
+<tr>
+<td>Robotics (ROS)</td>
+<td>Forward</td>
+<td>Left</td>
+<td>Up</td>
+<td>Robot base</td>
+</tr>
+<tr>
+<td>Aviation</td>
+<td>Forward</td>
+<td>Right</td>
+<td>Down</td>
+<td>Aircraft center</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>Right</td>
+<td>Down</td>
+<td>Forward (optical axis)</td>
+<td>Camera center</td>
+</tr>
+</tbody>
+</table>
+<p>Understanding and converting between coordinate frames is essential for integrating sensors, actuators, and displays.</p>
+<h4 id="diagram-3d-coordinate-system-visualizer">Diagram: 3D Coordinate System Visualizer</h4>
+<details>
+<summary>3D Coordinate System Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand different 3D coordinate system conventions and handedness (Bloom: Understand)</p>
+<p>Visual elements:
+- 3D view with X, Y, Z axes (color coded: X=red, Y=green, Z=blue)
+- Origin sphere
+- Sample point with coordinates displayed
+- Grid planes (XY, XZ, YZ) toggleable
+- Animated right-hand rule demonstration</p>
+<p>Interactive controls:
+- Toggle: Right-hand vs Left-hand system
+- Dropdown: Convention preset (OpenGL, DirectX, ROS, Camera)
+- Draggable point in 3D space
+- Rotate view with mouse drag
+- Toggle grid planes on/off</p>
+<p>Canvas layout: 700x600px with 3D view using WEBGL</p>
+<p>Behavior:
+- Switching handedness mirrors the Z axis
+- Presets reorient axes according to convention
+- Coordinate display updates as point moves
+- Show transformation matrix between conventions</p>
+<p>Implementation: p5.js with WEBGL for 3D rendering</p>
+</details>
+<h2 id="homogeneous-coordinates">Homogeneous Coordinates</h2>
+<p><strong>Homogeneous coordinates</strong> extend Cartesian coordinates with an additional dimension, enabling rotation and translation to be combined in a single matrix multiplication.</p>
+<h3 id="from-cartesian-to-homogeneous">From Cartesian to Homogeneous</h3>
+<p>A 3D point <span class="arithmatex">\((x, y, z)\)</span> becomes a 4D homogeneous point:</p>
+<p><span class="arithmatex">\((x, y, z) \rightarrow \begin{bmatrix} x \\ y \\ z \\ 1 \end{bmatrix}\)</span></p>
+<p>To convert back, divide by the fourth component:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} X \\ Y \\ Z \\ W \end{bmatrix} \rightarrow \left(\frac{X}{W}, \frac{Y}{W}, \frac{Z}{W}\right)\)</span></p>
+<p>Points with <span class="arithmatex">\(W = 0\)</span> represent <strong>directions</strong> (points at infinity).</p>
+<h3 id="why-homogeneous-coordinates">Why Homogeneous Coordinates?</h3>
+<p>In standard 3D coordinates:</p>
+<ul>
+<li>Rotation: <span class="arithmatex">\(\mathbf{p}' = \mathbf{R}\mathbf{p}\)</span> (matrix multiplication)</li>
+<li>Translation: <span class="arithmatex">\(\mathbf{p}' = \mathbf{p} + \mathbf{t}\)</span> (addition)</li>
+</ul>
+<p>We cannot combine these into a single matrix. With homogeneous coordinates:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} \mathbf{p}' \\ 1 \end{bmatrix} = \begin{bmatrix} \mathbf{R} &amp; \mathbf{t} \\ \mathbf{0}^\top &amp; 1 \end{bmatrix} \begin{bmatrix} \mathbf{p} \\ 1 \end{bmatrix}\)</span></p>
+<p>Now both operations are matrix multiplications, enabling efficient composition of multiple transformations.</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>3×3 Matrix</th>
+<th>4×4 Homogeneous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotation only</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Translation only</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Rotation + Translation</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Projection</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rotation-representations">Rotation Representations</h2>
+<p>Representing 3D rotations is surprisingly subtle. Several representations exist, each with trade-offs.</p>
+<h3 id="euler-angles">Euler Angles</h3>
+<p><strong>Euler angles</strong> describe a rotation as three successive rotations about coordinate axes. The most common convention is:</p>
+<ol>
+<li>Rotate by <span class="arithmatex">\(\psi\)</span> (yaw) about Z axis</li>
+<li>Rotate by <span class="arithmatex">\(\theta\)</span> (pitch) about Y axis</li>
+<li>Rotate by <span class="arithmatex">\(\phi\)</span> (roll) about X axis</li>
+</ol>
+<h4 id="euler-angle-rotation-matrices">Euler Angle Rotation Matrices</h4>
+<p><span class="arithmatex">\(\mathbf{R}_z(\psi) = \begin{bmatrix} \cos\psi &amp; -\sin\psi &amp; 0 \\ \sin\psi &amp; \cos\psi &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{R}_y(\theta) = \begin{bmatrix} \cos\theta &amp; 0 &amp; \sin\theta \\ 0 &amp; 1 &amp; 0 \\ -\sin\theta &amp; 0 &amp; \cos\theta \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{R}_x(\phi) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \cos\phi &amp; -\sin\phi \\ 0 &amp; \sin\phi &amp; \cos\phi \end{bmatrix}\)</span></p>
+<p>The combined rotation: <span class="arithmatex">\(\mathbf{R} = \mathbf{R}_z(\psi) \mathbf{R}_y(\theta) \mathbf{R}_x(\phi)\)</span></p>
+<p>Different conventions exist (XYZ, ZYX, ZXZ, etc.)—always verify which convention is used!</p>
+<h4 id="diagram-euler-angles-visualizer">Diagram: Euler Angles Visualizer</h4>
+<details>
+<summary>Euler Angles Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how Euler angles compose to form rotations (Bloom: Apply)</p>
+<p>Visual elements:
+- 3D coordinate frame (object frame)
+- Reference coordinate frame (world frame)
+- 3D object (e.g., airplane or box) showing orientation
+- Arc indicators for each angle
+- Rotation axis highlighted during animation</p>
+<p>Interactive controls:
+- Slider: Yaw (ψ) from -180° to 180°
+- Slider: Pitch (θ) from -90° to 90°
+- Slider: Roll (φ) from -180° to 180°
+- Dropdown: Convention (ZYX, XYZ, ZXZ)
+- Button: "Animate sequence" (show rotations step by step)
+- Button: "Reset"</p>
+<p>Canvas layout: 750x600px with 3D WEBGL view</p>
+<p>Behavior:
+- Update object orientation in real-time as sliders change
+- Animation shows each rotation applied sequentially
+- Display rotation matrix numerically
+- Highlight gimbal lock region when pitch approaches ±90°</p>
+<p>Implementation: p5.js with WEBGL and matrix computation</p>
+</details>
+<h3 id="gimbal-lock">Gimbal Lock</h3>
+<p><strong>Gimbal lock</strong> occurs when two rotation axes align, causing loss of one degree of freedom. In the ZYX convention, when pitch <span class="arithmatex">\(\theta = \pm 90°\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{R} = \begin{bmatrix} 0 &amp; \mp\sin(\psi \mp \phi) &amp; \pm\cos(\psi \mp \phi) \\ 0 &amp; \cos(\psi \mp \phi) &amp; \sin(\psi \mp \phi) \\ \mp 1 &amp; 0 &amp; 0 \end{bmatrix}\)</span></p>
+<p>Notice that yaw and roll combine into a single term <span class="arithmatex">\((\psi \mp \phi)\)</span>—we can only control their sum or difference, not each independently. The system has lost a degree of freedom.</p>
+<table>
+<thead>
+<tr>
+<th>Pitch Value</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta = 0°\)</span></td>
+<td>Full 3 DOF, no gimbal lock</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta = \pm 45°\)</span></td>
+<td>Slight coupling between yaw/roll</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta = \pm 90°\)</span></td>
+<td>Complete gimbal lock, only 2 DOF</td>
+</tr>
+</tbody>
+</table>
+<p>Gimbal lock is a fundamental problem with Euler angles, not a bug in implementation. It motivated the development of quaternions.</p>
+<h4 id="diagram-gimbal-lock-demonstration">Diagram: Gimbal Lock Demonstration</h4>
+<details>
+<summary>Gimbal Lock Demonstration</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Experience gimbal lock and understand why it occurs (Bloom: Analyze)</p>
+<p>Visual elements:
+- Physical gimbal mechanism (three nested rings)
+- Object attached to innermost ring
+- Color-coded rotation axes
+- Warning indicator when approaching gimbal lock</p>
+<p>Interactive controls:
+- Slider: Outer ring rotation (yaw)
+- Slider: Middle ring rotation (pitch)
+- Slider: Inner ring rotation (roll)
+- Button: "Go to gimbal lock" (set pitch to 90°)
+- Button: "Reset"</p>
+<p>Canvas layout: 700x600px with 3D gimbal visualization</p>
+<p>Behavior:
+- As pitch approaches 90°, outer and inner rings align visually
+- At gimbal lock, changing yaw and roll produces same motion
+- Display effective degrees of freedom (3 normally, 2 at lock)
+- Show that some orientations become unreachable</p>
+<p>Implementation: p5.js with WEBGL, mechanical gimbal model</p>
+</details>
+<h2 id="quaternions">Quaternions</h2>
+<p><strong>Quaternions</strong> provide a singularity-free representation of 3D rotations, avoiding gimbal lock.</p>
+<h3 id="quaternion-definition">Quaternion Definition</h3>
+<p>A quaternion has four components:</p>
+<p><span class="arithmatex">\(\mathbf{q} = w + xi + yj + zk = (w, x, y, z)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(w\)</span> is the scalar (real) part</li>
+<li><span class="arithmatex">\((x, y, z)\)</span> is the vector (imaginary) part</li>
+<li><span class="arithmatex">\(i, j, k\)</span> satisfy: <span class="arithmatex">\(i^2 = j^2 = k^2 = ijk = -1\)</span></li>
+</ul>
+<p>For representing rotations, we use <strong>unit quaternions</strong> with <span class="arithmatex">\(\|\mathbf{q}\| = 1\)</span>:</p>
+<p><span class="arithmatex">\(w^2 + x^2 + y^2 + z^2 = 1\)</span></p>
+<h3 id="quaternion-from-axis-angle">Quaternion from Axis-Angle</h3>
+<p>A rotation of angle <span class="arithmatex">\(\theta\)</span> about unit axis <span class="arithmatex">\(\hat{\mathbf{n}} = (n_x, n_y, n_z)\)</span>:</p>
+<h4 id="axis-angle-to-quaternion">Axis-Angle to Quaternion</h4>
+<p><span class="arithmatex">\(\mathbf{q} = \left(\cos\frac{\theta}{2}, \sin\frac{\theta}{2} \cdot n_x, \sin\frac{\theta}{2} \cdot n_y, \sin\frac{\theta}{2} \cdot n_z\right)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\theta\)</span> is the rotation angle</li>
+<li><span class="arithmatex">\(\hat{\mathbf{n}}\)</span> is the rotation axis (unit vector)</li>
+<li>Note the half-angle: rotating by <span class="arithmatex">\(\theta\)</span> uses <span class="arithmatex">\(\frac{\theta}{2}\)</span> in the quaternion</li>
+</ul>
+<h3 id="quaternion-rotation">Quaternion Rotation</h3>
+<p>To rotate a point <span class="arithmatex">\(\mathbf{p} = (p_x, p_y, p_z)\)</span> by quaternion <span class="arithmatex">\(\mathbf{q}\)</span>:</p>
+<ol>
+<li>Express the point as a pure quaternion: <span class="arithmatex">\(\mathbf{p}_q = (0, p_x, p_y, p_z)\)</span></li>
+<li>Compute: <span class="arithmatex">\(\mathbf{p}'_q = \mathbf{q} \cdot \mathbf{p}_q \cdot \mathbf{q}^*\)</span></li>
+<li>Extract the vector part as the rotated point</li>
+</ol>
+<p>where <span class="arithmatex">\(\mathbf{q}^* = (w, -x, -y, -z)\)</span> is the quaternion conjugate.</p>
+<h3 id="quaternion-multiplication">Quaternion Multiplication</h3>
+<p>Quaternion multiplication (non-commutative):</p>
+<p><span class="arithmatex">\(\mathbf{q}_1 \cdot \mathbf{q}_2 = (w_1 w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2, \; w_1 \mathbf{v}_2 + w_2 \mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2)\)</span></p>
+<p>Composing rotations: <span class="arithmatex">\(\mathbf{q}_{total} = \mathbf{q}_2 \cdot \mathbf{q}_1\)</span> (apply <span class="arithmatex">\(\mathbf{q}_1\)</span> first, then <span class="arithmatex">\(\mathbf{q}_2\)</span>)</p>
+<h3 id="comparison-of-rotation-representations">Comparison of Rotation Representations</h3>
+<table>
+<thead>
+<tr>
+<th>Representation</th>
+<th>Parameters</th>
+<th>Singularities</th>
+<th>Interpolation</th>
+<th>Composition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Euler angles</td>
+<td>3</td>
+<td>Gimbal lock</td>
+<td>Poor</td>
+<td>Matrix mult</td>
+</tr>
+<tr>
+<td>Rotation matrix</td>
+<td>9 (with constraints)</td>
+<td>None</td>
+<td>Complex</td>
+<td>Matrix mult</td>
+</tr>
+<tr>
+<td>Axis-angle</td>
+<td>4 (3 + 1)</td>
+<td>At <span class="arithmatex">\(\theta = 0\)</span></td>
+<td>Linear</td>
+<td>Complex</td>
+</tr>
+<tr>
+<td>Quaternion</td>
+<td>4 (unit constraint)</td>
+<td>None</td>
+<td>SLERP</td>
+<td>Quaternion mult</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-quaternion-rotation-visualizer">Diagram: Quaternion Rotation Visualizer</h4>
+<details>
+<summary>Quaternion Rotation Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand quaternion representation and rotation operation (Bloom: Apply)</p>
+<p>Visual elements:
+- 3D object with current orientation
+- Rotation axis displayed as arrow through origin
+- Arc showing rotation angle
+- Quaternion components displayed numerically
+- Unit sphere showing quaternion (projected)</p>
+<p>Interactive controls:
+- Axis input: Unit vector (nx, ny, nz) or draggable direction
+- Slider: Rotation angle θ (0° to 360°)
+- Button: "Apply rotation"
+- Button: "Compose with previous"
+- Toggle: Show equivalent Euler angles</p>
+<p>Canvas layout: 800x600px with 3D visualization</p>
+<p>Behavior:
+- Display quaternion (w, x, y, z) updating with axis/angle
+- Show rotation applied to 3D object
+- Demonstrate composition of multiple rotations
+- Compare with Euler angle representation
+- Show smooth interpolation (SLERP) between orientations</p>
+<p>Implementation: p5.js with WEBGL and quaternion math</p>
+</details>
+<h2 id="rigid-body-transforms">Rigid Body Transforms</h2>
+<p>A <strong>rigid body transform</strong> combines rotation and translation, preserving distances and angles. It represents the pose (position and orientation) of an object in 3D space.</p>
+<h3 id="se3-the-special-euclidean-group">SE(3): The Special Euclidean Group</h3>
+<p><strong>SE(3)</strong> is the mathematical group of all rigid body transformations in 3D. An SE(3) transform consists of:</p>
+<ul>
+<li>A rotation <span class="arithmatex">\(\mathbf{R} \in SO(3)\)</span> (3×3 orthogonal matrix with det = 1)</li>
+<li>A translation <span class="arithmatex">\(\mathbf{t} \in \mathbb{R}^3\)</span></li>
+</ul>
+<p>In homogeneous coordinates:</p>
+<h4 id="se3-transformation-matrix">SE(3) Transformation Matrix</h4>
+<p><span class="arithmatex">\(\mathbf{T} = \begin{bmatrix} \mathbf{R} &amp; \mathbf{t} \\ \mathbf{0}^\top &amp; 1 \end{bmatrix} = \begin{bmatrix} r_{11} &amp; r_{12} &amp; r_{13} &amp; t_x \\ r_{21} &amp; r_{22} &amp; r_{23} &amp; t_y \\ r_{31} &amp; r_{32} &amp; r_{33} &amp; t_z \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{R}\)</span> is a 3×3 rotation matrix</li>
+<li><span class="arithmatex">\(\mathbf{t} = (t_x, t_y, t_z)^\top\)</span> is the translation vector</li>
+<li>The bottom row <span class="arithmatex">\([0, 0, 0, 1]\)</span> maintains homogeneous structure</li>
+</ul>
+<h3 id="composing-transforms">Composing Transforms</h3>
+<p>Multiple transformations compose by matrix multiplication:</p>
+<p><span class="arithmatex">\(\mathbf{T}_{total} = \mathbf{T}_n \cdot \mathbf{T}_{n-1} \cdots \mathbf{T}_2 \cdot \mathbf{T}_1\)</span></p>
+<p>Transforms apply right-to-left: <span class="arithmatex">\(\mathbf{T}_1\)</span> first, then <span class="arithmatex">\(\mathbf{T}_2\)</span>, etc.</p>
+<h3 id="inverse-transform">Inverse Transform</h3>
+<p>The inverse of an SE(3) transform:</p>
+<p><span class="arithmatex">\(\mathbf{T}^{-1} = \begin{bmatrix} \mathbf{R}^\top &amp; -\mathbf{R}^\top \mathbf{t} \\ \mathbf{0}^\top &amp; 1 \end{bmatrix}\)</span></p>
+<p>Note: We use <span class="arithmatex">\(\mathbf{R}^\top\)</span> instead of computing a matrix inverse since rotation matrices are orthogonal.</p>
+<h4 id="diagram-rigid-body-transform-chain">Diagram: Rigid Body Transform Chain</h4>
+<details>
+<summary>Rigid Body Transform Chain</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Visualize composition of rigid body transforms (Bloom: Apply)</p>
+<p>Visual elements:
+- World coordinate frame at origin
+- Multiple linked coordinate frames (like robot arm joints)
+- 3D objects attached to each frame
+- Transform arrows showing relationships</p>
+<p>Interactive controls:
+- Sliders for each joint angle (rotations)
+- Sliders for link lengths (translations)
+- Toggle: Show individual transforms vs composed
+- Button: "Add link"
+- Button: "Reset"
+- Display: Full transform matrix from world to end effector</p>
+<p>Canvas layout: 850x650px with 3D kinematic chain</p>
+<p>Behavior:
+- Moving one joint updates all downstream frames
+- Show transform matrices at each stage
+- Highlight how composition order matters
+- Demonstrate forward kinematics visually</p>
+<p>Implementation: p5.js with WEBGL, matrix chain computation</p>
+</details>
+<h2 id="camera-models">Camera Models</h2>
+<p>A <strong>camera model</strong> describes how 3D points in the world project onto a 2D image. The most common model is the pinhole camera.</p>
+<h3 id="the-pinhole-camera-model">The Pinhole Camera Model</h3>
+<p>Light rays pass through a single point (the pinhole or optical center) and project onto an image plane:</p>
+<ul>
+<li>3D world point: <span class="arithmatex">\(\mathbf{P}_w = (X, Y, Z)\)</span></li>
+<li>2D image point: <span class="arithmatex">\(\mathbf{p} = (u, v)\)</span></li>
+</ul>
+<p>The projection involves two stages:</p>
+<ol>
+<li><strong>Extrinsic parameters:</strong> Transform from world to camera coordinates</li>
+<li><strong>Intrinsic parameters:</strong> Project from camera coordinates to image pixels</li>
+</ol>
+<h3 id="intrinsic-parameters">Intrinsic Parameters</h3>
+<p><strong>Intrinsic parameters</strong> describe the camera's internal geometry:</p>
+<h4 id="camera-intrinsic-matrix">Camera Intrinsic Matrix</h4>
+<p><span class="arithmatex">\(\mathbf{K} = \begin{bmatrix} f_x &amp; s &amp; c_x \\ 0 &amp; f_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(f_x, f_y\)</span> are focal lengths in pixels (may differ if pixels are non-square)</li>
+<li><span class="arithmatex">\((c_x, c_y)\)</span> is the principal point (usually near image center)</li>
+<li><span class="arithmatex">\(s\)</span> is the skew coefficient (usually 0 for modern cameras)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Typical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(f_x, f_y\)</span></td>
+<td>Focal length × pixels/mm</td>
+<td>500-2000 pixels</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c_x\)</span></td>
+<td>Principal point x</td>
+<td>image_width / 2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c_y\)</span></td>
+<td>Principal point y</td>
+<td>image_height / 2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(s\)</span></td>
+<td>Skew</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extrinsic-parameters">Extrinsic Parameters</h3>
+<p><strong>Extrinsic parameters</strong> describe the camera's pose in the world:</p>
+<p><span class="arithmatex">\([\mathbf{R} | \mathbf{t}]\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{R}\)</span> is the 3×3 rotation from world to camera frame</li>
+<li><span class="arithmatex">\(\mathbf{t}\)</span> is the translation (camera position in world, negated and rotated)</li>
+</ul>
+<p>The extrinsic matrix transforms points from world coordinates to camera coordinates.</p>
+<h3 id="the-full-camera-matrix">The Full Camera Matrix</h3>
+<p>The complete <strong>projection matrix</strong> combines intrinsic and extrinsic parameters:</p>
+<h4 id="projection-matrix">Projection Matrix</h4>
+<p><span class="arithmatex">\(\mathbf{P} = \mathbf{K} [\mathbf{R} | \mathbf{t}]\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{P}\)</span> is a 3×4 matrix</li>
+<li><span class="arithmatex">\(\mathbf{K}\)</span> is the 3×3 intrinsic matrix</li>
+<li><span class="arithmatex">\([\mathbf{R} | \mathbf{t}]\)</span> is the 3×4 extrinsic matrix</li>
+</ul>
+<p>Projection from world to image:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} u \\ v \\ 1 \end{bmatrix} \sim \mathbf{P} \begin{bmatrix} X \\ Y \\ Z \\ 1 \end{bmatrix}\)</span></p>
+<p>The <span class="arithmatex">\(\sim\)</span> indicates equality up to scale (divide by the third coordinate to get pixel coordinates).</p>
+<h4 id="diagram-camera-model-visualizer">Diagram: Camera Model Visualizer</h4>
+<details>
+<summary>Camera Model Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how camera parameters affect projection (Bloom: Analyze)</p>
+<p>Visual elements:
+- 3D scene with objects at various depths
+- Camera frustum showing field of view
+- Image plane with projected points
+- Ray lines from 3D points through camera center to image</p>
+<p>Interactive controls:
+- Slider: Focal length (affects FOV)
+- Slider: Principal point (cx, cy)
+- Camera pose controls: position and orientation
+- Toggle: Show projection rays
+- Toggle: Show camera frustum</p>
+<p>Canvas layout: 900x650px with 3D scene and 2D image view</p>
+<p>Behavior:
+- Changing focal length zooms in/out
+- Moving principal point shifts image
+- Moving camera updates all projections
+- Display intrinsic and extrinsic matrices
+- Show correspondence between 3D points and 2D projections</p>
+<p>Implementation: p5.js with WEBGL and matrix projection</p>
+</details>
+<h3 id="perspective-projection">Perspective Projection</h3>
+<p><strong>Perspective projection</strong> is the mathematical model of how 3D points map to 2D:</p>
+<p>For a point <span class="arithmatex">\((X, Y, Z)\)</span> in camera coordinates:</p>
+<p><span class="arithmatex">\(u = f_x \frac{X}{Z} + c_x, \quad v = f_y \frac{Y}{Z} + c_y\)</span></p>
+<p>Key properties:</p>
+<ul>
+<li>Objects farther away appear smaller (division by <span class="arithmatex">\(Z\)</span>)</li>
+<li>Parallel lines may converge to vanishing points</li>
+<li>Depth information is lost (many 3D points map to the same 2D point)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Projection Type</th>
+<th>Properties</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perspective</td>
+<td>Realistic, depth-dependent scaling</td>
+<td>Photos, human vision</td>
+</tr>
+<tr>
+<td>Orthographic</td>
+<td>No depth scaling, parallel projection</td>
+<td>Engineering drawings, CAD</td>
+</tr>
+<tr>
+<td>Weak perspective</td>
+<td>Uniform depth for scene</td>
+<td>Approximate when depth range is small</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stereo-vision">Stereo Vision</h2>
+<p><strong>Stereo vision</strong> uses two cameras to recover 3D structure, mimicking human binocular vision.</p>
+<h3 id="the-stereo-setup">The Stereo Setup</h3>
+<p>Two cameras with known relative pose observe the same scene:</p>
+<ul>
+<li><strong>Baseline</strong> <span class="arithmatex">\(b\)</span>: Distance between camera centers</li>
+<li><strong>Disparity</strong> <span class="arithmatex">\(d\)</span>: Difference in horizontal image position of corresponding points</li>
+</ul>
+<h4 id="depth-from-disparity">Depth from Disparity</h4>
+<p><span class="arithmatex">\(Z = \frac{f \cdot b}{d}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(Z\)</span> is the depth (distance to the point)</li>
+<li><span class="arithmatex">\(f\)</span> is the focal length</li>
+<li><span class="arithmatex">\(b\)</span> is the baseline (distance between cameras)</li>
+<li><span class="arithmatex">\(d = u_L - u_R\)</span> is the disparity (difference in x-coordinates)</li>
+</ul>
+<p>Key insight: Larger baseline gives better depth resolution but makes matching harder.</p>
+<h3 id="epipolar-geometry">Epipolar Geometry</h3>
+<p><strong>Epipolar geometry</strong> describes the geometric relationship between two views of the same scene.</p>
+<p>Key concepts:</p>
+<ul>
+<li><strong>Epipole:</strong> Where the line connecting camera centers intersects each image plane</li>
+<li><strong>Epipolar line:</strong> For a point in one image, the corresponding point in the other image lies on this line</li>
+<li><strong>Epipolar plane:</strong> Plane containing both camera centers and the 3D point</li>
+</ul>
+<h4 id="the-fundamental-matrix">The Fundamental Matrix</h4>
+<p>The <strong>fundamental matrix</strong> <span class="arithmatex">\(\mathbf{F}\)</span> encodes epipolar geometry:</p>
+<p><span class="arithmatex">\(\mathbf{p}_R^\top \mathbf{F} \mathbf{p}_L = 0\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{p}_L, \mathbf{p}_R\)</span> are corresponding points in left and right images (homogeneous)</li>
+<li><span class="arithmatex">\(\mathbf{F}\)</span> is a 3×3 matrix with rank 2</li>
+<li>This constraint means <span class="arithmatex">\(\mathbf{p}_R\)</span> lies on the epipolar line <span class="arithmatex">\(\mathbf{l}_R = \mathbf{F} \mathbf{p}_L\)</span></li>
+</ul>
+<p>The fundamental matrix has 7 degrees of freedom (9 elements minus scale minus rank constraint).</p>
+<h4 id="diagram-epipolar-geometry-visualizer">Diagram: Epipolar Geometry Visualizer</h4>
+<details>
+<summary>Epipolar Geometry Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand epipolar constraints in stereo vision (Bloom: Analyze)</p>
+<p>Visual elements:
+- Top-down view showing two cameras and 3D point
+- Left and right image planes
+- Epipolar lines drawn on both images
+- Epipoles marked
+- Epipolar plane visualization</p>
+<p>Interactive controls:
+- Draggable 3D point position
+- Draggable camera positions
+- Click on left image point to show epipolar line on right
+- Toggle: Show epipolar plane in 3D
+- Toggle: Show all epipolar lines (for multiple points)</p>
+<p>Canvas layout: 900x700px with 3D view and stereo pair</p>
+<p>Behavior:
+- Moving 3D point shows how image points move along epipolar lines
+- Display fundamental matrix
+- Show that corresponding points satisfy epipolar constraint
+- Demonstrate baseline effect on epipole positions</p>
+<p>Implementation: p5.js with WEBGL and epipolar line computation</p>
+</details>
+<h3 id="triangulation">Triangulation</h3>
+<p><strong>Triangulation</strong> computes the 3D position of a point from its projections in two or more images.</p>
+<p>Given:</p>
+<ul>
+<li>Camera matrices <span class="arithmatex">\(\mathbf{P}_L, \mathbf{P}_R\)</span></li>
+<li>Corresponding image points <span class="arithmatex">\(\mathbf{p}_L, \mathbf{p}_R\)</span></li>
+</ul>
+<p>Find the 3D point <span class="arithmatex">\(\mathbf{P}\)</span> such that:</p>
+<p><span class="arithmatex">\(\mathbf{p}_L \sim \mathbf{P}_L \mathbf{P}, \quad \mathbf{p}_R \sim \mathbf{P}_R \mathbf{P}\)</span></p>
+<h4 id="linear-triangulation">Linear Triangulation</h4>
+<p>Each correspondence provides two equations. Stack them into a linear system:</p>
+<p><span class="arithmatex">\(\mathbf{A} \mathbf{P} = \mathbf{0}\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{A}\)</span> is a 4×4 matrix built from camera matrices and image points. Solve using SVD (find the null space of <span class="arithmatex">\(\mathbf{A}\)</span>).</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Accuracy</th>
+<th>Robustness</th>
+<th>Computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear (DLT)</td>
+<td>Moderate</td>
+<td>Sensitive to noise</td>
+<td>Fast</td>
+</tr>
+<tr>
+<td>Optimal (geometric)</td>
+<td>Best</td>
+<td>Good</td>
+<td>Iterative</td>
+</tr>
+<tr>
+<td>Mid-point</td>
+<td>Low</td>
+<td>Fast</td>
+<td>Very fast</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-triangulation-visualizer">Diagram: Triangulation Visualizer</h4>
+<details>
+<summary>Triangulation Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how 3D points are recovered from stereo correspondences (Bloom: Apply)</p>
+<p>Visual elements:
+- Two cameras with projection rays
+- Intersection point (triangulated 3D position)
+- Error visualization when rays don't perfectly intersect
+- Left and right image planes with point markers</p>
+<p>Interactive controls:
+- Draggable image points on left and right images
+- Camera baseline slider
+- Add noise toggle (shows triangulation error)
+- Display: 3D coordinates, reprojection error</p>
+<p>Canvas layout: 800x650px with 3D scene and stereo pair</p>
+<p>Behavior:
+- Rays from each camera displayed in 3D
+- Show exact intersection or closest point when noisy
+- Moving image points updates 3D reconstruction
+- Display triangulation uncertainty with depth</p>
+<p>Implementation: p5.js with WEBGL and linear triangulation</p>
+</details>
+<h2 id="point-clouds">Point Clouds</h2>
+<p>A <strong>point cloud</strong> is a set of 3D points representing the surface or structure of objects and environments.</p>
+<h3 id="point-cloud-representation">Point Cloud Representation</h3>
+<p>Each point typically includes:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position</td>
+<td><span class="arithmatex">\((x, y, z)\)</span></td>
+<td>3D coordinates</td>
+</tr>
+<tr>
+<td>Color</td>
+<td><span class="arithmatex">\((r, g, b)\)</span></td>
+<td>Optional RGB values</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><span class="arithmatex">\((n_x, n_y, n_z)\)</span></td>
+<td>Surface orientation</td>
+</tr>
+<tr>
+<td>Intensity</td>
+<td>scalar</td>
+<td>Reflection strength (lidar)</td>
+</tr>
+</tbody>
+</table>
+<p>Point clouds can contain millions to billions of points for large-scale scenes.</p>
+<h3 id="sources-of-point-clouds">Sources of Point Clouds</h3>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Principle</th>
+<th>Typical Density</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stereo cameras</td>
+<td>Triangulation</td>
+<td>Dense (per-pixel)</td>
+<td>1-50m</td>
+</tr>
+<tr>
+<td>Structured light</td>
+<td>Projected pattern</td>
+<td>Dense</td>
+<td>0.5-5m</td>
+</tr>
+<tr>
+<td>Time-of-flight</td>
+<td>Light travel time</td>
+<td>Medium</td>
+<td>0.5-10m</td>
+</tr>
+<tr>
+<td>Lidar</td>
+<td>Laser scanning</td>
+<td>Sparse to medium</td>
+<td>1-200m</td>
+</tr>
+<tr>
+<td>Photogrammetry</td>
+<td>Multi-view</td>
+<td>Variable</td>
+<td>Any</td>
+</tr>
+</tbody>
+</table>
+<h3 id="point-cloud-processing">Point Cloud Processing</h3>
+<p>Common operations on point clouds:</p>
+<ul>
+<li><strong>Downsampling:</strong> Reduce density using voxel grids</li>
+<li><strong>Normal estimation:</strong> Compute surface orientation from local neighborhoods</li>
+<li><strong>Registration:</strong> Align multiple point clouds (ICP algorithm)</li>
+<li><strong>Segmentation:</strong> Separate ground, objects, etc.</li>
+<li><strong>Surface reconstruction:</strong> Create meshes from points</li>
+</ul>
+<h4 id="diagram-point-cloud-visualizer">Diagram: Point Cloud Visualizer</h4>
+<details>
+<summary>Point Cloud Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Explore point cloud data and common processing operations (Bloom: Understand)</p>
+<p>Visual elements:
+- 3D point cloud rendering
+- Color by height/intensity/normal
+- Bounding box
+- Selected point information display</p>
+<p>Interactive controls:
+- Rotate/zoom/pan 3D view
+- Point size slider
+- Color mode: height, intensity, RGB, normals
+- Downsampling slider (voxel size)
+- Toggle: Show surface normals as arrows
+- Sample dataset selector</p>
+<p>Canvas layout: 800x650px with 3D point cloud view</p>
+<p>Behavior:
+- Load and display sample point clouds
+- Real-time downsampling preview
+- Click point to show coordinates
+- Display point count and bounding box dimensions</p>
+<p>Implementation: p5.js with WEBGL, point rendering</p>
+</details>
+<h3 id="point-cloud-registration">Point Cloud Registration</h3>
+<p><strong>Registration</strong> aligns two point clouds into a common coordinate frame. The classic algorithm is <strong>Iterative Closest Point (ICP)</strong>:</p>
+<ol>
+<li>For each point in source cloud, find nearest neighbor in target</li>
+<li>Estimate rigid transform minimizing point-to-point distances</li>
+<li>Apply transform to source cloud</li>
+<li>Repeat until convergence</li>
+</ol>
+<p>ICP finds the transform <span class="arithmatex">\((\mathbf{R}, \mathbf{t})\)</span> minimizing:</p>
+<p><span class="arithmatex">\(E = \sum_{i} \| \mathbf{R} \mathbf{p}_i + \mathbf{t} - \mathbf{q}_i \|^2\)</span></p>
+<p>where <span class="arithmatex">\(\mathbf{p}_i\)</span> are source points and <span class="arithmatex">\(\mathbf{q}_i\)</span> are corresponding target points.</p>
+<h2 id="python-implementation">Python Implementation</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quaternion_from_axis_angle</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create quaternion from axis-angle representation.&quot;&quot;&quot;</span>
+    <span class="n">axis</span> <span class="o">=</span> <span class="n">axis</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>  <span class="c1"># Ensure unit axis</span>
+    <span class="n">half_angle</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">half_angle</span><span class="p">)</span>
+    <span class="n">xyz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">half_angle</span><span class="p">)</span> <span class="o">*</span> <span class="n">axis</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w</span><span class="p">,</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quaternion_rotate</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Rotate a 3D point by a quaternion.&quot;&quot;&quot;</span>
+    <span class="c1"># Point as pure quaternion</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+
+    <span class="c1"># q * p * q_conjugate</span>
+    <span class="n">q_conj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">q</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">q</span><span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">quaternion_multiply</span><span class="p">(</span><span class="n">quaternion_multiply</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">q_conj</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quaternion_multiply</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Multiply two quaternions.&quot;&quot;&quot;</span>
+    <span class="n">w1</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">z1</span> <span class="o">=</span> <span class="n">q1</span>
+    <span class="n">w2</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="n">q2</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">w2</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="n">x2</span> <span class="o">-</span> <span class="n">y1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">z1</span><span class="o">*</span><span class="n">z2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">w2</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">z2</span> <span class="o">-</span> <span class="n">z1</span><span class="o">*</span><span class="n">y2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">x1</span><span class="o">*</span><span class="n">z2</span> <span class="o">+</span> <span class="n">y1</span><span class="o">*</span><span class="n">w2</span> <span class="o">+</span> <span class="n">z1</span><span class="o">*</span><span class="n">x2</span><span class="p">,</span>
+        <span class="n">w1</span><span class="o">*</span><span class="n">z2</span> <span class="o">+</span> <span class="n">x1</span><span class="o">*</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">z1</span><span class="o">*</span><span class="n">w2</span>
+    <span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">project_point</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Project 3D point to 2D using camera model.&quot;&quot;&quot;</span>
+    <span class="c1"># World to camera coordinates</span>
+    <span class="n">P_cam</span> <span class="o">=</span> <span class="n">R</span> <span class="o">@</span> <span class="n">P</span> <span class="o">+</span> <span class="n">t</span>
+
+    <span class="c1"># Perspective projection</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">P_cam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">P_cam</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">P_cam</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">P_cam</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># Apply intrinsic matrix</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">K</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">])</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">triangulate</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span> <span class="n">P2</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Triangulate 3D point from two views.&quot;&quot;&quot;</span>
+    <span class="c1"># Build the A matrix for DLT</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">P1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">P1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span>
+        <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">P1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">P1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span>
+        <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">P2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">P2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span>
+        <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">P2</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span> <span class="o">-</span> <span class="n">P2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="p">])</span>
+
+    <span class="c1"># SVD solution</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">Vt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Convert from homogeneous</span>
+    <span class="k">return</span> <span class="n">X</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">/</span> <span class="n">X</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary_1">Summary</h2>
+<p>3D geometry and transformations provide the mathematical foundation for spatial computing:</p>
+<p><strong>Coordinate Systems and Representations:</strong></p>
+<ul>
+<li>3D coordinate systems use handedness conventions (right-hand vs left-hand)</li>
+<li>Homogeneous coordinates unify rotation and translation as matrix multiplication</li>
+<li>Different domains (robotics, graphics, vision) use different conventions</li>
+</ul>
+<p><strong>Rotation Representations:</strong></p>
+<ul>
+<li>Euler angles are intuitive but suffer from gimbal lock</li>
+<li>Quaternions provide singularity-free rotation representation</li>
+<li>Unit quaternions form a double cover of SO(3)</li>
+</ul>
+<p><strong>Rigid Body Transforms:</strong></p>
+<ul>
+<li>SE(3) combines rotation and translation</li>
+<li>4×4 homogeneous matrices enable efficient composition</li>
+<li>Transform chains model articulated systems like robot arms</li>
+</ul>
+<p><strong>Camera Models:</strong></p>
+<ul>
+<li>Intrinsic parameters describe internal camera geometry</li>
+<li>Extrinsic parameters describe camera pose in the world</li>
+<li>The projection matrix combines both for 3D-to-2D mapping</li>
+</ul>
+<p><strong>Stereo Vision:</strong></p>
+<ul>
+<li>Two views enable 3D reconstruction via triangulation</li>
+<li>Epipolar geometry constrains correspondence search</li>
+<li>Depth is inversely proportional to disparity</li>
+</ul>
+<p><strong>Point Clouds:</strong></p>
+<ul>
+<li>Represent 3D structure as sets of points</li>
+<li>Generated by various sensors (lidar, stereo, structured light)</li>
+<li>Registration aligns multiple scans into a common frame</li>
+</ul>
+<h2 id="self-check-questions">Self-Check Questions</h2>
+<details class="question">
+<summary>Why do we use half the rotation angle in the quaternion representation?</summary>
+<p>Quaternions provide a double cover of the rotation group SO(3), meaning both <span class="arithmatex">\(\mathbf{q}\)</span> and <span class="arithmatex">\(-\mathbf{q}\)</span> represent the same rotation. Using <span class="arithmatex">\(\frac{\theta}{2}\)</span> in the quaternion formula ensures that rotating by <span class="arithmatex">\(\theta\)</span> actually produces a rotation of <span class="arithmatex">\(\theta\)</span> (not <span class="arithmatex">\(2\theta\)</span>) when we compute <span class="arithmatex">\(\mathbf{q} \cdot \mathbf{p} \cdot \mathbf{q}^*\)</span>. The quaternion multiplication effectively applies the rotation twice (once with <span class="arithmatex">\(\mathbf{q}\)</span>, once with <span class="arithmatex">\(\mathbf{q}^*\)</span>), so we need half angles to get the correct total rotation.</p>
+</details>
+<details class="question">
+<summary>What information is lost during perspective projection, and why does this matter for 3D reconstruction?</summary>
+<p>Perspective projection loses depth information: all points along a ray from the camera center project to the same image point. Mathematically, <span class="arithmatex">\((X, Y, Z)\)</span> and <span class="arithmatex">\((kX, kY, kZ)\)</span> for any <span class="arithmatex">\(k &gt; 0\)</span> produce identical image coordinates. This is why a single image cannot determine 3D structure—we need additional constraints like multiple views (stereo), known object size, or depth sensors. Stereo vision solves this by observing the same point from two locations, where the disparity (difference in image position) encodes depth.</p>
+</details>
+<details class="question">
+<summary>How does the baseline affect stereo depth estimation?</summary>
+<p>The depth-disparity relationship is <span class="arithmatex">\(Z = \frac{fb}{d}\)</span>. With larger baseline <span class="arithmatex">\(b\)</span>, the same depth produces larger disparity, improving depth resolution (we can distinguish smaller depth differences). However, larger baseline makes stereo matching harder because: (1) occlusions become more common—parts visible in one camera may be hidden in the other, (2) appearance changes more between views, and (3) the search range for correspondences increases. Practical systems balance these trade-offs based on the target depth range.</p>
+</details>
+<details class="question">
+<summary>Why is gimbal lock a fundamental problem rather than an implementation bug?</summary>
+<p>Gimbal lock is inherent to representing 3D rotation with three sequential rotations about fixed axes. Any three-parameter rotation representation that uses Euler-type angles will have singularities because SO(3) (the rotation group) cannot be smoothly parameterized by <span class="arithmatex">\(\mathbb{R}^3\)</span>. At the singularity, two rotation axes align, reducing the effective degrees of freedom from 3 to 2. No choice of axis order eliminates the problem—it just moves the singularity. Quaternions avoid this by using four parameters with a unit constraint, providing a smooth parameterization of rotations.</p>
+</details>
 
 
 
@@ -1101,7 +3434,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../13-image-processing-and-computer-vision/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. Image Processing and Computer Vision">
+          <a href="../13-image-processing-and-computer-vision/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1111,20 +3444,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                13. Image Processing and Computer Vision
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-footer__link md-footer__link--next" aria-label="Next: 15. Autonomous Systems and Sensor Fusion">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                15. Autonomous Systems and Sensor Fusion
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1158,10 +3491,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

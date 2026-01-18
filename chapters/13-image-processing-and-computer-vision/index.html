@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Linear algebra foundations for image representation, filtering, and transformation">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/13-image-processing-and-computer-vision/">
       
       
-        <link rel="prev" href="../12-optimization-and-learning-algorithms/">
+        <link rel="prev" href="../12-optimization-and-learning-algorithms/quiz/">
       
       
-        <link rel="next" href="../14-3d-geometry-and-transformations/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>13. Image Processing and Computer Vision - Linear Algebra</title>
+        <title>Image Processing and Computer Vision - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="13. Image Processing and Computer Vision - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/13-image-processing-and-computer-vision/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/13-image-processing-and-computer-vision/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="13. Image Processing and Computer Vision - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/13-image-processing-and-computer-vision/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Image Processing and Computer Vision - Linear Algebra" />
+<meta property="og:description" content="Linear algebra foundations for image representation, filtering, and transformation" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/13-image-processing-and-computer-vision/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/13-image-processing-and-computer-vision/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Image Processing and Computer Vision - Linear Algebra" />
+<meta property="twitter:description" content="Linear algebra foundations for image representation, filtering, and transformation" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/13-image-processing-and-computer-vision/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13. Image Processing and Computer Vision
+              Image Processing and Computer Vision
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,763 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Neural Networks and Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Generative AI and LLMs
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Optimization and Learning Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Image Processing and Computer Vision
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    13. Image Processing and Computer Vision
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +1159,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,295 +1192,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    13. Image Processing and Computer Vision
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    13. Image Processing and Computer Vision
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 3D Geometry and Transformations
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    14. 3D Geometry and Transformations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,690 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Representation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Representation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-image-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Image Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grayscale-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grayscale Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grayscale Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-image-matrix-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Image Matrix Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RGB Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-tensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Tensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Tensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-rgb-channel-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: RGB Channel Decomposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-space-transforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Space Transforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color Space Transforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rgb-to-ycbcr-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RGB to YCbCr Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Convolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Convolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-convolution-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Convolution Operation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Convolution Operation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-convolution-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2D Convolution Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-convolution-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Convolution Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blur-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blur Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharpen-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharpen Filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharpen Filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-filter-effects-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Filter Effects Gallery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivative-based-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derivative-Based Edge Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-sobel-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Sobel Operator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Sobel Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sobel-kernels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sobel Kernels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-edge-detection-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Edge Detection Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-detection-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Detection Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier-transform-for-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fourier Transform for Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier Transform for Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-2d-discrete-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 2D Discrete Fourier Transform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The 2D Discrete Fourier Transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2d-discrete-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2D Discrete Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-domain-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Domain Interpretation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequency Domain Interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fourier-transform-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fourier Transform Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-domain-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency Domain Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Compression
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svd-based-compression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SVD-Based Compression
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SVD-Based Compression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-svd-compression-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: SVD Compression Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform-coding-jpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform Coding (JPEG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-compression-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison of Compression Approaches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-good-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes a Good Feature?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harris-corner-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harris Corner Detection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Harris Corner Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-tensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure Tensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-corner-detection-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Corner Detection Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale-invariant-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale-Invariant Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homography
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Homography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-homography-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Homography Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Homography Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#homography-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Homography Transformation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimating-homographies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimating Homographies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformation-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformation Hierarchy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformation Hierarchy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-homography-transformation-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Homography Transformation Demo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications-of-homography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications of Homography
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
     </span>
   </a>
   
@@ -1014,12 +2251,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    13. Image Processing and Computer Vision
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/13-image-processing-and-computer-vision/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/13-image-processing-and-computer-vision/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1059,7 +2364,963 @@
 <li><a href="../10-neural-networks-and-deep-learning/">Chapter 10: Neural Networks and Deep Learning</a> (for tensors)</li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Every digital image you see—from smartphone photos to medical scans—is fundamentally a matrix of numbers. This mathematical representation enables powerful image processing operations using linear algebra:</p>
+<ul>
+<li><strong>Matrix operations</strong> enable pixel-wise transformations</li>
+<li><strong>Convolution</strong> applies local filters for blurring, sharpening, and edge detection</li>
+<li><strong>Fourier transforms</strong> reveal frequency content for compression and filtering</li>
+<li><strong>Linear transformations</strong> correct perspective and align images</li>
+</ul>
+<p>Understanding these foundations illuminates how image editing software, computer vision systems, and neural networks process visual information.</p>
+<h2 id="image-representation">Image Representation</h2>
+<h3 id="the-image-matrix">The Image Matrix</h3>
+<p>A digital image is stored as a <strong>matrix</strong> where each entry represents a pixel's intensity or color value. For an image with height <span class="arithmatex">\(H\)</span> and width <span class="arithmatex">\(W\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{I} \in \mathbb{R}^{H \times W}\)</span></p>
+<p>The matrix entry <span class="arithmatex">\(I_{i,j}\)</span> corresponds to the pixel at row <span class="arithmatex">\(i\)</span> (from top) and column <span class="arithmatex">\(j\)</span> (from left). Pixel values are typically integers in <span class="arithmatex">\([0, 255]\)</span> or floats in <span class="arithmatex">\([0, 1]\)</span>.</p>
+<h3 id="grayscale-images">Grayscale Images</h3>
+<p>A <strong>grayscale image</strong> uses a single value per pixel representing light intensity:</p>
+<ul>
+<li>0 = black (no light)</li>
+<li>255 = white (maximum light)</li>
+<li>Intermediate values = shades of gray</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Value Range</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-50</td>
+<td>Very dark</td>
+</tr>
+<tr>
+<td>50-100</td>
+<td>Dark gray</td>
+</tr>
+<tr>
+<td>100-150</td>
+<td>Medium gray</td>
+</tr>
+<tr>
+<td>150-200</td>
+<td>Light gray</td>
+</tr>
+<tr>
+<td>200-255</td>
+<td>Very bright</td>
+</tr>
+</tbody>
+</table>
+<p>A 1920×1080 HD grayscale image is a matrix with over 2 million entries.</p>
+<h4 id="diagram-image-matrix-visualizer">Diagram: Image Matrix Visualizer</h4>
+<details>
+<summary>Image Matrix Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how pixel values in a matrix correspond to image appearance (Bloom: Understand)</p>
+<p>Visual elements:
+- Left panel: Small grayscale image (e.g., 8×8 or 16×16 pixels)
+- Right panel: Matrix showing numeric values
+- Hover highlight connecting matrix cell to corresponding pixel
+- Color gradient legend (0=black to 255=white)</p>
+<p>Interactive controls:
+- Dropdown: Select sample image (checkerboard, gradient, simple shape, random)
+- Slider: Zoom level for image display
+- Click on matrix cell to highlight corresponding pixel
+- Click on pixel to highlight corresponding matrix cell
+- Button: "Edit mode" to modify individual pixel values</p>
+<p>Canvas layout: 800x500px with side-by-side image and matrix</p>
+<p>Behavior:
+- Hovering over matrix cell highlights pixel with colored border
+- Editing a value immediately updates the image
+- Show real-time pixel coordinates and value on hover
+- Display image dimensions and total pixel count</p>
+<p>Implementation: p5.js with matrix rendering and image display</p>
+</details>
+<h3 id="rgb-images">RGB Images</h3>
+<p>Color images use <strong>three channels</strong>—Red, Green, Blue—each stored as a separate matrix:</p>
+<p><span class="arithmatex">\(\mathbf{I}_R, \mathbf{I}_G, \mathbf{I}_B \in \mathbb{R}^{H \times W}\)</span></p>
+<p>Each pixel is a triplet <span class="arithmatex">\((r, g, b)\)</span> where each component ranges from 0 to 255:</p>
+<table>
+<thead>
+<tr>
+<th>Color</th>
+<th>RGB Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>(255, 0, 0)</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>(0, 255, 0)</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>(0, 0, 255)</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>(255, 255, 0)</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td>(0, 255, 255)</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td>(255, 0, 255)</td>
+</tr>
+<tr>
+<td>White</td>
+<td>(255, 255, 255)</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>(0, 0, 0)</td>
+</tr>
+</tbody>
+</table>
+<p>The RGB color model is <strong>additive</strong>—colors are created by adding light. Mixing all three at full intensity produces white.</p>
+<h3 id="image-tensors">Image Tensors</h3>
+<p>For computational purposes, color images are often represented as <strong>3D tensors</strong>:</p>
+<p><span class="arithmatex">\(\mathbf{I} \in \mathbb{R}^{H \times W \times C}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(H\)</span> is the height (rows)</li>
+<li><span class="arithmatex">\(W\)</span> is the width (columns)</li>
+<li><span class="arithmatex">\(C\)</span> is the number of channels (3 for RGB, 4 for RGBA with transparency)</li>
+</ul>
+<p>In deep learning, batches of images form <strong>4D tensors</strong>:</p>
+<p><span class="arithmatex">\(\mathbf{X} \in \mathbb{R}^{N \times C \times H \times W}\)</span></p>
+<p>where <span class="arithmatex">\(N\)</span> is the batch size. The ordering of dimensions varies by framework (PyTorch uses <span class="arithmatex">\(N \times C \times H \times W\)</span>; TensorFlow often uses <span class="arithmatex">\(N \times H \times W \times C\)</span>).</p>
+<h4 id="diagram-rgb-channel-decomposition">Diagram: RGB Channel Decomposition</h4>
+<details>
+<summary>RGB Channel Decomposition</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Visualize how RGB channels combine to form color images (Bloom: Analyze)</p>
+<p>Visual elements:
+- Original color image (center or top)
+- Three grayscale images showing R, G, B channels separately
+- Color-tinted versions of each channel (red, green, blue tints)
+- Reconstructed image from selected channels</p>
+<p>Interactive controls:
+- Image selector: Choose from sample images
+- Channel toggles: Enable/disable R, G, B for reconstruction
+- Slider: Adjust individual channel intensity (0-100%)
+- Toggle: Show grayscale vs color-tinted channel views</p>
+<p>Canvas layout: 800x600px with original and channel displays</p>
+<p>Behavior:
+- Disabling a channel shows image without that color component
+- Adjusting channel intensity shows over/under-saturation effects
+- Hover over pixel to show (r, g, b) values
+- Real-time reconstruction as channels are modified</p>
+<p>Implementation: p5.js with pixel array manipulation</p>
+</details>
+<h3 id="color-space-transforms">Color Space Transforms</h3>
+<p>While RGB is standard for display, other <strong>color spaces</strong> are useful for specific tasks:</p>
+<table>
+<thead>
+<tr>
+<th>Color Space</th>
+<th>Components</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RGB</td>
+<td>Red, Green, Blue</td>
+<td>Display, storage</td>
+</tr>
+<tr>
+<td>HSV/HSB</td>
+<td>Hue, Saturation, Value</td>
+<td>Color selection, segmentation</td>
+</tr>
+<tr>
+<td>HSL</td>
+<td>Hue, Saturation, Lightness</td>
+<td>Web design, color adjustment</td>
+</tr>
+<tr>
+<td>YCbCr</td>
+<td>Luminance, Chrominance</td>
+<td>JPEG compression</td>
+</tr>
+<tr>
+<td>LAB</td>
+<td>Lightness, a<em>, b</em></td>
+<td>Perceptual uniformity</td>
+</tr>
+</tbody>
+</table>
+<p>Converting between color spaces involves matrix transformations. For example, RGB to YCbCr:</p>
+<h4 id="rgb-to-ycbcr-transform">RGB to YCbCr Transform</h4>
+<p><span class="arithmatex">\(\begin{bmatrix} Y \\ C_b \\ C_r \end{bmatrix} = \begin{bmatrix} 0.299 &amp; 0.587 &amp; 0.114 \\ -0.169 &amp; -0.331 &amp; 0.500 \\ 0.500 &amp; -0.419 &amp; -0.081 \end{bmatrix} \begin{bmatrix} R \\ G \\ B \end{bmatrix} + \begin{bmatrix} 0 \\ 128 \\ 128 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(Y\)</span> is luminance (brightness information)</li>
+<li><span class="arithmatex">\(C_b\)</span> and <span class="arithmatex">\(C_r\)</span> are chrominance (color difference signals)</li>
+<li>The matrix weights reflect human perception (green contributes most to perceived brightness)</li>
+</ul>
+<p>This separation enables <strong>chroma subsampling</strong>—reducing color resolution while preserving brightness detail—which is fundamental to JPEG compression.</p>
+<h2 id="image-convolution">Image Convolution</h2>
+<p><strong>Convolution</strong> is the foundational operation for image filtering. It applies a small matrix called a <strong>kernel</strong> or <strong>filter</strong> to every location in the image.</p>
+<h3 id="the-convolution-operation">The Convolution Operation</h3>
+<p>For a 2D image <span class="arithmatex">\(\mathbf{I}\)</span> and kernel <span class="arithmatex">\(\mathbf{K}\)</span> of size <span class="arithmatex">\((2k+1) \times (2k+1)\)</span>:</p>
+<h4 id="2d-convolution-formula">2D Convolution Formula</h4>
+<p><span class="arithmatex">\((\mathbf{I} * \mathbf{K})[i, j] = \sum_{m=-k}^{k} \sum_{n=-k}^{k} I[i+m, j+n] \cdot K[m, n]\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(*\)</span> denotes convolution (not multiplication)</li>
+<li><span class="arithmatex">\((i, j)\)</span> is the output pixel location</li>
+<li>The kernel is centered at each pixel</li>
+<li>Values outside the image boundary require padding (zero, replicate, or reflect)</li>
+</ul>
+<p>Convolution is a <strong>linear operation</strong>: convolving with a sum of kernels equals the sum of individual convolutions.</p>
+<h3 id="image-filters">Image Filters</h3>
+<p>An <strong>image filter</strong> is a kernel designed to achieve a specific effect. The kernel values determine what features are enhanced or suppressed.</p>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Effect</th>
+<th>Kernel Property</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low-pass (blur)</td>
+<td>Smooths, reduces noise</td>
+<td>Positive values, sums to 1</td>
+</tr>
+<tr>
+<td>High-pass (sharpen)</td>
+<td>Enhances edges</td>
+<td>Positive center, negative surround</td>
+</tr>
+<tr>
+<td>Derivative (edge)</td>
+<td>Detects changes</td>
+<td>Sums to 0, antisymmetric</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>No change</td>
+<td>1 at center, 0 elsewhere</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-convolution-visualizer">Diagram: Convolution Visualizer</h4>
+<details>
+<summary>Convolution Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how convolution applies a kernel to an image (Bloom: Apply)</p>
+<p>Visual elements:
+- Input image (grayscale, small for clarity)
+- Sliding kernel window highlighted on input
+- Kernel matrix with current values displayed
+- Output image being constructed
+- Calculation panel showing element-wise products and sum</p>
+<p>Interactive controls:
+- Kernel selector: Identity, Blur 3×3, Sharpen, Edge detect
+- Custom kernel editor: 3×3 grid of editable values
+- Animation speed slider
+- Button: "Step" (advance one pixel)
+- Button: "Run" (animate full convolution)
+- Toggle: Show/hide calculation details</p>
+<p>Canvas layout: 900x600px with input, kernel, and output panels</p>
+<p>Behavior:
+- Animate kernel sliding across input image
+- Show element-wise multiplication at current position
+- Display running sum being computed
+- Fill in output pixel when calculation completes
+- Handle boundary conditions visually</p>
+<p>Implementation: p5.js with step-by-step animation</p>
+</details>
+<h3 id="blur-filters">Blur Filters</h3>
+<p><strong>Blur filters</strong> smooth images by averaging neighboring pixels, reducing noise and fine detail.</p>
+<p><strong>Box Blur (Mean Filter):</strong></p>
+<p><span class="arithmatex">\(\mathbf{K}_{box} = \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Every pixel contributes equally. Simple but creates blocky artifacts.</p>
+<p><strong>Gaussian Blur:</strong></p>
+<p><span class="arithmatex">\(\mathbf{K}_{gauss} = \frac{1}{16} \begin{bmatrix} 1 &amp; 2 &amp; 1 \\ 2 &amp; 4 &amp; 2 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Weights follow a Gaussian distribution—center pixels contribute more. Produces smoother, more natural blurring.</p>
+<p>The general Gaussian kernel is:</p>
+<p><span class="arithmatex">\(G(x, y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}\)</span></p>
+<p>where <span class="arithmatex">\(\sigma\)</span> controls the blur radius. Larger <span class="arithmatex">\(\sigma\)</span> means more blurring.</p>
+<h3 id="sharpen-filters">Sharpen Filters</h3>
+<p><strong>Sharpen filters</strong> enhance edges and fine detail by emphasizing differences between neighboring pixels:</p>
+<p><span class="arithmatex">\(\mathbf{K}_{sharpen} = \begin{bmatrix} 0 &amp; -1 &amp; 0 \\ -1 &amp; 5 &amp; -1 \\ 0 &amp; -1 &amp; 0 \end{bmatrix}\)</span></p>
+<p>This kernel can be understood as:
+- Identity (center = 1) plus
+- Negative Laplacian (edge enhancement)</p>
+<p>The result amplifies differences while preserving overall brightness.</p>
+<h4 id="diagram-filter-effects-gallery">Diagram: Filter Effects Gallery</h4>
+<details>
+<summary>Filter Effects Gallery</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Compare effects of different filters on the same image (Bloom: Evaluate)</p>
+<p>Visual elements:
+- Original image (top center)
+- Grid of filtered results (4-6 variants)
+- Kernel display below each filtered image
+- Difference image option (filtered - original)</p>
+<p>Interactive controls:
+- Image selector: Choose sample image
+- Filter checkboxes: Select which filters to display
+- Slider: Filter strength/radius where applicable
+- Toggle: Show difference images
+- Toggle: Show kernel matrices</p>
+<p>Canvas layout: 900x700px with grid layout</p>
+<p>Behavior:
+- All filters applied to same source image
+- Hover over filtered image to see kernel
+- Click to show full-size comparison
+- Side-by-side slider for before/after on selected filter</p>
+<p>Implementation: p5.js with multiple filter implementations</p>
+</details>
+<h2 id="edge-detection">Edge Detection</h2>
+<p><strong>Edge detection</strong> identifies boundaries in images where intensity changes rapidly. Edges correspond to object boundaries, texture changes, and depth discontinuities.</p>
+<h3 id="derivative-based-edge-detection">Derivative-Based Edge Detection</h3>
+<p>Edges are locations of high <strong>gradient magnitude</strong>. The image gradient at pixel <span class="arithmatex">\((i, j)\)</span>:</p>
+<p><span class="arithmatex">\(\nabla I = \begin{bmatrix} \frac{\partial I}{\partial x} \\ \frac{\partial I}{\partial y} \end{bmatrix}\)</span></p>
+<p>The gradient magnitude and direction:</p>
+<p><span class="arithmatex">\(|\nabla I| = \sqrt{\left(\frac{\partial I}{\partial x}\right)^2 + \left(\frac{\partial I}{\partial y}\right)^2}\)</span></p>
+<p><span class="arithmatex">\(\theta = \arctan\left(\frac{\partial I / \partial y}{\partial I / \partial x}\right)\)</span></p>
+<h3 id="the-sobel-operator">The Sobel Operator</h3>
+<p>The <strong>Sobel operator</strong> approximates image derivatives using convolution:</p>
+<h4 id="sobel-kernels">Sobel Kernels</h4>
+<p><span class="arithmatex">\(\mathbf{G}_x = \begin{bmatrix} -1 &amp; 0 &amp; +1 \\ -2 &amp; 0 &amp; +2 \\ -1 &amp; 0 &amp; +1 \end{bmatrix}, \quad \mathbf{G}_y = \begin{bmatrix} -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ +1 &amp; +2 &amp; +1 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{G}_x\)</span> detects vertical edges (horizontal gradient)</li>
+<li><span class="arithmatex">\(\mathbf{G}_y\)</span> detects horizontal edges (vertical gradient)</li>
+<li>The weights provide smoothing (via the 1-2-1 pattern) combined with differentiation</li>
+</ul>
+<p>The Sobel operator combines Gaussian smoothing with differentiation, making it more robust to noise than simple difference operators.</p>
+<table>
+<thead>
+<tr>
+<th>Edge Detector</th>
+<th>Kernel Size</th>
+<th>Noise Sensitivity</th>
+<th>Edge Localization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple difference</td>
+<td>1×2</td>
+<td>High</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Prewitt</td>
+<td>3×3</td>
+<td>Medium</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Sobel</td>
+<td>3×3</td>
+<td>Low</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Scharr</td>
+<td>3×3</td>
+<td>Low</td>
+<td>Better rotational symmetry</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-edge-detection-visualizer">Diagram: Edge Detection Visualizer</h4>
+<details>
+<summary>Edge Detection Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how Sobel operators detect edges in different orientations (Bloom: Analyze)</p>
+<p>Visual elements:
+- Original grayscale image
+- Gx result (horizontal gradient) with positive/negative coloring
+- Gy result (vertical gradient) with positive/negative coloring
+- Gradient magnitude image
+- Gradient direction overlay (as arrows or color wheel)</p>
+<p>Interactive controls:
+- Image selector: Simple shapes, photos, text
+- Toggle: Show Gx, Gy, magnitude, direction
+- Slider: Threshold for edge display
+- Toggle: Show gradient arrows at sample points
+- Dropdown: Edge detector (Sobel, Prewitt, Scharr)</p>
+<p>Canvas layout: 850x650px with multi-panel display</p>
+<p>Behavior:
+- Compute and display gradient components
+- Color-code positive (white) and negative (black) gradients
+- Threshold slider converts magnitude to binary edges
+- Arrow overlay shows gradient direction at grid points</p>
+<p>Implementation: p5.js with Sobel convolution</p>
+</details>
+<h3 id="edge-detection-pipeline">Edge Detection Pipeline</h3>
+<p>Complete edge detection typically involves:</p>
+<ol>
+<li><strong>Smoothing:</strong> Gaussian blur to reduce noise</li>
+<li><strong>Gradient computation:</strong> Sobel or similar operator</li>
+<li><strong>Non-maximum suppression:</strong> Thin edges to single-pixel width</li>
+<li><strong>Thresholding:</strong> Keep only strong edges (hysteresis thresholding in Canny)</li>
+</ol>
+<p>The <strong>Canny edge detector</strong> implements this full pipeline and remains widely used.</p>
+<h2 id="fourier-transform-for-images">Fourier Transform for Images</h2>
+<p>The <strong>Fourier transform</strong> represents images in the <strong>frequency domain</strong>, revealing periodic patterns and enabling frequency-based filtering.</p>
+<h3 id="the-2d-discrete-fourier-transform">The 2D Discrete Fourier Transform</h3>
+<p>For an <span class="arithmatex">\(M \times N\)</span> image, the 2D DFT is:</p>
+<h4 id="2d-discrete-fourier-transform">2D Discrete Fourier Transform</h4>
+<p><span class="arithmatex">\(F(u, v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) \cdot e^{-2\pi i \left(\frac{ux}{M} + \frac{vy}{N}\right)}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(f(x, y)\)</span> is the spatial domain image</li>
+<li><span class="arithmatex">\(F(u, v)\)</span> is the frequency domain representation</li>
+<li><span class="arithmatex">\((u, v)\)</span> are frequency coordinates</li>
+<li>Low frequencies (near center) represent gradual changes</li>
+<li>High frequencies (near edges) represent rapid changes</li>
+</ul>
+<p>The inverse transform recovers the original image:</p>
+<p><span class="arithmatex">\(f(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} F(u, v) \cdot e^{2\pi i \left(\frac{ux}{M} + \frac{vy}{N}\right)}\)</span></p>
+<h3 id="frequency-domain-interpretation">Frequency Domain Interpretation</h3>
+<table>
+<thead>
+<tr>
+<th>Frequency Region</th>
+<th>Spatial Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC component (center)</td>
+<td>Average brightness</td>
+</tr>
+<tr>
+<td>Low frequencies</td>
+<td>Smooth regions, gradual changes</td>
+</tr>
+<tr>
+<td>High frequencies</td>
+<td>Edges, textures, fine detail</td>
+</tr>
+<tr>
+<td>Specific frequency</td>
+<td>Periodic patterns (e.g., stripes)</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>magnitude spectrum</strong> <span class="arithmatex">\(|F(u,v)|\)</span> shows which frequencies are present.</p>
+<p>The <strong>phase spectrum</strong> <span class="arithmatex">\(\angle F(u,v)\)</span> encodes spatial structure—surprisingly, phase carries more perceptual information than magnitude.</p>
+<h4 id="diagram-fourier-transform-visualizer">Diagram: Fourier Transform Visualizer</h4>
+<details>
+<summary>Fourier Transform Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Connect spatial image features to frequency domain representation (Bloom: Analyze)</p>
+<p>Visual elements:
+- Original image (left)
+- Magnitude spectrum (center, log-scaled for visibility)
+- Phase spectrum (right, as color wheel or grayscale)
+- Reconstructed image after filtering</p>
+<p>Interactive controls:
+- Image selector: Stripes, checkerboard, photo, text
+- Frequency filter: Low-pass, high-pass, band-pass (adjustable radius)
+- Toggle: Show magnitude/phase/both
+- Slider: Filter cutoff frequency
+- Button: Apply filter and show reconstruction</p>
+<p>Canvas layout: 900x600px with three-panel display</p>
+<p>Behavior:
+- Compute and display FFT magnitude (log scale)
+- Interactive frequency selection by clicking on spectrum
+- Show effect of zeroing selected frequencies
+- Real-time filter preview on reconstruction</p>
+<p>Implementation: p5.js with FFT library (or pre-computed examples)</p>
+</details>
+<h3 id="frequency-domain-filtering">Frequency Domain Filtering</h3>
+<p>Filtering in the frequency domain involves:</p>
+<ol>
+<li>Compute FFT of image: <span class="arithmatex">\(F = \mathcal{F}(f)\)</span></li>
+<li>Multiply by filter: <span class="arithmatex">\(G = F \cdot H\)</span></li>
+<li>Compute inverse FFT: <span class="arithmatex">\(g = \mathcal{F}^{-1}(G)\)</span></li>
+</ol>
+<p>Common frequency domain filters:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Frequency Mask</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal low-pass</td>
+<td>1 if <span class="arithmatex">\(\sqrt{u^2+v^2} &lt; r\)</span>, else 0</td>
+<td>Blur (with ringing)</td>
+</tr>
+<tr>
+<td>Gaussian low-pass</td>
+<td><span class="arithmatex">\(e^{-(u^2+v^2)/2\sigma^2}\)</span></td>
+<td>Smooth blur</td>
+</tr>
+<tr>
+<td>Ideal high-pass</td>
+<td>0 if <span class="arithmatex">\(\sqrt{u^2+v^2} &lt; r\)</span>, else 1</td>
+<td>Edge enhancement</td>
+</tr>
+<tr>
+<td>Notch filter</td>
+<td>0 at specific frequencies</td>
+<td>Remove periodic noise</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>convolution theorem</strong> connects spatial and frequency domains:</p>
+<p><span class="arithmatex">\(f * g = \mathcal{F}^{-1}(\mathcal{F}(f) \cdot \mathcal{F}(g))\)</span></p>
+<p>Convolution in spatial domain equals multiplication in frequency domain.</p>
+<h2 id="image-compression">Image Compression</h2>
+<p><strong>Image compression</strong> reduces storage size by exploiting redundancies in image data. Linear algebra provides key tools for lossy compression.</p>
+<h3 id="svd-based-compression">SVD-Based Compression</h3>
+<p>The <strong>Singular Value Decomposition</strong> represents an image as a sum of rank-1 matrices:</p>
+<p><span class="arithmatex">\(\mathbf{I} = \sum_{i=1}^{r} \sigma_i \mathbf{u}_i \mathbf{v}_i^\top\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\sigma_i\)</span> are singular values (in decreasing order)</li>
+<li><span class="arithmatex">\(\mathbf{u}_i, \mathbf{v}_i\)</span> are left and right singular vectors</li>
+<li><span class="arithmatex">\(r\)</span> is the rank of the image matrix</li>
+</ul>
+<p>Keeping only the <span class="arithmatex">\(k\)</span> largest singular values gives the best rank-<span class="arithmatex">\(k\)</span> approximation:</p>
+<p><span class="arithmatex">\(\mathbf{I}_k = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^\top\)</span></p>
+<table>
+<thead>
+<tr>
+<th>Original Storage</th>
+<th>Compressed Storage</th>
+<th>Compression Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(H \times W\)</span> values</td>
+<td><span class="arithmatex">\(k(H + W + 1)\)</span> values</td>
+<td><span class="arithmatex">\(\frac{HW}{k(H+W+1)}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>For a 1000×1000 image with <span class="arithmatex">\(k=50\)</span>: compression ratio ≈ 10:1.</p>
+<h4 id="diagram-svd-compression-visualizer">Diagram: SVD Compression Visualizer</h4>
+<details>
+<summary>SVD Compression Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how SVD achieves image compression by truncating singular values (Bloom: Apply)</p>
+<p>Visual elements:
+- Original image
+- Reconstructed image from k singular values
+- Singular value plot (bar chart or line, log scale)
+- Error image (original - reconstructed)
+- Compression statistics display</p>
+<p>Interactive controls:
+- Slider: Number of singular values k (1 to full rank)
+- Image selector: Choose sample image
+- Toggle: Show error image
+- Toggle: Log scale for singular values
+- Display: Compression ratio, PSNR, storage size</p>
+<p>Canvas layout: 850x650px with image comparison and statistics</p>
+<p>Behavior:
+- Real-time reconstruction as k changes
+- Show how image quality improves with more singular values
+- Display storage calculation
+- Highlight "knee" in singular value curve</p>
+<p>Implementation: p5.js with pre-computed SVD (for performance)</p>
+</details>
+<h3 id="transform-coding-jpeg">Transform Coding (JPEG)</h3>
+<p>JPEG compression uses the <strong>Discrete Cosine Transform (DCT)</strong>:</p>
+<ol>
+<li>Divide image into 8×8 blocks</li>
+<li>Apply 2D DCT to each block</li>
+<li>Quantize coefficients (lossy step)</li>
+<li>Entropy encode (lossless)</li>
+</ol>
+<p>The DCT concentrates energy in low-frequency coefficients, which are preserved, while high-frequency coefficients (fine detail) are quantized more aggressively.</p>
+<h3 id="comparison-of-compression-approaches">Comparison of Compression Approaches</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Compression</th>
+<th>Quality Control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVD truncation</td>
+<td>Lossy</td>
+<td>Variable</td>
+<td>Number of singular values</td>
+</tr>
+<tr>
+<td>JPEG (DCT)</td>
+<td>Lossy</td>
+<td>High</td>
+<td>Quality factor (1-100)</td>
+</tr>
+<tr>
+<td>PNG (lossless)</td>
+<td>Lossless</td>
+<td>Moderate</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>WebP</td>
+<td>Both</td>
+<td>High</td>
+<td>Quality factor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feature-detection">Feature Detection</h2>
+<p><strong>Feature detection</strong> identifies distinctive points in images that can be matched across views, enabling applications like image stitching, object recognition, and 3D reconstruction.</p>
+<h3 id="what-makes-a-good-feature">What Makes a Good Feature?</h3>
+<p>A good feature should be:</p>
+<ul>
+<li><strong>Distinctive:</strong> Different from its neighbors</li>
+<li><strong>Repeatable:</strong> Detectable despite changes in viewpoint, lighting, scale</li>
+<li><strong>Localizable:</strong> Precisely positioned</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature Type</th>
+<th>Detection Method</th>
+<th>Invariance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Corners</td>
+<td>Harris, Shi-Tomasi</td>
+<td>Rotation</td>
+</tr>
+<tr>
+<td>Blobs</td>
+<td>DoG (SIFT), Hessian (SURF)</td>
+<td>Rotation, Scale</td>
+</tr>
+<tr>
+<td>Edges</td>
+<td>Canny, Sobel</td>
+<td>Limited</td>
+</tr>
+</tbody>
+</table>
+<h3 id="harris-corner-detection">Harris Corner Detection</h3>
+<p>The <strong>Harris corner detector</strong> uses the <strong>structure tensor</strong> (second moment matrix):</p>
+<h4 id="structure-tensor">Structure Tensor</h4>
+<p><span class="arithmatex">\(\mathbf{M} = \sum_{(x,y) \in W} \begin{bmatrix} I_x^2 &amp; I_x I_y \\ I_x I_y &amp; I_y^2 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(I_x, I_y\)</span> are image derivatives</li>
+<li><span class="arithmatex">\(W\)</span> is a local window (often Gaussian-weighted)</li>
+<li>The eigenvalues of <span class="arithmatex">\(\mathbf{M}\)</span> characterize the local structure</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Eigenvalue Pattern</th>
+<th>Structure</th>
+<th>Feature Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Both small</td>
+<td>Flat region</td>
+<td>Not a feature</td>
+</tr>
+<tr>
+<td>One large, one small</td>
+<td>Edge</td>
+<td>Edge point</td>
+</tr>
+<tr>
+<td>Both large</td>
+<td>Corner</td>
+<td>Good feature</td>
+</tr>
+</tbody>
+</table>
+<p>The Harris corner response:</p>
+<p><span class="arithmatex">\(R = \det(\mathbf{M}) - k \cdot \text{trace}(\mathbf{M})^2 = \lambda_1 \lambda_2 - k(\lambda_1 + \lambda_2)^2\)</span></p>
+<p>where <span class="arithmatex">\(k \approx 0.04\)</span>. Corners have high <span class="arithmatex">\(R\)</span> values.</p>
+<h4 id="diagram-corner-detection-visualizer">Diagram: Corner Detection Visualizer</h4>
+<details>
+<summary>Corner Detection Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how eigenvalues of the structure tensor identify corners (Bloom: Analyze)</p>
+<p>Visual elements:
+- Input image with detected corners marked
+- Structure tensor ellipse visualization at selected points
+- Eigenvalue scatter plot (λ1 vs λ2)
+- Corner response heat map</p>
+<p>Interactive controls:
+- Image selector: Checkerboard, building, shapes
+- Slider: Harris k parameter (0.01 to 0.1)
+- Slider: Response threshold
+- Click on image to show local structure tensor
+- Toggle: Show response heat map vs corner points</p>
+<p>Canvas layout: 850x650px with image and analysis panels</p>
+<p>Behavior:
+- Compute Harris response for entire image
+- Mark corners above threshold
+- Click on pixel to show structure tensor as ellipse
+- Ellipse axes aligned with eigenvectors, lengths proportional to eigenvalues</p>
+<p>Implementation: p5.js with gradient and matrix computation</p>
+</details>
+<h3 id="scale-invariant-features">Scale-Invariant Features</h3>
+<p><strong>SIFT (Scale-Invariant Feature Transform)</strong> detects features at multiple scales:</p>
+<ol>
+<li>Build <strong>scale space</strong> using Gaussian blur at multiple <span class="arithmatex">\(\sigma\)</span> values</li>
+<li>Detect <strong>blob-like structures</strong> as extrema in Difference-of-Gaussian (DoG)</li>
+<li>Compute <strong>orientation</strong> from local gradients</li>
+<li>Build <strong>descriptor</strong> from gradient histograms</li>
+</ol>
+<p>The 128-dimensional SIFT descriptor is robust to scale, rotation, and moderate viewpoint changes.</p>
+<h2 id="homography">Homography</h2>
+<p>A <strong>homography</strong> is a projective transformation between two planes, essential for perspective correction, panorama stitching, and augmented reality.</p>
+<h3 id="the-homography-matrix">The Homography Matrix</h3>
+<p>A homography maps points from one image to another via a 3×3 matrix:</p>
+<h4 id="homography-transformation">Homography Transformation</h4>
+<p><span class="arithmatex">\(\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} \sim \mathbf{H} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix} h_{11} &amp; h_{12} &amp; h_{13} \\ h_{21} &amp; h_{22} &amp; h_{23} \\ h_{31} &amp; h_{32} &amp; h_{33} \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\((x, y)\)</span> and <span class="arithmatex">\((x', y')\)</span> are corresponding points in homogeneous coordinates</li>
+<li><span class="arithmatex">\(\sim\)</span> denotes equality up to scale</li>
+<li><span class="arithmatex">\(\mathbf{H}\)</span> has 8 degrees of freedom (9 elements minus 1 for scale)</li>
+</ul>
+<p>To recover Cartesian coordinates:</p>
+<p><span class="arithmatex">\(x' = \frac{h_{11}x + h_{12}y + h_{13}}{h_{31}x + h_{32}y + h_{33}}, \quad y' = \frac{h_{21}x + h_{22}y + h_{23}}{h_{31}x + h_{32}y + h_{33}}\)</span></p>
+<h3 id="estimating-homographies">Estimating Homographies</h3>
+<p>Given <span class="arithmatex">\(n \geq 4\)</span> point correspondences, we can estimate <span class="arithmatex">\(\mathbf{H}\)</span> by solving a linear system.</p>
+<p>Each correspondence <span class="arithmatex">\((x_i, y_i) \leftrightarrow (x_i', y_i')\)</span> provides two equations:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} x_i &amp; y_i &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -x_i'x_i &amp; -x_i'y_i &amp; -x_i' \\ 0 &amp; 0 &amp; 0 &amp; x_i &amp; y_i &amp; 1 &amp; -y_i'x_i &amp; -y_i'y_i &amp; -y_i' \end{bmatrix} \mathbf{h} = \mathbf{0}\)</span></p>
+<p>With 4+ correspondences, solve using SVD (find the null space of the coefficient matrix).</p>
+<h3 id="transformation-hierarchy">Transformation Hierarchy</h3>
+<p>Homographies are part of a hierarchy of 2D transformations:</p>
+<table>
+<thead>
+<tr>
+<th>Transformation</th>
+<th>DOF</th>
+<th>Preserves</th>
+<th>Matrix Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Translation</td>
+<td>2</td>
+<td>Everything</td>
+<td>$[I</td>
+</tr>
+<tr>
+<td>Euclidean (rigid)</td>
+<td>3</td>
+<td>Distances, angles</td>
+<td>$[R</td>
+</tr>
+<tr>
+<td>Similarity</td>
+<td>4</td>
+<td>Angles, ratios</td>
+<td>$[sR</td>
+</tr>
+<tr>
+<td>Affine</td>
+<td>6</td>
+<td>Parallelism</td>
+<td>$[A</td>
+</tr>
+<tr>
+<td>Projective (homography)</td>
+<td>8</td>
+<td>Straight lines</td>
+<td>General 3×3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-homography-transformation-demo">Diagram: Homography Transformation Demo</h4>
+<details>
+<summary>Homography Transformation Demo</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how homographies transform images for perspective correction (Bloom: Apply)</p>
+<p>Visual elements:
+- Source image with draggable corner points
+- Transformed image showing perspective effect
+- Homography matrix display
+- Grid overlay showing transformation</p>
+<p>Interactive controls:
+- Drag corners of source quadrilateral
+- Preset buttons: Perspective, rotation, shear, stretch
+- Button: "Reset to identity"
+- Toggle: Show transformation grid
+- Display: Homography matrix values</p>
+<p>Canvas layout: 800x600px with side-by-side source and result</p>
+<p>Behavior:
+- Compute homography from corner positions in real-time
+- Apply inverse warp to display transformed image
+- Show how parallel lines may not remain parallel
+- Demonstrate perspective correction (make rectangle from trapezoid)</p>
+<p>Implementation: p5.js with bilinear interpolation for warping</p>
+</details>
+<h3 id="applications-of-homography">Applications of Homography</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>How Homography Is Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panorama stitching</td>
+<td>Align overlapping images</td>
+</tr>
+<tr>
+<td>Perspective correction</td>
+<td>Straighten tilted documents/signs</td>
+</tr>
+<tr>
+<td>Augmented reality</td>
+<td>Overlay virtual objects on planar surfaces</td>
+</tr>
+<tr>
+<td>Sports graphics</td>
+<td>Insert ads on playing field</td>
+</tr>
+<tr>
+<td>Image rectification</td>
+<td>Correct lens distortion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="python-implementation">Python Implementation</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_homography</span><span class="p">(</span><span class="n">src_pts</span><span class="p">,</span> <span class="n">dst_pts</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute homography from 4+ point correspondences.</span>
+<span class="sd">    src_pts, dst_pts: Nx2 arrays of corresponding points</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">src_pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">src_pts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span> <span class="o">=</span> <span class="n">dst_pts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">xp</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="n">xp</span><span class="p">,</span> <span class="n">xp</span><span class="p">])</span>
+        <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">yp</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="n">yp</span><span class="p">,</span> <span class="n">yp</span><span class="p">])</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+    <span class="c1"># Solve using SVD</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">Vt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">H</span> <span class="o">/</span> <span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c1"># Normalize</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_homography</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply homography to a single point.&quot;&quot;&quot;</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">point</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">p_prime</span> <span class="o">=</span> <span class="n">H</span> <span class="o">@</span> <span class="n">p</span>
+    <span class="k">return</span> <span class="n">p_prime</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">p_prime</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary_1">Summary</h2>
+<p>Image processing and computer vision are built on linear algebra foundations:</p>
+<p><strong>Image Representation:</strong></p>
+<ul>
+<li>Images are matrices (grayscale) or tensors (color)</li>
+<li>RGB images have three channels; other color spaces serve specific purposes</li>
+<li>Color space transforms are matrix operations</li>
+</ul>
+<p><strong>Filtering and Convolution:</strong></p>
+<ul>
+<li>Convolution applies kernels to extract features</li>
+<li>Blur filters average neighbors; sharpen filters enhance differences</li>
+<li>Edge detection uses derivative-approximating kernels like Sobel</li>
+</ul>
+<p><strong>Frequency Domain:</strong></p>
+<ul>
+<li>Fourier transform reveals periodic structure</li>
+<li>Low frequencies encode smooth regions; high frequencies encode edges</li>
+<li>Frequency filtering multiplies spectra</li>
+</ul>
+<p><strong>Compression:</strong></p>
+<ul>
+<li>SVD truncation provides rank-based compression</li>
+<li>Transform coding (DCT/JPEG) exploits frequency concentration</li>
+</ul>
+<p><strong>Features and Geometry:</strong></p>
+<ul>
+<li>Corner detection uses structure tensor eigenvalues</li>
+<li>Homographies are projective transformations between planes</li>
+<li>4 point correspondences determine a homography</li>
+</ul>
+<h2 id="self-check-questions">Self-Check Questions</h2>
+<details class="question">
+<summary>Why does Gaussian blur produce smoother results than box blur?</summary>
+<p>Box blur weights all pixels in the kernel equally, creating abrupt transitions at the kernel boundary. This causes visible artifacts, especially in smooth gradients. Gaussian blur weights central pixels more heavily, with weights falling off smoothly according to the Gaussian function. This smooth weighting produces gradual blending without sharp discontinuities. Additionally, the Gaussian kernel is separable, meaning a 2D Gaussian blur can be computed as two 1D blurs, making it computationally efficient.</p>
+</details>
+<details class="question">
+<summary>How does the Sobel operator combine smoothing with differentiation?</summary>
+<p>The Sobel kernels have a specific structure: they can be decomposed as the outer product of a smoothing filter [1, 2, 1] and a difference filter [-1, 0, 1]. For example, Gx = [1, 2, 1]^T × [-1, 0, 1]. The [1, 2, 1] component provides Gaussian-like smoothing perpendicular to the derivative direction, reducing noise sensitivity. The [-1, 0, 1] component computes the derivative. This combination makes Sobel more robust than simple difference operators while maintaining good edge localization.</p>
+</details>
+<details class="question">
+<summary>Why does keeping the largest singular values give the best low-rank approximation?</summary>
+<p>The Eckart-Young-Mirsky theorem proves that the truncated SVD gives the optimal low-rank approximation in both Frobenius and spectral norms. Intuitively, each singular value represents the "energy" captured by that component—larger singular values correspond to more significant patterns in the image. By keeping the largest singular values, we retain the most important structure while discarding fine details associated with smaller singular values. The approximation error equals the sum of squared discarded singular values.</p>
+</details>
+<details class="question">
+<summary>What is the geometric meaning of the Harris corner response being large?</summary>
+<p>The Harris response R = λ₁λ₂ - k(λ₁ + λ₂)² is large when both eigenvalues of the structure tensor are large. The eigenvalues measure how quickly image intensity changes in the principal directions. At a corner, intensity changes significantly in both directions (both eigenvalues large). At an edge, intensity changes in only one direction (one eigenvalue large, one small). In a flat region, intensity is constant (both eigenvalues small). The product λ₁λ₂ in the response ensures both must be large.</p>
+</details>
 
 
 
@@ -1100,7 +3361,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../12-optimization-and-learning-algorithms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12.Optimization and Learning Algorithms">
+          <a href="../12-optimization-and-learning-algorithms/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1110,20 +3371,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                12.Optimization and Learning Algorithms
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../14-3d-geometry-and-transformations/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. 3D Geometry and Transformations">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                14. 3D Geometry and Transformations
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1157,10 +3418,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

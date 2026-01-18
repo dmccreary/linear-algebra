@@ -1,0 +1,2980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/faq/">
+      
+      
+        <link rel="prev" href="../glossary/">
+      
+      
+        <link rel="next" href="../sims/graph-viewer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>FAQ - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-KC2L3G6KXH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-KC2L3G6KXH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-KC2L3G6KXH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="FAQ - Linear Algebra" />
+<meta property="og:description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/faq.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/faq/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="FAQ - Linear Algebra" />
+<meta property="twitter:description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/faq.png" />
+</head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#applied-linear-algebra-for-ai-and-machine-learning-faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-this-course-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is this course about?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-this-course-designed-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who is this course designed for?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-prerequisites-for-this-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the prerequisites for this course?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-the-course-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How is the course structured?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-the-interactive-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I use the interactive MicroSims?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-linear-algebra-important-for-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is linear algebra important for AI and machine learning?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-long-does-it-take-to-complete-each-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How long does it take to complete each chapter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-software-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What software do I need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-check-my-understanding-of-the-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I check my understanding of the material?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-get-help-if-im-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I get help if I'm stuck?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concept-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concept Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concept Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-a-scalar-and-a-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between a scalar and a vector?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-matrix-and-how-does-it-relate-to-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a matrix and how does it relate to vectors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-does-it-mean-for-vectors-to-be-linearly-independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does it mean for vectors to be linearly independent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-basis-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a basis and why is it important?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-dot-product-and-what-does-it-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the dot product and what does it tell us?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-linear-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a linear transformation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-determinant-and-what-does-it-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the determinant and what does it tell us?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are eigenvalues and eigenvectors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-singular-value-decomposition-svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Singular Value Decomposition (SVD)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Principal Component Analysis (PCA)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-neural-networks-use-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do neural networks use linear algebra?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-attention-mechanism-in-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the attention mechanism in transformers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-kalman-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Kalman filter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-detail-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Detail Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Detail Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-l1-l2-and-l-infinity-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between L1, L2, and L-infinity norms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-a-symmetric-and-orthogonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between a symmetric and orthogonal matrix?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-rank-and-nullity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between rank and nullity?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-condition-number-and-why-does-it-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the condition number and why does it matter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-row-echelon-form-and-reduced-row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between row echelon form and reduced row echelon form?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-qr-and-lu-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between QR and LU decomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-pseudoinverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the pseudoinverse?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-gradient-descent-and-newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between gradient descent and Newton's method?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-convolution-and-correlation-in-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between convolution and correlation in image processing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are homogeneous coordinates?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-challenge-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Challenge Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Challenge Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-different-results-when-multiplying-matrices-in-different-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get different results when multiplying matrices in different orders?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-know-if-a-system-of-equations-has-a-unique-solution-no-solution-or-infinitely-many-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I know if a system of equations has a unique solution, no solution, or infinitely many solutions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-matrix-inversion-give-numerical-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does my matrix inversion give numerical errors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-non-square-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I handle non-square matrices?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-eigenvalue-computations-sometimes-give-complex-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do eigenvalue computations sometimes give complex numbers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-choose-the-right-matrix-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I choose the right matrix decomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-gradient-descent-slow-for-some-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is gradient descent slow for some problems?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-debug-dimension-mismatch-errors-in-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I debug dimension mismatch errors in neural networks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-sparse-matrix-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When should I use sparse matrix representations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-choose-the-number-of-principal-components-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I choose the number of principal components to keep?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-regularization-strength-should-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What regularization strength should I use?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-normalize-features-before-applying-linear-algebra-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How should I normalize features before applying linear algebra algorithms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-missing-data-in-matrix-computations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I handle missing data in matrix computations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-best-way-to-implement-matrix-operations-efficiently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the best way to implement matrix operations efficiently?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-choose-between-different-attention-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How should I choose between different attention mechanisms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topic-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Topic Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topic Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-lora-reduce-the-cost-of-fine-tuning-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does LoRA reduce the cost of fine-tuning large language models?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-relationship-between-svd-and-eigendecomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the relationship between SVD and eigendecomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-convolution-in-neural-networks-differ-from-mathematical-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does convolution in neural networks differ from mathematical convolution?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-quaternions-avoid-gimbal-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do quaternions avoid gimbal lock?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-slam-computationally-challenging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What makes SLAM computationally challenging?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-design-a-custom-loss-function-using-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I design a custom loss function using matrix operations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-trade-offs-between-different-sensor-fusion-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the trade-offs between different sensor fusion approaches?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-verify-my-linear-algebra-implementations-are-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I verify my linear algebra implementations are correct?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-emerging-applications-of-linear-algebra-should-i-be-aware-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What emerging applications of linear algebra should I be aware of?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-this-course-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is this course about?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-this-course-designed-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who is this course designed for?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-prerequisites-for-this-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the prerequisites for this course?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-is-the-course-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How is the course structured?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-the-interactive-microsims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I use the interactive MicroSims?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-linear-algebra-important-for-ai-and-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is linear algebra important for AI and machine learning?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-long-does-it-take-to-complete-each-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How long does it take to complete each chapter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-software-do-i-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What software do I need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-check-my-understanding-of-the-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I check my understanding of the material?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-can-i-get-help-if-im-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where can I get help if I'm stuck?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concept-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concept Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concept Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-a-scalar-and-a-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between a scalar and a vector?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-matrix-and-how-does-it-relate-to-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a matrix and how does it relate to vectors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-does-it-mean-for-vectors-to-be-linearly-independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What does it mean for vectors to be linearly independent?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-basis-and-why-is-it-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a basis and why is it important?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-dot-product-and-what-does-it-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the dot product and what does it tell us?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-linear-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a linear transformation?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-determinant-and-what-does-it-tell-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the determinant and what does it tell us?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-eigenvalues-and-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are eigenvalues and eigenvectors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-singular-value-decomposition-svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Singular Value Decomposition (SVD)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Principal Component Analysis (PCA)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-neural-networks-use-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do neural networks use linear algebra?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-attention-mechanism-in-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the attention mechanism in transformers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-kalman-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Kalman filter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-detail-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Detail Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Detail Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-l1-l2-and-l-infinity-norms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between L1, L2, and L-infinity norms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-a-symmetric-and-orthogonal-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between a symmetric and orthogonal matrix?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-rank-and-nullity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between rank and nullity?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-condition-number-and-why-does-it-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the condition number and why does it matter?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-row-echelon-form-and-reduced-row-echelon-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between row echelon form and reduced row echelon form?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-qr-and-lu-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between QR and LU decomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-pseudoinverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the pseudoinverse?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-gradient-descent-and-newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between gradient descent and Newton's method?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-convolution-and-correlation-in-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between convolution and correlation in image processing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-homogeneous-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are homogeneous coordinates?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-challenge-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Challenge Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Challenge Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-do-i-get-different-results-when-multiplying-matrices-in-different-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do I get different results when multiplying matrices in different orders?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-know-if-a-system-of-equations-has-a-unique-solution-no-solution-or-infinitely-many-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I know if a system of equations has a unique solution, no solution, or infinitely many solutions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-my-matrix-inversion-give-numerical-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does my matrix inversion give numerical errors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-non-square-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I handle non-square matrices?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-do-eigenvalue-computations-sometimes-give-complex-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why do eigenvalue computations sometimes give complex numbers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-choose-the-right-matrix-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I choose the right matrix decomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-gradient-descent-slow-for-some-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is gradient descent slow for some problems?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-debug-dimension-mismatch-errors-in-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I debug dimension mismatch errors in neural networks?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practice Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-should-i-use-sparse-matrix-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When should I use sparse matrix representations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-choose-the-number-of-principal-components-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I choose the number of principal components to keep?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-regularization-strength-should-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What regularization strength should I use?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-normalize-features-before-applying-linear-algebra-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How should I normalize features before applying linear algebra algorithms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-handle-missing-data-in-matrix-computations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I handle missing data in matrix computations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-best-way-to-implement-matrix-operations-efficiently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the best way to implement matrix operations efficiently?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-should-i-choose-between-different-attention-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How should I choose between different attention mechanisms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topic-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Topic Questions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topic Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-lora-reduce-the-cost-of-fine-tuning-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does LoRA reduce the cost of fine-tuning large language models?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-relationship-between-svd-and-eigendecomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the relationship between SVD and eigendecomposition?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-convolution-in-neural-networks-differ-from-mathematical-convolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does convolution in neural networks differ from mathematical convolution?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-quaternions-avoid-gimbal-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do quaternions avoid gimbal lock?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-slam-computationally-challenging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What makes SLAM computationally challenging?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-design-a-custom-loss-function-using-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I design a custom loss function using matrix operations?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-the-trade-offs-between-different-sensor-fusion-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the trade-offs between different sensor fusion approaches?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-verify-my-linear-algebra-implementations-are-correct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I verify my linear algebra implementations are correct?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-emerging-applications-of-linear-algebra-should-i-be-aware-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What emerging applications of linear algebra should I be aware of?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/faq.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="applied-linear-algebra-for-ai-and-machine-learning-faq">Applied Linear Algebra for AI and Machine Learning FAQ</h1>
+<p>This FAQ addresses common questions about the course content, concepts, and applications. Questions are organized by category to help you find answers quickly.</p>
+<h2 id="getting-started-questions">Getting Started Questions</h2>
+<h3 id="what-is-this-course-about">What is this course about?</h3>
+<p>This course provides a comprehensive introduction to linear algebra with a strong emphasis on practical applications in artificial intelligence, machine learning, and computer vision. You'll develop both theoretical understanding and hands-on skills through interactive microsimulations that bring abstract mathematical concepts to life. The course covers vectors, matrices, linear transformations, eigenvalues, matrix decompositions, and their applications in neural networks, generative AI, image processing, and autonomous systems.</p>
+<h3 id="who-is-this-course-designed-for">Who is this course designed for?</h3>
+<p>This course is designed for:</p>
+<ul>
+<li>Computer Science majors pursuing AI/ML specializations</li>
+<li>Data Science students seeking mathematical foundations</li>
+<li>Engineering students interested in robotics and autonomous systems</li>
+<li>Applied Mathematics students wanting practical applications</li>
+<li>Graduate students needing linear algebra foundations for research</li>
+</ul>
+<p>The material is presented at a college undergraduate level, making it accessible to anyone with the prerequisites who wants to understand the mathematics behind modern AI systems.</p>
+<h3 id="what-are-the-prerequisites-for-this-course">What are the prerequisites for this course?</h3>
+<p>To succeed in this course, you should have:</p>
+<ul>
+<li><strong>College Algebra or equivalent</strong>: Familiarity with functions, equations, and basic mathematical notation</li>
+<li><strong>Basic programming experience</strong>: Python is recommended but not required</li>
+<li><strong>Familiarity with calculus concepts</strong>: Understanding of derivatives and integrals at a conceptual level</li>
+</ul>
+<p>You don't need prior exposure to linear algebra—this course starts from the fundamentals and builds up systematically.</p>
+<h3 id="how-is-the-course-structured">How is the course structured?</h3>
+<p>The course is divided into four major parts spanning 15 chapters:</p>
+<ol>
+<li><strong>Part 1: Foundations of Linear Algebra (Chapters 1-4)</strong>: Vectors, matrices, systems of equations, and linear transformations</li>
+<li><strong>Part 2: Advanced Matrix Theory (Chapters 5-8)</strong>: Determinants, eigenvalues, matrix decompositions, and abstract vector spaces</li>
+<li><strong>Part 3: Linear Algebra in Machine Learning (Chapters 9-12)</strong>: ML foundations, neural networks, generative AI, and optimization</li>
+<li><strong>Part 4: Computer Vision and Autonomous Systems (Chapters 13-15)</strong>: Image processing, 3D geometry, and sensor fusion</li>
+</ol>
+<p>Each chapter includes interactive MicroSims to reinforce concepts through hands-on exploration.</p>
+<h3 id="how-do-i-use-the-interactive-microsims">How do I use the interactive MicroSims?</h3>
+<p>MicroSims are browser-based interactive simulations that let you visualize and experiment with linear algebra concepts. To use them:</p>
+<ol>
+<li>Navigate to the <strong>MicroSims</strong> section in the sidebar</li>
+<li>Select a simulation relevant to what you're studying</li>
+<li>Use the sliders, buttons, and controls to adjust parameters</li>
+<li>Observe how changes affect the visualization in real-time</li>
+<li>Connect the visual behavior to the mathematical concepts you're learning</li>
+</ol>
+<p>No software installation is required—all MicroSims run directly in your web browser.</p>
+<h3 id="why-is-linear-algebra-important-for-ai-and-machine-learning">Why is linear algebra important for AI and machine learning?</h3>
+<p>Linear algebra is the mathematical language in which modern AI systems are written. Understanding it enables you to:</p>
+<ul>
+<li><strong>Debug ML models</strong> by understanding what's happening mathematically inside them</li>
+<li><strong>Optimize performance</strong> by choosing efficient matrix operations and representations</li>
+<li><strong>Innovate</strong> by seeing new ways to apply linear algebra concepts to novel problems</li>
+<li><strong>Communicate</strong> with researchers and engineers using shared mathematical vocabulary</li>
+<li><strong>Adapt</strong> to new techniques that build on these foundational concepts</li>
+</ul>
+<p>From the matrix multiplications in neural networks to the transformations in computer vision, virtually every AI algorithm relies heavily on linear algebra operations.</p>
+<h3 id="how-long-does-it-take-to-complete-each-chapter">How long does it take to complete each chapter?</h3>
+<p>Each chapter is designed for approximately one week of study, including:</p>
+<ul>
+<li>Reading the chapter content (2-3 hours)</li>
+<li>Working through examples and exercises (2-3 hours)</li>
+<li>Exploring interactive MicroSims (1-2 hours)</li>
+<li>Completing practice problems (2-3 hours)</li>
+</ul>
+<p>The entire course spans 15 weeks at this pace, though self-study learners can adjust their schedule as needed.</p>
+<h3 id="what-software-do-i-need">What software do I need?</h3>
+<p>For reading the textbook and using MicroSims, you only need a modern web browser. For hands-on programming exercises, you'll benefit from:</p>
+<ul>
+<li><strong>Python 3.x</strong> with the following libraries:</li>
+<li><strong>NumPy</strong>: For numerical computations and array operations</li>
+<li><strong>Matplotlib</strong>: For creating visualizations</li>
+<li><strong>scikit-learn</strong>: For machine learning examples</li>
+<li><strong>Optional</strong>: GPU access for deep learning exercises in later chapters</li>
+</ul>
+<p>All code examples in the textbook use Python with NumPy.</p>
+<h3 id="how-can-i-check-my-understanding-of-the-material">How can I check my understanding of the material?</h3>
+<p>Each chapter provides multiple ways to assess your understanding:</p>
+<ul>
+<li><strong>Concept check questions</strong> embedded throughout the text</li>
+<li><strong>Interactive MicroSims</strong> where you can test your predictions</li>
+<li><strong>Practice problems</strong> with varying difficulty levels</li>
+<li><strong>The glossary</strong> for reviewing terminology</li>
+<li><strong>Quiz questions</strong> for self-assessment</li>
+</ul>
+<p>Working through these resources actively, rather than passively reading, is the key to building deep understanding.</p>
+<h3 id="where-can-i-get-help-if-im-stuck">Where can I get help if I'm stuck?</h3>
+<p>If you're struggling with a concept:</p>
+<ol>
+<li>Review the relevant <strong>glossary definitions</strong> for terminology clarity</li>
+<li>Use the <strong>MicroSims</strong> to build geometric intuition</li>
+<li>Re-read prerequisite material if foundational concepts are unclear</li>
+<li>Check the <strong>learning graph</strong> to ensure you've covered prerequisite concepts</li>
+<li>For textbook issues, report problems on the <a href="https://github.com/dmccreary/linear-Algebra/issues">GitHub Issues</a> page</li>
+</ol>
+<h2 id="core-concept-questions">Core Concept Questions</h2>
+<h3 id="what-is-the-difference-between-a-scalar-and-a-vector">What is the difference between a scalar and a vector?</h3>
+<p>A <strong>scalar</strong> is a single numerical value representing magnitude only (like temperature or mass). A <strong>vector</strong> is an ordered collection of scalars that represents both magnitude and direction. While the scalar 5 tells you "how much," the vector (3, 4) tells you "how much and in which direction."</p>
+<p><strong>Example:</strong> Speed of 60 mph is a scalar; velocity of 60 mph heading northeast is represented as a vector with components in the x and y directions.</p>
+<p>See also: <a href="../chapters/01-vectors-and-vector-spaces/">Chapter 1: Vectors and Vector Spaces</a></p>
+<h3 id="what-is-a-matrix-and-how-does-it-relate-to-vectors">What is a matrix and how does it relate to vectors?</h3>
+<p>A <strong>matrix</strong> is a rectangular array of numbers arranged in rows and columns. You can think of a matrix as:</p>
+<ul>
+<li>A collection of column vectors side by side</li>
+<li>A collection of row vectors stacked vertically</li>
+<li>A representation of a linear transformation</li>
+</ul>
+<p>A matrix with dimensions m×n has m rows and n columns. When you multiply a matrix by a vector, you're applying a linear transformation that maps the input vector to an output vector.</p>
+<p><strong>Example:</strong> A 3×2 matrix contains 3 rows and 2 columns, and can be viewed as 2 column vectors in 3-dimensional space.</p>
+<p>See also: <a href="../chapters/02-matrices-and-matrix-operations/">Chapter 2: Matrices and Matrix Operations</a></p>
+<h3 id="what-does-it-mean-for-vectors-to-be-linearly-independent">What does it mean for vectors to be linearly independent?</h3>
+<p>Vectors are <strong>linearly independent</strong> if no vector in the set can be written as a linear combination of the others. Equivalently, the only way to combine them to get the zero vector is with all zero coefficients.</p>
+<p><strong>Example:</strong> The vectors (1, 0) and (0, 1) are linearly independent because neither is a multiple of the other. However, (1, 2) and (2, 4) are linearly dependent because (2, 4) = 2·(1, 2).</p>
+<p>Linear independence is crucial because independent vectors provide "new directions" in space, while dependent vectors are redundant.</p>
+<h3 id="what-is-a-basis-and-why-is-it-important">What is a basis and why is it important?</h3>
+<p>A <strong>basis</strong> is a set of linearly independent vectors that span an entire vector space. Every vector in the space can be written as a unique linear combination of basis vectors. The number of vectors in a basis equals the dimension of the space.</p>
+<p>The basis is important because it provides a coordinate system for the vector space. The <strong>standard basis</strong> in 3D consists of the unit vectors along each axis: (1,0,0), (0,1,0), and (0,0,1).</p>
+<p><strong>Example:</strong> Any point in 3D space can be written as x(1,0,0) + y(0,1,0) + z(0,0,1) where (x, y, z) are the coordinates.</p>
+<h3 id="what-is-the-dot-product-and-what-does-it-tell-us">What is the dot product and what does it tell us?</h3>
+<p>The <strong>dot product</strong> (also called inner product) of two vectors produces a scalar value computed as the sum of products of corresponding components:</p>
+<div class="arithmatex">\[\mathbf{a} \cdot \mathbf{b} = a_1b_1 + a_2b_2 + \ldots + a_nb_n\]</div>
+<p>Geometrically, the dot product equals |a||b|cos(θ) where θ is the angle between the vectors. This tells us:</p>
+<ul>
+<li>If the dot product is positive, vectors point in similar directions</li>
+<li>If the dot product is zero, vectors are perpendicular (orthogonal)</li>
+<li>If the dot product is negative, vectors point in opposite directions</li>
+</ul>
+<p><strong>Example:</strong> The dot product of (1, 2) and (3, 4) is 1×3 + 2×4 = 11.</p>
+<h3 id="what-is-a-linear-transformation">What is a linear transformation?</h3>
+<p>A <strong>linear transformation</strong> is a function between vector spaces that preserves vector addition and scalar multiplication. If T is a linear transformation, then:</p>
+<ul>
+<li>T(u + v) = T(u) + T(v) for all vectors u and v</li>
+<li>T(cv) = cT(v) for all vectors v and scalars c</li>
+</ul>
+<p>Every linear transformation can be represented by a matrix. Common examples include rotations, reflections, scaling, shearing, and projections.</p>
+<p><strong>Example:</strong> Rotating a 2D vector by 45° is a linear transformation represented by the rotation matrix [[cos(45°), -sin(45°)], [sin(45°), cos(45°)]].</p>
+<p>See also: <a href="../chapters/04-linear-transformations/">Chapter 4: Linear Transformations</a></p>
+<h3 id="what-is-the-determinant-and-what-does-it-tell-us">What is the determinant and what does it tell us?</h3>
+<p>The <strong>determinant</strong> is a scalar value computed from a square matrix that tells us:</p>
+<ol>
+<li>Whether the matrix is invertible (nonzero determinant = invertible)</li>
+<li>The volume scaling factor of the associated transformation</li>
+<li>The orientation change (negative determinant = orientation flip)</li>
+</ol>
+<p>For a 2×2 matrix [[a, b], [c, d]], the determinant is ad - bc.</p>
+<p><strong>Example:</strong> A rotation matrix always has determinant 1 (preserves area and orientation). A reflection matrix has determinant -1 (preserves area but flips orientation).</p>
+<p>See also: <a href="../chapters/05-determinants-and-matrix-properties/">Chapter 5: Determinants and Matrix Properties</a></p>
+<h3 id="what-are-eigenvalues-and-eigenvectors">What are eigenvalues and eigenvectors?</h3>
+<p>An <strong>eigenvector</strong> of a matrix A is a nonzero vector v that, when transformed by A, points in the same direction (or exactly opposite)—it only gets scaled by a factor λ called the <strong>eigenvalue</strong>:</p>
+<div class="arithmatex">\[A\mathbf{v} = \lambda\mathbf{v}\]</div>
+<p>Eigenvectors reveal the "natural directions" of a transformation where the transformation acts as simple scaling rather than rotation or shearing.</p>
+<p><strong>Example:</strong> For a horizontal stretch matrix that doubles the x-coordinate, any vector along the x-axis is an eigenvector with eigenvalue 2, and any vector along the y-axis is an eigenvector with eigenvalue 1.</p>
+<p>See also: <a href="../chapters/06-eigenvalues-and-eigenvectors/">Chapter 6: Eigenvalues and Eigenvectors</a></p>
+<h3 id="what-is-singular-value-decomposition-svd">What is Singular Value Decomposition (SVD)?</h3>
+<p><strong>SVD</strong> decomposes any matrix A into three matrices: A = UΣV^T where:</p>
+<ul>
+<li>U contains left singular vectors (orthonormal columns)</li>
+<li>Σ is a diagonal matrix of singular values (non-negative, decreasing)</li>
+<li>V^T contains right singular vectors (orthonormal rows)</li>
+</ul>
+<p>SVD reveals the fundamental structure of any matrix and enables:</p>
+<ul>
+<li>Low-rank approximation (keeping only largest singular values)</li>
+<li>Image compression</li>
+<li>Pseudoinverse computation</li>
+<li>Dimensionality reduction</li>
+</ul>
+<p><strong>Example:</strong> Truncating an image's SVD to keep only the 50 largest singular values can reduce storage by 90% while maintaining recognizable quality.</p>
+<p>See also: <a href="../chapters/07-matrix-decompositions/">Chapter 7: Matrix Decompositions</a></p>
+<h3 id="what-is-principal-component-analysis-pca">What is Principal Component Analysis (PCA)?</h3>
+<p><strong>PCA</strong> is a technique that finds the directions of maximum variance in data by computing eigenvectors of the covariance matrix. The first principal component points in the direction of greatest variance, the second in the direction of greatest remaining variance (perpendicular to the first), and so on.</p>
+<p>PCA is used for:</p>
+<ul>
+<li>Dimensionality reduction (keeping top k components)</li>
+<li>Data visualization (projecting high-dimensional data to 2D or 3D)</li>
+<li>Feature extraction (finding the most informative directions)</li>
+<li>Noise reduction (removing low-variance components)</li>
+</ul>
+<p><strong>Example:</strong> Applying PCA to face images produces "eigenfaces"—the principal components that capture the most variation in facial appearance.</p>
+<p>See also: <a href="../chapters/09-machine-learning-foundations/">Chapter 9: Machine Learning Foundations</a></p>
+<h3 id="how-do-neural-networks-use-linear-algebra">How do neural networks use linear algebra?</h3>
+<p>Neural networks are fundamentally composed of linear algebra operations:</p>
+<ul>
+<li><strong>Weight matrices</strong> connect layers through matrix-vector multiplication</li>
+<li><strong>Bias vectors</strong> add constant offsets to layer outputs</li>
+<li><strong>Forward propagation</strong> chains matrix multiplications with nonlinear activations</li>
+<li><strong>Backpropagation</strong> uses chain rule with Jacobian matrices to compute gradients</li>
+<li><strong>Batch processing</strong> uses matrix-matrix multiplication for efficiency</li>
+</ul>
+<p>Each layer computes: output = activation(W·input + b) where W is the weight matrix and b is the bias vector.</p>
+<p><strong>Example:</strong> A layer connecting 100 inputs to 50 outputs uses a 50×100 weight matrix containing 5,000 learnable parameters.</p>
+<p>See also: <a href="../chapters/10-neural-networks-and-deep-learning/">Chapter 10: Neural Networks and Deep Learning</a></p>
+<h3 id="what-is-the-attention-mechanism-in-transformers">What is the attention mechanism in transformers?</h3>
+<p>The <strong>attention mechanism</strong> computes weighted combinations of values based on the relevance between queries and keys. Given Query (Q), Key (K), and Value (V) matrices:</p>
+<div class="arithmatex">\[\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\]</div>
+<p>This allows each position in a sequence to "attend to" relevant positions elsewhere. The dot product Q·K^T measures similarity, softmax normalizes to weights, and the weighted sum of V produces the output.</p>
+<p><strong>Multi-head attention</strong> runs multiple attention operations in parallel, allowing the model to attend to different types of relationships simultaneously.</p>
+<p>See also: <a href="../chapters/11-generative-ai-and-llms/">Chapter 11: Generative AI and LLMs</a></p>
+<h3 id="what-is-a-kalman-filter">What is a Kalman filter?</h3>
+<p>A <strong>Kalman filter</strong> is an optimal algorithm for estimating the state of a system from noisy measurements. It works in two steps:</p>
+<ol>
+<li><strong>Predict</strong>: Use a system model to predict the next state</li>
+<li><strong>Update</strong>: Correct the prediction using new measurements</li>
+</ol>
+<p>The <strong>Kalman gain</strong> determines how much to trust the prediction versus the measurement. The filter optimally combines both sources of information based on their uncertainties.</p>
+<p><strong>Example:</strong> A GPS receiver uses Kalman filtering to estimate position by fusing satellite measurements (accurate but slow) with inertial sensors (fast but drifts).</p>
+<p>See also: <a href="../chapters/15-autonomous-systems-and-sensor-fusion/">Chapter 15: Autonomous Systems and Sensor Fusion</a></p>
+<h2 id="technical-detail-questions">Technical Detail Questions</h2>
+<h3 id="what-is-the-difference-between-l1-l2-and-l-infinity-norms">What is the difference between L1, L2, and L-infinity norms?</h3>
+<p>These are different ways to measure vector length:</p>
+<table>
+<thead>
+<tr>
+<th>Norm</th>
+<th>Formula</th>
+<th>Geometric Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1 (Manhattan)</td>
+<td>$|v|_1 = \sum</td>
+<td>v_i</td>
+</tr>
+<tr>
+<td>L2 (Euclidean)</td>
+<td><span class="arithmatex">\(\|v\|_2 = \sqrt{\sum v_i^2}\)</span></td>
+<td>Straight-line distance</td>
+</tr>
+<tr>
+<td>L∞ (Max)</td>
+<td>$|v|_\infty = \max</td>
+<td>v_i</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong> For vector (3, -4), L1 = 7, L2 = 5, L∞ = 4.</p>
+<h3 id="what-is-the-difference-between-a-symmetric-and-orthogonal-matrix">What is the difference between a symmetric and orthogonal matrix?</h3>
+<p>A <strong>symmetric matrix</strong> equals its own transpose: A = A^T. This means the element in row i, column j equals the element in row j, column i. Symmetric matrices have real eigenvalues and orthogonal eigenvectors.</p>
+<p>An <strong>orthogonal matrix</strong> has columns (and rows) that are orthonormal: Q^TQ = QQ^T = I. This means Q^(-1) = Q^T. Orthogonal matrices preserve lengths and angles—rotations and reflections are orthogonal.</p>
+<p><strong>Example:</strong> Covariance matrices are symmetric. Rotation matrices are orthogonal.</p>
+<h3 id="what-is-the-difference-between-rank-and-nullity">What is the difference between rank and nullity?</h3>
+<p>The <strong>rank</strong> of a matrix is the dimension of its column space—the number of linearly independent columns. The <strong>nullity</strong> is the dimension of its null space—the number of independent vectors that map to zero.</p>
+<p>The <strong>Rank-Nullity Theorem</strong> states: rank(A) + nullity(A) = number of columns.</p>
+<p><strong>Example:</strong> A 3×5 matrix with rank 3 has nullity 5 - 3 = 2, meaning two free variables exist in the solution to Ax = 0.</p>
+<h3 id="what-is-the-condition-number-and-why-does-it-matter">What is the condition number and why does it matter?</h3>
+<p>The <strong>condition number</strong> of a matrix is the ratio of its largest to smallest singular value. It measures how sensitive solutions are to small changes in input:</p>
+<ul>
+<li>Condition number ≈ 1: Well-conditioned (stable)</li>
+<li>Condition number &gt; 10^10: Ill-conditioned (numerically unstable)</li>
+</ul>
+<p>An ill-conditioned matrix amplifies rounding errors, potentially making computed solutions unreliable.</p>
+<p><strong>Example:</strong> A matrix with condition number 10^6 can amplify input errors by up to a million times in the output.</p>
+<h3 id="what-is-the-difference-between-row-echelon-form-and-reduced-row-echelon-form">What is the difference between row echelon form and reduced row echelon form?</h3>
+<p><strong>Row echelon form (REF)</strong>:
+- Leading entries (pivots) are 1
+- Each pivot is to the right of the pivot above
+- Rows of all zeros are at the bottom
+- Entries below each pivot are zero</p>
+<p><strong>Reduced row echelon form (RREF)</strong> adds:
+- Each pivot is the only nonzero entry in its column</p>
+<p>RREF makes reading solutions easier but requires more computation to achieve.</p>
+<h3 id="what-is-the-difference-between-qr-and-lu-decomposition">What is the difference between QR and LU decomposition?</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>LU Decomposition</th>
+<th>QR Decomposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Form</td>
+<td>A = LU (Lower × Upper triangular)</td>
+<td>A = QR (Orthogonal × Upper triangular)</td>
+</tr>
+<tr>
+<td>Matrix type</td>
+<td>Square, some need pivoting</td>
+<td>Any matrix</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>May need partial pivoting</td>
+<td>Inherently stable</td>
+</tr>
+<tr>
+<td>Primary use</td>
+<td>Solving linear systems</td>
+<td>Least squares, eigenvalue algorithms</td>
+</tr>
+<tr>
+<td>Computation</td>
+<td>Generally faster</td>
+<td>More stable for ill-conditioned problems</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-the-pseudoinverse">What is the pseudoinverse?</h3>
+<p>The <strong>pseudoinverse</strong> A^+ generalizes matrix inversion to non-square and singular matrices. It's computed from SVD as:</p>
+<div class="arithmatex">\[A^+ = V\Sigma^+U^T\]</div>
+<p>where Σ^+ is formed by taking reciprocals of nonzero singular values.</p>
+<p>The pseudoinverse solves least squares problems: x = A^+b minimizes ||Ax - b||.</p>
+<h3 id="what-is-the-difference-between-gradient-descent-and-newtons-method">What is the difference between gradient descent and Newton's method?</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Gradient Descent</th>
+<th>Newton's Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uses</td>
+<td>First derivatives (gradient)</td>
+<td>First and second derivatives (Hessian)</td>
+</tr>
+<tr>
+<td>Step direction</td>
+<td>Steepest descent</td>
+<td>Newton step using curvature</td>
+</tr>
+<tr>
+<td>Convergence</td>
+<td>Linear (slow near minimum)</td>
+<td>Quadratic (fast near minimum)</td>
+</tr>
+<tr>
+<td>Per-iteration cost</td>
+<td>Low (gradient only)</td>
+<td>High (Hessian inversion)</td>
+</tr>
+<tr>
+<td>Robustness</td>
+<td>Works far from minimum</td>
+<td>May diverge far from minimum</td>
+</tr>
+</tbody>
+</table>
+<p>For large-scale problems, <strong>quasi-Newton methods</strong> like BFGS approximate the Hessian without computing it explicitly.</p>
+<h3 id="what-is-the-difference-between-convolution-and-correlation-in-image-processing">What is the difference between convolution and correlation in image processing?</h3>
+<p><strong>Convolution</strong> flips the kernel before sliding it across the image. <strong>Correlation</strong> does not flip the kernel. For symmetric kernels, they're identical.</p>
+<p>Mathematically, convolution is associative (order doesn't matter for multiple filters), which is important for neural network design.</p>
+<p>In practice, most deep learning frameworks implement correlation but call it "convolution."</p>
+<h3 id="what-are-homogeneous-coordinates">What are homogeneous coordinates?</h3>
+<p><strong>Homogeneous coordinates</strong> add an extra dimension to represent points. A 2D point (x, y) becomes (x, y, 1) in homogeneous coordinates. This enables:</p>
+<ul>
+<li>Representing translations as matrix multiplication</li>
+<li>Unified treatment of affine and projective transformations</li>
+<li>Representing points at infinity</li>
+<li>Simplifying perspective projection</li>
+</ul>
+<p>To convert back: (x, y, w) → (x/w, y/w)</p>
+<p><strong>Example:</strong> Translation, which is not a linear transformation in Cartesian coordinates, becomes a matrix multiplication in homogeneous coordinates.</p>
+<h2 id="common-challenge-questions">Common Challenge Questions</h2>
+<h3 id="why-do-i-get-different-results-when-multiplying-matrices-in-different-orders">Why do I get different results when multiplying matrices in different orders?</h3>
+<p>Matrix multiplication is <strong>not commutative</strong>: AB ≠ BA in general. The order matters because:</p>
+<ul>
+<li>A applies to the result of B, not the other way around</li>
+<li>Dimensions may not even allow reverse multiplication</li>
+<li>Geometrically, applying transformation A then B differs from B then A</li>
+</ul>
+<p><strong>Example:</strong> Rotating then scaling gives a different result than scaling then rotating.</p>
+<h3 id="how-do-i-know-if-a-system-of-equations-has-a-unique-solution-no-solution-or-infinitely-many-solutions">How do I know if a system of equations has a unique solution, no solution, or infinitely many solutions?</h3>
+<p>Analyze the augmented matrix after row reduction:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Solution Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pivot in every column (of coefficient matrix)</td>
+<td>Unique solution</td>
+</tr>
+<tr>
+<td>Pivot in last column (constant column)</td>
+<td>No solution</td>
+</tr>
+<tr>
+<td>Fewer pivots than variables</td>
+<td>Infinitely many solutions</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>rank</strong> of the coefficient matrix compared to the augmented matrix determines solvability.</p>
+<h3 id="why-does-my-matrix-inversion-give-numerical-errors">Why does my matrix inversion give numerical errors?</h3>
+<p>Numerical errors in matrix inversion occur when:</p>
+<ol>
+<li><strong>Matrix is singular or near-singular</strong>: Small pivots cause division by tiny numbers</li>
+<li><strong>Poor conditioning</strong>: Large condition number amplifies rounding errors</li>
+<li><strong>Accumulated errors</strong>: Long computation chains compound small errors</li>
+</ol>
+<p><strong>Solutions</strong>:
+- Use LU or QR decomposition instead of explicit inversion
+- Apply partial pivoting
+- Use higher precision arithmetic for critical applications
+- Reformulate the problem to avoid explicit inversion</p>
+<h3 id="how-do-i-handle-non-square-matrices">How do I handle non-square matrices?</h3>
+<p>Non-square matrices can't be inverted directly, but you can:</p>
+<ul>
+<li><strong>For m×n with m &gt; n</strong> (overdetermined): Use pseudoinverse or least squares</li>
+<li><strong>For m×n with m &lt; n</strong> (underdetermined): Solution has free variables; use minimum norm solution</li>
+<li><strong>For any case</strong>: SVD works on all matrices and provides the pseudoinverse</li>
+</ul>
+<h3 id="why-do-eigenvalue-computations-sometimes-give-complex-numbers">Why do eigenvalue computations sometimes give complex numbers?</h3>
+<p>Complex eigenvalues occur when a real matrix includes rotational components. For example, a pure rotation matrix in 2D has eigenvalues cos(θ) ± i·sin(θ).</p>
+<p>Complex eigenvalues always come in conjugate pairs for real matrices. They indicate oscillatory behavior in dynamical systems.</p>
+<h3 id="how-do-i-choose-the-right-matrix-decomposition">How do I choose the right matrix decomposition?</h3>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Best Decomposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solve Ax = b (general)</td>
+<td>LU with pivoting</td>
+</tr>
+<tr>
+<td>Solve Ax = b (symmetric positive definite)</td>
+<td>Cholesky</td>
+</tr>
+<tr>
+<td>Least squares</td>
+<td>QR</td>
+</tr>
+<tr>
+<td>Eigenvalues/vectors</td>
+<td>Use specialized eigenvalue algorithms</td>
+</tr>
+<tr>
+<td>Dimensionality reduction</td>
+<td>SVD or eigendecomposition</td>
+</tr>
+<tr>
+<td>Low-rank approximation</td>
+<td>Truncated SVD</td>
+</tr>
+<tr>
+<td>Numerical stability critical</td>
+<td>QR or SVD</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-is-gradient-descent-slow-for-some-problems">Why is gradient descent slow for some problems?</h3>
+<p>Gradient descent can be slow when:</p>
+<ol>
+<li><strong>Ill-conditioning</strong>: Different dimensions have very different scales</li>
+<li><strong>Saddle points</strong>: Gradient is small but not at a minimum</li>
+<li><strong>Plateaus</strong>: Loss surface is nearly flat</li>
+<li><strong>Learning rate issues</strong>: Too small = slow; too large = oscillation</li>
+</ol>
+<p><strong>Solutions</strong>: Use adaptive methods (Adam, RMSprop), apply preconditioning, or normalize features.</p>
+<h3 id="how-do-i-debug-dimension-mismatch-errors-in-neural-networks">How do I debug dimension mismatch errors in neural networks?</h3>
+<p>Common dimension mismatch causes:</p>
+<ol>
+<li><strong>Matrix multiplication</strong>: Inner dimensions must match (m×n times n×p)</li>
+<li><strong>Batch dimension confusion</strong>: First dimension is usually batch size</li>
+<li><strong>Flattening errors</strong>: Wrong reshape before fully connected layers</li>
+<li><strong>Convolution output</strong>: Calculate output size using (input - kernel + 2×padding)/stride + 1</li>
+</ol>
+<p>Trace dimensions through each layer systematically to find the mismatch.</p>
+<h2 id="best-practice-questions">Best Practice Questions</h2>
+<h3 id="when-should-i-use-sparse-matrix-representations">When should I use sparse matrix representations?</h3>
+<p>Use sparse matrices when:</p>
+<ul>
+<li>More than 90% of entries are zero</li>
+<li>Matrix is large (thousands of rows/columns)</li>
+<li>Memory is constrained</li>
+<li>Operations preserve sparsity</li>
+</ul>
+<p>Common sparse formats include CSR (fast row slicing), CSC (fast column slicing), and COO (fast construction).</p>
+<p><strong>Example:</strong> A 10,000×10,000 matrix with only 50,000 nonzero entries uses 99.95% less memory in sparse format.</p>
+<h3 id="how-do-i-choose-the-number-of-principal-components-to-keep">How do I choose the number of principal components to keep?</h3>
+<p>Common approaches:</p>
+<ol>
+<li><strong>Variance threshold</strong>: Keep components explaining 95% or 99% of total variance</li>
+<li><strong>Scree plot</strong>: Look for an "elbow" where variance explained drops sharply</li>
+<li><strong>Cross-validation</strong>: Choose k that minimizes reconstruction error on held-out data</li>
+<li><strong>Domain knowledge</strong>: Keep components that have interpretable meaning</li>
+</ol>
+<p>There's no universal rule—the best choice depends on your specific application.</p>
+<h3 id="what-regularization-strength-should-i-use">What regularization strength should I use?</h3>
+<p>Finding the right regularization strength (λ) typically requires:</p>
+<ol>
+<li><strong>Cross-validation</strong>: Try multiple values and evaluate on validation set</li>
+<li><strong>Grid search</strong>: Systematically explore a range (often logarithmic: 0.001, 0.01, 0.1, 1, 10)</li>
+<li><strong>Domain knowledge</strong>: Larger λ when you expect simpler relationships</li>
+<li><strong>Monitoring</strong>: Watch for underfitting (λ too large) or overfitting (λ too small)</li>
+</ol>
+<p>Start with λ = 1 and adjust based on validation performance.</p>
+<h3 id="how-should-i-normalize-features-before-applying-linear-algebra-algorithms">How should I normalize features before applying linear algebra algorithms?</h3>
+<p>Common normalization strategies:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Formula</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standardization</td>
+<td>(x - μ) / σ</td>
+<td>Features with different scales; PCA</td>
+</tr>
+<tr>
+<td>Min-Max</td>
+<td>(x - min) / (max - min)</td>
+<td>Bounded output needed (0-1)</td>
+</tr>
+<tr>
+<td>L2 Normalization</td>
+<td>x /</td>
+<td></td>
+</tr>
+<tr>
+<td>Batch Normalization</td>
+<td>Layer-wise during training</td>
+<td>Deep neural networks</td>
+</tr>
+</tbody>
+</table>
+<p>Always apply the same transformation to training and test data.</p>
+<h3 id="how-do-i-handle-missing-data-in-matrix-computations">How do I handle missing data in matrix computations?</h3>
+<p>Options for missing data:</p>
+<ol>
+<li><strong>Imputation</strong>: Fill with mean, median, or predicted values</li>
+<li><strong>Matrix completion</strong>: Use low-rank methods to estimate missing entries</li>
+<li><strong>Mask and ignore</strong>: Weight valid entries only in loss computation</li>
+<li><strong>Drop rows/columns</strong>: If missingness is sparse and random</li>
+</ol>
+<p>For recommendation systems, matrix completion methods specifically designed for sparse matrices work well.</p>
+<h3 id="whats-the-best-way-to-implement-matrix-operations-efficiently">What's the best way to implement matrix operations efficiently?</h3>
+<p>For efficient matrix operations:</p>
+<ol>
+<li><strong>Use optimized libraries</strong>: NumPy, BLAS, LAPACK, cuBLAS for GPU</li>
+<li><strong>Avoid explicit loops</strong>: Vectorize operations</li>
+<li><strong>Consider memory layout</strong>: Row-major vs column-major affects cache performance</li>
+<li><strong>Batch operations</strong>: Process multiple inputs simultaneously</li>
+<li><strong>Exploit structure</strong>: Use specialized algorithms for symmetric, sparse, or banded matrices</li>
+<li><strong>Avoid unnecessary copies</strong>: Use in-place operations when possible</li>
+</ol>
+<h3 id="how-should-i-choose-between-different-attention-mechanisms">How should I choose between different attention mechanisms?</h3>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Complexity</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dot-product</td>
+<td>O(n²d)</td>
+<td>Standard transformer, moderate sequences</td>
+</tr>
+<tr>
+<td>Multi-head</td>
+<td>O(n²d)</td>
+<td>Learning multiple relationship types</td>
+</tr>
+<tr>
+<td>Linear</td>
+<td>O(nd²)</td>
+<td>Very long sequences</td>
+</tr>
+<tr>
+<td>Sparse</td>
+<td>O(nd)</td>
+<td>Extremely long sequences with local patterns</td>
+</tr>
+<tr>
+<td>Cross-attention</td>
+<td>O(nm d)</td>
+<td>Different-length source and target</td>
+</tr>
+</tbody>
+</table>
+<p>For most applications, multi-head dot-product attention works well.</p>
+<h2 id="advanced-topic-questions">Advanced Topic Questions</h2>
+<h3 id="how-does-lora-reduce-the-cost-of-fine-tuning-large-language-models">How does LoRA reduce the cost of fine-tuning large language models?</h3>
+<p><strong>Low-Rank Adaptation (LoRA)</strong> decomposes weight updates as the product of two small matrices: ΔW = BA where B is (d × r) and A is (r × k) with rank r &lt;&lt; min(d, k).</p>
+<p>Instead of updating millions of parameters in the original weight matrix, LoRA only trains the small A and B matrices. This reduces:</p>
+<ul>
+<li>Trainable parameters by 10-100x</li>
+<li>Memory requirements during training</li>
+<li>Storage for multiple fine-tuned models (only store A and B)</li>
+</ul>
+<p><strong>Example:</strong> For a 1000×1000 weight matrix, using rank r=8 reduces parameters from 1,000,000 to 16,000.</p>
+<h3 id="what-is-the-relationship-between-svd-and-eigendecomposition">What is the relationship between SVD and eigendecomposition?</h3>
+<p>For a matrix A:</p>
+<ul>
+<li>A^T A has eigenvalues σ² (squared singular values) and eigenvectors V</li>
+<li>A A^T has eigenvalues σ² and eigenvectors U</li>
+<li>The singular values of A are the square roots of eigenvalues of A^T A</li>
+</ul>
+<p>For symmetric matrices, SVD and eigendecomposition are essentially the same, with singular values being absolute values of eigenvalues.</p>
+<h3 id="how-does-convolution-in-neural-networks-differ-from-mathematical-convolution">How does convolution in neural networks differ from mathematical convolution?</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Mathematical Convolution</th>
+<th>Neural Network "Convolution"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kernel flip</td>
+<td>Yes</td>
+<td>No (technically correlation)</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>Continuous or 1D discrete</td>
+<td>2D, 3D with channels</td>
+</tr>
+<tr>
+<td>Kernel</td>
+<td>Fixed</td>
+<td>Learned from data</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td>Signal processing</td>
+<td>Feature extraction</td>
+</tr>
+</tbody>
+</table>
+<p>The terminology is historical—neural network convolution is mathematically cross-correlation, but the learned kernels make the distinction practically irrelevant.</p>
+<h3 id="how-do-quaternions-avoid-gimbal-lock">How do quaternions avoid gimbal lock?</h3>
+<p><strong>Gimbal lock</strong> occurs with Euler angles when two rotation axes align, losing a degree of freedom. Quaternions avoid this by:</p>
+<ul>
+<li>Representing rotations as 4D unit vectors (avoiding singularities)</li>
+<li>Using a different mathematical structure without axis-angle limitations</li>
+<li>Enabling smooth interpolation (SLERP) between orientations</li>
+</ul>
+<p>The trade-off is less intuitive representation—quaternion components don't directly correspond to roll, pitch, yaw angles.</p>
+<h3 id="what-makes-slam-computationally-challenging">What makes SLAM computationally challenging?</h3>
+<p><strong>SLAM</strong> (Simultaneous Localization and Mapping) is challenging because:</p>
+<ol>
+<li><strong>Chicken-and-egg problem</strong>: Need position to build map, need map to determine position</li>
+<li><strong>Growing state</strong>: Map size grows over time, increasing computation</li>
+<li><strong>Loop closure</strong>: Recognizing previously visited locations requires global matching</li>
+<li><strong>Real-time constraints</strong>: Must process sensor data fast enough for navigation</li>
+<li><strong>Uncertainty management</strong>: Probabilistic state estimation with correlated errors</li>
+</ol>
+<p>Modern SLAM systems use sparse representations, keyframe-based approaches, and graph optimization to manage complexity.</p>
+<h3 id="how-do-i-design-a-custom-loss-function-using-matrix-operations">How do I design a custom loss function using matrix operations?</h3>
+<p>When designing custom loss functions:</p>
+<ol>
+<li><strong>Express in matrix form</strong>: Vectorize to enable batch computation</li>
+<li><strong>Ensure differentiability</strong>: Gradient must exist for backpropagation</li>
+<li><strong>Consider numerical stability</strong>: Avoid log(0), division by zero</li>
+<li><strong>Check convexity</strong>: Convex losses are easier to optimize</li>
+<li><strong>Match the problem</strong>: Classification → cross-entropy; regression → MSE or Huber</li>
+</ol>
+<p><strong>Example:</strong> Weighted least squares: L = (y - Xw)^T D (y - Xw) where D is a diagonal weight matrix.</p>
+<h3 id="what-are-the-trade-offs-between-different-sensor-fusion-approaches">What are the trade-offs between different sensor fusion approaches?</h3>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kalman Filter</td>
+<td>Optimal for linear Gaussian</td>
+<td>Assumes linearity and Gaussian noise</td>
+</tr>
+<tr>
+<td>Extended Kalman</td>
+<td>Handles nonlinearity</td>
+<td>Linearization errors, may diverge</td>
+</tr>
+<tr>
+<td>Particle Filter</td>
+<td>Any distribution</td>
+<td>Computationally expensive</td>
+</tr>
+<tr>
+<td>Factor Graph</td>
+<td>Handles complex relationships</td>
+<td>Complex implementation</td>
+</tr>
+<tr>
+<td>Neural Fusion</td>
+<td>Learns optimal fusion</td>
+<td>Requires training data, less interpretable</td>
+</tr>
+</tbody>
+</table>
+<p>Choose based on your system's characteristics and computational constraints.</p>
+<h3 id="how-can-i-verify-my-linear-algebra-implementations-are-correct">How can I verify my linear algebra implementations are correct?</h3>
+<p>Testing strategies:</p>
+<ol>
+<li><strong>Identity checks</strong>: Does multiplying by identity return input?</li>
+<li><strong>Inverse checks</strong>: Does AA^(-1) = I?</li>
+<li><strong>Orthogonality checks</strong>: Is Q^T Q = I for orthogonal Q?</li>
+<li><strong>Numerical comparison</strong>: Compare with NumPy/SciPy results</li>
+<li><strong>Known solutions</strong>: Test on problems with analytical solutions</li>
+<li><strong>Property preservation</strong>: Do transformations preserve expected properties?</li>
+<li><strong>Gradient checking</strong>: Compare analytical gradients with numerical differences</li>
+</ol>
+<h3 id="what-emerging-applications-of-linear-algebra-should-i-be-aware-of">What emerging applications of linear algebra should I be aware of?</h3>
+<p>Active areas applying linear algebra include:</p>
+<ul>
+<li><strong>Quantum computing</strong>: Quantum states are vectors; operations are unitary matrices</li>
+<li><strong>Graph neural networks</strong>: Message passing as sparse matrix operations</li>
+<li><strong>Neural radiance fields (NeRF)</strong>: 3D scene representation using transformations</li>
+<li><strong>Diffusion models</strong>: Noise addition/removal as matrix operations</li>
+<li><strong>Mixture of experts</strong>: Sparse gating with linear combinations</li>
+<li><strong>State space models</strong>: Efficient alternatives to attention using matrix structure</li>
+</ul>
+<p>Understanding linear algebra fundamentals prepares you for these advancing fields.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../glossary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Glossary">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sims/graph-viewer/" class="md-footer__link md-footer__link--next" aria-label="Next: Graph Viewer">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Graph Viewer
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

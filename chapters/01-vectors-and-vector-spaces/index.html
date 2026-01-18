@@ -18,11 +18,14 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../02-matrices-and-matrix-operations/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Vectors and Vector Spaces - Linear Algebra" >
-      
-        <meta  property="og:description"  content="Introduction to vectors as the fundamental building blocks of linear algebra" >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Vectors and Vector Spaces - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="Introduction to vectors as the fundamental building blocks of linear algebra" >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vectors and Vector Spaces - Linear Algebra" />
+<meta property="og:description" content="Introduction to vectors as the fundamental building blocks of linear algebra" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Vectors and Vector Spaces - Linear Algebra" />
+<meta property="twitter:description" content="Introduction to vectors as the fundamental building blocks of linear algebra" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/01-vectors-and-vector-spaces/index.png" />
+</head>
   
   
     
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -421,632 +408,96 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
   
   <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
+    
+  
+    1. Vectors and Vector Spaces
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Vectors and Vector Spaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quiz/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
+    
+  
+    Quiz
+  
+
+    
   </span>
+  
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scalars-and-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scalars and Vectors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scalars and Vectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#understanding-scalars" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Scalars
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-vector" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Vector?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vector-notation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Notation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vectors-in-different-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vectors in Different Dimensions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vectors in Different Dimensions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#2d-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D Vectors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3d-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      3D Vectors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3D Vectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-2d-and-3d-vector-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: 2D and 3D Vector Visualization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#n-dimensional-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      N-Dimensional Vectors
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-vector-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Vector Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic Vector Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vector-addition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Addition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scalar-multiplication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scalar Multiplication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vector-subtraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Subtraction
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vector Subtraction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-vector-operations-playground" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Vector Operations Playground
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vector-products" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Products
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vector Products">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-dot-product" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Dot Product
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-cross-product" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Cross Product
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Cross Product">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-dot-product-and-cross-product-visualizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Dot Product and Cross Product Visualizer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#magnitude-and-norms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Magnitude and Norms
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Magnitude and Norms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vector-magnitude" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Magnitude
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#understanding-norms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding Norms
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding Norms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#l2-norm-euclidean-norm" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2 Norm (Euclidean Norm)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#l1-norm-manhattan-norm" class="md-nav__link">
-    <span class="md-ellipsis">
-      L1 Norm (Manhattan Norm)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#l-infinity-norm-maximum-norm" class="md-nav__link">
-    <span class="md-ellipsis">
-      L-Infinity Norm (Maximum Norm)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diagram-norm-comparison-visualizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Norm Comparison Visualizer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#euclidean-distance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Euclidean Distance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unit-vectors-and-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unit Vectors and Normalization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-combinations-and-span" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Combinations and Span
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Combinations and Span">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-combinations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Combinations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-span-of-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Span of Vectors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Span of Vectors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-linear-combination-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Linear Combination Explorer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-independence-and-dependence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Independence and Dependence
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Independence and Dependence">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-independence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Independence
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linear-dependence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Dependence
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basis-and-coordinate-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basis and Coordinate Systems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basis and Coordinate Systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basis-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basis Vectors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-standard-basis" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Standard Basis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#coordinate-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      Coordinate Systems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Coordinate Systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-basis-and-coordinate-system-visualizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Basis and Coordinate System Visualizer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vector-spaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Spaces
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vector Spaces">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition-of-a-vector-space" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition of a Vector Space
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#examples-of-vector-spaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples of Vector Spaces
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dimension-of-a-vector-space" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dimension of a Vector Space
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dimension of a Vector Space">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-vector-space-axiom-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Vector Space Axiom Explorer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applications-in-ai-and-machine-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applications in AI and Machine Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Applications in AI and Machine Learning">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#feature-vectors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Feature Vectors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#word-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Word Embeddings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neural-network-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Neural Network Parameters
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1059,23 +510,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     2. Matrices and Matrix Operations
+  
+
+    
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
   
 
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-      </a>
+      
     </li>
   
 
@@ -1087,23 +567,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
   
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    3. Systems of Linear Equations
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1115,44 +624,109 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     4. Linear Transformations
+  
+
+    
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
   
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     5. Determinants and Matrix Properties
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1164,16 +738,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     6. Eigenvalues and Eigenvectors
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1185,16 +795,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     7. Matrix Decompositions
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1206,16 +852,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     8. Vector Spaces and Inner Products
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1227,16 +909,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     9. Machine Learning Foundations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1248,16 +966,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     10. Neural Networks and Deep Learning
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1269,16 +1023,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
+    
+  
+    11. Generative AI and LLMs
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1290,16 +1080,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
+    
+  
+    12. Optimization and Learning Algorithms
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1311,16 +1137,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1332,16 +1194,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1353,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1398,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1411,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1436,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -1444,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -1484,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1532,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1541,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1550,7 +1552,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1559,7 +1563,9 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      
+        Introduction
+      
     </span>
   </a>
   
@@ -1568,7 +1574,9 @@
         <li class="md-nav__item">
   <a href="#scalars-and-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalars and Vectors
+      
+        Scalars and Vectors
+      
     </span>
   </a>
   
@@ -1578,7 +1586,9 @@
           <li class="md-nav__item">
   <a href="#understanding-scalars" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Scalars
+      
+        Understanding Scalars
+      
     </span>
   </a>
   
@@ -1587,7 +1597,9 @@
           <li class="md-nav__item">
   <a href="#what-is-a-vector" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Vector?
+      
+        What is a Vector?
+      
     </span>
   </a>
   
@@ -1596,7 +1608,9 @@
           <li class="md-nav__item">
   <a href="#vector-notation" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Notation
+      
+        Vector Notation
+      
     </span>
   </a>
   
@@ -1610,7 +1624,9 @@
         <li class="md-nav__item">
   <a href="#vectors-in-different-dimensions" class="md-nav__link">
     <span class="md-ellipsis">
-      Vectors in Different Dimensions
+      
+        Vectors in Different Dimensions
+      
     </span>
   </a>
   
@@ -1620,7 +1636,9 @@
           <li class="md-nav__item">
   <a href="#2d-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      2D Vectors
+      
+        2D Vectors
+      
     </span>
   </a>
   
@@ -1629,7 +1647,9 @@
           <li class="md-nav__item">
   <a href="#3d-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      3D Vectors
+      
+        3D Vectors
+      
     </span>
   </a>
   
@@ -1639,7 +1659,9 @@
           <li class="md-nav__item">
   <a href="#diagram-2d-and-3d-vector-visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: 2D and 3D Vector Visualization
+      
+        Diagram: 2D and 3D Vector Visualization
+      
     </span>
   </a>
   
@@ -1653,7 +1675,9 @@
           <li class="md-nav__item">
   <a href="#n-dimensional-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      N-Dimensional Vectors
+      
+        N-Dimensional Vectors
+      
     </span>
   </a>
   
@@ -1667,7 +1691,9 @@
         <li class="md-nav__item">
   <a href="#basic-vector-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Vector Operations
+      
+        Basic Vector Operations
+      
     </span>
   </a>
   
@@ -1677,7 +1703,9 @@
           <li class="md-nav__item">
   <a href="#vector-addition" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Addition
+      
+        Vector Addition
+      
     </span>
   </a>
   
@@ -1686,7 +1714,9 @@
           <li class="md-nav__item">
   <a href="#scalar-multiplication" class="md-nav__link">
     <span class="md-ellipsis">
-      Scalar Multiplication
+      
+        Scalar Multiplication
+      
     </span>
   </a>
   
@@ -1695,7 +1725,9 @@
           <li class="md-nav__item">
   <a href="#vector-subtraction" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Subtraction
+      
+        Vector Subtraction
+      
     </span>
   </a>
   
@@ -1705,7 +1737,9 @@
           <li class="md-nav__item">
   <a href="#diagram-vector-operations-playground" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Vector Operations Playground
+      
+        Diagram: Vector Operations Playground
+      
     </span>
   </a>
   
@@ -1724,7 +1758,9 @@
         <li class="md-nav__item">
   <a href="#vector-products" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Products
+      
+        Vector Products
+      
     </span>
   </a>
   
@@ -1734,7 +1770,9 @@
           <li class="md-nav__item">
   <a href="#the-dot-product" class="md-nav__link">
     <span class="md-ellipsis">
-      The Dot Product
+      
+        The Dot Product
+      
     </span>
   </a>
   
@@ -1743,7 +1781,9 @@
           <li class="md-nav__item">
   <a href="#the-cross-product" class="md-nav__link">
     <span class="md-ellipsis">
-      The Cross Product
+      
+        The Cross Product
+      
     </span>
   </a>
   
@@ -1753,7 +1793,9 @@
           <li class="md-nav__item">
   <a href="#diagram-dot-product-and-cross-product-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Dot Product and Cross Product Visualizer
+      
+        Diagram: Dot Product and Cross Product Visualizer
+      
     </span>
   </a>
   
@@ -1772,7 +1814,9 @@
         <li class="md-nav__item">
   <a href="#magnitude-and-norms" class="md-nav__link">
     <span class="md-ellipsis">
-      Magnitude and Norms
+      
+        Magnitude and Norms
+      
     </span>
   </a>
   
@@ -1782,7 +1826,9 @@
           <li class="md-nav__item">
   <a href="#vector-magnitude" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Magnitude
+      
+        Vector Magnitude
+      
     </span>
   </a>
   
@@ -1791,7 +1837,9 @@
           <li class="md-nav__item">
   <a href="#understanding-norms" class="md-nav__link">
     <span class="md-ellipsis">
-      Understanding Norms
+      
+        Understanding Norms
+      
     </span>
   </a>
   
@@ -1801,7 +1849,9 @@
           <li class="md-nav__item">
   <a href="#l2-norm-euclidean-norm" class="md-nav__link">
     <span class="md-ellipsis">
-      L2 Norm (Euclidean Norm)
+      
+        L2 Norm (Euclidean Norm)
+      
     </span>
   </a>
   
@@ -1810,7 +1860,9 @@
           <li class="md-nav__item">
   <a href="#l1-norm-manhattan-norm" class="md-nav__link">
     <span class="md-ellipsis">
-      L1 Norm (Manhattan Norm)
+      
+        L1 Norm (Manhattan Norm)
+      
     </span>
   </a>
   
@@ -1819,7 +1871,9 @@
           <li class="md-nav__item">
   <a href="#l-infinity-norm-maximum-norm" class="md-nav__link">
     <span class="md-ellipsis">
-      L-Infinity Norm (Maximum Norm)
+      
+        L-Infinity Norm (Maximum Norm)
+      
     </span>
   </a>
   
@@ -1828,7 +1882,9 @@
           <li class="md-nav__item">
   <a href="#diagram-norm-comparison-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Norm Comparison Visualizer
+      
+        Diagram: Norm Comparison Visualizer
+      
     </span>
   </a>
   
@@ -1842,7 +1898,9 @@
           <li class="md-nav__item">
   <a href="#euclidean-distance" class="md-nav__link">
     <span class="md-ellipsis">
-      Euclidean Distance
+      
+        Euclidean Distance
+      
     </span>
   </a>
   
@@ -1851,7 +1909,9 @@
           <li class="md-nav__item">
   <a href="#unit-vectors-and-normalization" class="md-nav__link">
     <span class="md-ellipsis">
-      Unit Vectors and Normalization
+      
+        Unit Vectors and Normalization
+      
     </span>
   </a>
   
@@ -1865,7 +1925,9 @@
         <li class="md-nav__item">
   <a href="#linear-combinations-and-span" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Combinations and Span
+      
+        Linear Combinations and Span
+      
     </span>
   </a>
   
@@ -1875,7 +1937,9 @@
           <li class="md-nav__item">
   <a href="#linear-combinations" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Combinations
+      
+        Linear Combinations
+      
     </span>
   </a>
   
@@ -1884,7 +1948,9 @@
           <li class="md-nav__item">
   <a href="#the-span-of-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      The Span of Vectors
+      
+        The Span of Vectors
+      
     </span>
   </a>
   
@@ -1894,7 +1960,9 @@
           <li class="md-nav__item">
   <a href="#diagram-linear-combination-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Linear Combination Explorer
+      
+        Diagram: Linear Combination Explorer
+      
     </span>
   </a>
   
@@ -1913,7 +1981,9 @@
         <li class="md-nav__item">
   <a href="#linear-independence-and-dependence" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Independence and Dependence
+      
+        Linear Independence and Dependence
+      
     </span>
   </a>
   
@@ -1923,7 +1993,9 @@
           <li class="md-nav__item">
   <a href="#linear-independence" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Independence
+      
+        Linear Independence
+      
     </span>
   </a>
   
@@ -1932,7 +2004,9 @@
           <li class="md-nav__item">
   <a href="#linear-dependence" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Dependence
+      
+        Linear Dependence
+      
     </span>
   </a>
   
@@ -1946,7 +2020,9 @@
         <li class="md-nav__item">
   <a href="#basis-and-coordinate-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Basis and Coordinate Systems
+      
+        Basis and Coordinate Systems
+      
     </span>
   </a>
   
@@ -1956,7 +2032,9 @@
           <li class="md-nav__item">
   <a href="#basis-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      Basis Vectors
+      
+        Basis Vectors
+      
     </span>
   </a>
   
@@ -1965,7 +2043,9 @@
           <li class="md-nav__item">
   <a href="#the-standard-basis" class="md-nav__link">
     <span class="md-ellipsis">
-      The Standard Basis
+      
+        The Standard Basis
+      
     </span>
   </a>
   
@@ -1974,7 +2054,9 @@
           <li class="md-nav__item">
   <a href="#coordinate-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Coordinate Systems
+      
+        Coordinate Systems
+      
     </span>
   </a>
   
@@ -1984,7 +2066,9 @@
           <li class="md-nav__item">
   <a href="#diagram-basis-and-coordinate-system-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Basis and Coordinate System Visualizer
+      
+        Diagram: Basis and Coordinate System Visualizer
+      
     </span>
   </a>
   
@@ -2003,7 +2087,9 @@
         <li class="md-nav__item">
   <a href="#vector-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      Vector Spaces
+      
+        Vector Spaces
+      
     </span>
   </a>
   
@@ -2013,7 +2099,9 @@
           <li class="md-nav__item">
   <a href="#definition-of-a-vector-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Definition of a Vector Space
+      
+        Definition of a Vector Space
+      
     </span>
   </a>
   
@@ -2022,7 +2110,9 @@
           <li class="md-nav__item">
   <a href="#examples-of-vector-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      Examples of Vector Spaces
+      
+        Examples of Vector Spaces
+      
     </span>
   </a>
   
@@ -2031,7 +2121,9 @@
           <li class="md-nav__item">
   <a href="#dimension-of-a-vector-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Dimension of a Vector Space
+      
+        Dimension of a Vector Space
+      
     </span>
   </a>
   
@@ -2041,7 +2133,9 @@
           <li class="md-nav__item">
   <a href="#diagram-vector-space-axiom-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Vector Space Axiom Explorer
+      
+        Diagram: Vector Space Axiom Explorer
+      
     </span>
   </a>
   
@@ -2060,7 +2154,9 @@
         <li class="md-nav__item">
   <a href="#applications-in-ai-and-machine-learning" class="md-nav__link">
     <span class="md-ellipsis">
-      Applications in AI and Machine Learning
+      
+        Applications in AI and Machine Learning
+      
     </span>
   </a>
   
@@ -2070,7 +2166,9 @@
           <li class="md-nav__item">
   <a href="#feature-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      Feature Vectors
+      
+        Feature Vectors
+      
     </span>
   </a>
   
@@ -2079,7 +2177,9 @@
           <li class="md-nav__item">
   <a href="#word-embeddings" class="md-nav__link">
     <span class="md-ellipsis">
-      Word Embeddings
+      
+        Word Embeddings
+      
     </span>
   </a>
   
@@ -2088,7 +2188,9 @@
           <li class="md-nav__item">
   <a href="#neural-network-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Neural Network Parameters
+      
+        Neural Network Parameters
+      
     </span>
   </a>
   
@@ -2102,7 +2204,9 @@
         <li class="md-nav__item">
   <a href="#summary_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -2118,12 +2222,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    1. Vectors and Vector Spaces
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/01-vectors-and-vector-spaces/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/01-vectors-and-vector-spaces/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2649,9 +2821,9 @@ Bloom Verb: use, demonstrate, calculate</p>
 <h3 id="the-standard-basis">The Standard Basis</h3>
 <p>The <strong>standard basis</strong> for <span class="arithmatex">\(\mathbb{R}^n\)</span> consists of vectors with a single 1 and all other components 0:</p>
 <p>For <span class="arithmatex">\(\mathbb{R}^2\)</span>:
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>\)</span></p>
+$<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\)</span>$</p>
 <p>For <span class="arithmatex">\(\mathbb{R}^3\)</span>:
-<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\)</span>\)</span></p>
+$<span class="arithmatex">\(\mathbf{e}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}, \quad \mathbf{e}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \quad \mathbf{e}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\)</span>$</p>
 <p>The standard basis vectors align with the coordinate axes, making them intuitive for visualization and computation.</p>
 <h3 id="coordinate-systems">Coordinate Systems</h3>
 <p>A <strong>coordinate system</strong> assigns a unique tuple of numbers to each point in space. When we choose a basis <span class="arithmatex">\(\{\mathbf{b}_1, \mathbf{b}_2, \ldots, \mathbf{b}_n\}\)</span>, any vector <span class="arithmatex">\(\mathbf{v}\)</span> can be written as:</p>
@@ -2905,13 +3077,13 @@ Bloom Verb: identify, recognize, list</p>
         
         
           
-          <a href="../02-matrices-and-matrix-operations/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Matrices and Matrix Operations">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                2. Matrices and Matrix Operations
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2945,10 +3117,13 @@ Bloom Verb: identify, recognize, list</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

@@ -1,0 +1,2045 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/learning-graph/quiz-generation-report/">
+      
+      
+        <link rel="prev" href="../faq-quality-report/">
+      
+      
+        <link rel="next" href="../../glossary/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Quiz Generation Report - Linear Algebra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-KC2L3G6KXH"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-KC2L3G6KXH",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-KC2L3G6KXH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Quiz Generation Report - Linear Algebra" />
+<meta property="og:description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/learning-graph/quiz-generation-report.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/learning-graph/quiz-generation-report/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Quiz Generation Report - Linear Algebra" />
+<meta property="twitter:description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/learning-graph/quiz-generation-report.png" />
+</head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quiz-generation-quality-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Linear Algebra" class="md-header__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Linear Algebra
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quiz Generation Report
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Linear Algebra" class="md-nav__button md-logo" aria-label="Linear Algebra" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    Linear Algebra
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning Graph
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course-description-assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quality-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concept-taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomy-distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy Distribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary-quality-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary Quality Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-quality-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ Quality Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz Generation Report
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz Generation Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Statistics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blooms-taxonomy-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloom's Taxonomy Distribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloom&#39;s Taxonomy Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-distribution-intermediate-chapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Distribution (Intermediate Chapters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-distribution-estimated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Distribution (Estimated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Balance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Answer Balance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-quality-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question Quality Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coverage Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapters-1-4-introductory-linear-algebra-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 1-4 (Introductory - Linear Algebra Foundations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-5-8-intermediate-advanced-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 5-8 (Intermediate - Advanced Linear Algebra)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-9-12-machine-learning-and-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 9-12 (Machine Learning and AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-13-15-applications-vision-and-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 13-15 (Applications - Vision and Robotics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-for-upper-alpha-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS for Upper-Alpha Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Statistics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-chapter-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Chapter Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blooms-taxonomy-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bloom's Taxonomy Distribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bloom&#39;s Taxonomy Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-distribution-intermediate-chapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target Distribution (Intermediate Chapters)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-distribution-estimated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Distribution (Estimated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Balance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Answer Balance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overall-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-quality-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question Quality Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coverage Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapters-1-4-introductory-linear-algebra-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 1-4 (Introductory - Linear Algebra Foundations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-5-8-intermediate-advanced-linear-algebra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 5-8 (Intermediate - Advanced Linear Algebra)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-9-12-machine-learning-and-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 9-12 (Machine Learning and AI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chapters-13-15-applications-vision-and-robotics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chapters 13-15 (Applications - Vision and Robotics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#high-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low Priority
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Notes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-for-upper-alpha-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS for Upper-Alpha Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/learning-graph/quiz-generation-report.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="quiz-generation-quality-report">Quiz Generation Quality Report</h1>
+<p><strong>Generated:</strong> 2026-01-17
+<strong>Skill Version:</strong> Quiz Generator v0.2</p>
+<h2 id="overall-statistics">Overall Statistics</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Chapters</strong></td>
+<td>15</td>
+</tr>
+<tr>
+<td><strong>Total Questions</strong></td>
+<td>150</td>
+</tr>
+<tr>
+<td><strong>Avg Questions per Chapter</strong></td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Overall Quality Score</strong></td>
+<td>82/100</td>
+</tr>
+<tr>
+<td><strong>Chapters with Full Content</strong></td>
+<td>14</td>
+</tr>
+<tr>
+<td><strong>Chapters with Stub Content</strong></td>
+<td>1 (Ch 5)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="per-chapter-summary">Per-Chapter Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Title</th>
+<th>Questions</th>
+<th>Concepts</th>
+<th>Content Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Vectors and Vector Spaces</td>
+<td>10</td>
+<td>27</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Matrices and Matrix Operations</td>
+<td>10</td>
+<td>23</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Systems of Linear Equations</td>
+<td>10</td>
+<td>23</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Linear Transformations</td>
+<td>10</td>
+<td>27</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Determinants and Matrix Properties</td>
+<td>10</td>
+<td>12</td>
+<td>Stub*</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Eigenvalues and Eigenvectors</td>
+<td>10</td>
+<td>17</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Matrix Decompositions</td>
+<td>10</td>
+<td>19</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Vector Spaces and Inner Products</td>
+<td>10</td>
+<td>19</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Machine Learning Foundations</td>
+<td>10</td>
+<td>20</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Neural Networks and Deep Learning</td>
+<td>10</td>
+<td>26</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Generative AI and LLMs</td>
+<td>10</td>
+<td>19</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Optimization and Learning Algorithms</td>
+<td>10</td>
+<td>14</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Image Processing and Computer Vision</td>
+<td>10</td>
+<td>16</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>14</td>
+<td>3D Geometry and Transformations</td>
+<td>10</td>
+<td>17</td>
+<td>Full</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Autonomous Systems and Sensor Fusion</td>
+<td>10</td>
+<td>20</td>
+<td>Full</td>
+</tr>
+</tbody>
+</table>
+<p>*Chapter 5 quiz generated from concept list only; content pending.</p>
+<h2 id="blooms-taxonomy-distribution">Bloom's Taxonomy Distribution</h2>
+<h3 id="target-distribution-intermediate-chapters">Target Distribution (Intermediate Chapters)</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remember</td>
+<td>25%</td>
+<td>Recall facts, terms, basic concepts</td>
+</tr>
+<tr>
+<td>Understand</td>
+<td>30%</td>
+<td>Explain ideas, comprehend relationships</td>
+</tr>
+<tr>
+<td>Apply</td>
+<td>30%</td>
+<td>Use knowledge in new situations</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>15%</td>
+<td>Draw connections, identify patterns</td>
+</tr>
+<tr>
+<td>Evaluate</td>
+<td>0%</td>
+<td>Make judgments (advanced only)</td>
+</tr>
+<tr>
+<td>Create</td>
+<td>0%</td>
+<td>Produce original work (advanced only)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="actual-distribution-estimated">Actual Distribution (Estimated)</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Actual</th>
+<th>Target</th>
+<th>Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remember</td>
+<td>28%</td>
+<td>25%</td>
+<td>+3% ✓</td>
+</tr>
+<tr>
+<td>Understand</td>
+<td>35%</td>
+<td>30%</td>
+<td>+5% ✓</td>
+</tr>
+<tr>
+<td>Apply</td>
+<td>25%</td>
+<td>30%</td>
+<td>-5% ✓</td>
+</tr>
+<tr>
+<td>Analyze</td>
+<td>12%</td>
+<td>15%</td>
+<td>-3% ✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bloom's Distribution Score:</strong> 22/25 (good distribution)</p>
+<h2 id="answer-balance">Answer Balance</h2>
+<h3 id="overall-distribution">Overall Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Count</th>
+<th>Percentage</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>37</td>
+<td>24.7%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>B</td>
+<td>41</td>
+<td>27.3%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>36</td>
+<td>24.0%</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>D</td>
+<td>36</td>
+<td>24.0%</td>
+<td>25%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer Balance Score:</strong> 14/15 (excellent distribution, slight B bias)</p>
+<h2 id="question-quality-analysis">Question Quality Analysis</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Well-formed questions</td>
+<td>100%</td>
+<td>All questions end with ?</td>
+</tr>
+<tr>
+<td>Quality distractors</td>
+<td>88%</td>
+<td>Plausible alternatives</td>
+</tr>
+<tr>
+<td>Clear explanations</td>
+<td>100%</td>
+<td>All have explanations</td>
+</tr>
+<tr>
+<td>Concept attribution</td>
+<td>100%</td>
+<td>All identify tested concept</td>
+</tr>
+<tr>
+<td>Unique questions</td>
+<td>100%</td>
+<td>No duplicates</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question Quality Score:</strong> 28/30</p>
+<h2 id="coverage-analysis">Coverage Analysis</h2>
+<h3 id="chapters-1-4-introductory-linear-algebra-foundations">Chapters 1-4 (Introductory - Linear Algebra Foundations)</h3>
+<ul>
+<li>Strong coverage of fundamental concepts</li>
+<li>Vectors, matrices, systems, transformations well represented</li>
+<li>Good mix of computational and conceptual questions</li>
+</ul>
+<h3 id="chapters-5-8-intermediate-advanced-linear-algebra">Chapters 5-8 (Intermediate - Advanced Linear Algebra)</h3>
+<ul>
+<li>Chapter 5: Limited to concept list (content pending)</li>
+<li>Eigenvalues/eigenvectors thoroughly tested</li>
+<li>Matrix decompositions cover SVD, QR, Cholesky</li>
+<li>Inner products and orthogonality well covered</li>
+</ul>
+<h3 id="chapters-9-12-machine-learning-and-ai">Chapters 9-12 (Machine Learning and AI)</h3>
+<ul>
+<li>ML foundations connect linear algebra to applications</li>
+<li>Neural networks emphasize matrix operations</li>
+<li>Attention mechanisms and transformers included</li>
+<li>Optimization covers both classical and modern methods</li>
+</ul>
+<h3 id="chapters-13-15-applications-vision-and-robotics">Chapters 13-15 (Applications - Vision and Robotics)</h3>
+<ul>
+<li>Image processing links to convolution and Fourier</li>
+<li>3D geometry covers rotations, homogeneous coordinates</li>
+<li>Autonomous systems integrates all previous concepts</li>
+</ul>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="high-priority">High Priority</h3>
+<ol>
+<li><strong>Generate Chapter 5 content</strong> - Currently a stub; quiz based on concepts only</li>
+<li><strong>Add 2-3 more Apply-level questions</strong> per chapter to reach 30% target</li>
+<li><strong>Reduce B answer frequency</strong> slightly (currently 27.3%)</li>
+</ol>
+<h3 id="medium-priority">Medium Priority</h3>
+<ol>
+<li>Consider adding alternative questions for high-centrality concepts</li>
+<li>Add more computational questions with specific numerical examples</li>
+<li>Include questions that span multiple concepts</li>
+</ol>
+<h3 id="low-priority">Low Priority</h3>
+<ol>
+<li>Create study guide versions of quizzes</li>
+<li>Export to LMS-compatible formats (Moodle XML, Canvas QTI)</li>
+<li>Add timed quiz mode suggestions</li>
+</ol>
+<h2 id="technical-notes">Technical Notes</h2>
+<h3 id="format-compliance">Format Compliance</h3>
+<p>All quizzes use the mkdocs-material question admonition format:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gu">#### N. Question text?</span>
+
+&lt;div class=&quot;upper-alpha&quot; markdown&gt;
+<span class="k">1.</span> Option A
+<span class="k">2.</span> Option B
+<span class="k">3.</span> Option C
+<span class="k">4.</span> Option D
+&lt;/div&gt;
+
+??? question &quot;Show Answer&quot;
+    The correct answer is <span class="gs">**X**</span>. [Explanation]
+
+    <span class="gs">**Concept Tested:**</span> [Concept Name]
+</code></pre></div></td></tr></table></div>
+<h3 id="requirements">Requirements</h3>
+<p>For proper rendering, ensure <code>mkdocs.yml</code> includes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_in_html</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="css-for-upper-alpha-lists">CSS for Upper-Alpha Lists</h3>
+<p>The <code>upper-alpha</code> class requires custom CSS in <code>docs/css/extra.css</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">.</span><span class="nc">upper-alpha</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">upper-alpha</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>150 questions</strong> generated across 15 chapters</li>
+<li><strong>Quality Score: 82/100</strong> (good)</li>
+<li>All questions have explanations and concept attribution</li>
+<li>Answer distribution well-balanced (24-27% per option)</li>
+<li>Chapter 5 needs content generation for improved quiz quality</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../faq-quality-report/" class="md-footer__link md-footer__link--prev" aria-label="Previous: FAQ Quality Report">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                FAQ Quality Report
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../glossary/" class="md-footer__link md-footer__link--next" aria-label="Next: Glossary">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

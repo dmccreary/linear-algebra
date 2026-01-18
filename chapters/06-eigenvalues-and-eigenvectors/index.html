@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Understanding the intrinsic structure of linear transformations through eigenanalysis">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/06-eigenvalues-and-eigenvectors/">
       
       
-        <link rel="prev" href="../05-determinants-and-matrix-properties/">
+        <link rel="prev" href="../05-determinants-and-matrix-properties/quiz/">
       
       
-        <link rel="next" href="../07-matrix-decompositions/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>6. Eigenvalues and Eigenvectors - Linear Algebra</title>
+        <title>Eigenvalues and Eigenvectors - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="6. Eigenvalues and Eigenvectors - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/06-eigenvalues-and-eigenvectors/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/06-eigenvalues-and-eigenvectors/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="6. Eigenvalues and Eigenvectors - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/06-eigenvalues-and-eigenvectors/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Eigenvalues and Eigenvectors - Linear Algebra" />
+<meta property="og:description" content="Understanding the intrinsic structure of linear transformations through eigenanalysis" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/06-eigenvalues-and-eigenvectors/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/06-eigenvalues-and-eigenvectors/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Eigenvalues and Eigenvectors - Linear Algebra" />
+<meta property="twitter:description" content="Understanding the intrinsic structure of linear transformations through eigenanalysis" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/06-eigenvalues-and-eigenvectors/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6. Eigenvalues and Eigenvectors
+              Eigenvalues and Eigenvectors
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,364 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Eigenvalues and Eigenvectors
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +760,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,148 +793,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     8. Vector Spaces and Inner Products
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -675,16 +909,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     9. Machine Learning Foundations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -696,16 +966,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     10. Neural Networks and Deep Learning
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -717,16 +1023,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
+    
+  
+    11. Generative AI and LLMs
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -738,16 +1080,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
+    
+  
+    12. Optimization and Learning Algorithms
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -759,16 +1137,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -780,16 +1194,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -801,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,712 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and-eigenvectors-the-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalues and Eigenvectors: The Core Concepts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenvalues and Eigenvectors: The Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-eigen-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Eigen Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-eigenvector-transformation-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Eigenvector Transformation Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-eigenvalues-the-characteristic-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Eigenvalues: The Characteristic Polynomial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Eigenvalues: The Characteristic Polynomial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-characteristic-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Characteristic Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-characteristic-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Characteristic Polynomial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-finding-eigenvalues-of-a-22-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Finding Eigenvalues of a 2×2 Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Finding Eigenvalues of a 2×2 Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-characteristic-polynomial-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Characteristic Polynomial Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Eigenvectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding Eigenvectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-finding-eigenvectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Finding Eigenvectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-eigenspace-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Eigenspace Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algebraic-and-geometric-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algebraic and Geometric Multiplicity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Algebraic and Geometric Multiplicity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algebraic-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algebraic Multiplicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric Multiplicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-multiplicity-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Multiplicity Inequality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Multiplicity Inequality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-multiplicity-comparison-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Multiplicity Comparison Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similar-matrices-and-diagonalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Similar Matrices and Diagonalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Similar Matrices and Diagonalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagonalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagonalization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagonalization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-diagonal-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Diagonal Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditions-for-diagonalizability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions for Diagonalizability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditions for Diagonalizability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-diagonalization-process-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Diagonalization Process Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-diagonalization-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Diagonalization Matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Diagonalization Matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-matrix-power-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Matrix Power Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigendecomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigendecomposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-eigenvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Eigenvalues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complex Eigenvalues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometric-interpretation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric Interpretation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-rotation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Rotation Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Rotation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-complex-eigenvalue-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Complex Eigenvalue Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetric-matrices-and-the-spectral-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Matrices and the Spectral Theorem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symmetric Matrices and the Spectral Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-eigenvalues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Eigenvalues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-spectral-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Spectral Theorem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spectral-decomposition-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spectral Decomposition Form
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spectral Decomposition Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-spectral-theorem-for-symmetric-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Spectral Theorem for Symmetric Matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-iteration-computing-the-dominant-eigenvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Iteration: Computing the Dominant Eigenvalue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Iteration: Computing the Dominant Eigenvalue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-dominant-eigenvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dominant Eigenvalue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-iteration-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Iteration Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Iteration Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rayleigh-quotient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rayleigh Quotient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-power-iteration-microsim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Power Iteration MicroSim
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variants-of-power-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants of Power Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-machine-learning-and-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications in Machine Learning and AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in Machine Learning and AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principal Component Analysis (PCA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerank-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PageRank Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stability-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stability Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stability Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-eigenvalue-applications-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Eigenvalue Applications Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computational-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numerical-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numerical Stability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1014,12 +2273,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    6. Eigenvalues and Eigenvectors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/06-eigenvalues-and-eigenvectors/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/06-eigenvalues-and-eigenvectors/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1059,7 +2386,847 @@
 <li><a href="../05-determinants-and-matrix-properties/">Chapter 5: Determinants and Matrix Properties</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>When a linear transformation acts on a vector, it typically changes both the direction and magnitude of that vector. However, certain special vectors maintain their direction under transformation—they may stretch, shrink, or flip, but they remain on the same line through the origin. These exceptional vectors, called <strong>eigenvectors</strong>, and their associated scaling factors, called <strong>eigenvalues</strong>, reveal the fundamental structure of linear transformations.</p>
+<p>Understanding eigenanalysis is crucial for modern AI and machine learning applications. Principal Component Analysis (PCA) uses eigenvectors to find the directions of maximum variance in data. Google's PageRank algorithm models web importance as an eigenvector problem. Neural networks converge based on the eigenvalues of their weight matrices. Stability analysis of dynamical systems depends entirely on eigenvalue properties.</p>
+<p>This chapter develops eigenanalysis from first principles, building intuition through visualizations before presenting the computational techniques used in practice.</p>
+<h2 id="eigenvalues-and-eigenvectors-the-core-concepts">Eigenvalues and Eigenvectors: The Core Concepts</h2>
+<p>Consider a linear transformation represented by a square matrix <span class="arithmatex">\(A\)</span>. When we apply <span class="arithmatex">\(A\)</span> to most vectors, both the direction and magnitude change. But for special vectors, the transformation only scales the vector without changing its direction.</p>
+<h4 id="the-eigen-equation">The Eigen Equation</h4>
+<p>The relationship between a matrix <span class="arithmatex">\(A\)</span>, an eigenvector <span class="arithmatex">\(\mathbf{v}\)</span>, and its eigenvalue <span class="arithmatex">\(\lambda\)</span> is captured by the eigen equation:</p>
+<p><span class="arithmatex">\(A\mathbf{v} = \lambda\mathbf{v}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(A\)</span> is an <span class="arithmatex">\(n \times n\)</span> square matrix</li>
+<li><span class="arithmatex">\(\mathbf{v}\)</span> is a non-zero vector (the eigenvector)</li>
+<li><span class="arithmatex">\(\lambda\)</span> is a scalar (the eigenvalue)</li>
+</ul>
+<p>This equation states that applying the transformation <span class="arithmatex">\(A\)</span> to the eigenvector <span class="arithmatex">\(\mathbf{v}\)</span> produces the same result as simply scaling <span class="arithmatex">\(\mathbf{v}\)</span> by the factor <span class="arithmatex">\(\lambda\)</span>.</p>
+<h4 id="diagram-eigenvector-transformation-visualization">Diagram: Eigenvector Transformation Visualization</h4>
+<details>
+<summary>Eigenvector Transformation Visualization</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Demonstrate visually how eigenvectors maintain their direction under linear transformation while other vectors change direction</p>
+<p>Visual elements:
+- 2D coordinate plane with grid lines
+- A unit circle showing sample vectors
+- Original vector (blue arrow) that user can drag to different positions
+- Transformed vector (red arrow) showing result of A*v
+- Eigenvector directions displayed as dashed lines through origin
+- Matrix A displayed in corner with editable values</p>
+<p>Interactive controls:
+- Drag handle on the blue vector to change its direction and magnitude
+- 2x2 matrix input fields for A (pre-populated with example: [[2, 1], [1, 2]])
+- "Show Eigenvectors" toggle button
+- "Animate Transformation" button that smoothly morphs vector to its transformed position
+- Reset button</p>
+<p>Default parameters:
+- Matrix A = [[2, 1], [1, 2]] (eigenvalues 3 and 1)
+- Initial vector at (1, 0)
+- Canvas size: responsive, minimum 600x500px</p>
+<p>Behavior:
+- As user drags the vector, show both original and transformed positions
+- When vector aligns with an eigenvector direction, highlight this with a glow effect
+- Display "Eigenvector detected!" message when alignment occurs
+- Show eigenvalue as the ratio of transformed to original length
+- Color code: vectors along eigenvectors glow green, others remain blue/red</p>
+<p>Implementation: p5.js with responsive canvas design</p>
+</details>
+<p>The key insight is that eigenvectors define the "natural axes" of a linear transformation. Along these axes, the transformation acts as pure scaling—no rotation or shearing occurs.</p>
+<h3 id="geometric-interpretation">Geometric Interpretation</h3>
+<p>Different eigenvalue values produce different geometric behaviors:</p>
+<table>
+<thead>
+<tr>
+<th>Eigenvalue</th>
+<th>Geometric Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\lambda &gt; 1\)</span></td>
+<td>Stretches the eigenvector away from origin</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(0 &lt; \lambda &lt; 1\)</span></td>
+<td>Compresses the eigenvector toward origin</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda = 1\)</span></td>
+<td>Leaves the eigenvector unchanged</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda = 0\)</span></td>
+<td>Collapses the eigenvector to the origin</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda &lt; 0\)</span></td>
+<td>Flips and scales the eigenvector</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Eigenvectors Are Not Unique in Scale</p>
+<p>If <span class="arithmatex">\(\mathbf{v}\)</span> is an eigenvector with eigenvalue <span class="arithmatex">\(\lambda\)</span>, then any non-zero scalar multiple <span class="arithmatex">\(c\mathbf{v}\)</span> is also an eigenvector with the same eigenvalue. We often normalize eigenvectors to have unit length for convenience.</p>
+</div>
+<h2 id="finding-eigenvalues-the-characteristic-polynomial">Finding Eigenvalues: The Characteristic Polynomial</h2>
+<p>To find eigenvalues, we need to solve the eigen equation systematically. Rearranging <span class="arithmatex">\(A\mathbf{v} = \lambda\mathbf{v}\)</span> gives us:</p>
+<p><span class="arithmatex">\(A\mathbf{v} - \lambda\mathbf{v} = \mathbf{0}\)</span></p>
+<p><span class="arithmatex">\((A - \lambda I)\mathbf{v} = \mathbf{0}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(I\)</span> is the identity matrix of the same size as <span class="arithmatex">\(A\)</span></li>
+<li><span class="arithmatex">\(\mathbf{0}\)</span> is the zero vector</li>
+</ul>
+<p>For a non-zero solution <span class="arithmatex">\(\mathbf{v}\)</span> to exist, the matrix <span class="arithmatex">\((A - \lambda I)\)</span> must be singular (non-invertible). This happens precisely when its determinant equals zero.</p>
+<h4 id="the-characteristic-equation">The Characteristic Equation</h4>
+<p>The characteristic equation determines all eigenvalues of a matrix:</p>
+<p><span class="arithmatex">\(\det(A - \lambda I) = 0\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\det\)</span> denotes the determinant</li>
+<li><span class="arithmatex">\(A\)</span> is the square matrix</li>
+<li><span class="arithmatex">\(\lambda\)</span> represents the unknown eigenvalue</li>
+<li><span class="arithmatex">\(I\)</span> is the identity matrix</li>
+</ul>
+<h4 id="the-characteristic-polynomial">The Characteristic Polynomial</h4>
+<p>Expanding the determinant <span class="arithmatex">\(\det(A - \lambda I)\)</span> produces a polynomial in <span class="arithmatex">\(\lambda\)</span> called the <strong>characteristic polynomial</strong>. For an <span class="arithmatex">\(n \times n\)</span> matrix, this polynomial has degree <span class="arithmatex">\(n\)</span>:</p>
+<p><span class="arithmatex">\(p(\lambda) = \det(A - \lambda I) = (-1)^n \lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_1\lambda + c_0\)</span></p>
+<p>The eigenvalues are the roots of this polynomial.</p>
+<h3 id="example-finding-eigenvalues-of-a-22-matrix">Example: Finding Eigenvalues of a 2×2 Matrix</h3>
+<p>Consider the matrix:</p>
+<p><span class="arithmatex">\(A = \begin{bmatrix} 4 &amp; 2 \\ 1 &amp; 3 \end{bmatrix}\)</span></p>
+<p>Step 1: Form <span class="arithmatex">\((A - \lambda I)\)</span>:</p>
+<p><span class="arithmatex">\(A - \lambda I = \begin{bmatrix} 4-\lambda &amp; 2 \\ 1 &amp; 3-\lambda \end{bmatrix}\)</span></p>
+<p>Step 2: Compute the determinant:</p>
+<p><span class="arithmatex">\(\det(A - \lambda I) = (4-\lambda)(3-\lambda) - (2)(1)\)</span>
+<span class="arithmatex">\(= 12 - 4\lambda - 3\lambda + \lambda^2 - 2\)</span>
+<span class="arithmatex">\(= \lambda^2 - 7\lambda + 10\)</span></p>
+<p>Step 3: Solve the characteristic equation:</p>
+<p><span class="arithmatex">\(\lambda^2 - 7\lambda + 10 = 0\)</span>
+<span class="arithmatex">\((\lambda - 5)(\lambda - 2) = 0\)</span></p>
+<p>The eigenvalues are <span class="arithmatex">\(\lambda_1 = 5\)</span> and <span class="arithmatex">\(\lambda_2 = 2\)</span>.</p>
+<h4 id="diagram-characteristic-polynomial-explorer">Diagram: Characteristic Polynomial Explorer</h4>
+<details>
+<summary>Characteristic Polynomial Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Enable students to interactively compute characteristic polynomials and find eigenvalues for 2x2 and 3x3 matrices</p>
+<p>Visual elements:
+- Left panel: Matrix input grid (2x2 or 3x3)
+- Center panel: Step-by-step calculation display showing:
+  - The (A - λI) matrix with λ as variable
+  - Determinant expansion
+  - Resulting polynomial in standard form
+- Right panel: Graph of the characteristic polynomial with x-axis as λ
+- Eigenvalues marked as points where curve crosses x-axis
+- Vertical dashed lines from roots to x-axis</p>
+<p>Interactive controls:
+- Matrix size toggle (2x2 / 3x3)
+- Numeric input fields for matrix entries
+- "Calculate" button to compute polynomial
+- Slider to trace along the polynomial curve
+- Pre-set example matrices dropdown (identity, rotation, symmetric, defective)</p>
+<p>Default parameters:
+- 2x2 matrix mode
+- Matrix A = [[4, 2], [1, 3]]
+- Polynomial graph range: λ from -2 to 8
+- Canvas size: responsive, minimum 900x500px</p>
+<p>Behavior:
+- Real-time polynomial graph update as matrix values change
+- Highlight eigenvalues on graph with dots and labels
+- Show factored form when roots are nice numbers
+- Display "Complex roots" indicator when polynomial has no real zeros
+- Step-through animation of determinant calculation</p>
+<p>Implementation: p5.js with math expression rendering</p>
+</details>
+<h2 id="finding-eigenvectors">Finding Eigenvectors</h2>
+<p>Once we have an eigenvalue <span class="arithmatex">\(\lambda\)</span>, we find its corresponding eigenvector(s) by solving:</p>
+<p><span class="arithmatex">\((A - \lambda I)\mathbf{v} = \mathbf{0}\)</span></p>
+<p>This is a homogeneous system of linear equations. We use row reduction to find the null space of <span class="arithmatex">\((A - \lambda I)\)</span>.</p>
+<h3 id="example-finding-eigenvectors">Example: Finding Eigenvectors</h3>
+<p>Continuing with our matrix <span class="arithmatex">\(A = \begin{bmatrix} 4 &amp; 2 \\ 1 &amp; 3 \end{bmatrix}\)</span>:</p>
+<p><strong>For <span class="arithmatex">\(\lambda_1 = 5\)</span>:</strong></p>
+<p><span class="arithmatex">\(A - 5I = \begin{bmatrix} -1 &amp; 2 \\ 1 &amp; -2 \end{bmatrix}\)</span></p>
+<p>Row reduce to find the null space:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} -1 &amp; 2 \\ 1 &amp; -2 \end{bmatrix} \rightarrow \begin{bmatrix} 1 &amp; -2 \\ 0 &amp; 0 \end{bmatrix}\)</span></p>
+<p>From <span class="arithmatex">\(x_1 - 2x_2 = 0\)</span>, we get <span class="arithmatex">\(x_1 = 2x_2\)</span>. Setting <span class="arithmatex">\(x_2 = 1\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{v}_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}\)</span></p>
+<p><strong>For <span class="arithmatex">\(\lambda_2 = 2\)</span>:</strong></p>
+<p><span class="arithmatex">\(A - 2I = \begin{bmatrix} 2 &amp; 2 \\ 1 &amp; 1 \end{bmatrix}\)</span></p>
+<p>Row reduce:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} 2 &amp; 2 \\ 1 &amp; 1 \end{bmatrix} \rightarrow \begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 0 \end{bmatrix}\)</span></p>
+<p>From <span class="arithmatex">\(x_1 + x_2 = 0\)</span>, we get <span class="arithmatex">\(x_1 = -x_2\)</span>. Setting <span class="arithmatex">\(x_2 = 1\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{v}_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix}\)</span></p>
+<h2 id="eigenspace">Eigenspace</h2>
+<p>The <strong>eigenspace</strong> corresponding to an eigenvalue <span class="arithmatex">\(\lambda\)</span> is the set of all eigenvectors with that eigenvalue, together with the zero vector. Formally:</p>
+<p><span class="arithmatex">\(E_\lambda = \text{null}(A - \lambda I) = \{\mathbf{v} \in \mathbb{R}^n : A\mathbf{v} = \lambda\mathbf{v}\}\)</span></p>
+<p>The eigenspace is a vector subspace of <span class="arithmatex">\(\mathbb{R}^n\)</span>. Its dimension is called the <strong>geometric multiplicity</strong> of the eigenvalue.</p>
+<p>Key properties of eigenspaces:</p>
+<ul>
+<li>Every eigenspace contains the zero vector</li>
+<li>Every eigenspace is closed under addition and scalar multiplication</li>
+<li>The dimension of an eigenspace is at least 1</li>
+<li>Eigenvectors from different eigenspaces are linearly independent</li>
+</ul>
+<h4 id="diagram-eigenspace-visualization">Diagram: Eigenspace Visualization</h4>
+<details>
+<summary>Eigenspace Visualization</summary>
+<p>Type: diagram</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize eigenspaces as subspaces and understand how their dimension relates to geometric multiplicity</p>
+<p>Components to show:
+- 3D coordinate system with translucent planes/lines representing eigenspaces
+- For a 3x3 matrix with three distinct eigenvalues: three lines through origin
+- For a 3x3 matrix with a repeated eigenvalue (geometric multiplicity 2): one line and one plane
+- Original vectors and their transformed counterparts
+- Color coding by eigenvalue</p>
+<p>Layout:
+- Main 3D view showing eigenspaces
+- Rotation controls to view from different angles
+- Matrix display in corner
+- Legend showing eigenvalue-color correspondence</p>
+<p>Visual style:
+- Eigenspaces rendered as semi-transparent colored surfaces
+- Lines rendered as tubes for visibility
+- Sample vectors as arrows with different opacities</p>
+<p>Color scheme:
+- Eigenspace 1: Blue (line or plane)
+- Eigenspace 2: Orange (line or plane)
+- Eigenspace 3: Green (line)
+- Background grid: Light gray</p>
+<p>Implementation: Three.js or p5.js with WEBGL mode for 3D rendering</p>
+</details>
+<h2 id="algebraic-and-geometric-multiplicity">Algebraic and Geometric Multiplicity</h2>
+<p>The relationship between algebraic and geometric multiplicity is fundamental to understanding when matrices can be diagonalized.</p>
+<h3 id="algebraic-multiplicity">Algebraic Multiplicity</h3>
+<p>The <strong>algebraic multiplicity</strong> of an eigenvalue is the number of times it appears as a root of the characteristic polynomial. If the characteristic polynomial factors as:</p>
+<p><span class="arithmatex">\(p(\lambda) = (\lambda - \lambda_1)^{m_1}(\lambda - \lambda_2)^{m_2} \cdots (\lambda - \lambda_k)^{m_k}\)</span></p>
+<p>then the algebraic multiplicity of <span class="arithmatex">\(\lambda_i\)</span> is <span class="arithmatex">\(m_i\)</span>.</p>
+<h3 id="geometric-multiplicity">Geometric Multiplicity</h3>
+<p>The <strong>geometric multiplicity</strong> of an eigenvalue is the dimension of its eigenspace:</p>
+<p><span class="arithmatex">\(g_i = \dim(E_{\lambda_i}) = \dim(\text{null}(A - \lambda_i I))\)</span></p>
+<h3 id="the-multiplicity-inequality">The Multiplicity Inequality</h3>
+<p>A fundamental theorem states that for any eigenvalue:</p>
+<p><span class="arithmatex">\(1 \leq \text{geometric multiplicity} \leq \text{algebraic multiplicity}\)</span></p>
+<p>This inequality has profound implications for diagonalization.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Algebraic</th>
+<th>Geometric</th>
+<th>Diagonalizable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All eigenvalues distinct</td>
+<td>1 each</td>
+<td>1 each</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Repeated eigenvalue, full eigenspace</td>
+<td><span class="arithmatex">\(m\)</span></td>
+<td><span class="arithmatex">\(m\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Repeated eigenvalue, deficient eigenspace</td>
+<td><span class="arithmatex">\(m\)</span></td>
+<td><span class="arithmatex">\(&lt; m\)</span></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-multiplicity-comparison-chart">Diagram: Multiplicity Comparison Chart</h4>
+<details>
+<summary>Multiplicity Comparison Chart</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Compare algebraic and geometric multiplicity across different matrix types and understand implications for diagonalization</p>
+<p>Layout: Three-column comparison with expandable examples</p>
+<p>Sections:
+1. "Distinct Eigenvalues" column
+   - Example: A = [[2, 0], [0, 3]]
+   - Characteristic polynomial: (λ-2)(λ-3)
+   - Each eigenvalue has alg. mult. = geo. mult. = 1
+   - Status: Diagonalizable ✓</p>
+<ol>
+<li>"Repeated with Full Eigenspace" column</li>
+<li>Example: A = [[2, 0], [0, 2]]</li>
+<li>Characteristic polynomial: (λ-2)²</li>
+<li>Eigenvalue 2: alg. mult. = 2, geo. mult. = 2</li>
+<li>
+<p>Status: Diagonalizable ✓</p>
+</li>
+<li>
+<p>"Defective Matrix" column</p>
+</li>
+<li>Example: A = [[2, 1], [0, 2]]</li>
+<li>Characteristic polynomial: (λ-2)²</li>
+<li>Eigenvalue 2: alg. mult. = 2, geo. mult. = 1</li>
+<li>Status: Not Diagonalizable ✗</li>
+</ol>
+<p>Interactive elements:
+- Hover over each example to see eigenspace visualization
+- Click to expand full calculation
+- Toggle between 2x2 and 3x3 examples</p>
+<p>Visual style:
+- Clean cards with matrix notation
+- Color indicators: green for diagonalizable, red for defective
+- Progress bars showing geometric/algebraic ratio</p>
+<p>Implementation: HTML/CSS/JavaScript with SVG visualizations</p>
+</details>
+<h2 id="similar-matrices-and-diagonalization">Similar Matrices and Diagonalization</h2>
+<p>Two matrices <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are <strong>similar</strong> if there exists an invertible matrix <span class="arithmatex">\(P\)</span> such that:</p>
+<p><span class="arithmatex">\(B = P^{-1}AP\)</span></p>
+<p>Similar matrices share important properties:</p>
+<ul>
+<li>Same eigenvalues (with same algebraic multiplicities)</li>
+<li>Same determinant</li>
+<li>Same trace</li>
+<li>Same rank</li>
+<li>Same characteristic polynomial</li>
+</ul>
+<p>The geometric interpretation is that similar matrices represent the same linear transformation in different bases.</p>
+<h3 id="diagonalization">Diagonalization</h3>
+<p>A matrix <span class="arithmatex">\(A\)</span> is <strong>diagonalizable</strong> if it is similar to a diagonal matrix. This means we can write:</p>
+<p><span class="arithmatex">\(A = PDP^{-1}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(D\)</span> is a diagonal matrix containing the eigenvalues</li>
+<li><span class="arithmatex">\(P\)</span> is a matrix whose columns are the corresponding eigenvectors</li>
+</ul>
+<h4 id="the-diagonal-form">The Diagonal Form</h4>
+<p>The <strong>diagonal form</strong> <span class="arithmatex">\(D\)</span> of a diagonalizable matrix contains eigenvalues on its main diagonal:</p>
+<p><span class="arithmatex">\(D = \begin{bmatrix} \lambda_1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; \lambda_n \end{bmatrix}\)</span></p>
+<h3 id="conditions-for-diagonalizability">Conditions for Diagonalizability</h3>
+<p>A matrix <span class="arithmatex">\(A\)</span> is diagonalizable if and only if:</p>
+<ol>
+<li>The sum of geometric multiplicities equals <span class="arithmatex">\(n\)</span> (the matrix dimension), OR</li>
+<li>For each eigenvalue, geometric multiplicity equals algebraic multiplicity, OR</li>
+<li><span class="arithmatex">\(A\)</span> has <span class="arithmatex">\(n\)</span> linearly independent eigenvectors</li>
+</ol>
+<h4 id="diagram-diagonalization-process-workflow">Diagram: Diagonalization Process Workflow</h4>
+<details>
+<summary>Diagonalization Process Workflow</summary>
+<p>Type: workflow</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Guide students through the step-by-step process of diagonalizing a matrix</p>
+<p>Visual style: Flowchart with decision diamonds and process rectangles</p>
+<p>Steps:
+1. Start: "Given matrix A"
+   Hover text: "Begin with an n×n matrix A"</p>
+<ol>
+<li>
+<p>Process: "Find characteristic polynomial det(A - λI)"
+   Hover text: "Expand determinant to get polynomial in λ"</p>
+</li>
+<li>
+<p>Process: "Solve characteristic equation for eigenvalues"
+   Hover text: "Find all roots λ₁, λ₂, ..., λₖ"</p>
+</li>
+<li>
+<p>Decision: "All n eigenvalues found (counting multiplicity)?"
+   Hover text: "Complex eigenvalues count too"</p>
+</li>
+<li>
+<p>No → End: "Check for complex eigenvalues"</p>
+</li>
+<li>
+<p>Process: "For each eigenvalue, find eigenvectors"
+   Hover text: "Solve (A - λI)v = 0 for each λ"</p>
+</li>
+<li>
+<p>Process: "Determine geometric multiplicity of each eigenvalue"
+   Hover text: "Count linearly independent eigenvectors"</p>
+</li>
+<li>
+<p>Decision: "Geometric mult. = Algebraic mult. for all eigenvalues?"</p>
+</li>
+<li>No → End: "Matrix is NOT diagonalizable"</li>
+<li>
+<p>Yes → Continue</p>
+</li>
+<li>
+<p>Process: "Form P from eigenvector columns"
+   Hover text: "P = [v₁ | v₂ | ... | vₙ]"</p>
+</li>
+<li>
+<p>Process: "Form D from eigenvalues"
+   Hover text: "D = diag(λ₁, λ₂, ..., λₙ)"</p>
+</li>
+<li>
+<p>End: "A = PDP⁻¹"
+    Hover text: "Diagonalization complete!"</p>
+</li>
+</ol>
+<p>Color coding:
+- Blue: Computation steps
+- Yellow: Decision points
+- Green: Success outcomes
+- Red: Failure outcomes</p>
+<p>Implementation: Mermaid.js or custom SVG with hover interactions</p>
+</details>
+<h3 id="why-diagonalization-matters">Why Diagonalization Matters</h3>
+<p>Diagonalization simplifies many computations:</p>
+<p><strong>Matrix Powers:</strong> Computing <span class="arithmatex">\(A^k\)</span> becomes trivial:</p>
+<p><span class="arithmatex">\(A^k = PD^kP^{-1}\)</span></p>
+<p>where <span class="arithmatex">\(D^k = \begin{bmatrix} \lambda_1^k &amp; 0 &amp; \cdots \\ 0 &amp; \lambda_2^k &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots \end{bmatrix}\)</span></p>
+<p><strong>Exponentials:</strong> The matrix exponential <span class="arithmatex">\(e^A\)</span> is essential for solving differential equations:</p>
+<p><span class="arithmatex">\(e^A = Pe^DP^{-1}\)</span></p>
+<p>where <span class="arithmatex">\(e^D = \begin{bmatrix} e^{\lambda_1} &amp; 0 &amp; \cdots \\ 0 &amp; e^{\lambda_2} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots \end{bmatrix}\)</span></p>
+<p><strong>Systems of Differential Equations:</strong> The system <span class="arithmatex">\(\frac{d\mathbf{x}}{dt} = A\mathbf{x}\)</span> has solution:</p>
+<p><span class="arithmatex">\(\mathbf{x}(t) = c_1e^{\lambda_1 t}\mathbf{v}_1 + c_2e^{\lambda_2 t}\mathbf{v}_2 + \cdots\)</span></p>
+<h4 id="diagram-matrix-power-calculator">Diagram: Matrix Power Calculator</h4>
+<details>
+<summary>Matrix Power Calculator MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Demonstrate how diagonalization simplifies computing matrix powers by comparing direct multiplication vs. the eigenvalue approach</p>
+<p>Visual elements:
+- Left panel: Input matrix A (2x2 or 3x3)
+- Center panel: Diagonalization display showing P, D, P⁻¹
+- Right panel: Result matrix Aᵏ
+- Bottom: Step-by-step calculation toggle</p>
+<p>Interactive controls:
+- Matrix entry fields for A
+- Power k slider (1 to 20)
+- "Compute Direct" button (shows A×A×...×A method)
+- "Compute via Diagonalization" button (shows PD^kP^{-1} method)
+- Speed comparison display
+- Animation speed slider</p>
+<p>Default parameters:
+- Matrix A = [[2, 1], [0, 3]]
+- Power k = 5
+- Canvas: responsive layout</p>
+<p>Behavior:
+- Show step-by-step computation for both methods
+- Highlight the efficiency of eigenvalue method for large k
+- Display operation count for each method
+- Warning message if matrix is not diagonalizable
+- Show numerical error comparison for high powers</p>
+<p>Implementation: p5.js with matrix computation library</p>
+</details>
+<h2 id="eigendecomposition">Eigendecomposition</h2>
+<p>The <strong>eigendecomposition</strong> (also called spectral decomposition for symmetric matrices) expresses a diagonalizable matrix as a product of its eigenvectors and eigenvalues:</p>
+<p><span class="arithmatex">\(A = PDP^{-1} = \sum_{i=1}^{n} \lambda_i \mathbf{v}_i \mathbf{v}_i^T\)</span> (for symmetric matrices with orthonormal eigenvectors)</p>
+<p>More generally, for any diagonalizable matrix:</p>
+<p><span class="arithmatex">\(A = \sum_{i=1}^{n} \lambda_i \mathbf{v}_i \mathbf{w}_i^T\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{v}_i\)</span> are the right eigenvectors (columns of <span class="arithmatex">\(P\)</span>)</li>
+<li><span class="arithmatex">\(\mathbf{w}_i\)</span> are the left eigenvectors (rows of <span class="arithmatex">\(P^{-1}\)</span>)</li>
+<li><span class="arithmatex">\(\lambda_i\)</span> are the eigenvalues</li>
+</ul>
+<p>This representation reveals that a matrix can be decomposed into a sum of rank-1 matrices, each scaled by an eigenvalue.</p>
+<h2 id="complex-eigenvalues">Complex Eigenvalues</h2>
+<p>Real matrices can have <strong>complex eigenvalues</strong>. When they occur, complex eigenvalues always appear in conjugate pairs: if <span class="arithmatex">\(\lambda = a + bi\)</span> is an eigenvalue, so is <span class="arithmatex">\(\bar{\lambda} = a - bi\)</span>.</p>
+<h3 id="geometric-interpretation_1">Geometric Interpretation</h3>
+<p>Complex eigenvalues indicate rotation in the transformation. For a 2×2 real matrix with eigenvalues <span class="arithmatex">\(\lambda = a \pm bi\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(|{\lambda}| = \sqrt{a^2 + b^2}\)</span> gives the scaling factor</li>
+<li><span class="arithmatex">\(\theta = \arctan(b/a)\)</span> gives the rotation angle</li>
+</ul>
+<h3 id="example-rotation-matrix">Example: Rotation Matrix</h3>
+<p>The rotation matrix by angle <span class="arithmatex">\(\theta\)</span>:</p>
+<p><span class="arithmatex">\(R_\theta = \begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}\)</span></p>
+<p>has eigenvalues <span class="arithmatex">\(\lambda = \cos\theta \pm i\sin\theta = e^{\pm i\theta}\)</span>.</p>
+<p>For a 90° rotation:</p>
+<p><span class="arithmatex">\(R_{90°} = \begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix}\)</span></p>
+<p>The eigenvalues are <span class="arithmatex">\(\lambda = \pm i\)</span>, which are purely imaginary—reflecting pure rotation with no scaling.</p>
+<h4 id="diagram-complex-eigenvalue-visualizer">Diagram: Complex Eigenvalue Visualizer</h4>
+<details>
+<summary>Complex Eigenvalue Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize how complex eigenvalues correspond to rotation-scaling transformations in 2D</p>
+<p>Visual elements:
+- Left panel: 2D plane showing transformation of a unit square
+- Right panel: Complex plane showing eigenvalue locations
+- Unit circle on complex plane for reference
+- Spiral path showing repeated application of transformation
+- Angle arc showing rotation per step</p>
+<p>Interactive controls:
+- Slider for real part a of eigenvalue (range: -2 to 2)
+- Slider for imaginary part b of eigenvalue (range: -2 to 2)
+- "Animate" button to show repeated transformation
+- Step counter display
+- "Show Conjugate Pair" toggle
+- Reset button</p>
+<p>Default parameters:
+- a = 0.9 (slight contraction)
+- b = 0.4 (rotation component)
+- Canvas: 800x400px responsive</p>
+<p>Behavior:
+- As sliders adjust, show corresponding matrix A
+- Animate unit square through multiple transformation steps
+- Plot trajectory of corner point as spiral
+- Display eigenvalue magnitude and angle
+- Show connection between eigenvalue position and transformation behavior:
+  - |λ| &gt; 1: spiral outward
+  - |λ| &lt; 1: spiral inward
+  - |λ| = 1: pure rotation (circle)
+- Highlight conjugate pair relationship</p>
+<p>Implementation: p5.js with complex number support</p>
+</details>
+<h2 id="symmetric-matrices-and-the-spectral-theorem">Symmetric Matrices and the Spectral Theorem</h2>
+<p>Symmetric matrices (<span class="arithmatex">\(A = A^T\)</span>) have particularly nice eigenvalue properties that make them central to applications in machine learning, physics, and engineering.</p>
+<h3 id="symmetric-eigenvalues">Symmetric Eigenvalues</h3>
+<p>For a symmetric matrix <span class="arithmatex">\(A\)</span>:</p>
+<ol>
+<li><strong>All eigenvalues are real</strong> (no complex eigenvalues)</li>
+<li><strong>Eigenvectors corresponding to distinct eigenvalues are orthogonal</strong></li>
+<li><strong>The matrix is always diagonalizable</strong></li>
+</ol>
+<p>These properties follow from the fact that symmetric matrices equal their own transposes, constraining the characteristic polynomial to have only real roots.</p>
+<h3 id="the-spectral-theorem">The Spectral Theorem</h3>
+<p>The <strong>Spectral Theorem</strong> provides a complete characterization of symmetric matrices:</p>
+<div class="admonition tip">
+<p class="admonition-title">The Spectral Theorem for Real Symmetric Matrices</p>
+<p>A real matrix <span class="arithmatex">\(A\)</span> is symmetric if and only if it can be orthogonally diagonalized:</p>
+<p><span class="arithmatex">\(A = Q\Lambda Q^T\)</span></p>
+<p>where <span class="arithmatex">\(Q\)</span> is an orthogonal matrix (<span class="arithmatex">\(Q^TQ = I\)</span>) whose columns are orthonormal eigenvectors, and <span class="arithmatex">\(\Lambda\)</span> is a diagonal matrix of real eigenvalues.</p>
+</div>
+<p>The beauty of orthogonal diagonalization is that <span class="arithmatex">\(Q^{-1} = Q^T\)</span>, which is computationally simple to obtain.</p>
+<h3 id="spectral-decomposition-form">Spectral Decomposition Form</h3>
+<p>For a symmetric matrix, the eigendecomposition takes the elegant form:</p>
+<p><span class="arithmatex">\(A = \sum_{i=1}^{n} \lambda_i \mathbf{q}_i \mathbf{q}_i^T\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{q}_i\)</span> are orthonormal eigenvectors</li>
+<li><span class="arithmatex">\(\lambda_i\)</span> are real eigenvalues</li>
+<li>Each <span class="arithmatex">\(\mathbf{q}_i \mathbf{q}_i^T\)</span> is a projection matrix onto the eigenspace</li>
+</ul>
+<p>This decomposition is the foundation of Principal Component Analysis (PCA).</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>General Matrix</th>
+<th>Symmetric Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eigenvalues</td>
+<td>May be complex</td>
+<td>Always real</td>
+</tr>
+<tr>
+<td>Eigenvectors</td>
+<td>Generally not orthogonal</td>
+<td>Orthogonal (for distinct λ)</td>
+</tr>
+<tr>
+<td>Diagonalization</td>
+<td>Not guaranteed</td>
+<td>Always possible</td>
+</tr>
+<tr>
+<td>Inverse of P</td>
+<td>Must compute P⁻¹</td>
+<td>Simply P^T</td>
+</tr>
+<tr>
+<td>Numerical stability</td>
+<td>May have issues</td>
+<td>Highly stable</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-spectral-theorem-for-symmetric-matrices">Diagram: Spectral Theorem for Symmetric Matrices</h4>
+<details>
+<summary>Spectral Theorem Interactive Demonstration</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Demonstrate the spectral theorem by showing how symmetric matrices decompose into orthogonal eigenvectors and real eigenvalues</p>
+<p>Visual elements:
+- Left panel: 2D/3D visualization of transformation
+- Center panel: Matrix equation display A = QΛQᵀ
+- Right panel: Individual rank-1 components λᵢqᵢqᵢᵀ
+- Orthogonality indicator showing qᵢ·qⱼ = 0 for i≠j
+- Unit sphere showing eigenvector directions</p>
+<p>Interactive controls:
+- Symmetric matrix input (auto-enforced: entering aᵢⱼ sets aⱼᵢ)
+- Slider to blend between original matrix and diagonal form
+- Component selector to highlight individual λᵢqᵢqᵢᵀ terms
+- "Verify Orthogonality" button
+- 2D/3D toggle (for 2x2 and 3x3 matrices)</p>
+<p>Default parameters:
+- Matrix A = [[3, 1], [1, 3]] (symmetric)
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time eigenvalue/eigenvector computation
+- Show eigenvectors as perpendicular on unit circle/sphere
+- Animate decomposition into sum of outer products
+- Verify QQᵀ = I visually
+- Display reconstruction error when summing components</p>
+<p>Implementation: p5.js with linear algebra computations</p>
+</details>
+<h2 id="power-iteration-computing-the-dominant-eigenvalue">Power Iteration: Computing the Dominant Eigenvalue</h2>
+<p>For large matrices, computing eigenvalues through the characteristic polynomial is impractical. <strong>Power iteration</strong> is a simple iterative algorithm for finding the largest eigenvalue and its eigenvector.</p>
+<h3 id="the-dominant-eigenvalue">The Dominant Eigenvalue</h3>
+<p>The <strong>dominant eigenvalue</strong> is the eigenvalue with the largest absolute value:</p>
+<p><span class="arithmatex">\(|\lambda_1| &gt; |\lambda_2| \geq |\lambda_3| \geq \cdots \geq |\lambda_n|\)</span></p>
+<p>The corresponding eigenvector is called the dominant eigenvector.</p>
+<h3 id="power-iteration-algorithm">Power Iteration Algorithm</h3>
+<p>The algorithm works by repeatedly multiplying a random vector by the matrix:</p>
+<ol>
+<li>Start with a random non-zero vector <span class="arithmatex">\(\mathbf{x}_0\)</span></li>
+<li>Compute <span class="arithmatex">\(\mathbf{y}_{k+1} = A\mathbf{x}_k\)</span></li>
+<li>Normalize: <span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{y}_{k+1} / \|\mathbf{y}_{k+1}\|\)</span></li>
+<li>Repeat until convergence</li>
+</ol>
+<h4 id="convergence-rate">Convergence Rate</h4>
+<p>The convergence rate depends on the ratio of the two largest eigenvalues:</p>
+<p><span class="arithmatex">\(\text{error after } k \text{ iterations} \approx O\left(\left|\frac{\lambda_2}{\lambda_1}\right|^k\right)\)</span></p>
+<p>If <span class="arithmatex">\(|\lambda_1| \gg |\lambda_2|\)</span>, convergence is fast. If <span class="arithmatex">\(|\lambda_1| \approx |\lambda_2|\)</span>, convergence is slow.</p>
+<h4 id="rayleigh-quotient">Rayleigh Quotient</h4>
+<p>After obtaining an approximate eigenvector <span class="arithmatex">\(\mathbf{x}\)</span>, we can estimate the eigenvalue using the <strong>Rayleigh quotient</strong>:</p>
+<p><span class="arithmatex">\(\lambda \approx R(\mathbf{x}) = \frac{\mathbf{x}^T A \mathbf{x}}{\mathbf{x}^T \mathbf{x}}\)</span></p>
+<p>The Rayleigh quotient gives a more accurate eigenvalue estimate than examining vector scaling alone.</p>
+<h4 id="diagram-power-iteration-microsim">Diagram: Power Iteration MicroSim</h4>
+<details>
+<summary>Power Iteration Algorithm Visualization</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand how power iteration converges to the dominant eigenvector and how convergence rate depends on the eigenvalue ratio</p>
+<p>Visual elements:
+- Left panel: 2D plane showing vector iterations
+  - Current vector (solid arrow)
+  - Previous vectors (faded arrows showing history)
+  - True dominant eigenvector direction (dashed line)
+  - Angle error indicator
+- Right panel: Convergence plot
+  - X-axis: iteration number
+  - Y-axis: log(error) where error = angle to true eigenvector
+  - Theoretical convergence rate line for comparison
+- Bottom panel: Matrix and current eigenvalue estimate</p>
+<p>Interactive controls:
+- 2x2 matrix input
+- "Step" button for single iteration
+- "Run" button for continuous animation
+- Speed slider for animation
+- "Reset with Random Vector" button
+- Convergence threshold input
+- Display of λ₂/λ₁ ratio</p>
+<p>Default parameters:
+- Matrix A = [[3, 1], [1, 2]] (eigenvalues ≈ 3.62, 1.38)
+- Initial vector: random unit vector
+- Canvas: 800x600px responsive</p>
+<p>Behavior:
+- Show each iteration step clearly
+- Highlight when convergence criterion met
+- Display iteration count and current eigenvalue estimate
+- Show Rayleigh quotient computation
+- Compare to true eigenvalue (computed analytically for 2x2)
+- Demonstrate slow convergence when eigenvalue ratio near 1
+- Warning if matrix has complex dominant eigenvalue</p>
+<p>Implementation: p5.js with step-by-step animation</p>
+</details>
+<h3 id="variants-of-power-iteration">Variants of Power Iteration</h3>
+<p>Several important algorithms extend the basic power iteration:</p>
+<ul>
+<li><strong>Inverse Power Iteration:</strong> Find the smallest eigenvalue by applying power iteration to <span class="arithmatex">\(A^{-1}\)</span></li>
+<li><strong>Shifted Inverse Iteration:</strong> Find eigenvalue closest to a given shift <span class="arithmatex">\(\sigma\)</span> using <span class="arithmatex">\((A - \sigma I)^{-1}\)</span></li>
+<li><strong>QR Algorithm:</strong> Industry-standard method that finds all eigenvalues simultaneously</li>
+<li><strong>Lanczos Algorithm:</strong> Efficient for large sparse symmetric matrices</li>
+</ul>
+<h2 id="applications-in-machine-learning-and-ai">Applications in Machine Learning and AI</h2>
+<p>Eigenanalysis is fundamental to numerous AI and machine learning algorithms:</p>
+<h3 id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h3>
+<p>PCA finds the directions of maximum variance in data by computing eigenvectors of the covariance matrix:</p>
+<ol>
+<li>Center the data: <span class="arithmatex">\(\bar{X} = X - \mu\)</span></li>
+<li>Compute covariance matrix: <span class="arithmatex">\(C = \frac{1}{n-1}\bar{X}^T\bar{X}\)</span></li>
+<li>Find eigenvalues and eigenvectors of <span class="arithmatex">\(C\)</span></li>
+<li>Project data onto top <span class="arithmatex">\(k\)</span> eigenvectors</li>
+</ol>
+<p>The eigenvectors are the principal components, and eigenvalues indicate variance explained.</p>
+<h3 id="pagerank-algorithm">PageRank Algorithm</h3>
+<p>Google's PageRank models web page importance as the dominant eigenvector of a modified adjacency matrix:</p>
+<p><span class="arithmatex">\(\mathbf{r} = M\mathbf{r}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{r}\)</span> is the rank vector (eigenvector)</li>
+<li><span class="arithmatex">\(M\)</span> is the transition probability matrix</li>
+<li>PageRank is the eigenvector with eigenvalue 1</li>
+</ul>
+<h3 id="stability-analysis">Stability Analysis</h3>
+<p>In dynamical systems and neural network training, eigenvalues determine stability:</p>
+<ul>
+<li><span class="arithmatex">\(|\lambda| &lt; 1\)</span> for all eigenvalues: system is stable (converges)</li>
+<li><span class="arithmatex">\(|\lambda| = 1\)</span>: system is marginally stable (oscillates)</li>
+<li><span class="arithmatex">\(|\lambda| &gt; 1\)</span>: system is unstable (explodes)</li>
+</ul>
+<p>Neural networks with weight matrices having eigenvalues far from 1 suffer from vanishing or exploding gradients.</p>
+<h4 id="diagram-eigenvalue-applications-map">Diagram: Eigenvalue Applications Map</h4>
+<details>
+<summary>Eigenvalue Applications in ML and AI</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy Level: Evaluate</p>
+<p>Learning Objective: Connect eigenanalysis concepts to real-world machine learning applications and understand when to apply each technique</p>
+<p>Layout: Central hub-and-spoke diagram with clickable nodes</p>
+<p>Central concept: "Eigenanalysis"</p>
+<p>Spokes (applications):
+1. PCA / Dimensionality Reduction
+   - Uses: Covariance matrix eigenvectors
+   - Key insight: Eigenvectors = directions of max variance
+   - Example: Face recognition (Eigenfaces)</p>
+<ol>
+<li>Spectral Clustering</li>
+<li>Uses: Graph Laplacian eigenvectors</li>
+<li>Key insight: Second eigenvector separates clusters</li>
+<li>
+<p>Example: Image segmentation</p>
+</li>
+<li>
+<p>Google PageRank</p>
+</li>
+<li>Uses: Dominant eigenvector</li>
+<li>Key insight: Power iteration at web scale</li>
+<li>
+<p>Example: Web page ranking</p>
+</li>
+<li>
+<p>Neural Network Stability</p>
+</li>
+<li>Uses: Weight matrix eigenvalues</li>
+<li>Key insight: |λ| controls gradient flow</li>
+<li>
+<p>Example: RNN vanishing gradients</p>
+</li>
+<li>
+<p>Recommender Systems</p>
+</li>
+<li>Uses: Matrix factorization (related to eigendecomposition)</li>
+<li>Key insight: Low-rank approximation</li>
+<li>
+<p>Example: Netflix recommendations</p>
+</li>
+<li>
+<p>Quantum Computing</p>
+</li>
+<li>Uses: Eigenvalues as measurement outcomes</li>
+<li>Key insight: Observables are Hermitian operators</li>
+<li>Example: Quantum simulation</li>
+</ol>
+<p>Interactive elements:
+- Click each spoke to expand details
+- Hover for quick summary
+- Links to related concepts in other chapters</p>
+<p>Visual style:
+- Modern flat design with icons for each application
+- Color coding by application domain (ML, physics, web, etc.)
+- Connecting lines showing concept flow</p>
+<p>Implementation: D3.js or custom SVG with interaction handlers</p>
+</details>
+<h2 id="computational-considerations">Computational Considerations</h2>
+<p>When working with eigenproblems in practice, several computational issues arise:</p>
+<h3 id="numerical-stability">Numerical Stability</h3>
+<ul>
+<li>Direct polynomial root-finding is numerically unstable for large matrices</li>
+<li>The QR algorithm is the standard stable method</li>
+<li>Symmetric matrices have more stable algorithms (divide-and-conquer, MRRR)</li>
+</ul>
+<h3 id="computational-complexity">Computational Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Complexity</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Characteristic polynomial</td>
+<td><span class="arithmatex">\(O(n^3)\)</span> for determinant</td>
+<td>Theoretical, small matrices</td>
+</tr>
+<tr>
+<td>Power iteration</td>
+<td><span class="arithmatex">\(O(n^2)\)</span> per iteration</td>
+<td>Dominant eigenvalue only</td>
+</tr>
+<tr>
+<td>QR algorithm</td>
+<td><span class="arithmatex">\(O(n^3)\)</span> total</td>
+<td>All eigenvalues, dense matrices</td>
+</tr>
+<tr>
+<td>Lanczos/Arnoldi</td>
+<td><span class="arithmatex">\(O(kn^2)\)</span></td>
+<td>Top <span class="arithmatex">\(k\)</span> eigenvalues, sparse matrices</td>
+</tr>
+</tbody>
+</table>
+<h3 id="software-libraries">Software Libraries</h3>
+<p>In practice, use optimized libraries:</p>
+<ul>
+<li><strong>NumPy/SciPy:</strong> <code>np.linalg.eig()</code>, <code>np.linalg.eigh()</code> for symmetric</li>
+<li><strong>PyTorch:</strong> <code>torch.linalg.eig()</code> for GPU acceleration</li>
+<li><strong>LAPACK:</strong> Industry-standard Fortran library underlying most implementations</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># General eigenvalue problem</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Symmetric matrix (more stable)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary_1">Summary</h2>
+<p>This chapter introduced eigenanalysis as a fundamental tool for understanding linear transformations:</p>
+<p><strong>Core Concepts:</strong></p>
+<ul>
+<li><strong>Eigenvalues and eigenvectors</strong> satisfy <span class="arithmatex">\(A\mathbf{v} = \lambda\mathbf{v}\)</span>, revealing directions preserved by transformations</li>
+<li>The <strong>characteristic polynomial</strong> <span class="arithmatex">\(\det(A - \lambda I) = 0\)</span> yields eigenvalues as its roots</li>
+<li><strong>Eigenspaces</strong> are subspaces containing all eigenvectors for a given eigenvalue</li>
+</ul>
+<p><strong>Multiplicities and Diagonalization:</strong></p>
+<ul>
+<li><strong>Algebraic multiplicity</strong> counts eigenvalue repetition in the characteristic polynomial</li>
+<li><strong>Geometric multiplicity</strong> measures eigenspace dimension</li>
+<li>A matrix is <strong>diagonalizable</strong> when geometric equals algebraic multiplicity for all eigenvalues</li>
+<li><strong>Similar matrices</strong> share eigenvalues and represent the same transformation in different bases</li>
+</ul>
+<p><strong>Special Cases:</strong></p>
+<ul>
+<li><strong>Complex eigenvalues</strong> indicate rotation and appear in conjugate pairs for real matrices</li>
+<li><strong>Symmetric matrices</strong> have real eigenvalues and orthogonal eigenvectors (Spectral Theorem)</li>
+</ul>
+<p><strong>Computation:</strong></p>
+<ul>
+<li><strong>Power iteration</strong> finds the dominant eigenvalue through repeated matrix-vector multiplication</li>
+<li>The <strong>Rayleigh quotient</strong> provides eigenvalue estimates from approximate eigenvectors</li>
+<li><strong>Eigendecomposition</strong> <span class="arithmatex">\(A = PDP^{-1}\)</span> enables efficient computation of matrix powers and exponentials</li>
+</ul>
+<p><strong>Key Takeaways for AI/ML:</strong></p>
+<ol>
+<li>PCA reduces dimensionality using covariance matrix eigenvectors</li>
+<li>PageRank is an eigenvector problem solved by power iteration</li>
+<li>Neural network stability depends on weight matrix eigenvalues</li>
+<li>The spectral theorem guarantees nice properties for symmetric matrices (common in ML)</li>
+</ol>
+<details class="question">
+<summary>Self-Check: Can you identify which eigenvalue property determines whether a neural network's gradients will vanish or explode?</summary>
+<p>The magnitude of the eigenvalues of the weight matrices determines gradient behavior. If <span class="arithmatex">\(|\lambda| &lt; 1\)</span> for all eigenvalues, gradients shrink exponentially (vanishing). If <span class="arithmatex">\(|\lambda| &gt; 1\)</span>, gradients grow exponentially (exploding). Stable training requires eigenvalues near <span class="arithmatex">\(|\lambda| = 1\)</span>.</p>
+</details>
 
 
 
@@ -1100,7 +3267,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-determinants-and-matrix-properties/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Determinants and Matrix Properties">
+          <a href="../05-determinants-and-matrix-properties/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1110,20 +3277,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                5. Determinants and Matrix Properties
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-matrix-decompositions/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Matrix Decompositions">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7. Matrix Decompositions
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1157,10 +3324,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

@@ -15,14 +15,17 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/03-systems-of-linear-equations/">
       
       
-        <link rel="prev" href="../02-matrices-and-matrix-operations/">
+        <link rel="prev" href="../02-matrices-and-matrix-operations/quiz/">
       
       
-        <link rel="next" href="../04-linear-transformations/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -30,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Systems of Linear Equations - Linear Algebra" >
-      
-        <meta  property="og:description"  content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/03-systems-of-linear-equations/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Systems of Linear Equations - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Systems of Linear Equations - Linear Algebra" />
+<meta property="og:description" content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/03-systems-of-linear-equations/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Systems of Linear Equations - Linear Algebra" />
+<meta property="twitter:description" content="Formulating and solving systems of linear equations using Gaussian elimination, row echelon forms, and solution analysis" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/03-systems-of-linear-equations/index.png" />
+</head>
   
   
     
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,200 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Systems of Linear Equations
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,15 +596,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
+    
+  
+    Quiz
+  
+
+    
   </span>
+  
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -440,702 +631,109 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
   
   <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linear-equations-and-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Equations and Systems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Linear Equations and Systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-is-a-linear-equation" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Linear Equation?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What is a Linear Equation?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#linear-equation-standard-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linear Equation Standard Form
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#systems-of-equations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Systems of Equations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Systems of Equations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-system-of-equations-geometry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: System of Equations Geometry
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matrix-representation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Matrix Representation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Matrix Representation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matrix-equation-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Matrix Equation Form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Matrix Equation Form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#matrix-equation-form_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Matrix Equation Form
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-augmented-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Augmented Matrix
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#row-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Row Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Row Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-three-elementary-row-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Three Elementary Row Operations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Three Elementary Row Operations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-row-operations-interactive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Row Operations Interactive
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gaussian-elimination" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gaussian Elimination
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Gaussian Elimination">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Algorithm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#row-echelon-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Row Echelon Form
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#back-substitution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Back Substitution
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Back Substitution">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-gaussian-elimination-visualizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Gaussian Elimination Visualizer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reduced-row-echelon-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reduced Row Echelon Form
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reduced Row Echelon Form">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition-and-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      Definition and Properties
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparing-ref-and-rref" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparing REF and RREF
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Comparing REF and RREF">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-ref-vs-rref-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: REF vs RREF Comparison
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solution-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Solution Analysis
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Solution Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#types-of-solution-sets" class="md-nav__link">
-    <span class="md-ellipsis">
-      Types of Solution Sets
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#basic-and-free-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic and Free Variables
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Basic and Free Variables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-solution-set-visualizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Solution Set Visualizer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#homogeneous-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      Homogeneous Systems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Homogeneous Systems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-trivial-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Trivial Solution
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#existence-of-nontrivial-solutions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Existence of Nontrivial Solutions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#solution-space-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Solution Space Structure
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Solution Space Structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-homogeneous-system-explorer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Homogeneous System Explorer
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-stability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Numerical Stability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Numerical Stability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sources-of-numerical-error" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sources of Numerical Error
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#partial-pivoting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Partial Pivoting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#condition-number" class="md-nav__link">
-    <span class="md-ellipsis">
-      Condition Number
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Condition Number">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#diagram-numerical-stability-demonstration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diagram: Numerical Stability Demonstration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applications" class="md-nav__link">
-    <span class="md-ellipsis">
-      Applications
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Applications">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#balancing-chemical-equations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Balancing Chemical Equations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-flow-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Network Flow Analysis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#machine-learning-linear-regression" class="md-nav__link">
-    <span class="md-ellipsis">
-      Machine Learning: Linear Regression
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#neural-network-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Neural Network Training
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#computational-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Computational Implementation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Computational Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#numpy-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      NumPy Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Functions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-and-key-takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary and Key Takeaways
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercises" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercises
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     4. Linear Transformations
+  
+
+    
   </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
   
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     5. Determinants and Matrix Properties
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1147,16 +745,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     6. Eigenvalues and Eigenvectors
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1168,16 +802,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     7. Matrix Decompositions
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1189,16 +859,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     8. Vector Spaces and Inner Products
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1210,16 +916,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     9. Machine Learning Foundations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1231,16 +973,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     10. Neural Networks and Deep Learning
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1252,16 +1030,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
+    
+  
+    11. Generative AI and LLMs
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1273,16 +1087,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
+    
+  
+    12. Optimization and Learning Algorithms
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1294,16 +1144,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1315,16 +1201,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1336,16 +1258,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -1381,6 +1339,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -1394,12 +1359,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -1419,6 +1392,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -1427,33 +1454,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -1467,12 +1481,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -1515,7 +1537,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1524,7 +1548,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -1533,7 +1559,9 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
     </span>
   </a>
   
@@ -1542,7 +1570,9 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      
+        Introduction
+      
     </span>
   </a>
   
@@ -1551,7 +1581,9 @@
         <li class="md-nav__item">
   <a href="#linear-equations-and-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Equations and Systems
+      
+        Linear Equations and Systems
+      
     </span>
   </a>
   
@@ -1561,7 +1593,9 @@
           <li class="md-nav__item">
   <a href="#what-is-a-linear-equation" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Linear Equation?
+      
+        What is a Linear Equation?
+      
     </span>
   </a>
   
@@ -1571,7 +1605,9 @@
           <li class="md-nav__item">
   <a href="#linear-equation-standard-form" class="md-nav__link">
     <span class="md-ellipsis">
-      Linear Equation Standard Form
+      
+        Linear Equation Standard Form
+      
     </span>
   </a>
   
@@ -1585,7 +1621,9 @@
           <li class="md-nav__item">
   <a href="#systems-of-equations" class="md-nav__link">
     <span class="md-ellipsis">
-      Systems of Equations
+      
+        Systems of Equations
+      
     </span>
   </a>
   
@@ -1595,7 +1633,9 @@
           <li class="md-nav__item">
   <a href="#diagram-system-of-equations-geometry" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: System of Equations Geometry
+      
+        Diagram: System of Equations Geometry
+      
     </span>
   </a>
   
@@ -1614,7 +1654,9 @@
         <li class="md-nav__item">
   <a href="#matrix-representation" class="md-nav__link">
     <span class="md-ellipsis">
-      Matrix Representation
+      
+        Matrix Representation
+      
     </span>
   </a>
   
@@ -1624,7 +1666,9 @@
           <li class="md-nav__item">
   <a href="#matrix-equation-form" class="md-nav__link">
     <span class="md-ellipsis">
-      Matrix Equation Form
+      
+        Matrix Equation Form
+      
     </span>
   </a>
   
@@ -1634,7 +1678,9 @@
           <li class="md-nav__item">
   <a href="#matrix-equation-form_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Matrix Equation Form
+      
+        Matrix Equation Form
+      
     </span>
   </a>
   
@@ -1648,7 +1694,9 @@
           <li class="md-nav__item">
   <a href="#the-augmented-matrix" class="md-nav__link">
     <span class="md-ellipsis">
-      The Augmented Matrix
+      
+        The Augmented Matrix
+      
     </span>
   </a>
   
@@ -1662,7 +1710,9 @@
         <li class="md-nav__item">
   <a href="#row-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      Row Operations
+      
+        Row Operations
+      
     </span>
   </a>
   
@@ -1672,7 +1722,9 @@
           <li class="md-nav__item">
   <a href="#the-three-elementary-row-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      The Three Elementary Row Operations
+      
+        The Three Elementary Row Operations
+      
     </span>
   </a>
   
@@ -1682,7 +1734,9 @@
           <li class="md-nav__item">
   <a href="#diagram-row-operations-interactive" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Row Operations Interactive
+      
+        Diagram: Row Operations Interactive
+      
     </span>
   </a>
   
@@ -1701,7 +1755,9 @@
         <li class="md-nav__item">
   <a href="#gaussian-elimination" class="md-nav__link">
     <span class="md-ellipsis">
-      Gaussian Elimination
+      
+        Gaussian Elimination
+      
     </span>
   </a>
   
@@ -1711,7 +1767,9 @@
           <li class="md-nav__item">
   <a href="#the-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      The Algorithm
+      
+        The Algorithm
+      
     </span>
   </a>
   
@@ -1720,7 +1778,9 @@
           <li class="md-nav__item">
   <a href="#row-echelon-form" class="md-nav__link">
     <span class="md-ellipsis">
-      Row Echelon Form
+      
+        Row Echelon Form
+      
     </span>
   </a>
   
@@ -1729,7 +1789,9 @@
           <li class="md-nav__item">
   <a href="#back-substitution" class="md-nav__link">
     <span class="md-ellipsis">
-      Back Substitution
+      
+        Back Substitution
+      
     </span>
   </a>
   
@@ -1739,7 +1801,9 @@
           <li class="md-nav__item">
   <a href="#diagram-gaussian-elimination-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Gaussian Elimination Visualizer
+      
+        Diagram: Gaussian Elimination Visualizer
+      
     </span>
   </a>
   
@@ -1758,7 +1822,9 @@
         <li class="md-nav__item">
   <a href="#reduced-row-echelon-form" class="md-nav__link">
     <span class="md-ellipsis">
-      Reduced Row Echelon Form
+      
+        Reduced Row Echelon Form
+      
     </span>
   </a>
   
@@ -1768,7 +1834,9 @@
           <li class="md-nav__item">
   <a href="#definition-and-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Definition and Properties
+      
+        Definition and Properties
+      
     </span>
   </a>
   
@@ -1777,7 +1845,9 @@
           <li class="md-nav__item">
   <a href="#comparing-ref-and-rref" class="md-nav__link">
     <span class="md-ellipsis">
-      Comparing REF and RREF
+      
+        Comparing REF and RREF
+      
     </span>
   </a>
   
@@ -1787,7 +1857,9 @@
           <li class="md-nav__item">
   <a href="#diagram-ref-vs-rref-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: REF vs RREF Comparison
+      
+        Diagram: REF vs RREF Comparison
+      
     </span>
   </a>
   
@@ -1806,7 +1878,9 @@
         <li class="md-nav__item">
   <a href="#solution-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Solution Analysis
+      
+        Solution Analysis
+      
     </span>
   </a>
   
@@ -1816,7 +1890,9 @@
           <li class="md-nav__item">
   <a href="#types-of-solution-sets" class="md-nav__link">
     <span class="md-ellipsis">
-      Types of Solution Sets
+      
+        Types of Solution Sets
+      
     </span>
   </a>
   
@@ -1825,7 +1901,9 @@
           <li class="md-nav__item">
   <a href="#basic-and-free-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic and Free Variables
+      
+        Basic and Free Variables
+      
     </span>
   </a>
   
@@ -1835,7 +1913,9 @@
           <li class="md-nav__item">
   <a href="#diagram-solution-set-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Solution Set Visualizer
+      
+        Diagram: Solution Set Visualizer
+      
     </span>
   </a>
   
@@ -1854,7 +1934,9 @@
         <li class="md-nav__item">
   <a href="#homogeneous-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Homogeneous Systems
+      
+        Homogeneous Systems
+      
     </span>
   </a>
   
@@ -1864,7 +1946,9 @@
           <li class="md-nav__item">
   <a href="#the-trivial-solution" class="md-nav__link">
     <span class="md-ellipsis">
-      The Trivial Solution
+      
+        The Trivial Solution
+      
     </span>
   </a>
   
@@ -1873,7 +1957,9 @@
           <li class="md-nav__item">
   <a href="#existence-of-nontrivial-solutions" class="md-nav__link">
     <span class="md-ellipsis">
-      Existence of Nontrivial Solutions
+      
+        Existence of Nontrivial Solutions
+      
     </span>
   </a>
   
@@ -1882,7 +1968,9 @@
           <li class="md-nav__item">
   <a href="#solution-space-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Solution Space Structure
+      
+        Solution Space Structure
+      
     </span>
   </a>
   
@@ -1892,7 +1980,9 @@
           <li class="md-nav__item">
   <a href="#diagram-homogeneous-system-explorer" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Homogeneous System Explorer
+      
+        Diagram: Homogeneous System Explorer
+      
     </span>
   </a>
   
@@ -1911,7 +2001,9 @@
         <li class="md-nav__item">
   <a href="#numerical-stability" class="md-nav__link">
     <span class="md-ellipsis">
-      Numerical Stability
+      
+        Numerical Stability
+      
     </span>
   </a>
   
@@ -1921,7 +2013,9 @@
           <li class="md-nav__item">
   <a href="#sources-of-numerical-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Sources of Numerical Error
+      
+        Sources of Numerical Error
+      
     </span>
   </a>
   
@@ -1930,7 +2024,9 @@
           <li class="md-nav__item">
   <a href="#partial-pivoting" class="md-nav__link">
     <span class="md-ellipsis">
-      Partial Pivoting
+      
+        Partial Pivoting
+      
     </span>
   </a>
   
@@ -1939,7 +2035,9 @@
           <li class="md-nav__item">
   <a href="#condition-number" class="md-nav__link">
     <span class="md-ellipsis">
-      Condition Number
+      
+        Condition Number
+      
     </span>
   </a>
   
@@ -1949,7 +2047,9 @@
           <li class="md-nav__item">
   <a href="#diagram-numerical-stability-demonstration" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagram: Numerical Stability Demonstration
+      
+        Diagram: Numerical Stability Demonstration
+      
     </span>
   </a>
   
@@ -1968,7 +2068,9 @@
         <li class="md-nav__item">
   <a href="#applications" class="md-nav__link">
     <span class="md-ellipsis">
-      Applications
+      
+        Applications
+      
     </span>
   </a>
   
@@ -1978,7 +2080,9 @@
           <li class="md-nav__item">
   <a href="#balancing-chemical-equations" class="md-nav__link">
     <span class="md-ellipsis">
-      Balancing Chemical Equations
+      
+        Balancing Chemical Equations
+      
     </span>
   </a>
   
@@ -1987,7 +2091,9 @@
           <li class="md-nav__item">
   <a href="#network-flow-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Network Flow Analysis
+      
+        Network Flow Analysis
+      
     </span>
   </a>
   
@@ -1996,7 +2102,9 @@
           <li class="md-nav__item">
   <a href="#machine-learning-linear-regression" class="md-nav__link">
     <span class="md-ellipsis">
-      Machine Learning: Linear Regression
+      
+        Machine Learning: Linear Regression
+      
     </span>
   </a>
   
@@ -2005,7 +2113,9 @@
           <li class="md-nav__item">
   <a href="#neural-network-training" class="md-nav__link">
     <span class="md-ellipsis">
-      Neural Network Training
+      
+        Neural Network Training
+      
     </span>
   </a>
   
@@ -2019,7 +2129,9 @@
         <li class="md-nav__item">
   <a href="#computational-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Computational Implementation
+      
+        Computational Implementation
+      
     </span>
   </a>
   
@@ -2029,7 +2141,9 @@
           <li class="md-nav__item">
   <a href="#numpy-example" class="md-nav__link">
     <span class="md-ellipsis">
-      NumPy Example
+      
+        NumPy Example
+      
     </span>
   </a>
   
@@ -2038,7 +2152,9 @@
           <li class="md-nav__item">
   <a href="#key-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Functions
+      
+        Key Functions
+      
     </span>
   </a>
   
@@ -2052,7 +2168,9 @@
         <li class="md-nav__item">
   <a href="#summary-and-key-takeaways" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary and Key Takeaways
+      
+        Summary and Key Takeaways
+      
     </span>
   </a>
   
@@ -2061,7 +2179,9 @@
         <li class="md-nav__item">
   <a href="#exercises" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises
+      
+        Exercises
+      
     </span>
   </a>
   
@@ -2077,12 +2197,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    3. Systems of Linear Equations
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/03-systems-of-linear-equations/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/03-systems-of-linear-equations/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2794,7 +2982,7 @@ Bloom Verb: assess, judge</p>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define the system Ax = b</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
@@ -2951,7 +3139,7 @@ Bloom Verb: assess, judge</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../02-matrices-and-matrix-operations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Matrices and Matrix Operations">
+          <a href="../02-matrices-and-matrix-operations/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2961,20 +3149,20 @@ Bloom Verb: assess, judge</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                2. Matrices and Matrix Operations
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../04-linear-transformations/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Linear Transformations">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                4. Linear Transformations
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3008,10 +3196,13 @@ Bloom Verb: assess, judge</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

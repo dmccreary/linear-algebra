@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/">
       
       
-        <link rel="prev" href="../07-matrix-decompositions/">
+        <link rel="prev" href="../07-matrix-decompositions/quiz/">
       
       
-        <link rel="next" href="../09-machine-learning-foundations/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>8. Vector Spaces and Inner Products - Linear Algebra</title>
+        <title>Vector Spaces and Inner Products - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="8. Vector Spaces and Inner Products - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="8. Vector Spaces and Inner Products - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vector Spaces and Inner Products - Linear Algebra" />
+<meta property="og:description" content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Vector Spaces and Inner Products - Linear Algebra" />
+<meta property="twitter:description" content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              8. Vector Spaces and Inner Products
+              Vector Spaces and Inner Products
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,478 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    8. Vector Spaces and Inner Products
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +874,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,190 +907,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     10. Neural Networks and Deep Learning
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -717,16 +1023,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
+    
+  
+    11. Generative AI and LLMs
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -738,16 +1080,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
+    
+  
+    12. Optimization and Learning Algorithms
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -759,16 +1137,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -780,16 +1194,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -801,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,706 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract Vector Spaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstract Vector Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-space-axioms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector Space Axioms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-vector-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples of Vector Spaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of Vector Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-vector-space-examples-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Vector Space Examples Gallery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subspaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subspace-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subspace Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Subspaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-subspace-tester" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Subspace Tester
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inner-products-and-inner-product-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inner Products and Inner Product Spaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inner Products and Inner Product Spaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inner-product-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inner Product Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-inner-products" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard Inner Products
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norm-from-inner-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Norm from Inner Product
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Norm from Inner Product">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inner-product-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Inner Product Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-cauchy-schwarz-inequality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Cauchy-Schwarz Inequality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle-between-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angle Between Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Orthogonality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthogonal Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthonormal-sets-and-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orthonormal Sets and Bases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-orthonormal-bases-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Orthonormal Bases Matter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Orthonormal Bases Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-orthonormal-basis-coordinate-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Orthonormal Basis Coordinate Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gram-schmidt-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gram-Schmidt Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Gram-Schmidt Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric Interpretation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-gram-schmidt-process-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Gram-Schmidt Process Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-to-qr-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to QR Decomposition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projection-onto-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projection onto Subspaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projection onto Subspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projection-onto-a-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projection onto a Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projection-onto-a-subspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projection onto a Subspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties-of-projection-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties of Projection Matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties of Projection Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-projection-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Projection Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-least-squares-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Least Squares Problem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Least Squares Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geometric-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometric View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-normal-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Normal Equations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Normal Equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solving-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solving Least Squares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solving Least Squares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-least-squares-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Least Squares Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-regression-as-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Regression as Least Squares
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-four-fundamental-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Four Fundamental Subspaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Four Fundamental Subspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#column-space-and-row-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column Space and Row Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-space-and-left-null-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Null Space and Left Null Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fundamental-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fundamental Theorem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fundamental Theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-four-fundamental-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Four Fundamental Subspaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pseudoinverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Pseudoinverse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Pseudoinverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-via-svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition via SVD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-squares-via-pseudoinverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Least Squares via Pseudoinverse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Least Squares via Pseudoinverse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pseudoinverse-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Pseudoinverse Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1014,12 +2267,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    8. Vector Spaces and Inner Products
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/08-vector-spaces-and-inner-products/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/08-vector-spaces-and-inner-products/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1061,7 +2382,933 @@
 <li><a href="../04-linear-transformations/">Chapter 4: Linear Transformations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>So far, we have worked with vectors as arrows in <span class="arithmatex">\(\mathbb{R}^n\)</span>—ordered lists of real numbers that we can add and scale. But the power of linear algebra extends far beyond number arrays. Functions, matrices, polynomials, and even quantum states can all be treated as "vectors" in appropriately defined spaces.</p>
+<p>This chapter develops the abstract framework that unifies these diverse applications. By identifying the essential properties that make <span class="arithmatex">\(\mathbb{R}^n\)</span> useful—the ability to add vectors, scale them, measure lengths, and find angles—we can extend linear algebra to any mathematical structure satisfying these properties.</p>
+<p>The payoff is enormous. The same techniques that solve systems of equations in <span class="arithmatex">\(\mathbb{R}^n\)</span> can approximate functions with polynomials, denoise signals, and find optimal solutions in infinite-dimensional spaces. The abstract perspective reveals that linear algebra is not just about numbers—it's about structure.</p>
+<h2 id="abstract-vector-spaces">Abstract Vector Spaces</h2>
+<p>An <strong>abstract vector space</strong> is a set <span class="arithmatex">\(V\)</span> equipped with two operations—vector addition and scalar multiplication—that satisfy certain axioms. The elements of <span class="arithmatex">\(V\)</span> are called vectors, though they need not be column vectors in the traditional sense.</p>
+<h3 id="vector-space-axioms">Vector Space Axioms</h3>
+<p>A vector space over the real numbers must satisfy the following <strong>vector space axioms</strong>:</p>
+<p><strong>Addition axioms:</strong></p>
+<ol>
+<li><strong>Closure under addition:</strong> For all <span class="arithmatex">\(\mathbf{u}, \mathbf{v} \in V\)</span>, we have <span class="arithmatex">\(\mathbf{u} + \mathbf{v} \in V\)</span></li>
+<li><strong>Commutativity:</strong> <span class="arithmatex">\(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\)</span></li>
+<li><strong>Associativity:</strong> <span class="arithmatex">\((\mathbf{u} + \mathbf{v}) + \mathbf{w} = \mathbf{u} + (\mathbf{v} + \mathbf{w})\)</span></li>
+<li><strong>Zero vector:</strong> There exists <span class="arithmatex">\(\mathbf{0} \in V\)</span> such that <span class="arithmatex">\(\mathbf{v} + \mathbf{0} = \mathbf{v}\)</span> for all <span class="arithmatex">\(\mathbf{v}\)</span></li>
+<li><strong>Additive inverse:</strong> For each <span class="arithmatex">\(\mathbf{v}\)</span>, there exists <span class="arithmatex">\(-\mathbf{v}\)</span> such that <span class="arithmatex">\(\mathbf{v} + (-\mathbf{v}) = \mathbf{0}\)</span></li>
+</ol>
+<p><strong>Scalar multiplication axioms:</strong></p>
+<ol>
+<li><strong>Closure under scalar multiplication:</strong> For all <span class="arithmatex">\(c \in \mathbb{R}\)</span> and <span class="arithmatex">\(\mathbf{v} \in V\)</span>, we have <span class="arithmatex">\(c\mathbf{v} \in V\)</span></li>
+<li><strong>Distributivity over vector addition:</strong> <span class="arithmatex">\(c(\mathbf{u} + \mathbf{v}) = c\mathbf{u} + c\mathbf{v}\)</span></li>
+<li><strong>Distributivity over scalar addition:</strong> <span class="arithmatex">\((c + d)\mathbf{v} = c\mathbf{v} + d\mathbf{v}\)</span></li>
+<li><strong>Associativity of scalar multiplication:</strong> <span class="arithmatex">\(c(d\mathbf{v}) = (cd)\mathbf{v}\)</span></li>
+<li><strong>Identity element:</strong> <span class="arithmatex">\(1 \cdot \mathbf{v} = \mathbf{v}\)</span></li>
+</ol>
+<p>These axioms capture the essential algebraic properties needed for linear algebra to work.</p>
+<h3 id="examples-of-vector-spaces">Examples of Vector Spaces</h3>
+<table>
+<thead>
+<tr>
+<th>Vector Space</th>
+<th>Elements</th>
+<th>Addition</th>
+<th>Scalar Multiplication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>Column vectors</td>
+<td>Component-wise</td>
+<td>Component-wise</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathcal{P}_n\)</span></td>
+<td>Polynomials of degree <span class="arithmatex">\(\leq n\)</span></td>
+<td>Add coefficients</td>
+<td>Multiply coefficients</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathcal{C}[a,b]\)</span></td>
+<td>Continuous functions on <span class="arithmatex">\([a,b]\)</span></td>
+<td><span class="arithmatex">\((f+g)(x) = f(x)+g(x)\)</span></td>
+<td><span class="arithmatex">\((cf)(x) = c \cdot f(x)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbb{R}^{m \times n}\)</span></td>
+<td><span class="arithmatex">\(m \times n\)</span> matrices</td>
+<td>Entry-wise</td>
+<td>Entry-wise</td>
+</tr>
+<tr>
+<td>Solutions to <span class="arithmatex">\(A\mathbf{x} = \mathbf{0}\)</span></td>
+<td>Null space vectors</td>
+<td>Inherited from <span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>Inherited from <span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">The Zero Vector</p>
+<p>Every vector space must contain a zero vector <span class="arithmatex">\(\mathbf{0}\)</span>. In <span class="arithmatex">\(\mathbb{R}^n\)</span>, it's the origin. In function spaces, it's the function <span class="arithmatex">\(f(x) = 0\)</span>. In matrix spaces, it's the zero matrix.</p>
+</div>
+<h4 id="diagram-vector-space-examples-gallery">Diagram: Vector Space Examples Gallery</h4>
+<details>
+<summary>Vector Space Examples Gallery</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Recognize diverse examples of vector spaces and identify the zero vector and operations in each</p>
+<p>Layout: Grid of 6 cards, each representing a different vector space</p>
+<p>Cards:
+1. "<span class="arithmatex">\(\mathbb{R}^2\)</span>: The Plane"
+   - Visual: 2D coordinate system with vectors
+   - Zero: Origin (0, 0)
+   - Example: <span class="arithmatex">\(\mathbf{v} = (3, 4)\)</span></p>
+<ol>
+<li>"<span class="arithmatex">\(\mathbb{R}^3\)</span>: 3D Space"</li>
+<li>Visual: 3D coordinate system</li>
+<li>Zero: Origin (0, 0, 0)</li>
+<li>
+<p>Example: <span class="arithmatex">\(\mathbf{v} = (1, 2, 3)\)</span></p>
+</li>
+<li>
+<p>"<span class="arithmatex">\(\mathcal{P}_2\)</span>: Quadratic Polynomials"</p>
+</li>
+<li>Visual: Parabola graphs</li>
+<li>Zero: <span class="arithmatex">\(p(x) = 0\)</span></li>
+<li>
+<p>Example: <span class="arithmatex">\(p(x) = 2x^2 - 3x + 1\)</span></p>
+</li>
+<li>
+<p>"Continuous Functions"</p>
+</li>
+<li>Visual: Function curve plot</li>
+<li>Zero: <span class="arithmatex">\(f(x) = 0\)</span> (horizontal axis)</li>
+<li>
+<p>Example: <span class="arithmatex">\(f(x) = \sin(x)\)</span></p>
+</li>
+<li>
+<p>"<span class="arithmatex">\(\mathbb{R}^{2 \times 2}\)</span>: 2×2 Matrices"</p>
+</li>
+<li>Visual: Matrix grid representation</li>
+<li>Zero: Zero matrix</li>
+<li>
+<p>Example: <span class="arithmatex">\(A = [[1,2],[3,4]]\)</span></p>
+</li>
+<li>
+<p>"Null Space of A"</p>
+</li>
+<li>Visual: Plane through origin in 3D</li>
+<li>Zero: Origin</li>
+<li>Example: All <span class="arithmatex">\(\mathbf{x}\)</span> where <span class="arithmatex">\(A\mathbf{x} = \mathbf{0}\)</span></li>
+</ol>
+<p>Interactive elements:
+- Hover to see addition and scalar multiplication examples
+- Click to verify axioms interactively</p>
+<p>Visual style:
+- Consistent card format with icons
+- Color-coded by dimension (finite vs. infinite)</p>
+<p>Implementation: HTML/CSS grid with SVG visualizations</p>
+</details>
+<h2 id="subspaces">Subspaces</h2>
+<p>A <strong>subspace</strong> of a vector space <span class="arithmatex">\(V\)</span> is a non-empty subset <span class="arithmatex">\(W \subseteq V\)</span> that is itself a vector space under the same operations. Rather than checking all ten axioms, we can use a simpler test.</p>
+<h3 id="subspace-test">Subspace Test</h3>
+<p>A non-empty subset <span class="arithmatex">\(W\)</span> of <span class="arithmatex">\(V\)</span> is a subspace if and only if:</p>
+<ol>
+<li><strong>Closed under addition:</strong> For all <span class="arithmatex">\(\mathbf{u}, \mathbf{w} \in W\)</span>, we have <span class="arithmatex">\(\mathbf{u} + \mathbf{w} \in W\)</span></li>
+<li><strong>Closed under scalar multiplication:</strong> For all <span class="arithmatex">\(c \in \mathbb{R}\)</span> and <span class="arithmatex">\(\mathbf{w} \in W\)</span>, we have <span class="arithmatex">\(c\mathbf{w} \in W\)</span></li>
+</ol>
+<p>Equivalently (single condition): For all <span class="arithmatex">\(\mathbf{u}, \mathbf{w} \in W\)</span> and scalars <span class="arithmatex">\(c, d\)</span>:
+<span class="arithmatex">\(c\mathbf{u} + d\mathbf{w} \in W\)</span></p>
+<h3 id="important-subspaces">Important Subspaces</h3>
+<p>Every matrix <span class="arithmatex">\(A\)</span> has associated subspaces:</p>
+<ul>
+<li><strong>Column space</strong> <span class="arithmatex">\(\text{col}(A)\)</span>: All linear combinations of columns of <span class="arithmatex">\(A\)</span></li>
+<li><strong>Null space</strong> <span class="arithmatex">\(\text{null}(A)\)</span>: All solutions to <span class="arithmatex">\(A\mathbf{x} = \mathbf{0}\)</span></li>
+<li><strong>Row space</strong> <span class="arithmatex">\(\text{row}(A)\)</span>: All linear combinations of rows of <span class="arithmatex">\(A\)</span></li>
+<li><strong>Left null space</strong> <span class="arithmatex">\(\text{null}(A^T)\)</span>: All solutions to <span class="arithmatex">\(A^T\mathbf{y} = \mathbf{0}\)</span></li>
+</ul>
+<h3 id="non-examples">Non-Examples</h3>
+<p>Not every subset is a subspace:</p>
+<ul>
+<li>The unit circle in <span class="arithmatex">\(\mathbb{R}^2\)</span> is not a subspace (not closed under addition)</li>
+<li>The first quadrant in <span class="arithmatex">\(\mathbb{R}^2\)</span> is not a subspace (not closed under scalar multiplication by negatives)</li>
+<li>A line not through the origin is not a subspace (no zero vector)</li>
+</ul>
+<h4 id="diagram-subspace-tester">Diagram: Subspace Tester</h4>
+<details>
+<summary>Subspace Tester MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Test whether sets are subspaces by checking closure under linear combinations</p>
+<p>Visual elements:
+- 2D coordinate plane
+- Set definition displayed (equation or description)
+- Test vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> as draggable arrows
+- Linear combination <span class="arithmatex">\(c\mathbf{u} + d\mathbf{v}\)</span> shown
+- Set boundary highlighted</p>
+<p>Interactive controls:
+- Preset sets dropdown: "Line through origin", "Line not through origin", "First quadrant", "Circle", "Plane in 3D"
+- Sliders for scalars c and d
+- Draggable points for u and v (constrained to set)
+- "Check if Subspace" button with explanation</p>
+<p>Default parameters:
+- Set: Line through origin (y = 2x)
+- Scalars c = 1, d = 1
+- Canvas: responsive</p>
+<p>Behavior:
+- Highlight when linear combination leaves the set (subspace test fails)
+- Green indicator when combination stays in set
+- Explain which property fails for non-subspaces
+- Show counter-example automatically</p>
+<p>Implementation: p5.js with interactive geometry</p>
+</details>
+<h2 id="inner-products-and-inner-product-spaces">Inner Products and Inner Product Spaces</h2>
+<p>An <strong>inner product</strong> generalizes the dot product to abstract vector spaces, enabling us to measure lengths and angles.</p>
+<h3 id="inner-product-definition">Inner Product Definition</h3>
+<p>An <strong>inner product</strong> on a vector space <span class="arithmatex">\(V\)</span> is a function <span class="arithmatex">\(\langle \cdot, \cdot \rangle : V \times V \to \mathbb{R}\)</span> satisfying:</p>
+<ol>
+<li><strong>Symmetry:</strong> <span class="arithmatex">\(\langle \mathbf{u}, \mathbf{v} \rangle = \langle \mathbf{v}, \mathbf{u} \rangle\)</span></li>
+<li><strong>Linearity in first argument:</strong> <span class="arithmatex">\(\langle c\mathbf{u} + d\mathbf{w}, \mathbf{v} \rangle = c\langle \mathbf{u}, \mathbf{v} \rangle + d\langle \mathbf{w}, \mathbf{v} \rangle\)</span></li>
+<li><strong>Positive definiteness:</strong> <span class="arithmatex">\(\langle \mathbf{v}, \mathbf{v} \rangle \geq 0\)</span>, with equality iff <span class="arithmatex">\(\mathbf{v} = \mathbf{0}\)</span></li>
+</ol>
+<p>A vector space equipped with an inner product is called an <strong>inner product space</strong>.</p>
+<h3 id="standard-inner-products">Standard Inner Products</h3>
+<table>
+<thead>
+<tr>
+<th>Space</th>
+<th>Inner Product</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>Dot product</td>
+<td><span class="arithmatex">\(\langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u}^T\mathbf{v} = \sum_{i=1}^n u_i v_i\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathcal{C}[a,b]\)</span></td>
+<td>Integral</td>
+<td><span class="arithmatex">\(\langle f, g \rangle = \int_a^b f(x)g(x)\,dx\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbb{R}^{m \times n}\)</span></td>
+<td>Frobenius</td>
+<td><span class="arithmatex">\(\langle A, B \rangle = \text{tr}(A^TB) = \sum_{i,j} a_{ij}b_{ij}\)</span></td>
+</tr>
+<tr>
+<td>Weighted <span class="arithmatex">\(\mathbb{R}^n\)</span></td>
+<td>Weighted dot</td>
+<td><span class="arithmatex">\(\langle \mathbf{u}, \mathbf{v} \rangle_W = \mathbf{u}^TW\mathbf{v}\)</span> (W positive definite)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="norm-from-inner-product">Norm from Inner Product</h3>
+<p>Every inner product induces a <strong>norm</strong> (length function):</p>
+<p><span class="arithmatex">\(\|\mathbf{v}\| = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}\)</span></p>
+<p>For the standard dot product on <span class="arithmatex">\(\mathbb{R}^n\)</span>, this gives the Euclidean norm:</p>
+<p><span class="arithmatex">\(\|\mathbf{v}\| = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2}\)</span></p>
+<p>The norm satisfies:</p>
+<ul>
+<li><strong>Positivity:</strong> <span class="arithmatex">\(\|\mathbf{v}\| \geq 0\)</span>, with equality iff <span class="arithmatex">\(\mathbf{v} = \mathbf{0}\)</span></li>
+<li><strong>Homogeneity:</strong> <span class="arithmatex">\(\|c\mathbf{v}\| = |c| \cdot \|\mathbf{v}\|\)</span></li>
+<li><strong>Triangle inequality:</strong> <span class="arithmatex">\(\|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|\)</span></li>
+</ul>
+<h4 id="diagram-inner-product-visualizer">Diagram: Inner Product Visualizer</h4>
+<details>
+<summary>Inner Product Space Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize how different inner products define different notions of length and angle</p>
+<p>Visual elements:
+- 2D plane with two adjustable vectors u and v
+- Unit circle for standard inner product
+- Transformed unit "circle" (ellipse) for weighted inner product
+- Angle arc between vectors
+- Length labels for each vector</p>
+<p>Interactive controls:
+- Draggable endpoints for vectors u and v
+- Inner product selector: "Standard dot product", "Weighted (diagonal W)", "Weighted (general W)"
+- Weight matrix input (for weighted inner products)
+- Display: inner product value, norms, angle</p>
+<p>Default parameters:
+- Standard dot product
+- u = (3, 1), v = (1, 2)
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time update of inner product, norms, angle
+- Show how unit ball changes with different inner products
+- Demonstrate that angle definition depends on inner product
+- Verify Cauchy-Schwarz inequality visually</p>
+<p>Implementation: p5.js with dynamic geometry</p>
+</details>
+<h3 id="the-cauchy-schwarz-inequality">The Cauchy-Schwarz Inequality</h3>
+<p>The <strong>Cauchy-Schwarz inequality</strong> is one of the most important results in linear algebra:</p>
+<p><span class="arithmatex">\(|\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \cdot \|\mathbf{v}\|\)</span></p>
+<p>where:</p>
+<ul>
+<li>Equality holds if and only if <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> are linearly dependent</li>
+<li>This inequality holds in every inner product space</li>
+</ul>
+<p>For the standard dot product in <span class="arithmatex">\(\mathbb{R}^n\)</span>:</p>
+<p><span class="arithmatex">\(|\mathbf{u} \cdot \mathbf{v}| \leq \|\mathbf{u}\|_2 \cdot \|\mathbf{v}\|_2\)</span></p>
+<h3 id="angle-between-vectors">Angle Between Vectors</h3>
+<p>The Cauchy-Schwarz inequality guarantees that:</p>
+<p><span class="arithmatex">\(-1 \leq \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|} \leq 1\)</span></p>
+<p>This allows us to define the <strong>angle</strong> <span class="arithmatex">\(\theta\)</span> between vectors:</p>
+<p><span class="arithmatex">\(\cos\theta = \frac{\langle \mathbf{u}, \mathbf{v} \rangle}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|}\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">Cauchy-Schwarz in Applications</p>
+<p>Cauchy-Schwarz appears throughout machine learning:</p>
+<ul>
+<li><strong>Cosine similarity:</strong> <span class="arithmatex">\(\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}\)</span> measures document/word similarity</li>
+<li><strong>Correlation coefficient:</strong> Normalized covariance uses Cauchy-Schwarz to bound <span class="arithmatex">\(|\rho| \leq 1\)</span></li>
+<li><strong>Attention mechanisms:</strong> Softmax of dot products for similarity scoring</li>
+</ul>
+</div>
+<h2 id="orthogonality">Orthogonality</h2>
+<p><strong>Orthogonality</strong> is the generalization of perpendicularity to abstract vector spaces.</p>
+<h3 id="orthogonal-vectors">Orthogonal Vectors</h3>
+<p>Two vectors <span class="arithmatex">\(\mathbf{u}\)</span> and <span class="arithmatex">\(\mathbf{v}\)</span> are <strong>orthogonal</strong> (written <span class="arithmatex">\(\mathbf{u} \perp \mathbf{v}\)</span>) if:</p>
+<p><span class="arithmatex">\(\langle \mathbf{u}, \mathbf{v} \rangle = 0\)</span></p>
+<p>In <span class="arithmatex">\(\mathbb{R}^n\)</span> with the standard dot product, this means <span class="arithmatex">\(\mathbf{u} \cdot \mathbf{v} = 0\)</span>.</p>
+<p>Key properties:</p>
+<ul>
+<li>The zero vector is orthogonal to every vector</li>
+<li>Orthogonal non-zero vectors are linearly independent</li>
+<li>The Pythagorean theorem generalizes: if <span class="arithmatex">\(\mathbf{u} \perp \mathbf{v}\)</span>, then <span class="arithmatex">\(\|\mathbf{u} + \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2\)</span></li>
+</ul>
+<h3 id="orthonormal-sets-and-bases">Orthonormal Sets and Bases</h3>
+<p>An <strong>orthonormal set</strong> is a set of vectors that are:</p>
+<ol>
+<li><strong>Pairwise orthogonal:</strong> <span class="arithmatex">\(\langle \mathbf{u}_i, \mathbf{u}_j \rangle = 0\)</span> for <span class="arithmatex">\(i \neq j\)</span></li>
+<li><strong>Unit length:</strong> <span class="arithmatex">\(\|\mathbf{u}_i\| = 1\)</span> for all <span class="arithmatex">\(i\)</span></li>
+</ol>
+<p>An <strong>orthonormal basis</strong> is an orthonormal set that spans the entire space.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Orthogonal Set</th>
+<th>Orthonormal Set</th>
+<th>Orthonormal Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pairwise orthogonal</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Unit vectors</td>
+<td>✗</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Spans space</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Linearly independent</td>
+<td>✓ (if non-zero)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-orthonormal-bases-matter">Why Orthonormal Bases Matter</h3>
+<p>Orthonormal bases dramatically simplify computations:</p>
+<p><strong>Coordinate computation:</strong> If <span class="arithmatex">\(\{\mathbf{q}_1, \ldots, \mathbf{q}_n\}\)</span> is orthonormal:</p>
+<p><span class="arithmatex">\(\mathbf{v} = \sum_{i=1}^n \langle \mathbf{v}, \mathbf{q}_i \rangle \mathbf{q}_i\)</span></p>
+<p>The coefficients are just inner products—no matrix inversion needed!</p>
+<p><strong>Parseval's identity:</strong></p>
+<p><span class="arithmatex">\(\|\mathbf{v}\|^2 = \sum_{i=1}^n |\langle \mathbf{v}, \mathbf{q}_i \rangle|^2\)</span></p>
+<p><strong>Orthogonal matrices:</strong> A matrix <span class="arithmatex">\(Q\)</span> is orthogonal if its columns form an orthonormal basis:</p>
+<p><span class="arithmatex">\(Q^TQ = I \quad \Rightarrow \quad Q^{-1} = Q^T\)</span></p>
+<h4 id="diagram-orthonormal-basis-coordinate-finder">Diagram: Orthonormal Basis Coordinate Finder</h4>
+<details>
+<summary>Orthonormal Basis Coordinate Finder</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Demonstrate how orthonormal bases simplify finding coordinates via inner products</p>
+<p>Visual elements:
+- 2D or 3D coordinate system
+- Standard basis vectors (gray, dashed)
+- Orthonormal basis vectors q₁, q₂ (colored arrows)
+- Target vector v (black arrow)
+- Projection lines from v to each qᵢ
+- Coordinate display in both bases</p>
+<p>Interactive controls:
+- Draggable orthonormal basis vectors (constrained to stay orthonormal)
+- Draggable target vector v
+- Toggle between 2D and 3D
+- "Show Projections" toggle
+- "Compare to Standard Basis" toggle</p>
+<p>Default parameters:
+- 2D mode
+- Orthonormal basis at 45° rotation
+- v = (3, 2)
+- Canvas: responsive</p>
+<p>Behavior:
+- Show coefficients as inner products: cᵢ = ⟨v, qᵢ⟩
+- Demonstrate reconstruction: v = c₁q₁ + c₂q₂
+- Verify Parseval's identity visually
+- Compare computation effort with non-orthonormal basis</p>
+<p>Implementation: p5.js with vector geometry</p>
+</details>
+<h2 id="the-gram-schmidt-process">The Gram-Schmidt Process</h2>
+<p>The <strong>Gram-Schmidt process</strong> converts any linearly independent set of vectors into an orthonormal set spanning the same subspace.</p>
+<h3 id="algorithm">Algorithm</h3>
+<p>Given linearly independent vectors <span class="arithmatex">\(\{\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n\}\)</span>:</p>
+<p><strong>Step 1: First vector</strong></p>
+<p><span class="arithmatex">\(\mathbf{u}_1 = \mathbf{v}_1, \quad \mathbf{q}_1 = \frac{\mathbf{u}_1}{\|\mathbf{u}_1\|}\)</span></p>
+<p><strong>Step 2: Subtract projection, normalize</strong></p>
+<p>For <span class="arithmatex">\(k = 2, \ldots, n\)</span>:</p>
+<p><span class="arithmatex">\(\mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \langle \mathbf{v}_k, \mathbf{q}_j \rangle \mathbf{q}_j\)</span></p>
+<p><span class="arithmatex">\(\mathbf{q}_k = \frac{\mathbf{u}_k}{\|\mathbf{u}_k\|}\)</span></p>
+<h3 id="geometric-interpretation">Geometric Interpretation</h3>
+<p>Each step:</p>
+<ol>
+<li>Takes the next input vector <span class="arithmatex">\(\mathbf{v}_k\)</span></li>
+<li>Subtracts its projections onto all previously computed <span class="arithmatex">\(\mathbf{q}_j\)</span></li>
+<li>Normalizes the result to unit length</li>
+</ol>
+<p>The projection <span class="arithmatex">\(\langle \mathbf{v}_k, \mathbf{q}_j \rangle \mathbf{q}_j\)</span> removes the component of <span class="arithmatex">\(\mathbf{v}_k\)</span> in the direction of <span class="arithmatex">\(\mathbf{q}_j\)</span>, leaving only the component orthogonal to all previous vectors.</p>
+<h4 id="diagram-gram-schmidt-process-visualizer">Diagram: Gram-Schmidt Process Visualizer</h4>
+<details>
+<summary>Gram-Schmidt Step-by-Step Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand the Gram-Schmidt process by watching projection and orthogonalization steps</p>
+<p>Visual elements:
+- 3D coordinate system
+- Input vectors v₁, v₂, v₃ (original, semi-transparent after processing)
+- Current vector being processed (highlighted)
+- Projection vectors being subtracted (dashed arrows)
+- Output orthonormal vectors q₁, q₂, q₃ (solid, colored)
+- Right-angle indicators</p>
+<p>Interactive controls:
+- Input matrix (3 column vectors)
+- "Next Step" button
+- "Auto Run" with speed slider
+- "Reset" button
+- "Show All Projections" toggle
+- "Show Residual" toggle</p>
+<p>Default parameters:
+- Three linearly independent vectors in 3D
+- Step-by-step mode
+- Canvas: responsive 3D view</p>
+<p>Behavior:
+- Animate each projection subtraction
+- Show normalization as length scaling
+- Highlight orthogonality between output vectors
+- Display intermediate u vectors before normalization
+- Warning if vectors become nearly dependent</p>
+<p>Implementation: p5.js with WEBGL for 3D</p>
+</details>
+<h3 id="connection-to-qr-decomposition">Connection to QR Decomposition</h3>
+<p>Gram-Schmidt applied to the columns of matrix <span class="arithmatex">\(A\)</span> produces:</p>
+<p><span class="arithmatex">\(A = QR\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> contains the orthonormal vectors <span class="arithmatex">\(\mathbf{q}_1, \ldots, \mathbf{q}_n\)</span></li>
+<li><span class="arithmatex">\(R\)</span> is upper triangular with <span class="arithmatex">\(r_{ij} = \langle \mathbf{v}_j, \mathbf{q}_i \rangle\)</span> for <span class="arithmatex">\(i &lt; j\)</span> and <span class="arithmatex">\(r_{ii} = \|\mathbf{u}_i\|\)</span></li>
+</ul>
+<h2 id="projection-onto-subspaces">Projection onto Subspaces</h2>
+<p><strong>Projection</strong> finds the closest point in a subspace to a given vector—the foundation of least squares.</p>
+<h3 id="projection-onto-a-line">Projection onto a Line</h3>
+<p>The projection of <span class="arithmatex">\(\mathbf{v}\)</span> onto the line spanned by <span class="arithmatex">\(\mathbf{u}\)</span> is:</p>
+<p><span class="arithmatex">\(\text{proj}_{\mathbf{u}}(\mathbf{v}) = \frac{\langle \mathbf{v}, \mathbf{u} \rangle}{\langle \mathbf{u}, \mathbf{u} \rangle} \mathbf{u} = \frac{\mathbf{u}^T\mathbf{v}}{\mathbf{u}^T\mathbf{u}} \mathbf{u}\)</span></p>
+<p>The projection matrix onto the line is:</p>
+<p><span class="arithmatex">\(P = \frac{\mathbf{u}\mathbf{u}^T}{\mathbf{u}^T\mathbf{u}}\)</span></p>
+<h3 id="projection-onto-a-subspace">Projection onto a Subspace</h3>
+<p>For a subspace <span class="arithmatex">\(W\)</span> with orthonormal basis <span class="arithmatex">\(\{\mathbf{q}_1, \ldots, \mathbf{q}_k\}\)</span>:</p>
+<p><span class="arithmatex">\(\text{proj}_W(\mathbf{v}) = \sum_{i=1}^k \langle \mathbf{v}, \mathbf{q}_i \rangle \mathbf{q}_i\)</span></p>
+<p>The projection matrix is:</p>
+<p><span class="arithmatex">\(P = QQ^T\)</span></p>
+<p>where <span class="arithmatex">\(Q = [\mathbf{q}_1 | \cdots | \mathbf{q}_k]\)</span>.</p>
+<p>For a general subspace with basis columns of <span class="arithmatex">\(A\)</span>:</p>
+<p><span class="arithmatex">\(P = A(A^TA)^{-1}A^T\)</span></p>
+<h3 id="properties-of-projection-matrices">Properties of Projection Matrices</h3>
+<p>Projection matrices satisfy:</p>
+<ul>
+<li><strong>Symmetric:</strong> <span class="arithmatex">\(P = P^T\)</span></li>
+<li><strong>Idempotent:</strong> <span class="arithmatex">\(P^2 = P\)</span> (projecting twice gives the same result)</li>
+<li><strong>Eigenvalues:</strong> Only 0 and 1 (0 for orthogonal complement, 1 for subspace)</li>
+</ul>
+<h4 id="diagram-projection-visualizer">Diagram: Projection Visualizer</h4>
+<details>
+<summary>Projection onto Subspace Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Visualize projection as finding the closest point in a subspace and understand the orthogonal error</p>
+<p>Visual elements:
+- 3D coordinate system
+- Subspace W shown as a plane through origin (or line)
+- Vector v (starting point)
+- Projection p = proj_W(v) (on subspace)
+- Error vector e = v - p (perpendicular to subspace)
+- Right angle indicator between e and subspace</p>
+<p>Interactive controls:
+- Draggable vector v
+- Subspace definition: basis vectors or normal vector
+- Toggle between 1D subspace (line) and 2D subspace (plane)
+- "Show Projection Matrix" toggle
+- "Show Error Vector" toggle</p>
+<p>Default parameters:
+- 2D subspace (plane) in 3D
+- v outside the subspace
+- Canvas: responsive 3D view</p>
+<p>Behavior:
+- Real-time projection update as v moves
+- Show that e is orthogonal to subspace
+- Display projection formula and computation
+- Highlight that p is closest point in subspace to v
+- Show distance ||e|| as length of error</p>
+<p>Implementation: p5.js with WEBGL for 3D</p>
+</details>
+<h2 id="the-least-squares-problem">The Least Squares Problem</h2>
+<p>When a system <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span> has no exact solution (overdetermined), we seek the <strong>least squares solution</strong>—the <span class="arithmatex">\(\mathbf{x}\)</span> that minimizes the error <span class="arithmatex">\(\|A\mathbf{x} - \mathbf{b}\|^2\)</span>.</p>
+<h3 id="geometric-view">Geometric View</h3>
+<p>The least squares problem asks: find the point <span class="arithmatex">\(A\mathbf{x}\)</span> in the column space of <span class="arithmatex">\(A\)</span> closest to <span class="arithmatex">\(\mathbf{b}\)</span>.</p>
+<p>The answer is the projection of <span class="arithmatex">\(\mathbf{b}\)</span> onto the column space:</p>
+<p><span class="arithmatex">\(A\hat{\mathbf{x}} = \text{proj}_{\text{col}(A)}(\mathbf{b})\)</span></p>
+<h3 id="the-normal-equations">The Normal Equations</h3>
+<p>The least squares solution satisfies the <strong>normal equations</strong>:</p>
+<p><span class="arithmatex">\(A^TA\hat{\mathbf{x}} = A^T\mathbf{b}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(A^TA\)</span> is an <span class="arithmatex">\(n \times n\)</span> symmetric positive semi-definite matrix</li>
+<li><span class="arithmatex">\(A^T\mathbf{b}\)</span> is an <span class="arithmatex">\(n \times 1\)</span> vector</li>
+<li>If <span class="arithmatex">\(A\)</span> has full column rank, <span class="arithmatex">\(A^TA\)</span> is positive definite and invertible</li>
+</ul>
+<h4 id="derivation">Derivation</h4>
+<p>The error vector <span class="arithmatex">\(\mathbf{e} = \mathbf{b} - A\hat{\mathbf{x}}\)</span> must be orthogonal to the column space of <span class="arithmatex">\(A\)</span>:</p>
+<p><span class="arithmatex">\(A^T\mathbf{e} = \mathbf{0}\)</span></p>
+<p><span class="arithmatex">\(A^T(\mathbf{b} - A\hat{\mathbf{x}}) = \mathbf{0}\)</span></p>
+<p><span class="arithmatex">\(A^TA\hat{\mathbf{x}} = A^T\mathbf{b}\)</span></p>
+<h3 id="solving-least-squares">Solving Least Squares</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Formula</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal equations</td>
+<td><span class="arithmatex">\(\hat{\mathbf{x}} = (A^TA)^{-1}A^T\mathbf{b}\)</span></td>
+<td>Small, well-conditioned problems</td>
+</tr>
+<tr>
+<td>QR decomposition</td>
+<td><span class="arithmatex">\(R\hat{\mathbf{x}} = Q^T\mathbf{b}\)</span></td>
+<td>General, numerically stable</td>
+</tr>
+<tr>
+<td>SVD</td>
+<td><span class="arithmatex">\(\hat{\mathbf{x}} = V\Sigma^{-1}U^T\mathbf{b}\)</span></td>
+<td>Rank-deficient or ill-conditioned</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Numerical Stability</p>
+<p>Avoid explicitly forming <span class="arithmatex">\(A^TA\)</span> when possible. It squares the condition number, amplifying numerical errors. Use QR or SVD instead.</p>
+</div>
+<h4 id="diagram-least-squares-visualizer">Diagram: Least Squares Visualizer</h4>
+<details>
+<summary>Least Squares Problem Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Understand least squares as projection and visualize the geometric relationship between b, Ax̂, and the error</p>
+<p>Visual elements:
+- 3D space showing column space of A as a plane
+- Vector b (outside the plane)
+- Projection Ax̂ (on the plane)
+- Error vector e = b - Ax̂ (perpendicular to plane)
+- Data points and fitted line (for 2D regression example)</p>
+<p>Interactive controls:
+- Switch between "Geometric View" and "Regression View"
+- In geometric view: adjust b position
+- In regression view: drag data points
+- "Show Normal Equations" toggle
+- "Compare Methods" (normal eq vs QR vs SVD)</p>
+<p>Default parameters:
+- Simple 2D linear regression example
+- 5 data points
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time update of least squares solution
+- Show residuals as vertical lines to fitted line
+- Display sum of squared residuals
+- Highlight that solution minimizes total squared error
+- Show condition number warning if ill-conditioned</p>
+<p>Implementation: p5.js with dual view modes</p>
+</details>
+<h3 id="linear-regression-as-least-squares">Linear Regression as Least Squares</h3>
+<p>Fitting a line <span class="arithmatex">\(y = mx + c\)</span> to data points <span class="arithmatex">\((x_1, y_1), \ldots, (x_n, y_n)\)</span>:</p>
+<p><span class="arithmatex">\(\begin{bmatrix} x_1 &amp; 1 \\ x_2 &amp; 1 \\ \vdots &amp; \vdots \\ x_n &amp; 1 \end{bmatrix} \begin{bmatrix} m \\ c \end{bmatrix} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}\)</span></p>
+<p>This is <span class="arithmatex">\(A\mathbf{x} = \mathbf{b}\)</span> with <span class="arithmatex">\(n &gt; 2\)</span> equations and 2 unknowns—overdetermined!</p>
+<p>The least squares solution minimizes <span class="arithmatex">\(\sum_{i=1}^n (y_i - mx_i - c)^2\)</span>.</p>
+<h2 id="the-four-fundamental-subspaces">The Four Fundamental Subspaces</h2>
+<p>Every <span class="arithmatex">\(m \times n\)</span> matrix <span class="arithmatex">\(A\)</span> defines four fundamental subspaces that partition <span class="arithmatex">\(\mathbb{R}^n\)</span> and <span class="arithmatex">\(\mathbb{R}^m\)</span>.</p>
+<h3 id="column-space-and-row-space">Column Space and Row Space</h3>
+<p>The <strong>column space</strong> <span class="arithmatex">\(\text{col}(A)\)</span> is the span of the columns of <span class="arithmatex">\(A\)</span>:</p>
+<p><span class="arithmatex">\(\text{col}(A) = \{A\mathbf{x} : \mathbf{x} \in \mathbb{R}^n\} \subseteq \mathbb{R}^m\)</span></p>
+<p>The <strong>row space</strong> <span class="arithmatex">\(\text{row}(A)\)</span> is the span of the rows of <span class="arithmatex">\(A\)</span> (equivalently, column space of <span class="arithmatex">\(A^T\)</span>):</p>
+<p><span class="arithmatex">\(\text{row}(A) = \text{col}(A^T) \subseteq \mathbb{R}^n\)</span></p>
+<p>Both have dimension equal to the rank of <span class="arithmatex">\(A\)</span>.</p>
+<h3 id="null-space-and-left-null-space">Null Space and Left Null Space</h3>
+<p>The <strong>null space</strong> (kernel) <span class="arithmatex">\(\text{null}(A)\)</span> contains all solutions to <span class="arithmatex">\(A\mathbf{x} = \mathbf{0}\)</span>:</p>
+<p><span class="arithmatex">\(\text{null}(A) = \{\mathbf{x} \in \mathbb{R}^n : A\mathbf{x} = \mathbf{0}\}\)</span></p>
+<p>The <strong>left null space</strong> <span class="arithmatex">\(\text{null}(A^T)\)</span> contains all solutions to <span class="arithmatex">\(A^T\mathbf{y} = \mathbf{0}\)</span>:</p>
+<p><span class="arithmatex">\(\text{null}(A^T) = \{\mathbf{y} \in \mathbb{R}^m : A^T\mathbf{y} = \mathbf{0}\}\)</span></p>
+<h3 id="the-fundamental-theorem">The Fundamental Theorem</h3>
+<p>The <strong>Four Subspaces Theorem</strong> reveals beautiful orthogonal relationships:</p>
+<table>
+<thead>
+<tr>
+<th>Subspace</th>
+<th>Dimension</th>
+<th>Orthogonal Complement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Column space <span class="arithmatex">\(\text{col}(A)\)</span></td>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Left null space <span class="arithmatex">\(\text{null}(A^T)\)</span></td>
+</tr>
+<tr>
+<td>Row space <span class="arithmatex">\(\text{row}(A)\)</span></td>
+<td><span class="arithmatex">\(r\)</span></td>
+<td>Null space <span class="arithmatex">\(\text{null}(A)\)</span></td>
+</tr>
+<tr>
+<td>Null space <span class="arithmatex">\(\text{null}(A)\)</span></td>
+<td><span class="arithmatex">\(n - r\)</span></td>
+<td>Row space <span class="arithmatex">\(\text{row}(A)\)</span></td>
+</tr>
+<tr>
+<td>Left null space <span class="arithmatex">\(\text{null}(A^T)\)</span></td>
+<td><span class="arithmatex">\(m - r\)</span></td>
+<td>Column space <span class="arithmatex">\(\text{col}(A)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="arithmatex">\(r = \text{rank}(A)\)</span>.</p>
+<p>Key insights:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbb{R}^n = \text{row}(A) \oplus \text{null}(A)\)</span> (direct sum)</li>
+<li><span class="arithmatex">\(\mathbb{R}^m = \text{col}(A) \oplus \text{null}(A^T)\)</span> (direct sum)</li>
+<li>The matrix <span class="arithmatex">\(A\)</span> maps row space to column space (bijectively if full rank)</li>
+<li>The matrix <span class="arithmatex">\(A\)</span> maps null space to zero</li>
+</ul>
+<h4 id="diagram-four-fundamental-subspaces">Diagram: Four Fundamental Subspaces</h4>
+<details>
+<summary>Four Fundamental Subspaces Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Visualize the four fundamental subspaces and their orthogonal relationships</p>
+<p>Visual elements:
+- Two side-by-side panels: Domain (R^n) and Codomain (R^m)
+- In R^n: Row space and null space as orthogonal subspaces
+- In R^m: Column space and left null space as orthogonal subspaces
+- Arrow showing A maps row space → column space
+- Arrow showing A maps null space → {0}
+- Dimension labels on each subspace</p>
+<p>Interactive controls:
+- Matrix A input (up to 4×4)
+- "Compute Subspaces" button
+- Toggle to show basis vectors for each subspace
+- Toggle to show orthogonality verification
+- Slider to highlight one subspace at a time</p>
+<p>Default parameters:
+- 3×4 matrix with rank 2
+- Show all four subspaces
+- Canvas: responsive dual-panel layout</p>
+<p>Behavior:
+- Compute and display bases for each subspace
+- Verify orthogonality numerically
+- Show rank and dimension formulas
+- Animate vector mapping from domain to codomain
+- Highlight which vectors map to zero</p>
+<p>Implementation: p5.js with SVG diagrams</p>
+</details>
+<h3 id="visualization">Visualization</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>             A
+    R^n  ─────────→  R^m
+
+┌─────────────┐      ┌─────────────┐
+│             │      │             │
+│  row(A)     │ ───→ │   col(A)    │
+│  dim = r    │      │   dim = r   │
+│             │      │             │
+├─────────────┤      ├─────────────┤
+│             │      │             │
+│  null(A)    │ ───→ │   {0}       │
+│  dim = n-r  │      │             │
+│             │      │  null(A^T)  │
+│             │      │  dim = m-r  │
+└─────────────┘      └─────────────┘
+        ⊥                  ⊥
+</code></pre></div></td></tr></table></div>
+<h2 id="the-pseudoinverse">The Pseudoinverse</h2>
+<p>The <strong>pseudoinverse</strong> (Moore-Penrose inverse) <span class="arithmatex">\(A^+\)</span> generalizes the matrix inverse to rectangular and singular matrices.</p>
+<h3 id="definition-via-svd">Definition via SVD</h3>
+<p>If <span class="arithmatex">\(A = U\Sigma V^T\)</span> is the SVD with non-zero singular values <span class="arithmatex">\(\sigma_1, \ldots, \sigma_r\)</span>:</p>
+<p><span class="arithmatex">\(A^+ = V\Sigma^+ U^T\)</span></p>
+<p>where:</p>
+<p><span class="arithmatex">\(\Sigma^+ = \begin{bmatrix} \sigma_1^{-1} &amp; &amp; \\ &amp; \ddots &amp; \\ &amp; &amp; \sigma_r^{-1} \\ &amp; \mathbf{0} &amp; \end{bmatrix}^T\)</span></p>
+<h3 id="properties">Properties</h3>
+<p>The pseudoinverse satisfies the <strong>Moore-Penrose conditions</strong>:</p>
+<ol>
+<li><span class="arithmatex">\(AA^+A = A\)</span></li>
+<li><span class="arithmatex">\(A^+AA^+ = A^+\)</span></li>
+<li><span class="arithmatex">\((AA^+)^T = AA^+\)</span> (symmetric)</li>
+<li><span class="arithmatex">\((A^+A)^T = A^+A\)</span> (symmetric)</li>
+</ol>
+<h3 id="special-cases">Special Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Matrix Type</th>
+<th>Pseudoinverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invertible</td>
+<td><span class="arithmatex">\(A^+ = A^{-1}\)</span></td>
+</tr>
+<tr>
+<td>Full column rank (<span class="arithmatex">\(m &gt; n\)</span>)</td>
+<td><span class="arithmatex">\(A^+ = (A^TA)^{-1}A^T\)</span> (left inverse)</td>
+</tr>
+<tr>
+<td>Full row rank (<span class="arithmatex">\(m &lt; n\)</span>)</td>
+<td><span class="arithmatex">\(A^+ = A^T(AA^T)^{-1}\)</span> (right inverse)</td>
+</tr>
+<tr>
+<td>Rank-deficient</td>
+<td>Use SVD formula</td>
+</tr>
+</tbody>
+</table>
+<h3 id="least-squares-via-pseudoinverse">Least Squares via Pseudoinverse</h3>
+<p>The least squares solution is:</p>
+<p><span class="arithmatex">\(\hat{\mathbf{x}} = A^+\mathbf{b}\)</span></p>
+<p>When <span class="arithmatex">\(A\)</span> has full column rank, this equals <span class="arithmatex">\((A^TA)^{-1}A^T\mathbf{b}\)</span>.</p>
+<p>When <span class="arithmatex">\(A\)</span> is rank-deficient, the pseudoinverse gives the <strong>minimum-norm least squares solution</strong>—the smallest <span class="arithmatex">\(\hat{\mathbf{x}}\)</span> that minimizes <span class="arithmatex">\(\|A\mathbf{x} - \mathbf{b}\|\)</span>.</p>
+<h4 id="diagram-pseudoinverse-application">Diagram: Pseudoinverse Application</h4>
+<details>
+<summary>Pseudoinverse Solver MicroSim</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand how the pseudoinverse solves least squares problems, especially for rank-deficient systems</p>
+<p>Visual elements:
+- Matrix A display with rank indicator
+- Vector b input
+- Solution x = A⁺b display
+- Residual ||Ax - b|| display
+- SVD components visualization
+- Comparison: exact solution (if exists) vs least squares</p>
+<p>Interactive controls:
+- Matrix A entry fields (up to 4×4)
+- Vector b entry fields
+- "Compute Pseudoinverse" button
+- "Show SVD" toggle
+- Preset examples: full rank, rank deficient, underdetermined</p>
+<p>Default parameters:
+- 3×2 matrix (overdetermined)
+- Show solution and residual
+- Canvas: responsive</p>
+<p>Behavior:
+- Compute and display A⁺
+- Solve x = A⁺b
+- Show residual and verify it's minimal
+- For underdetermined: show minimum-norm property
+- Compare with direct (A^TA)^{-1}A^T when applicable</p>
+<p>Implementation: p5.js with numerical computation</p>
+</details>
+<h2 id="practical-implementation">Practical Implementation</h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">linalg</span>
+
+<span class="c1"># Vector space operations</span>
+<span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+
+<span class="c1"># Inner product (dot product)</span>
+<span class="n">inner</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+
+<span class="c1"># Norm from inner product</span>
+<span class="n">norm_v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v1</span><span class="p">))</span>  <span class="c1"># or np.linalg.norm(v1)</span>
+
+<span class="c1"># Angle between vectors (Cauchy-Schwarz)</span>
+<span class="n">cos_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v2</span><span class="p">))</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">cos_theta</span><span class="p">)</span>
+
+<span class="c1"># Gram-Schmidt (via QR)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Orthonormal basis Q:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span>
+
+<span class="c1"># Projection onto column space</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">project_onto_colspace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Project b onto column space of A.&quot;&quot;&quot;</span>
+    <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">Q</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">b</span>
+
+<span class="c1"># Least squares</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Method 1: Normal equations (less stable)</span>
+<span class="n">x_normal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># Method 2: QR decomposition (stable)</span>
+<span class="n">x_qr</span><span class="p">,</span> <span class="n">residuals</span><span class="p">,</span> <span class="n">rank</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">rcond</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Method 3: Pseudoinverse</span>
+<span class="n">A_pinv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">x_pinv</span> <span class="o">=</span> <span class="n">A_pinv</span> <span class="o">@</span> <span class="n">b</span>
+
+<span class="c1"># Four fundamental subspaces via SVD</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">rank</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mf">1e-10</span><span class="p">)</span>
+
+<span class="n">col_space_basis</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="p">:</span><span class="n">rank</span><span class="p">]</span>      <span class="c1"># Column space</span>
+<span class="n">left_null_basis</span> <span class="o">=</span> <span class="n">U</span><span class="p">[:,</span> <span class="n">rank</span><span class="p">:]</span>       <span class="c1"># Left null space</span>
+<span class="n">row_space_basis</span> <span class="o">=</span> <span class="n">Vh</span><span class="p">[:</span><span class="n">rank</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span>    <span class="c1"># Row space</span>
+<span class="n">null_space_basis</span> <span class="o">=</span> <span class="n">Vh</span><span class="p">[</span><span class="n">rank</span><span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span>   <span class="c1"># Null space</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rank: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column space dim: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">, Left null space dim: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Row space dim: </span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">, Null space dim: </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rank</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="summary_1">Summary</h2>
+<p>This chapter developed the abstract framework for linear algebra:</p>
+<p><strong>Vector Spaces:</strong></p>
+<ul>
+<li><strong>Abstract vector spaces</strong> satisfy ten axioms enabling addition and scalar multiplication</li>
+<li><strong>Subspaces</strong> are closed under linear combinations</li>
+<li>The framework applies to functions, matrices, and beyond <span class="arithmatex">\(\mathbb{R}^n\)</span></li>
+</ul>
+<p><strong>Inner Products:</strong></p>
+<ul>
+<li><strong>Inner products</strong> generalize dot products, enabling length and angle measurement</li>
+<li><strong>Norms</strong> derive from inner products: <span class="arithmatex">\(\|\mathbf{v}\| = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}\)</span></li>
+<li><strong>Cauchy-Schwarz inequality:</strong> <span class="arithmatex">\(|\langle \mathbf{u}, \mathbf{v} \rangle| \leq \|\mathbf{u}\| \|\mathbf{v}\|\)</span></li>
+</ul>
+<p><strong>Orthogonality:</strong></p>
+<ul>
+<li><strong>Orthogonal vectors</strong> satisfy <span class="arithmatex">\(\langle \mathbf{u}, \mathbf{v} \rangle = 0\)</span></li>
+<li><strong>Orthonormal bases</strong> simplify coordinate computation to inner products</li>
+<li><strong>Gram-Schmidt</strong> converts any basis to orthonormal</li>
+</ul>
+<p><strong>Projections and Least Squares:</strong></p>
+<ul>
+<li><strong>Projection</strong> finds the closest point in a subspace</li>
+<li><strong>Least squares</strong> minimizes <span class="arithmatex">\(\|A\mathbf{x} - \mathbf{b}\|^2\)</span></li>
+<li><strong>Normal equations:</strong> <span class="arithmatex">\(A^TA\hat{\mathbf{x}} = A^T\mathbf{b}\)</span></li>
+</ul>
+<p><strong>Fundamental Subspaces:</strong></p>
+<ul>
+<li>Every matrix has <strong>four fundamental subspaces</strong>: column, row, null, left null</li>
+<li>Row space <span class="arithmatex">\(\perp\)</span> null space; column space <span class="arithmatex">\(\perp\)</span> left null space</li>
+<li>Dimensions sum correctly: <span class="arithmatex">\(r + (n-r) = n\)</span> and <span class="arithmatex">\(r + (m-r) = m\)</span></li>
+</ul>
+<p><strong>Pseudoinverse:</strong></p>
+<ul>
+<li><strong><span class="arithmatex">\(A^+\)</span></strong> generalizes inversion to any matrix</li>
+<li>Provides minimum-norm least squares solutions</li>
+<li>Computed via SVD: <span class="arithmatex">\(A^+ = V\Sigma^+ U^T\)</span></li>
+</ul>
+<details class="question">
+<summary>Self-Check: Why must the error vector in least squares be orthogonal to the column space of A?</summary>
+<p>The error <span class="arithmatex">\(\mathbf{e} = \mathbf{b} - A\hat{\mathbf{x}}\)</span> must be orthogonal to <span class="arithmatex">\(\text{col}(A)\)</span> because projection gives the closest point. If <span class="arithmatex">\(\mathbf{e}\)</span> had any component in <span class="arithmatex">\(\text{col}(A)\)</span>, we could subtract that component from <span class="arithmatex">\(\mathbf{e}\)</span> to get closer to <span class="arithmatex">\(\mathbf{b}\)</span>, contradicting minimality. Mathematically, the first-order optimality condition <span class="arithmatex">\(\nabla_\mathbf{x}\|A\mathbf{x} - \mathbf{b}\|^2 = 0\)</span> yields <span class="arithmatex">\(A^T(A\mathbf{x} - \mathbf{b}) = 0\)</span>, meaning <span class="arithmatex">\(A^T\mathbf{e} = 0\)</span>—the error is orthogonal to every column of <span class="arithmatex">\(A\)</span>.</p>
+</details>
 
 
 
@@ -1102,7 +3349,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../07-matrix-decompositions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Matrix Decompositions">
+          <a href="../07-matrix-decompositions/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1112,20 +3359,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                7. Matrix Decompositions
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../09-machine-learning-foundations/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Machine Learning Foundations">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                9. Machine Learning Foundations
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1159,10 +3406,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

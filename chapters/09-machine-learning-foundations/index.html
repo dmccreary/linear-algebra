@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Connecting linear algebra to core machine learning algorithms including PCA, regression, and gradient descent">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/09-machine-learning-foundations/">
       
       
-        <link rel="prev" href="../08-vector-spaces-and-inner-products/">
+        <link rel="prev" href="../08-vector-spaces-and-inner-products/quiz/">
       
       
-        <link rel="next" href="../10-neural-networks-and-deep-learning/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>9. Machine Learning Foundations - Linear Algebra</title>
+        <title>Machine Learning Foundations - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="9. Machine Learning Foundations - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/09-machine-learning-foundations/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/09-machine-learning-foundations/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="9. Machine Learning Foundations - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/09-machine-learning-foundations/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Machine Learning Foundations - Linear Algebra" />
+<meta property="og:description" content="Connecting linear algebra to core machine learning algorithms including PCA, regression, and gradient descent" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/09-machine-learning-foundations/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/09-machine-learning-foundations/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Machine Learning Foundations - Linear Algebra" />
+<meta property="twitter:description" content="Connecting linear algebra to core machine learning algorithms including PCA, regression, and gradient descent" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/09-machine-learning-foundations/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              9. Machine Learning Foundations
+              Machine Learning Foundations
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,535 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    9. Machine Learning Foundations
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +931,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,190 +964,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Neural Networks and Deep Learning
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
+    
+  
+    11. Generative AI and LLMs
+  
+
+    
   </span>
   
+  
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -717,16 +1080,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
-    11.Generative AI and LLMs
+    
+  
+    12. Optimization and Learning Algorithms
+  
+
+    
   </span>
   
+  
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -738,37 +1137,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     13. Image Processing and Computer Vision
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -780,16 +1194,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -801,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,573 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-as-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data as Matrices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data as Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-matrix-and-data-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature Matrix and Data Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Feature Matrix and Data Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-data-matrix-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Data Matrix Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistical-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistical Foundations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statistical Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standardization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standardization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-standardize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Standardize?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#covariance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covariance Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Covariance Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#covariance-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Covariance Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correlation Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Correlation Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-covariance-and-correlation-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Covariance and Correlation Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principal-component-analysis-pca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principal Component Analysis (PCA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principal Component Analysis (PCA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-goal-of-dimensionality-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Goal of Dimensionality Reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principal-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principal Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCA Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variance-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variance Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scree-plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scree Plot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scree Plot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-pca-interactive-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: PCA Interactive Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pca-via-svd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCA via SVD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PCA via SVD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-scree-plot-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Scree Plot Interactive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Regression
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linear Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordinary-least-squares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordinary Least Squares
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordinary Least Squares">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-linear-regression-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Linear Regression Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regularization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regularization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-regularize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Regularize?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ridge-regression-l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ridge Regression (L2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lasso-regression-l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lasso Regression (L1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lasso Regression (L1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-regularization-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Regularization Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-based-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient-Based Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradient-Based Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradient-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient Vector
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradient-descent-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradient Descent Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Rate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Rate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-gradient-descent-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Gradient Descent Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variants-of-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variants of Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variants of Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-learning-rate-effect-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Learning Rate Effect Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It All Together
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It All Together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-ml-pipeline-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: ML Pipeline Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
     </span>
   </a>
   
@@ -1014,12 +2134,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    9. Machine Learning Foundations
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/09-machine-learning-foundations/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/09-machine-learning-foundations/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1064,7 +2252,925 @@
 <li><a href="../08-vector-spaces-and-inner-products/">Chapter 8: Vector Spaces and Inner Products</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Machine learning is, at its core, applied linear algebra. When you train a model, you perform matrix operations. When you reduce dimensions, you compute eigendecompositions. When you optimize, you follow gradients through high-dimensional spaces. Understanding the linear algebra behind these operations transforms you from a user of black-box algorithms into a practitioner who can debug, optimize, and innovate.</p>
+<p>This chapter bridges abstract linear algebra and practical machine learning. We start with how data becomes matrices, develop statistical tools like covariance, build up to PCA for dimensionality reduction, implement regression with regularization, and master gradient descent for optimization. Each section reinforces that machine learning "magic" is really linear algebra in action.</p>
+<h2 id="data-as-matrices">Data as Matrices</h2>
+<p>In machine learning, data is organized into matrices where each row represents an observation and each column represents a feature.</p>
+<h3 id="feature-vectors">Feature Vectors</h3>
+<p>A <strong>feature vector</strong> represents a single data point as a vector of measurements or attributes:</p>
+<p><span class="arithmatex">\(\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_d \end{bmatrix} \in \mathbb{R}^d\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(d\)</span> is the number of features (dimensionality)</li>
+<li>Each <span class="arithmatex">\(x_i\)</span> is a measurement (e.g., height, weight, pixel intensity)</li>
+</ul>
+<p>Examples of feature vectors:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Features</th>
+<th>Dimensionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Housing</td>
+<td>bedrooms, sqft, age, location</td>
+<td>4+</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>pixel intensities</td>
+<td>784 (28×28) to millions</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>word counts or embeddings</td>
+<td>100 to 768+</td>
+</tr>
+<tr>
+<td>Tabular</td>
+<td>mixed numerical/categorical</td>
+<td>varies</td>
+</tr>
+</tbody>
+</table>
+<h3 id="feature-matrix-and-data-matrix">Feature Matrix and Data Matrix</h3>
+<p>A <strong>feature matrix</strong> (also called <strong>data matrix</strong>) stacks <span class="arithmatex">\(n\)</span> feature vectors as rows:</p>
+<p><span class="arithmatex">\(X = \begin{bmatrix} — \mathbf{x}_1^T — \\ — \mathbf{x}_2^T — \\ \vdots \\ — \mathbf{x}_n^T — \end{bmatrix} = \begin{bmatrix} x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} \\ x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nd} \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(X\)</span> is <span class="arithmatex">\(n \times d\)</span> (n samples, d features)</li>
+<li>Row <span class="arithmatex">\(i\)</span> is sample <span class="arithmatex">\(\mathbf{x}_i^T\)</span></li>
+<li>Column <span class="arithmatex">\(j\)</span> contains all values of feature <span class="arithmatex">\(j\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Convention Alert</p>
+<p>Some texts use columns for samples (X is d×n). We follow the more common machine learning convention where rows are samples, matching NumPy/Pandas defaults. Always check the convention when reading papers or documentation.</p>
+</div>
+<h4 id="diagram-data-matrix-structure">Diagram: Data Matrix Structure</h4>
+<details>
+<summary>Data Matrix Structure Visualizer</summary>
+<p>Type: infographic</p>
+<p>Bloom Taxonomy Level: Understand</p>
+<p>Learning Objective: Visualize the structure of data matrices and understand the relationship between rows (samples) and columns (features)</p>
+<p>Layout: Interactive matrix representation with labeled dimensions</p>
+<p>Visual elements:
+- Main panel: Color-coded matrix grid
+- Row labels: "Sample 1", "Sample 2", ..., "Sample n"
+- Column labels: "Feature 1", "Feature 2", ..., "Feature d"
+- Highlighted single row showing feature vector
+- Highlighted single column showing all values of one feature
+- Dimension annotations: n (rows) and d (columns)</p>
+<p>Interactive elements:
+- Click a row to highlight as feature vector
+- Click a column to highlight as feature across all samples
+- Hover to see individual cell value
+- Toggle to show actual example data (iris, housing, etc.)</p>
+<p>Example datasets:
+1. Iris: 150 samples, 4 features (petal/sepal dimensions)
+2. MNIST digit: 1 sample, 784 features (pixel values)
+3. Housing: 506 samples, 13 features</p>
+<p>Visual style:
+- Heat map coloring for numerical values
+- Clean grid lines
+- Responsive sizing</p>
+<p>Implementation: HTML/CSS/JavaScript with interactive highlighting</p>
+</details>
+<h2 id="statistical-foundations">Statistical Foundations</h2>
+<p>Before applying machine learning algorithms, we must understand the statistical structure of our data.</p>
+<h3 id="standardization">Standardization</h3>
+<p><strong>Standardization</strong> transforms features to have zero mean and unit variance:</p>
+<p><span class="arithmatex">\(z_{ij} = \frac{x_{ij} - \mu_j}{\sigma_j}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mu_j = \frac{1}{n}\sum_{i=1}^n x_{ij}\)</span> is the mean of feature <span class="arithmatex">\(j\)</span></li>
+<li><span class="arithmatex">\(\sigma_j = \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_{ij} - \mu_j)^2}\)</span> is the standard deviation</li>
+</ul>
+<p>In matrix form, if <span class="arithmatex">\(\boldsymbol{\mu}\)</span> is the row vector of means:</p>
+<p><span class="arithmatex">\(Z = (X - \mathbf{1}\boldsymbol{\mu}) \text{diag}(\boldsymbol{\sigma})^{-1}\)</span></p>
+<h4 id="why-standardize">Why Standardize?</h4>
+<ul>
+<li><strong>Scale invariance:</strong> Features measured in different units become comparable</li>
+<li><strong>Numerical stability:</strong> Prevents features with large values from dominating</li>
+<li><strong>Algorithm requirements:</strong> Many algorithms (PCA, gradient descent, regularization) assume or benefit from standardized data</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Standardization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCA</td>
+<td>Required for meaningful results</td>
+</tr>
+<tr>
+<td>k-Means</td>
+<td>Recommended</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>Required (especially with RBF kernel)</td>
+</tr>
+<tr>
+<td>Neural Networks</td>
+<td>Strongly recommended</td>
+</tr>
+<tr>
+<td>Decision Trees</td>
+<td>Not necessary</td>
+</tr>
+<tr>
+<td>Linear Regression</td>
+<td>Recommended for regularization</td>
+</tr>
+</tbody>
+</table>
+<h3 id="covariance-matrix">Covariance Matrix</h3>
+<p>The <strong>covariance matrix</strong> captures how features vary together:</p>
+<p><span class="arithmatex">\(\Sigma = \frac{1}{n-1}(X - \mathbf{1}\boldsymbol{\mu})^T(X - \mathbf{1}\boldsymbol{\mu}) = \frac{1}{n-1}\tilde{X}^T\tilde{X}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\tilde{X}\)</span> is the centered data matrix (mean subtracted)</li>
+<li><span class="arithmatex">\(\Sigma\)</span> is a <span class="arithmatex">\(d \times d\)</span> symmetric positive semi-definite matrix</li>
+<li><span class="arithmatex">\(\Sigma_{jk} = \text{Cov}(X_j, X_k)\)</span></li>
+</ul>
+<h4 id="covariance-formula">Covariance Formula</h4>
+<p>The covariance between features <span class="arithmatex">\(j\)</span> and <span class="arithmatex">\(k\)</span>:</p>
+<p><span class="arithmatex">\(\text{Cov}(X_j, X_k) = \frac{1}{n-1}\sum_{i=1}^n (x_{ij} - \mu_j)(x_{ik} - \mu_k)\)</span></p>
+<p>Properties:</p>
+<ul>
+<li>Diagonal entries <span class="arithmatex">\(\Sigma_{jj} = \text{Var}(X_j)\)</span> are variances</li>
+<li>Off-diagonal entries measure linear relationships</li>
+<li><span class="arithmatex">\(\Sigma_{jk} &gt; 0\)</span>: features increase together</li>
+<li><span class="arithmatex">\(\Sigma_{jk} &lt; 0\)</span>: one increases as other decreases</li>
+<li><span class="arithmatex">\(\Sigma_{jk} = 0\)</span>: no linear relationship (not necessarily independent)</li>
+</ul>
+<h3 id="correlation-matrix">Correlation Matrix</h3>
+<p>The <strong>correlation matrix</strong> is the standardized covariance:</p>
+<p><span class="arithmatex">\(R = D^{-1}\Sigma D^{-1}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(D = \text{diag}(\sigma_1, \ldots, \sigma_d)\)</span> contains standard deviations</li>
+<li><span class="arithmatex">\(R_{jk} = \frac{\Sigma_{jk}}{\sigma_j \sigma_k} = \frac{\text{Cov}(X_j, X_k)}{\sqrt{\text{Var}(X_j)\text{Var}(X_k)}}\)</span></li>
+</ul>
+<p>Properties:</p>
+<ul>
+<li>Diagonal entries are 1 (features perfectly correlate with themselves)</li>
+<li>Off-diagonal entries satisfy <span class="arithmatex">\(-1 \leq R_{jk} \leq 1\)</span></li>
+<li><span class="arithmatex">\(R_{jk} = \pm 1\)</span>: perfect linear relationship</li>
+<li>The correlation matrix is the covariance matrix of standardized data</li>
+</ul>
+<h4 id="diagram-covariance-and-correlation-visualizer">Diagram: Covariance and Correlation Visualizer</h4>
+<details>
+<summary>Covariance and Correlation Matrix Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Understand how covariance and correlation capture relationships between features through interactive exploration</p>
+<p>Visual elements:
+- Left panel: Scatter plot matrix (pairs of features)
+- Center panel: Covariance matrix as heatmap
+- Right panel: Correlation matrix as heatmap
+- Color scale: Blue (negative) to White (zero) to Red (positive)
+- Eigenvalue display for covariance matrix</p>
+<p>Interactive controls:
+- Dataset selector (generated bivariate, iris, custom)
+- Draggable data points to modify dataset
+- "Standardize" toggle to see effect on covariance
+- Highlight cell to see corresponding scatter plot
+- Slider to add/remove correlation between features</p>
+<p>Default parameters:
+- 2D generated data with moderate positive correlation
+- 100 sample points
+- Canvas: responsive three-panel layout</p>
+<p>Behavior:
+- Real-time update of matrices as data changes
+- Show how correlation normalizes for scale
+- Highlight relationship between scatter plot shape and correlation value
+- Display eigenvalues/eigenvectors of covariance matrix
+- Demonstrate that standardized data has correlation = covariance</p>
+<p>Implementation: p5.js with matrix visualization</p>
+</details>
+<h2 id="principal-component-analysis-pca">Principal Component Analysis (PCA)</h2>
+<p><strong>Principal Component Analysis</strong> is a technique for <strong>dimensionality reduction</strong> that finds the directions of maximum variance in data.</p>
+<h3 id="the-goal-of-dimensionality-reduction">The Goal of Dimensionality Reduction</h3>
+<p>High-dimensional data presents challenges:</p>
+<ul>
+<li><strong>Visualization:</strong> Cannot plot more than 3 dimensions</li>
+<li><strong>Computation:</strong> Many algorithms scale poorly with dimensions</li>
+<li><strong>Curse of dimensionality:</strong> Data becomes sparse in high dimensions</li>
+<li><strong>Noise:</strong> Some dimensions may be noise rather than signal</li>
+</ul>
+<p><strong>Dimensionality reduction</strong> projects data from <span class="arithmatex">\(\mathbb{R}^d\)</span> to <span class="arithmatex">\(\mathbb{R}^k\)</span> where <span class="arithmatex">\(k &lt; d\)</span>, preserving as much information as possible.</p>
+<h3 id="principal-components">Principal Components</h3>
+<p><strong>Principal components</strong> are the eigenvectors of the covariance matrix, ordered by their eigenvalues:</p>
+<p><span class="arithmatex">\(\Sigma \mathbf{v}_i = \lambda_i \mathbf{v}_i\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{v}_1\)</span> is the first principal component (direction of maximum variance)</li>
+<li><span class="arithmatex">\(\mathbf{v}_2\)</span> is orthogonal to <span class="arithmatex">\(\mathbf{v}_1\)</span> and captures maximum remaining variance</li>
+<li><span class="arithmatex">\(\lambda_i\)</span> is the variance explained by the <span class="arithmatex">\(i\)</span>-th component</li>
+</ul>
+<p>The principal components form an orthonormal basis aligned with the data's natural axes of variation.</p>
+<h3 id="pca-algorithm">PCA Algorithm</h3>
+<p><strong>Step 1: Center the data</strong></p>
+<p><span class="arithmatex">\(\tilde{X} = X - \mathbf{1}\boldsymbol{\mu}\)</span></p>
+<p><strong>Step 2: Compute covariance matrix</strong></p>
+<p><span class="arithmatex">\(\Sigma = \frac{1}{n-1}\tilde{X}^T\tilde{X}\)</span></p>
+<p><strong>Step 3: Eigendecomposition</strong></p>
+<p><span class="arithmatex">\(\Sigma = V\Lambda V^T\)</span></p>
+<p>where <span class="arithmatex">\(V = [\mathbf{v}_1 | \cdots | \mathbf{v}_d]\)</span> and <span class="arithmatex">\(\Lambda = \text{diag}(\lambda_1, \ldots, \lambda_d)\)</span> with <span class="arithmatex">\(\lambda_1 \geq \cdots \geq \lambda_d\)</span>.</p>
+<p><strong>Step 4: Project onto top <span class="arithmatex">\(k\)</span> components</strong></p>
+<p><span class="arithmatex">\(Z = \tilde{X}V_k\)</span></p>
+<p>where <span class="arithmatex">\(V_k = [\mathbf{v}_1 | \cdots | \mathbf{v}_k]\)</span> contains the first <span class="arithmatex">\(k\)</span> principal components.</p>
+<h3 id="variance-explained">Variance Explained</h3>
+<p>The <strong>variance explained</strong> by each principal component is its eigenvalue:</p>
+<ul>
+<li>Total variance: <span class="arithmatex">\(\sum_{i=1}^d \lambda_i = \text{trace}(\Sigma)\)</span></li>
+<li>Proportion of variance explained by component <span class="arithmatex">\(i\)</span>: <span class="arithmatex">\(\frac{\lambda_i}{\sum_{j=1}^d \lambda_j}\)</span></li>
+<li>Cumulative variance explained by first <span class="arithmatex">\(k\)</span> components: <span class="arithmatex">\(\frac{\sum_{i=1}^k \lambda_i}{\sum_{j=1}^d \lambda_j}\)</span></li>
+</ul>
+<h3 id="scree-plot">Scree Plot</h3>
+<p>A <strong>scree plot</strong> visualizes eigenvalues to help choose the number of components:</p>
+<ul>
+<li>X-axis: Component number (1, 2, 3, ...)</li>
+<li>Y-axis: Eigenvalue (variance explained) or proportion of variance</li>
+<li>Look for an "elbow" where eigenvalues drop sharply</li>
+</ul>
+<h4 id="diagram-pca-interactive-explorer">Diagram: PCA Interactive Explorer</h4>
+<details>
+<summary>PCA Step-by-Step Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand PCA by visualizing each step from raw data to projected low-dimensional representation</p>
+<p>Visual elements:
+- Panel 1: Original 2D/3D data with mean point
+- Panel 2: Centered data (translated to origin)
+- Panel 3: Principal component vectors overlaid on data
+- Panel 4: Projected 1D data along first PC
+- Scree plot showing eigenvalues
+- Variance explained percentage display</p>
+<p>Interactive controls:
+- Data generator: cluster shape, spread, rotation
+- Number of points slider (20-200)
+- Dimension selector (2D or 3D)
+- Step-through buttons: "Center", "Find PCs", "Project"
+- Number of components to keep (k)
+- "Show Reconstruction" toggle</p>
+<p>Default parameters:
+- Elongated 2D Gaussian cluster
+- 100 points
+- Canvas: responsive multi-panel</p>
+<p>Behavior:
+- Animate centering transformation
+- Show eigenvectors with length proportional to eigenvalue
+- Demonstrate projection onto first PC
+- Show reconstruction error when reducing dimensions
+- Display scree plot updating with data changes</p>
+<p>Implementation: p5.js with eigenvalue computation</p>
+</details>
+<h3 id="pca-via-svd">PCA via SVD</h3>
+<p>In practice, PCA is computed using SVD for numerical stability:</p>
+<p><span class="arithmatex">\(\tilde{X} = U\Sigma V^T\)</span></p>
+<p>The relationship to eigendecomposition:</p>
+<ul>
+<li>Right singular vectors <span class="arithmatex">\(V\)</span> are the principal components</li>
+<li>Singular values relate to eigenvalues: <span class="arithmatex">\(\lambda_i = \frac{\sigma_i^2}{n-1}\)</span></li>
+<li>This avoids forming <span class="arithmatex">\(\tilde{X}^T\tilde{X}\)</span> explicitly</li>
+</ul>
+<h4 id="diagram-scree-plot-interactive">Diagram: Scree Plot Interactive</h4>
+<details>
+<summary>Scree Plot and Component Selection</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Evaluate</p>
+<p>Learning Objective: Use scree plots and cumulative variance to select the optimal number of principal components</p>
+<p>Visual elements:
+- Left panel: Scree plot (bar chart of eigenvalues)
+- Right panel: Cumulative variance explained (line plot)
+- Threshold line for desired variance (e.g., 95%)
+- Elbow point detection and highlight
+- Reconstruction comparison at different k values</p>
+<p>Interactive controls:
+- Dataset selector (synthetic, iris, digits subset)
+- Draggable threshold line for variance target
+- Number of components slider
+- "Show Reconstructed Data" toggle
+- "Compare Original vs Reconstructed" toggle</p>
+<p>Default parameters:
+- Synthetic dataset with clear elbow at k=3
+- 95% variance threshold line
+- Canvas: responsive dual-panel</p>
+<p>Behavior:
+- Highlight suggested k based on elbow detection
+- Show which k achieves target variance
+- Display reconstruction error as k changes
+- For image data: show visual reconstruction quality
+- Kaiser criterion line (eigenvalue = 1 for standardized data)</p>
+<p>Implementation: p5.js with statistical visualization</p>
+</details>
+<h2 id="linear-regression">Linear Regression</h2>
+<p><strong>Linear regression</strong> fits a linear model to predict a target variable from features.</p>
+<h3 id="the-model">The Model</h3>
+<p>Given features <span class="arithmatex">\(\mathbf{x} \in \mathbb{R}^d\)</span> and target <span class="arithmatex">\(y \in \mathbb{R}\)</span>:</p>
+<p><span class="arithmatex">\(y = \mathbf{w}^T\mathbf{x} + b = w_1x_1 + w_2x_2 + \cdots + w_dx_d + b\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{w} \in \mathbb{R}^d\)</span> is the weight vector</li>
+<li><span class="arithmatex">\(b \in \mathbb{R}\)</span> is the bias (intercept)</li>
+</ul>
+<h3 id="design-matrix">Design Matrix</h3>
+<p>The <strong>design matrix</strong> augments features with a column of ones to absorb the bias:</p>
+<p><span class="arithmatex">\(X = \begin{bmatrix} 1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1d} \\ 1 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2d} \\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{nd} \end{bmatrix}\)</span></p>
+<p>Now the model becomes:</p>
+<p><span class="arithmatex">\(\mathbf{y} = X\boldsymbol{\theta}\)</span></p>
+<p>where <span class="arithmatex">\(\boldsymbol{\theta} = [b, w_1, \ldots, w_d]^T\)</span> combines bias and weights.</p>
+<h3 id="ordinary-least-squares">Ordinary Least Squares</h3>
+<p>The least squares solution minimizes:</p>
+<p><span class="arithmatex">\(J(\boldsymbol{\theta}) = \|X\boldsymbol{\theta} - \mathbf{y}\|^2 = \sum_{i=1}^n (x_i^T\boldsymbol{\theta} - y_i)^2\)</span></p>
+<p>The closed-form solution (normal equations):</p>
+<p><span class="arithmatex">\(\hat{\boldsymbol{\theta}} = (X^TX)^{-1}X^T\mathbf{y}\)</span></p>
+<h4 id="diagram-linear-regression-visualizer">Diagram: Linear Regression Visualizer</h4>
+<details>
+<summary>Linear Regression Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand linear regression as finding the best-fit line/plane by minimizing squared errors</p>
+<p>Visual elements:
+- Main panel: Scatter plot of data points
+- Fitted line/plane (2D or 3D)
+- Residual lines from points to fitted line
+- Loss function surface (for 2D: 3D surface of loss vs w, b)
+- Current parameter values display</p>
+<p>Interactive controls:
+- Drag data points to modify dataset
+- Manual sliders for w and b to see effect on fit and loss
+- "Fit OLS" button to compute optimal parameters
+- Toggle residual visualization
+- Switch between 1D (line fit) and 2D (plane fit) examples</p>
+<p>Default parameters:
+- 2D scatter with linear relationship plus noise
+- 20 data points
+- Canvas: responsive</p>
+<p>Behavior:
+- Real-time residual and loss computation
+- Show that OLS solution is at minimum of loss surface
+- Display R² score for goodness of fit
+- Highlight vertical (y) residuals vs perpendicular distance
+- Show normal equations computation</p>
+<p>Implementation: p5.js with regression computation</p>
+</details>
+<h2 id="regularization">Regularization</h2>
+<p><strong>Regularization</strong> adds a penalty term to prevent overfitting by constraining model complexity.</p>
+<h3 id="why-regularize">Why Regularize?</h3>
+<p>Without regularization, models can:</p>
+<ul>
+<li>Overfit to noise in training data</li>
+<li>Have large, unstable weights</li>
+<li>Perform poorly on new data</li>
+<li>Fail when features are correlated (multicollinearity)</li>
+</ul>
+<h3 id="ridge-regression-l2">Ridge Regression (L2)</h3>
+<p><strong>Ridge regression</strong> adds an L2 penalty on weights:</p>
+<p><span class="arithmatex">\(J(\boldsymbol{\theta}) = \|X\boldsymbol{\theta} - \mathbf{y}\|^2 + \alpha\|\boldsymbol{\theta}\|^2\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\alpha \geq 0\)</span> is the regularization strength</li>
+<li><span class="arithmatex">\(\|\boldsymbol{\theta}\|^2 = \sum_j \theta_j^2\)</span> (typically excluding bias)</li>
+</ul>
+<p>The closed-form solution:</p>
+<p><span class="arithmatex">\(\hat{\boldsymbol{\theta}} = (X^TX + \alpha I)^{-1}X^T\mathbf{y}\)</span></p>
+<p>Key properties:</p>
+<ul>
+<li>Always invertible (even if <span class="arithmatex">\(X^TX\)</span> is singular)</li>
+<li>Shrinks weights toward zero</li>
+<li>Keeps all features (no feature selection)</li>
+<li>Equivalent to adding "fake" data points</li>
+</ul>
+<h3 id="lasso-regression-l1">Lasso Regression (L1)</h3>
+<p><strong>Lasso regression</strong> uses an L1 penalty:</p>
+<p><span class="arithmatex">\(J(\boldsymbol{\theta}) = \|X\boldsymbol{\theta} - \mathbf{y}\|^2 + \alpha\|\boldsymbol{\theta}\|_1\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\|\boldsymbol{\theta}\|_1 = \sum_j |\theta_j|\)</span> is the L1 norm</li>
+</ul>
+<p>Key properties:</p>
+<ul>
+<li>Produces sparse solutions (some weights exactly zero)</li>
+<li>Performs automatic feature selection</li>
+<li>No closed-form solution (requires iterative optimization)</li>
+<li>Useful when only few features are truly relevant</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Ridge (L2)</th>
+<th>Lasso (L1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Penalty</td>
+<td><span class="arithmatex">\(\sum \theta_j^2\)</span></td>
+<td>$\sum</td>
+</tr>
+<tr>
+<td>Sparsity</td>
+<td>No</td>
+<td>Yes (feature selection)</td>
+</tr>
+<tr>
+<td>Closed-form</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Multicollinearity</td>
+<td>Handles well</td>
+<td>Picks one of correlated features</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>Circular constraint</td>
+<td>Diamond constraint</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-regularization-geometry">Diagram: Regularization Geometry</h4>
+<details>
+<summary>Regularization Geometry Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Analyze</p>
+<p>Learning Objective: Understand how L1 and L2 regularization constrain weights geometrically and why L1 produces sparsity</p>
+<p>Visual elements:
+- 2D parameter space (θ₁ vs θ₂)
+- Contour lines of unregularized loss function
+- L2 constraint region (circle)
+- L1 constraint region (diamond)
+- OLS solution point
+- Regularized solution point
+- Regularization path as α varies</p>
+<p>Interactive controls:
+- Slider for regularization strength α
+- Toggle between L1 and L2
+- Drag ellipse center (changing OLS solution location)
+- "Show Regularization Path" toggle
+- Animation of solution as α increases</p>
+<p>Default parameters:
+- OLS solution at (3, 2)
+- Moderate α
+- Canvas: responsive</p>
+<p>Behavior:
+- Show how constraint region intersects loss contours
+- Demonstrate L1 hitting corners (sparse solution)
+- Animate solution moving toward origin as α increases
+- Show weight values and their evolution
+- Display sparsity count for L1</p>
+<p>Implementation: p5.js with geometric visualization</p>
+</details>
+<h2 id="gradient-based-optimization">Gradient-Based Optimization</h2>
+<p>When closed-form solutions don't exist or are too expensive, we use iterative <strong>gradient descent</strong>.</p>
+<h3 id="gradient-vector">Gradient Vector</h3>
+<p>The <strong>gradient vector</strong> of a scalar function <span class="arithmatex">\(f : \mathbb{R}^d \to \mathbb{R}\)</span> collects all partial derivatives:</p>
+<p><span class="arithmatex">\(\nabla f(\boldsymbol{\theta}) = \begin{bmatrix} \frac{\partial f}{\partial \theta_1} \\ \frac{\partial f}{\partial \theta_2} \\ \vdots \\ \frac{\partial f}{\partial \theta_d} \end{bmatrix}\)</span></p>
+<p>Key properties:</p>
+<ul>
+<li>Points in the direction of steepest increase</li>
+<li>Magnitude indicates rate of change</li>
+<li>At a minimum, <span class="arithmatex">\(\nabla f = \mathbf{0}\)</span></li>
+</ul>
+<p>For linear regression loss <span class="arithmatex">\(J(\boldsymbol{\theta}) = \|X\boldsymbol{\theta} - \mathbf{y}\|^2\)</span>:</p>
+<p><span class="arithmatex">\(\nabla J(\boldsymbol{\theta}) = 2X^T(X\boldsymbol{\theta} - \mathbf{y})\)</span></p>
+<h3 id="gradient-descent-algorithm">Gradient Descent Algorithm</h3>
+<p><strong>Gradient descent</strong> iteratively moves in the negative gradient direction:</p>
+<p><span class="arithmatex">\(\boldsymbol{\theta}^{(t+1)} = \boldsymbol{\theta}^{(t)} - \eta \nabla J(\boldsymbol{\theta}^{(t)})\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\eta &gt; 0\)</span> is the <strong>learning rate</strong> (step size)</li>
+<li><span class="arithmatex">\(t\)</span> is the iteration number</li>
+<li>We move against the gradient to decrease the function</li>
+</ul>
+<h3 id="batch-gradient-descent">Batch Gradient Descent</h3>
+<p><strong>Batch gradient descent</strong> uses all training samples to compute the gradient at each step:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Initialize θ randomly
+For t = 1, 2, ..., max_iterations:
+    gradient = (2/n) * X^T @ (X @ θ - y)  # Full batch gradient
+    θ = θ - η * gradient
+    If ||gradient|| &lt; tolerance:
+        break
+Return θ
+</code></pre></div></td></tr></table></div>
+<p>Characteristics:</p>
+<ul>
+<li>Deterministic updates (same path from same initialization)</li>
+<li>Smooth convergence</li>
+<li>Expensive per iteration for large datasets</li>
+<li>May be slow for large <span class="arithmatex">\(n\)</span></li>
+</ul>
+<h3 id="learning-rate">Learning Rate</h3>
+<p>The <strong>learning rate</strong> <span class="arithmatex">\(\eta\)</span> controls step size and critically affects convergence:</p>
+<table>
+<thead>
+<tr>
+<th>Learning Rate</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Too small</td>
+<td>Very slow convergence, may take forever</td>
+</tr>
+<tr>
+<td>Just right</td>
+<td>Smooth, efficient convergence</td>
+</tr>
+<tr>
+<td>Too large</td>
+<td>Oscillation, overshooting</td>
+</tr>
+<tr>
+<td>Way too large</td>
+<td>Divergence (loss increases)</td>
+</tr>
+</tbody>
+</table>
+<p>Choosing the learning rate:</p>
+<ul>
+<li>Start with <span class="arithmatex">\(\eta = 0.01\)</span> or <span class="arithmatex">\(0.001\)</span></li>
+<li>Use learning rate schedules (decay over time)</li>
+<li>Adaptive methods (Adam, RMSprop) adjust per-parameter</li>
+</ul>
+<h4 id="diagram-gradient-descent-visualizer">Diagram: Gradient Descent Visualizer</h4>
+<details>
+<summary>Gradient Descent Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Apply</p>
+<p>Learning Objective: Understand how gradient descent navigates the loss surface and how learning rate affects convergence</p>
+<p>Visual elements:
+- Main panel: 3D surface plot of loss function J(θ₁, θ₂)
+- Contour plot view (top-down)
+- Current position marker
+- Gradient arrow at current position
+- Path traced by optimization
+- Loss vs iteration plot</p>
+<p>Interactive controls:
+- Learning rate slider (0.001 to 1.0, log scale)
+- "Step" button for single iteration
+- "Run" button for continuous optimization
+- "Reset" button to reinitialize
+- Starting point selector (click on surface)
+- Loss function selector (quadratic, Rosenbrock, etc.)</p>
+<p>Default parameters:
+- Simple quadratic loss with single minimum
+- Learning rate = 0.1
+- Starting point away from minimum
+- Canvas: responsive multi-view</p>
+<p>Behavior:
+- Show gradient vector at each step
+- Trace optimization path on contour plot
+- Display convergence (or divergence) in loss plot
+- Demonstrate oscillation with high learning rate
+- Show slow progress with low learning rate
+- Count iterations to convergence</p>
+<p>Implementation: p5.js with 3D surface rendering (WEBGL)</p>
+</details>
+<h3 id="variants-of-gradient-descent">Variants of Gradient Descent</h3>
+<p>Beyond batch gradient descent, several variants improve efficiency:</p>
+<p><strong>Stochastic Gradient Descent (SGD):</strong></p>
+<ul>
+<li>Uses single sample per update: <span class="arithmatex">\(\nabla J_i(\boldsymbol{\theta})\)</span></li>
+<li>Fast iterations but noisy updates</li>
+<li>Can escape local minima due to noise</li>
+</ul>
+<p><strong>Mini-batch Gradient Descent:</strong></p>
+<ul>
+<li>Uses subset of samples (batch size <span class="arithmatex">\(b\)</span>): <span class="arithmatex">\(\frac{1}{b}\sum_{i \in B}\nabla J_i(\boldsymbol{\theta})\)</span></li>
+<li>Balances noise and efficiency</li>
+<li>Standard in deep learning (batch size 32-256)</li>
+</ul>
+<p><strong>Momentum:</strong></p>
+<ul>
+<li>Accumulates velocity: <span class="arithmatex">\(\mathbf{v}^{(t+1)} = \beta\mathbf{v}^{(t)} + \nabla J(\boldsymbol{\theta}^{(t)})\)</span></li>
+<li>Update: <span class="arithmatex">\(\boldsymbol{\theta}^{(t+1)} = \boldsymbol{\theta}^{(t)} - \eta\mathbf{v}^{(t+1)}\)</span></li>
+<li>Accelerates through flat regions, dampens oscillations</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Per-Iteration Cost</th>
+<th>Convergence</th>
+<th>Noise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Batch GD</td>
+<td><span class="arithmatex">\(O(nd)\)</span></td>
+<td>Smooth</td>
+<td>None</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td><span class="arithmatex">\(O(d)\)</span></td>
+<td>Noisy</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Mini-batch</td>
+<td><span class="arithmatex">\(O(bd)\)</span></td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-learning-rate-effect-visualizer">Diagram: Learning Rate Effect Visualizer</h4>
+<details>
+<summary>Learning Rate Effect on Convergence</summary>
+<p>Type: microsim</p>
+<p>Bloom Taxonomy Level: Evaluate</p>
+<p>Learning Objective: Understand how learning rate choice affects optimization behavior through side-by-side comparison</p>
+<p>Visual elements:
+- Three parallel contour plots with different learning rates
+- Path traces showing optimization trajectories
+- Loss curves for each learning rate
+- Status indicators: "Converging", "Oscillating", "Diverging"
+- Step count to convergence</p>
+<p>Interactive controls:
+- Individual learning rate sliders for each panel
+- Preset buttons: "Too Small", "Just Right", "Too Large"
+- Shared "Run All" button
+- "Reset All" button
+- Speed slider for animation</p>
+<p>Default parameters:
+- Left: η = 0.01 (too small)
+- Center: η = 0.1 (good)
+- Right: η = 0.5 (too large)
+- Same starting point for all</p>
+<p>Behavior:
+- Simultaneous animation of all three optimizations
+- Real-time loss comparison plot
+- Show oscillation in too-large case
+- Show slow progress in too-small case
+- Identify optimal learning rate region
+- Display final loss values</p>
+<p>Implementation: p5.js with synchronized animations</p>
+</details>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>Here's a complete machine learning pipeline using these concepts:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">Lasso</span>
+
+<span class="c1"># Load data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>  <span class="c1"># n×d feature matrix, n×1 target</span>
+
+<span class="c1"># Step 1: Standardize features</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># Step 2: PCA for dimensionality reduction</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>  <span class="c1"># Keep 95% variance</span>
+<span class="n">X_reduced</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reduced from </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">X_reduced</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> dimensions&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Examine variance explained</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)),</span>
+        <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scree Plot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cumulative Variance Explained&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Step 4: Ridge regression</span>
+<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_reduced</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Step 5: Lasso for feature selection (on original features)</span>
+<span class="n">lasso</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">lasso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">selected_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lasso</span><span class="o">.</span><span class="n">coef_</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lasso selected </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span><span class="si">}</span><span class="s2"> features&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 6: Manual gradient descent implementation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">gradient_descent</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">n_iterations</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="p">):</span>
+        <span class="c1"># Compute predictions</span>
+        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">theta</span>
+
+        <span class="c1"># Compute gradient</span>
+        <span class="n">gradient</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="c1"># Update parameters</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">gradient</span>
+
+        <span class="c1"># Track loss</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">theta</span><span class="p">,</span> <span class="n">losses</span>
+
+<span class="c1"># Add bias column and run gradient descent</span>
+<span class="n">X_with_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_reduced</span><span class="p">)),</span> <span class="n">X_reduced</span><span class="p">]</span>
+<span class="n">theta_gd</span><span class="p">,</span> <span class="n">losses</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">X_with_bias</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+                                     <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                                     <span class="n">n_iterations</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="diagram-ml-pipeline-workflow">Diagram: ML Pipeline Workflow</h4>
+<details>
+<summary>Machine Learning Pipeline Workflow</summary>
+<p>Type: workflow</p>
+<p>Bloom Taxonomy Level: Create</p>
+<p>Learning Objective: Understand the complete ML pipeline from raw data to trained model</p>
+<p>Visual style: Flowchart with processing stages</p>
+<p>Steps:
+1. Start: "Raw Data"
+   Hover text: "Original features, possibly different scales and units"</p>
+<ol>
+<li>Process: "Standardization"
+   Hover text: "Transform to zero mean, unit variance"</li>
+<li>Input: Raw features X</li>
+<li>
+<p>Output: Standardized Z</p>
+</li>
+<li>
+<p>Process: "PCA (optional)"
+   Hover text: "Reduce dimensionality while preserving variance"</p>
+</li>
+<li>Input: Standardized data Z</li>
+<li>Output: Reduced data (k dimensions)</li>
+<li>
+<p>Decision: Scree plot analysis</p>
+</li>
+<li>
+<p>Process: "Train/Test Split"
+   Hover text: "Hold out data for evaluation"</p>
+</li>
+<li>
+<p>Process: "Model Selection"
+   Hover text: "Choose algorithm and hyperparameters"</p>
+</li>
+<li>Branch A: OLS (no regularization)</li>
+<li>Branch B: Ridge (L2)</li>
+<li>
+<p>Branch C: Lasso (L1)</p>
+</li>
+<li>
+<p>Process: "Optimization"
+   Hover text: "Find optimal parameters"</p>
+</li>
+<li>Closed-form (Ridge) or</li>
+<li>
+<p>Gradient descent (Lasso, Neural Networks)</p>
+</li>
+<li>
+<p>Process: "Evaluation"
+   Hover text: "Assess on test set"</p>
+</li>
+<li>
+<p>Metrics: MSE, R², etc.</p>
+</li>
+<li>
+<p>End: "Trained Model"</p>
+</li>
+</ol>
+<p>Color coding:
+- Blue: Data processing
+- Green: Modeling
+- Orange: Optimization
+- Purple: Evaluation</p>
+<p>Interactive:
+- Click nodes to see code examples
+- Hover for detailed explanations</p>
+<p>Implementation: D3.js or Mermaid.js</p>
+</details>
+<h2 id="summary_1">Summary</h2>
+<p>This chapter connected linear algebra to machine learning:</p>
+<p><strong>Data Representation:</strong></p>
+<ul>
+<li><strong>Feature vectors</strong> represent samples as <span class="arithmatex">\(d\)</span>-dimensional vectors</li>
+<li><strong>Data matrices</strong> organize <span class="arithmatex">\(n\)</span> samples as rows, <span class="arithmatex">\(d\)</span> features as columns</li>
+<li>Consistent conventions are crucial for correct matrix operations</li>
+</ul>
+<p><strong>Statistical Foundations:</strong></p>
+<ul>
+<li><strong>Standardization</strong> ensures comparable scales and improves algorithm performance</li>
+<li><strong>Covariance matrices</strong> capture feature relationships: <span class="arithmatex">\(\Sigma = \frac{1}{n-1}\tilde{X}^T\tilde{X}\)</span></li>
+<li><strong>Correlation matrices</strong> are standardized covariances with values in <span class="arithmatex">\([-1, 1]\)</span></li>
+</ul>
+<p><strong>Dimensionality Reduction:</strong></p>
+<ul>
+<li><strong>PCA</strong> finds directions of maximum variance via eigendecomposition</li>
+<li><strong>Principal components</strong> are eigenvectors of the covariance matrix</li>
+<li><strong>Scree plots</strong> help choose the number of components to retain</li>
+<li>Use SVD for numerical stability in practice</li>
+</ul>
+<p><strong>Regression:</strong></p>
+<ul>
+<li><strong>Linear regression</strong> minimizes squared error: <span class="arithmatex">\(J = \|X\boldsymbol{\theta} - \mathbf{y}\|^2\)</span></li>
+<li><strong>Design matrices</strong> incorporate the bias term</li>
+<li><strong>Ridge (L2)</strong> shrinks weights, handles multicollinearity</li>
+<li><strong>Lasso (L1)</strong> produces sparse solutions for feature selection</li>
+</ul>
+<p><strong>Optimization:</strong></p>
+<ul>
+<li><strong>Gradient vectors</strong> point in the direction of steepest increase</li>
+<li><strong>Gradient descent</strong> iteratively minimizes: <span class="arithmatex">\(\boldsymbol{\theta}^{(t+1)} = \boldsymbol{\theta}^{(t)} - \eta\nabla J\)</span></li>
+<li><strong>Learning rate</strong> is critical: too small = slow, too large = diverge</li>
+<li>Batch, mini-batch, and stochastic variants trade off noise vs. efficiency</li>
+</ul>
+<details class="question">
+<summary>Self-Check: Why does PCA use the covariance matrix of centered data rather than the original data?</summary>
+<p>Centering (subtracting the mean) is essential because PCA seeks directions of maximum variance from the data's center of mass. Without centering, the first principal component would largely capture the offset from the origin rather than the true variation structure. The covariance matrix of centered data measures how features vary around their means, which is exactly what PCA needs to find the principal directions of spread.</p>
+</details>
 
 
 
@@ -1105,7 +3211,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../08-vector-spaces-and-inner-products/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8. Vector Spaces and Inner Products">
+          <a href="../08-vector-spaces-and-inner-products/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1115,20 +3221,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                8. Vector Spaces and Inner Products
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../10-neural-networks-and-deep-learning/" class="md-footer__link md-footer__link--next" aria-label="Next: 10. Neural Networks and Deep Learning">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                10. Neural Networks and Deep Learning
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1162,10 +3268,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

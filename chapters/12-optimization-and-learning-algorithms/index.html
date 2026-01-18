@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="The linear algebra foundations of optimization algorithms powering machine learning">
       
       
         <meta name="author" content="Dan McCreary">
@@ -15,25 +15,28 @@
         <link rel="canonical" href="https://dmccreary.github.io/linear-Algebra/chapters/12-optimization-and-learning-algorithms/">
       
       
-        <link rel="prev" href="../11-generative-ai-and-llms/">
+        <link rel="prev" href="../11-generative-ai-and-llms/quiz/">
       
       
-        <link rel="next" href="../13-image-processing-and-computer-vision/">
+        <link rel="next" href="quiz/">
+      
+      
+        
       
       
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>12.Optimization and Learning Algorithms - Linear Algebra</title>
+        <title>Optimization and Learning Algorithms - Linear Algebra</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -70,34 +73,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="12.Optimization and Learning Algorithms - Linear Algebra" >
-      
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/12-optimization-and-learning-algorithms/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/12-optimization-and-learning-algorithms/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="12.Optimization and Learning Algorithms - Linear Algebra" >
-      
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
-      
-        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/12-optimization-and-learning-algorithms/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Optimization and Learning Algorithms - Linear Algebra" />
+<meta property="og:description" content="The linear algebra foundations of optimization algorithms powering machine learning" />
+<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/12-optimization-and-learning-algorithms/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/12-optimization-and-learning-algorithms/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Optimization and Learning Algorithms - Linear Algebra" />
+<meta property="twitter:description" content="The linear algebra foundations of optimization algorithms powering machine learning" />
+<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/12-optimization-and-learning-algorithms/index.png" />
+</head>
   
   
     
@@ -149,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12.Optimization and Learning Algorithms
+              Optimization and Learning Algorithms
             
           </span>
         </div>
@@ -161,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -197,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -248,7 +240,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -268,9 +260,16 @@
       <a href="../.." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Home
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -288,9 +287,16 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Course Description
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -314,65 +320,36 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -385,14 +362,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Chapters
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -407,7 +390,706 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Chapters
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Vectors and Vector Spaces
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Matrices and Matrix Operations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../03-systems-of-linear-equations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Systems of Linear Equations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../04-linear-transformations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Linear Transformations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Determinants and Matrix Properties
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Eigenvalues and Eigenvectors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../07-matrix-decompositions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Matrix Decompositions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Vector Spaces and Inner Products
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../09-machine-learning-foundations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Machine Learning Foundations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Neural Networks and Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../11-generative-ai-and-llms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Generative AI and LLMs
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Optimization and Learning Algorithms
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    12. Optimization and Learning Algorithms
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -420,99 +1102,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
+      <a href="quiz/" class="md-nav__link">
         
   
-  <span class="md-ellipsis">
-    1.Vectors and Vector Spaces
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    2. Matrices and Matrix Operations
-  </span>
-  
     
   
-  
-    <span class="md-status md-status--draft"></span>
-  
-
+    Quiz
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-systems-of-linear-equations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.Systems of Linear Equations
-  </span>
-  
     
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-linear-transformations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    4. Linear Transformations
   </span>
   
-    
-  
-  
-    <span class="md-status md-status--draft"></span>
-  
-
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -522,274 +1135,111 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    5. Determinants and Matrix Properties
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    6. Eigenvalues and Eigenvectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../07-matrix-decompositions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    7. Matrix Decompositions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-vector-spaces-and-inner-products/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-machine-learning-foundations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    9. Machine Learning Foundations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    10. Neural Networks and Deep Learning
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-generative-ai-and-llms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    11.Generative AI and LLMs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
-  
-  <span class="md-ellipsis">
-    12.Optimization and Learning Algorithms
-  </span>
-  
-
-      </a>
       
         
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Image Processing and Computer Vision
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
+        
+          
+        
       
-        <li class="md-nav__item">
-  <a href="#concepts-covered" class="md-nav__link">
-    <span class="md-ellipsis">
-      Concepts Covered
-    </span>
-  </a>
-  
-</li>
+        
       
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
+    
+    
+    
+    
       
-    </ul>
-  
-</nav>
+        
+        
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
-  <span class="md-ellipsis">
-    13. Image Processing and Computer Vision
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
   
   
+    <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
+      
   
-  
-    <li class="md-nav__item">
-      <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
+    
+  
     14. 3D Geometry and Transformations
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -801,16 +1251,52 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
   
+  
+  
+    <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
+      
+  
+  
   <span class="md-ellipsis">
+    
+  
     15. Autonomous Systems and Sensor Fusion
-  </span>
   
 
-      </a>
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -846,6 +1332,13 @@
       
         
       
+        
+      
+        
+      
+        
+      
+    
     
     
     
@@ -859,12 +1352,20 @@
         
   
   
+  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     Learning Graph
+  
+
+    
   </span>
+  
   
 
       
@@ -884,6 +1385,60 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -892,33 +1447,20 @@
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
+      
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
+    
     
     
     
@@ -932,12 +1474,20 @@
         
   
   
+  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
+  
   <span class="md-ellipsis">
+    
+  
     MicroSims
+  
+
+    
   </span>
+  
   
 
       
@@ -980,7 +1530,9 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      
+        Summary
+      
     </span>
   </a>
   
@@ -989,7 +1541,9 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Concepts Covered
+      
+        Concepts Covered
+      
     </span>
   </a>
   
@@ -998,7 +1552,724 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convexity-and-convex-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convexity and Convex Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convexity and Convex Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-set-convex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes a Set Convex?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convex Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-convex-function-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Convex Function Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-order-condition-for-convexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-Order Condition for Convexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#second-order-condition-for-convexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second-Order Condition for Convexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hessian-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hessian Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Hessian Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hessian-matrix-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hessian Matrix Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigenvalue-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eigenvalue Interpretation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eigenvalue Interpretation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-hessian-and-curvature-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Hessian and Curvature Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-hessian-in-taylor-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Hessian in Taylor Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#newtons-method-for-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Newton's Method for Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Newton&#39;s Method for Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newton-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Newton Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison with Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-newton-vs-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Newton vs Gradient Descent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges-with-newtons-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenges with Newton's Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quasi-newton-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quasi-Newton Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quasi-Newton Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-secant-equation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Secant Equation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bfgs-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BFGS Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The BFGS Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bfgs-update-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BFGS Update Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-gradient-descent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stochastic Gradient Descent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stochastic Gradient Descent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sgd-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SGD Algorithm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The SGD Algorithm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sgd-update-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SGD Update Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-batch-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini-Batch SGD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mini-Batch SGD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-sgd-trajectory-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: SGD Trajectory Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#momentum-based-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum-Based Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Momentum-Based Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classical-momentum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classical Momentum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classical Momentum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#momentum-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Momentum Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesterov-accelerated-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nesterov Accelerated Gradient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nesterov Accelerated Gradient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-momentum-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Momentum Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-learning-rate-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Learning Rate Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Learning Rate Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rmsprop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMSprop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RMSprop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rmsprop-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RMSprop Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-adam-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Adam Optimizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Adam Optimizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adam-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adam Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-optimizer-comparison-arena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Optimizer Comparison Arena
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constrained-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constrained Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constrained Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Formulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lagrange-multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrange Multipliers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lagrange Multipliers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagrangian-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lagrangian Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-lagrange-multiplier-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Lagrange Multiplier Geometry
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kkt-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KKT Conditions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KKT Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kkt-conditions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KKT Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#active-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Active Constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Active Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-kkt-conditions-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: KKT Conditions Visualizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applications in Machine Learning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regularized-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regularized Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-vector-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Vector Machines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Network Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-check-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check Questions
+      
     </span>
   </a>
   
@@ -1014,12 +2285,80 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    12. Optimization and Learning Algorithms
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/12-optimization-and-learning-algorithms/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/12-optimization-and-learning-algorithms/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1056,7 +2395,825 @@
 <li><a href="../09-machine-learning-foundations/">Chapter 9: Machine Learning Foundations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>Training machine learning models fundamentally requires solving optimization problems—finding the parameters that minimize a loss function. From simple linear regression to complex deep neural networks, optimization algorithms determine both the quality and efficiency of learning. Linear algebra provides essential tools for understanding these algorithms:</p>
+<ul>
+<li><strong>Gradients</strong> indicate the direction of steepest ascent</li>
+<li><strong>Hessians</strong> capture curvature information</li>
+<li><strong>Matrix operations</strong> enable efficient computation</li>
+<li><strong>Eigenvalue analysis</strong> reveals optimization landscapes</li>
+</ul>
+<p>This chapter builds from foundational concepts like convexity through classical algorithms like Newton's method to modern adaptive optimizers used in deep learning.</p>
+<h2 id="convexity-and-convex-functions">Convexity and Convex Functions</h2>
+<p>Before diving into optimization algorithms, we need to understand the landscape we're optimizing over. <strong>Convexity</strong> is the most important property that makes optimization tractable.</p>
+<h3 id="what-makes-a-set-convex">What Makes a Set Convex?</h3>
+<p>A set <span class="arithmatex">\(S\)</span> is <strong>convex</strong> if for any two points <span class="arithmatex">\(\mathbf{x}, \mathbf{y} \in S\)</span>, the line segment connecting them lies entirely within <span class="arithmatex">\(S\)</span>:</p>
+<p><span class="arithmatex">\(\lambda \mathbf{x} + (1 - \lambda) \mathbf{y} \in S \quad \text{for all } \lambda \in [0, 1]\)</span></p>
+<p>Intuitively, a convex set has no "dents" or "holes."</p>
+<table>
+<thead>
+<tr>
+<th>Set Type</th>
+<th>Examples</th>
+<th>Convex?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ball/Sphere interior</td>
+<td><span class="arithmatex">\(\{\mathbf{x} : \|\mathbf{x}\| \leq r\}\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Hyperplane</td>
+<td><span class="arithmatex">\(\{\mathbf{x} : \mathbf{a}^\top \mathbf{x} = b\}\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Half-space</td>
+<td><span class="arithmatex">\(\{\mathbf{x} : \mathbf{a}^\top \mathbf{x} \leq b\}\)</span></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Donut/Annulus</td>
+<td><span class="arithmatex">\(\{\mathbf{x} : r_1 \leq \|\mathbf{x}\| \leq r_2\}\)</span></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="convex-functions">Convex Functions</h3>
+<p>A function <span class="arithmatex">\(f: \mathbb{R}^n \to \mathbb{R}\)</span> is <strong>convex</strong> if its domain is a convex set and for all points in its domain:</p>
+<p><span class="arithmatex">\(f(\lambda \mathbf{x} + (1-\lambda) \mathbf{y}) \leq \lambda f(\mathbf{x}) + (1-\lambda) f(\mathbf{y})\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{x}, \mathbf{y}\)</span> are any two points in the domain</li>
+<li><span class="arithmatex">\(\lambda \in [0, 1]\)</span> is a mixing coefficient</li>
+</ul>
+<p>Geometrically, the function lies below the chord connecting any two points on its graph—it "curves upward."</p>
+<h4 id="diagram-convex-function-visualizer">Diagram: Convex Function Visualizer</h4>
+<details>
+<summary>Convex Function Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand the geometric definition of convexity by visualizing the chord condition (Bloom: Understand)</p>
+<p>Visual elements:
+- 2D plot showing function curve f(x)
+- Two draggable points on the curve (x1, f(x1)) and (x2, f(x2))
+- Line segment (chord) connecting the two points
+- Shaded region between chord and curve
+- Color indicator: green if convex condition satisfied, red otherwise</p>
+<p>Interactive controls:
+- Dropdown to select function: x², |x|, x⁴, x² + sin(x), -x² (non-convex)
+- Draggable points to adjust x1 and x2 positions
+- Slider for lambda (0 to 1) to show interpolation point
+- Display showing f(λx+(1-λ)y) vs λf(x)+(1-λ)f(y)</p>
+<p>Canvas layout: 700x500px with function plot area and value comparison</p>
+<p>Behavior:
+- As user drags points, chord updates in real-time
+- Lambda slider moves a point along chord and on curve to compare heights
+- Text displays the convexity inequality with current values
+- Red highlight appears when a non-convex function violates the condition</p>
+<p>Implementation: p5.js with interactive draggable elements</p>
+</details>
+<h3 id="first-order-condition-for-convexity">First-Order Condition for Convexity</h3>
+<p>For differentiable functions, convexity has an equivalent characterization using the gradient:</p>
+<p><span class="arithmatex">\(f(\mathbf{y}) \geq f(\mathbf{x}) + \nabla f(\mathbf{x})^\top (\mathbf{y} - \mathbf{x})\)</span></p>
+<p>This says the function always lies above its tangent hyperplane—the linearization underestimates the function everywhere.</p>
+<h3 id="second-order-condition-for-convexity">Second-Order Condition for Convexity</h3>
+<p>For twice-differentiable functions, convexity is equivalent to the Hessian being positive semidefinite everywhere:</p>
+<p><span class="arithmatex">\(\nabla^2 f(\mathbf{x}) \succeq 0 \quad \text{for all } \mathbf{x}\)</span></p>
+<p>This connects convexity to the eigenvalues of the Hessian matrix.</p>
+<h2 id="the-hessian-matrix">The Hessian Matrix</h2>
+<p>The <strong>Hessian matrix</strong> captures all second-order partial derivative information of a function. For a function <span class="arithmatex">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>:</p>
+<h4 id="hessian-matrix-definition">Hessian Matrix Definition</h4>
+<p><span class="arithmatex">\(\mathbf{H} = \nabla^2 f(\mathbf{x}) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1 \partial x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_1 \partial x_n} \\ \frac{\partial^2 f}{\partial x_2 \partial x_1} &amp; \frac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} &amp; \frac{\partial^2 f}{\partial x_n \partial x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{H}\)</span> is an <span class="arithmatex">\(n \times n\)</span> symmetric matrix (if <span class="arithmatex">\(f\)</span> is twice continuously differentiable)</li>
+<li><span class="arithmatex">\(H_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}\)</span> is the <span class="arithmatex">\((i,j)\)</span> entry</li>
+<li>Diagonal entries are second derivatives with respect to single variables</li>
+<li>Off-diagonal entries capture how the gradient changes in one direction as we move in another</li>
+</ul>
+<h3 id="eigenvalue-interpretation">Eigenvalue Interpretation</h3>
+<p>The eigenvalues of the Hessian reveal the curvature of the function:</p>
+<table>
+<thead>
+<tr>
+<th>Eigenvalue Pattern</th>
+<th>Curvature Type</th>
+<th>Optimization Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All positive</td>
+<td>Bowl (minimum)</td>
+<td>Local minimum found</td>
+</tr>
+<tr>
+<td>All negative</td>
+<td>Dome (maximum)</td>
+<td>Local maximum</td>
+</tr>
+<tr>
+<td>Mixed signs</td>
+<td>Saddle point</td>
+<td>Neither min nor max</td>
+</tr>
+<tr>
+<td>Zero eigenvalue</td>
+<td>Flat direction</td>
+<td>Infinitely many solutions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-hessian-and-curvature-visualizer">Diagram: Hessian and Curvature Visualizer</h4>
+<details>
+<summary>Hessian and Curvature Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Connect Hessian eigenvalues to geometric curvature of 2D functions (Bloom: Analyze)</p>
+<p>Visual elements:
+- 3D surface plot of f(x,y)
+- Contour plot below the surface
+- Current point indicator (draggable)
+- Principal curvature directions shown as arrows at current point
+- Eigenvalue display with color coding</p>
+<p>Interactive controls:
+- Function selector: x²+y², x²-y² (saddle), x²+0.1y², 2x²+y²
+- Draggable point on contour plot to change evaluation location
+- Toggle to show/hide principal directions
+- Toggle to show local quadratic approximation</p>
+<p>Canvas layout: 800x600px with 3D plot and eigenvector overlay</p>
+<p>Behavior:
+- As point moves, Hessian is recomputed and displayed as matrix
+- Eigenvalues update with color (green=positive, red=negative)
+- Principal direction arrows scale with eigenvalue magnitude
+- Quadratic approximation surface overlays at current point</p>
+<p>Implementation: p5.js with WEBGL for 3D rendering</p>
+</details>
+<h3 id="the-hessian-in-taylor-expansion">The Hessian in Taylor Expansion</h3>
+<p>The Hessian appears in the second-order Taylor expansion:</p>
+<p><span class="arithmatex">\(f(\mathbf{x} + \mathbf{d}) \approx f(\mathbf{x}) + \nabla f(\mathbf{x})^\top \mathbf{d} + \frac{1}{2} \mathbf{d}^\top \mathbf{H} \mathbf{d}\)</span></p>
+<p>This quadratic approximation is the foundation of Newton's method.</p>
+<h2 id="newtons-method-for-optimization">Newton's Method for Optimization</h2>
+<p><strong>Newton's method</strong> uses second-order information to find where the gradient equals zero. By setting the gradient of the quadratic approximation to zero:</p>
+<h4 id="newton-update-rule">Newton Update Rule</h4>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \mathbf{H}^{-1} \nabla f(\mathbf{x}_k)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{x}_k\)</span> is the current iterate</li>
+<li><span class="arithmatex">\(\mathbf{H} = \nabla^2 f(\mathbf{x}_k)\)</span> is the Hessian at the current point</li>
+<li><span class="arithmatex">\(\nabla f(\mathbf{x}_k)\)</span> is the gradient at the current point</li>
+<li>The term <span class="arithmatex">\(\mathbf{H}^{-1} \nabla f\)</span> is called the <strong>Newton direction</strong></li>
+</ul>
+<h3 id="comparison-with-gradient-descent">Comparison with Gradient Descent</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Gradient Descent</th>
+<th>Newton's Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update direction</td>
+<td><span class="arithmatex">\(-\nabla f\)</span> (steepest descent)</td>
+<td><span class="arithmatex">\(-\mathbf{H}^{-1} \nabla f\)</span> (Newton direction)</td>
+</tr>
+<tr>
+<td>Step size</td>
+<td>Requires tuning <span class="arithmatex">\(\alpha\)</span></td>
+<td>Natural step size of 1</td>
+</tr>
+<tr>
+<td>Convergence rate</td>
+<td>Linear</td>
+<td>Quadratic (near solution)</td>
+</tr>
+<tr>
+<td>Cost per iteration</td>
+<td><span class="arithmatex">\(O(n)\)</span> gradient</td>
+<td><span class="arithmatex">\(O(n^3)\)</span> Hessian solve</td>
+</tr>
+<tr>
+<td>Condition number sensitivity</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p>Newton's method effectively rescales the problem to have uniform curvature in all directions, making it condition-number independent.</p>
+<h4 id="diagram-newton-vs-gradient-descent">Diagram: Newton vs Gradient Descent</h4>
+<details>
+<summary>Newton vs Gradient Descent Comparison</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Compare convergence behavior of gradient descent and Newton's method on ill-conditioned problems (Bloom: Analyze)</p>
+<p>Visual elements:
+- Contour plot of 2D quadratic function with adjustable condition number
+- Two optimization paths: gradient descent (blue) and Newton (orange)
+- Current iterate markers for both methods
+- Iteration counter and function value display</p>
+<p>Interactive controls:
+- Slider: Condition number (1 to 100)
+- Slider: Learning rate for gradient descent (0.001 to 0.1)
+- Button: "Step" (advance one iteration)
+- Button: "Run to Convergence"
+- Button: "Reset"
+- Starting point selector (click on contour plot)</p>
+<p>Canvas layout: 700x600px with contour plot and convergence comparison</p>
+<p>Behavior:
+- Newton's method converges in 1 step for quadratics
+- Gradient descent shows zig-zag pattern for high condition numbers
+- Display shows iteration count to reach tolerance
+- Side panel shows current gradient norm for both methods</p>
+<p>Implementation: p5.js with eigenvalue-based ellipse generation</p>
+</details>
+<h3 id="challenges-with-newtons-method">Challenges with Newton's Method</h3>
+<p>Despite quadratic convergence, Newton's method has practical limitations:</p>
+<ul>
+<li><strong>Hessian computation:</strong> <span class="arithmatex">\(O(n^2)\)</span> storage and <span class="arithmatex">\(O(n^3)\)</span> inversion</li>
+<li><strong>Non-convexity:</strong> May converge to saddle points or maxima</li>
+<li><strong>Numerical stability:</strong> Requires Hessian to be positive definite</li>
+<li><strong>Scalability:</strong> Impractical for deep learning with millions of parameters</li>
+</ul>
+<p>These limitations motivate quasi-Newton methods.</p>
+<h2 id="quasi-newton-methods">Quasi-Newton Methods</h2>
+<p><strong>Quasi-Newton methods</strong> approximate the Hessian (or its inverse) using only gradient information, avoiding explicit Hessian computation.</p>
+<h3 id="the-secant-equation">The Secant Equation</h3>
+<p>Quasi-Newton methods build approximations <span class="arithmatex">\(\mathbf{B}_k \approx \mathbf{H}_k\)</span> satisfying the <strong>secant equation</strong>:</p>
+<p><span class="arithmatex">\(\mathbf{B}_{k+1} \mathbf{s}_k = \mathbf{y}_k\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{s}_k = \mathbf{x}_{k+1} - \mathbf{x}_k\)</span> is the step taken</li>
+<li><span class="arithmatex">\(\mathbf{y}_k = \nabla f(\mathbf{x}_{k+1}) - \nabla f(\mathbf{x}_k)\)</span> is the gradient difference</li>
+<li>This equation states that <span class="arithmatex">\(\mathbf{B}_{k+1}\)</span> correctly maps the step to the gradient change</li>
+</ul>
+<h3 id="the-bfgs-algorithm">The BFGS Algorithm</h3>
+<p>The <strong>Broyden-Fletcher-Goldfarb-Shanno (BFGS)</strong> algorithm is the most successful quasi-Newton method. It directly maintains an approximation <span class="arithmatex">\(\mathbf{M}_k \approx \mathbf{H}_k^{-1}\)</span>:</p>
+<h4 id="bfgs-update-formula">BFGS Update Formula</h4>
+<p><span class="arithmatex">\(\mathbf{M}_{k+1} = \left(\mathbf{I} - \rho_k \mathbf{s}_k \mathbf{y}_k^\top\right) \mathbf{M}_k \left(\mathbf{I} - \rho_k \mathbf{y}_k \mathbf{s}_k^\top\right) + \rho_k \mathbf{s}_k \mathbf{s}_k^\top\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\rho_k = \frac{1}{\mathbf{y}_k^\top \mathbf{s}_k}\)</span></li>
+<li><span class="arithmatex">\(\mathbf{M}_k\)</span> is the current inverse Hessian approximation</li>
+<li><span class="arithmatex">\(\mathbf{s}_k\)</span> and <span class="arithmatex">\(\mathbf{y}_k\)</span> are the step and gradient difference</li>
+</ul>
+<p>Key properties of BFGS:</p>
+<ul>
+<li>Maintains positive definiteness if initialized positive definite</li>
+<li>Converges superlinearly (faster than linear, slower than quadratic)</li>
+<li>Only requires gradient evaluations, not Hessian</li>
+<li><span class="arithmatex">\(O(n^2)\)</span> storage and update cost</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Hessian Cost</th>
+<th>Storage</th>
+<th>Convergence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Newton</td>
+<td><span class="arithmatex">\(O(n^3)\)</span> exact</td>
+<td><span class="arithmatex">\(O(n^2)\)</span></td>
+<td>Quadratic</td>
+</tr>
+<tr>
+<td>BFGS</td>
+<td><span class="arithmatex">\(O(n^2)\)</span> approximate</td>
+<td><span class="arithmatex">\(O(n^2)\)</span></td>
+<td>Superlinear</td>
+</tr>
+<tr>
+<td>L-BFGS</td>
+<td><span class="arithmatex">\(O(mn)\)</span> limited memory</td>
+<td><span class="arithmatex">\(O(mn)\)</span></td>
+<td>Superlinear</td>
+</tr>
+<tr>
+<td>Gradient Descent</td>
+<td>None</td>
+<td><span class="arithmatex">\(O(n)\)</span></td>
+<td>Linear</td>
+</tr>
+</tbody>
+</table>
+<p>L-BFGS (Limited-memory BFGS) stores only the <span class="arithmatex">\(m\)</span> most recent <span class="arithmatex">\((\mathbf{s}_k, \mathbf{y}_k)\)</span> pairs, making it suitable for large-scale problems.</p>
+<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent</h2>
+<p>While Newton and quasi-Newton methods work well for moderate-sized problems, deep learning requires optimizing millions of parameters using billions of data points. <strong>Stochastic Gradient Descent (SGD)</strong> trades accuracy for efficiency.</p>
+<h3 id="the-sgd-algorithm">The SGD Algorithm</h3>
+<p>Instead of computing the full gradient over all training examples:</p>
+<p><span class="arithmatex">\(\nabla f(\mathbf{x}) = \frac{1}{N} \sum_{i=1}^{N} \nabla f_i(\mathbf{x})\)</span></p>
+<p>SGD uses a single randomly selected example:</p>
+<h4 id="sgd-update-rule">SGD Update Rule</h4>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f_{i_k}(\mathbf{x}_k)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\alpha\)</span> is the learning rate</li>
+<li><span class="arithmatex">\(i_k\)</span> is a randomly selected index from <span class="arithmatex">\(\{1, \ldots, N\}\)</span></li>
+<li><span class="arithmatex">\(\nabla f_{i_k}\)</span> is the gradient for example <span class="arithmatex">\(i_k\)</span></li>
+</ul>
+<p>The stochastic gradient is an <strong>unbiased estimator</strong> of the true gradient:</p>
+<p><span class="arithmatex">\(\mathbb{E}[\nabla f_{i_k}(\mathbf{x})] = \nabla f(\mathbf{x})\)</span></p>
+<h3 id="mini-batch-sgd">Mini-Batch SGD</h3>
+<p><strong>Mini-batch SGD</strong> balances the efficiency of single-sample SGD with the stability of full-batch gradient descent:</p>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \cdot \frac{1}{|B_k|} \sum_{i \in B_k} \nabla f_i(\mathbf{x}_k)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(B_k\)</span> is a randomly sampled mini-batch of size <span class="arithmatex">\(|B_k|\)</span> (typically 32-512)</li>
+<li>The average reduces gradient variance by factor <span class="arithmatex">\(|B_k|\)</span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Batch Size</th>
+<th>Gradient Variance</th>
+<th>GPU Utilization</th>
+<th>Generalization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (pure SGD)</td>
+<td>High</td>
+<td>Poor</td>
+<td>Often good</td>
+</tr>
+<tr>
+<td>32-64</td>
+<td>Moderate</td>
+<td>Good</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>256-512</td>
+<td>Low</td>
+<td>Excellent</td>
+<td>May need tuning</td>
+</tr>
+<tr>
+<td>Full batch</td>
+<td>Zero</td>
+<td>Memory limited</td>
+<td>May overfit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-sgd-trajectory-visualizer">Diagram: SGD Trajectory Visualizer</h4>
+<details>
+<summary>SGD Trajectory Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand how batch size affects SGD convergence behavior (Bloom: Apply)</p>
+<p>Visual elements:
+- 2D contour plot of loss landscape
+- Optimization trajectory showing recent steps
+- "True gradient" arrow and "stochastic gradient" arrow at current point
+- Noise cloud visualization around true gradient</p>
+<p>Interactive controls:
+- Slider: Batch size (1, 8, 32, 128, full)
+- Slider: Learning rate (0.001 to 0.5)
+- Button: "Step" (one update)
+- Button: "Run 100 steps"
+- Button: "Reset"
+- Toggle: Show gradient noise distribution</p>
+<p>Canvas layout: 700x600px with contour plot and gradient visualization</p>
+<p>Behavior:
+- Small batch sizes show noisy, erratic paths
+- Large batch sizes show smoother convergence
+- Display running average of gradient norm
+- Show variance estimate of stochastic gradient</p>
+<p>Implementation: p5.js with random gradient noise simulation</p>
+</details>
+<h2 id="momentum-based-optimization">Momentum-Based Optimization</h2>
+<p>Pure SGD can oscillate in ravines—directions where the curvature differs significantly. <strong>Momentum</strong> addresses this by accumulating gradient information across iterations.</p>
+<h3 id="classical-momentum">Classical Momentum</h3>
+<p>The momentum update maintains a velocity vector:</p>
+<h4 id="momentum-update">Momentum Update</h4>
+<p><span class="arithmatex">\(\mathbf{v}_{k+1} = \beta \mathbf{v}_k + \nabla f(\mathbf{x}_k)\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \mathbf{v}_{k+1}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{v}_k\)</span> is the velocity (accumulated gradient)</li>
+<li><span class="arithmatex">\(\beta \in [0, 1)\)</span> is the momentum coefficient (typically 0.9)</li>
+<li><span class="arithmatex">\(\alpha\)</span> is the learning rate</li>
+</ul>
+<p>Momentum has a physical interpretation: the parameters move like a ball rolling downhill with friction. The ball builds up speed in consistent gradient directions while damping oscillations.</p>
+<h3 id="nesterov-accelerated-gradient">Nesterov Accelerated Gradient</h3>
+<p><strong>Nesterov momentum</strong> looks ahead before computing the gradient:</p>
+<p><span class="arithmatex">\(\mathbf{v}_{k+1} = \beta \mathbf{v}_k + \nabla f(\mathbf{x}_k - \alpha \beta \mathbf{v}_k)\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \mathbf{v}_{k+1}\)</span></p>
+<p>This "lookahead" provides a correction that improves convergence, especially near the optimum.</p>
+<h4 id="diagram-momentum-dynamics">Diagram: Momentum Dynamics</h4>
+<details>
+<summary>Momentum Dynamics Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Visualize how momentum accumulates and dampens oscillations (Bloom: Understand)</p>
+<p>Visual elements:
+- 2D contour plot with elongated elliptical contours (ill-conditioned)
+- Three simultaneous optimization paths: SGD (blue), Momentum (green), Nesterov (orange)
+- Velocity vectors shown as arrows at current positions
+- Trace of recent positions for each method</p>
+<p>Interactive controls:
+- Slider: Momentum coefficient beta (0 to 0.99)
+- Slider: Learning rate (0.001 to 0.1)
+- Button: "Step"
+- Button: "Run to convergence"
+- Button: "Reset"
+- Checkbox: Show velocity vectors</p>
+<p>Canvas layout: 750x600px with contour visualization</p>
+<p>Behavior:
+- SGD shows characteristic zig-zag oscillation
+- Momentum shows smooth acceleration toward minimum
+- Nesterov shows slightly faster convergence
+- Velocity vectors grow in consistent directions, shrink during oscillation</p>
+<p>Implementation: p5.js with physics-based animation</p>
+</details>
+<h2 id="adaptive-learning-rate-methods">Adaptive Learning Rate Methods</h2>
+<p>Different parameters often require different learning rates. <strong>Adaptive methods</strong> automatically adjust per-parameter learning rates based on historical gradient information.</p>
+<h3 id="rmsprop">RMSprop</h3>
+<p><strong>RMSprop</strong> (Root Mean Square Propagation) maintains a running average of squared gradients:</p>
+<h4 id="rmsprop-update">RMSprop Update</h4>
+<p><span class="arithmatex">\(\mathbf{s}_{k+1} = \gamma \mathbf{s}_k + (1 - \gamma) \nabla f(\mathbf{x}_k)^2\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \frac{\alpha}{\sqrt{\mathbf{s}_{k+1} + \epsilon}} \odot \nabla f(\mathbf{x}_k)\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{s}_k\)</span> is the running average of squared gradients (element-wise)</li>
+<li><span class="arithmatex">\(\gamma \approx 0.9\)</span> is the decay rate</li>
+<li><span class="arithmatex">\(\epsilon \approx 10^{-8}\)</span> prevents division by zero</li>
+<li><span class="arithmatex">\(\odot\)</span> denotes element-wise multiplication</li>
+<li>The division is element-wise</li>
+</ul>
+<p>RMSprop divides the learning rate by the root mean square of recent gradients, effectively:</p>
+<ul>
+<li>Reducing step size for parameters with large gradients</li>
+<li>Increasing step size for parameters with small gradients</li>
+</ul>
+<h3 id="the-adam-optimizer">The Adam Optimizer</h3>
+<p><strong>Adam</strong> (Adaptive Moment Estimation) combines momentum with RMSprop:</p>
+<h4 id="adam-update">Adam Update</h4>
+<p><span class="arithmatex">\(\mathbf{m}_{k+1} = \beta_1 \mathbf{m}_k + (1 - \beta_1) \nabla f(\mathbf{x}_k)\)</span></p>
+<p><span class="arithmatex">\(\mathbf{v}_{k+1} = \beta_2 \mathbf{v}_k + (1 - \beta_2) \nabla f(\mathbf{x}_k)^2\)</span></p>
+<p><span class="arithmatex">\(\hat{\mathbf{m}} = \frac{\mathbf{m}_{k+1}}{1 - \beta_1^{k+1}}, \quad \hat{\mathbf{v}} = \frac{\mathbf{v}_{k+1}}{1 - \beta_2^{k+1}}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{x}_{k+1} = \mathbf{x}_k - \frac{\alpha}{\sqrt{\hat{\mathbf{v}}} + \epsilon} \odot \hat{\mathbf{m}}\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{m}_k\)</span> is the first moment (mean) estimate</li>
+<li><span class="arithmatex">\(\mathbf{v}_k\)</span> is the second moment (variance) estimate</li>
+<li><span class="arithmatex">\(\beta_1 \approx 0.9\)</span> is the first moment decay</li>
+<li><span class="arithmatex">\(\beta_2 \approx 0.999\)</span> is the second moment decay</li>
+<li><span class="arithmatex">\(\hat{\mathbf{m}}, \hat{\mathbf{v}}\)</span> are bias-corrected estimates</li>
+</ul>
+<p>The bias correction compensates for initialization at zero, which otherwise underestimates moments early in training.</p>
+<table>
+<thead>
+<tr>
+<th>Optimizer</th>
+<th>First Moment</th>
+<th>Second Moment</th>
+<th>Bias Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGD</td>
+<td>No</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Momentum</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>RMSprop</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Adam</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>AdaGrad</td>
+<td>No</td>
+<td>Yes (cumulative)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-optimizer-comparison-arena">Diagram: Optimizer Comparison Arena</h4>
+<details>
+<summary>Optimizer Comparison Arena</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Compare convergence behavior of different optimizers on various loss landscapes (Bloom: Evaluate)</p>
+<p>Visual elements:
+- 2D loss landscape (selectable)
+- Multiple optimization paths: SGD, Momentum, RMSprop, Adam
+- Color-coded trajectories with position markers
+- Loss vs iteration plot below main visualization</p>
+<p>Interactive controls:
+- Dropdown: Loss landscape (Quadratic, Rosenbrock, Beale, Saddle)
+- Sliders for each optimizer's hyperparameters
+- Button: "Race!" (run all optimizers simultaneously)
+- Button: "Reset"
+- Checkboxes to enable/disable each optimizer</p>
+<p>Canvas layout: 800x700px with landscape and convergence plot</p>
+<p>Behavior:
+- All optimizers start from same initial point
+- Animate simultaneous optimization
+- Display current loss value for each
+- Declare "winner" when first reaches tolerance
+- Show iteration count for each optimizer</p>
+<p>Implementation: p5.js with multiple optimizer state tracking</p>
+</details>
+<h3 id="python-implementation">Python Implementation</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Adam</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">beta1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">beta2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beta1</span> <span class="o">=</span> <span class="n">beta1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beta2</span> <span class="o">=</span> <span class="n">beta2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># First moment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Second moment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># Time step</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">grads</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Update biased first and second moment estimates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta1</span><span class="p">)</span> <span class="o">*</span> <span class="n">grads</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta2</span><span class="p">)</span> <span class="o">*</span> <span class="n">grads</span><span class="o">**</span><span class="mi">2</span>
+
+        <span class="c1"># Bias correction</span>
+        <span class="n">m_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">m</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta1</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">v_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta2</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+
+        <span class="c1"># Update parameters</span>
+        <span class="n">params</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="n">m_hat</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v_hat</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">params</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="constrained-optimization">Constrained Optimization</h2>
+<p>Many optimization problems have constraints—parameter bounds, equality requirements, or inequality restrictions. <strong>Constrained optimization</strong> finds optima while satisfying these constraints.</p>
+<h3 id="problem-formulation">Problem Formulation</h3>
+<p>A general constrained optimization problem:</p>
+<p><span class="arithmatex">\(\min_{\mathbf{x}} f(\mathbf{x})\)</span></p>
+<p>subject to:</p>
+<ul>
+<li><span class="arithmatex">\(g_i(\mathbf{x}) \leq 0\)</span> for <span class="arithmatex">\(i = 1, \ldots, m\)</span> (inequality constraints)</li>
+<li><span class="arithmatex">\(h_j(\mathbf{x}) = 0\)</span> for <span class="arithmatex">\(j = 1, \ldots, p\)</span> (equality constraints)</li>
+</ul>
+<h3 id="lagrange-multipliers">Lagrange Multipliers</h3>
+<p>For equality-constrained problems, <strong>Lagrange multipliers</strong> convert the constrained problem to an unconstrained one.</p>
+<p>Consider minimizing <span class="arithmatex">\(f(\mathbf{x})\)</span> subject to <span class="arithmatex">\(h(\mathbf{x}) = 0\)</span>. We form the <strong>Lagrangian</strong>:</p>
+<h4 id="lagrangian-function">Lagrangian Function</h4>
+<p><span class="arithmatex">\(\mathcal{L}(\mathbf{x}, \lambda) = f(\mathbf{x}) + \lambda h(\mathbf{x})\)</span></p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\lambda\)</span> is the Lagrange multiplier</li>
+<li>The optimal <span class="arithmatex">\((\mathbf{x}^*, \lambda^*)\)</span> satisfies <span class="arithmatex">\(\nabla_{\mathbf{x}} \mathcal{L} = 0\)</span> and <span class="arithmatex">\(\nabla_\lambda \mathcal{L} = 0\)</span></li>
+</ul>
+<p>The condition <span class="arithmatex">\(\nabla_{\mathbf{x}} \mathcal{L} = 0\)</span> gives:</p>
+<p><span class="arithmatex">\(\nabla f(\mathbf{x}^*) = -\lambda \nabla h(\mathbf{x}^*)\)</span></p>
+<p>At the optimum, the gradient of <span class="arithmatex">\(f\)</span> is parallel to the constraint gradient—we can't improve <span class="arithmatex">\(f\)</span> while staying on the constraint surface.</p>
+<h4 id="diagram-lagrange-multiplier-geometry">Diagram: Lagrange Multiplier Geometry</h4>
+<details>
+<summary>Lagrange Multiplier Geometry</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Visualize the geometric interpretation of Lagrange multipliers (Bloom: Understand)</p>
+<p>Visual elements:
+- 2D contour plot of objective function f(x,y)
+- Constraint curve h(x,y) = 0 (bold line)
+- Gradient vectors: ∇f at selected point (blue arrow)
+- Constraint normal: ∇h at selected point (red arrow)
+- Highlighted optimal point where gradients are parallel</p>
+<p>Interactive controls:
+- Draggable point along constraint curve
+- Toggle: Show gradient field of f
+- Toggle: Show constraint normal field
+- Button: "Find Optimum" (animate to solution)
+- Display: Current f value, λ value</p>
+<p>Canvas layout: 700x600px with contour and vector field</p>
+<p>Behavior:
+- As user drags point along constraint, show gradient angles
+- Highlight when ∇f and ∇h become parallel
+- Display computed λ = -||∇f||/||∇h|| at parallel point
+- Animate optimization path along constraint</p>
+<p>Implementation: p5.js with gradient computation</p>
+</details>
+<h3 id="kkt-conditions">KKT Conditions</h3>
+<p>The <strong>Karush-Kuhn-Tucker (KKT) conditions</strong> generalize Lagrange multipliers to include inequality constraints. For the problem with both equality and inequality constraints, the KKT conditions are:</p>
+<h4 id="kkt-conditions_1">KKT Conditions</h4>
+<ol>
+<li>
+<p><strong>Stationarity:</strong> <span class="arithmatex">\(\nabla f(\mathbf{x}^*) + \sum_{i=1}^{m} \mu_i \nabla g_i(\mathbf{x}^*) + \sum_{j=1}^{p} \lambda_j \nabla h_j(\mathbf{x}^*) = 0\)</span></p>
+</li>
+<li>
+<p><strong>Primal feasibility:</strong> <span class="arithmatex">\(g_i(\mathbf{x}^*) \leq 0\)</span> and <span class="arithmatex">\(h_j(\mathbf{x}^*) = 0\)</span></p>
+</li>
+<li>
+<p><strong>Dual feasibility:</strong> <span class="arithmatex">\(\mu_i \geq 0\)</span> for all <span class="arithmatex">\(i\)</span></p>
+</li>
+<li>
+<p><strong>Complementary slackness:</strong> <span class="arithmatex">\(\mu_i g_i(\mathbf{x}^*) = 0\)</span> for all <span class="arithmatex">\(i\)</span></p>
+</li>
+</ol>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mu_i\)</span> are multipliers for inequality constraints</li>
+<li><span class="arithmatex">\(\lambda_j\)</span> are multipliers for equality constraints</li>
+<li>Complementary slackness means either <span class="arithmatex">\(\mu_i = 0\)</span> or <span class="arithmatex">\(g_i(\mathbf{x}^*) = 0\)</span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stationarity</td>
+<td>Gradient balance at optimum</td>
+</tr>
+<tr>
+<td>Primal feasibility</td>
+<td>Solution satisfies constraints</td>
+</tr>
+<tr>
+<td>Dual feasibility</td>
+<td>Inequality multipliers are non-negative</td>
+</tr>
+<tr>
+<td>Complementary slackness</td>
+<td>Inactive constraints have zero multipliers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="active-constraints">Active Constraints</h3>
+<p>The <strong>complementary slackness</strong> condition is particularly important:</p>
+<ul>
+<li>If <span class="arithmatex">\(g_i(\mathbf{x}^*) &lt; 0\)</span>, the constraint is <strong>inactive</strong> and <span class="arithmatex">\(\mu_i = 0\)</span></li>
+<li>If <span class="arithmatex">\(g_i(\mathbf{x}^*) = 0\)</span>, the constraint is <strong>active</strong> and may have <span class="arithmatex">\(\mu_i &gt; 0\)</span></li>
+</ul>
+<p>Inactive constraints don't affect the solution—they're not "binding."</p>
+<h4 id="diagram-kkt-conditions-visualizer">Diagram: KKT Conditions Visualizer</h4>
+<details>
+<summary>KKT Conditions Visualizer</summary>
+<p>Type: microsim</p>
+<p>Learning objective: Understand KKT conditions for inequality-constrained optimization (Bloom: Analyze)</p>
+<p>Visual elements:
+- 2D contour plot of objective function
+- Feasible region shaded (where all g_i ≤ 0)
+- Constraint boundaries with active/inactive coloring
+- Optimal point with gradient vectors
+- KKT condition checklist with live status</p>
+<p>Interactive controls:
+- Draggable objective function center
+- Toggle constraints on/off
+- Button: "Solve" (find KKT point)
+- Display: Multiplier values μ_i for each constraint</p>
+<p>Canvas layout: 800x650px with visualization and KKT status panel</p>
+<p>Behavior:
+- Show feasible region as intersection of half-planes
+- Animate solution finding
+- Display which constraints are active at solution
+- Show complementary slackness: μ_i = 0 for inactive constraints
+- Color-code constraints: green (inactive), orange (active)</p>
+<p>Implementation: p5.js with linear programming solver</p>
+</details>
+<h2 id="applications-in-machine-learning">Applications in Machine Learning</h2>
+<h3 id="regularized-optimization">Regularized Optimization</h3>
+<p>Many machine learning problems add regularization terms that can be viewed through the lens of constrained optimization:</p>
+<table>
+<thead>
+<tr>
+<th>Formulation</th>
+<th>Constraint View</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\min f(\mathbf{x}) + \lambda\|\mathbf{x}\|_2^2\)</span></td>
+<td><span class="arithmatex">\(\|\mathbf{x}\|_2 \leq r\)</span></td>
+<td>L2 regularization (weight decay)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\min f(\mathbf{x}) + \lambda\|\mathbf{x}\|_1\)</span></td>
+<td><span class="arithmatex">\(\|\mathbf{x}\|_1 \leq r\)</span></td>
+<td>L1 regularization (sparsity)</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\min f(\mathbf{x})\)</span> s.t. <span class="arithmatex">\(\|\mathbf{x}\|_2 = 1\)</span></td>
+<td>Unit sphere</td>
+<td>Normalized embeddings</td>
+</tr>
+</tbody>
+</table>
+<h3 id="support-vector-machines">Support Vector Machines</h3>
+<p>SVMs solve a constrained quadratic program:</p>
+<p><span class="arithmatex">\(\min_{\mathbf{w}, b} \frac{1}{2}\|\mathbf{w}\|^2\)</span></p>
+<p>subject to <span class="arithmatex">\(y_i(\mathbf{w}^\top \mathbf{x}_i + b) \geq 1\)</span> for all training examples.</p>
+<p>The KKT conditions reveal which training examples are <strong>support vectors</strong> (those with active constraints).</p>
+<h3 id="neural-network-constraints">Neural Network Constraints</h3>
+<p>Modern deep learning increasingly uses constrained optimization:</p>
+<ul>
+<li><strong>Spectral normalization:</strong> Constrain weight matrix spectral norm</li>
+<li><strong>Gradient clipping:</strong> Constrain gradient magnitude</li>
+<li><strong>Projected gradient descent:</strong> Project onto feasible set after each step</li>
+</ul>
+<h2 id="summary_1">Summary</h2>
+<p>Optimization algorithms form the computational backbone of machine learning. This chapter covered:</p>
+<p><strong>Foundational Concepts:</strong></p>
+<ul>
+<li>Convexity guarantees global optima are local optima</li>
+<li>The Hessian matrix captures curvature and determines convergence behavior</li>
+<li>Positive definite Hessians indicate convexity</li>
+</ul>
+<p><strong>Classical Methods:</strong></p>
+<ul>
+<li>Newton's method uses the Hessian for quadratic convergence</li>
+<li>Quasi-Newton methods (BFGS) approximate the Hessian efficiently</li>
+<li>L-BFGS scales to large problems with limited memory</li>
+</ul>
+<p><strong>Stochastic Methods:</strong></p>
+<ul>
+<li>SGD enables optimization with large datasets</li>
+<li>Mini-batches balance variance reduction with efficiency</li>
+<li>Momentum accelerates convergence and dampens oscillations</li>
+</ul>
+<p><strong>Adaptive Methods:</strong></p>
+<ul>
+<li>RMSprop adapts learning rates using gradient magnitudes</li>
+<li>Adam combines momentum with adaptive rates</li>
+<li>Bias correction handles initialization effects</li>
+</ul>
+<p><strong>Constrained Optimization:</strong></p>
+<ul>
+<li>Lagrange multipliers handle equality constraints</li>
+<li>KKT conditions extend to inequality constraints</li>
+<li>Complementary slackness identifies active constraints</li>
+</ul>
+<h2 id="self-check-questions">Self-Check Questions</h2>
+<details class="question">
+<summary>Why does Newton's method converge faster than gradient descent?</summary>
+<p>Newton's method uses second-order (curvature) information from the Hessian to account for the shape of the objective function. While gradient descent takes steps proportional to the gradient magnitude, Newton's method takes steps that account for how quickly the gradient changes. In the quadratic approximation, Newton's method jumps directly to the minimum. For well-behaved functions near a minimum, this gives quadratic convergence: the number of correct digits roughly doubles each iteration.</p>
+</details>
+<details class="question">
+<summary>What is the purpose of bias correction in Adam?</summary>
+<p>The first and second moment estimates in Adam are initialized to zero. In early iterations, these running averages are biased toward zero because they haven't accumulated enough gradient history. Bias correction divides by <span class="arithmatex">\((1 - \beta^t)\)</span> to compensate, essentially scaling up the estimates early in training. As <span class="arithmatex">\(t \to \infty\)</span>, the correction factor approaches 1 and has no effect.</p>
+</details>
+<details class="question">
+<summary>Explain the geometric meaning of the KKT complementary slackness condition.</summary>
+<p>Complementary slackness states that <span class="arithmatex">\(\mu_i g_i(\mathbf{x}^*) = 0\)</span> for each inequality constraint. This means either the constraint is inactive (<span class="arithmatex">\(g_i &lt; 0\)</span>) and its multiplier is zero (<span class="arithmatex">\(\mu_i = 0\)</span>), or the constraint is active (<span class="arithmatex">\(g_i = 0\)</span>) and the multiplier may be positive. Geometrically, only constraints that the solution "touches" can exert force on the solution. Constraints that are strictly satisfied (with slack) don't affect where the optimum lies.</p>
+</details>
+<details class="question">
+<summary>Why is mini-batch SGD preferred over pure SGD in practice?</summary>
+<p>Pure SGD (batch size 1) has high variance in gradient estimates, leading to noisy optimization paths. While this noise can help escape local minima, it also slows convergence and makes training unstable. Mini-batches reduce variance by averaging over multiple examples while still being much faster than full-batch gradient descent. Additionally, mini-batches enable efficient GPU parallelization—processing 32 examples takes nearly the same time as 1 on modern hardware.</p>
+</details>
 
 
 
@@ -1097,7 +3254,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../11-generative-ai-and-llms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11.Generative AI and LLMs">
+          <a href="../11-generative-ai-and-llms/quiz/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quiz">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1107,20 +3264,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                11.Generative AI and LLMs
+                Quiz
               </div>
             </div>
           </a>
         
         
           
-          <a href="../13-image-processing-and-computer-vision/" class="md-footer__link md-footer__link--next" aria-label="Next: 13. Image Processing and Computer Vision">
+          <a href="quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                13. Image Processing and Computer Vision
+                Quiz
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1154,10 +3311,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       
