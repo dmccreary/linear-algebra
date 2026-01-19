@@ -43,6 +43,48 @@ sim-name/
 
 MicroSims use p5.js with WEBGL for 3D rendering. They are embedded via iframe in chapter content.
 
+### MicroSim Portability Goal
+
+**Important:** All MicroSims should be designed so teachers can copy the JavaScript file directly into the [p5.js editor](https://editor.p5js.org/) and run it without any changes to HTML or CSS. This allows easy editing, experimentation, and customization by educators.
+
+The standard HTML wrapper (`main.html`) and CSS are minimal and should not contain sim-specific logic:
+
+```css
+/* Standard CSS - do not add sim-specific styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+}
+```
+
+All simulation logic, styling, and layout should be handled within the JavaScript file itself.
+
+The p5.js editor uses this standard `index.html` (we name ours `main.html`):
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+```
+
+**Differences from p5.js editor defaults:**
+- We use `main.html` instead of `index.html`
+- We use the MicroSim name for the JS file (e.g., `vector-2d-3d-visualizer.js`) instead of `sketch.js`
+- We do not include the p5.sound library by default (the editor includes `p5.sound.min.js`)
+
 ### Chapter Content Format
 
 Chapters use YAML frontmatter with generation metadata:
