@@ -15,6 +15,8 @@ social:
 
 [Run the Vector Space Axiom Explorer Fullscreen](./main.html){ .md-button .md-button--primary }
 
+[Edit the Vector Space Axiom Explorer Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/hH-uUSTOa)
+
 ## About This Infographic
 
 This interactive infographic helps students learn and remember the ten vector space axioms. The axioms are organized into two groups: five for vector addition and five for scalar multiplication. Click on each axiom card to see its definition and a concrete example.
