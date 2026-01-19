@@ -65,6 +65,15 @@ nav:
     - Linear Combination Explorer: sims/linear-combination-explorer/index.md
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
+    - Row and Column Vectors: sims/row-column-vectors/index.md
+    - Matrix Addition and Scalar Multiplication: sims/matrix-basic-ops/index.md
+    - Matrix Multiplication: sims/matrix-multiplication/index.md
+    - Special Matrix Types: sims/special-matrices/index.md
+    - Orthogonal Matrix Transformation: sims/orthogonal-transform/index.md
+    - Matrix Inverse Explorer: sims/matrix-inverse/index.md
+    - Sparse vs Dense Matrices: sims/sparse-dense-matrices/index.md
+    - Block Matrix Partitioning: sims/block-matrix/index.md
+    - Neural Network Layer: sims/neural-network-layer/index.md
 
   - Learning Graph:
     - Introduction: learning-graph/index.md

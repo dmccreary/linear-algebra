@@ -1,0 +1,53 @@
+{
+  "title": "Matrix Inverse Explorer",
+  "description": "Interactive exploration of 2×2 matrix inversion with real-time computation, verification that AA⁻¹ = I, and visualization of singular matrices.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Matrix Inverse"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Matrix Inverse",
+    "learningObjectives": [
+      "Apply the 2×2 inverse formula to compute A⁻¹",
+      "Verify that AA⁻¹ = I for invertible matrices",
+      "Identify singular matrices by their zero determinant",
+      "Explain why singular matrices have no inverse"
+    ],
+    "bloomsLevel": "Apply",
+    "bloomsVerb": ["calculate", "demonstrate", "verify"],
+    "duration": "5-7 minutes",
+    "prerequisites": ["Matrix multiplication", "Determinant concept"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 450",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "button",
+      "label": "Randomize",
+      "description": "Generate a new random invertible matrix"
+    },
+    {
+      "type": "button",
+      "label": "Make Singular",
+      "description": "Transform matrix to be singular (det = 0)"
+    },
+    {
+      "type": "slider",
+      "label": "Approach Singularity",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1,
+      "description": "Smoothly vary matrix toward singular state"
+    }
+  ]
+}

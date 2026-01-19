@@ -1,0 +1,52 @@
+{
+  "title": "Block Matrix Partitioning",
+  "description": "Interactive visualization of matrix partitioning into blocks with draggable partition lines showing how large matrices can be decomposed into submatrices.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Block Matrices"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Block Matrices",
+    "learningObjectives": [
+      "Partition a matrix into blocks of specified dimensions",
+      "Write block matrix notation for a given partition",
+      "Identify valid block decompositions for matrix operations",
+      "Explain how block structure enables efficient computation"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["explain", "classify", "identify"],
+    "duration": "5 minutes",
+    "prerequisites": ["Basic matrix structure and notation"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 450",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Partition",
+      "options": ["2×2 Blocks", "Row Partition", "Column Partition", "Asymmetric"],
+      "default": "2×2 Blocks",
+      "description": "Preset partitioning patterns"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Dimensions",
+      "default": true,
+      "description": "Display dimensions of each block"
+    },
+    {
+      "type": "draggable",
+      "label": "Partition Lines",
+      "description": "Drag red (horizontal) and blue (vertical) handles to resize blocks"
+    }
+  ]
+}

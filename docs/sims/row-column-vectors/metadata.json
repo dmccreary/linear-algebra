@@ -1,0 +1,53 @@
+{
+  "title": "Row and Column Vectors",
+  "description": "Interactive visualization comparing row vectors (horizontal, 1×n) and column vectors (vertical, m×1) to help students understand how orientation affects matrix operations.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Vectors"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Vectors and Matrices",
+    "learningObjectives": [
+      "Visually distinguish between row vectors and column vectors",
+      "Correctly identify dimensions of row vectors (1×n) and column vectors (m×1)",
+      "Understand that vector orientation affects matrix multiplication compatibility"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["compare", "contrast", "identify"],
+    "duration": "5-10 minutes",
+    "prerequisites": ["Basic understanding of vectors", "Familiarity with ordered lists of numbers"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 480",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Elements",
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "description": "Number of elements in both vectors"
+    },
+    {
+      "type": "button",
+      "label": "Randomize",
+      "description": "Generate new random values for both vectors"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Dimensions",
+      "default": true,
+      "description": "Toggle display of dimension annotations (1×n and m×1)"
+    }
+  ]
+}

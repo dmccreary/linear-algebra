@@ -1,0 +1,48 @@
+{
+  "title": "Special Matrix Types Gallery",
+  "description": "Visual gallery of special matrix types including identity, diagonal, upper triangular, and lower triangular matrices with interactive size control.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Special Matrices"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Special Matrix Types",
+    "learningObjectives": [
+      "Identify the visual pattern of identity, diagonal, upper triangular, and lower triangular matrices",
+      "State the defining property of each special matrix type",
+      "Recognize these patterns in computational contexts"
+    ],
+    "bloomsLevel": "Remember",
+    "bloomsVerb": ["identify", "recognize", "recall"],
+    "duration": "3-5 minutes",
+    "prerequisites": ["Basic understanding of matrix structure"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 450",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Size",
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "description": "Matrix dimension (n×n)"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Zeros",
+      "default": true,
+      "description": "Toggle visibility of zero entries"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Neural Network Layer",
+  "description": "Interactive visualization of a neural network layer showing how matrix-vector multiplication implements the forward pass with various activation functions.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Neural Networks", "Deep Learning"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics / Computer Science",
+    "topic": "Linear Algebra - Neural Network Applications",
+    "learningObjectives": [
+      "Explain how a neural network layer implements matrix-vector multiplication",
+      "Describe the role of weights, biases, and activation functions",
+      "Calculate the output of a simple layer by hand",
+      "Connect linear algebra concepts to deep learning"
+    ],
+    "bloomsLevel": "Apply",
+    "bloomsVerb": ["implement", "demonstrate", "calculate"],
+    "duration": "7-10 minutes",
+    "prerequisites": ["Matrix-vector multiplication", "Basic function concepts"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 500",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Inputs",
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "description": "Number of input neurons"
+    },
+    {
+      "type": "slider",
+      "label": "Outputs",
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "description": "Number of output neurons"
+    },
+    {
+      "type": "select",
+      "label": "Activation",
+      "options": ["None", "ReLU", "Sigmoid", "Tanh"],
+      "default": "ReLU",
+      "description": "Activation function applied to outputs"
+    },
+    {
+      "type": "button",
+      "label": "Random W",
+      "description": "Randomize weight matrix"
+    },
+    {
+      "type": "button",
+      "label": "Random X",
+      "description": "Randomize input vector"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Bias",
+      "default": true,
+      "description": "Include bias term in computation"
+    }
+  ]
+}

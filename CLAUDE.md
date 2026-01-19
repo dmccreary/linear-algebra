@@ -36,10 +36,13 @@ Each MicroSim in `docs/sims/` follows this pattern:
 ```
 sim-name/
 ├── index.md          # Documentation with iframe embed
-├── main.html         # Standalone HTML wrapper
-├── sim-name.js       # p5.js simulation code
+├── main.html         # Standalone HTML wrapper (links to external CSS/JS)
+├── sim-name.js       # JavaScript simulation code
+├── sim-name.css      # Styles (if needed beyond standard CSS)
 └── metadata.json     # Educational metadata (Bloom's level, prerequisites)
 ```
+
+**Important:** CSS and JavaScript must be in separate files, NOT inline in `main.html`. The HTML file should only contain the document structure and link to external stylesheets and scripts. This keeps code maintainable and allows teachers to easily copy and modify individual files.
 
 MicroSims use p5.js with WEBGL for 3D rendering. They are embedded via iframe in chapter content.
 

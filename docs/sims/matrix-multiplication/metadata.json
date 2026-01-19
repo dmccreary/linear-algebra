@@ -1,0 +1,71 @@
+{
+  "title": "Matrix Multiplication Visualizer",
+  "description": "Step-by-step visualization of matrix multiplication showing row-by-column dot product calculations with animation and highlighting.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Matrix Multiplication"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Matrix Multiplication",
+    "learningObjectives": [
+      "Explain the row-by-column dot product process for computing each entry",
+      "Determine the dimensions of the result matrix given input dimensions",
+      "Identify when two matrices can be multiplied",
+      "Calculate individual entries of a matrix product"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["explain", "interpret", "demonstrate"],
+    "duration": "7-10 minutes",
+    "prerequisites": ["Matrix notation and dimensions", "Dot product concept"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 500",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Matrix A Dimensions",
+      "options": ["2×2", "2×3", "3×2", "3×3"],
+      "default": "2×3",
+      "description": "Set the dimensions of matrix A"
+    },
+    {
+      "type": "select",
+      "label": "Matrix B Dimensions",
+      "options": ["dynamic based on A"],
+      "description": "Set the dimensions of matrix B (rows must match columns of A)"
+    },
+    {
+      "type": "button",
+      "label": "Next",
+      "description": "Advance to the next step of the calculation"
+    },
+    {
+      "type": "button",
+      "label": "Auto",
+      "description": "Toggle auto-play mode to animate all calculations"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "description": "Reset the animation to the beginning with new random values"
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 200,
+      "max": 2000,
+      "default": 800,
+      "step": 100,
+      "description": "Animation speed in milliseconds per step"
+    }
+  ]
+}
