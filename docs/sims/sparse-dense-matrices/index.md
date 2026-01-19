@@ -15,6 +15,8 @@ social:
 
 [Run the Sparse vs Dense MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 
+[Edit the Sparse vs Dense MicroSim with the p5.js editor](https://editor.p5js.org/)
+
 You can include this MicroSim on your website using the following `iframe`:
 
 ```html

@@ -88,6 +88,20 @@ The p5.js editor uses this standard `index.html` (we name ours `main.html`):
 - We use the MicroSim name for the JS file (e.g., `vector-2d-3d-visualizer.js`) instead of `sketch.js`
 - We do not include the p5.sound library by default (the editor includes `p5.sound.min.js`)
 
+### MicroSim index.md Template
+
+Every MicroSim `index.md` must include both Fullscreen and Edit links after the iframe:
+
+```markdown
+<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
+
+[Run the MicroSim Name Fullscreen](./main.html){ .md-button .md-button--primary }
+
+[Edit the MicroSim Name with the p5.js editor](https://editor.p5js.org/)
+```
+
+The Edit link allows teachers to quickly open the p5.js editor. Update the URL with a specific sketch ID (e.g., `https://editor.p5js.org/dmccreary/sketches/xxxxx`) after uploading the sketch.
+
 ### Chapter Content Format
 
 Chapters use YAML frontmatter with generation metadata:
