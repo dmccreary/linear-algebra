@@ -4,12 +4,12 @@
 
 // Canvas dimensions
 let canvasWidth = 400;
-let drawHeight = 400;
+let drawHeight = 270;
 let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
 
 let margin = 25;
-let sliderLeftMargin = 200;
+let sliderLeftMargin = 235;
 let defaultTextSize = 16;
 
 // Matrix dimensions
@@ -40,36 +40,44 @@ let matrixGap = 30;
 function setup() {
   updateCanvasSize();
   const canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent(document.querySelector('main'));
+  const container = document.querySelector('main');
+  canvas.parent(container);
 
   textSize(defaultTextSize);
-
-  // Initialize matrices with random values
-  initializeMatrices();
 
   // Create operation selector (using buttons instead of radio)
   operationSelect = createSelect();
   operationSelect.option('Addition', 'addition');
   operationSelect.option('Scalar Multiply', 'scalar');
   operationSelect.selected('addition');
+  operationSelect.parent(container);
   operationSelect.position(10, drawHeight + 8);
   operationSelect.changed(onOperationChange);
 
   // Create scalar slider
   scalarSlider = createSlider(-3, 3, 2, 0.5);
+  scalarSlider.parent(container);
   scalarSlider.position(sliderLeftMargin, drawHeight + 8);
   scalarSlider.size(canvasWidth - sliderLeftMargin - margin);
   scalarSlider.input(onScalarChange);
 
   // Create randomize button
   randomizeButton = createButton('Randomize');
+  randomizeButton.parent(container);
   randomizeButton.position(10, drawHeight + 43);
   randomizeButton.mousePressed(initializeMatrices);
 
   // Create step button
-  stepButton = createButton('Step');
+  stepButton = createButton('First Addition Step');
+  stepButton.parent(container);
   stepButton.position(100, drawHeight + 43);
   stepButton.mousePressed(stepAnimation);
+
+  // Hide scalar controls in addition mode (default), show step button
+  scalarSlider.hide();
+
+  // Initialize matrices with random values (must be after UI elements are created)
+  initializeMatrices();
 
   describe('Interactive matrix calculator showing addition of two 3×3 matrices or scalar multiplication with step-by-step highlighting.', LABEL);
 }
@@ -101,8 +109,10 @@ function draw() {
   let startX = (canvasWidth - totalWidth) / 2;
   let matrixY = 60;
 
-  // Calculate result
-  calculateResult();
+  // Calculate result (only for scalar mode - addition uses step-through)
+  if (operation === 'scalar') {
+    calculateResult();
+  }
 
   if (operation === 'addition') {
     // Draw Matrix A
@@ -135,7 +145,7 @@ function draw() {
     noStroke();
     textAlign(CENTER, CENTER);
     textSize(28);
-    text('k=' + scalarValue.toFixed(1), scalarX + 30, matrixY + (ROWS * cellSize) / 2);
+    text('k=' + scalarValue.toFixed(1), scalarX + 20, matrixY + (ROWS * cellSize) / 2);
 
     // Draw multiplication symbol
     let multX = scalarX + 70;
@@ -158,12 +168,14 @@ function draw() {
   // Draw formula explanation
   drawFormulaExplanation();
 
-  // Control labels
-  fill('black');
-  noStroke();
-  textAlign(LEFT, CENTER);
-  textSize(defaultTextSize);
-  text('Scalar k: ' + scalarValue.toFixed(1), 130, drawHeight + 20);
+  // Control labels - only show scalar label in scalar mode
+  if (operation === 'scalar') {
+    fill('black');
+    noStroke();
+    textAlign(LEFT, CENTER);
+    textSize(defaultTextSize);
+    text('Scalar k: ' + scalarValue.toFixed(1), 130, drawHeight + 20);
+  }
 }
 
 function drawMatrix(matrix, x, y, label, fillColor, strokeColor) {
@@ -194,7 +206,8 @@ function drawMatrix(matrix, x, y, label, fillColor, strokeColor) {
       textAlign(CENTER, CENTER);
       textSize(16);
       let val = matrix[i][j];
-      text(Number.isInteger(val) ? val : val.toFixed(1), cellX + cellSize / 2, cellY + cellSize / 2);
+      let displayVal = isNaN(val) ? '?' : (Number.isInteger(val) ? val : val.toFixed(1));
+      text(displayVal, cellX + cellSize / 2, cellY + cellSize / 2);
     }
   }
 
@@ -206,21 +219,68 @@ function drawMatrix(matrix, x, y, label, fillColor, strokeColor) {
   text(label, x + (COLS * cellSize) / 2, y + ROWS * cellSize + 5);
 }
 
+// Helper function to draw text with subscripts
+// tokens is an array where each element is either:
+//   - a string (drawn normally)
+//   - an object {base: 'c', sub: 'ij'} for subscript notation
+function drawWithSubscripts(tokens, centerX, y, baseSize) {
+  // First calculate total width for centering
+  let totalWidth = 0;
+  for (let token of tokens) {
+    if (typeof token === 'string') {
+      textSize(baseSize);
+      totalWidth += textWidth(token);
+    } else {
+      textSize(baseSize);
+      totalWidth += textWidth(token.base);
+      textSize(baseSize * 0.7);
+      totalWidth += textWidth(token.sub);
+    }
+  }
+
+  // Draw from left, starting at center minus half width
+  let x = centerX - totalWidth / 2;
+  textAlign(LEFT, TOP);
+
+  for (let token of tokens) {
+    if (typeof token === 'string') {
+      textSize(baseSize);
+      text(token, x, y);
+      x += textWidth(token);
+    } else {
+      // Draw base letter
+      textSize(baseSize);
+      text(token.base, x, y);
+      x += textWidth(token.base);
+      // Draw subscript (smaller and lower)
+      textSize(baseSize * 0.7);
+      text(token.sub, x, y + baseSize * 0.4);
+      x += textWidth(token.sub);
+    }
+  }
+}
+
 function drawFormulaExplanation() {
   let y = 200;
   fill('black');
   noStroke();
-  textAlign(CENTER, TOP);
-  textSize(14);
 
   if (operation === 'addition') {
-    text('Formula: c_ij = a_ij + b_ij', canvasWidth / 2, y);
+    // Formula: cᵢⱼ = aᵢⱼ + bᵢⱼ
+    drawWithSubscripts([
+      'Formula: ', {base: 'c', sub: 'ij'}, ' = ', {base: 'a', sub: 'ij'}, ' + ', {base: 'b', sub: 'ij'}
+    ], canvasWidth / 2, y, 14);
     textSize(12);
+    textAlign(CENTER, TOP);
     fill('gray');
     text('Each entry in C is the sum of corresponding entries in A and B', canvasWidth / 2, y + 20);
   } else {
-    text('Formula: c_ij = k × a_ij', canvasWidth / 2, y);
+    // Formula: cᵢⱼ = k × aᵢⱼ
+    drawWithSubscripts([
+      'Formula: ', {base: 'c', sub: 'ij'}, ' = k × ', {base: 'a', sub: 'ij'}
+    ], canvasWidth / 2, y, 14);
     textSize(12);
+    textAlign(CENTER, TOP);
     fill('gray');
     text('Each entry in C is the scalar k times the corresponding entry in A', canvasWidth / 2, y + 20);
   }
@@ -229,13 +289,17 @@ function drawFormulaExplanation() {
   if (highlightIndex >= 0 && highlightIndex < ROWS * COLS) {
     let i = Math.floor(highlightIndex / COLS);
     let j = highlightIndex % COLS;
-    textSize(14);
     fill('red');
     if (operation === 'addition') {
-      text(`c_${i + 1}${j + 1} = ${matrixA[i][j]} + ${matrixB[i][j]} = ${matrixC[i][j]}`, canvasWidth / 2, y + 45);
+      drawWithSubscripts([
+        {base: 'c', sub: `${i + 1}${j + 1}`}, ` = ${matrixA[i][j]} + ${matrixB[i][j]} = ${matrixC[i][j]}`
+      ], canvasWidth / 2, y + 45, 14);
     } else {
       let result = matrixC[i][j];
-      text(`c_${i + 1}${j + 1} = ${scalarValue.toFixed(1)} × ${matrixA[i][j]} = ${Number.isInteger(result) ? result : result.toFixed(1)}`, canvasWidth / 2, y + 45);
+      let resultStr = Number.isInteger(result) ? result : result.toFixed(1);
+      drawWithSubscripts([
+        {base: 'c', sub: `${i + 1}${j + 1}`}, ` = ${scalarValue.toFixed(1)} × ${matrixA[i][j]} = ${resultStr}`
+      ], canvasWidth / 2, y + 45, 14);
     }
   }
 }
@@ -243,16 +307,19 @@ function drawFormulaExplanation() {
 function initializeMatrices() {
   matrixA = [];
   matrixB = [];
+  matrixC = [];
   for (let i = 0; i < ROWS; i++) {
     matrixA[i] = [];
     matrixB[i] = [];
+    matrixC[i] = [];
     for (let j = 0; j < COLS; j++) {
       matrixA[i][j] = floor(random(-5, 6));
       matrixB[i][j] = floor(random(-5, 6));
+      matrixC[i][j] = NaN;  // Start with NaN until user steps through
     }
   }
   highlightIndex = -1;
-  calculateResult();
+  stepButton.html('First Addition Step');
 }
 
 function calculateResult() {
@@ -272,6 +339,24 @@ function calculateResult() {
 function onOperationChange() {
   operation = operationSelect.value();
   highlightIndex = -1;
+  stepButton.html('First Addition Step');
+
+  // Show/hide controls based on operation
+  if (operation === 'addition') {
+    scalarSlider.hide();
+    stepButton.show();
+    // Reset matrixC to NaN for step-through mode
+    for (let i = 0; i < ROWS; i++) {
+      for (let j = 0; j < COLS; j++) {
+        matrixC[i][j] = NaN;
+      }
+    }
+  } else {
+    scalarSlider.show();
+    stepButton.hide();
+    // Calculate all values immediately for scalar mode
+    calculateResult();
+  }
 }
 
 function onScalarChange() {
@@ -279,15 +364,41 @@ function onScalarChange() {
 }
 
 function stepAnimation() {
+  // If we're at "Done" state, reset everything
+  if (highlightIndex >= ROWS * COLS - 1 && stepButton.html() === 'Done') {
+    highlightIndex = -1;
+    for (let i = 0; i < ROWS; i++) {
+      for (let j = 0; j < COLS; j++) {
+        matrixC[i][j] = NaN;
+      }
+    }
+    stepButton.html('First Addition Step');
+    return;
+  }
+
   highlightIndex++;
-  if (highlightIndex >= ROWS * COLS) {
-    highlightIndex = 0;
+
+  // Calculate the current highlighted cell
+  let i = Math.floor(highlightIndex / COLS);
+  let j = highlightIndex % COLS;
+  if (operation === 'addition') {
+    matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
+  } else {
+    matrixC[i][j] = scalarValue * matrixA[i][j];
+  }
+
+  // Update button label
+  if (highlightIndex >= ROWS * COLS - 1) {
+    stepButton.html('Done');
+  } else {
+    stepButton.html('Next Addition Step');
   }
 }
 
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  // Update slider size for new canvas width
   scalarSlider.size(canvasWidth - sliderLeftMargin - margin);
 }
 

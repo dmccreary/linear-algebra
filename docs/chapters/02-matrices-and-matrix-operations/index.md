@@ -97,7 +97,7 @@ In machine learning contexts, column vectors typically represent individual data
 
 #### Diagram: Row and Column Vector Visualization
 
-<iframe src="../../sims/row-column-vectors/main.html" width="100%" height="400px" scrolling="no"></iframe>
+<iframe src="../../sims/row-column-vectors/main.html" width="100%" height="490px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Row and Column Vector Visualization</summary>
@@ -197,7 +197,7 @@ Scalar multiplication scales all entries uniformly. In neural networks, this ope
 
 #### Diagram: Matrix Addition and Scalar Multiplication
 
-<iframe src="../../sims/matrix-basic-ops/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/matrix-basic-ops/main.html" width="100%" height="350px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Matrix Addition and Scalar Multiplication Interactive</summary>
