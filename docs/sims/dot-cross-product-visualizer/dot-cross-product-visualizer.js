@@ -116,10 +116,10 @@ function draw() {
             animating = false;
         }
         // Rotate v around origin
-        let mag = sqrt(v2D.x * v2D.x + v2D.y * v2D.y);
+        let vMag = sqrt(v2D.x * v2D.x + v2D.y * v2D.y);
         let baseAngle = atan2(u2D.y, u2D.x);
-        v2D.x = mag * cos(baseAngle + animAngle);
-        v2D.y = mag * sin(baseAngle + animAngle);
+        v2D.x = vMag * cos(baseAngle + animAngle);
+        v2D.y = vMag * sin(baseAngle + animAngle);
         // Update 3D vectors
         v3D.x = v2D.x;
         v3D.y = v2D.y;

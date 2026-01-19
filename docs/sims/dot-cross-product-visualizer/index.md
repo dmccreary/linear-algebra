@@ -15,6 +15,8 @@ social:
 
 [Run the Dot Product and Cross Product Visualizer Fullscreen](./main.html){ .md-button .md-button--primary }
 
+[Edit the Dot Product and Cross Product Visualizer Using the p5.js Editor](https://editor.p5js.org/dmccreary/sketches/YmAY-nPNL)
+
 ## About This MicroSim
 
 This visualization helps students understand the geometric meaning of both the dot product and cross product. The dot product view shows how vectors project onto each other and how the angle between vectors affects the result. The cross product view demonstrates the perpendicular vector and its relationship to parallelogram area.

@@ -11,7 +11,7 @@ social:
 
 # Vector Space Axiom Explorer
 
-<iframe src="main.html" height="750px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="1150px" width="100%" scrolling="no"></iframe>
 
 [Run the Vector Space Axiom Explorer Fullscreen](./main.html){ .md-button .md-button--primary }
 
