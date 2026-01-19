@@ -15,6 +15,15 @@ social:
 
 [Run the 2D and 3D Vector Visualization Fullscreen](./main.html){ .md-button .md-button--primary }
 
+You can embed this MicroSim in your own webpage using the following iframe code:
+
+```html
+<iframe src="https://dmccreary.github.io/linear-algebra/sims/vector-2d-3d-visualizer/main.html"
+        height="562px"
+        width="100%"
+        scrolling="no">
+</iframe>
+```
 ## About This MicroSim
 
 This interactive visualization helps students understand how vector components determine position and direction in both 2D and 3D coordinate systems. Students can manipulate the x, y, and z components using sliders and observe how the vector changes in real-time.
@@ -35,18 +44,6 @@ This interactive visualization helps students understand how vector components d
 - **Vector Magnitude**: The length of the vector, calculated as $\|v\| = \sqrt{x^2 + y^2}$ in 2D or $\|v\| = \sqrt{x^2 + y^2 + z^2}$ in 3D
 - **Coordinate Axes**: The standard basis vectors along x, y, and z directions
 - **Projection**: How a vector projects onto coordinate planes and axes
-
-## Embedding This MicroSim
-
-You can embed this MicroSim in your own webpage using the following iframe code:
-
-```html
-<iframe src="https://dmccreary.github.io/linear-algebra/sims/vector-2d-3d-visualizer/main.html"
-        height="562px"
-        width="100%"
-        scrolling="no">
-</iframe>
-```
 
 ## Lesson Plan
 
