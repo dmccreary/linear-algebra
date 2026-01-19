@@ -120,7 +120,7 @@ The additional $z$-component allows us to represent quantities in our three-dime
 
 #### Diagram: 2D and 3D Vector Visualization
 
-<iframe src="../../sims/vector-2d-3d-visualizer" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/vector-2d-3d-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>2D and 3D Vector Visualization MicroSim</summary>
@@ -224,7 +224,7 @@ $$\mathbf{u} - \mathbf{v} = \begin{bmatrix} u_1 - v_1 \\ u_2 - v_2 \\ \vdots \\ 
 
 #### Diagram: Vector Operations Playground
 
-<iframe src="../../sims/vector-operations-playground" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/vector-operations-playground/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Vector Operations Playground MicroSim</summary>
@@ -324,7 +324,7 @@ Important properties of the cross product:
 
 #### Diagram: Dot Product and Cross Product Visualizer
 
-<iframe src="../../sims/dot-cross-product-visualizer" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/dot-cross-product-visualizer/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Dot Product and Cross Product Visualizer MicroSim</summary>
@@ -420,7 +420,7 @@ This norm is useful when you need to constrain the maximum deviation in any sing
 
 #### Diagram: Norm Comparison Visualizer
 
-<iframe src="../../sims/norm-comparison-visualizer" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/norm-comparison-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Norm Comparison Visualizer MicroSim</summary>
@@ -514,7 +514,7 @@ Geometrically, the span represents all points reachable by combining the vectors
 
 #### Diagram: Linear Combination Explorer
 
-<iframe src="../../sims/linear-combination-explorer" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/linear-combination-explorer/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Linear Combination Explorer MicroSim</summary>
@@ -628,7 +628,7 @@ The coefficients $(c_1, c_2, \ldots, c_n)$ are the **coordinates** of $\mathbf{v
 
 #### Diagram: Basis and Coordinate System Visualizer
 
-<iframe src="../../sims/basis-coordinate-visualizer" width="100%" height="550px" scrolling="no"></iframe>
+<iframe src="../../sims/basis-coordinate-visualizer/main.html" width="100%" height="550px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Basis and Coordinate System Visualizer MicroSim</summary>
@@ -720,7 +720,7 @@ Dimension tells us the "degrees of freedom" in a vector space—how many indepen
 
 #### Diagram: Vector Space Axiom Explorer
 
-<iframe src="../../sims/vector-space-axiom-explorer" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/vector-space-axiom-explorer/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Vector Space Axiom Explorer Infographic</summary>
