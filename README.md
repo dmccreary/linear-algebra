@@ -2,15 +2,15 @@
 
 [![MkDocs](https://img.shields.io/badge/Made%20with-MkDocs-526CFE?logo=materialformkdocs)](https://www.mkdocs.org/)
 [![Material for MkDocs](https://img.shields.io/badge/Material%20for%20MkDocs-526CFE?logo=materialformkdocs)](https://squidfunk.github.io/mkdocs-material/)
-[![GitHub Pages](https://img.shields.io/badge/View%20on-GitHub%20Pages-blue?logo=github)](https://dmccreary.github.io/linear-Algebra/)
-[![GitHub](https://img.shields.io/badge/GitHub-dmccreary%2Flinear--Algebra-blue?logo=github)](https://github.com/dmccreary/linear-Algebra)
+[![GitHub Pages](https://img.shields.io/badge/View%20on-GitHub%20Pages-blue?logo=github)](https://dmccreary.github.io/linear-algebra/)
+[![GitHub](https://img.shields.io/badge/GitHub-dmccreary%2Flinear--Algebra-blue?logo=github)](https://github.com/dmccreary/linear-algebra)
 [![Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-DA7857?logo=anthropic)](https://claude.ai/code)
 [![p5.js](https://img.shields.io/badge/p5.js-ED225D?logo=p5.js&logoColor=white)](https://p5js.org/)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## View the Live Site
 
-Visit the interactive textbook at: [https://dmccreary.github.io/linear-Algebra/](https://dmccreary.github.io/linear-Algebra/)
+Visit the interactive textbook at: [https://dmccreary.github.io/linear-algebra/](https://dmccreary.github.io/linear-algebra/)
 
 ## Overview
 
@@ -36,8 +36,8 @@ The textbook follows Bloom's Taxonomy (2001 revision) for learning outcomes and 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/dmccreary/linear-Algebra.git
-cd linear-Algebra
+git clone https://github.com/dmccreary/linear-algebra.git
+cd linear-algebra
 ```
 
 ### Install Dependencies
@@ -97,7 +97,7 @@ This will build the site and push it to the `gh-pages` branch.
 ## Repository Structure
 
 ```
-linear-Algebra/
+linear-algebra/
 ├── docs/                          # MkDocs documentation source
 │   ├── chapters/                  # 15 chapter directories
 │   │   ├── 01-vectors-and-vector-spaces/
@@ -122,7 +122,7 @@ linear-Algebra/
 
 Found a bug, typo, or have a suggestion for improvement? Please report it:
 
-[GitHub Issues](https://github.com/dmccreary/linear-Algebra/issues)
+[GitHub Issues](https://github.com/dmccreary/linear-algebra/issues)
 
 When reporting issues, please include:
 

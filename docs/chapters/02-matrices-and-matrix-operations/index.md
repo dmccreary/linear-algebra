@@ -344,7 +344,7 @@ Behavior:
 - Move to next entry automatically or on button click
 - Column interpretation mode shows result as linear combination
 
-Implementation: p5.js with animation states [here](/linear-Algebra/sims/matrix-multiplication)
+Implementation: p5.js with animation states [here](/linear-algebra/sims/matrix-multiplication)
 </details>
 
 ### Properties of Matrix Multiplication

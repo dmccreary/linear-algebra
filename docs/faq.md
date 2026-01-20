@@ -108,7 +108,7 @@ If you're struggling with a concept:
 2. Use the **MicroSims** to build geometric intuition
 3. Re-read prerequisite material if foundational concepts are unclear
 4. Check the **learning graph** to ensure you've covered prerequisite concepts
-5. For textbook issues, report problems on the [GitHub Issues](https://github.com/dmccreary/linear-Algebra/issues) page
+5. For textbook issues, report problems on the [GitHub Issues](https://github.com/dmccreary/linear-algebra/issues) page
 
 ## Core Concept Questions
 
