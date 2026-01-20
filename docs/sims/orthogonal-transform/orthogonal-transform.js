@@ -27,7 +27,7 @@ let showLengths = true;
 let showAngles = false;
 
 // Coordinate system
-let scale = 60;  // pixels per unit
+let scale = 120;  // pixels per unit
 let originX, originY;
 
 // Original shape vertices (unit square)
@@ -79,13 +79,13 @@ function draw() {
 
   // Drawing area background
   fill('aliceblue');
+  // draw a light gray border around both the drawing region and the control region
   stroke('silver');
   strokeWeight(1);
   rect(0, 0, canvasWidth, drawHeight);
 
   // Control area background
   fill('white');
-  noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title
@@ -95,9 +95,9 @@ function draw() {
   textSize(18);
   text('Orthogonal Matrix Transformation', canvasWidth / 2, 8);
 
-  // Set origin to center of drawing area
-  originX = canvasWidth * 0.4;
-  originY = drawHeight * 0.55;
+  // Set origin to center of drawing area, shifted down
+  originX = canvasWidth / 2;
+  originY = drawHeight / 2 + 30;
 
   // Draw coordinate system
   drawCoordinateSystem();
@@ -141,32 +141,28 @@ function draw() {
 }
 
 function drawCoordinateSystem() {
-  // Grid
-  stroke(220);
-  strokeWeight(1);
-  for (let i = -3; i <= 3; i++) {
-    // Vertical lines
-    line(originX + i * scale, originY - 3 * scale, originX + i * scale, originY + 3 * scale);
-    // Horizontal lines
-    line(originX - 3 * scale, originY - i * scale, originX + 3 * scale, originY - i * scale);
-  }
+  // Calculate axis bounds based on canvas size
+  let minX = Math.floor(-originX / scale);
+  let maxX = Math.floor((canvasWidth - originX) / scale);
+  let minY = Math.floor(-(drawHeight - originY) / scale);
+  let maxY = Math.floor(originY / scale);
 
   // Axes
   stroke(100);
   strokeWeight(2);
-  // X axis
-  line(originX - 3 * scale, originY, originX + 3 * scale, originY);
-  // Y axis
-  line(originX, originY + 3 * scale, originX, originY - 3 * scale);
+  // X axis - clipped to canvas
+  line(Math.max(0, originX + minX * scale), originY, Math.min(canvasWidth, originX + maxX * scale), originY);
+  // Y axis - clipped to canvas (stop 2 margins from top to avoid title)
+  line(originX, Math.min(drawHeight, originY - minY * scale), originX, Math.max(2 * margin, originY - maxY * scale));
 
   // Axis labels
   fill(100);
   noStroke();
   textSize(14);
   textAlign(CENTER, TOP);
-  text('x', originX + 3 * scale + 10, originY - 5);
+  text('x', Math.min(canvasWidth - 15, originX + maxX * scale + 10), originY - 5);
   textAlign(RIGHT, CENTER);
-  text('y', originX + 5, originY - 3 * scale - 10);
+  text('y', originX + 5, Math.max(15, originY - maxY * scale - 10) + 2 * margin);
 
   // Origin label
   textAlign(RIGHT, TOP);
@@ -206,13 +202,15 @@ function drawVectorAnnotations(theta, reflectFactor) {
     };
 
     // Original vector
-    stroke(0, 100, 200);
+    let origColor = color(0, 100, 200);
+    stroke(origColor);
     strokeWeight(2);
-    drawArrow(originX, originY, originX + v.x * scale, originY - v.y * scale);
+    drawArrow(originX, originY, originX + v.x * scale, originY - v.y * scale, origColor);
 
     // Transformed vector
-    stroke(200, 50, 50);
-    drawArrow(originX, originY, originX + tv.x * scale, originY - tv.y * scale);
+    let transColor = color(200, 50, 50);
+    stroke(transColor);
+    drawArrow(originX, originY, originX + tv.x * scale, originY - tv.y * scale, transColor);
 
     if (showLengths) {
       // Calculate lengths
@@ -275,7 +273,7 @@ function drawVectorAnnotations(theta, reflectFactor) {
   }
 }
 
-function drawArrow(x1, y1, x2, y2) {
+function drawArrow(x1, y1, x2, y2, arrowColor) {
   line(x1, y1, x2, y2);
 
   // Arrowhead
@@ -284,7 +282,7 @@ function drawArrow(x1, y1, x2, y2) {
   push();
   translate(x2, y2);
   rotate(angle);
-  fill(stroke());
+  fill(arrowColor);
   noStroke();
   triangle(0, 0, -arrowSize, arrowSize / 2, -arrowSize, -arrowSize / 2);
   pop();

@@ -484,6 +484,10 @@ Implementation: HTML/CSS/JavaScript with SVG or Canvas
 
 ### Symmetric Matrix
 
+#### Diagram: Symmetric Matrix
+
+<iframe src="../../sims/symmetric-matrix/main.html" height="500px" width="100%" scrolling="no"></iframe>
+
 A **symmetric matrix** equals its own transpose: $\mathbf{A} = \mathbf{A}^T$. This means $a_{ij} = a_{ji}$ for all entries—the matrix is mirror-symmetric across the diagonal.
 
 $\mathbf{S} = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix}$
