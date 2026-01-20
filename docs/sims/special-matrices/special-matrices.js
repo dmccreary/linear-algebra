@@ -5,14 +5,15 @@
 // Canvas dimensions
 let canvasWidth = 400;
 let drawHeight = 500;
-let controlHeight = 50;
+let controlHeight = 45;
 let canvasHeight = drawHeight + controlHeight;
 
-let margin = 25;
-let sliderLeftMargin = 180;
+let margin = 20;
+let sliderLeftMargin = 220;
 let defaultTextSize = 16;
 
 // Matrix settings
+// this is the default size; it can be changed via the slider
 let matrixSize = 4;
 let showZeros = true;
 let selectedType = null;  // Which matrix type is selected for detail view
@@ -80,13 +81,13 @@ function draw() {
 
   // Drawing area background
   fill('aliceblue');
+  // draw a light gray border around both the drawing and control areas
   stroke('silver');
   strokeWeight(1);
   rect(0, 0, canvasWidth, drawHeight);
 
   // Control area background
   fill('white');
-  noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title
@@ -96,37 +97,39 @@ function draw() {
   textSize(20);
   text('Special Matrix Types', canvasWidth / 2, 8);
 
-  // Calculate cell size based on canvas width and matrix size
-  let gridWidth = (canvasWidth - 60) / 2;  // Two columns with some padding
-  cellSize = Math.min(30, Math.floor((gridWidth - 40) / matrixSize));
+  // Calculate panel dimensions: subtract 3*margin (left, middle, right) and multiply by 0.5
+  let titleHeight = 35;
+  let panelWidth = (canvasWidth - 3 * margin) * 0.5;
+  let panelHeight = (drawHeight - titleHeight - 3 * margin) * 0.5;
+
+  // Calculate cell size based on panel size and matrix size
+  cellSize = Math.min(30, Math.floor((panelWidth - 40) / matrixSize), Math.floor((panelHeight - 60) / matrixSize));
 
   // Draw 2x2 grid of matrix types
-  let startY = 45;
-  let colWidth = canvasWidth / 2;
+  let startY = titleHeight + margin;
 
   // Identity (top-left)
-  drawMatrixCard('identity', margin, startY, colWidth - margin * 1.5);
+  drawMatrixCard('identity', margin, startY, panelWidth, panelHeight);
 
   // Diagonal (top-right)
-  drawMatrixCard('diagonal', colWidth + margin / 2, startY, colWidth - margin * 1.5);
+  drawMatrixCard('diagonal', 2 * margin + panelWidth, startY, panelWidth, panelHeight);
 
   // Upper Triangular (bottom-left)
-  let row2Y = startY + 165;
-  drawMatrixCard('upper', margin, row2Y, colWidth - margin * 1.5);
+  let row2Y = startY + panelHeight + margin;
+  drawMatrixCard('upper', margin, row2Y, panelWidth, panelHeight);
 
   // Lower Triangular (bottom-right)
-  drawMatrixCard('lower', colWidth + margin / 2, row2Y, colWidth - margin * 1.5);
+  drawMatrixCard('lower', 2 * margin + panelWidth, row2Y, panelWidth, panelHeight);
 
   // Control labels
   fill('black');
   noStroke();
-  textAlign(LEFT, CENTER);
+  textAlign(RIGHT, CENTER);
   textSize(defaultTextSize);
-  text('Size: ' + matrixSize + '×' + matrixSize, 120, drawHeight + 22);
+  text('Size: ' + matrixSize + '×' + matrixSize, sliderLeftMargin - 10, drawHeight + 22);
 }
 
-function drawMatrixCard(type, x, y, cardWidth) {
-  let cardHeight = 155;
+function drawMatrixCard(type, x, y, cardWidth, cardHeight) {
   let colors = TYPE_COLORS[type];
   let matrix = matrices[type];
 

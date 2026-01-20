@@ -11,16 +11,16 @@ social:
 
 # Special Matrix Types Gallery
 
-<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="542px" width="100%" scrolling="no"></iframe>
 
 [Run the Special Matrix Types MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 
-[Edit the Special Matrix Types MicroSim with the p5.js editor](https://editor.p5js.org/)
+[Edit the Special Matrix Types MicroSim with the p5.js editor](https://editor.p5js.org/dmccreary/sketches/q8D8Pb8I7)
 
 You can include this MicroSim on your website using the following `iframe`:
 
 ```html
-<iframe src="https://dmccreary.github.io/linear-algebra/sims/special-matrices/main.html" height="452px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/linear-algebra/sims/special-matrices/main.html" height="542px" scrolling="no"></iframe>
 ```
 
 ## Description

@@ -437,7 +437,7 @@ LU decomposition factors any matrix into lower and upper triangular components, 
 
 #### Diagram: Special Matrix Types Gallery
 
-<iframe src="../../sims/special-matrices/main.html" width="100%" height="450px" scrolling="no"></iframe>
+<iframe src="../../sims/special-matrices/main.html" width="100%" height="542px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Special Matrix Types Interactive Gallery</summary>
