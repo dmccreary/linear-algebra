@@ -297,7 +297,7 @@ The dimension compatibility rule states: the number of columns in $\mathbf{A}$ m
 
 #### Diagram: Matrix Multiplication Visualizer
 
-<iframe src="../../sims/matrix-multiplication/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/matrix-multiplication/main.html" width="100%" height="407px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Matrix Multiplication Step-by-Step Visualizer</summary>
@@ -344,7 +344,7 @@ Behavior:
 - Move to next entry automatically or on button click
 - Column interpretation mode shows result as linear combination
 
-Implementation: p5.js with animation states
+Implementation: p5.js with animation states [here](/linear-Algebra/sims/matrix-multiplication)
 </details>
 
 ### Properties of Matrix Multiplication

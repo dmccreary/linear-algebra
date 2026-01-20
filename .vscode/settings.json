@@ -28,6 +28,7 @@
         "pymdownx",
         "reprojection",
         "scikit",
+        "seagreen",
         "superfences"
     ]
 }

@@ -1,15 +1,18 @@
+// @ts-nocheck
 // Matrix Multiplication Step-by-Step Visualizer
 // Helps students understand the row-by-column computation process
 // by animating each entry calculation.
+/// <reference types="p5/global" />                                        
+
 
 // Canvas dimensions
 let canvasWidth = 400;
-let drawHeight = 420;
-let controlHeight = 80;
+let drawHeight = 320;
+let controlHeight = 85;
 let canvasHeight = drawHeight + controlHeight;
+let sliderLeftMargin = 200;
 
 let margin = 25;
-let sliderLeftMargin = 280;
 let defaultTextSize = 16;
 
 // Matrix dimensions
@@ -52,9 +55,6 @@ function setup() {
 
   textSize(defaultTextSize);
 
-  // Initialize matrices
-  initializeMatrices();
-
   // Create dimension selector for A
   dimSelectA = createSelect();
   dimSelectA.option('2×2', '2x2');
@@ -71,24 +71,30 @@ function setup() {
   dimSelectB.position(80, drawHeight + 8);
   dimSelectB.changed(onDimensionChangeB);
 
-  // Create control buttons
-  nextButton = createButton('Next');
-  nextButton.position(150, drawHeight + 8);
-  nextButton.mousePressed(nextStep);
-
-  autoPlayButton = createButton('Auto');
-  autoPlayButton.position(200, drawHeight + 8);
-  autoPlayButton.mousePressed(toggleAutoPlay);
-
+  // Create control buttons - first row
   resetButton = createButton('Reset');
-  resetButton.position(250, drawHeight + 8);
+  resetButton.position(150, drawHeight + 8);
   resetButton.mousePressed(resetAnimation);
 
-  // Create speed slider
-  speedSlider = createSlider(200, 2000, 800, 100);
+  nextButton = createButton('First Multiplication');
+  nextButton.position(210, drawHeight + 8);
+  nextButton.mousePressed(nextStep);
+
+  // Second row - Auto button and speed slider
+  autoPlayButton = createButton('Auto');
+  autoPlayButton.position(10, drawHeight + 43);
+  autoPlayButton.mousePressed(toggleAutoPlay);
+
+  // Create speed slider (inverted: left = slow, right = fast)
+  // Slider value 2400 gives animationSpeed = 3200 - 2400 = 800ms
+  // Slower is on the left, faster on the right
+  speedSlider = createSlider(200, 3000, 1000, 100);
   speedSlider.position(sliderLeftMargin, drawHeight + 43);
   speedSlider.size(canvasWidth - sliderLeftMargin - margin);
   speedSlider.input(onSpeedChange);
+
+  // Initialize matrices (must be after UI elements are created)
+  initializeMatrices();
 
   describe('Matrix multiplication visualizer showing step-by-step row-by-column dot product calculations with animation.', LABEL);
 }
@@ -98,13 +104,13 @@ function draw() {
 
   // Drawing area background
   fill('aliceblue');
+  // light boarder around both the drawing and control areas
   stroke('silver');
   strokeWeight(1);
   rect(0, 0, canvasWidth, drawHeight);
 
   // Control area background
   fill('white');
-  noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title
@@ -143,14 +149,26 @@ function draw() {
   drawDimensionLabels(matrixAX, matrixBX, matrixCX, matrixY);
 
   // Draw calculation display
+  
+  push();
+  translate(0, -10);
   drawCalculationDisplay();
+  pop();
 
-  // Control labels
+  // Control labels - second row
   fill('black');
   noStroke();
+  textSize(14);
+
+  // Animation Speed label (right of Auto button)
   textAlign(LEFT, CENTER);
-  textSize(defaultTextSize);
-  text('Speed: ' + animationSpeed + 'ms', 10, drawHeight + 55);
+  text('Animation Speed: ', 75, drawHeight + 55);
+
+  // Slow/Fast labels under slider
+  textAlign(LEFT, TOP);
+  text('Slower', sliderLeftMargin + 20, drawHeight + 63);
+  textAlign(RIGHT, TOP);
+  text('Faster', canvasWidth - margin -10, drawHeight + 63);
 }
 
 function drawMatrixA(x, y) {
@@ -295,45 +313,117 @@ function drawDimensionLabels(aX, bX, cX, y) {
   text(`(${rowsA}×${colsB})`, cX + (colsB * cellSize) / 2, labelY);
 }
 
-function drawCalculationDisplay() {
-  let y = 250;
-
-  fill('black');
-  noStroke();
-  textAlign(CENTER, TOP);
-  textSize(14);
-
-  if (calculationComplete) {
-    fill('green');
-    text('Multiplication Complete!', canvasWidth / 2, y);
-    return;
-  }
-
-  // Show formula
-  text(`Computing C[${currentRow + 1},${currentCol + 1}] = Row ${currentRow + 1} of A · Column ${currentCol + 1} of B`, canvasWidth / 2, y);
-
-  // Show dot product calculation
-  let calcStr = '';
-  for (let k = 0; k < colsA; k++) {
-    if (k > 0) calcStr += ' + ';
-    if (k < dotProductStep) {
-      calcStr += `${matrixA[currentRow][k]}×${matrixB[k][currentCol]}`;
-    } else if (k === dotProductStep) {
-      calcStr += `[${matrixA[currentRow][k]}×${matrixB[k][currentCol]}]`;
+// Helper function to draw text with subscripts
+// tokens is an array where each element is either:
+//   - a string (drawn normally)
+//   - an object {base: 'c', sub: 'ij', scale: 2, color: 'red', yOffset: -5, subYOffset: 4}
+//     scale is optional (default 1) and multiplies the base letter size
+//     color is optional and sets the fill color for this token
+//     yOffset is optional additional vertical offset for base letter
+//     subYOffset is optional additional vertical offset for subscript
+function drawWithSubscripts(tokens, centerX, y, baseSize, defaultColor) {
+  // First calculate total width for centering
+  let totalWidth = 0;
+  for (let token of tokens) {
+    if (typeof token === 'string') {
+      textSize(baseSize);
+      totalWidth += textWidth(token);
     } else {
-      calcStr += `(${matrixA[currentRow][k]}×${matrixB[k][currentCol]})`;
+      let scale = token.scale || 1;
+      textSize(baseSize * scale);
+      totalWidth += textWidth(token.base);
+      textSize(baseSize * 0.7);
+      totalWidth += textWidth(token.sub);
     }
   }
 
-  textSize(12);
+  // Draw from left, starting at center minus half width
+  let x = centerX - totalWidth / 2;
+  textAlign(LEFT, TOP);
+
+  for (let token of tokens) {
+    if (typeof token === 'string') {
+      if (defaultColor) fill(defaultColor);
+      textSize(baseSize);
+      text(token, x, y);
+      x += textWidth(token);
+    } else {
+      let scale = token.scale || 1;
+      let tokenYOffset = token.yOffset || 0;
+      let subYOffset = token.subYOffset || 0;
+      // Draw base letter (optionally scaled and colored)
+      if (token.color) fill(token.color);
+      else if (defaultColor) fill(defaultColor);
+      textSize(baseSize * scale);
+      let scaleYOffset = (scale > 1) ? -baseSize * (scale - 1) * 0.3 : 0;
+      text(token.base, x, y + scaleYOffset + tokenYOffset);
+      x += textWidth(token.base);
+      // Draw subscript (smaller and lower, same color as base)
+      textSize(baseSize * 0.7);
+      text(token.sub, x, y + baseSize * 0.4 + subYOffset);
+      x += textWidth(token.sub);
+      // Reset color for next token
+      if (token.color && defaultColor) fill(defaultColor);
+    }
+  }
+}
+
+function drawCalculationDisplay() {
+  let y = 220;
+
   fill('black');
-  text(calcStr, canvasWidth / 2, y + 25);
+  noStroke();
+
+  // Calculate number of operations
+  let numMultiplications = rowsA * colsB * colsA;
+  let numAdditions = rowsA * colsB * (colsA - 1);
+
+  // Show operations count
+  textAlign(CENTER, TOP);
+  textSize(14);
+  fill('black');
+  text(`Number of Operations: Multiplications = ${numMultiplications}   Additions = ${numAdditions}`, canvasWidth / 2, y);
+
+  if (calculationComplete) {
+    fill('green');
+    textAlign(CENTER, TOP);
+    textSize(14);
+    text('Multiplication Complete!', canvasWidth / 2, y + 30);
+    return;
+  }
+
+  // Show formula with subscripts: Computing c₁₂ = Row 1 of A · Column 2 of B
+  let i = currentRow + 1;
+  let j = currentCol + 1;
+  drawWithSubscripts([
+    'Computing ', {base: 'c', sub: `${i}${j}`, scale: 2, color: 'goldenrod', yOffset: -5, subYOffset: 4}, ` = Row ${i} of A · Column ${j} of B`
+  ], canvasWidth / 2, y + 20, 14, 'black');
+
+  // Show dot product calculation with numeric values
+  let calcStr = '';
+  for (let k = 0; k < colsA; k++) {
+    if (k > 0) calcStr += ' + ';
+    let aVal = matrixA[currentRow][k];
+    let bVal = matrixB[k][currentCol];
+    if (k < dotProductStep) {
+      calcStr += `${aVal}×${bVal}`;
+    } else if (k === dotProductStep) {
+      calcStr += `[${aVal}×${bVal}]`;
+    } else {
+      calcStr += `(${aVal}×${bVal})`;
+    }
+  }
+
+  textAlign(CENTER, TOP);
+  textSize(14);
+  fill('black');
+  text(calcStr, canvasWidth / 2, y + 55);
 
   // Show running sum
   if (dotProductStep > 0) {
-    fill('red');
-    textSize(14);
-    text(`Running sum: ${runningSum}`, canvasWidth / 2, y + 50);
+    drawWithSubscripts([
+      {base: 'c', sub: `${i}${j}`, scale: 2, color: 'goldenrod', yOffset: -5, subYOffset: 4}, ` = ${runningSum} (running sum)`
+    ], canvasWidth / 2, y + 80, 14, 'red');
   }
 }
 
@@ -368,7 +458,11 @@ function initializeMatrices() {
 }
 
 function nextStep() {
-  if (calculationComplete) return;
+  // If complete and user clicks again, reset
+  if (calculationComplete) {
+    resetAnimation();
+    return;
+  }
 
   if (dotProductStep < colsA) {
     // Add next product to running sum
@@ -390,11 +484,16 @@ function nextStep() {
     if (currentRow >= rowsA) {
       calculationComplete = true;
       stopAutoPlay();
+      nextButton.html('Done');
     } else {
       // Reset for next entry
       dotProductStep = 0;
       runningSum = 0;
+      nextButton.html('Next Multiplication');
     }
+  } else {
+    // Update button label after first step
+    nextButton.html('Next Multiplication');
   }
 }
 
@@ -405,6 +504,7 @@ function resetAnimation() {
   runningSum = 0;
   calculationComplete = false;
   stopAutoPlay();
+  nextButton.html('First Multiplication');
 
   // Clear result matrix
   for (let i = 0; i < rowsA; i++) {
@@ -441,7 +541,8 @@ function stopAutoPlay() {
 }
 
 function onSpeedChange() {
-  animationSpeed = speedSlider.value();
+  // Invert slider: left (200) = slow (3000ms), right (3000) = fast (200ms)
+  animationSpeed = 3200 - speedSlider.value();
   if (isAutoPlaying) {
     stopAutoPlay();
     startAutoPlay();
@@ -489,6 +590,7 @@ function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
   speedSlider.size(canvasWidth - sliderLeftMargin - margin);
+
 }
 
 function updateCanvasSize() {
