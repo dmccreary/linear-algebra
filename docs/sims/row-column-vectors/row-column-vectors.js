@@ -61,13 +61,13 @@ function draw() {
 
   // Drawing area background
   fill('aliceblue');
+  // Draw a thin light gray border around both the drawing and control areas
   stroke('silver');
   strokeWeight(1);
   rect(0, 0, canvasWidth, drawHeight);
 
   // Control area background
   fill('white');
-  noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title

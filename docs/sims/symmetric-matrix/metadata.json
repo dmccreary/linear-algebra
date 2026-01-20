@@ -1,0 +1,47 @@
+{
+  "title": "Symmetric Matrix",
+  "description": "Interactive visualization demonstrating symmetric matrices where A[i,j] = A[j,i], with adjustable size from 2×2 to 10×10.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Symmetric Matrices"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Matrix Properties",
+    "learningObjectives": [
+      "Identify symmetric matrices visually",
+      "Understand the property A[i,j] = A[j,i]",
+      "Recognize that symmetric matrices equal their transpose"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["identify", "explain", "recognize"],
+    "duration": "5-10 minutes",
+    "prerequisites": ["Basic understanding of matrices", "Familiarity with matrix indices"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 500",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Size",
+      "min": 2,
+      "max": 10,
+      "default": 4,
+      "step": 1,
+      "description": "Matrix dimensions (n×n)"
+    },
+    {
+      "type": "button",
+      "label": "Regenerate",
+      "description": "Generate new random symmetric matrix with values 0-9"
+    }
+  ]
+}
