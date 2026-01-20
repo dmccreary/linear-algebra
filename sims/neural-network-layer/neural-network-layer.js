@@ -305,8 +305,8 @@ function drawFormula() {
 }
 
 function initializeNetwork() {
-  randomizeInputs();
-  randomizeWeights();
+  randomizeWeights();  // Must initialize weights before inputs
+  randomizeInputs();   // This calls computeOutput() which needs weights
 }
 
 function randomizeInputs() {
