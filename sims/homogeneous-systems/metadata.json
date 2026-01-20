@@ -1,0 +1,21 @@
+{
+  "title": "Homogeneous System Explorer",
+  "description": "Explore homogeneous systems Ax = 0 and visualize their null spaces as subspaces through the origin",
+  "subject": "Linear Algebra",
+  "topic": "Homogeneous Systems",
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "learningObjective": "Help students understand that homogeneous systems always have the trivial solution and may have additional solutions forming a subspace through the origin",
+  "gradeLevel": "Undergraduate",
+  "duration": "10-15 minutes",
+  "prerequisites": ["Matrix rank", "Linear equations", "Vector spaces"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "controls": [
+    {"type": "select", "label": "Example", "options": ["Only Trivial Solution", "1D Null Space", "2D Null Space", "More Vars than Eqs"], "description": "Choose a preset example"},
+    {"type": "checkbox", "label": "Show null space basis", "default": true, "description": "Display basis vectors for the null space"}
+  ],
+  "dateCreated": "2026-01-19",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

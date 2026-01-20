@@ -1,379 +1,411 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/about/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/about/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/contact/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/contact/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/course-description/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/course-description/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/faq/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/faq/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/glossary/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/glossary/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/license/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/license/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/01-vectors-and-vector-spaces/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/01-vectors-and-vector-spaces/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/01-vectors-and-vector-spaces/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/02-matrices-and-matrix-operations/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/02-matrices-and-matrix-operations/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/02-matrices-and-matrix-operations/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/02-matrices-and-matrix-operations/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/03-systems-of-linear-equations/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/03-systems-of-linear-equations/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/03-systems-of-linear-equations/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/03-systems-of-linear-equations/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/04-linear-transformations/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/04-linear-transformations/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/04-linear-transformations/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/04-linear-transformations/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/05-determinants-and-matrix-properties/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/05-determinants-and-matrix-properties/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/05-determinants-and-matrix-properties/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/05-determinants-and-matrix-properties/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/06-eigenvalues-and-eigenvectors/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/06-eigenvalues-and-eigenvectors/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/06-eigenvalues-and-eigenvectors/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/06-eigenvalues-and-eigenvectors/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/07-matrix-decompositions/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/07-matrix-decompositions/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/07-matrix-decompositions/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/07-matrix-decompositions/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/08-vector-spaces-and-inner-products/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/08-vector-spaces-and-inner-products/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/09-machine-learning-foundations/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/09-machine-learning-foundations/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/09-machine-learning-foundations/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/09-machine-learning-foundations/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/10-neural-networks-and-deep-learning/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/10-neural-networks-and-deep-learning/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/10-neural-networks-and-deep-learning/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/10-neural-networks-and-deep-learning/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/11-generative-ai-and-llms/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/11-generative-ai-and-llms/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/11-generative-ai-and-llms/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/11-generative-ai-and-llms/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/12-optimization-and-learning-algorithms/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/12-optimization-and-learning-algorithms/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/12-optimization-and-learning-algorithms/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/12-optimization-and-learning-algorithms/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/13-image-processing-and-computer-vision/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/13-image-processing-and-computer-vision/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/13-image-processing-and-computer-vision/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/13-image-processing-and-computer-vision/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/14-3d-geometry-and-transformations/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/14-3d-geometry-and-transformations/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/14-3d-geometry-and-transformations/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/14-3d-geometry-and-transformations/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/15-autonomous-systems-and-sensor-fusion/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/15-autonomous-systems-and-sensor-fusion/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/chapters/15-autonomous-systems-and-sensor-fusion/quiz/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/chapters/15-autonomous-systems-and-sensor-fusion/quiz/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/concept-list/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/concept-list/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/concept-taxonomy/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/concept-taxonomy/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/course-description-assessment/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/course-description-assessment/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/faq-quality-report/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/faq-quality-report/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/glossary-quality-report/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/glossary-quality-report/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/quality-metrics/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/quality-metrics/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/quiz-generation-report/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/quiz-generation-report/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/learning-graph/taxonomy-distribution/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/learning-graph/taxonomy-distribution/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/section-1/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/section-1/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-1/chapter-1/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-1/chapter-1/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-2/chapter-2/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-2/chapter-2/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-3/chapter-3/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-3/chapter-3/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-4/chapter-4/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-4/chapter-4/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-5/chapter-5/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-5/chapter-5/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-1/chapter-6/chapter-6/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-1/chapter-6/chapter-6/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-2/section-2/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-2/section-2/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-2/chapter-10/chapter-10/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-2/chapter-10/chapter-10/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-2/chapter-7/chapter-7/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-2/chapter-7/chapter-7/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-2/chapter-8/chapter-8/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-2/chapter-8/chapter-8/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-2/chapter-9/chapter-9/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-2/chapter-9/chapter-9/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-3/section-3/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-3/section-3/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-3/chapter-11/chapter-11/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-3/chapter-11/chapter-11/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-3/chapter-12/chapter-12/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-3/chapter-12/chapter-12/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-3/chapter-13/chapter-13/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-3/chapter-13/chapter-13/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-4/section-4/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-4/section-4/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-4/chapter-14/chapter-14/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-4/chapter-14/chapter-14/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-4/chapter-15/chapter-15/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-4/chapter-15/chapter-15/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-4/chapter-16/chapter-16/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-4/chapter-16/chapter-16/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/section-5/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/section-5/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-17/chapter-17/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/chapter-17/chapter-17/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-18/chapter-18/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/chapter-18/chapter-18/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-19/chapter-19/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/chapter-19/chapter-19/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-20/chapter-20/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/chapter-20/chapter-20/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/old-sections/section-5/chapter-21/chapter-21/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/old-sections/section-5/chapter-21/chapter-21/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/prompts/cover-image/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/prompts/cover-image/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/prompts/logo/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/prompts/generate-microsims-for-a-chapter/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/basis-coordinate-visualizer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/prompts/logo/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/block-matrix/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/basis-coordinate-visualizer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/dot-cross-product-visualizer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/block-matrix/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/graph-viewer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/dot-cross-product-visualizer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/linear-combination-explorer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/gaussian-elimination/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/matrix-basic-ops/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/graph-viewer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/matrix-inverse/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/homogeneous-systems/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/matrix-multiplication/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/linear-combination-explorer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/neural-network-layer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/matrix-basic-ops/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/norm-comparison-visualizer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/matrix-inverse/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/orthogonal-transform/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/matrix-multiplication/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/row-column-vectors/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/neural-network-layer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/sparse-dense-matrices/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/norm-comparison-visualizer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/special-matrices/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/numerical-stability/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/symmetric-matrix/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/orthogonal-transform/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/vector-2d-3d-visualizer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/ref-vs-rref/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/vector-operations-playground/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/row-column-vectors/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
     <url>
-         <loc>https://dmccreary.github.io/linear-Algebra/sims/vector-space-axiom-explorer/</loc>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/row-operations/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/solution-sets/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/sparse-dense-matrices/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/special-matrices/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/symmetric-matrix/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/system-geometry/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/vector-2d-3d-visualizer/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/vector-operations-playground/</loc>
+         <lastmod>2026-01-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/vector-space-axiom-explorer/</loc>
          <lastmod>2026-01-20</lastmod>
     </url>
 </urlset>
