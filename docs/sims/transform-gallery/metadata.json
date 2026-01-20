@@ -1,0 +1,66 @@
+{
+  "title": "Geometric Transformations Interactive Gallery",
+  "description": "Compare and contrast rotation, scaling, shear, and reflection transformations with interactive controls and live matrix display.",
+  "subject": "Linear Algebra",
+  "topic": "Geometric Transformations",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Compare different geometric transformations",
+    "Identify transformation type from matrix structure",
+    "Understand properties preserved by each transformation"
+  ],
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix multiplication",
+    "2D coordinate geometry",
+    "Determinants (basic)"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "typeButtons",
+      "label": "Transformation Type",
+      "options": ["Rotation", "Scaling", "Shear", "Reflection"],
+      "description": "Select transformation type to visualize"
+    },
+    {
+      "type": "slider",
+      "name": "param1Slider",
+      "label": "Parameter 1",
+      "description": "Primary parameter (angle, scale, or shear factor)"
+    },
+    {
+      "type": "slider",
+      "name": "param2Slider",
+      "label": "Parameter 2",
+      "description": "Secondary parameter (for scaling Y)"
+    },
+    {
+      "type": "select",
+      "name": "shapeSelect",
+      "label": "Shape",
+      "options": ["F-Shape", "Square", "Arrow", "Points"],
+      "description": "Shape to transform"
+    },
+    {
+      "type": "checkbox",
+      "name": "showGridCheckbox",
+      "label": "Show Grid",
+      "default": true,
+      "description": "Toggle grid deformation visibility"
+    },
+    {
+      "type": "button",
+      "name": "animateButton",
+      "label": "Animate",
+      "description": "Animate transformation from identity"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 520",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

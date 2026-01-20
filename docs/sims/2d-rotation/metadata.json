@@ -1,0 +1,64 @@
+{
+  "title": "2D Rotation Matrix Visualizer",
+  "description": "Interactive visualization of 2D rotation matrices showing the relationship between rotation angle and cos/sin matrix entries.",
+  "subject": "Linear Algebra",
+  "topic": "Rotation Matrices",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Verify relationship between angle and matrix entries",
+    "Observe how rotation transforms shapes and basis vectors",
+    "Understand orthogonality property of rotation matrices"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "demonstrate",
+  "duration": "5-10 minutes",
+  "prerequisites": [
+    "Trigonometric functions",
+    "Matrix multiplication",
+    "2D coordinate geometry"
+  ],
+  "controls": [
+    {
+      "type": "slider",
+      "name": "angleSlider",
+      "label": "Angle θ",
+      "min": -360,
+      "max": 360,
+      "default": 45,
+      "step": 1,
+      "description": "Rotation angle in degrees"
+    },
+    {
+      "type": "button",
+      "name": "animateButton",
+      "label": "Animate",
+      "description": "Toggle continuous rotation animation"
+    },
+    {
+      "type": "select",
+      "name": "shapeSelect",
+      "label": "Shape",
+      "options": ["F-Shape", "Arrow", "Square", "Triangle"],
+      "description": "Shape to rotate"
+    },
+    {
+      "type": "checkbox",
+      "name": "showCircleCheckbox",
+      "label": "Unit Circle",
+      "default": true,
+      "description": "Show unit circle reference"
+    },
+    {
+      "type": "checkbox",
+      "name": "showArcCheckbox",
+      "label": "Show Arc",
+      "default": true,
+      "description": "Show rotation angle arc"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

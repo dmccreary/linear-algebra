@@ -1,0 +1,59 @@
+{
+  "title": "Kernel and Range Interactive Visualizer",
+  "description": "Visualize the kernel (null space) and range (column space) of linear transformations, demonstrating the rank-nullity theorem.",
+  "subject": "Linear Algebra",
+  "topic": "Kernel and Range",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Visualize kernel (null space) and range (column space)",
+    "Verify the rank-nullity theorem",
+    "Understand connection between rank and invertibility"
+  ],
+  "bloomLevel": "Analyze",
+  "bloomVerb": "differentiate",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Linear transformations",
+    "Matrix multiplication",
+    "Subspaces"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "fullRankButton",
+      "label": "Full Rank",
+      "description": "Generate a random invertible matrix"
+    },
+    {
+      "type": "button",
+      "name": "deficientButton",
+      "label": "Rank Deficient",
+      "description": "Generate a rank-1 matrix with nontrivial kernel"
+    },
+    {
+      "type": "checkbox",
+      "name": "showKernelCheckbox",
+      "label": "Show Kernel",
+      "default": true,
+      "description": "Highlight the kernel subspace"
+    },
+    {
+      "type": "checkbox",
+      "name": "showMappingCheckbox",
+      "label": "Show Mapping",
+      "default": true,
+      "description": "Show how vectors map from domain to codomain"
+    },
+    {
+      "type": "button",
+      "name": "animateButton",
+      "label": "Animate",
+      "description": "Animate the transformation"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 500",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

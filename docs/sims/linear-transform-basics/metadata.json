@@ -1,0 +1,76 @@
+{
+  "title": "Linear Transformation Fundamentals Visualizer",
+  "description": "Interactive visualization showing how linear transformations preserve grid structure and are determined by where basis vectors map.",
+  "subject": "Linear Algebra",
+  "topic": "Linear Transformations",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Understand that linear transformations are determined by where basis vectors map",
+    "Visualize how transformations preserve grid structure (parallel lines)",
+    "Connect transformation matrices to geometric effects"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix-vector multiplication",
+    "Standard basis vectors",
+    "2D coordinate geometry"
+  ],
+  "controls": [
+    {
+      "type": "slider",
+      "name": "animSlider",
+      "label": "Morph",
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 0.01,
+      "description": "Animate between identity and current transformation"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Reset to identity transformation"
+    },
+    {
+      "type": "select",
+      "name": "presetSelect",
+      "label": "Presets",
+      "options": ["Identity", "Rotation 45°", "Scale 2×", "Shear X", "Reflect Y", "Stretch"],
+      "description": "Select common transformation presets"
+    },
+    {
+      "type": "checkbox",
+      "name": "showGridCheckbox",
+      "label": "Show Grid",
+      "default": true,
+      "description": "Toggle grid visibility"
+    },
+    {
+      "type": "checkbox",
+      "name": "showVectorCheckbox",
+      "label": "Show Sample",
+      "default": true,
+      "description": "Toggle sample vector visibility"
+    },
+    {
+      "type": "drag",
+      "name": "te1Handle",
+      "label": "T(e₁)",
+      "description": "Drag to set where e₁ maps to"
+    },
+    {
+      "type": "drag",
+      "name": "te2Handle",
+      "label": "T(e₂)",
+      "description": "Drag to set where e₂ maps to"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

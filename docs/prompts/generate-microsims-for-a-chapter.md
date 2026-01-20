@@ -5,3 +5,15 @@ Go through all of the level 4 diagram headers (#### Diagram:) and for each
 diagram, use text within the <details markdown="1"> as input specification to the
 microsim-generator skill to generate a microsim for each diagram.  When done, add a session
 log to logs/ch-03-microsims.md
+
+Set the context to @docs/chapters/04-linear-transformations/index.md.
+Go through all of the level 4 diagram headers (#### Diagram:) and for each
+diagram, use text within the <details markdown="1"> as input specification to the
+microsim-generator skill to generate a microsim for each diagram.  When done, add a session
+log to logs/ch-04-microsims.md
+
+Set the context to @docs/chapters/05-determinants-and-matrix-properties/index.md.
+Go through all of the level 4 diagram headers (#### Diagram:) and for each
+diagram, use text within the <details markdown="1"> as input specification to the
+microsim-generator skill to generate a microsim for each diagram.  When done, add a session
+log to logs/ch-05-microsims.md
