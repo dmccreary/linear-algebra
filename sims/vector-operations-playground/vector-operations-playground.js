@@ -18,7 +18,7 @@ let scale; // pixels per unit, calculated based on width
 
 // Vectors (in mathematical coordinates, not screen)
 let uVec = { x: 3, y: 2 };
-let vVec = { x: 1, y: 4 };
+let vVec = { x: -1, y: 2 };
 let resultVec = { x: 0, y: 0 };
 
 // Operation state
@@ -63,13 +63,20 @@ function createControls() {
     addRadio.position(10, drawHeight + 10);
     addRadio.changed(() => {
         operation = addRadio.value();
+        // Show/hide scalar slider based on operation
+        if (operation === 'scalar') {
+            scalarSlider.show();
+        } else {
+            scalarSlider.hide();
+        }
         calculateResult();
     });
 
-    // Scalar slider
+    // Scalar slider (hidden by default since operation starts as 'add')
     scalarSlider = createSlider(-3, 3, 2, 0.1);
     scalarSlider.position(sliderLeftMargin + 120, drawHeight + 45);
     scalarSlider.size(canvasWidth - sliderLeftMargin - 180);
+    scalarSlider.hide();
 
     // Checkboxes
     parallelogramCheckbox = createCheckbox(' Parallelogram', true);
@@ -110,9 +117,10 @@ function startAnimation() {
 
 function resetVectors() {
     uVec = { x: 3, y: 2 };
-    vVec = { x: 1, y: 4 };
+    vVec = { x: -1, y: 2 };
     scalarSlider.value(2);
     scalarValue = 2;
+    scalarSlider.hide();
     addRadio.selected('add');
     operation = 'add';
     animating = false;
@@ -210,12 +218,12 @@ function draw() {
 
     pop();
 
-    // Draw title
+    // Draw title (centered in left quadrant to avoid axis labels)
     fill(0);
     textSize(18);
     textAlign(CENTER, TOP);
     noStroke();
-    text('Vector Operations Playground', canvasWidth/2, 8);
+    text('Vector Operations Playground', canvasWidth/4, 8);
 
     // Draw info panel
     drawInfoPanel();
@@ -228,40 +236,57 @@ function drawGrid() {
     stroke(230);
     strokeWeight(1);
 
+    // Constrain grid to drawing area bounds (with margin from top)
+    let yMin = -drawHeight / 2 + margin;
+    let yMax = drawHeight / 2;
+
     for (let i = gridMin; i <= gridMax; i++) {
-        // Vertical lines
-        line(i * scale, gridMin * scale, i * scale, gridMax * scale);
-        // Horizontal lines (inverted Y)
-        line(gridMin * scale, -i * scale, gridMax * scale, -i * scale);
+        // Vertical lines - constrained to drawing area
+        line(i * scale, max(gridMin * scale, yMin), i * scale, min(gridMax * scale, yMax));
+        // Horizontal lines (inverted Y) - only draw if within visible area
+        if (-i * scale >= yMin && -i * scale <= yMax) {
+            line(gridMin * scale, -i * scale, gridMax * scale, -i * scale);
+        }
     }
 }
 
 function drawAxes() {
     strokeWeight(2);
 
+    // Constrain axes to drawing area bounds
+    let yMin = -drawHeight / 2;
+    let yMax = drawHeight / 2;
+    let xMin = -canvasWidth / 2;
+    let xMax = canvasWidth / 2;
+
     // X-axis
     stroke(150);
-    line(gridMin * scale, 0, gridMax * scale, 0);
+    line(max(gridMin * scale, xMin), 0, min(gridMax * scale, xMax), 0);
     // Arrow
     fill(150);
     noStroke();
-    triangle(gridMax * scale + 5, 0, gridMax * scale - 5, -5, gridMax * scale - 5, 5);
+    let xArrowPos = min(gridMax * scale, xMax - 10);
+    triangle(xArrowPos + 5, 0, xArrowPos - 5, -5, xArrowPos - 5, 5);
 
     // Y-axis
     stroke(150);
-    line(0, -gridMin * scale, 0, -gridMax * scale);
+    let yAxisTop = max(-gridMax * scale, yMin);
+    let yAxisBottom = min(-gridMin * scale, yMax);
+    line(0, yAxisTop, 0, yAxisBottom);
     // Arrow (note: screen Y is inverted)
     fill(150);
     noStroke();
-    triangle(0, -gridMax * scale - 5, -5, -gridMax * scale + 5, 5, -gridMax * scale + 5);
+    let yArrowPos = max(-gridMax * scale, yMin + 10);
+    triangle(0, yArrowPos - 5, -5, yArrowPos + 5, 5, yArrowPos + 5);
 
     // Axis labels
     fill(100);
+    noStroke();
     textSize(14);
     textAlign(CENTER, TOP);
-    text('x', gridMax * scale + 15, 5);
+    text('x', min(gridMax * scale + 15, xMax - 5), 5);
     textAlign(RIGHT, CENTER);
-    text('y', -10, -gridMax * scale);
+    text('y', -10, max(-gridMax * scale, yMin + 15));
 
     // Origin
     fill(100);
@@ -332,6 +357,7 @@ function drawVectorArrow(x1, y1, x2, y2, col, label, showMag) {
     // Draw label
     if (label) {
         fill(col);
+        noStroke();
         textSize(14);
         textAlign(LEFT, BOTTOM);
         let midX = (sx1 + sx2) / 2;
@@ -366,9 +392,9 @@ function drawDragPoint(x, y, col) {
 }
 
 function drawInfoPanel() {
-    let panelX = canvasWidth - 160;
+    let panelX = canvasWidth - 105;
     let panelY = 35;
-    let panelW = 150;
+    let panelW = 100;
     let panelH = 130;
 
     // Panel background
@@ -416,17 +442,20 @@ function drawInfoPanel() {
 
 function drawControlLabels() {
     fill(0);
+    noStroke();
     textSize(12);
     textAlign(LEFT, CENTER);
-    noStroke();
 
-    // Scalar slider label
-    text('Scalar c: ' + scalarValue.toFixed(1), sliderLeftMargin, drawHeight + 55);
+    // Scalar slider label (only show in scalar mode)
+    if (operation === 'scalar') {
+        text('Scalar c: ' + scalarValue.toFixed(1), sliderLeftMargin + 30, drawHeight + 55);
+    }
 
     // Instructions
     fill(100);
+    noStroke();
     textSize(11);
-    text('Drag vector endpoints to adjust', 150, drawHeight + 15);
+    text('Drag vector endpoints to adjust', 400, drawHeight + 15);
 }
 
 function magnitude(v) {

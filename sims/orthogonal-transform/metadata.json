@@ -1,0 +1,60 @@
+{
+  "title": "Orthogonal Matrix Transformation",
+  "description": "Interactive visualization demonstrating how orthogonal matrices (rotations and reflections) preserve lengths and angles when transforming shapes.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Transformations"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Orthogonal Matrices",
+    "learningObjectives": [
+      "Explain why orthogonal matrices preserve lengths and angles",
+      "Write the 2D rotation matrix for any angle θ",
+      "Distinguish between rotation and reflection",
+      "Verify that Q^T Q = I for rotation matrices"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["explain", "interpret", "demonstrate"],
+    "duration": "5-7 minutes",
+    "prerequisites": ["Matrix multiplication", "Trigonometry basics"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 500",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Angle",
+      "min": 0,
+      "max": 360,
+      "default": 45,
+      "step": 1,
+      "description": "Rotation angle θ in degrees"
+    },
+    {
+      "type": "checkbox",
+      "label": "Lengths",
+      "default": true,
+      "description": "Show length comparison for sample vectors"
+    },
+    {
+      "type": "checkbox",
+      "label": "Angles",
+      "default": false,
+      "description": "Show angle preservation between vectors"
+    },
+    {
+      "type": "button",
+      "label": "Reflect",
+      "description": "Toggle reflection transformation (det = -1)"
+    }
+  ]
+}

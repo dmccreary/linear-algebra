@@ -38,10 +38,21 @@ let scale3D = 35; // pixels per unit in 3D
 let isDragging = false;
 let lastMouseX, lastMouseY;
 
+// Font for WEBGL text
+let font;
+
+function preload() {
+    // Load font for WEBGL text rendering
+    font = loadFont('https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/font/SourceSansPro-Regular.otf');
+}
+
 function setup() {
     updateCanvasSize();
     const canvas = createCanvas(canvasWidth, canvasHeight, WEBGL);
     canvas.parent(document.querySelector('main'));
+
+    // Set font for WEBGL text
+    textFont(font);
 
     // Create controls
     createControls();
@@ -50,32 +61,41 @@ function setup() {
 }
 
 function createControls() {
+    const container = document.querySelector('main');
+
     // X component slider
     xSlider = createSlider(-5, 5, 3, 0.1);
+    xSlider.parent(container);
     xSlider.position(sliderLeftMargin, drawHeight + 15);
     xSlider.size(canvasWidth/2 - sliderLeftMargin - margin);
 
     // Y component slider
     ySlider = createSlider(-5, 5, 4, 0.1);
+    ySlider.parent(container);
     ySlider.position(sliderLeftMargin, drawHeight + 45);
     ySlider.size(canvasWidth/2 - sliderLeftMargin - margin);
 
-    // Z component slider
+    // Z component slider (hidden initially for 2D mode)
     zSlider = createSlider(-5, 5, 2, 0.1);
+    zSlider.parent(container);
     zSlider.position(sliderLeftMargin, drawHeight + 75);
     zSlider.size(canvasWidth/2 - sliderLeftMargin - margin);
+    zSlider.hide();
 
     // Toggle view button
     toggleViewButton = createButton('Switch to 3D');
+    toggleViewButton.parent(container);
     toggleViewButton.position(canvasWidth/2 + 20, drawHeight + 15);
     toggleViewButton.mousePressed(toggleView);
 
     // Checkboxes
     projectionsCheckbox = createCheckbox(' Show Projections', true);
+    projectionsCheckbox.parent(container);
     projectionsCheckbox.position(canvasWidth/2 + 20, drawHeight + 45);
     projectionsCheckbox.changed(() => showProjections = projectionsCheckbox.checked());
 
     labelsCheckbox = createCheckbox(' Show Labels', true);
+    labelsCheckbox.parent(container);
     labelsCheckbox.position(canvasWidth/2 + 20, drawHeight + 75);
     labelsCheckbox.changed(() => showLabels = labelsCheckbox.checked());
 }
@@ -83,6 +103,12 @@ function createControls() {
 function toggleView() {
     is3DView = !is3DView;
     toggleViewButton.html(is3DView ? 'Switch to 2D' : 'Switch to 3D');
+    // Show/hide Z slider based on view mode
+    if (is3DView) {
+        zSlider.show();
+    } else {
+        zSlider.hide();
+    }
 }
 
 function draw() {
@@ -220,23 +246,33 @@ function drawAxes2D() {
 function drawProjections2D() {
     stroke(100, 100, 200);
     strokeWeight(1);
-    drawingContext.setLineDash([5, 5]);
 
     let px = vx * scale2D;
     let py = -vy * scale2D; // Invert Y for screen
 
-    // X projection
-    line(px, py, px, 0);
-    // Y projection
-    line(px, py, 0, py);
-
-    drawingContext.setLineDash([]);
+    // X projection (dashed line from vector tip to x-axis)
+    drawDashedLine2D(px, py, px, 0);
+    // Y projection (dashed line from vector tip to y-axis)
+    drawDashedLine2D(px, py, 0, py);
 
     // Projection points
     fill(100, 100, 200);
     noStroke();
     ellipse(px, 0, 6, 6);
     ellipse(0, py, 6, 6);
+}
+
+function drawDashedLine2D(x1, y1, x2, y2) {
+    let steps = 10;
+    for (let i = 0; i < steps; i += 2) {
+        let t1 = i / steps;
+        let t2 = (i + 1) / steps;
+        let sx = lerp(x1, x2, t1);
+        let sy = lerp(y1, y2, t1);
+        let ex = lerp(x1, x2, t2);
+        let ey = lerp(y1, y2, t2);
+        line(sx, sy, ex, ey);
+    }
 }
 
 function drawVector2D() {
@@ -537,7 +573,9 @@ function drawControlArea() {
     noStroke();
     text('X: ' + vx.toFixed(1), 10, drawHeight + 25);
     text('Y: ' + vy.toFixed(1), 10, drawHeight + 55);
-    text('Z: ' + vz.toFixed(1), 10, drawHeight + 85);
+    if (is3DView) {
+        text('Z: ' + vz.toFixed(1), 10, drawHeight + 85);
+    }
 
     pop();
 }

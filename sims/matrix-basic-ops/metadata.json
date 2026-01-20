@@ -1,0 +1,60 @@
+{
+  "title": "Matrix Addition and Scalar Multiplication",
+  "description": "Interactive visualization demonstrating element-wise matrix addition and scalar multiplication with step-by-step calculation highlighting.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Matrix Operations"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Matrix Operations",
+    "learningObjectives": [
+      "Calculate the sum of two matrices by adding corresponding entries",
+      "Multiply a matrix by a scalar by multiplying each entry",
+      "Recognize that both operations preserve matrix dimensions",
+      "Understand the element-wise nature of these operations"
+    ],
+    "bloomsLevel": "Apply",
+    "bloomsVerb": ["calculate", "demonstrate", "apply"],
+    "duration": "5-10 minutes",
+    "prerequisites": ["Understanding of matrices as arrays of numbers", "Basic arithmetic"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 480",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Operation",
+      "options": ["Addition", "Scalar Multiply"],
+      "default": "Addition",
+      "description": "Choose between matrix addition and scalar multiplication"
+    },
+    {
+      "type": "slider",
+      "label": "Scalar k",
+      "min": -3,
+      "max": 3,
+      "default": 2,
+      "step": 0.5,
+      "description": "Scalar value for multiplication (only active in scalar multiply mode)"
+    },
+    {
+      "type": "button",
+      "label": "Randomize",
+      "description": "Generate new random values for matrices A and B"
+    },
+    {
+      "type": "button",
+      "label": "Step",
+      "description": "Highlight the next entry calculation in sequence"
+    }
+  ]
+}

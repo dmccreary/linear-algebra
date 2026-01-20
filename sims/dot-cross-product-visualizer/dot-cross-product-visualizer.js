@@ -47,10 +47,18 @@ let animateButton;
 let dragging = null;
 let dragThreshold = 15;
 
+// Font for WEBGL text
+let font;
+
+function preload() {
+    font = loadFont('https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/font/SourceSansPro-Regular.otf');
+}
+
 function setup() {
     updateCanvasSize();
     const canvas = createCanvas(canvasWidth, canvasHeight, WEBGL);
     canvas.parent(document.querySelector('main'));
+    textFont(font);
 
     createControls();
 
@@ -58,26 +66,33 @@ function setup() {
 }
 
 function createControls() {
+    const container = document.querySelector('main');
+
     // Toggle view button
     toggleViewButton = createButton('Show Cross Product (3D)');
+    toggleViewButton.parent(container);
     toggleViewButton.position(10, drawHeight + 15);
     toggleViewButton.mousePressed(toggleView);
 
     // Checkboxes
     projectionCheckbox = createCheckbox(' Show Projection', true);
+    projectionCheckbox.parent(container);
     projectionCheckbox.position(10, drawHeight + 50);
     projectionCheckbox.changed(() => showProjection = projectionCheckbox.checked());
 
     parallelogramCheckbox = createCheckbox(' Show Parallelogram', true);
+    parallelogramCheckbox.parent(container);
     parallelogramCheckbox.position(10, drawHeight + 75);
     parallelogramCheckbox.changed(() => showParallelogram = parallelogramCheckbox.checked());
 
     formulaCheckbox = createCheckbox(' Show Formula', true);
+    formulaCheckbox.parent(container);
     formulaCheckbox.position(10, drawHeight + 100);
     formulaCheckbox.changed(() => showFormula = formulaCheckbox.checked());
 
     // Animate button
     animateButton = createButton('Animate Angle Sweep');
+    animateButton.parent(container);
     animateButton.position(200, drawHeight + 15);
     animateButton.mousePressed(startAnimation);
 }
@@ -101,17 +116,17 @@ function draw() {
             animating = false;
         }
         // Rotate v around origin
-        let mag = sqrt(v2D.x * v2D.x + v2D.y * v2D.y);
+        let vMag = sqrt(v2D.x * v2D.x + v2D.y * v2D.y);
         let baseAngle = atan2(u2D.y, u2D.x);
-        v2D.x = mag * cos(baseAngle + animAngle);
-        v2D.y = mag * sin(baseAngle + animAngle);
+        v2D.x = vMag * cos(baseAngle + animAngle);
+        v2D.y = vMag * sin(baseAngle + animAngle);
         // Update 3D vectors
         v3D.x = v2D.x;
         v3D.y = v2D.y;
     }
 
     resetMatrix();
-    background(245);
+    background(240, 248, 255); // aliceblue
 
     if (is3DView) {
         draw3DView();
@@ -266,18 +281,15 @@ function drawProjection2D(dotProduct, magU) {
     let projLength = dotProduct / magU;
     let uHat = { x: u2D.x / magU, y: u2D.y / magU };
 
-    // Draw projection line
-    stroke(150, 100, 200);
-    strokeWeight(1);
-    drawingContext.setLineDash([4, 4]);
-
     let vx = v2D.x * scale2D;
     let vy = -v2D.y * scale2D;
     let projX = projLength * uHat.x * scale2D;
     let projY = -projLength * uHat.y * scale2D;
 
-    line(vx, vy, projX, projY);
-    drawingContext.setLineDash([]);
+    // Draw projection line (dashed manually for WEBGL)
+    stroke(150, 100, 200);
+    strokeWeight(1);
+    drawDashedLine(vx, vy, projX, projY);
 
     // Draw projection vector
     stroke(150, 100, 200);
@@ -434,14 +446,14 @@ function drawDotProductInfo(dotProduct, magU, magV, theta) {
     resetMatrix();
     translate(-canvasWidth/2, -canvasHeight/2);
 
-    let panelX = canvasWidth - 200;
+    let panelX = canvasWidth - 150;
     let panelY = 40;
 
     // Panel background
     fill(255, 255, 255, 240);
     stroke(200);
     strokeWeight(1);
-    rect(panelX, panelY, 190, showFormula ? 160 : 100, 8);
+    rect(panelX, panelY, 140, showFormula ? 160 : 100, 8);
 
     // Content
     fill(0);
@@ -494,14 +506,14 @@ function drawCrossProductInfo(cross, crossMag) {
     resetMatrix();
     translate(-canvasWidth/2, -canvasHeight/2);
 
-    let panelX = canvasWidth - 210;
+    let panelX = canvasWidth - 160;
     let panelY = 40;
 
     // Panel background
     fill(255, 255, 255, 240);
     stroke(200);
     strokeWeight(1);
-    rect(panelX, panelY, 200, showFormula ? 180 : 120, 8);
+    rect(panelX, panelY, 150, showFormula ? 180 : 120, 8);
 
     // Content
     fill(0);
@@ -527,14 +539,18 @@ function drawCrossProductInfo(cross, crossMag) {
 
     fill(0);
     text('|u × v| = ' + crossMag.toFixed(2), panelX + 10, y);
-    y += 18;
-    text('(Area of parallelogram)', panelX + 10, y);
+    y += 16;
+    text('Area of', panelX + 10, y);
+    y += 14;
+    text('Parallelogram', panelX + 10, y);
 
     if (showFormula) {
         y += 22;
         fill(100);
         textSize(10);
-        text('u × v = (u₂v₃-u₃v₂, u₃v₁-u₁v₃, u₁v₂-u₂v₁)', panelX + 10, y);
+        text('u × v =', panelX + 10, y);
+        y += 12;
+        text('(u₂v₃-u₃v₂, u₃v₁-u₁v₃, u₁v₂-u₂v₁)', panelX + 10, y);
     }
 
     pop();
@@ -548,11 +564,11 @@ function drawTitle2D() {
     textSize(18);
     textAlign(CENTER, TOP);
     noStroke();
-    text('Dot Product Visualizer', canvasWidth/2 - 50, 10);
+    text('Dot Product Visualizer', canvasWidth/4, 10);
 
     fill(100);
     textSize(11);
-    text('Drag vector endpoints', canvasWidth/2 - 50, 32);
+    text('Drag vector endpoints', canvasWidth/4, 32);
     pop();
 }
 
@@ -564,11 +580,11 @@ function drawTitle3D() {
     textSize(18);
     textAlign(CENTER, TOP);
     noStroke();
-    text('Cross Product Visualizer', canvasWidth/2 - 50, 10);
+    text('Cross Product Visualizer', canvasWidth/4, 10);
 
     fill(100);
     textSize(11);
-    text('Drag to rotate view', canvasWidth/2 - 50, 32);
+    text('Drag to rotate view', canvasWidth/4, 32);
     pop();
 }
 
@@ -658,5 +674,19 @@ function updateCanvasSize() {
     const container = document.querySelector('main');
     if (container) {
         canvasWidth = Math.max(500, container.offsetWidth);
+    }
+}
+
+// Helper function for dashed lines in WEBGL mode
+function drawDashedLine(x1, y1, x2, y2) {
+    let steps = 10;
+    for (let i = 0; i < steps; i += 2) {
+        let t1 = i / steps;
+        let t2 = (i + 1) / steps;
+        let sx = lerp(x1, x2, t1);
+        let sy = lerp(y1, y2, t1);
+        let ex = lerp(x1, x2, t2);
+        let ey = lerp(y1, y2, t2);
+        line(sx, sy, ex, ey);
     }
 }

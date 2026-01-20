@@ -21,11 +21,8 @@
         <link rel="next" href="quiz/">
       
       
-        
-      
-      
       <link rel="icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
@@ -33,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -73,20 +70,34 @@
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Vector Spaces and Inner Products - Linear Algebra" />
-<meta property="og:description" content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" />
-<meta property="og:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Vector Spaces and Inner Products - Linear Algebra" />
-<meta property="twitter:description" content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" />
-<meta property="twitter:image" content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" />
-</head>
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Vector Spaces and Inner Products - Linear Algebra" >
+      
+        <meta  property="og:description"  content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" >
+      
+        <meta  property="og:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://dmccreary.github.io/linear-Algebra/chapters/08-vector-spaces-and-inner-products/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Vector Spaces and Inner Products - Linear Algebra" >
+      
+        <meta  name="twitter:description"  content="Abstract framework for vector spaces, orthogonality, projections, and the fundamental subspaces" >
+      
+        <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-Algebra/assets/images/social/chapters/08-vector-spaces-and-inner-products/index.png" >
+      
+    
+    
+  </head>
   
   
     
@@ -150,13 +161,11 @@
     
     
     
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -188,14 +197,13 @@
     </div>
   </div>
 </div>
-      
     
     
       <div class="md-header__source">
         <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -240,7 +248,7 @@
       <a href="https://github.com/dmccreary/linear-Algebra" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -260,16 +268,9 @@
       <a href="../.." class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     Home
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -287,16 +288,9 @@
       <a href="../../course-description/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     Course Description
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -352,7 +346,6 @@
     
     
     
-    
       
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -362,20 +355,14 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
+          
           <div class="md-nav__link md-nav__container">
             <a href="../" class="md-nav__link ">
               
   
-  
   <span class="md-ellipsis">
-    
-  
     Chapters
-  
-
-    
   </span>
-  
   
 
             </a>
@@ -390,11 +377,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    Chapters
-  
-
+            Chapters
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -418,7 +401,6 @@
     
     
     
-    
       
         
         
@@ -427,22 +409,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../01-vectors-and-vector-spaces/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     1. Vectors and Vector Spaces
-  
-
-    
   </span>
-  
   
 
       
@@ -475,7 +449,6 @@
     
     
     
-    
       
         
         
@@ -484,22 +457,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../02-matrices-and-matrix-operations/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     2. Matrices and Matrix Operations
-  
-
-    
   </span>
-  
   
 
       
@@ -532,7 +497,6 @@
     
     
     
-    
       
         
         
@@ -541,22 +505,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../03-systems-of-linear-equations/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     3. Systems of Linear Equations
-  
-
-    
   </span>
-  
   
 
       
@@ -589,7 +545,6 @@
     
     
     
-    
       
         
         
@@ -598,22 +553,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../04-linear-transformations/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     4. Linear Transformations
-  
-
-    
   </span>
-  
   
 
       
@@ -646,7 +593,6 @@
     
     
     
-    
       
         
         
@@ -655,22 +601,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../05-determinants-and-matrix-properties/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     5. Determinants and Matrix Properties
-  
-
-    
   </span>
-  
   
 
       
@@ -703,7 +641,6 @@
     
     
     
-    
       
         
         
@@ -712,22 +649,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../06-eigenvalues-and-eigenvectors/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     6. Eigenvalues and Eigenvectors
-  
-
-    
   </span>
-  
   
 
       
@@ -757,7 +686,6 @@
       
         
       
-    
     
     
     
@@ -771,20 +699,12 @@
         
   
   
-  
     <a href="../07-matrix-decompositions/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     7. Matrix Decompositions
-  
-
-    
   </span>
-  
   
 
       
@@ -816,7 +736,6 @@
       
         
       
-    
     
     
     
@@ -829,20 +748,14 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
         
           
+          
           <div class="md-nav__link md-nav__container">
             <a href="./" class="md-nav__link md-nav__link--active">
               
   
-  
   <span class="md-ellipsis">
-    
-  
     8. Vector Spaces and Inner Products
-  
-
-    
   </span>
-  
   
 
             </a>
@@ -857,11 +770,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
-            
-  
-    8. Vector Spaces and Inner Products
-  
-
+            8. Vector Spaces and Inner Products
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -877,16 +786,9 @@
       <a href="quiz/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     Quiz
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -921,7 +823,6 @@
     
     
     
-    
       
         
         
@@ -930,22 +831,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../09-machine-learning-foundations/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     9. Machine Learning Foundations
-  
-
-    
   </span>
-  
   
 
       
@@ -978,7 +871,6 @@
     
     
     
-    
       
         
         
@@ -987,22 +879,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../10-neural-networks-and-deep-learning/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     10. Neural Networks and Deep Learning
-  
-
-    
   </span>
-  
   
 
       
@@ -1035,7 +919,6 @@
     
     
     
-    
       
         
         
@@ -1044,22 +927,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../11-generative-ai-and-llms/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     11. Generative AI and LLMs
-  
-
-    
   </span>
-  
   
 
       
@@ -1092,7 +967,6 @@
     
     
     
-    
       
         
         
@@ -1101,22 +975,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../12-optimization-and-learning-algorithms/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     12. Optimization and Learning Algorithms
-  
-
-    
   </span>
-  
   
 
       
@@ -1149,7 +1015,6 @@
     
     
     
-    
       
         
         
@@ -1158,22 +1023,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../13-image-processing-and-computer-vision/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     13. Image Processing and Computer Vision
-  
-
-    
   </span>
-  
   
 
       
@@ -1206,7 +1063,6 @@
     
     
     
-    
       
         
         
@@ -1215,22 +1071,14 @@
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
       
         
-  
   
   
     <a href="../14-3d-geometry-and-transformations/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     14. 3D Geometry and Transformations
-  
-
-    
   </span>
-  
   
 
       
@@ -1263,7 +1111,6 @@
     
     
     
-    
       
         
         
@@ -1274,20 +1121,12 @@
         
   
   
-  
     <a href="../15-autonomous-systems-and-sensor-fusion/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     15. Autonomous Systems and Sensor Fusion
-  
-
-    
   </span>
-  
   
 
       
@@ -1323,20 +1162,69 @@
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
-      
+          
         
       
         
+          
+        
       
-    
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1350,20 +1238,12 @@
         
   
   
-  
     <a href="../../sims/graph-viewer/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     MicroSims
-  
-
-    
   </span>
-  
   
 
       
@@ -1409,7 +1289,6 @@
     
     
     
-    
       
         
         
@@ -1420,20 +1299,12 @@
         
   
   
-  
     <a href="../../learning-graph/" class="md-nav__link">
       
   
-  
   <span class="md-ellipsis">
-    
-  
     Learning Graph
-  
-
-    
   </span>
-  
   
 
       
@@ -1457,16 +1328,9 @@
       <a href="../../glossary/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     Glossary
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -1484,16 +1348,9 @@
       <a href="../../faq/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     FAQ
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -1511,16 +1368,9 @@
       <a href="../../license/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     License
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -1538,16 +1388,9 @@
       <a href="../../contact/" class="md-nav__link">
         
   
-  
   <span class="md-ellipsis">
-    
-  
     Contact
-  
-
-    
   </span>
-  
   
 
       </a>
@@ -1584,9 +1427,7 @@
         <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Summary
-      
+      Summary
     </span>
   </a>
   
@@ -1595,9 +1436,7 @@
         <li class="md-nav__item">
   <a href="#concepts-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Concepts Covered
-      
+      Concepts Covered
     </span>
   </a>
   
@@ -1606,9 +1445,7 @@
         <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Prerequisites
-      
+      Prerequisites
     </span>
   </a>
   
@@ -1617,9 +1454,7 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Introduction
-      
+      Introduction
     </span>
   </a>
   
@@ -1628,9 +1463,7 @@
         <li class="md-nav__item">
   <a href="#abstract-vector-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Abstract Vector Spaces
-      
+      Abstract Vector Spaces
     </span>
   </a>
   
@@ -1640,9 +1473,7 @@
           <li class="md-nav__item">
   <a href="#vector-space-axioms" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Vector Space Axioms
-      
+      Vector Space Axioms
     </span>
   </a>
   
@@ -1651,9 +1482,7 @@
           <li class="md-nav__item">
   <a href="#examples-of-vector-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Examples of Vector Spaces
-      
+      Examples of Vector Spaces
     </span>
   </a>
   
@@ -1663,9 +1492,7 @@
           <li class="md-nav__item">
   <a href="#diagram-vector-space-examples-gallery" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Vector Space Examples Gallery
-      
+      Diagram: Vector Space Examples Gallery
     </span>
   </a>
   
@@ -1684,9 +1511,7 @@
         <li class="md-nav__item">
   <a href="#subspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Subspaces
-      
+      Subspaces
     </span>
   </a>
   
@@ -1696,9 +1521,7 @@
           <li class="md-nav__item">
   <a href="#subspace-test" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Subspace Test
-      
+      Subspace Test
     </span>
   </a>
   
@@ -1707,9 +1530,7 @@
           <li class="md-nav__item">
   <a href="#important-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Important Subspaces
-      
+      Important Subspaces
     </span>
   </a>
   
@@ -1718,9 +1539,7 @@
           <li class="md-nav__item">
   <a href="#non-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Non-Examples
-      
+      Non-Examples
     </span>
   </a>
   
@@ -1730,9 +1549,7 @@
           <li class="md-nav__item">
   <a href="#diagram-subspace-tester" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Subspace Tester
-      
+      Diagram: Subspace Tester
     </span>
   </a>
   
@@ -1751,9 +1568,7 @@
         <li class="md-nav__item">
   <a href="#inner-products-and-inner-product-spaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Inner Products and Inner Product Spaces
-      
+      Inner Products and Inner Product Spaces
     </span>
   </a>
   
@@ -1763,9 +1578,7 @@
           <li class="md-nav__item">
   <a href="#inner-product-definition" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Inner Product Definition
-      
+      Inner Product Definition
     </span>
   </a>
   
@@ -1774,9 +1587,7 @@
           <li class="md-nav__item">
   <a href="#standard-inner-products" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Standard Inner Products
-      
+      Standard Inner Products
     </span>
   </a>
   
@@ -1785,9 +1596,7 @@
           <li class="md-nav__item">
   <a href="#norm-from-inner-product" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Norm from Inner Product
-      
+      Norm from Inner Product
     </span>
   </a>
   
@@ -1797,9 +1606,7 @@
           <li class="md-nav__item">
   <a href="#diagram-inner-product-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Inner Product Visualizer
-      
+      Diagram: Inner Product Visualizer
     </span>
   </a>
   
@@ -1813,9 +1620,7 @@
           <li class="md-nav__item">
   <a href="#the-cauchy-schwarz-inequality" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Cauchy-Schwarz Inequality
-      
+      The Cauchy-Schwarz Inequality
     </span>
   </a>
   
@@ -1824,9 +1629,7 @@
           <li class="md-nav__item">
   <a href="#angle-between-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Angle Between Vectors
-      
+      Angle Between Vectors
     </span>
   </a>
   
@@ -1840,9 +1643,7 @@
         <li class="md-nav__item">
   <a href="#orthogonality" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Orthogonality
-      
+      Orthogonality
     </span>
   </a>
   
@@ -1852,9 +1653,7 @@
           <li class="md-nav__item">
   <a href="#orthogonal-vectors" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Orthogonal Vectors
-      
+      Orthogonal Vectors
     </span>
   </a>
   
@@ -1863,9 +1662,7 @@
           <li class="md-nav__item">
   <a href="#orthonormal-sets-and-bases" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Orthonormal Sets and Bases
-      
+      Orthonormal Sets and Bases
     </span>
   </a>
   
@@ -1874,9 +1671,7 @@
           <li class="md-nav__item">
   <a href="#why-orthonormal-bases-matter" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Why Orthonormal Bases Matter
-      
+      Why Orthonormal Bases Matter
     </span>
   </a>
   
@@ -1886,9 +1681,7 @@
           <li class="md-nav__item">
   <a href="#diagram-orthonormal-basis-coordinate-finder" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Orthonormal Basis Coordinate Finder
-      
+      Diagram: Orthonormal Basis Coordinate Finder
     </span>
   </a>
   
@@ -1907,9 +1700,7 @@
         <li class="md-nav__item">
   <a href="#the-gram-schmidt-process" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Gram-Schmidt Process
-      
+      The Gram-Schmidt Process
     </span>
   </a>
   
@@ -1919,9 +1710,7 @@
           <li class="md-nav__item">
   <a href="#algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Algorithm
-      
+      Algorithm
     </span>
   </a>
   
@@ -1930,9 +1719,7 @@
           <li class="md-nav__item">
   <a href="#geometric-interpretation" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Geometric Interpretation
-      
+      Geometric Interpretation
     </span>
   </a>
   
@@ -1942,9 +1729,7 @@
           <li class="md-nav__item">
   <a href="#diagram-gram-schmidt-process-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Gram-Schmidt Process Visualizer
-      
+      Diagram: Gram-Schmidt Process Visualizer
     </span>
   </a>
   
@@ -1958,9 +1743,7 @@
           <li class="md-nav__item">
   <a href="#connection-to-qr-decomposition" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Connection to QR Decomposition
-      
+      Connection to QR Decomposition
     </span>
   </a>
   
@@ -1974,9 +1757,7 @@
         <li class="md-nav__item">
   <a href="#projection-onto-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Projection onto Subspaces
-      
+      Projection onto Subspaces
     </span>
   </a>
   
@@ -1986,9 +1767,7 @@
           <li class="md-nav__item">
   <a href="#projection-onto-a-line" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Projection onto a Line
-      
+      Projection onto a Line
     </span>
   </a>
   
@@ -1997,9 +1776,7 @@
           <li class="md-nav__item">
   <a href="#projection-onto-a-subspace" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Projection onto a Subspace
-      
+      Projection onto a Subspace
     </span>
   </a>
   
@@ -2008,9 +1785,7 @@
           <li class="md-nav__item">
   <a href="#properties-of-projection-matrices" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Properties of Projection Matrices
-      
+      Properties of Projection Matrices
     </span>
   </a>
   
@@ -2020,9 +1795,7 @@
           <li class="md-nav__item">
   <a href="#diagram-projection-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Projection Visualizer
-      
+      Diagram: Projection Visualizer
     </span>
   </a>
   
@@ -2041,9 +1814,7 @@
         <li class="md-nav__item">
   <a href="#the-least-squares-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Least Squares Problem
-      
+      The Least Squares Problem
     </span>
   </a>
   
@@ -2053,9 +1824,7 @@
           <li class="md-nav__item">
   <a href="#geometric-view" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Geometric View
-      
+      Geometric View
     </span>
   </a>
   
@@ -2064,9 +1833,7 @@
           <li class="md-nav__item">
   <a href="#the-normal-equations" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Normal Equations
-      
+      The Normal Equations
     </span>
   </a>
   
@@ -2076,9 +1843,7 @@
           <li class="md-nav__item">
   <a href="#derivation" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Derivation
-      
+      Derivation
     </span>
   </a>
   
@@ -2092,9 +1857,7 @@
           <li class="md-nav__item">
   <a href="#solving-least-squares" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Solving Least Squares
-      
+      Solving Least Squares
     </span>
   </a>
   
@@ -2104,9 +1867,7 @@
           <li class="md-nav__item">
   <a href="#diagram-least-squares-visualizer" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Least Squares Visualizer
-      
+      Diagram: Least Squares Visualizer
     </span>
   </a>
   
@@ -2120,9 +1881,7 @@
           <li class="md-nav__item">
   <a href="#linear-regression-as-least-squares" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Linear Regression as Least Squares
-      
+      Linear Regression as Least Squares
     </span>
   </a>
   
@@ -2136,9 +1895,7 @@
         <li class="md-nav__item">
   <a href="#the-four-fundamental-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Four Fundamental Subspaces
-      
+      The Four Fundamental Subspaces
     </span>
   </a>
   
@@ -2148,9 +1905,7 @@
           <li class="md-nav__item">
   <a href="#column-space-and-row-space" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Column Space and Row Space
-      
+      Column Space and Row Space
     </span>
   </a>
   
@@ -2159,9 +1914,7 @@
           <li class="md-nav__item">
   <a href="#null-space-and-left-null-space" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Null Space and Left Null Space
-      
+      Null Space and Left Null Space
     </span>
   </a>
   
@@ -2170,9 +1923,7 @@
           <li class="md-nav__item">
   <a href="#the-fundamental-theorem" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Fundamental Theorem
-      
+      The Fundamental Theorem
     </span>
   </a>
   
@@ -2182,9 +1933,7 @@
           <li class="md-nav__item">
   <a href="#diagram-four-fundamental-subspaces" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Four Fundamental Subspaces
-      
+      Diagram: Four Fundamental Subspaces
     </span>
   </a>
   
@@ -2198,9 +1947,7 @@
           <li class="md-nav__item">
   <a href="#visualization" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Visualization
-      
+      Visualization
     </span>
   </a>
   
@@ -2214,9 +1961,7 @@
         <li class="md-nav__item">
   <a href="#the-pseudoinverse" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        The Pseudoinverse
-      
+      The Pseudoinverse
     </span>
   </a>
   
@@ -2226,9 +1971,7 @@
           <li class="md-nav__item">
   <a href="#definition-via-svd" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Definition via SVD
-      
+      Definition via SVD
     </span>
   </a>
   
@@ -2237,9 +1980,7 @@
           <li class="md-nav__item">
   <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Properties
-      
+      Properties
     </span>
   </a>
   
@@ -2248,9 +1989,7 @@
           <li class="md-nav__item">
   <a href="#special-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Special Cases
-      
+      Special Cases
     </span>
   </a>
   
@@ -2259,9 +1998,7 @@
           <li class="md-nav__item">
   <a href="#least-squares-via-pseudoinverse" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Least Squares via Pseudoinverse
-      
+      Least Squares via Pseudoinverse
     </span>
   </a>
   
@@ -2271,9 +2008,7 @@
           <li class="md-nav__item">
   <a href="#diagram-pseudoinverse-application" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Diagram: Pseudoinverse Application
-      
+      Diagram: Pseudoinverse Application
     </span>
   </a>
   
@@ -2292,9 +2027,7 @@
         <li class="md-nav__item">
   <a href="#practical-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Practical Implementation
-      
+      Practical Implementation
     </span>
   </a>
   
@@ -2303,9 +2036,7 @@
         <li class="md-nav__item">
   <a href="#summary_1" class="md-nav__link">
     <span class="md-ellipsis">
-      
-        Summary
-      
+      Summary
     </span>
   </a>
   
@@ -2321,80 +2052,12 @@
           
           
             <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-  
-
-
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Chapters
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    8. Vector Spaces and Inner Products
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
-              
               <article class="md-content__inner md-typeset">
                 
                   
 
-
   
-    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/08-vector-spaces-and-inner-products/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/dmccreary/linear-Algebra/edit/master/docs/chapters/08-vector-spaces-and-inner-products/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3266,8 +2929,8 @@
 <span class="normal">51</span>
 <span class="normal">52</span>
 <span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">linalg</span>
+<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
 
 <span class="c1"># Vector space operations</span>
 <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -3289,7 +2952,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Orthonormal basis Q:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span>
 
 <span class="c1"># Projection onto column space</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">project_onto_colspace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">project_onto_colspace</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Project b onto column space of A.&quot;&quot;&quot;</span>
     <span class="n">Q</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">Q</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">b</span>
@@ -3460,13 +3123,10 @@
     </div>
     
     
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "navigation.footer", "content.action.edit"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../js/extra.js"></script>
       

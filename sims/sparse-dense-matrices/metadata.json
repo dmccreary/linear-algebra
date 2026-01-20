@@ -1,0 +1,59 @@
+{
+  "title": "Sparse vs Dense Matrices",
+  "description": "Side-by-side comparison of sparse and dense matrices showing structural differences, storage efficiency, and common sparsity patterns.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrices", "Data Structures"],
+  "date": "2026-01-19",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "MIT License",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Matrix Storage",
+    "learningObjectives": [
+      "Distinguish sparse and dense matrices visually",
+      "Estimate storage requirements for both types",
+      "Recognize common sparsity patterns in applications",
+      "Explain why sparse storage formats save memory"
+    ],
+    "bloomsLevel": "Analyze",
+    "bloomsVerb": ["compare", "contrast", "differentiate"],
+    "duration": "5 minutes",
+    "prerequisites": ["Basic understanding of matrix structure"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive × 450",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Pattern",
+      "options": ["Random", "Diagonal", "Banded", "Block"],
+      "default": "Random",
+      "description": "Sparsity pattern for the sparse matrix"
+    },
+    {
+      "type": "slider",
+      "label": "Size",
+      "min": 10,
+      "max": 50,
+      "default": 20,
+      "step": 5,
+      "description": "Matrix dimension (n×n)"
+    },
+    {
+      "type": "slider",
+      "label": "Sparsity",
+      "min": 50,
+      "max": 99,
+      "default": 85,
+      "step": 1,
+      "description": "Percentage of zero entries in sparse matrix"
+    }
+  ]
+}
