@@ -1,0 +1,59 @@
+{
+  "title": "Signed Area Interactive Visualizer",
+  "description": "Visualize the signed area of a parallelogram formed by two vectors, showing how orientation affects the sign of the determinant.",
+  "subject": "Linear Algebra",
+  "topic": "Determinants - Signed Area",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Interpret the determinant geometrically as signed area",
+    "Understand how vector orientation affects the sign of the determinant",
+    "Recognize when the determinant equals zero geometrically"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "interpret",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2D vectors",
+    "Coordinate systems",
+    "Basic geometry"
+  ],
+  "controls": [
+    {
+      "type": "drag",
+      "name": "vectorU",
+      "label": "Vector u",
+      "description": "Drag the red endpoint to change vector u"
+    },
+    {
+      "type": "drag",
+      "name": "vectorV",
+      "label": "Vector v",
+      "description": "Drag the blue endpoint to change vector v"
+    },
+    {
+      "type": "checkbox",
+      "name": "showParallelogram",
+      "label": "Show Parallelogram",
+      "default": true,
+      "description": "Toggle parallelogram visibility"
+    },
+    {
+      "type": "checkbox",
+      "name": "showFormula",
+      "label": "Show Formula",
+      "default": true,
+      "description": "Toggle formula display"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Reset vectors to default positions"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 450",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

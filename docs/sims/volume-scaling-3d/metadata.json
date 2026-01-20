@@ -1,0 +1,68 @@
+{
+  "title": "3D Volume Scaling Interactive Visualizer",
+  "description": "Visualize how 3×3 matrix transformations scale 3D volumes, connecting the determinant to geometric volume change.",
+  "subject": "Linear Algebra",
+  "topic": "Determinants and Volume Scaling",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Visualize the determinant as a volume scaling factor in 3D",
+    "Distinguish between orientation-preserving and orientation-reversing transformations",
+    "Recognize singular transformations in 3D"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "3×3 determinants",
+    "Linear transformations",
+    "3D coordinate systems"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "scalingButton",
+      "label": "Scaling",
+      "description": "Set to a diagonal scaling matrix"
+    },
+    {
+      "type": "button",
+      "name": "rotationButton",
+      "label": "Rotation",
+      "description": "Set to a rotation matrix"
+    },
+    {
+      "type": "button",
+      "name": "singularButton",
+      "label": "Singular",
+      "description": "Set to a singular matrix"
+    },
+    {
+      "type": "slider",
+      "name": "morphSlider",
+      "label": "Morph",
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "description": "Interpolate between identity and target matrix"
+    },
+    {
+      "type": "checkbox",
+      "name": "showCubeCheckbox",
+      "label": "Show Unit Cube",
+      "default": true,
+      "description": "Toggle unit cube wireframe display"
+    },
+    {
+      "type": "drag",
+      "name": "cameraRotation",
+      "label": "Camera",
+      "description": "Click and drag to rotate the 3D view"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "renderer": "WEBGL",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

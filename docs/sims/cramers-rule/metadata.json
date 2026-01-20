@@ -1,0 +1,57 @@
+{
+  "title": "Cramer's Rule Interactive Solver",
+  "description": "Step-by-step visualization of solving systems of equations using Cramer's Rule with determinants.",
+  "subject": "Linear Algebra",
+  "topic": "Cramer's Rule for Solving Systems",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Apply Cramer's Rule to solve 2×2 systems of equations",
+    "Identify when Cramer's Rule cannot be applied (singular matrices)",
+    "Connect algebraic solution to geometric line intersection"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "solve",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2×2 determinants",
+    "Systems of linear equations",
+    "Matrix notation"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "stepButton",
+      "label": "Step",
+      "description": "Advance to the next calculation step"
+    },
+    {
+      "type": "button",
+      "name": "playButton",
+      "label": "Play/Pause",
+      "description": "Auto-animate through all steps"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Return to initial state"
+    },
+    {
+      "type": "button",
+      "name": "randomButton",
+      "label": "Random",
+      "description": "Generate a random non-singular system"
+    },
+    {
+      "type": "button",
+      "name": "singularButton",
+      "label": "Singular",
+      "description": "Set to a singular system (no unique solution)"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 500",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

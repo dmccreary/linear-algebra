@@ -1,0 +1,58 @@
+{
+  "title": "2×2 Determinant Calculator",
+  "description": "Interactive calculator for computing 2×2 determinants with step-by-step visualization and geometric interpretation.",
+  "subject": "Linear Algebra",
+  "topic": "2×2 Determinant Computation",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Calculate 2×2 determinants using the formula ad - bc",
+    "Identify main diagonal and anti-diagonal elements",
+    "Connect algebraic computation to geometric signed area"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "calculate",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix notation",
+    "2D vectors",
+    "Signed area concept"
+  ],
+  "controls": [
+    {
+      "type": "input",
+      "name": "matrixCells",
+      "label": "Matrix Entries",
+      "description": "Click cells to edit matrix values"
+    },
+    {
+      "type": "button",
+      "name": "randomButton",
+      "label": "Random",
+      "description": "Generate a random matrix"
+    },
+    {
+      "type": "button",
+      "name": "identityButton",
+      "label": "Identity",
+      "description": "Set to identity matrix"
+    },
+    {
+      "type": "button",
+      "name": "singularButton",
+      "label": "Singular",
+      "description": "Set to a singular matrix with det=0"
+    },
+    {
+      "type": "checkbox",
+      "name": "showSteps",
+      "label": "Show Steps",
+      "default": true,
+      "description": "Toggle step-by-step calculation display"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

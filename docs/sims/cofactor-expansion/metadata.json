@@ -1,0 +1,59 @@
+{
+  "title": "Cofactor Expansion Interactive Visualizer",
+  "description": "Step-by-step animation showing cofactor expansion for computing determinants of any size matrix.",
+  "subject": "Linear Algebra",
+  "topic": "Cofactor Expansion (Laplace Expansion)",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Identify minors and cofactors of matrix entries",
+    "Apply the cofactor expansion formula along any row or column",
+    "Understand the recursive nature of determinant computation"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2×2 determinants",
+    "Matrix notation",
+    "Sign patterns"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "stepButton",
+      "label": "Step",
+      "description": "Advance to the next cofactor"
+    },
+    {
+      "type": "button",
+      "name": "playButton",
+      "label": "Play/Pause",
+      "description": "Auto-animate through all steps"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Return to initial state"
+    },
+    {
+      "type": "select",
+      "name": "rowSelect",
+      "label": "Expansion Row",
+      "options": ["Row 1", "Row 2", "Row 3"],
+      "description": "Select which row to expand along"
+    },
+    {
+      "type": "checkbox",
+      "name": "showSignsCheckbox",
+      "label": "Show Sign Pattern",
+      "default": true,
+      "description": "Display the checkerboard sign pattern"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 520",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

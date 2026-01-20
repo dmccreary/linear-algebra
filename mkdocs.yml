@@ -88,6 +88,14 @@ nav:
     - Transformation Composition: sims/transform-composition/index.md
     - Kernel and Range: sims/kernel-range/index.md
     - Change of Basis: sims/change-of-basis/index.md
+    - Signed Area Visualizer: sims/signed-area/index.md
+    - 2x2 Determinant Calculator: sims/det-2x2-calculator/index.md
+    - Rule of Sarrus Visualizer: sims/sarrus-rule/index.md
+    - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
+    - Determinant Properties Explorer: sims/det-properties/index.md
+    - Singular Matrix Visualizer: sims/singular-matrix/index.md
+    - 3D Volume Scaling Visualizer: sims/volume-scaling-3d/index.md
+    - Cramers Rule Solver: sims/cramers-rule/index.md
 
   - Learning Graph:
     - Introduction: learning-graph/index.md

@@ -1,0 +1,61 @@
+{
+  "title": "Rule of Sarrus Interactive Visualizer",
+  "description": "Step-by-step animation showing how to compute 3×3 determinants using the Rule of Sarrus.",
+  "subject": "Linear Algebra",
+  "topic": "3×3 Determinant - Rule of Sarrus",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Apply the Rule of Sarrus to compute 3×3 determinants",
+    "Identify positive and negative diagonal products",
+    "Understand the limitation to 3×3 matrices only"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2×2 determinants",
+    "Matrix notation",
+    "Basic multiplication"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "stepButton",
+      "label": "Step",
+      "description": "Advance to the next diagonal"
+    },
+    {
+      "type": "button",
+      "name": "playButton",
+      "label": "Play/Pause",
+      "description": "Auto-animate through all steps"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Return to initial state"
+    },
+    {
+      "type": "slider",
+      "name": "speedSlider",
+      "label": "Speed",
+      "min": 0.5,
+      "max": 3,
+      "default": 1,
+      "description": "Animation speed multiplier"
+    },
+    {
+      "type": "select",
+      "name": "exampleSelect",
+      "label": "Example Matrix",
+      "options": ["Custom", "Identity", "Rotation", "Singular"],
+      "description": "Select preset example matrices"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}
