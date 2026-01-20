@@ -19,6 +19,7 @@
         "Kalman",
         "linenums",
         "Matplotlib",
+        "microsim",
         "Microsimulation",
         "microsimulations",
         "nonlinearities",

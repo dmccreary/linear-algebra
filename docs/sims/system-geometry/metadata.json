@@ -1,0 +1,28 @@
+{
+  "title": "System of Equations Geometry",
+  "description": "Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D)",
+  "subject": "Linear Algebra",
+  "topic": "Systems of Linear Equations",
+  "bloomLevel": "Understand",
+  "bloomVerb": "interpret",
+  "learningObjective": "Help students visualize how the solution to a system of linear equations corresponds to the geometric intersection of lines (2D) or planes (3D)",
+  "gradeLevel": "Undergraduate",
+  "duration": "10-15 minutes",
+  "prerequisites": ["Linear equations", "Coordinate geometry", "Basic algebra"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 530",
+  "controls": [
+    {"type": "button", "label": "Switch to 2D/3D", "description": "Toggle between 2D and 3D visualization modes"},
+    {"type": "button", "label": "Random", "description": "Generate a random system of equations"},
+    {"type": "checkbox", "label": "Show Solution", "description": "Display the solution point when it exists"},
+    {"type": "slider", "label": "a₁", "min": -5, "max": 5, "default": 1, "description": "Coefficient of x in equation 1"},
+    {"type": "slider", "label": "b₁", "min": -5, "max": 5, "default": 1, "description": "Coefficient of y in equation 1"},
+    {"type": "slider", "label": "c₁", "min": -10, "max": 10, "default": 3, "description": "Constant term in equation 1"},
+    {"type": "slider", "label": "a₂", "min": -5, "max": 5, "default": 1, "description": "Coefficient of x in equation 2"},
+    {"type": "slider", "label": "b₂", "min": -5, "max": 5, "default": -1, "description": "Coefficient of y in equation 2"},
+    {"type": "slider", "label": "c₂", "min": -10, "max": 10, "default": 1, "description": "Constant term in equation 2"}
+  ],
+  "dateCreated": "2026-01-19",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

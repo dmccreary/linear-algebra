@@ -74,6 +74,13 @@ nav:
     - Sparse vs Dense Matrices: sims/sparse-dense-matrices/index.md
     - Block Matrix Partitioning: sims/block-matrix/index.md
     - Neural Network Layer: sims/neural-network-layer/index.md
+    - System of Equations Geometry: sims/system-geometry/index.md
+    - Row Operations Practice: sims/row-operations/index.md
+    - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
+    - REF vs RREF Comparison: sims/ref-vs-rref/index.md
+    - Solution Set Visualizer: sims/solution-sets/index.md
+    - Homogeneous System Explorer: sims/homogeneous-systems/index.md
+    - Numerical Stability Demo: sims/numerical-stability/index.md
 
   - Learning Graph:
     - Introduction: learning-graph/index.md

@@ -1,0 +1,24 @@
+{
+  "title": "Gaussian Elimination Visualizer",
+  "description": "Step-by-step animated guide through the Gaussian elimination algorithm with explanations",
+  "subject": "Linear Algebra",
+  "topic": "Gaussian Elimination",
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "learningObjective": "Guide students through the complete Gaussian elimination algorithm, showing each row operation and explaining why it is performed",
+  "gradeLevel": "Undergraduate",
+  "duration": "15-20 minutes",
+  "prerequisites": ["Row operations", "Augmented matrices", "Linear equations"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "controls": [
+    {"type": "select", "label": "Example", "options": ["3×3 System", "3×3 Easy", "2×2 System"], "description": "Choose a system to solve"},
+    {"type": "button", "label": "Next Step", "description": "Advance one step in the algorithm"},
+    {"type": "button", "label": "Auto Solve", "description": "Automatically run through all steps"},
+    {"type": "button", "label": "Reset", "description": "Return to initial state"},
+    {"type": "slider", "label": "Speed", "min": 0.5, "max": 3, "default": 1, "description": "Control auto-solve animation speed"}
+  ],
+  "dateCreated": "2026-01-19",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

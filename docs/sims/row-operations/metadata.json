@@ -1,0 +1,26 @@
+{
+  "title": "Row Operations Practice",
+  "description": "Interactive practice tool for applying elementary row operations on augmented matrices",
+  "subject": "Linear Algebra",
+  "topic": "Row Operations",
+  "bloomLevel": "Apply",
+  "bloomVerb": "execute",
+  "learningObjective": "Enable students to practice applying the three elementary row operations and observe how they transform the augmented matrix while preserving solutions",
+  "gradeLevel": "Undergraduate",
+  "duration": "10-15 minutes",
+  "prerequisites": ["Matrix notation", "Linear equations", "Basic algebra"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "controls": [
+    {"type": "select", "label": "Operation", "options": ["Swap Rows", "Scale Row", "Add Multiple"], "description": "Choose which row operation to perform"},
+    {"type": "select", "label": "Row 1", "options": ["R₁", "R₂", "R₃"], "description": "Select the first row"},
+    {"type": "select", "label": "Row 2", "options": ["R₁", "R₂", "R₃"], "description": "Select the second row (for swap/add)"},
+    {"type": "input", "label": "Scalar", "default": "2", "description": "Multiplier for scale/add operations"},
+    {"type": "button", "label": "Apply Operation", "description": "Execute the selected operation"},
+    {"type": "button", "label": "Undo", "description": "Reverse the last operation"},
+    {"type": "button", "label": "Reset", "description": "Return to the original matrix"}
+  ],
+  "dateCreated": "2026-01-19",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

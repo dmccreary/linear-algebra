@@ -1,0 +1,22 @@
+{
+  "title": "REF vs RREF Comparison",
+  "description": "Side-by-side comparison of Row Echelon Form and Reduced Row Echelon Form with highlighted differences",
+  "subject": "Linear Algebra",
+  "topic": "Row Echelon Forms",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "compare",
+  "learningObjective": "Help students understand the difference between row echelon form and reduced row echelon form, and when each is preferable",
+  "gradeLevel": "Undergraduate",
+  "duration": "10-15 minutes",
+  "prerequisites": ["Row operations", "Gaussian elimination", "Matrix reduction"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 450",
+  "controls": [
+    {"type": "select", "label": "Size", "options": ["2×2", "3×3", "4×4"], "default": "3×3", "description": "Choose matrix size"},
+    {"type": "button", "label": "New Random System", "description": "Generate a new random matrix"},
+    {"type": "checkbox", "label": "Show operation counts", "default": true, "description": "Display number of operations to reach each form"}
+  ],
+  "dateCreated": "2026-01-19",
+  "creator": "Claude AI",
+  "license": "MIT"
+}
