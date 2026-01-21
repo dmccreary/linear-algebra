@@ -194,6 +194,12 @@ nav:
     - FAQ Quality Report: learning-graph/faq-quality-report.md
     - Quiz Generation Report: learning-graph/quiz-generation-report.md
   
+  - Sample Prompts:
+    - prompts/index.md
+    - prompts/cover-image.md
+    - prompts/generate-microsims-for-a-chapter.md
+      - prompts/logo.md
+
   - Glossary: glossary.md
   - FAQ: faq.md
   - License: license.md
