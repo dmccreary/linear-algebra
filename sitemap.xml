@@ -313,6 +313,14 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/activation-functions/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/backpropagation/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/basis-coordinate-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -341,7 +349,23 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/convolution-operation/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/cosine-euclidean-similarity/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/covariance-correlation/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/cramers-rule/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/data-matrix-structure/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -377,11 +401,23 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/embedding-space-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/forward-propagation/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/four-subspaces/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/gaussian-elimination/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/gradient-descent/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -409,11 +445,19 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/learning-rate-effect/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/least-squares-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/linear-combination-explorer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/linear-regression/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -445,7 +489,15 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/ml-pipeline/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/multiplicity-comparison/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/neural-network-architecture/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -454,6 +506,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/norm-comparison-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/normalization-comparison/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -470,6 +526,14 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/orthonormal-basis-finder/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/pca-explorer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/perceptron-decision-boundary/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -493,6 +557,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/regularization-geometry/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/row-column-vectors/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -502,6 +570,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/sarrus-rule/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/scree-plot/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -550,6 +622,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/system-geometry/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/tensor-operations/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>

@@ -1,0 +1,60 @@
+{
+  "title": "Forward Propagation",
+  "description": "Step-by-step visualization of forward propagation through a neural network showing matrix operations at each layer.",
+  "subject": "Neural Networks, Deep Learning, Linear Algebra",
+  "keywords": ["forward propagation", "neural network", "matrix multiplication", "activation function", "feedforward"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Apply",
+  "learningObjectives": [
+    "Trace data flow through a neural network",
+    "Understand matrix operations at each layer",
+    "Apply forward propagation algorithm step by step"
+  ],
+  "duration": "15-20 minutes",
+  "prerequisites": ["Matrix multiplication", "Activation functions", "Neural network architecture"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 500",
+  "controls": [
+    {
+      "type": "button",
+      "label": "Next Step",
+      "action": "Advance one computation step"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "action": "Reinitialize network weights"
+    },
+    {
+      "type": "checkbox",
+      "label": "Auto Run",
+      "default": false
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 0.5,
+      "max": 3,
+      "default": 1
+    },
+    {
+      "type": "slider",
+      "label": "Input x1",
+      "min": -2,
+      "max": 2,
+      "default": 1.0
+    },
+    {
+      "type": "slider",
+      "label": "Input x2",
+      "min": -2,
+      "max": 2,
+      "default": 0.5
+    }
+  ]
+}

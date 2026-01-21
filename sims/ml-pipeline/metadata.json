@@ -1,0 +1,60 @@
+{
+    "title": "Machine Learning Pipeline Workflow",
+    "description": "Interactive flowchart showing the complete ML pipeline from raw data to trained model with code examples and detailed explanations.",
+    "creator": "Claude AI",
+    "subject": "Machine Learning, Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Flowchart",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Computer Science, Mathematics",
+        "topic": "Machine Learning Pipeline",
+        "learningObjectives": [
+            "Understand the complete ML pipeline from raw data to trained model",
+            "Identify preprocessing steps and their purposes",
+            "Compare different regression approaches (OLS, Ridge, Lasso)",
+            "Connect linear algebra operations to ML pipeline stages"
+        ],
+        "bloomsLevel": "Create",
+        "duration": "15-20 minutes",
+        "prerequisites": [
+            "Matrix operations",
+            "Linear regression",
+            "Standardization",
+            "PCA basics"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 550",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "color-coded categories", "hover descriptions", "code examples"]
+    },
+    "controls": [
+        {
+            "type": "hover",
+            "label": "Node Hover",
+            "description": "Hover over nodes to see detailed explanations"
+        },
+        {
+            "type": "click",
+            "label": "Node Click",
+            "description": "Click nodes to see Python code examples"
+        },
+        {
+            "type": "button",
+            "label": "Clear Selection",
+            "description": "Dismiss the code panel"
+        }
+    ],
+    "colorCoding": {
+        "blue": "Data Processing (Raw Data, Standardization, PCA, Train/Test Split)",
+        "green": "Modeling (Model Selection, OLS, Ridge, Lasso)",
+        "orange": "Optimization",
+        "purple": "Evaluation (Evaluation, Trained Model)"
+    }
+}

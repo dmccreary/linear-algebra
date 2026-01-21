@@ -1,0 +1,100 @@
+{
+  "title": "Linear Regression Interactive Visualizer",
+  "description": "Interactive visualization of linear regression showing how the best-fit line minimizes squared errors with draggable data points, parameter sliders, and a loss surface heatmap",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Linear Regression", "Least Squares", "Optimization"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Linear Regression",
+  "learningObjectives": [
+    "Understand linear regression as finding the best-fit line by minimizing squared errors",
+    "Visualize the loss surface as a function of slope and intercept",
+    "Connect the normal equations to the OLS solution",
+    "Interpret residuals and R-squared goodness of fit",
+    "Explore how data changes affect the optimal regression line"
+  ],
+  "bloomsLevel": "Apply",
+  "duration": "15-20 minutes",
+  "prerequisites": [
+    "Function of two variables",
+    "Basic calculus (optimization)",
+    "Matrix multiplication",
+    "Systems of linear equations"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 530",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "slider",
+      "label": "w (slope)",
+      "min": -2,
+      "max": 4,
+      "default": 1,
+      "step": 0.05
+    },
+    {
+      "type": "slider",
+      "label": "b (intercept)",
+      "min": -2,
+      "max": 4,
+      "default": 0.5,
+      "step": 0.05
+    },
+    {
+      "type": "checkbox",
+      "label": "Residuals",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Loss Surface",
+      "default": true
+    },
+    {
+      "type": "button",
+      "label": "Fit OLS",
+      "action": "Compute optimal parameters using normal equations"
+    },
+    {
+      "type": "button",
+      "label": "Add Noise",
+      "action": "Add random Gaussian noise to y values"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "action": "Reset data and parameters to initial state"
+    },
+    {
+      "type": "drag",
+      "label": "Data Points",
+      "note": "Drag to adjust position"
+    }
+  ],
+  "visualElements": [
+    {
+      "element": "Scatter Plot",
+      "description": "Main visualization showing data points and fitted line"
+    },
+    {
+      "element": "Loss Surface Heatmap",
+      "description": "2D heatmap showing MSE as function of w and b"
+    },
+    {
+      "element": "Residual Lines",
+      "description": "Vertical dashed lines from points to fitted line"
+    },
+    {
+      "element": "Statistics Panel",
+      "description": "Current and optimal parameters, loss, and R-squared"
+    }
+  ],
+  "chapter": "08-vector-spaces"
+}

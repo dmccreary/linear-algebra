@@ -1,0 +1,71 @@
+{
+    "title": "Regularization Geometry Visualizer",
+    "description": "Interactive visualization showing how L1 and L2 regularization constrain model weights geometrically, demonstrating why L1 regularization produces sparse solutions while L2 produces smooth shrinkage.",
+    "creator": "Claude AI",
+    "subject": ["Linear Algebra", "Machine Learning", "Regularization", "Optimization"],
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics/Machine Learning",
+        "topic": "Regularization Geometry",
+        "learningObjectives": [
+            "Understand how L1 and L2 regularization constrain weights geometrically",
+            "Explain why L1 regularization produces sparse solutions",
+            "Compare the behavior of L1 (Lasso) and L2 (Ridge) regularization",
+            "Visualize the regularization path as constraint strength varies",
+            "Connect constraint regions to feature selection in machine learning"
+        ],
+        "bloomsLevel": ["Analyze", "Understand"],
+        "duration": "20-25 minutes",
+        "prerequisites": ["Least squares regression", "L1 and L2 norms", "Basic optimization"]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 530",
+        "responsive": true,
+        "dependencies": ["p5.js 1.11.10"],
+        "features": ["Drag-and-drop", "Real-time calculation", "Animation", "Toggle controls"]
+    },
+    "controls": [
+        {
+            "type": "slider",
+            "name": "Alpha",
+            "min": 0.1,
+            "max": 4,
+            "default": 1.5,
+            "step": 0.1,
+            "description": "Controls the regularization strength (constraint radius)"
+        },
+        {
+            "type": "button",
+            "name": "L1 (Lasso)",
+            "description": "Switches to L1 regularization with diamond constraint"
+        },
+        {
+            "type": "button",
+            "name": "L2 (Ridge)",
+            "description": "Switches to L2 regularization with circular constraint"
+        },
+        {
+            "type": "checkbox",
+            "name": "Show Regularization Path",
+            "default": false,
+            "description": "Displays the path of solutions as alpha varies from 0 to maximum"
+        },
+        {
+            "type": "button",
+            "name": "Animate",
+            "description": "Animates the regularized solution as alpha increases"
+        },
+        {
+            "type": "drag",
+            "name": "OLS Solution Point",
+            "description": "Drag to change the unconstrained OLS solution location"
+        }
+    ],
+    "keywords": ["L1 regularization", "L2 regularization", "Lasso", "Ridge", "sparsity", "feature selection", "constraint region", "regularization path", "shrinkage", "machine learning"]
+}
