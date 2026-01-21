@@ -1,0 +1,76 @@
+{
+  "title": "Data Matrix Structure Visualizer",
+  "description": "Interactive visualization showing the structure of data matrices with rows as samples and columns as features, including heat map coloring and click-to-highlight functionality.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Data Science", "Machine Learning", "Data Matrices"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Data Matrices",
+    "learningObjectives": [
+      "Identify rows as samples and columns as features in a data matrix",
+      "Extract a feature vector for a specific sample",
+      "Compare feature values across different samples",
+      "Recognize the dimensions n (samples) and d (features)"
+    ],
+    "bloomsLevel": "Understand",
+    "bloomsVerb": ["identify", "explain", "interpret", "classify"],
+    "duration": "5-10 minutes",
+    "prerequisites": ["Understanding of matrices as arrays of numbers", "Basic understanding of data and features"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Dataset",
+      "options": ["Iris Dataset", "MNIST Digit", "Housing Dataset", "Generic Matrix"],
+      "default": "Iris Dataset",
+      "description": "Choose an example dataset to visualize"
+    },
+    {
+      "type": "click",
+      "label": "Row Click",
+      "description": "Click a row to highlight it as a feature vector"
+    },
+    {
+      "type": "click",
+      "label": "Column Click",
+      "description": "Click a column header to highlight one feature across all samples"
+    },
+    {
+      "type": "hover",
+      "label": "Cell Hover",
+      "description": "Hover over any cell to see its value"
+    }
+  ],
+  "datasets": [
+    {
+      "name": "Iris",
+      "fullSize": "150 x 4",
+      "displaySize": "8 x 4",
+      "description": "Botanical measurements of iris flowers"
+    },
+    {
+      "name": "MNIST",
+      "fullSize": "1 x 784",
+      "displaySize": "1 x 16",
+      "description": "Pixel values from handwritten digit image"
+    },
+    {
+      "name": "Housing",
+      "fullSize": "506 x 13",
+      "displaySize": "6 x 5",
+      "description": "Boston housing socioeconomic features"
+    }
+  ]
+}

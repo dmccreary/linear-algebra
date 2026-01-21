@@ -1,0 +1,113 @@
+{
+  "title": "Gradient Descent Interactive Visualizer",
+  "description": "Visualize how gradient descent optimization navigates loss surfaces and how learning rate affects convergence behavior.",
+  "subject": "Linear Algebra / Machine Learning",
+  "topic": "Optimization and Gradient Descent",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Understand how gradient descent updates parameters using gradients",
+    "Predict how learning rate affects convergence behavior",
+    "Identify when gradient descent will converge, oscillate, or diverge",
+    "Recognize why some loss surfaces are harder to optimize"
+  ],
+  "bloomLevel": "Apply",
+  "bloomVerb": "apply",
+  "duration": "15-20 minutes",
+  "prerequisites": [
+    "Partial derivatives",
+    "Gradient vectors",
+    "Function minimization concepts",
+    "Basic calculus"
+  ],
+  "controls": [
+    {
+      "type": "slider",
+      "name": "lrSlider",
+      "label": "Learning Rate",
+      "min": 0.001,
+      "max": 1.0,
+      "default": 0.1,
+      "scale": "logarithmic",
+      "description": "Controls the step size of gradient descent updates"
+    },
+    {
+      "type": "button",
+      "name": "stepButton",
+      "label": "Step",
+      "description": "Execute a single gradient descent iteration"
+    },
+    {
+      "type": "button",
+      "name": "runButton",
+      "label": "Run/Pause",
+      "description": "Start or stop continuous optimization"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Reset to initial starting position"
+    },
+    {
+      "type": "select",
+      "name": "lossSelect",
+      "label": "Loss Function",
+      "options": ["Quadratic Bowl", "Rosenbrock", "Saddle Point"],
+      "default": "Quadratic Bowl",
+      "description": "Choose the loss function landscape"
+    },
+    {
+      "type": "button",
+      "name": "viewToggle",
+      "label": "Toggle 3D/Contour",
+      "description": "Switch between 3D surface and 2D contour views"
+    },
+    {
+      "type": "click",
+      "name": "startingPoint",
+      "label": "Starting Point",
+      "description": "Click on contour plot to set new starting position"
+    },
+    {
+      "type": "drag",
+      "name": "cameraRotation",
+      "label": "Camera",
+      "description": "Drag to rotate the 3D view"
+    }
+  ],
+  "visualElements": [
+    "3D surface plot of loss function",
+    "2D contour plot with level curves",
+    "Current position marker",
+    "Gradient arrow at current position",
+    "Optimization path trace",
+    "Loss vs iteration plot",
+    "Convergence status display"
+  ],
+  "lossFunctions": [
+    {
+      "name": "Quadratic Bowl",
+      "formula": "J = theta1^2 + theta2^2",
+      "minimum": "(0, 0)",
+      "characteristics": "Convex, single minimum, ideal for demonstration"
+    },
+    {
+      "name": "Rosenbrock",
+      "formula": "J = (1-theta1)^2 + 5*(theta2-theta1^2)^2",
+      "minimum": "(1, 1)",
+      "characteristics": "Narrow curved valley, challenging optimization"
+    },
+    {
+      "name": "Saddle Point",
+      "formula": "J = theta1^2 - theta2^2 + 0.05*theta2^4",
+      "minimum": "None (saddle at origin)",
+      "characteristics": "Demonstrates saddle point challenge"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 550",
+  "renderer": "WEBGL",
+  "dateCreated": "2026-01-21",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

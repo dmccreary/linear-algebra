@@ -1,0 +1,105 @@
+{
+    "title": "PCA Step-by-Step Visualizer",
+    "description": "Interactive visualization demonstrating Principal Component Analysis step by step, from raw data through centering, eigenvector computation, and projection to lower dimensions.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics / Machine Learning",
+        "topic": "Principal Component Analysis",
+        "learningObjectives": [
+            "Explain the centering step and why it is necessary before PCA",
+            "Identify principal components as eigenvectors of the covariance matrix",
+            "Understand eigenvalues as variance along principal component directions",
+            "Demonstrate projection onto principal components for dimensionality reduction",
+            "Interpret scree plots to decide number of components to retain",
+            "Visualize reconstruction error from dimensionality reduction"
+        ],
+        "bloomsLevel": "Apply",
+        "duration": "15-20 minutes",
+        "prerequisites": [
+            "Matrix-vector multiplication",
+            "Eigenvalues and eigenvectors",
+            "Covariance and correlation",
+            "Linear projections"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 550",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors", "color-coded panels"]
+    },
+    "controls": [
+        {
+            "type": "button",
+            "label": "1. Center",
+            "description": "Advance to centering step - translate data to have zero mean"
+        },
+        {
+            "type": "button",
+            "label": "2. Find PCs",
+            "description": "Compute principal components from covariance matrix eigendecomposition"
+        },
+        {
+            "type": "button",
+            "label": "3. Project",
+            "description": "Project data onto first k principal components"
+        },
+        {
+            "type": "button",
+            "label": "Reset",
+            "description": "Return to original data view"
+        },
+        {
+            "type": "slider",
+            "label": "k (Components)",
+            "description": "Number of principal components to keep (1 or 2)"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Reconstruction",
+            "description": "Display reconstruction error lines between original and projected points"
+        },
+        {
+            "type": "button",
+            "label": "New Data",
+            "description": "Generate new random data with randomized parameters"
+        },
+        {
+            "type": "slider",
+            "label": "Points",
+            "description": "Number of data points (20-200)"
+        },
+        {
+            "type": "slider",
+            "label": "Spread",
+            "description": "Overall spread/scale of the data cluster"
+        },
+        {
+            "type": "slider",
+            "label": "Rotation",
+            "description": "Rotation angle of the elongated cluster"
+        },
+        {
+            "type": "slider",
+            "label": "Elongation",
+            "description": "How elongated the cluster is (ratio of major to minor axis)"
+        }
+    ],
+    "visualElements": [
+        "Four-panel data visualization showing each PCA step",
+        "Mean point marker in original data panel",
+        "Principal component vectors with length proportional to eigenvalue",
+        "Scree plot showing eigenvalue magnitudes",
+        "Variance explained percentage display",
+        "Optional reconstruction error visualization",
+        "Color-coded points for tracking through transformations"
+    ]
+}

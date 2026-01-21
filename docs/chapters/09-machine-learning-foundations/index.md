@@ -96,6 +96,10 @@ where:
 
 #### Diagram: Data Matrix Structure
 
+<iframe src="../../sims/data-matrix-structure/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Data Matrix Structure Visualizer Fullscreen](../../sims/data-matrix-structure/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Data Matrix Structure Visualizer</summary>
 Type: infographic
@@ -213,6 +217,10 @@ Properties:
 
 #### Diagram: Covariance and Correlation Visualizer
 
+<iframe src="../../sims/covariance-correlation/main.html" height="582px" width="100%" scrolling="no"></iframe>
+
+[Run the Covariance and Correlation Visualizer Fullscreen](../../sims/covariance-correlation/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Covariance and Correlation Matrix Visualizer</summary>
 Type: microsim
@@ -319,6 +327,10 @@ A **scree plot** visualizes eigenvalues to help choose the number of components:
 
 #### Diagram: PCA Interactive Explorer
 
+<iframe src="../../sims/pca-explorer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the PCA Explorer Fullscreen](../../sims/pca-explorer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>PCA Step-by-Step Visualizer</summary>
 Type: microsim
@@ -371,6 +383,10 @@ The relationship to eigendecomposition:
 - This avoids forming $\tilde{X}^T\tilde{X}$ explicitly
 
 #### Diagram: Scree Plot Interactive
+
+<iframe src="../../sims/scree-plot/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run the Scree Plot Visualizer Fullscreen](../../sims/scree-plot/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Scree Plot and Component Selection</summary>
@@ -447,6 +463,10 @@ The closed-form solution (normal equations):
 $\hat{\boldsymbol{\theta}} = (X^TX)^{-1}X^T\mathbf{y}$
 
 #### Diagram: Linear Regression Visualizer
+
+<iframe src="../../sims/linear-regression/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Linear Regression Visualizer Fullscreen](../../sims/linear-regression/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Linear Regression Interactive Visualizer</summary>
@@ -546,6 +566,10 @@ Key properties:
 | Geometry | Circular constraint | Diamond constraint |
 
 #### Diagram: Regularization Geometry
+
+<iframe src="../../sims/regularization-geometry/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Regularization Geometry Visualizer Fullscreen](../../sims/regularization-geometry/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Regularization Geometry Visualizer</summary>
@@ -658,6 +682,10 @@ Choosing the learning rate:
 
 #### Diagram: Gradient Descent Visualizer
 
+<iframe src="../../sims/gradient-descent/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Gradient Descent Visualizer Fullscreen](../../sims/gradient-descent/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Gradient Descent Interactive Visualizer</summary>
 Type: microsim
@@ -728,6 +756,10 @@ Beyond batch gradient descent, several variants improve efficiency:
 | Mini-batch | $O(bd)$ | Moderate | Moderate |
 
 #### Diagram: Learning Rate Effect Visualizer
+
+<iframe src="../../sims/learning-rate-effect/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Learning Rate Effect Visualizer Fullscreen](../../sims/learning-rate-effect/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Learning Rate Effect on Convergence</summary>
@@ -843,6 +875,10 @@ theta_gd, losses = gradient_descent(X_with_bias, y_train,
 ```
 
 #### Diagram: ML Pipeline Workflow
+
+<iframe src="../../sims/ml-pipeline/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the ML Pipeline Workflow Fullscreen](../../sims/ml-pipeline/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Machine Learning Pipeline Workflow</summary>

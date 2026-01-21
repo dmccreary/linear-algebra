@@ -1,0 +1,97 @@
+{
+    "title": "Learning Rate Effect on Convergence",
+    "description": "Interactive side-by-side comparison showing how different learning rates affect gradient descent optimization, demonstrating convergence, oscillation, and divergence behaviors in real-time.",
+    "creator": "Claude AI",
+    "subject": ["Linear Algebra", "Machine Learning", "Optimization", "Gradient Descent"],
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics/Machine Learning",
+        "topic": "Learning Rate and Optimization",
+        "learningObjectives": [
+            "Understand how learning rate choice affects gradient descent behavior",
+            "Recognize convergence, oscillation, and divergence patterns",
+            "Compare optimization trajectories with different learning rates",
+            "Identify the optimal learning rate region for a given problem",
+            "Connect eigenvalues to learning rate stability bounds"
+        ],
+        "bloomsLevel": ["Evaluate", "Analyze"],
+        "duration": "20-25 minutes",
+        "prerequisites": ["Gradient descent", "Partial derivatives", "Loss functions"]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 500",
+        "responsive": true,
+        "dependencies": ["p5.js 1.11.10"],
+        "features": ["Side-by-side comparison", "Real-time animation", "Loss curves", "Status indicators"]
+    },
+    "controls": [
+        {
+            "type": "slider",
+            "name": "Learning Rate 1",
+            "min": 0.001,
+            "max": 1,
+            "default": 0.01,
+            "step": 0.001,
+            "description": "Controls learning rate for left panel (Too Small)"
+        },
+        {
+            "type": "slider",
+            "name": "Learning Rate 2",
+            "min": 0.001,
+            "max": 1,
+            "default": 0.1,
+            "step": 0.001,
+            "description": "Controls learning rate for center panel (Just Right)"
+        },
+        {
+            "type": "slider",
+            "name": "Learning Rate 3",
+            "min": 0.001,
+            "max": 1,
+            "default": 0.5,
+            "step": 0.001,
+            "description": "Controls learning rate for right panel (Too Large)"
+        },
+        {
+            "type": "button",
+            "name": "Too Small",
+            "description": "Sets all learning rates to very small values"
+        },
+        {
+            "type": "button",
+            "name": "Just Right",
+            "description": "Sets all learning rates to optimal values"
+        },
+        {
+            "type": "button",
+            "name": "Too Large",
+            "description": "Sets all learning rates to large values"
+        },
+        {
+            "type": "slider",
+            "name": "Speed",
+            "min": 1,
+            "max": 10,
+            "default": 1,
+            "step": 1,
+            "description": "Controls animation speed (steps per frame)"
+        },
+        {
+            "type": "button",
+            "name": "Run All",
+            "description": "Starts or pauses the optimization animation"
+        },
+        {
+            "type": "button",
+            "name": "Reset All",
+            "description": "Resets all optimizations to initial state"
+        }
+    ],
+    "keywords": ["learning rate", "gradient descent", "convergence", "divergence", "oscillation", "optimization", "hyperparameter", "machine learning", "loss function", "step size"]
+}

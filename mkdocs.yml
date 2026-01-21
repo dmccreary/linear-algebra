@@ -68,7 +68,9 @@ nav:
     - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
     - Complex Eigenvalue Visualizer: sims/complex-eigenvalue/index.md
     - Condition Number Visualizer: sims/condition-number/index.md
+    - Covariance and Correlation Visualizer: sims/covariance-correlation/index.md
     - Cramers Rule Solver: sims/cramers-rule/index.md
+    - Data Matrix Structure: sims/data-matrix-structure/index.md
     - Decomposition Selection Guide: sims/decomposition-guide/index.md
     - Determinant Properties Explorer: sims/det-properties/index.md
     - Diagonalization Workflow: sims/diagonalization-workflow/index.md
@@ -81,12 +83,15 @@ nav:
     - Geometric Transformations Gallery: sims/transform-gallery/index.md
     - Gram-Schmidt Process Visualizer: sims/gram-schmidt/index.md
     - Gram-Schmidt Step-by-Step (Ch8): sims/gram-schmidt-ch8/index.md
+    - Gradient Descent Visualizer: sims/gradient-descent/index.md
     - Graph Viewer: sims/graph-viewer/index.md
     - Homogeneous System Explorer: sims/homogeneous-systems/index.md
     - Inner Product Space Visualizer: sims/inner-product-visualizer/index.md
     - Kernel and Range: sims/kernel-range/index.md
     - Least Squares Visualizer: sims/least-squares-visualizer/index.md
+    - Learning Rate Effect: sims/learning-rate-effect/index.md
     - Linear Combination Explorer: sims/linear-combination-explorer/index.md
+    - Linear Regression Visualizer: sims/linear-regression/index.md
     - Linear Transformation Fundamentals: sims/linear-transform-basics/index.md
     - LU Decomposition Visualizer: sims/lu-decomposition/index.md
     - Matrix Addition and Scalar Multiplication: sims/matrix-basic-ops/index.md
@@ -94,6 +99,7 @@ nav:
     - Matrix Multiplication: sims/matrix-multiplication/index.md
     - Matrix Power Calculator: sims/matrix-power-calculator/index.md
     - Matrix Rank Visualizer: sims/matrix-rank-visualizer/index.md
+    - ML Pipeline Workflow: sims/ml-pipeline/index.md
     - Multiplicity Comparison Chart: sims/multiplicity-comparison/index.md
     - Neural Network Layer: sims/neural-network-layer/index.md
     - Norm Comparison Visualizer: sims/norm-comparison-visualizer/index.md
@@ -101,14 +107,17 @@ nav:
     - Orthogonal Matrix Transformation: sims/orthogonal-transform/index.md
     - Orthogonal Projection: sims/orthogonal-projection/index.md
     - Orthonormal Basis Finder: sims/orthonormal-basis-finder/index.md
+    - PCA Explorer: sims/pca-explorer/index.md
     - Positive Definiteness Visualizer: sims/positive-definiteness/index.md
     - Power Iteration: sims/power-iteration/index.md
     - Projection onto Subspace: sims/projection-subspace/index.md
     - Pseudoinverse Solver: sims/pseudoinverse-solver/index.md
     - REF vs RREF Comparison: sims/ref-vs-rref/index.md
+    - Regularization Geometry: sims/regularization-geometry/index.md
     - Row and Column Vectors: sims/row-column-vectors/index.md
     - Row Operations Practice: sims/row-operations/index.md
     - Rule of Sarrus Visualizer: sims/sarrus-rule/index.md
+    - Scree Plot: sims/scree-plot/index.md
     - Signed Area Visualizer: sims/signed-area/index.md
     - Singular Matrix Visualizer: sims/singular-matrix/index.md
     - Solution Set Visualizer: sims/solution-sets/index.md
