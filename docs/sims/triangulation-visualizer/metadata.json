@@ -1,0 +1,22 @@
+{
+  "title": "Triangulation Visualizer",
+  "description": "Interactive demonstration of 3D point recovery from stereo correspondences showing triangulation accuracy and noise effects.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": ["Computer Vision", "Stereo Vision", "Triangulation", "Linear Algebra"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": ["Claude Code"],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/triangulation-visualizer/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": ["Apply", "Understand"],
+  "concepts": ["Triangulation", "3D Reconstruction", "Stereo Vision", "Ray Intersection"],
+  "prerequisites": ["Stereo camera geometry", "Projection", "Linear algebra"],
+  "library": "p5.js"
+}

@@ -87,6 +87,10 @@ Understanding and converting between coordinate frames is essential for integrat
 
 #### Diagram: 3D Coordinate System Visualizer
 
+<iframe src="../../sims/coordinate-system-3d/main.html" height="582px" width="100%" scrolling="no"></iframe>
+
+[Run the 3D Coordinate System Visualizer Fullscreen](../../sims/coordinate-system-3d/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>3D Coordinate System Visualizer</summary>
 Type: microsim
@@ -181,6 +185,10 @@ Different conventions exist (XYZ, ZYX, ZXZ, etc.)—always verify which conventi
 
 #### Diagram: Euler Angles Visualizer
 
+<iframe src="../../sims/euler-angles-visualizer/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+[Run the Euler Angles Visualizer Fullscreen](../../sims/euler-angles-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Euler Angles Visualizer</summary>
 Type: microsim
@@ -230,6 +238,10 @@ Notice that yaw and roll combine into a single term $(\psi \mp \phi)$—we can o
 Gimbal lock is a fundamental problem with Euler angles, not a bug in implementation. It motivated the development of quaternions.
 
 #### Diagram: Gimbal Lock Demonstration
+
+<iframe src="../../sims/gimbal-lock-demo/main.html" height="592px" width="100%" scrolling="no"></iframe>
+
+[Run the Gimbal Lock Demo Fullscreen](../../sims/gimbal-lock-demo/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Gimbal Lock Demonstration</summary>
@@ -324,6 +336,10 @@ Composing rotations: $\mathbf{q}_{total} = \mathbf{q}_2 \cdot \mathbf{q}_1$ (app
 
 #### Diagram: Quaternion Rotation Visualizer
 
+<iframe src="../../sims/quaternion-rotation/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+[Run the Quaternion Rotation Visualizer Fullscreen](../../sims/quaternion-rotation/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Quaternion Rotation Visualizer</summary>
 Type: microsim
@@ -396,6 +412,10 @@ $\mathbf{T}^{-1} = \begin{bmatrix} \mathbf{R}^\top & -\mathbf{R}^\top \mathbf{t}
 Note: We use $\mathbf{R}^\top$ instead of computing a matrix inverse since rotation matrices are orthogonal.
 
 #### Diagram: Rigid Body Transform Chain
+
+<iframe src="../../sims/rigid-body-transform/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the Rigid Body Transform Chain Fullscreen](../../sims/rigid-body-transform/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Rigid Body Transform Chain</summary>
@@ -500,6 +520,10 @@ The $\sim$ indicates equality up to scale (divide by the third coordinate to get
 
 #### Diagram: Camera Model Visualizer
 
+<iframe src="../../sims/camera-model-visualizer/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the Camera Model Visualizer Fullscreen](../../sims/camera-model-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Camera Model Visualizer</summary>
 Type: microsim
@@ -601,6 +625,10 @@ The fundamental matrix has 7 degrees of freedom (9 elements minus scale minus ra
 
 #### Diagram: Epipolar Geometry Visualizer
 
+<iframe src="../../sims/epipolar-geometry/main.html" height="682px" width="100%" scrolling="no"></iframe>
+
+[Run the Epipolar Geometry Visualizer Fullscreen](../../sims/epipolar-geometry/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Epipolar Geometry Visualizer</summary>
 Type: microsim
@@ -660,6 +688,10 @@ where $\mathbf{A}$ is a 4×4 matrix built from camera matrices and image points.
 | Mid-point | Low | Fast | Very fast |
 
 #### Diagram: Triangulation Visualizer
+
+<iframe src="../../sims/triangulation-visualizer/main.html" height="632px" width="100%" scrolling="no"></iframe>
+
+[Run the Triangulation Visualizer Fullscreen](../../sims/triangulation-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Triangulation Visualizer</summary>
@@ -728,6 +760,10 @@ Common operations on point clouds:
 - **Surface reconstruction:** Create meshes from points
 
 #### Diagram: Point Cloud Visualizer
+
+<iframe src="../../sims/point-cloud-visualizer/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the Point Cloud Visualizer Fullscreen](../../sims/point-cloud-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Point Cloud Visualizer</summary>

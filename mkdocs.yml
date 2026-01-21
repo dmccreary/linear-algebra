@@ -66,6 +66,7 @@ nav:
     - Backpropagation Visualizer: sims/backpropagation/index.md
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Block Matrix Partitioning: sims/block-matrix/index.md
+    - Camera Model Visualizer: sims/camera-model-visualizer/index.md
     - Change of Basis: sims/change-of-basis/index.md
     - Characteristic Polynomial Explorer: sims/characteristic-polynomial/index.md
     - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
@@ -73,6 +74,7 @@ nav:
     - Condition Number Visualizer: sims/condition-number/index.md
     - Convolution Operation Visualizer: sims/convolution-operation/index.md
     - Convolution Visualizer: sims/convolution-visualizer/index.md
+    - Coordinate System 3D: sims/coordinate-system-3d/index.md
     - Corner Detection Visualizer: sims/corner-detection-visualizer/index.md
     - Cosine vs Euclidean Similarity: sims/cosine-euclidean-similarity/index.md
     - Convex Function Visualizer: sims/convex-function-visualizer/index.md
@@ -88,12 +90,15 @@ nav:
     - Eigenvector Transformation: sims/eigenvector-transformation/index.md
     - Edge Detection Visualizer: sims/edge-detection-visualizer/index.md
     - Embedding Space Visualizer: sims/embedding-space-visualizer/index.md
+    - Epipolar Geometry Visualizer: sims/epipolar-geometry/index.md
+    - Euler Angles Visualizer: sims/euler-angles-visualizer/index.md
     - Filter Effects Gallery: sims/filter-effects-gallery/index.md
     - Forward Propagation Visualizer: sims/forward-propagation/index.md
     - Four Fundamental Subspaces: sims/four-subspaces/index.md
     - Fourier Transform Visualizer: sims/fourier-transform-visualizer/index.md
     - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
     - Geometric Transformations Gallery: sims/transform-gallery/index.md
+    - Gimbal Lock Demo: sims/gimbal-lock-demo/index.md
     - Gram-Schmidt Process Visualizer: sims/gram-schmidt/index.md
     - Gram-Schmidt Step-by-Step (Ch8): sims/gram-schmidt-ch8/index.md
     - Gradient Descent Visualizer: sims/gradient-descent/index.md
@@ -135,12 +140,15 @@ nav:
     - Orthonormal Basis Finder: sims/orthonormal-basis-finder/index.md
     - PCA Explorer: sims/pca-explorer/index.md
     - Perceptron Decision Boundary: sims/perceptron-decision-boundary/index.md
+    - Point Cloud Visualizer: sims/point-cloud-visualizer/index.md
     - Positive Definiteness Visualizer: sims/positive-definiteness/index.md
     - Power Iteration: sims/power-iteration/index.md
     - Projection onto Subspace: sims/projection-subspace/index.md
     - Pseudoinverse Solver: sims/pseudoinverse-solver/index.md
+    - Quaternion Rotation Visualizer: sims/quaternion-rotation/index.md
     - REF vs RREF Comparison: sims/ref-vs-rref/index.md
     - RGB Channel Decomposition: sims/rgb-channel-decomposition/index.md
+    - Rigid Body Transform Chain: sims/rigid-body-transform/index.md
     - Regularization Geometry: sims/regularization-geometry/index.md
     - Row and Column Vectors: sims/row-column-vectors/index.md
     - Row Operations Practice: sims/row-operations/index.md
@@ -162,6 +170,7 @@ nav:
     - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md
     - Transformer Block Visualizer: sims/transformer-block/index.md
+    - Triangulation Visualizer: sims/triangulation-visualizer/index.md
     - Vector Operations Playground: sims/vector-operations-playground/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
     - Vector Space Gallery: sims/vector-space-gallery/index.md
