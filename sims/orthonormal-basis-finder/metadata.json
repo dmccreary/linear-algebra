@@ -1,0 +1,76 @@
+{
+  "title": "Orthonormal Basis Coordinate Finder",
+  "description": "Interactive visualization demonstrating how orthonormal bases simplify coordinate finding through inner products",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Orthonormal Bases", "Inner Products", "Coordinates"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Orthonormal Basis Coordinates",
+  "learningObjectives": [
+    "Demonstrate that coordinates in orthonormal bases are inner products",
+    "Visualize projections onto orthonormal basis vectors",
+    "Verify Parseval's identity for orthonormal bases",
+    "Compare computational effort with non-orthonormal methods"
+  ],
+  "bloomsLevel": "Apply",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Basis and coordinates",
+    "Inner product (dot product)",
+    "Vector projection"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 480",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Basis angle",
+      "min": 0,
+      "max": 180,
+      "default": 45,
+      "unit": "degrees"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Projections",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Compare to Standard Basis",
+      "default": false
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "draggable",
+      "label": "Target vector v"
+    },
+    {
+      "type": "draggable",
+      "label": "Basis angle via q1 endpoint"
+    }
+  ],
+  "visualElements": [
+    "Orthonormal basis vectors q1, q2",
+    "Target vector v",
+    "Projection lines with coordinates",
+    "Standard basis comparison (optional)",
+    "Parseval identity verification"
+  ],
+  "defaultParameters": {
+    "mode": "2D",
+    "basisAngle": 45,
+    "targetVector": [3, 2]
+  },
+  "chapter": "08-vector-spaces"
+}

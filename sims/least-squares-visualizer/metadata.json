@@ -1,0 +1,96 @@
+{
+  "title": "Least Squares Problem Visualizer",
+  "description": "Interactive visualization of least squares as projection showing the geometric relationship between b, Ax-hat, and the error vector with dual regression and geometric views",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Least Squares", "Linear Regression", "Projection"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Least Squares Problem",
+  "learningObjectives": [
+    "Understand least squares as projection onto column space",
+    "Visualize the geometric relationship between b, Ax-hat, and error",
+    "Connect normal equations to the projection formula",
+    "Apply least squares to linear regression problems",
+    "Compare different solution methods (Normal Eq., QR, SVD)"
+  ],
+  "bloomsLevel": "Analyze",
+  "duration": "15-20 minutes",
+  "prerequisites": [
+    "Matrix multiplication",
+    "Column space",
+    "Vector projection",
+    "Normal equations"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 500",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "select",
+      "label": "View Mode",
+      "options": ["Regression View", "Geometric View"],
+      "default": "Regression View"
+    },
+    {
+      "type": "select",
+      "label": "Method",
+      "options": ["Normal Equations", "QR Decomposition", "SVD Method"],
+      "default": "Normal Equations"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Residuals",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Equations",
+      "default": true
+    },
+    {
+      "type": "slider",
+      "label": "b_x",
+      "min": -3,
+      "max": 3,
+      "default": 2,
+      "note": "Geometric view only"
+    },
+    {
+      "type": "slider",
+      "label": "b_y",
+      "min": -3,
+      "max": 3,
+      "default": 3,
+      "note": "Geometric view only"
+    },
+    {
+      "type": "slider",
+      "label": "b_z",
+      "min": -3,
+      "max": 3,
+      "default": 1,
+      "note": "Geometric view only"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "drag",
+      "label": "Data Points",
+      "note": "Regression view - drag to adjust"
+    },
+    {
+      "type": "drag",
+      "label": "3D Rotation",
+      "note": "Geometric view - drag to rotate"
+    }
+  ],
+  "chapter": "09-solving-linear-systems"
+}

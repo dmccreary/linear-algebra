@@ -1,0 +1,78 @@
+{
+    "title": "Inner Product Space Visualizer",
+    "description": "Interactive visualization showing how different inner products define different notions of length and angle, demonstrating standard dot product versus weighted inner products.",
+    "creator": "Claude AI",
+    "subject": ["Linear Algebra", "Inner Products", "Vector Spaces", "Norms"],
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY-NC-SA 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Inner Product Spaces",
+        "learningObjectives": [
+            "Visualize how different inner products define different notions of length",
+            "Understand how angle definition depends on inner product choice",
+            "Observe how unit ball shape changes with weighted inner products",
+            "Verify Cauchy-Schwarz inequality visually"
+        ],
+        "bloomsLevel": ["Understand", "Analyze"],
+        "duration": "20-30 minutes",
+        "prerequisites": ["Vector basics", "Dot product", "Matrix multiplication", "Positive definite matrices"]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive x 500",
+        "responsive": true,
+        "dependencies": ["p5.js 1.11.10"],
+        "features": ["Drag-and-drop vectors", "Dynamic unit ball visualization", "Real-time calculations"]
+    },
+    "controls": [
+        {
+            "type": "select",
+            "name": "Inner Product Type",
+            "options": ["Standard dot product", "Weighted (diagonal W)", "Weighted (general W)"],
+            "default": "Standard dot product",
+            "description": "Select the type of inner product to use"
+        },
+        {
+            "type": "slider",
+            "name": "w11",
+            "min": 0.2,
+            "max": 3,
+            "default": 1,
+            "description": "Weight matrix element W[1,1] - scales x component"
+        },
+        {
+            "type": "slider",
+            "name": "w22",
+            "min": 0.2,
+            "max": 3,
+            "default": 1,
+            "description": "Weight matrix element W[2,2] - scales y component"
+        },
+        {
+            "type": "slider",
+            "name": "w12",
+            "min": -1,
+            "max": 1,
+            "default": 0,
+            "description": "Weight matrix element W[1,2] = W[2,1] - cross-coupling term"
+        },
+        {
+            "type": "drag",
+            "name": "Vector u",
+            "default": [3, 1],
+            "description": "Drag to reposition vector u"
+        },
+        {
+            "type": "drag",
+            "name": "Vector v",
+            "default": [1, 2],
+            "description": "Drag to reposition vector v"
+        }
+    ],
+    "keywords": ["inner product", "weighted inner product", "dot product", "norm", "angle", "unit ball", "Cauchy-Schwarz", "positive definite", "linear algebra"]
+}

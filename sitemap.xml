@@ -377,11 +377,19 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/four-subspaces/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/gaussian-elimination/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/gram-schmidt/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/gram-schmidt-ch8/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -393,7 +401,15 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/inner-product-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/kernel-range/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/least-squares-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -453,11 +469,23 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/orthonormal-basis-finder/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/positive-definiteness/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/power-iteration/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/projection-subspace/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/pseudoinverse-solver/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -501,6 +529,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/subspace-tester/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/svd-forms-comparison/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -538,6 +570,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/vector-space-axiom-explorer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/vector-space-gallery/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>

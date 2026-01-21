@@ -1,0 +1,73 @@
+{
+  "title": "Gram-Schmidt Step-by-Step Visualizer",
+  "description": "Detailed step-by-step 3D visualization of Gram-Schmidt orthonormalization showing projection computation, subtraction, and normalization phases",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Orthogonalization", "Inner Product Spaces"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Gram-Schmidt Orthonormalization",
+  "learningObjectives": [
+    "Understand the Gram-Schmidt process by watching projection and orthogonalization steps",
+    "Visualize each projection being computed and subtracted",
+    "Observe normalization as length scaling",
+    "Recognize when vectors become linearly dependent"
+  ],
+  "bloomsLevel": "Apply",
+  "duration": "15-20 minutes",
+  "prerequisites": [
+    "Vector projections",
+    "Dot product",
+    "Linear independence",
+    "Vector spaces"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 550",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "button",
+      "label": "Next Step"
+    },
+    {
+      "type": "button",
+      "label": "Auto Run"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 500,
+      "max": 3000,
+      "default": 1500,
+      "unit": "ms"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show All Projections",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Residual",
+      "default": true
+    },
+    {
+      "type": "slider-matrix",
+      "label": "Input Vectors v1, v2, v3",
+      "dimensions": "3x3",
+      "min": -3,
+      "max": 3,
+      "default": [[2, 0, 0], [1, 2, 0], [1, 1, 2]]
+    }
+  ],
+  "chapter": "08-vector-spaces"
+}

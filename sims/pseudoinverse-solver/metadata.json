@@ -1,0 +1,57 @@
+{
+  "title": "Pseudoinverse Solver MicroSim",
+  "description": "Interactive exploration of the Moore-Penrose pseudoinverse for solving least squares problems, including overdetermined, underdetermined, and rank-deficient systems with SVD visualization.",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Pseudoinverse", "Least Squares", "SVD"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "College",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Algebra - Pseudoinverse and Least Squares",
+    "learningObjectives": [
+      "Apply the pseudoinverse to solve overdetermined systems",
+      "Explain why the pseudoinverse gives the least squares solution",
+      "Identify rank-deficient systems and understand their solutions",
+      "Compare pseudoinverse with normal equation approach",
+      "Connect the pseudoinverse to SVD computation"
+    ],
+    "bloomsLevel": "Apply",
+    "bloomsVerb": ["compute", "solve", "compare", "verify"],
+    "duration": "7-10 minutes",
+    "prerequisites": ["Matrix multiplication", "SVD basics", "Least squares concept"]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 540",
+    "responsive": "Width-responsive",
+    "dependencies": ["p5.js 1.11.10"]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Preset Examples",
+      "options": ["Overdetermined (3x2)", "Rank Deficient (3x2)", "Underdetermined (2x3)", "Full Rank (2x2)"],
+      "description": "Choose preset system configurations"
+    },
+    {
+      "type": "button",
+      "label": "Compute Pseudoinverse",
+      "description": "Calculate A+, solution x, and residual"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show SVD",
+      "default": false,
+      "description": "Display SVD components U, Sigma, V"
+    },
+    {
+      "type": "input-fields",
+      "label": "Matrix A and Vector b",
+      "description": "Editable matrix entries for custom systems"
+    }
+  ]
+}
