@@ -73,6 +73,8 @@ The "signed" aspect captures orientation:
 
 <iframe src="../../sims/signed-area/main.html" width="100%" height="450px" scrolling="no"></iframe>
 
+[Run the Signed Area Visualizer Fullscreen](../../sims/signed-area/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Signed Area Interactive Visualizer</summary>
 Type: microsim
@@ -160,6 +162,8 @@ The second example has determinant zero—the columns $(2, 1)$ and $(6, 3)$ are 
 
 <iframe src="../../sims/det-2x2-calculator/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
+[Run the 2×2 Determinant Calculator Fullscreen](../../sims/det-2x2-calculator/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>2×2 Determinant Interactive Calculator</summary>
 Type: microsim
@@ -224,6 +228,8 @@ While Sarrus' rule only works for 3×3 matrices (not larger ones), it provides a
 #### Diagram: 3×3 Determinant Sarrus Visualizer
 
 <iframe src="../../sims/sarrus-rule/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+[Run the Rule of Sarrus Visualizer Fullscreen](../../sims/sarrus-rule/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Rule of Sarrus Interactive Visualizer</summary>
@@ -308,6 +314,8 @@ $$\det = 1 \cdot C_{11} + 0 \cdot C_{21} + 0 \cdot C_{31} = 1 \cdot (+1) \cdot \
 #### Diagram: Cofactor Expansion Step-by-Step
 
 <iframe src="../../sims/cofactor-expansion/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+[Run the Cofactor Expansion Visualizer Fullscreen](../../sims/cofactor-expansion/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Cofactor Expansion Interactive Visualizer</summary>
@@ -397,6 +405,8 @@ This means every property that holds for rows also holds for columns. If two col
 
 <iframe src="../../sims/det-properties/main.html" width="100%" height="500px" scrolling="no"></iframe>
 
+[Run the Determinant Properties Explorer Fullscreen](../../sims/det-properties/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Determinant Properties Interactive Explorer</summary>
 Type: microsim
@@ -479,6 +489,8 @@ This explains why singular matrices aren't invertible—once you collapse a dime
 
 <iframe src="../../sims/singular-matrix/main.html" width="100%" height="480px" scrolling="no"></iframe>
 
+[Run the Singular Matrix Visualizer Fullscreen](../../sims/singular-matrix/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Singular vs Non-Singular Matrix Visualizer</summary>
 Type: microsim
@@ -551,6 +563,8 @@ For the unsigned volume, take the absolute value: $|\det(\mathbf{A})|$.
 #### Diagram: 3D Volume Scaling Visualizer
 
 <iframe src="../../sims/volume-scaling-3d/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+[Run the 3D Volume Scaling Visualizer Fullscreen](../../sims/volume-scaling-3d/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>3D Volume Scaling Interactive Visualizer</summary>
@@ -643,6 +657,8 @@ $$\det(\mathbf{A}_2) = \det\begin{bmatrix} 2 & 7 \\ 1 & 9 \end{bmatrix} = 18 - 7
 #### Diagram: Cramer's Rule Step-by-Step Solver
 
 <iframe src="../../sims/cramers-rule/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+[Run the Cramer's Rule Solver Fullscreen](../../sims/cramers-rule/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Cramer's Rule Interactive Solver</summary>
