@@ -333,6 +333,14 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/camera-calibration/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/camera-model-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/change-of-basis/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -429,6 +437,14 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/epipolar-geometry/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/euler-angles-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/filter-effects-gallery/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -446,6 +462,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/gaussian-elimination/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/gimbal-lock-demo/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -485,6 +505,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/kalman-filter/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/kernel-range/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -506,6 +530,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/least-squares-visualizer/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/lidar-point-cloud/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -589,6 +617,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/object-tracking/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/optimizer-comparison-arena/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -605,11 +637,19 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/path-planning/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/pca-explorer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/perceptron-decision-boundary/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/point-cloud-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -629,6 +669,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/quaternion-rotation/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/ref-vs-rref/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -638,6 +682,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/rgb-channel-decomposition/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/rigid-body-transform/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -657,6 +705,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/sensor-fusion/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/sgd-trajectory-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -666,6 +718,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/singular-matrix/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/slam-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
@@ -717,6 +773,10 @@
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/trajectory-optimization/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/transform-composition/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
@@ -726,6 +786,10 @@
     </url>
     <url>
          <loc>https://dmccreary.github.io/linear-algebra/sims/transformer-block/</loc>
+         <lastmod>2026-01-21</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/linear-algebra/sims/triangulation-visualizer/</loc>
          <lastmod>2026-01-21</lastmod>
     </url>
     <url>

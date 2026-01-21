@@ -1,0 +1,61 @@
+{
+    "title": "Path Planning Visualizer",
+    "description": "Interactive comparison of path planning algorithms (A*, Dijkstra, RRT) showing exploration patterns, path quality, and performance metrics.",
+    "subject": "Robotics, Autonomous Systems, Algorithms",
+    "topic": "Path Planning",
+    "bloom_level": "Evaluate",
+    "learning_objectives": [
+        "Compare search-based vs sampling-based planning",
+        "Evaluate algorithm tradeoffs (optimality, completeness, speed)",
+        "Apply appropriate algorithm for different scenarios"
+    ],
+    "prerequisites": [
+        "Graph search algorithms",
+        "Heuristic functions",
+        "Computational complexity basics"
+    ],
+    "estimated_time": "15-20 minutes",
+    "grade_level": "Undergraduate",
+    "keywords": [
+        "path planning",
+        "A*",
+        "Dijkstra",
+        "RRT",
+        "robotics",
+        "motion planning",
+        "autonomous navigation"
+    ],
+    "creator": "Claude AI",
+    "date_created": "2026-01-21",
+    "framework": "p5.js",
+    "canvas_size": "850x700",
+    "responsive": true,
+    "controls": [
+        {
+            "type": "select",
+            "label": "Algorithm",
+            "options": ["A*", "Dijkstra", "RRT"],
+            "default": "A*"
+        },
+        {
+            "type": "button",
+            "label": "Plan Path"
+        },
+        {
+            "type": "button",
+            "label": "Clear All"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Exploration",
+            "default": true
+        },
+        {
+            "type": "slider",
+            "label": "Grid Size",
+            "min": 10,
+            "max": 40,
+            "default": 20
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "title": "LIDAR Point Cloud Visualizer",
+    "description": "Interactive 3D visualization of LIDAR point cloud data demonstrating ground segmentation, object clustering, and various coloring modes used in autonomous vehicle perception systems.",
+    "subject": "Autonomous Systems, Computer Vision, Linear Algebra",
+    "topic": "LIDAR Point Cloud Processing",
+    "bloom_level": "Understand",
+    "learning_objectives": [
+        "Understand the structure of LIDAR point cloud data",
+        "Recognize ground segmentation vs obstacle detection",
+        "Visualize how clustering groups points into objects"
+    ],
+    "prerequisites": [
+        "3D coordinate systems",
+        "Basic understanding of sensors"
+    ],
+    "estimated_time": "10-15 minutes",
+    "grade_level": "Undergraduate",
+    "keywords": [
+        "LIDAR",
+        "point cloud",
+        "autonomous vehicles",
+        "sensor fusion",
+        "3D visualization",
+        "clustering",
+        "ground segmentation"
+    ],
+    "creator": "Claude AI",
+    "date_created": "2026-01-21",
+    "framework": "p5.js",
+    "canvas_size": "850x650",
+    "responsive": true,
+    "controls": [
+        {
+            "type": "slider",
+            "label": "Point Size",
+            "min": 1,
+            "max": 8,
+            "default": 3
+        },
+        {
+            "type": "slider",
+            "label": "Intensity Threshold",
+            "min": 0,
+            "max": 255,
+            "default": 0
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Ground",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Clusters",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "label": "Animate",
+            "default": true
+        },
+        {
+            "type": "select",
+            "label": "Color Mode",
+            "options": ["Intensity", "Height", "Distance", "Cluster"],
+            "default": "Intensity"
+        }
+    ]
+}

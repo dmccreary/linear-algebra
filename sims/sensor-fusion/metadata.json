@@ -1,0 +1,67 @@
+{
+    "title": "Sensor Fusion Visualizer",
+    "description": "Interactive demonstration of GPS and IMU sensor fusion using Kalman filtering, showing how combining complementary sensors improves state estimation accuracy.",
+    "subject": "Autonomous Systems, State Estimation, Linear Algebra",
+    "topic": "Sensor Fusion",
+    "bloom_level": "Analyze",
+    "learning_objectives": [
+        "Understand why multiple sensors outperform single sensors",
+        "Recognize drift vs noise sensor characteristics",
+        "Analyze fusion improvement quantitatively via RMSE"
+    ],
+    "prerequisites": [
+        "Kalman filter basics",
+        "Sensor characteristics",
+        "State estimation"
+    ],
+    "estimated_time": "15-20 minutes",
+    "grade_level": "Undergraduate",
+    "keywords": [
+        "sensor fusion",
+        "GPS",
+        "IMU",
+        "Kalman filter",
+        "dead reckoning",
+        "drift",
+        "autonomous vehicles"
+    ],
+    "creator": "Claude AI",
+    "date_created": "2026-01-21",
+    "framework": "p5.js",
+    "canvas_size": "850x650",
+    "responsive": true,
+    "controls": [
+        {
+            "type": "slider",
+            "label": "GPS Noise",
+            "min": 5,
+            "max": 40,
+            "default": 15
+        },
+        {
+            "type": "slider",
+            "label": "IMU Drift Rate",
+            "min": 0,
+            "max": 0.5,
+            "default": 0.1
+        },
+        {
+            "type": "checkbox",
+            "label": "Enable GPS",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "label": "Enable IMU",
+            "default": true
+        },
+        {
+            "type": "button",
+            "label": "Run/Pause"
+        },
+        {
+            "type": "button",
+            "label": "Reset"
+        }
+    ]
+}

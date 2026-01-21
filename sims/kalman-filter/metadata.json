@@ -1,0 +1,72 @@
+{
+    "title": "Kalman Filter Visualizer",
+    "description": "Interactive visualization of the Kalman filter showing the predict-update cycle, uncertainty propagation, and the effects of process and measurement noise on state estimation.",
+    "subject": "State Estimation, Control Theory, Linear Algebra",
+    "topic": "Kalman Filter",
+    "bloom_level": "Apply",
+    "learning_objectives": [
+        "Understand the predict-update cycle of the Kalman filter",
+        "Recognize how noise parameters affect estimation quality",
+        "Visualize uncertainty propagation through covariance matrices"
+    ],
+    "prerequisites": [
+        "Matrix operations",
+        "Probability and Gaussian distributions",
+        "State space representation"
+    ],
+    "estimated_time": "15-20 minutes",
+    "grade_level": "Undergraduate",
+    "keywords": [
+        "Kalman filter",
+        "state estimation",
+        "sensor fusion",
+        "covariance",
+        "prediction",
+        "autonomous systems",
+        "tracking"
+    ],
+    "creator": "Claude AI",
+    "date_created": "2026-01-21",
+    "framework": "p5.js",
+    "canvas_size": "800x600",
+    "responsive": true,
+    "controls": [
+        {
+            "type": "slider",
+            "label": "Process Noise Q",
+            "min": 0.01,
+            "max": 2,
+            "default": 0.5
+        },
+        {
+            "type": "slider",
+            "label": "Measurement Noise R",
+            "min": 1,
+            "max": 50,
+            "default": 20
+        },
+        {
+            "type": "button",
+            "label": "Step"
+        },
+        {
+            "type": "button",
+            "label": "Run/Pause"
+        },
+        {
+            "type": "button",
+            "label": "Reset"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show True Position",
+            "default": false
+        },
+        {
+            "type": "select",
+            "label": "Motion Model",
+            "options": ["Constant Velocity", "Constant Acceleration", "Random Walk"],
+            "default": "Constant Velocity"
+        }
+    ]
+}

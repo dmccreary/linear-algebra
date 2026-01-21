@@ -1,0 +1,27 @@
+{
+  "title": "Euler Angles Visualizer",
+  "description": "Interactive demonstration of how Euler angles (yaw, pitch, roll) compose to form 3D rotations with multiple conventions and gimbal lock warning.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "3D Geometry",
+    "Euler Angles",
+    "Rotations",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": ["Claude Code"],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/euler-angles-visualizer/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": ["Apply", "Understand"],
+  "concepts": ["Euler Angles", "Rotation Matrix", "Gimbal Lock", "ZYX Convention"],
+  "prerequisites": ["3D coordinate systems", "Matrix multiplication"],
+  "library": "p5.js"
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Quaternion Rotation Visualizer",
+  "description": "Interactive demonstration of quaternion rotation representation with axis-angle conversion, rotation application, and composition.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": ["3D Geometry", "Quaternions", "Rotations", "Linear Algebra"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": ["Claude Code"],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/quaternion-rotation/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": ["Apply", "Understand"],
+  "concepts": ["Quaternion", "Quaternion Rotation", "Axis-Angle", "Rotation Composition"],
+  "prerequisites": ["Complex numbers", "3D rotations", "Euler angles"],
+  "library": "p5.js"
+}
