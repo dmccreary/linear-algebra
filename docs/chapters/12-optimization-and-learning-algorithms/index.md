@@ -86,6 +86,8 @@ Geometrically, the function lies below the chord connecting any two points on it
 
 #### Diagram: Convex Function Visualizer
 
+<iframe src="../../sims/convex-function-visualizer/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>Convex Function Visualizer</summary>
 Type: microsim
@@ -160,6 +162,8 @@ The eigenvalues of the Hessian reveal the curvature of the function:
 
 #### Diagram: Hessian and Curvature Visualizer
 
+<iframe src="../../sims/hessian-curvature-visualizer/main.html" height="582px" width="100%" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>Hessian and Curvature Visualizer</summary>
 Type: microsim
@@ -226,6 +230,8 @@ where:
 Newton's method effectively rescales the problem to have uniform curvature in all directions, making it condition-number independent.
 
 #### Diagram: Newton vs Gradient Descent
+
+<iframe src="../../sims/newton-vs-gradient-descent/main.html" height="552px" width="100%" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Newton vs Gradient Descent Comparison</summary>
@@ -361,6 +367,8 @@ where:
 
 #### Diagram: SGD Trajectory Visualizer
 
+<iframe src="../../sims/sgd-trajectory-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>SGD Trajectory Visualizer</summary>
 Type: microsim
@@ -425,6 +433,8 @@ $\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \mathbf{v}_{k+1}$
 This "lookahead" provides a correction that improves convergence, especially near the optimum.
 
 #### Diagram: Momentum Dynamics
+
+<iframe src="../../sims/momentum-dynamics-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Momentum Dynamics Visualizer</summary>
@@ -517,6 +527,8 @@ The bias correction compensates for initialization at zero, which otherwise unde
 | AdaGrad | No | Yes (cumulative) | No |
 
 #### Diagram: Optimizer Comparison Arena
+
+<iframe src="../../sims/optimizer-comparison-arena/main.html" height="582px" width="100%" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>Optimizer Comparison Arena</summary>
@@ -622,6 +634,8 @@ At the optimum, the gradient of $f$ is parallel to the constraint gradient—we 
 
 #### Diagram: Lagrange Multiplier Geometry
 
+<iframe src="../../sims/lagrange-multiplier-geometry/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
 <details markdown="1">
 <summary>Lagrange Multiplier Geometry</summary>
 Type: microsim
@@ -690,6 +704,8 @@ The **complementary slackness** condition is particularly important:
 Inactive constraints don't affect the solution—they're not "binding."
 
 #### Diagram: KKT Conditions Visualizer
+
+<iframe src="../../sims/kkt-conditions-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>KKT Conditions Visualizer</summary>
