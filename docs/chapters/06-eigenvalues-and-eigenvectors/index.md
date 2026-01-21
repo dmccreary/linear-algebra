@@ -72,6 +72,10 @@ This equation states that applying the transformation $A$ to the eigenvector $\m
 
 #### Diagram: Eigenvector Transformation Visualization
 
+<iframe src="../../sims/eigenvector-transformation/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Eigenvector Transformation Visualizer Fullscreen](../../sims/eigenvector-transformation/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Eigenvector Transformation Visualization</summary>
 Type: microsim
@@ -188,6 +192,10 @@ The eigenvalues are $\lambda_1 = 5$ and $\lambda_2 = 2$.
 
 #### Diagram: Characteristic Polynomial Explorer
 
+<iframe src="../../sims/characteristic-polynomial/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Characteristic Polynomial Explorer Fullscreen](../../sims/characteristic-polynomial/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Characteristic Polynomial Explorer</summary>
 Type: microsim
@@ -282,6 +290,10 @@ Key properties of eigenspaces:
 
 #### Diagram: Eigenspace Visualization
 
+<iframe src="../../sims/eigenspace-visualization/main.html" height="550px" width="100%" scrolling="no"></iframe>
+
+[Run the Eigenspace Visualizer Fullscreen](../../sims/eigenspace-visualization/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Eigenspace Visualization</summary>
 Type: diagram
@@ -350,6 +362,10 @@ This inequality has profound implications for diagonalization.
 | Repeated eigenvalue, deficient eigenspace | $m$ | $< m$ | No |
 
 #### Diagram: Multiplicity Comparison Chart
+
+<iframe src="../../sims/multiplicity-comparison/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Multiplicity Comparison Chart Fullscreen](../../sims/multiplicity-comparison/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Multiplicity Comparison Chart</summary>
@@ -436,6 +452,10 @@ A matrix $A$ is diagonalizable if and only if:
 
 #### Diagram: Diagonalization Process Workflow
 
+<iframe src="../../sims/diagonalization-workflow/main.html" height="540px" width="100%" scrolling="no"></iframe>
+
+[Run the Diagonalization Workflow Fullscreen](../../sims/diagonalization-workflow/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Diagonalization Process Workflow</summary>
 Type: workflow
@@ -509,6 +529,10 @@ where $e^D = \begin{bmatrix} e^{\lambda_1} & 0 & \cdots \\ 0 & e^{\lambda_2} & \
 $\mathbf{x}(t) = c_1e^{\lambda_1 t}\mathbf{v}_1 + c_2e^{\lambda_2 t}\mathbf{v}_2 + \cdots$
 
 #### Diagram: Matrix Power Calculator
+
+<iframe src="../../sims/matrix-power-calculator/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Matrix Power Calculator Fullscreen](../../sims/matrix-power-calculator/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Matrix Power Calculator MicroSim</summary>
@@ -591,6 +615,10 @@ $R_{90°} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$
 The eigenvalues are $\lambda = \pm i$, which are purely imaginary—reflecting pure rotation with no scaling.
 
 #### Diagram: Complex Eigenvalue Visualizer
+
+<iframe src="../../sims/complex-eigenvalue/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Complex Eigenvalue Visualizer Fullscreen](../../sims/complex-eigenvalue/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Complex Eigenvalue Visualizer</summary>
@@ -685,6 +713,10 @@ This decomposition is the foundation of Principal Component Analysis (PCA).
 
 #### Diagram: Spectral Theorem for Symmetric Matrices
 
+<iframe src="../../sims/spectral-theorem/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Spectral Theorem Demo Fullscreen](../../sims/spectral-theorem/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Spectral Theorem Interactive Demonstration</summary>
 Type: microsim
@@ -759,6 +791,10 @@ $\lambda \approx R(\mathbf{x}) = \frac{\mathbf{x}^T A \mathbf{x}}{\mathbf{x}^T \
 The Rayleigh quotient gives a more accurate eigenvalue estimate than examining vector scaling alone.
 
 #### Diagram: Power Iteration MicroSim
+
+<iframe src="../../sims/power-iteration/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Power Iteration Visualizer Fullscreen](../../sims/power-iteration/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Power Iteration Algorithm Visualization</summary>
@@ -853,6 +889,10 @@ In dynamical systems and neural network training, eigenvalues determine stabilit
 Neural networks with weight matrices having eigenvalues far from 1 suffer from vanishing or exploding gradients.
 
 #### Diagram: Eigenvalue Applications Map
+
+<iframe src="../../sims/eigenvalue-applications/main.html" height="520px" width="100%" scrolling="no"></iframe>
+
+[Run the Eigenvalue Applications Map Fullscreen](../../sims/eigenvalue-applications/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Eigenvalue Applications in ML and AI</summary>
