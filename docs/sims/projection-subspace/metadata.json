@@ -1,0 +1,76 @@
+{
+  "title": "Projection onto Subspace Visualizer",
+  "description": "3D visualization of vector projection onto subspaces showing the projection as the closest point and the orthogonal error vector",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Projections", "Orthogonality"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Projection onto Subspaces",
+  "learningObjectives": [
+    "Visualize projection as finding the closest point in a subspace",
+    "Understand the orthogonal error vector",
+    "Compare projection onto 1D (line) vs 2D (plane) subspaces",
+    "Connect projection to least squares applications"
+  ],
+  "bloomsLevel": "Analyze",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Vector projection onto a line",
+    "Dot product",
+    "Orthogonality",
+    "Subspaces and bases"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 530",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Vector v (x, y, z)",
+      "min": -4,
+      "max": 4,
+      "default": [2, 3, 2]
+    },
+    {
+      "type": "slider",
+      "label": "Basis u1 (x, y, z)",
+      "min": -2,
+      "max": 2,
+      "default": [1, 0, 0]
+    },
+    {
+      "type": "slider",
+      "label": "Basis u2 (x, y, z)",
+      "min": -2,
+      "max": 2,
+      "default": [0, 1, 0]
+    },
+    {
+      "type": "select",
+      "label": "Subspace Type",
+      "options": ["2D Plane", "1D Line"],
+      "default": "2D Plane"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Error Vector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Projection Matrix",
+      "default": true
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    }
+  ],
+  "chapter": "08-orthogonality"
+}

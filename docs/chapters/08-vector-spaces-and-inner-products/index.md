@@ -95,6 +95,10 @@ These axioms capture the essential algebraic properties needed for linear algebr
 
 #### Diagram: Vector Space Examples Gallery
 
+<iframe src="../../sims/vector-space-gallery/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Vector Space Gallery Fullscreen](../../sims/vector-space-gallery/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Vector Space Examples Gallery</summary>
 Type: infographic
@@ -180,6 +184,10 @@ Not every subset is a subspace:
 
 #### Diagram: Subspace Tester
 
+<iframe src="../../sims/subspace-tester/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Subspace Tester Fullscreen](../../sims/subspace-tester/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Subspace Tester MicroSim</summary>
 Type: microsim
@@ -255,6 +263,10 @@ The norm satisfies:
 - **Triangle inequality:** $\|\mathbf{u} + \mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|$
 
 #### Diagram: Inner Product Visualizer
+
+<iframe src="../../sims/inner-product-visualizer/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Inner Product Visualizer Fullscreen](../../sims/inner-product-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Inner Product Space Visualizer</summary>
@@ -377,6 +389,10 @@ $Q^TQ = I \quad \Rightarrow \quad Q^{-1} = Q^T$
 
 #### Diagram: Orthonormal Basis Coordinate Finder
 
+<iframe src="../../sims/orthonormal-basis-finder/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run the Orthonormal Basis Finder Fullscreen](../../sims/orthonormal-basis-finder/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Orthonormal Basis Coordinate Finder</summary>
 Type: microsim
@@ -446,6 +462,10 @@ Each step:
 The projection $\langle \mathbf{v}_k, \mathbf{q}_j \rangle \mathbf{q}_j$ removes the component of $\mathbf{v}_k$ in the direction of $\mathbf{q}_j$, leaving only the component orthogonal to all previous vectors.
 
 #### Diagram: Gram-Schmidt Process Visualizer
+
+<iframe src="../../sims/gram-schmidt-ch8/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Gram-Schmidt Visualizer Fullscreen](../../sims/gram-schmidt-ch8/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Gram-Schmidt Step-by-Step Visualizer</summary>
@@ -537,6 +557,10 @@ Projection matrices satisfy:
 
 #### Diagram: Projection Visualizer
 
+<iframe src="../../sims/projection-subspace/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Projection Visualizer Fullscreen](../../sims/projection-subspace/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Projection onto Subspace Visualizer</summary>
 Type: microsim
@@ -621,6 +645,10 @@ $A^TA\hat{\mathbf{x}} = A^T\mathbf{b}$
     Avoid explicitly forming $A^TA$ when possible. It squares the condition number, amplifying numerical errors. Use QR or SVD instead.
 
 #### Diagram: Least Squares Visualizer
+
+<iframe src="../../sims/least-squares-visualizer/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Least Squares Visualizer Fullscreen](../../sims/least-squares-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Least Squares Problem Visualizer</summary>
@@ -716,6 +744,10 @@ Key insights:
 - The matrix $A$ maps null space to zero
 
 #### Diagram: Four Fundamental Subspaces
+
+<iframe src="../../sims/four-subspaces/main.html" height="542px" width="100%" scrolling="no"></iframe>
+
+[Run the Four Subspaces Visualizer Fullscreen](../../sims/four-subspaces/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Four Fundamental Subspaces Visualizer</summary>
@@ -819,6 +851,10 @@ When $A$ has full column rank, this equals $(A^TA)^{-1}A^T\mathbf{b}$.
 When $A$ is rank-deficient, the pseudoinverse gives the **minimum-norm least squares solution**—the smallest $\hat{\mathbf{x}}$ that minimizes $\|A\mathbf{x} - \mathbf{b}\|$.
 
 #### Diagram: Pseudoinverse Application
+
+<iframe src="../../sims/pseudoinverse-solver/main.html" height="542px" width="100%" scrolling="no"></iframe>
+
+[Run the Pseudoinverse Solver Fullscreen](../../sims/pseudoinverse-solver/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Pseudoinverse Solver MicroSim</summary>

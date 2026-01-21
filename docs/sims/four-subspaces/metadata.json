@@ -1,0 +1,65 @@
+{
+  "title": "Four Fundamental Subspaces Visualizer",
+  "description": "Visualize the four fundamental subspaces of a matrix (row space, column space, null space, left null space) and their orthogonal relationships, demonstrating the Fundamental Theorem of Linear Algebra.",
+  "subject": "Linear Algebra",
+  "topic": "Four Fundamental Subspaces",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Visualize the four fundamental subspaces and their orthogonal relationships",
+    "Understand how matrix transformation maps domain subspaces to codomain subspaces",
+    "Verify the rank-nullity theorem for both domain and codomain",
+    "Compute and display basis vectors for each subspace"
+  ],
+  "bloomLevel": "Analyze",
+  "bloomVerb": "differentiate",
+  "duration": "15-20 minutes",
+  "prerequisites": [
+    "Row space and column space",
+    "Null space",
+    "Rank-nullity theorem",
+    "Matrix transposition",
+    "Orthogonality"
+  ],
+  "controls": [
+    {
+      "type": "input",
+      "name": "matrixInputs",
+      "label": "Matrix A",
+      "description": "Edit matrix entries (up to 4x4)"
+    },
+    {
+      "type": "button",
+      "name": "computeButton",
+      "label": "Compute Subspaces",
+      "description": "Calculate and display all four fundamental subspaces"
+    },
+    {
+      "type": "checkbox",
+      "name": "showBasisCheckbox",
+      "label": "Show Basis Vectors",
+      "default": true,
+      "description": "Display basis vectors for each subspace"
+    },
+    {
+      "type": "checkbox",
+      "name": "showOrthogCheckbox",
+      "label": "Verify Orthogonality",
+      "default": false,
+      "description": "Show orthogonality verification panel"
+    },
+    {
+      "type": "slider",
+      "name": "highlightSlider",
+      "label": "Highlight",
+      "min": 0,
+      "max": 4,
+      "default": 0,
+      "description": "Highlight one subspace at a time (0=all, 1=Row, 2=Col, 3=Null, 4=LeftNull)"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 540",
+  "dateCreated": "2026-01-21",
+  "creator": "Claude AI",
+  "license": "MIT"
+}
