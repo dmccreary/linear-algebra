@@ -1,0 +1,70 @@
+{
+  "title": "Orthogonal Projection Interactive Visualizer",
+  "description": "Visualize how vectors project onto lines with perpendicular error vectors and live formula display.",
+  "subject": "Linear Algebra",
+  "topic": "Orthogonal Projection",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Visualize orthogonal projection onto a line",
+    "Understand the perpendicular relationship between projection and error",
+    "Apply the dot product projection formula"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "duration": "5-10 minutes",
+  "prerequisites": [
+    "Dot product",
+    "Unit vectors",
+    "Vector components"
+  ],
+  "controls": [
+    {
+      "type": "slider",
+      "name": "angleSlider",
+      "label": "Line angle",
+      "min": -90,
+      "max": 90,
+      "default": 30,
+      "step": 1,
+      "description": "Angle of projection line from x-axis"
+    },
+    {
+      "type": "drag",
+      "name": "vectorHandle",
+      "label": "Vector v",
+      "description": "Drag to change the vector to project"
+    },
+    {
+      "type": "checkbox",
+      "name": "showErrorCheckbox",
+      "label": "Error Vector",
+      "default": true,
+      "description": "Show the perpendicular error component"
+    },
+    {
+      "type": "checkbox",
+      "name": "showRightAngleCheckbox",
+      "label": "Right Angle",
+      "default": true,
+      "description": "Show right angle indicator"
+    },
+    {
+      "type": "checkbox",
+      "name": "showFormulaCheckbox",
+      "label": "Formula",
+      "default": true,
+      "description": "Show projection formula and calculations"
+    },
+    {
+      "type": "button",
+      "name": "animateButton",
+      "label": "Animate",
+      "description": "Animate projection process"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

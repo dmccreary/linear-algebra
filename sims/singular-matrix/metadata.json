@@ -1,0 +1,61 @@
+{
+  "title": "Singular vs Non-Singular Matrix Visualizer",
+  "description": "Visualize the geometric difference between singular and non-singular matrices through transformation animation.",
+  "subject": "Linear Algebra",
+  "topic": "Singular Matrices and Invertibility",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Recognize singular matrices visually and algebraically",
+    "Explain why singular matrices are not invertible",
+    "Connect determinant zero to dimension collapse"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2×2 determinants",
+    "Linear transformations",
+    "Matrix invertibility"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "singularButton",
+      "label": "Singular",
+      "description": "Set to a singular matrix example"
+    },
+    {
+      "type": "button",
+      "name": "nonSingularButton",
+      "label": "Non-singular",
+      "description": "Set to a non-singular matrix example"
+    },
+    {
+      "type": "button",
+      "name": "randomButton",
+      "label": "Random",
+      "description": "Generate a random matrix"
+    },
+    {
+      "type": "slider",
+      "name": "morphSlider",
+      "label": "Morph",
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "description": "Interpolate between identity and target matrix"
+    },
+    {
+      "type": "checkbox",
+      "name": "showGridCheckbox",
+      "label": "Show Grid",
+      "default": true,
+      "description": "Toggle transformed grid display"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

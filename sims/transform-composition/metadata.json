@@ -1,0 +1,66 @@
+{
+  "title": "Transformation Composition Visualizer",
+  "description": "Demonstrate that the order of transformations matters by comparing T then S versus S then T side by side.",
+  "subject": "Linear Algebra",
+  "topic": "Composition of Transformations",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Demonstrate that matrix multiplication order matters",
+    "Visualize composed transformations",
+    "Identify when transformations commute"
+  ],
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix multiplication",
+    "Geometric transformations",
+    "Function composition"
+  ],
+  "controls": [
+    {
+      "type": "select",
+      "name": "type1Select",
+      "label": "Transform T",
+      "options": ["Rotation", "Scale", "Shear"],
+      "description": "First transformation type"
+    },
+    {
+      "type": "slider",
+      "name": "param1Slider",
+      "label": "T Parameter",
+      "description": "Parameter for transformation T"
+    },
+    {
+      "type": "select",
+      "name": "type2Select",
+      "label": "Transform S",
+      "options": ["Rotation", "Scale", "Shear"],
+      "description": "Second transformation type"
+    },
+    {
+      "type": "slider",
+      "name": "param2Slider",
+      "label": "S Parameter",
+      "description": "Parameter for transformation S"
+    },
+    {
+      "type": "checkbox",
+      "name": "showIntermediateCheckbox",
+      "label": "Show Steps",
+      "default": true,
+      "description": "Show intermediate transformation states"
+    },
+    {
+      "type": "button",
+      "name": "animateButton",
+      "label": "Animate",
+      "description": "Animate both transformation pipelines"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 500",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

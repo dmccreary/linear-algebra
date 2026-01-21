@@ -1,0 +1,58 @@
+{
+    "title": "Eigenspace Visualization",
+    "description": "3D visualization of eigenspaces showing how geometric multiplicity determines whether eigenspaces are lines or planes through the origin.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Eigenspaces and Geometric Multiplicity",
+        "learningObjectives": [
+            "Visualize eigenspaces as subspaces through the origin",
+            "Connect geometric multiplicity to eigenspace dimension",
+            "Understand linear independence of eigenvectors from different eigenspaces"
+        ],
+        "bloomsLevel": "Understand",
+        "duration": "8-12 minutes",
+        "prerequisites": [
+            "Eigenvalues and eigenvectors",
+            "Vector subspaces",
+            "3D coordinate systems"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "mode": "WEBGL",
+        "canvasDimensions": "responsive × 500",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "drag",
+            "label": "3D rotation",
+            "description": "Drag to rotate the 3D view"
+        },
+        {
+            "type": "button",
+            "label": "Prev/Next",
+            "description": "Browse through matrix examples"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Grid",
+            "description": "Toggle coordinate grid visibility"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Vectors",
+            "description": "Toggle eigenvector arrow visibility"
+        }
+    ]
+}

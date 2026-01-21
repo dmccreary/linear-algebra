@@ -1,0 +1,62 @@
+{
+    "title": "Power Iteration Algorithm",
+    "description": "Visualization of the power iteration method for finding the dominant eigenvalue and eigenvector through repeated matrix-vector multiplication.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Power Iteration",
+        "learningObjectives": [
+            "Explain how power iteration finds the dominant eigenvector",
+            "Connect eigenvalue ratio to convergence speed",
+            "Use Rayleigh quotient to estimate eigenvalues"
+        ],
+        "bloomsLevel": "Apply",
+        "duration": "10-15 minutes",
+        "prerequisites": [
+            "Eigenvalues and eigenvectors",
+            "Matrix-vector multiplication",
+            "Vector normalization"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 500",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "button",
+            "label": "Step",
+            "description": "Perform one power iteration step"
+        },
+        {
+            "type": "button",
+            "label": "Run/Pause",
+            "description": "Toggle continuous iteration"
+        },
+        {
+            "type": "button",
+            "label": "Reset",
+            "description": "Reset with new random starting vector"
+        },
+        {
+            "type": "slider",
+            "label": "Speed",
+            "description": "Control iteration animation speed"
+        },
+        {
+            "type": "input",
+            "label": "Matrix cells",
+            "description": "Click to edit matrix values"
+        }
+    ]
+}

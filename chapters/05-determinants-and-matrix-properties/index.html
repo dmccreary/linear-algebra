@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.">
+        <meta name="description" content="Understanding determinants as volume scaling factors, computation methods, properties, and applications including Cramer's rule">
       
       
         <meta name="author" content="Dan McCreary">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Content - Linear Algebra</title>
+        <title>Determinants and Matrix Properties - Linear Algebra</title>
       
     
     
@@ -73,9 +73,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Content - Linear Algebra" >
+        <meta  property="og:title"  content="Determinants and Matrix Properties - Linear Algebra" >
       
-        <meta  property="og:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  property="og:description"  content="Understanding determinants as volume scaling factors, computation methods, properties, and applications including Cramer's rule" >
       
         <meta  property="og:image"  content="https://dmccreary.github.io/linear-algebra/assets/images/social/chapters/05-determinants-and-matrix-properties/index.png" >
       
@@ -89,9 +89,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Content - Linear Algebra" >
+        <meta  name="twitter:title"  content="Determinants and Matrix Properties - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems." >
+        <meta  name="twitter:description"  content="Understanding determinants as volume scaling factors, computation methods, properties, and applications including Cramer's rule" >
       
         <meta  name="twitter:image"  content="https://dmccreary.github.io/linear-algebra/assets/images/social/chapters/05-determinants-and-matrix-properties/index.png" >
       
@@ -149,7 +149,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Content
+              Determinants and Matrix Properties
             
           </span>
         </div>
@@ -612,6 +612,13 @@
   <span class="md-ellipsis">
     5. Determinants and Matrix Properties
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
             </a>
@@ -1253,6 +1260,66 @@
           
         
       
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1479,6 +1546,483 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geometric-motivation-signed-area-and-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Motivation: Signed Area and Volume
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Motivation: Signed Area and Volume">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signed-area-in-2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Signed Area in 2D
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Signed Area in 2D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-signed-area-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Signed Area Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-scaling-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Scaling Factor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-22-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 2×2 Determinant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The 2×2 Determinant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computing-22-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing 2×2 Determinants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing 2×2 Determinants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-22-determinant-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 2×2 Determinant Calculator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-33-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 3×3 Determinant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The 3×3 Determinant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-rule-of-sarrus" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Rule of Sarrus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Rule of Sarrus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-33-determinant-sarrus-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 3×3 Determinant Sarrus Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cofactor-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cofactor Expansion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cofactor Expansion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minors-and-cofactors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minors and Cofactors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cofactor-expansion-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cofactor Expansion Formula
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cofactor Expansion Formula">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cofactor-expansion-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cofactor Expansion Step-by-Step
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-of-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Properties of Determinants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Properties of Determinants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-determinant-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Determinant Properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicative-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicative Property
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transpose-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transpose Determinant
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transpose Determinant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-determinant-properties-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Determinant Properties Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#singular-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Singular Matrices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Singular Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characterizations-of-singular-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characterizations of Singular Matrices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-interpretation-of-singularity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometric Interpretation of Singularity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geometric Interpretation of Singularity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-singular-vs-non-singular-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Singular vs Non-Singular Transformation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume-scaling-in-higher-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume Scaling in Higher Dimensions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Volume Scaling in Higher Dimensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computing-volumes-with-determinants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing Volumes with Determinants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing Volumes with Determinants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-3d-volume-scaling-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: 3D Volume Scaling Visualizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cramers-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cramer's Rule
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cramer's Rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Formula
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-22-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: 2×2 System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-cramers-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Cramer's Rule
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to Use Cramer's Rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-cramers-rule-step-by-step-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Cramer's Rule Step-by-Step Solver
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing-determinants-efficiently" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing Determinants Efficiently
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing Determinants Efficiently">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-reduction-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Row Reduction Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computer-graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Graphics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physics-and-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physics and Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Key Takeaways
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1530,7 +2074,732 @@
 <li><a href="../04-linear-transformations/">Chapter 4: Linear Transformations</a></li>
 </ul>
 <hr />
-<p>TODO: Generate Chapter Content</p>
+<h2 id="introduction">Introduction</h2>
+<p>The determinant is one of the most important numbers associated with a square matrix. While its definition might seem algebraically arbitrary at first, the determinant has profound geometric meaning: it measures how a linear transformation scales area (in 2D) or volume (in 3D and higher dimensions). A determinant of 2 means the transformation doubles all areas; a determinant of 0 means the transformation collapses space onto a lower dimension.</p>
+<p>Understanding determinants connects algebraic matrix operations to geometric intuition about transformations. When you compute a determinant, you're answering the question: "How much does this transformation stretch or compress space?" This perspective makes determinants essential for computer graphics, physics simulations, and understanding when systems of equations have unique solutions.</p>
+<h2 id="geometric-motivation-signed-area-and-volume">Geometric Motivation: Signed Area and Volume</h2>
+<p>Before diving into formulas, let's build intuition for what determinants measure geometrically.</p>
+<h3 id="signed-area-in-2d">Signed Area in 2D</h3>
+<p>Consider two vectors <span class="arithmatex">\(\mathbf{u} = \begin{bmatrix} a \\ c \end{bmatrix}\)</span> and <span class="arithmatex">\(\mathbf{v} = \begin{bmatrix} b \\ d \end{bmatrix}\)</span> in 2D. These vectors form a parallelogram. The <strong>signed area</strong> of this parallelogram is:</p>
+<div class="arithmatex">\[\text{Signed Area} = ad - bc\]</div>
+<p>The "signed" aspect captures orientation:</p>
+<ul>
+<li>Positive area: <span class="arithmatex">\(\mathbf{v}\)</span> is counterclockwise from <span class="arithmatex">\(\mathbf{u}\)</span></li>
+<li>Negative area: <span class="arithmatex">\(\mathbf{v}\)</span> is clockwise from <span class="arithmatex">\(\mathbf{u}\)</span></li>
+<li>Zero area: vectors are parallel (parallelogram collapses to a line)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Signed Area</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CCW orientation</td>
+<td>Positive</td>
+<td>Preserves orientation</td>
+</tr>
+<tr>
+<td>CW orientation</td>
+<td>Negative</td>
+<td>Reverses orientation</td>
+</tr>
+<tr>
+<td>Parallel vectors</td>
+<td>Zero</td>
+<td>Collapses to lower dimension</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-signed-area-visualizer">Diagram: Signed Area Visualizer</h4>
+<iframe src="../../sims/signed-area/main.html" width="100%" height="450px" scrolling="no"></iframe>
+
+<details>
+<summary>Signed Area Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: interpret, explain</p>
+<p>Learning Objective: Help students visualize the signed area of the parallelogram formed by two vectors, understanding how orientation affects the sign.</p>
+<p>Canvas layout:
+- Main area: 2D coordinate plane with vectors and parallelogram
+- Right panel: Area calculation display
+- Bottom: Controls</p>
+<p>Visual elements:
+- Vector u (red arrow) from origin
+- Vector v (blue arrow) from origin
+- Parallelogram shaded (green if positive, red if negative area)
+- Grid background for reference
+- Area value displayed prominently
+- Sign indicator (+/-) with color coding</p>
+<p>Interactive controls:
+- Draggable endpoints for vectors u and v
+- Checkbox: Show parallelogram
+- Checkbox: Show area calculation formula
+- Button: Reset to default vectors
+- Display: Current signed area value</p>
+<p>Default parameters:
+- u = (2, 1)
+- v = (1, 2)
+- Show parallelogram: true</p>
+<p>Behavior:
+- Parallelogram updates in real-time as vectors are dragged
+- Area calculation shows ad - bc with current values
+- Color changes from green to red when area becomes negative
+- When area approaches zero, parallelogram visibly flattens</p>
+<p>Implementation: p5.js with interactive vector dragging</p>
+</details>
+<h3 id="volume-scaling-factor">Volume Scaling Factor</h3>
+<p>When a matrix <span class="arithmatex">\(\mathbf{A}\)</span> represents a linear transformation, the determinant <span class="arithmatex">\(\det(\mathbf{A})\)</span> tells us how the transformation scales volumes:</p>
+<ul>
+<li><span class="arithmatex">\(|\det(\mathbf{A})| &gt; 1\)</span>: Transformation expands volumes</li>
+<li><span class="arithmatex">\(|\det(\mathbf{A})| &lt; 1\)</span>: Transformation compresses volumes</li>
+<li><span class="arithmatex">\(|\det(\mathbf{A})| = 1\)</span>: Transformation preserves volumes</li>
+<li><span class="arithmatex">\(\det(\mathbf{A}) &lt; 0\)</span>: Transformation also flips orientation</li>
+<li><span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span>: Transformation collapses dimension</li>
+</ul>
+<p>The absolute value <span class="arithmatex">\(|\det(\mathbf{A})|\)</span> gives the volume scaling factor, while the sign indicates whether orientation is preserved or reversed.</p>
+<div class="admonition example">
+<p class="admonition-title">Volume Scaling Examples</p>
+<ul>
+<li>Rotation matrices have <span class="arithmatex">\(\det(\mathbf{R}) = 1\)</span> (preserve area, preserve orientation)</li>
+<li>Reflection matrices have <span class="arithmatex">\(\det(\mathbf{F}) = -1\)</span> (preserve area, reverse orientation)</li>
+<li>Scaling by factor <span class="arithmatex">\(k\)</span> in all directions: <span class="arithmatex">\(\det = k^n\)</span> where <span class="arithmatex">\(n\)</span> is dimension</li>
+<li>Projection matrices have <span class="arithmatex">\(\det = 0\)</span> (collapse to lower dimension)</li>
+</ul>
+</div>
+<h2 id="the-22-determinant">The 2×2 Determinant</h2>
+<p>The <strong>determinant</strong> of a 2×2 matrix is defined as:</p>
+<div class="arithmatex">\[\det\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} = ad - bc\]</div>
+<p>This formula directly gives the signed area of the parallelogram formed by the column vectors. We also write <span class="arithmatex">\(\det(\mathbf{A})\)</span> as <span class="arithmatex">\(|\mathbf{A}|\)</span>.</p>
+<h3 id="computing-22-determinants">Computing 2×2 Determinants</h3>
+<p>The pattern is simple: multiply along the main diagonal, subtract the product along the anti-diagonal.</p>
+<div class="arithmatex">\[\det\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix} = \underbrace{a \cdot d}_{\text{main diagonal}} - \underbrace{b \cdot c}_{\text{anti-diagonal}}\]</div>
+<p><strong>Examples:</strong></p>
+<div class="arithmatex">\[\det\begin{bmatrix} 3 &amp; 2 \\ 1 &amp; 4 \end{bmatrix} = (3)(4) - (2)(1) = 12 - 2 = 10\]</div>
+<div class="arithmatex">\[\det\begin{bmatrix} 2 &amp; 6 \\ 1 &amp; 3 \end{bmatrix} = (2)(3) - (6)(1) = 6 - 6 = 0\]</div>
+<p>The second example has determinant zero—the columns <span class="arithmatex">\((2, 1)\)</span> and <span class="arithmatex">\((6, 3)\)</span> are parallel (one is a scalar multiple of the other).</p>
+<h4 id="diagram-22-determinant-calculator">Diagram: 2×2 Determinant Calculator</h4>
+<iframe src="../../sims/det-2x2-calculator/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>2×2 Determinant Interactive Calculator</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: calculate, demonstrate</p>
+<p>Learning Objective: Enable students to practice computing 2×2 determinants and see the geometric interpretation simultaneously.</p>
+<p>Canvas layout:
+- Left: Matrix input area with editable cells
+- Center: Geometric visualization (parallelogram)
+- Right: Step-by-step calculation
+- Bottom: Controls</p>
+<p>Visual elements:
+- 2×2 matrix with editable numerical entries
+- Parallelogram formed by column vectors
+- Main diagonal highlighted (green)
+- Anti-diagonal highlighted (red)
+- Area shading with sign indication
+- Step-by-step calculation: ad = ?, bc = ?, ad - bc = ?</p>
+<p>Interactive controls:
+- Editable matrix entries (click to edit, -10 to 10 range)
+- Button: Random matrix
+- Button: Identity matrix
+- Button: Singular matrix (det = 0)
+- Checkbox: Show calculation steps
+- Checkbox: Animate diagonal products</p>
+<p>Default parameters:
+- Matrix: [[3, 1], [2, 4]]
+- Show calculation: true</p>
+<p>Behavior:
+- Parallelogram updates as matrix entries change
+- Calculation steps update in real-time
+- Color changes for positive/negative/zero determinant
+- Animation highlights diagonal products when enabled</p>
+<p>Implementation: p5.js with text input handling</p>
+</details>
+<h2 id="the-33-determinant">The 3×3 Determinant</h2>
+<p>For a 3×3 matrix, the determinant represents the signed volume of the parallelepiped (3D parallelogram) formed by the three column vectors.</p>
+<div class="arithmatex">\[\det\begin{bmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)\]</div>
+<h3 id="the-rule-of-sarrus">The Rule of Sarrus</h3>
+<p>A mnemonic for 3×3 determinants is the <strong>Rule of Sarrus</strong>. Copy the first two columns to the right, then:</p>
+<ul>
+<li>Add products along the three downward diagonals</li>
+<li>Subtract products along the three upward diagonals</li>
+</ul>
+<div class="arithmatex">\[\det(\mathbf{A}) = aei + bfg + cdh - ceg - afh - bdi\]</div>
+<p>While Sarrus' rule only works for 3×3 matrices (not larger ones), it provides a quick calculation method.</p>
+<h4 id="diagram-33-determinant-sarrus-visualizer">Diagram: 3×3 Determinant Sarrus Visualizer</h4>
+<iframe src="../../sims/sarrus-rule/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Rule of Sarrus Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute, calculate</p>
+<p>Learning Objective: Help students master the Rule of Sarrus for computing 3×3 determinants through visual step-by-step animation.</p>
+<p>Canvas layout:
+- Main area: 3×3 matrix with extended columns
+- Diagonal lines shown during calculation
+- Running total display
+- Bottom: Controls</p>
+<p>Visual elements:
+- 3×3 matrix grid with values
+- First two columns repeated to the right
+- Downward diagonal lines (green, positive terms)
+- Upward diagonal lines (red, negative terms)
+- Product values along each diagonal
+- Running total that builds up the determinant</p>
+<p>Interactive controls:
+- Editable matrix entries
+- Button: Step through calculation
+- Button: Play animation
+- Button: Reset
+- Slider: Animation speed
+- Dropdown: Example matrices (identity, rotation, random)</p>
+<p>Default parameters:
+- Matrix: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+- Animation speed: medium</p>
+<p>Behavior:
+- Step mode highlights one diagonal at a time
+- Shows product calculation for each diagonal
+- Running total updates with each step
+- Final result highlighted when complete
+- Color coding for positive (green) and negative (red) terms</p>
+<p>Implementation: p5.js with step-based animation</p>
+</details>
+<h2 id="cofactor-expansion">Cofactor Expansion</h2>
+<p>For matrices larger than 3×3, we use <strong>cofactor expansion</strong> (also called Laplace expansion). This recursive method expresses a determinant in terms of smaller determinants.</p>
+<h3 id="minors-and-cofactors">Minors and Cofactors</h3>
+<p>For a matrix <span class="arithmatex">\(\mathbf{A}\)</span>, the <strong>minor</strong> <span class="arithmatex">\(M_{ij}\)</span> is the determinant of the submatrix obtained by deleting row <span class="arithmatex">\(i\)</span> and column <span class="arithmatex">\(j\)</span>.</p>
+<p>The <strong>cofactor</strong> <span class="arithmatex">\(C_{ij}\)</span> includes a sign factor:</p>
+<div class="arithmatex">\[C_{ij} = (-1)^{i+j} M_{ij}\]</div>
+<p>The sign pattern alternates in a checkerboard fashion:</p>
+<div class="arithmatex">\[\begin{bmatrix} + &amp; - &amp; + &amp; - &amp; \cdots \\ - &amp; + &amp; - &amp; + &amp; \cdots \\ + &amp; - &amp; + &amp; - &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots \end{bmatrix}\]</div>
+<h3 id="cofactor-expansion-formula">Cofactor Expansion Formula</h3>
+<p>The determinant can be computed by expanding along any row or column:</p>
+<p><strong>Expansion along row <span class="arithmatex">\(i\)</span>:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\det(\mathbf{A}) = \sum_{j=1}^{n} a_{ij} C_{ij} = \sum_{j=1}^{n} (-1)^{i+j} a_{ij} M_{ij}\)</span>\)</span></p>
+<p><strong>Expansion along column <span class="arithmatex">\(j\)</span>:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\det(\mathbf{A}) = \sum_{i=1}^{n} a_{ij} C_{ij} = \sum_{i=1}^{n} (-1)^{i+j} a_{ij} M_{ij}\)</span>\)</span></p>
+<p>The result is the same regardless of which row or column you choose. For efficiency, expand along a row or column with the most zeros.</p>
+<p><strong>Example:</strong> Compute <span class="arithmatex">\(\det\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; 0 &amp; 6 \end{bmatrix}\)</span> by expanding along column 1:</p>
+<div class="arithmatex">\[\det = 1 \cdot C_{11} + 0 \cdot C_{21} + 0 \cdot C_{31} = 1 \cdot (+1) \cdot \det\begin{bmatrix} 4 &amp; 5 \\ 0 &amp; 6 \end{bmatrix} = 1 \cdot (24 - 0) = 24\]</div>
+<div class="admonition tip">
+<p class="admonition-title">Efficiency Tip</p>
+<p>Always expand along the row or column with the most zeros. This minimizes the number of cofactor calculations needed.</p>
+</div>
+<h4 id="diagram-cofactor-expansion-step-by-step">Diagram: Cofactor Expansion Step-by-Step</h4>
+<iframe src="../../sims/cofactor-expansion/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details>
+<summary>Cofactor Expansion Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: execute, implement</p>
+<p>Learning Objective: Guide students through the cofactor expansion process step-by-step, showing how minors and cofactors combine to compute the determinant.</p>
+<p>Canvas layout:
+- Top: Original matrix with selectable expansion row/column
+- Middle: Submatrices (minors) being calculated
+- Bottom: Cofactor combination and final result
+- Controls panel</p>
+<p>Visual elements:
+- Matrix with highlighted expansion row/column
+- Sign checkerboard pattern overlay
+- Submatrices shown when computing each minor
+- Term-by-term calculation: a_ij × C_ij = ?
+- Summation showing all terms combining
+- Color coding: positive terms (green), negative terms (red)</p>
+<p>Interactive controls:
+- Matrix size selector (3×3, 4×4)
+- Editable matrix entries
+- Dropdown: Select row or column for expansion
+- Button: Step through expansion
+- Button: Auto-play animation
+- Button: Reset
+- Checkbox: Show sign pattern</p>
+<p>Default parameters:
+- Matrix size: 3×3
+- Matrix: [[2, 1, 3], [4, 5, 6], [7, 8, 9]]
+- Expand along: row 1</p>
+<p>Behavior:
+- Highlights selected row/column for expansion
+- Shows each minor being computed
+- Displays sign factor for each cofactor
+- Accumulates partial sums
+- Final determinant displayed with verification</p>
+<p>Implementation: p5.js with step-based animation and submatrix visualization</p>
+</details>
+<h2 id="properties-of-determinants">Properties of Determinants</h2>
+<p>Determinants satisfy several important properties that simplify calculations and reveal structural information about matrices.</p>
+<h3 id="key-determinant-properties">Key Determinant Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Statement</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row swap</td>
+<td>Swapping two rows negates the determinant</td>
+<td><span class="arithmatex">\(\det(\text{swap}) = -\det(\mathbf{A})\)</span></td>
+</tr>
+<tr>
+<td>Row scaling</td>
+<td>Multiplying a row by <span class="arithmatex">\(k\)</span> multiplies det by <span class="arithmatex">\(k\)</span></td>
+<td><span class="arithmatex">\(\det(k\mathbf{A}) = k^n \det(\mathbf{A})\)</span></td>
+</tr>
+<tr>
+<td>Row addition</td>
+<td>Adding a multiple of one row to another doesn't change det</td>
+<td>Useful for Gaussian elimination</td>
+</tr>
+<tr>
+<td>Triangular</td>
+<td>Determinant of triangular matrix = product of diagonal</td>
+<td>Fast computation</td>
+</tr>
+<tr>
+<td>Zero row/column</td>
+<td>If any row or column is all zeros, det = 0</td>
+<td>Matrix is singular</td>
+</tr>
+<tr>
+<td>Proportional rows</td>
+<td>If two rows are proportional, det = 0</td>
+<td>Linear dependence</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiplicative-property">Multiplicative Property</h3>
+<p>One of the most important properties: the determinant of a product equals the product of determinants.</p>
+<div class="arithmatex">\[\det(\mathbf{A}\mathbf{B}) = \det(\mathbf{A}) \cdot \det(\mathbf{B})\]</div>
+<p><strong>Geometric interpretation:</strong> If transformation <span class="arithmatex">\(\mathbf{A}\)</span> scales volume by factor <span class="arithmatex">\(|\det(\mathbf{A})|\)</span> and transformation <span class="arithmatex">\(\mathbf{B}\)</span> scales by <span class="arithmatex">\(|\det(\mathbf{B})|\)</span>, then the composition scales by <span class="arithmatex">\(|\det(\mathbf{A})| \cdot |\det(\mathbf{B})|\)</span>.</p>
+<p><strong>Consequences:</strong></p>
+<ul>
+<li><span class="arithmatex">\(\det(\mathbf{A}^{-1}) = \frac{1}{\det(\mathbf{A})}\)</span> (if <span class="arithmatex">\(\mathbf{A}\)</span> is invertible)</li>
+<li><span class="arithmatex">\(\det(\mathbf{A}^n) = (\det(\mathbf{A}))^n\)</span></li>
+<li><span class="arithmatex">\(\det(\mathbf{I}) = 1\)</span></li>
+</ul>
+<h3 id="transpose-determinant">Transpose Determinant</h3>
+<p>The determinant is unchanged by transposition:</p>
+<div class="arithmatex">\[\det(\mathbf{A}^T) = \det(\mathbf{A})\]</div>
+<p>This means every property that holds for rows also holds for columns. If two columns are proportional, the determinant is zero. If you scale a column by <span class="arithmatex">\(k\)</span>, the determinant scales by <span class="arithmatex">\(k\)</span>.</p>
+<h4 id="diagram-determinant-properties-explorer">Diagram: Determinant Properties Explorer</h4>
+<iframe src="../../sims/det-properties/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Determinant Properties Interactive Explorer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Analyze (L4)
+Bloom Verb: examine, differentiate</p>
+<p>Learning Objective: Allow students to experiment with row/column operations and observe how each operation affects the determinant, building intuition for determinant properties.</p>
+<p>Canvas layout:
+- Left: Original matrix with determinant
+- Center: Operation selector and visualization
+- Right: Modified matrix with new determinant
+- Bottom: Property explanation panel</p>
+<p>Visual elements:
+- Two matrices side by side (before/after operation)
+- Determinant values displayed for both
+- Parallelogram visualizations (for 2×2 mode)
+- Ratio of determinants shown
+- Operation description text</p>
+<p>Interactive controls:
+- Matrix size selector (2×2, 3×3)
+- Editable matrix entries
+- Operation buttons:
+  - Swap rows i and j
+  - Scale row i by k
+  - Add k × row i to row j
+  - Transpose
+  - Multiply by another matrix
+- Slider: Scale factor k (-5 to 5)
+- Row/column selectors</p>
+<p>Default parameters:
+- Matrix size: 2×2
+- Matrix: [[2, 1], [3, 4]]
+- Operation: none selected</p>
+<p>Behavior:
+- Shows before/after matrices
+- Displays determinant change: det(A) → det(A')
+- Explains the property being demonstrated
+- For 2×2, shows parallelogram area change
+- Highlights which property is being used</p>
+<p>Implementation: p5.js with operation buttons and real-time calculation</p>
+</details>
+<h2 id="singular-matrices">Singular Matrices</h2>
+<p>A square matrix <span class="arithmatex">\(\mathbf{A}\)</span> is <strong>singular</strong> (non-invertible) if and only if <span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span>.</p>
+<h3 id="characterizations-of-singular-matrices">Characterizations of Singular Matrices</h3>
+<p>The following are equivalent for an <span class="arithmatex">\(n \times n\)</span> matrix <span class="arithmatex">\(\mathbf{A}\)</span>:</p>
+<ul>
+<li><span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span></li>
+<li><span class="arithmatex">\(\mathbf{A}\)</span> is not invertible</li>
+<li><span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{0}\)</span> has non-trivial solutions</li>
+<li>The columns of <span class="arithmatex">\(\mathbf{A}\)</span> are linearly dependent</li>
+<li>The rows of <span class="arithmatex">\(\mathbf{A}\)</span> are linearly dependent</li>
+<li><span class="arithmatex">\(\text{rank}(\mathbf{A}) &lt; n\)</span></li>
+<li>The transformation collapses space to lower dimension</li>
+<li>Zero is an eigenvalue of <span class="arithmatex">\(\mathbf{A}\)</span></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Singular Matrices in Applications</p>
+<p>In numerical computing, matrices with determinants close to zero (nearly singular) cause problems. Small errors get amplified, leading to unreliable results. The <strong>condition number</strong> measures how close a matrix is to being singular.</p>
+</div>
+<h3 id="geometric-interpretation-of-singularity">Geometric Interpretation of Singularity</h3>
+<p>When <span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span>, the linear transformation represented by <span class="arithmatex">\(\mathbf{A}\)</span> collapses at least one dimension:</p>
+<ul>
+<li>In 2D: A plane gets squashed onto a line or point</li>
+<li>In 3D: A volume gets flattened onto a plane, line, or point</li>
+</ul>
+<p>This explains why singular matrices aren't invertible—once you collapse a dimension, you can't recover the original information.</p>
+<h4 id="diagram-singular-vs-non-singular-transformation">Diagram: Singular vs Non-Singular Transformation</h4>
+<iframe src="../../sims/singular-matrix/main.html" width="100%" height="480px" scrolling="no"></iframe>
+
+<details>
+<summary>Singular vs Non-Singular Matrix Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Visualize the geometric difference between singular (det=0) and non-singular matrices, showing how singular matrices collapse dimension.</p>
+<p>Canvas layout:
+- Left: Original unit square with grid
+- Right: Transformed shape
+- Bottom: Matrix display and determinant
+- Controls panel</p>
+<p>Visual elements:
+- Unit square (original) with grid points
+- Transformed parallelogram or collapsed line
+- Column vectors highlighted
+- Determinant value prominently displayed
+- "Singular" or "Non-singular" label
+- Animation showing transformation process</p>
+<p>Interactive controls:
+- Editable 2×2 matrix entries
+- Slider: Interpolate between identity and current matrix
+- Button: Set to singular example (e.g., [[2,4],[1,2]])
+- Button: Set to non-singular example
+- Button: Random matrix
+- Checkbox: Show grid transformation</p>
+<p>Default parameters:
+- Matrix: [[2, 1], [4, 2]] (singular)
+- Animation: at full transformation</p>
+<p>Behavior:
+- When det ≈ 0, shape collapses to line
+- Color changes to indicate singularity
+- Animation shows smooth collapse process
+- Explains why inverse doesn't exist geometrically
+- Shows rank deficiency visually</p>
+<p>Implementation: p5.js with smooth animation</p>
+</details>
+<h2 id="volume-scaling-in-higher-dimensions">Volume Scaling in Higher Dimensions</h2>
+<p>The determinant generalizes the concept of signed area to higher dimensions:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Geometric Object</th>
+<th>Determinant Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D</td>
+<td>Parallelogram</td>
+<td>Signed area</td>
+</tr>
+<tr>
+<td>3D</td>
+<td>Parallelepiped</td>
+<td>Signed volume</td>
+</tr>
+<tr>
+<td>nD</td>
+<td>n-dimensional parallelotope</td>
+<td>Signed hypervolume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="computing-volumes-with-determinants">Computing Volumes with Determinants</h3>
+<p>Given vectors <span class="arithmatex">\(\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n\)</span> in <span class="arithmatex">\(\mathbb{R}^n\)</span>, the (signed) volume of the parallelepiped they span is:</p>
+<div class="arithmatex">\[\text{Volume} = \det\begin{bmatrix} | &amp; | &amp; &amp; | \\ \mathbf{v}_1 &amp; \mathbf{v}_2 &amp; \cdots &amp; \mathbf{v}_n \\ | &amp; | &amp; &amp; | \end{bmatrix}\]</div>
+<p>For the unsigned volume, take the absolute value: <span class="arithmatex">\(|\det(\mathbf{A})|\)</span>.</p>
+<p><strong>Application:</strong> In computer graphics, determinants help determine:</p>
+<ul>
+<li>Whether a set of points is coplanar (det = 0)</li>
+<li>The orientation of a triangle (clockwise vs counterclockwise)</li>
+<li>The volume of a tetrahedron for collision detection</li>
+</ul>
+<h4 id="diagram-3d-volume-scaling-visualizer">Diagram: 3D Volume Scaling Visualizer</h4>
+<iframe src="../../sims/volume-scaling-3d/main.html" width="100%" height="520px" scrolling="no"></iframe>
+
+<details>
+<summary>3D Volume Scaling Interactive Visualizer</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Understand (L2)
+Bloom Verb: explain, interpret</p>
+<p>Learning Objective: Help students visualize how 3×3 matrix transformations scale 3D volumes, connecting the determinant to geometric volume change.</p>
+<p>Canvas layout:
+- Main area: 3D view with unit cube and transformed parallelepiped
+- Right panel: Matrix and determinant display
+- Bottom: Controls</p>
+<p>Visual elements:
+- Unit cube (wireframe, semi-transparent)
+- Transformed parallelepiped (solid, colored by det sign)
+- Three column vectors as arrows from origin
+- Axes with labels
+- Volume ratio display: V'/V = |det(A)|
+- Determinant value with sign</p>
+<p>Interactive controls:
+- 3×3 matrix editor
+- Camera rotation (click and drag)
+- Slider: Animation morph (0 = identity, 1 = full transform)
+- Button: Rotation matrix example
+- Button: Scaling matrix example
+- Button: Singular matrix example
+- Checkbox: Show original cube
+- Checkbox: Show column vectors</p>
+<p>Default parameters:
+- Matrix: [[2,0,0],[0,1.5,0],[0,0,1]] (scaling)
+- Animation: at 1.0
+- Camera angle: isometric view</p>
+<p>Behavior:
+- Real-time 3D rendering with rotation
+- Smooth morphing animation
+- Volume label updates with determinant
+- For singular matrices, parallelepiped collapses
+- Color indicates positive (green) or negative (red) determinant</p>
+<p>Implementation: p5.js with WEBGL for 3D rendering</p>
+</details>
+<h2 id="cramers-rule">Cramer's Rule</h2>
+<p><strong>Cramer's Rule</strong> provides explicit formulas for solving systems of linear equations using determinants.</p>
+<h3 id="the-formula">The Formula</h3>
+<p>For a system <span class="arithmatex">\(\mathbf{A}\mathbf{x} = \mathbf{b}\)</span> where <span class="arithmatex">\(\mathbf{A}\)</span> is <span class="arithmatex">\(n \times n\)</span> and <span class="arithmatex">\(\det(\mathbf{A}) \neq 0\)</span>:</p>
+<div class="arithmatex">\[x_i = \frac{\det(\mathbf{A}_i)}{\det(\mathbf{A})}\]</div>
+<p>where <span class="arithmatex">\(\mathbf{A}_i\)</span> is the matrix formed by replacing column <span class="arithmatex">\(i\)</span> of <span class="arithmatex">\(\mathbf{A}\)</span> with <span class="arithmatex">\(\mathbf{b}\)</span>.</p>
+<h3 id="example-22-system">Example: 2×2 System</h3>
+<p>Solve: <span class="arithmatex">\(\begin{cases} 2x + 3y = 7 \\ x + 4y = 9 \end{cases}\)</span></p>
+<p>Matrix form: <span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 2 &amp; 3 \\ 1 &amp; 4 \end{bmatrix}\)</span>, <span class="arithmatex">\(\mathbf{b} = \begin{bmatrix} 7 \\ 9 \end{bmatrix}\)</span></p>
+<p><strong>Step 1:</strong> <span class="arithmatex">\(\det(\mathbf{A}) = 2(4) - 3(1) = 5\)</span></p>
+<p><strong>Step 2:</strong> Replace column 1 with <span class="arithmatex">\(\mathbf{b}\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\det(\mathbf{A}_1) = \det\begin{bmatrix} 7 &amp; 3 \\ 9 &amp; 4 \end{bmatrix} = 28 - 27 = 1\)</span>\)</span></p>
+<p><strong>Step 3:</strong> Replace column 2 with <span class="arithmatex">\(\mathbf{b}\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\det(\mathbf{A}_2) = \det\begin{bmatrix} 2 &amp; 7 \\ 1 &amp; 9 \end{bmatrix} = 18 - 7 = 11\)</span>\)</span></p>
+<p><strong>Solution:</strong> <span class="arithmatex">\(x = \frac{1}{5}\)</span>, <span class="arithmatex">\(y = \frac{11}{5}\)</span></p>
+<h3 id="when-to-use-cramers-rule">When to Use Cramer's Rule</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small systems (2×2, 3×3)</td>
+<td>Cramer's rule is practical</td>
+</tr>
+<tr>
+<td>Solve for one variable only</td>
+<td>Efficient—only compute relevant det</td>
+</tr>
+<tr>
+<td>Large systems</td>
+<td>Use Gaussian elimination (more efficient)</td>
+</tr>
+<tr>
+<td>Theoretical analysis</td>
+<td>Cramer's rule gives explicit formulas</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span></td>
+<td>Cramer's rule doesn't apply</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Computational Efficiency</p>
+<p>For large systems, Cramer's rule requires computing <span class="arithmatex">\(n+1\)</span> determinants, each of which is <span class="arithmatex">\(O(n!)\)</span> by cofactor expansion or <span class="arithmatex">\(O(n^3)\)</span> by LU decomposition. Gaussian elimination solves the system in <span class="arithmatex">\(O(n^3)\)</span>, making it much more efficient for large <span class="arithmatex">\(n\)</span>.</p>
+</div>
+<h4 id="diagram-cramers-rule-step-by-step-solver">Diagram: Cramer's Rule Step-by-Step Solver</h4>
+<iframe src="../../sims/cramers-rule/main.html" width="100%" height="500px" scrolling="no"></iframe>
+
+<details>
+<summary>Cramer's Rule Interactive Solver</summary>
+<p>Type: microsim</p>
+<p>Bloom Level: Apply (L3)
+Bloom Verb: solve, calculate</p>
+<p>Learning Objective: Guide students through applying Cramer's rule to solve 2×2 and 3×3 systems, showing each replacement and determinant calculation.</p>
+<p>Canvas layout:
+- Top: Original system of equations
+- Middle: Step-by-step determinant calculations
+- Bottom: Solution display and geometric interpretation (for 2×2)
+- Controls panel</p>
+<p>Visual elements:
+- System of equations in standard form
+- Matrix A and vector b displayed
+- Each modified matrix A_i highlighted
+- Determinant calculations shown
+- Solution vector
+- For 2×2: geometric interpretation showing intersection of lines</p>
+<p>Interactive controls:
+- System size selector (2×2, 3×3)
+- Editable coefficient matrix A
+- Editable vector b
+- Button: Step through solution
+- Button: Auto-solve with animation
+- Button: Random system
+- Button: Singular system (to show failure case)</p>
+<p>Default parameters:
+- System size: 2×2
+- A = [[2, 3], [1, 4]]
+- b = [7, 9]</p>
+<p>Behavior:
+- Highlights which column is being replaced
+- Shows each determinant calculation
+- Builds up solution step by step
+- If det(A) = 0, shows "No unique solution" message
+- Geometric view shows lines and their intersection</p>
+<p>Implementation: p5.js with step-based animation</p>
+</details>
+<h2 id="computing-determinants-efficiently">Computing Determinants Efficiently</h2>
+<p>For practical computation, several methods are available:</p>
+<h3 id="method-comparison">Method Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Time Complexity</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct formula</td>
+<td><span class="arithmatex">\(O(1)\)</span> for 2×2</td>
+<td>2×2 matrices</td>
+</tr>
+<tr>
+<td>Sarrus rule</td>
+<td><span class="arithmatex">\(O(1)\)</span></td>
+<td>3×3 matrices</td>
+</tr>
+<tr>
+<td>Cofactor expansion</td>
+<td><span class="arithmatex">\(O(n!)\)</span></td>
+<td>Small matrices, matrices with many zeros</td>
+</tr>
+<tr>
+<td>Row reduction</td>
+<td><span class="arithmatex">\(O(n^3)\)</span></td>
+<td>Large matrices</td>
+</tr>
+<tr>
+<td>LU decomposition</td>
+<td><span class="arithmatex">\(O(n^3)\)</span></td>
+<td>Multiple determinants, also need inverse</td>
+</tr>
+</tbody>
+</table>
+<h3 id="row-reduction-method">Row Reduction Method</h3>
+<ol>
+<li>Reduce <span class="arithmatex">\(\mathbf{A}\)</span> to upper triangular form <span class="arithmatex">\(\mathbf{U}\)</span> using row operations</li>
+<li>Track row swaps (each negates the determinant)</li>
+<li>Track row scalings (each multiplies the determinant)</li>
+<li><span class="arithmatex">\(\det(\mathbf{A}) = (\text{sign from swaps}) \times (\text{scaling factors}) \times \prod_{i} u_{ii}\)</span></li>
+</ol>
+<p>For an upper triangular matrix, the determinant is simply the product of diagonal entries:</p>
+<div class="arithmatex">\[\det(\mathbf{U}) = u_{11} \cdot u_{22} \cdot \ldots \cdot u_{nn}\]</div>
+<h2 id="applications">Applications</h2>
+<h3 id="computer-graphics">Computer Graphics</h3>
+<p>Determinants are used to:</p>
+<ul>
+<li>Test if three points are collinear (2×2 det = 0)</li>
+<li>Determine triangle orientation for rendering</li>
+<li>Calculate areas for texture mapping</li>
+<li>Check if a transformation preserves handedness</li>
+</ul>
+<h3 id="physics-and-engineering">Physics and Engineering</h3>
+<ul>
+<li>Calculate moments of inertia (involving volume integrals)</li>
+<li>Solve systems in circuit analysis</li>
+<li>Determine stability of equilibrium points</li>
+<li>Compute Jacobians for coordinate transformations</li>
+</ul>
+<h3 id="machine-learning">Machine Learning</h3>
+<ul>
+<li>Check if features are linearly independent</li>
+<li>Compute multivariate Gaussian distributions</li>
+<li>Calculate volume elements in probability spaces</li>
+<li>Understand transformation properties in neural networks</li>
+</ul>
+<h2 id="summary-and-key-takeaways">Summary and Key Takeaways</h2>
+<p>This chapter explored determinants as fundamental matrix quantities with both algebraic and geometric significance.</p>
+<p><strong>Core Concepts:</strong></p>
+<ul>
+<li>The <strong>determinant</strong> measures how a transformation scales volumes</li>
+<li><strong>Signed area</strong> (2D) and <strong>volume scaling factor</strong> (3D+) connect determinants to geometry</li>
+<li>The <strong>2×2 determinant</strong> is <span class="arithmatex">\(ad - bc\)</span> (main diagonal minus anti-diagonal)</li>
+<li>The <strong>3×3 determinant</strong> can be computed via Sarrus' rule or cofactor expansion</li>
+<li><strong>Cofactor expansion</strong> generalizes to any size using <strong>minors</strong> and <strong>cofactors</strong></li>
+</ul>
+<p><strong>Key Properties:</strong></p>
+<ul>
+<li><strong>Multiplicative property</strong>: <span class="arithmatex">\(\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})\)</span></li>
+<li><strong>Transpose property</strong>: <span class="arithmatex">\(\det(\mathbf{A}^T) = \det(\mathbf{A})\)</span></li>
+<li>Row operations affect determinants predictably</li>
+<li>Triangular matrices have det = product of diagonal</li>
+</ul>
+<p><strong>Singularity:</strong></p>
+<ul>
+<li><span class="arithmatex">\(\det(\mathbf{A}) = 0\)</span> means <span class="arithmatex">\(\mathbf{A}\)</span> is <strong>singular</strong> (not invertible)</li>
+<li>Geometrically: transformation collapses dimension</li>
+<li>Algebraically: columns are linearly dependent</li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul>
+<li><strong>Cramer's Rule</strong> solves systems using determinant ratios</li>
+<li>Efficient computation uses row reduction for large matrices</li>
+<li>Determinants appear throughout graphics, physics, and ML</li>
+</ul>
+<hr />
+<h2 id="exercises">Exercises</h2>
+<details class="question">
+<summary>Exercise 1: Computing Determinants</summary>
+<p>Calculate the determinant of each matrix:</p>
+<p>a) <span class="arithmatex">\(\begin{bmatrix} 5 &amp; 2 \\ 3 &amp; 4 \end{bmatrix}\)</span></p>
+<p>b) <span class="arithmatex">\(\begin{bmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 5 \\ 0 &amp; 0 &amp; 6 \end{bmatrix}\)</span></p>
+<p>c) <span class="arithmatex">\(\begin{bmatrix} 2 &amp; 1 &amp; 0 \\ 1 &amp; 3 &amp; 2 \\ 0 &amp; 1 &amp; 4 \end{bmatrix}\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 2: Determinant Properties</summary>
+<p>If <span class="arithmatex">\(\det(\mathbf{A}) = 3\)</span> and <span class="arithmatex">\(\det(\mathbf{B}) = -2\)</span>, find:</p>
+<p>a) <span class="arithmatex">\(\det(\mathbf{AB})\)</span></p>
+<p>b) <span class="arithmatex">\(\det(\mathbf{A}^{-1})\)</span></p>
+<p>c) <span class="arithmatex">\(\det(2\mathbf{A})\)</span> for a 3×3 matrix</p>
+<p>d) <span class="arithmatex">\(\det(\mathbf{A}^T\mathbf{B})\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 3: Cramer's Rule</summary>
+<p>Use Cramer's rule to solve:
+<span class="arithmatex">\(\begin{cases} 3x + 2y = 8 \\ x - y = 1 \end{cases}\)</span></p>
+</details>
+<details class="question">
+<summary>Exercise 4: Geometric Interpretation</summary>
+<p>The transformation <span class="arithmatex">\(T\)</span> has matrix <span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 3 \end{bmatrix}\)</span>.</p>
+<p>a) What is <span class="arithmatex">\(\det(\mathbf{A})\)</span>?</p>
+<p>b) If a triangle has area 5, what is the area of its image under <span class="arithmatex">\(T\)</span>?</p>
+<p>c) Is the transformation orientation-preserving?</p>
+</details>
+<details class="question">
+<summary>Exercise 5: Singularity</summary>
+<p>For what values of <span class="arithmatex">\(k\)</span> is the matrix singular?
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{A} = \begin{bmatrix} 1 &amp; 2 &amp; k \\ 0 &amp; k-1 &amp; 3 \\ 0 &amp; 0 &amp; k+2 \end{bmatrix}\)</span>\)</span></p>
+</details>
 
 
 

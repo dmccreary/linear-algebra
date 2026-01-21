@@ -1,0 +1,66 @@
+{
+  "title": "Determinant Properties Explorer",
+  "description": "Interactive exploration of how row operations affect determinant values.",
+  "subject": "Linear Algebra",
+  "topic": "Determinant Properties and Row Operations",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Predict how row operations change the determinant",
+    "Understand which operations preserve the determinant",
+    "Connect algebraic properties to geometric interpretation"
+  ],
+  "bloomLevel": "Analyze",
+  "bloomVerb": "examine",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "2×2 determinants",
+    "Row operations",
+    "Matrix arithmetic"
+  ],
+  "controls": [
+    {
+      "type": "button",
+      "name": "swapButton",
+      "label": "Swap Rows",
+      "description": "Swap rows 1 and 2"
+    },
+    {
+      "type": "button",
+      "name": "scaleButton",
+      "label": "Scale Row",
+      "description": "Multiply row 1 by k"
+    },
+    {
+      "type": "button",
+      "name": "addButton",
+      "label": "Add Rows",
+      "description": "Add k times row 1 to row 2"
+    },
+    {
+      "type": "button",
+      "name": "transposeButton",
+      "label": "Transpose",
+      "description": "Transpose the matrix"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset",
+      "description": "Reset to original matrix"
+    },
+    {
+      "type": "slider",
+      "name": "kSlider",
+      "label": "Scale factor k",
+      "min": -3,
+      "max": 3,
+      "default": 2,
+      "description": "Factor for scaling and row addition"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 500",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

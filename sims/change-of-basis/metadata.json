@@ -1,0 +1,70 @@
+{
+  "title": "Change of Basis Interactive Visualizer",
+  "description": "Visualize how the same vector has different coordinate representations in different bases, with transition matrix display.",
+  "subject": "Linear Algebra",
+  "topic": "Change of Basis",
+  "gradeLevel": "Undergraduate",
+  "learningObjectives": [
+    "Understand that vectors have different coordinates in different bases",
+    "Use transition matrices to convert between basis representations",
+    "Distinguish between a vector and its coordinate representation"
+  ],
+  "bloomLevel": "Understand",
+  "bloomVerb": "explain",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Basis vectors",
+    "Coordinate systems",
+    "Matrix inverse"
+  ],
+  "controls": [
+    {
+      "type": "select",
+      "name": "presetSelect",
+      "label": "Basis Preset",
+      "options": ["Rotated 30°", "Skewed", "Scaled", "Custom"],
+      "description": "Select a preset basis configuration"
+    },
+    {
+      "type": "slider",
+      "name": "basisAngleSlider",
+      "label": "Basis rotation",
+      "min": -60,
+      "max": 60,
+      "default": 30,
+      "step": 1,
+      "description": "Rotate the custom basis"
+    },
+    {
+      "type": "checkbox",
+      "name": "showBothCheckbox",
+      "label": "Overlay Bases",
+      "default": false,
+      "description": "Show both bases overlaid in one view"
+    },
+    {
+      "type": "checkbox",
+      "name": "showGridCheckbox",
+      "label": "Show Grids",
+      "default": true,
+      "description": "Show coordinate grid lines"
+    },
+    {
+      "type": "drag",
+      "name": "vectorHandle",
+      "label": "Vector v",
+      "description": "Drag to change the vector position"
+    },
+    {
+      "type": "button",
+      "name": "resetButton",
+      "label": "Reset Vector",
+      "description": "Reset vector to default position"
+    }
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 480",
+  "dateCreated": "2026-01-20",
+  "creator": "Claude AI",
+  "license": "MIT"
+}

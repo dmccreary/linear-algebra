@@ -55,28 +55,23 @@ let errorMagnification = 0;
 let presetSelect;
 let perturbSlider;
 let applyPerturbButton;
-
-// Font
-let font;
-
-function preload() {
-    font = loadFont('https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/font/SourceSansPro-Regular.otf');
-}
+let currentPreset = 'well';
 
 function setup() {
     updateCanvasSize();
     const canvas = createCanvas(canvasWidth, canvasHeight);
-    canvas.parent(document.querySelector('main'));
-    textFont(font);
+    const container = document.querySelector('main');
+    if (container) {
+        canvas.parent(container);
+        container.style.position = 'relative';
+    }
     textSize(defaultTextSize);
-
-    // Load initial preset
-    loadPreset('well');
 
     // Controls
     let row1Y = drawHeight + 15;
 
     presetSelect = createSelect();
+    if (container) presetSelect.parent(container);
     presetSelect.position(90, row1Y);
     presetSelect.option('Well-Conditioned', 'well');
     presetSelect.option('Moderately Ill-Conditioned', 'moderate');
@@ -88,13 +83,18 @@ function setup() {
     let row2Y = drawHeight + 55;
 
     perturbSlider = createSlider(-4, -1, -3, 0.5);
+    if (container) perturbSlider.parent(container);
     perturbSlider.position(160, row2Y);
     perturbSlider.size(150);
     perturbSlider.input(applyPerturbation);
 
     applyPerturbButton = createButton('New Random Perturbation');
+    if (container) applyPerturbButton.parent(container);
     applyPerturbButton.position(330, row2Y);
     applyPerturbButton.mousePressed(applyPerturbation);
+
+    // Load initial preset AFTER controls are created
+    loadPreset('well');
 
     describe('Demonstration of numerical stability showing how ill-conditioned systems amplify small input errors', LABEL);
 }
@@ -135,6 +135,13 @@ function draw() {
         drawGeometricComparison();
     }
 
+    // Preset description at bottom of drawing area
+    fill(100);
+    noStroke();
+    textAlign(CENTER, BOTTOM);
+    textSize(16);
+    text(presets[currentPreset].desc, canvasWidth/2, drawHeight - margin);
+
     // Control labels
     drawControlLabels();
 }
@@ -169,7 +176,7 @@ function drawSystemPanel(A, b, solution, title, x, y, showDiff) {
     line(rightX, bottomY, rightX - 5, bottomY);
 
     // Augmented line
-    let augX = x + A[0].length * cellW - 3;
+    let augX = x + A[0].length * cellW + 6;
     stroke(150);
     line(augX, topY, augX, bottomY);
 
@@ -195,7 +202,7 @@ function drawSystemPanel(A, b, solution, title, x, y, showDiff) {
         }
 
         // b vector
-        let bx = x + A[i].length * cellW + cellW/2;
+        let bx = x + A[i].length * cellW + cellW/2 + 10;
         let by = matrixY + i * cellH + cellH/2;
 
         if (showDiff && originalB && Math.abs(b[i] - originalB[i]) > 1e-10) {
@@ -215,7 +222,7 @@ function drawSystemPanel(A, b, solution, title, x, y, showDiff) {
         fill(60);
         textAlign(LEFT, TOP);
         textSize(11);
-        text('Solution:', x, solY);
+        text('Solution:', x - 5, solY);
 
         let vars = ['x', 'y', 'z', 'w'];
         for (let i = 0; i < solution.length; i++) {
@@ -226,21 +233,21 @@ function drawSystemPanel(A, b, solution, title, x, y, showDiff) {
                 else if (diff > 0.01) solColor = '#cc6600';
             }
             fill(solColor);
-            text(vars[i] + ' = ' + formatNumber(solution[i], 6), x + 60 + i * 100, solY);
+            text(vars[i] + ' = ' + formatNumber(solution[i], 6), x + 55 + i * 85, solY);
         }
     }
 }
 
 function drawErrorAnalysis() {
     let panelX = 20;
-    let panelY = 230;
+    let panelY = 175;
     let panelW = canvasWidth/2 - 40;
 
     // Background
     fill(255, 255, 250);
     stroke(200);
     strokeWeight(1);
-    rect(panelX, panelY, panelW, 120, 5);
+    rect(panelX, panelY, panelW, 150, 5);
 
     fill('black');
     noStroke();
@@ -256,12 +263,6 @@ function drawErrorAnalysis() {
                     conditionNumber < 1000 ? [200, 150, 0] : [200, 50, 50];
     fill(condColor);
     text('Condition Number: ' + formatNumber(conditionNumber, 2), panelX + 15, y);
-
-    // Condition assessment
-    let assessment = conditionNumber < 10 ? '(Well-conditioned)' :
-                    conditionNumber < 1000 ? '(Moderately ill-conditioned)' : '(Severely ill-conditioned!)';
-    fill(100);
-    text(assessment, panelX + 200, y);
 
     y += 22;
 
@@ -293,9 +294,9 @@ function drawErrorAnalysis() {
 
 function drawGeometricComparison() {
     let viewX = canvasWidth/2 + 20;
-    let viewY = 230;
+    let viewY = 175;
     let viewW = canvasWidth/2 - 60;
-    let viewH = 120;
+    let viewH = 150;
 
     // Background
     fill(250, 255, 250);
@@ -386,10 +387,17 @@ function drawControlLabels() {
     textSize(14);
 
     text('Example:', 20, drawHeight + 27);
-    text('Perturbation: 10^' + perturbSlider.value().toFixed(1), 20, drawHeight + 67);
+
+    // Perturbation label with superscript exponent
+    text('Perturbation: 10', 20, drawHeight + 67);
+    let baseWidth = textWidth('Perturbation: 10');
+    textSize(10);
+    text(perturbSlider.value().toFixed(1), 20 + baseWidth, drawHeight + 67 - 6);
+    textSize(14);
 }
 
 function loadPreset(name) {
+    currentPreset = name;
     let preset = presets[name];
     originalA = JSON.parse(JSON.stringify(preset.A));
     originalB = JSON.parse(JSON.stringify(preset.b));
