@@ -1,0 +1,43 @@
+{
+  "title": "Fourier Transform Visualizer",
+  "description": "Interactive 2D Discrete Fourier Transform visualization showing spatial-frequency relationship, magnitude/phase spectra, and frequency filtering effects.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Image Processing",
+    "Signal Processing",
+    "Fourier Transform",
+    "Frequency Domain",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/fourier-transform-visualizer/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Analyze",
+    "Apply"
+  ],
+  "concepts": [
+    "Fourier Transform",
+    "Frequency Domain",
+    "Magnitude Spectrum",
+    "Phase Spectrum",
+    "Frequency Filtering"
+  ],
+  "prerequisites": [
+    "Complex numbers",
+    "Trigonometric functions",
+    "Image matrices"
+  ],
+  "library": "p5.js"
+}

@@ -72,6 +72,8 @@ nav:
     - Complex Eigenvalue Visualizer: sims/complex-eigenvalue/index.md
     - Condition Number Visualizer: sims/condition-number/index.md
     - Convolution Operation Visualizer: sims/convolution-operation/index.md
+    - Convolution Visualizer: sims/convolution-visualizer/index.md
+    - Corner Detection Visualizer: sims/corner-detection-visualizer/index.md
     - Cosine vs Euclidean Similarity: sims/cosine-euclidean-similarity/index.md
     - Convex Function Visualizer: sims/convex-function-visualizer/index.md
     - Covariance and Correlation Visualizer: sims/covariance-correlation/index.md
@@ -84,9 +86,12 @@ nav:
     - Eigenspace Visualization: sims/eigenspace-visualization/index.md
     - Eigenvalue Applications Map: sims/eigenvalue-applications/index.md
     - Eigenvector Transformation: sims/eigenvector-transformation/index.md
+    - Edge Detection Visualizer: sims/edge-detection-visualizer/index.md
     - Embedding Space Visualizer: sims/embedding-space-visualizer/index.md
+    - Filter Effects Gallery: sims/filter-effects-gallery/index.md
     - Forward Propagation Visualizer: sims/forward-propagation/index.md
     - Four Fundamental Subspaces: sims/four-subspaces/index.md
+    - Fourier Transform Visualizer: sims/fourier-transform-visualizer/index.md
     - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
     - Geometric Transformations Gallery: sims/transform-gallery/index.md
     - Gram-Schmidt Process Visualizer: sims/gram-schmidt/index.md
@@ -95,6 +100,8 @@ nav:
     - Graph Viewer: sims/graph-viewer/index.md
     - Hessian and Curvature Visualizer: sims/hessian-curvature-visualizer/index.md
     - Homogeneous System Explorer: sims/homogeneous-systems/index.md
+    - Homography Demo: sims/homography-demo/index.md
+    - Image Matrix Visualizer: sims/image-matrix-visualizer/index.md
     - Inner Product Space Visualizer: sims/inner-product-visualizer/index.md
     - Kernel and Range: sims/kernel-range/index.md
     - KKT Conditions Visualizer: sims/kkt-conditions-visualizer/index.md
@@ -133,6 +140,7 @@ nav:
     - Projection onto Subspace: sims/projection-subspace/index.md
     - Pseudoinverse Solver: sims/pseudoinverse-solver/index.md
     - REF vs RREF Comparison: sims/ref-vs-rref/index.md
+    - RGB Channel Decomposition: sims/rgb-channel-decomposition/index.md
     - Regularization Geometry: sims/regularization-geometry/index.md
     - Row and Column Vectors: sims/row-column-vectors/index.md
     - Row Operations Practice: sims/row-operations/index.md
@@ -149,6 +157,7 @@ nav:
     - SVD Forms Comparison: sims/svd-forms-comparison/index.md
     - SVD Geometric Interpretation: sims/svd-geometry/index.md
     - SVD Image Compression: sims/svd-image-compression/index.md
+    - SVD Compression Visualizer: sims/svd-compression-visualizer/index.md
     - System of Equations Geometry: sims/system-geometry/index.md
     - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md

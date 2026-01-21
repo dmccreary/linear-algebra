@@ -85,6 +85,10 @@ A 1920×1080 HD grayscale image is a matrix with over 2 million entries.
 
 #### Diagram: Image Matrix Visualizer
 
+<iframe src="../../sims/image-matrix-visualizer/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run the Image Matrix Visualizer Fullscreen](../../sims/image-matrix-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Image Matrix Visualizer</summary>
 Type: microsim
@@ -155,6 +159,10 @@ $\mathbf{X} \in \mathbb{R}^{N \times C \times H \times W}$
 where $N$ is the batch size. The ordering of dimensions varies by framework (PyTorch uses $N \times C \times H \times W$; TensorFlow often uses $N \times H \times W \times C$).
 
 #### Diagram: RGB Channel Decomposition
+
+<iframe src="../../sims/rgb-channel-decomposition/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the RGB Channel Decomposition Fullscreen](../../sims/rgb-channel-decomposition/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>RGB Channel Decomposition</summary>
@@ -245,6 +253,10 @@ An **image filter** is a kernel designed to achieve a specific effect. The kerne
 
 #### Diagram: Convolution Visualizer
 
+<iframe src="../../sims/convolution-visualizer/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Convolution Visualizer Fullscreen](../../sims/convolution-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Convolution Visualizer</summary>
 Type: microsim
@@ -313,6 +325,10 @@ This kernel can be understood as:
 The result amplifies differences while preserving overall brightness.
 
 #### Diagram: Filter Effects Gallery
+
+<iframe src="../../sims/filter-effects-gallery/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Filter Effects Gallery Fullscreen](../../sims/filter-effects-gallery/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Filter Effects Gallery</summary>
@@ -384,6 +400,10 @@ The Sobel operator combines Gaussian smoothing with differentiation, making it m
 | Scharr | 3×3 | Low | Better rotational symmetry |
 
 #### Diagram: Edge Detection Visualizer
+
+<iframe src="../../sims/edge-detection-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Edge Detection Visualizer Fullscreen](../../sims/edge-detection-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Edge Detection Visualizer</summary>
@@ -466,6 +486,10 @@ The **phase spectrum** $\angle F(u,v)$ encodes spatial structure—surprisingly,
 
 #### Diagram: Fourier Transform Visualizer
 
+<iframe src="../../sims/fourier-transform-visualizer/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Fourier Transform Visualizer Fullscreen](../../sims/fourier-transform-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Fourier Transform Visualizer</summary>
 Type: microsim
@@ -546,6 +570,10 @@ $\mathbf{I}_k = \sum_{i=1}^{k} \sigma_i \mathbf{u}_i \mathbf{v}_i^\top$
 For a 1000×1000 image with $k=50$: compression ratio ≈ 10:1.
 
 #### Diagram: SVD Compression Visualizer
+
+<iframe src="../../sims/svd-compression-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the SVD Compression Visualizer Fullscreen](../../sims/svd-compression-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>SVD Compression Visualizer</summary>
@@ -644,6 +672,10 @@ where $k \approx 0.04$. Corners have high $R$ values.
 
 #### Diagram: Corner Detection Visualizer
 
+<iframe src="../../sims/corner-detection-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Corner Detection Visualizer Fullscreen](../../sims/corner-detection-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Corner Detection Visualizer</summary>
 Type: microsim
@@ -730,6 +762,10 @@ Homographies are part of a hierarchy of 2D transformations:
 | Projective (homography) | 8 | Straight lines | General 3×3 |
 
 #### Diagram: Homography Transformation Demo
+
+<iframe src="../../sims/homography-demo/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Homography Transformation Demo Fullscreen](../../sims/homography-demo/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Homography Transformation Demo</summary>

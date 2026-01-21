@@ -1,0 +1,42 @@
+{
+  "title": "Filter Effects Gallery",
+  "description": "Side-by-side comparison of image filters including blur, sharpen, edge detection, and emboss effects with kernel visualization.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Image Processing",
+    "Computer Vision",
+    "Image Filtering",
+    "Convolution Kernels",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/filter-effects-gallery/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Evaluate",
+    "Analyze"
+  ],
+  "concepts": [
+    "Image Filter",
+    "Blur Filter",
+    "Sharpen Filter",
+    "Edge Detection",
+    "Convolution Kernel"
+  ],
+  "prerequisites": [
+    "Image Convolution concept",
+    "Basic image processing"
+  ],
+  "library": "p5.js"
+}

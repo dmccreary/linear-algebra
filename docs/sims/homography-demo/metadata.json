@@ -1,0 +1,43 @@
+{
+  "title": "Homography Transformation Demo",
+  "description": "Interactive demonstration of perspective transformations using homography matrices with draggable corner points and real-time matrix computation.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Computer Vision",
+    "Projective Geometry",
+    "Homography",
+    "Image Transformation",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/homography-demo/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Apply",
+    "Understand"
+  ],
+  "concepts": [
+    "Homography",
+    "Projective Transformation",
+    "Perspective Correction",
+    "Matrix Transformation",
+    "Coordinate Systems"
+  ],
+  "prerequisites": [
+    "Matrix multiplication",
+    "Coordinate geometry",
+    "Linear transformations"
+  ],
+  "library": "p5.js"
+}
