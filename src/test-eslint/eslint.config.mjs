@@ -14,9 +14,7 @@ export default [
         ...globals.browser,
 
         // ===== p5.js Core Structure =====
-        preload: "readonly",
-        setup: "readonly",
-        draw: "readonly",
+        // Note: preload, setup, draw are functions YOU define - not globals
         remove: "readonly",
         disableFriendlyErrors: "writable",
         noLoop: "readonly",
@@ -503,7 +501,10 @@ export default [
     },
     rules: {
       // Customize rules as needed
-      "no-unused-vars": "warn",
+      "no-unused-vars": ["warn", {
+        // Ignore p5.js lifecycle and event callback functions
+        "varsIgnorePattern": "^(setup|draw|preload|windowResized|mousePressed|mouseReleased|mouseClicked|mouseMoved|mouseDragged|mouseWheel|doubleClicked|keyPressed|keyReleased|keyTyped|touchStarted|touchMoved|touchEnded|deviceMoved|deviceTurned|deviceShaken)$"
+      }],
       "no-undef": "error",
     }
   }

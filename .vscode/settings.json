@@ -1,4 +1,11 @@
 {
+    "eslint.useFlatConfig": true,
+    "eslint.options": {
+        "overrideConfigFile": "./src/test-eslint/eslint.config.mjs"
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
     "cSpell.words": [
         "arithmatex",
         "Backpropagation",
