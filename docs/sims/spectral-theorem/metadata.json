@@ -1,0 +1,57 @@
+{
+    "title": "Spectral Theorem Demonstration",
+    "description": "Interactive demonstration of the spectral theorem showing how symmetric matrices decompose into orthogonal eigenvectors and real eigenvalues.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Spectral Theorem",
+        "learningObjectives": [
+            "State the spectral theorem for real symmetric matrices",
+            "Verify eigenvector orthogonality for symmetric matrices",
+            "Explain why Q⁻¹ = Qᵀ for orthogonal matrices"
+        ],
+        "bloomsLevel": "Analyze",
+        "duration": "10-15 minutes",
+        "prerequisites": [
+            "Eigenvalues and eigenvectors",
+            "Orthogonal matrices",
+            "Symmetric matrices"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 530",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "button",
+            "label": "Random Symmetric",
+            "description": "Generate a random symmetric matrix"
+        },
+        {
+            "type": "button",
+            "label": "Identity",
+            "description": "Set matrix to identity"
+        },
+        {
+            "type": "button",
+            "label": "Animate Decomposition",
+            "description": "Animate the spectral decomposition"
+        },
+        {
+            "type": "input",
+            "label": "Matrix cells",
+            "description": "Click to edit (symmetry maintained)"
+        }
+    ]
+}

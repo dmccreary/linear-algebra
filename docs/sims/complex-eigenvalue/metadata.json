@@ -1,0 +1,64 @@
+{
+    "title": "Complex Eigenvalue Visualizer",
+    "description": "Visualize how complex eigenvalues λ = a + bi correspond to rotation-scaling transformations in 2D.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Complex Eigenvalues",
+        "learningObjectives": [
+            "Connect complex eigenvalues to rotation-scaling transformations",
+            "Interpret eigenvalue magnitude as scaling factor",
+            "Interpret eigenvalue argument as rotation angle"
+        ],
+        "bloomsLevel": "Understand",
+        "duration": "10-12 minutes",
+        "prerequisites": [
+            "Complex numbers",
+            "Eigenvalues",
+            "2D transformations"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 500",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "slider",
+            "label": "Re",
+            "range": [-2, 2],
+            "description": "Real part of eigenvalue"
+        },
+        {
+            "type": "slider",
+            "label": "Im",
+            "range": [-2, 2],
+            "description": "Imaginary part of eigenvalue"
+        },
+        {
+            "type": "button",
+            "label": "Animate",
+            "description": "Start/pause spiral animation"
+        },
+        {
+            "type": "button",
+            "label": "Reset",
+            "description": "Reset animation to starting point"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Conjugate",
+            "description": "Display conjugate eigenvalue"
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "title": "Matrix Power Calculator",
+    "description": "Demonstrates how diagonalization simplifies computing matrix powers using the eigenvalue decomposition A^k = PD^kP⁻¹.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Matrix Powers and Diagonalization",
+        "learningObjectives": [
+            "Compute matrix powers using diagonalization",
+            "Explain why diagonal matrix powers are easy to compute",
+            "Identify when diagonalization cannot be used"
+        ],
+        "bloomsLevel": "Apply",
+        "duration": "10-12 minutes",
+        "prerequisites": [
+            "Matrix diagonalization",
+            "Eigenvalues and eigenvectors",
+            "Matrix multiplication"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 530",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "slider",
+            "label": "Power k",
+            "range": [1, 20],
+            "description": "Exponent for matrix power A^k"
+        },
+        {
+            "type": "button",
+            "label": "Random",
+            "description": "Generate a random matrix"
+        },
+        {
+            "type": "button",
+            "label": "Diagonalizable",
+            "description": "Set a diagonalizable example"
+        },
+        {
+            "type": "button",
+            "label": "Defective",
+            "description": "Set a defective matrix example"
+        },
+        {
+            "type": "checkbox",
+            "label": "Show Steps",
+            "description": "Display step-by-step diagonalization"
+        },
+        {
+            "type": "input",
+            "label": "Matrix cells",
+            "description": "Click to edit matrix values"
+        }
+    ]
+}

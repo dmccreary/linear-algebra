@@ -1,0 +1,67 @@
+{
+    "title": "Characteristic Polynomial Explorer",
+    "description": "Interactive computation of characteristic polynomials and eigenvalues for 2×2 and 3×3 matrices with graphical visualization.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Simulation",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Characteristic Polynomials and Eigenvalues",
+        "learningObjectives": [
+            "Compute characteristic polynomials for 2×2 and 3×3 matrices",
+            "Find eigenvalues as roots of the characteristic polynomial",
+            "Connect algebraic formulas to graphical representation"
+        ],
+        "bloomsLevel": "Apply",
+        "duration": "10-15 minutes",
+        "prerequisites": [
+            "Determinants",
+            "Polynomial roots",
+            "Matrix notation"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 530",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors"]
+    },
+    "controls": [
+        {
+            "type": "button",
+            "label": "2×2/3×3",
+            "description": "Toggle between 2×2 and 3×3 matrix sizes"
+        },
+        {
+            "type": "button",
+            "label": "Random",
+            "description": "Generate a random matrix"
+        },
+        {
+            "type": "button",
+            "label": "Identity",
+            "description": "Set matrix to identity"
+        },
+        {
+            "type": "button",
+            "label": "Symmetric",
+            "description": "Set a symmetric example matrix"
+        },
+        {
+            "type": "slider",
+            "label": "λ trace",
+            "description": "Trace along the polynomial curve to see values"
+        },
+        {
+            "type": "input",
+            "label": "Matrix cells",
+            "description": "Click to edit matrix values"
+        }
+    ]
+}

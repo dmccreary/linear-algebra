@@ -1,0 +1,55 @@
+{
+    "title": "Eigenvalue Applications Map",
+    "description": "Interactive hub-and-spoke infographic showing how eigenanalysis concepts connect to real-world applications in machine learning, AI, and science.",
+    "creator": "Claude AI",
+    "subject": "Linear Algebra",
+    "date": "2026-01-21",
+    "type": "Interactive Infographic",
+    "format": "text/html",
+    "language": "en",
+    "rights": "CC BY 4.0",
+    "educational": {
+        "gradeLevel": "Undergraduate",
+        "subjectArea": "Mathematics",
+        "topic": "Eigenvalue Applications",
+        "learningObjectives": [
+            "Connect eigenanalysis concepts to real-world applications",
+            "Explain why eigenvalues are crucial for system stability",
+            "Identify appropriate eigenanalysis techniques for different problems"
+        ],
+        "bloomsLevel": "Evaluate",
+        "duration": "8-12 minutes",
+        "prerequisites": [
+            "Eigenvalues and eigenvectors",
+            "Power iteration",
+            "Spectral theorem"
+        ]
+    },
+    "technical": {
+        "framework": "p5.js",
+        "canvasDimensions": "responsive × 520",
+        "responsive": true,
+        "dependencies": ["p5.js CDN"],
+        "accessibility": ["describe() function", "high contrast colors", "hover states"]
+    },
+    "controls": [
+        {
+            "type": "hover",
+            "label": "Node hover",
+            "description": "Highlight connections when hovering over application nodes"
+        },
+        {
+            "type": "click",
+            "label": "Node click",
+            "description": "Show detailed information about each application"
+        }
+    ],
+    "applications": [
+        "Principal Component Analysis (PCA)",
+        "Google PageRank",
+        "Neural Network Stability",
+        "Spectral Clustering",
+        "Quantum Computing",
+        "Recommender Systems"
+    ]
+}
