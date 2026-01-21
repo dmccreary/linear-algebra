@@ -109,6 +109,10 @@ This works because the embedding space encodes the "royalty" and "gender" concep
 
 #### Diagram: Embedding Space Visualizer
 
+<iframe src="../../sims/embedding-space-visualizer/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Embedding Space Visualizer Fullscreen](../../sims/embedding-space-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Embedding Space Visualizer</summary>
 Type: microsim
@@ -185,6 +189,10 @@ $\text{cosine}(\mathbf{u}, \mathbf{v}) = \mathbf{u}^T\mathbf{v}$
 This is just the dot product—extremely fast to compute.
 
 #### Diagram: Similarity Comparison
+
+<iframe src="../../sims/cosine-euclidean-similarity/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Cosine vs Euclidean Similarity Fullscreen](../../sims/cosine-euclidean-similarity/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Cosine vs Euclidean Similarity</summary>
@@ -345,6 +353,10 @@ Output shape: $n \times d_v$ — one output vector per position.
 
 #### Diagram: Attention Mechanism Visualizer
 
+<iframe src="../../sims/attention-mechanism/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Attention Mechanism Visualizer Fullscreen](../../sims/attention-mechanism/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Attention Mechanism Step-by-Step</summary>
 Type: microsim
@@ -429,6 +441,10 @@ Typical configuration (e.g., $d_{model} = 512$, $h = 8$):
 | After $W^O$ | $n \times d_{model}$ |
 
 #### Diagram: Multi-Head Attention Visualizer
+
+<iframe src="../../sims/multi-head-attention/main.html" height="522px" width="100%" scrolling="no"></iframe>
+
+[Run the Multi-Head Attention Visualizer Fullscreen](../../sims/multi-head-attention/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Multi-Head Attention Visualizer</summary>
@@ -551,6 +567,10 @@ Properties:
 
 #### Diagram: Transformer Architecture
 
+<iframe src="../../sims/transformer-block/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Transformer Block Visualizer Fullscreen](../../sims/transformer-block/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Transformer Block Visualizer</summary>
 Type: microsim
@@ -638,6 +658,10 @@ For inference, can merge: $W' = W + BA$ (no added latency).
 
 #### Diagram: LoRA Visualization
 
+<iframe src="../../sims/lora-visualizer/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the LoRA Visualizer Fullscreen](../../sims/lora-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>LoRA Low-Rank Adaptation Visualizer</summary>
 Type: microsim
@@ -722,6 +746,10 @@ where $\theta = \arccos(\mathbf{z}_1 \cdot \mathbf{z}_2)$ for normalized vectors
 - **Data augmentation:** Generate novel training samples
 
 #### Diagram: Latent Space Interpolation
+
+<iframe src="../../sims/latent-space-interpolation/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Latent Space Interpolation Visualizer Fullscreen](../../sims/latent-space-interpolation/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Latent Space Interpolation Visualizer</summary>

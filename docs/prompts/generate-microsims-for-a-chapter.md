@@ -103,3 +103,16 @@ microsim-generator skill to generate a microsim for each diagram.
 
 When done, add a session
 log to logs/ch-11-microsims.md
+
+## Chapter 12 MicroSims Generator Prompt
+
+Set the context to @docs/chapters/12-optimization-and-learning-algorithms/index.md.
+Go through all of the level 4 diagram headers (#### Diagram:) and for each
+diagram do the following:
+
+1. Use text within the <details markdown="1"> as input specification to the
+microsim-generator skill to generate a microsim for each diagram.
+2. Update the chapter content with an embedded iframe element immediately after the #### Diagram: that links to the new MicroSim you just created.
+3. Update the mkdocs.yml file so the navigation has links to the new Microsims.
+
+When done, add a session log to logs/ch-12-microsims.md

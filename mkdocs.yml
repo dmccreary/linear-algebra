@@ -62,6 +62,7 @@ nav:
     - 2x2 Determinant Calculator: sims/det-2x2-calculator/index.md
     - 3D Volume Scaling Visualizer: sims/volume-scaling-3d/index.md
     - Activation Functions Visualizer: sims/activation-functions/index.md
+    - Attention Mechanism Step-by-Step: sims/attention-mechanism/index.md
     - Backpropagation Visualizer: sims/backpropagation/index.md
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Block Matrix Partitioning: sims/block-matrix/index.md
@@ -71,6 +72,7 @@ nav:
     - Complex Eigenvalue Visualizer: sims/complex-eigenvalue/index.md
     - Condition Number Visualizer: sims/condition-number/index.md
     - Convolution Operation Visualizer: sims/convolution-operation/index.md
+    - Cosine vs Euclidean Similarity: sims/cosine-euclidean-similarity/index.md
     - Covariance and Correlation Visualizer: sims/covariance-correlation/index.md
     - Cramers Rule Solver: sims/cramers-rule/index.md
     - Data Matrix Structure: sims/data-matrix-structure/index.md
@@ -81,6 +83,7 @@ nav:
     - Eigenspace Visualization: sims/eigenspace-visualization/index.md
     - Eigenvalue Applications Map: sims/eigenvalue-applications/index.md
     - Eigenvector Transformation: sims/eigenvector-transformation/index.md
+    - Embedding Space Visualizer: sims/embedding-space-visualizer/index.md
     - Forward Propagation Visualizer: sims/forward-propagation/index.md
     - Four Fundamental Subspaces: sims/four-subspaces/index.md
     - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
@@ -92,11 +95,13 @@ nav:
     - Homogeneous System Explorer: sims/homogeneous-systems/index.md
     - Inner Product Space Visualizer: sims/inner-product-visualizer/index.md
     - Kernel and Range: sims/kernel-range/index.md
+    - Latent Space Interpolation: sims/latent-space-interpolation/index.md
     - Least Squares Visualizer: sims/least-squares-visualizer/index.md
     - Learning Rate Effect: sims/learning-rate-effect/index.md
     - Linear Combination Explorer: sims/linear-combination-explorer/index.md
     - Linear Regression Visualizer: sims/linear-regression/index.md
     - Linear Transformation Fundamentals: sims/linear-transform-basics/index.md
+    - LoRA Low-Rank Adaptation: sims/lora-visualizer/index.md
     - LU Decomposition Visualizer: sims/lu-decomposition/index.md
     - Matrix Addition and Scalar Multiplication: sims/matrix-basic-ops/index.md
     - Matrix Inverse Explorer: sims/matrix-inverse/index.md
@@ -104,6 +109,7 @@ nav:
     - Matrix Power Calculator: sims/matrix-power-calculator/index.md
     - Matrix Rank Visualizer: sims/matrix-rank-visualizer/index.md
     - ML Pipeline Workflow: sims/ml-pipeline/index.md
+    - Multi-Head Attention Visualizer: sims/multi-head-attention/index.md
     - Multiplicity Comparison Chart: sims/multiplicity-comparison/index.md
     - Neural Network Architecture Visualizer: sims/neural-network-architecture/index.md
     - Neural Network Layer: sims/neural-network-layer/index.md
@@ -138,6 +144,7 @@ nav:
     - System of Equations Geometry: sims/system-geometry/index.md
     - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md
+    - Transformer Block Visualizer: sims/transformer-block/index.md
     - Vector Operations Playground: sims/vector-operations-playground/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
     - Vector Space Gallery: sims/vector-space-gallery/index.md
