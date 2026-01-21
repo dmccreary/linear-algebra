@@ -1,0 +1,24 @@
+{
+  "title": "Matrix Decomposition Selection Guide",
+  "description": "Interactive decision tree for choosing the right matrix decomposition based on your problem",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrix Decomposition"],
+  "date": "2026-01-21",
+  "type": "Interactive Workflow",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Decomposition Selection",
+  "learningObjectives": [
+    "Match problems to appropriate decompositions",
+    "Understand decomposition preferences",
+    "Navigate decision criteria"
+  ],
+  "bloomsLevel": "Evaluate",
+  "duration": "5-10 minutes",
+  "prerequisites": ["Understanding of each decomposition"],
+  "framework": "p5.js",
+  "chapter": "07-matrix-decompositions"
+}

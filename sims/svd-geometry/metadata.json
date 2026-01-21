@@ -1,0 +1,82 @@
+{
+  "title": "SVD Geometric Interpretation",
+  "description": "Visualize SVD as a sequence of rotation-scaling-rotation transformations on the unit circle",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "SVD", "Matrix Decomposition"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Singular Value Decomposition",
+  "learningObjectives": [
+    "Explain SVD as rotation-scaling-rotation",
+    "Identify singular values as ellipse semi-axis lengths",
+    "Connect singular vectors to principal directions",
+    "Understand SVD exists for any matrix"
+  ],
+  "bloomsLevel": "Analyze",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix transformations",
+    "Eigenvalues and eigenvectors",
+    "Orthogonal matrices"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 500",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "button",
+      "label": "Animate"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "slider",
+      "label": "Phase",
+      "min": 0,
+      "max": 300,
+      "default": 0
+    },
+    {
+      "type": "slider",
+      "label": "a₁₁",
+      "min": -4,
+      "max": 4,
+      "default": 3
+    },
+    {
+      "type": "slider",
+      "label": "a₁₂",
+      "min": -4,
+      "max": 4,
+      "default": 1
+    },
+    {
+      "type": "slider",
+      "label": "a₂₁",
+      "min": -4,
+      "max": 4,
+      "default": 1
+    },
+    {
+      "type": "slider",
+      "label": "a₂₂",
+      "min": -4,
+      "max": 4,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Singular Vectors",
+      "default": true
+    }
+  ],
+  "chapter": "07-matrix-decompositions"
+}

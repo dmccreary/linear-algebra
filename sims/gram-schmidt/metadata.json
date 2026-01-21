@@ -1,0 +1,59 @@
+{
+  "title": "Gram-Schmidt Process Visualizer",
+  "description": "Step-by-step 3D visualization of Gram-Schmidt orthonormalization showing projections and construction of orthonormal vectors",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "QR Decomposition", "Orthogonalization"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Gram-Schmidt Orthonormalization",
+  "learningObjectives": [
+    "Execute Gram-Schmidt process step by step",
+    "Visualize projection subtraction geometrically",
+    "Understand why resulting vectors are orthonormal",
+    "Connect Gram-Schmidt to QR decomposition"
+  ],
+  "bloomsLevel": "Apply",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Vector projections",
+    "Dot product",
+    "Linear independence"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 550",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "button",
+      "label": "Step"
+    },
+    {
+      "type": "button",
+      "label": "Run All"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 300,
+      "max": 2000,
+      "default": 1200,
+      "unit": "ms"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Projections",
+      "default": true
+    }
+  ],
+  "chapter": "07-matrix-decompositions"
+}
