@@ -1,0 +1,51 @@
+{
+  "title": "Backpropagation",
+  "description": "Step-by-step visualization of backpropagation showing how gradients flow backward through a neural network via the chain rule.",
+  "subject": "Neural Networks, Deep Learning, Calculus",
+  "keywords": ["backpropagation", "gradient", "chain rule", "neural network", "training", "learning"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Analyze",
+  "learningObjectives": [
+    "Understand how gradients flow backward through the chain rule",
+    "Compute error signals at each layer",
+    "Calculate weight gradients from activations and error signals"
+  ],
+  "duration": "15-20 minutes",
+  "prerequisites": ["Forward propagation", "Chain rule", "Matrix transpose"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 500",
+  "controls": [
+    {
+      "type": "button",
+      "label": "Forward Pass",
+      "action": "Compute all activations"
+    },
+    {
+      "type": "button",
+      "label": "Backward Step",
+      "action": "Step through gradient computation"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "action": "Reset to initial state"
+    },
+    {
+      "type": "checkbox",
+      "label": "Auto",
+      "default": false
+    },
+    {
+      "type": "slider",
+      "label": "Target",
+      "min": 0,
+      "max": 1,
+      "default": 1.0
+    }
+  ]
+}

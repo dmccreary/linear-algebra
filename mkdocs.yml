@@ -61,6 +61,8 @@ nav:
     - 2D Rotation Matrix: sims/2d-rotation/index.md
     - 2x2 Determinant Calculator: sims/det-2x2-calculator/index.md
     - 3D Volume Scaling Visualizer: sims/volume-scaling-3d/index.md
+    - Activation Functions Visualizer: sims/activation-functions/index.md
+    - Backpropagation Visualizer: sims/backpropagation/index.md
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Block Matrix Partitioning: sims/block-matrix/index.md
     - Change of Basis: sims/change-of-basis/index.md
@@ -68,6 +70,7 @@ nav:
     - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
     - Complex Eigenvalue Visualizer: sims/complex-eigenvalue/index.md
     - Condition Number Visualizer: sims/condition-number/index.md
+    - Convolution Operation Visualizer: sims/convolution-operation/index.md
     - Covariance and Correlation Visualizer: sims/covariance-correlation/index.md
     - Cramers Rule Solver: sims/cramers-rule/index.md
     - Data Matrix Structure: sims/data-matrix-structure/index.md
@@ -78,6 +81,7 @@ nav:
     - Eigenspace Visualization: sims/eigenspace-visualization/index.md
     - Eigenvalue Applications Map: sims/eigenvalue-applications/index.md
     - Eigenvector Transformation: sims/eigenvector-transformation/index.md
+    - Forward Propagation Visualizer: sims/forward-propagation/index.md
     - Four Fundamental Subspaces: sims/four-subspaces/index.md
     - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
     - Geometric Transformations Gallery: sims/transform-gallery/index.md
@@ -101,13 +105,16 @@ nav:
     - Matrix Rank Visualizer: sims/matrix-rank-visualizer/index.md
     - ML Pipeline Workflow: sims/ml-pipeline/index.md
     - Multiplicity Comparison Chart: sims/multiplicity-comparison/index.md
+    - Neural Network Architecture Visualizer: sims/neural-network-architecture/index.md
     - Neural Network Layer: sims/neural-network-layer/index.md
     - Norm Comparison Visualizer: sims/norm-comparison-visualizer/index.md
+    - Normalization Comparison: sims/normalization-comparison/index.md
     - Numerical Stability Demo: sims/numerical-stability/index.md
     - Orthogonal Matrix Transformation: sims/orthogonal-transform/index.md
     - Orthogonal Projection: sims/orthogonal-projection/index.md
     - Orthonormal Basis Finder: sims/orthonormal-basis-finder/index.md
     - PCA Explorer: sims/pca-explorer/index.md
+    - Perceptron Decision Boundary: sims/perceptron-decision-boundary/index.md
     - Positive Definiteness Visualizer: sims/positive-definiteness/index.md
     - Power Iteration: sims/power-iteration/index.md
     - Projection onto Subspace: sims/projection-subspace/index.md
@@ -129,6 +136,7 @@ nav:
     - SVD Geometric Interpretation: sims/svd-geometry/index.md
     - SVD Image Compression: sims/svd-image-compression/index.md
     - System of Equations Geometry: sims/system-geometry/index.md
+    - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md
     - Vector Operations Playground: sims/vector-operations-playground/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md

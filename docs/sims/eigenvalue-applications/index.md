@@ -14,7 +14,8 @@ social:
 
 [Run the Applications Map Fullscreen](./main.html){ .md-button .md-button--primary }
 
-[Edit the MicroSim with the p5.js editor](https://editor.p5js.org/)
+<!--TODO: Clean up the UI -->
+[Edit the MicroSim with the p5.js editor](https://editor.p5js.org/dmccreary/sketches/Okr52Yvws)
 
 ## About This MicroSim
 

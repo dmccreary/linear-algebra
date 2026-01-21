@@ -1,0 +1,54 @@
+{
+  "title": "Convolution Operation",
+  "description": "Interactive visualization of the convolution operation showing how kernels slide across images with stride and padding controls.",
+  "subject": "Convolutional Neural Networks, Image Processing",
+  "keywords": ["convolution", "kernel", "filter", "stride", "padding", "CNN", "image processing"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Apply",
+  "learningObjectives": [
+    "Understand how convolution kernels slide across images",
+    "Calculate output dimensions with different stride and padding settings",
+    "Observe the effect of different kernel patterns"
+  ],
+  "duration": "15 minutes",
+  "prerequisites": ["Matrix multiplication", "Image representation"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 500",
+  "controls": [
+    {
+      "type": "select",
+      "label": "Kernel",
+      "options": ["Edge Detect", "Blur", "Sharpen", "Sobel X", "Identity"]
+    },
+    {
+      "type": "select",
+      "label": "Stride",
+      "options": ["Stride 1", "Stride 2"]
+    },
+    {
+      "type": "select",
+      "label": "Padding",
+      "options": ["Valid", "Same"]
+    },
+    {
+      "type": "button",
+      "label": "Step",
+      "action": "Advance one kernel position"
+    },
+    {
+      "type": "button",
+      "label": "Animate",
+      "action": "Run continuous animation"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "action": "Reset convolution"
+    }
+  ]
+}

@@ -92,6 +92,10 @@ The weight vector $\mathbf{w}$ is perpendicular to the decision boundary, and th
 
 #### Diagram: Perceptron Decision Boundary
 
+<iframe src="../../sims/perceptron-decision-boundary/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/perceptron-decision-boundary/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Perceptron Decision Boundary Visualizer</summary>
 Type: microsim
@@ -221,6 +225,10 @@ Properties:
 
 #### Diagram: Activation Function Comparison
 
+<iframe src="../../sims/activation-functions/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/activation-functions/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Activation Functions Visualizer</summary>
 Type: microsim
@@ -310,6 +318,10 @@ The output is $\mathbf{a}^{[L]}$.
 
 #### Diagram: Network Architecture Visualizer
 
+<iframe src="../../sims/neural-network-architecture/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/neural-network-architecture/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Neural Network Architecture Visualizer</summary>
 Type: microsim
@@ -387,6 +399,10 @@ $\mathbf{y} = W^{[2]}(W^{[1]}\mathbf{x}) = (W^{[2]}W^{[1]})\mathbf{x} = W'\mathb
 The composition of linear functions is linear! Without nonlinear activations, deep networks would have no more expressive power than a single layer.
 
 #### Diagram: Forward Propagation Visualizer
+
+<iframe src="../../sims/forward-propagation/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/forward-propagation/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Forward Propagation Step-by-Step</summary>
@@ -508,6 +524,10 @@ where:
 
 #### Diagram: Backpropagation Visualizer
 
+<iframe src="../../sims/backpropagation/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/backpropagation/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Backpropagation Step-by-Step</summary>
 Type: microsim
@@ -620,6 +640,10 @@ Common configuration: $2 \times 2$ pool with stride 2 halves each spatial dimens
 
 #### Diagram: Convolution Visualizer
 
+<iframe src="../../sims/convolution-operation/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/convolution-operation/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Convolution Operation Visualizer</summary>
 Type: microsim
@@ -712,6 +736,10 @@ Benefits:
 
 #### Diagram: Normalization Comparison
 
+<iframe src="../../sims/normalization-comparison/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/normalization-comparison/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Batch vs Layer Normalization</summary>
 Type: infographic
@@ -798,6 +826,10 @@ torch.einsum('bqd,bkd->bqk', Q, K)
 ```
 
 #### Diagram: Tensor Shape Visualizer
+
+<iframe src="../../sims/tensor-operations/main.html" height="482px" width="100%" scrolling="no"></iframe>
+
+[Run Fullscreen](../../sims/tensor-operations/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Tensor Operations Visualizer</summary>

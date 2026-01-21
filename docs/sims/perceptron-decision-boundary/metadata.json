@@ -1,0 +1,57 @@
+{
+  "title": "Perceptron Decision Boundary",
+  "description": "Interactive visualization showing how perceptron weights and bias define a linear decision boundary for binary classification.",
+  "subject": "Neural Networks, Machine Learning, Linear Algebra",
+  "keywords": ["perceptron", "decision boundary", "classification", "weights", "bias", "linear separability"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Understand",
+  "learningObjectives": [
+    "Visualize how perceptron weights and bias define a linear decision boundary",
+    "Understand the concept of linear separability",
+    "Observe the perceptron learning algorithm in action"
+  ],
+  "duration": "10-15 minutes",
+  "prerequisites": ["Vectors", "Dot product", "Linear equations"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 480",
+  "controls": [
+    {
+      "type": "select",
+      "label": "Dataset",
+      "options": ["Linearly Separable", "XOR (Not Separable)", "Clustered", "Clear"]
+    },
+    {
+      "type": "button",
+      "label": "Add Points",
+      "action": "Toggle add point mode"
+    },
+    {
+      "type": "button",
+      "label": "Learn",
+      "action": "Run perceptron learning algorithm"
+    },
+    {
+      "type": "button",
+      "label": "Reset Weights",
+      "action": "Randomize weights and bias"
+    },
+    {
+      "type": "slider",
+      "label": "Bias",
+      "min": -5,
+      "max": 5,
+      "default": 0,
+      "step": 0.1
+    },
+    {
+      "type": "drag",
+      "label": "Weight Vector",
+      "action": "Drag to change weight direction"
+    }
+  ]
+}

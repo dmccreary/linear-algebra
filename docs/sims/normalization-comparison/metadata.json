@@ -1,0 +1,34 @@
+{
+  "title": "Normalization Comparison",
+  "description": "Visual comparison of batch normalization and layer normalization showing which tensor dimensions each technique normalizes.",
+  "subject": "Deep Learning, Neural Networks",
+  "keywords": ["batch normalization", "layer normalization", "normalization", "training", "deep learning"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Analyze",
+  "learningObjectives": [
+    "Understand the difference between batch and layer normalization",
+    "Visualize which dimensions each normalization operates over",
+    "Choose appropriate normalization for different architectures"
+  ],
+  "duration": "10-15 minutes",
+  "prerequisites": ["Tensors", "Neural network training basics"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 500",
+  "controls": [
+    {
+      "type": "select",
+      "label": "View",
+      "options": ["Compare Both", "Batch Normalization", "Layer Normalization"]
+    },
+    {
+      "type": "checkbox",
+      "label": "Animate",
+      "default": true
+    }
+  ]
+}

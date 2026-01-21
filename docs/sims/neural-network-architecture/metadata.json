@@ -1,0 +1,57 @@
+{
+  "title": "Neural Network Architecture",
+  "description": "Interactive visualization of neural network architecture showing layers, neurons, weight matrix dimensions, and parameter counts.",
+  "subject": "Neural Networks, Deep Learning",
+  "keywords": ["neural network", "architecture", "layers", "weight matrix", "parameters", "deep learning"],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-21",
+  "language": "en",
+  "rights": "MIT License",
+  "gradeLevel": "Undergraduate",
+  "educationalLevel": "College",
+  "bloomsTaxonomy": "Understand",
+  "learningObjectives": [
+    "Visualize neural network architecture and layer connections",
+    "Understand weight matrix dimensions at each layer",
+    "Calculate total parameters in a network"
+  ],
+  "duration": "10-15 minutes",
+  "prerequisites": ["Matrix dimensions", "Basic neural network concepts"],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive x 480",
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Input Neurons",
+      "min": 1,
+      "max": 10,
+      "default": 4
+    },
+    {
+      "type": "slider",
+      "label": "Hidden Layers",
+      "min": 1,
+      "max": 5,
+      "default": 2
+    },
+    {
+      "type": "slider",
+      "label": "Hidden Neurons",
+      "min": 1,
+      "max": 16,
+      "default": 8
+    },
+    {
+      "type": "slider",
+      "label": "Output Neurons",
+      "min": 1,
+      "max": 10,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Dimensions",
+      "default": true
+    }
+  ]
+}
