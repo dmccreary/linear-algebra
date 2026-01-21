@@ -44,8 +44,14 @@ TODO:
 
 Set the context to @docs/chapters/07-matrix-decompositions/index.md.
 Go through all of the level 4 diagram headers (#### Diagram:) and for each
-diagram, use text within the <details markdown="1"> as input specification to the
-microsim-generator skill to generate a microsim for each diagram.  When done, add a session
+diagram:
+
+1. Use text within the <details markdown="1"> as input specification to the
+microsim-generator skill to generate a microsim for each diagram.
+2. Update the chapter content with an iframe element immediately after the #### Diagram: that links to the new MicroSim.
+3. Update the mkdocs.yml file so the navigation has links to the new Microsims.
+
+When done, add a session
 log to logs/ch-07-microsims.md
 
 Set the context to @docs/chapters/08-vector-spaces-and-inner-products/index.md.

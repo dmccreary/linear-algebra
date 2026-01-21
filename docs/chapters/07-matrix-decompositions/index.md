@@ -83,6 +83,10 @@ The rank tells us how many linearly independent columns (or rows) the matrix con
 
 #### Diagram: Matrix Rank Visualizer
 
+<iframe src="../../sims/matrix-rank-visualizer/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Matrix Rank Visualizer Fullscreen](../../sims/matrix-rank-visualizer/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Matrix Rank Visualizer</summary>
 Type: microsim
@@ -182,6 +186,10 @@ $L = \begin{bmatrix} 1 & 0 & 0 \\ 2 & 1 & 0 \\ 4 & 3 & 1 \end{bmatrix}$
 You can verify: $LU = A$.
 
 #### Diagram: LU Decomposition Step-by-Step
+
+<iframe src="../../sims/lu-decomposition/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the LU Decomposition Visualizer Fullscreen](../../sims/lu-decomposition/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>LU Decomposition Algorithm Visualizer</summary>
@@ -295,6 +303,10 @@ Positive definite matrices arise frequently in applications:
 | Cholesky | Unique $LL^T$ exists | $LL^T$ exists but $L$ may have zeros |
 
 #### Diagram: Positive Definiteness Visualizer
+
+<iframe src="../../sims/positive-definiteness/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Positive Definiteness Visualizer Fullscreen](../../sims/positive-definiteness/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Positive Definiteness Visualizer</summary>
@@ -422,6 +434,10 @@ The coefficients form the upper triangular matrix $R$:
 
 #### Diagram: Gram-Schmidt Orthogonalization
 
+<iframe src="../../sims/gram-schmidt/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the Gram-Schmidt Visualizer Fullscreen](../../sims/gram-schmidt/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Gram-Schmidt Process Visualizer</summary>
 Type: microsim
@@ -532,6 +548,10 @@ $A^T\mathbf{u}_i = \sigma_i \mathbf{v}_i$
 
 #### Diagram: SVD Geometry
 
+<iframe src="../../sims/svd-geometry/main.html" height="452px" width="100%" scrolling="no"></iframe>
+
+[Run the SVD Geometry Visualizer Fullscreen](../../sims/svd-geometry/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>SVD Geometric Interpretation</summary>
 Type: microsim
@@ -615,6 +635,10 @@ $A_k = U_{m \times k} \Sigma_{k \times k} V^T_{k \times n}$
 This gives the best rank-$k$ approximation to $A$ (Eckart-Young theorem).
 
 #### Diagram: SVD Forms Comparison
+
+<iframe src="../../sims/svd-forms-comparison/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the SVD Forms Comparison Fullscreen](../../sims/svd-forms-comparison/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>SVD Forms Comparison</summary>
@@ -703,6 +727,10 @@ This theorem justifies using truncated SVD for:
 - **Recommender systems:** Approximate user-item matrices
 
 #### Diagram: Image Compression with SVD
+
+<iframe src="../../sims/svd-image-compression/main.html" height="552px" width="100%" scrolling="no"></iframe>
+
+[Run the SVD Image Compression MicroSim Fullscreen](../../sims/svd-image-compression/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Image Compression MicroSim</summary>
@@ -802,6 +830,10 @@ A small perturbation $\delta \mathbf{b}$ in the right-hand side can be amplified
 
 #### Diagram: Condition Number Visualizer
 
+<iframe src="../../sims/condition-number/main.html" height="502px" width="100%" scrolling="no"></iframe>
+
+[Run the Condition Number Visualizer Fullscreen](../../sims/condition-number/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Condition Number and Sensitivity Visualizer</summary>
 Type: microsim
@@ -877,6 +909,10 @@ Is A square?
 | Matrix rank | SVD | Count significant $\sigma_i$ |
 
 #### Diagram: Decomposition Decision Tree
+
+<iframe src="../../sims/decomposition-guide/main.html" height="532px" width="100%" scrolling="no"></iframe>
+
+[Run the Decomposition Selection Guide Fullscreen](../../sims/decomposition-guide/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Matrix Decomposition Selection Guide</summary>

@@ -1,0 +1,64 @@
+{
+  "title": "LU Decomposition Algorithm Visualizer",
+  "description": "Step-by-step visualization of LU decomposition showing how Gaussian elimination produces L and U matrices",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrix Factorization", "Numerical Methods"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "LU Decomposition",
+  "learningObjectives": [
+    "Understand LU decomposition as saved Gaussian elimination",
+    "Track multipliers stored in the L matrix",
+    "Verify the decomposition A = LU",
+    "Connect elimination steps to matrix factorization"
+  ],
+  "bloomsLevel": "Apply",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Gaussian elimination",
+    "Matrix multiplication",
+    "Triangular matrices"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 530",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "controls": [
+    {
+      "type": "button",
+      "label": "Next Step"
+    },
+    {
+      "type": "button",
+      "label": "Auto Run"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "button",
+      "label": "Verify L×U=A"
+    },
+    {
+      "type": "select",
+      "label": "Matrix size",
+      "options": ["3×3", "4×4"],
+      "default": "3×3"
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 200,
+      "max": 2000,
+      "default": 1000,
+      "unit": "ms"
+    }
+  ],
+  "chapter": "07-matrix-decompositions"
+}

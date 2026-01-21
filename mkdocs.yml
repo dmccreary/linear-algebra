@@ -57,45 +57,54 @@ nav:
       - Quiz: chapters/15-autonomous-systems-and-sensor-fusion/quiz.md
  
   - MicroSims:
-    - Graph Viewer: sims/graph-viewer/index.md
     - 2D and 3D Vector Visualization: sims/vector-2d-3d-visualizer/index.md
-    - Vector Operations Playground: sims/vector-operations-playground/index.md
-    - Dot Product and Cross Product Visualizer: sims/dot-cross-product-visualizer/index.md
-    - Norm Comparison Visualizer: sims/norm-comparison-visualizer/index.md
-    - Linear Combination Explorer: sims/linear-combination-explorer/index.md
-    - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
-    - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
-    - Row and Column Vectors: sims/row-column-vectors/index.md
-    - Matrix Addition and Scalar Multiplication: sims/matrix-basic-ops/index.md
-    - Matrix Multiplication: sims/matrix-multiplication/index.md
-    - Special Matrix Types: sims/special-matrices/index.md
-    - Orthogonal Matrix Transformation: sims/orthogonal-transform/index.md
-    - Matrix Inverse Explorer: sims/matrix-inverse/index.md
-    - Sparse vs Dense Matrices: sims/sparse-dense-matrices/index.md
-    - Block Matrix Partitioning: sims/block-matrix/index.md
-    - Neural Network Layer: sims/neural-network-layer/index.md
-    - System of Equations Geometry: sims/system-geometry/index.md
-    - Row Operations Practice: sims/row-operations/index.md
-    - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
-    - REF vs RREF Comparison: sims/ref-vs-rref/index.md
-    - Solution Set Visualizer: sims/solution-sets/index.md
-    - Homogeneous System Explorer: sims/homogeneous-systems/index.md
-    - Numerical Stability Demo: sims/numerical-stability/index.md
-    - Linear Transformation Fundamentals: sims/linear-transform-basics/index.md
     - 2D Rotation Matrix: sims/2d-rotation/index.md
-    - Geometric Transformations Gallery: sims/transform-gallery/index.md
-    - Orthogonal Projection: sims/orthogonal-projection/index.md
-    - Transformation Composition: sims/transform-composition/index.md
-    - Kernel and Range: sims/kernel-range/index.md
-    - Change of Basis: sims/change-of-basis/index.md
-    - Signed Area Visualizer: sims/signed-area/index.md
     - 2x2 Determinant Calculator: sims/det-2x2-calculator/index.md
-    - Rule of Sarrus Visualizer: sims/sarrus-rule/index.md
-    - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
-    - Determinant Properties Explorer: sims/det-properties/index.md
-    - Singular Matrix Visualizer: sims/singular-matrix/index.md
     - 3D Volume Scaling Visualizer: sims/volume-scaling-3d/index.md
+    - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
+    - Block Matrix Partitioning: sims/block-matrix/index.md
+    - Change of Basis: sims/change-of-basis/index.md
+    - Cofactor Expansion Visualizer: sims/cofactor-expansion/index.md
+    - Condition Number Visualizer: sims/condition-number/index.md
     - Cramers Rule Solver: sims/cramers-rule/index.md
+    - Decomposition Selection Guide: sims/decomposition-guide/index.md
+    - Determinant Properties Explorer: sims/det-properties/index.md
+    - Dot Product and Cross Product Visualizer: sims/dot-cross-product-visualizer/index.md
+    - Gaussian Elimination Visualizer: sims/gaussian-elimination/index.md
+    - Geometric Transformations Gallery: sims/transform-gallery/index.md
+    - Gram-Schmidt Process Visualizer: sims/gram-schmidt/index.md
+    - Graph Viewer: sims/graph-viewer/index.md
+    - Homogeneous System Explorer: sims/homogeneous-systems/index.md
+    - Kernel and Range: sims/kernel-range/index.md
+    - Linear Combination Explorer: sims/linear-combination-explorer/index.md
+    - Linear Transformation Fundamentals: sims/linear-transform-basics/index.md
+    - LU Decomposition Visualizer: sims/lu-decomposition/index.md
+    - Matrix Addition and Scalar Multiplication: sims/matrix-basic-ops/index.md
+    - Matrix Inverse Explorer: sims/matrix-inverse/index.md
+    - Matrix Multiplication: sims/matrix-multiplication/index.md
+    - Matrix Rank Visualizer: sims/matrix-rank-visualizer/index.md
+    - Neural Network Layer: sims/neural-network-layer/index.md
+    - Norm Comparison Visualizer: sims/norm-comparison-visualizer/index.md
+    - Numerical Stability Demo: sims/numerical-stability/index.md
+    - Orthogonal Matrix Transformation: sims/orthogonal-transform/index.md
+    - Orthogonal Projection: sims/orthogonal-projection/index.md
+    - Positive Definiteness Visualizer: sims/positive-definiteness/index.md
+    - REF vs RREF Comparison: sims/ref-vs-rref/index.md
+    - Row and Column Vectors: sims/row-column-vectors/index.md
+    - Row Operations Practice: sims/row-operations/index.md
+    - Rule of Sarrus Visualizer: sims/sarrus-rule/index.md
+    - Signed Area Visualizer: sims/signed-area/index.md
+    - Singular Matrix Visualizer: sims/singular-matrix/index.md
+    - Solution Set Visualizer: sims/solution-sets/index.md
+    - Sparse vs Dense Matrices: sims/sparse-dense-matrices/index.md
+    - Special Matrix Types: sims/special-matrices/index.md
+    - SVD Forms Comparison: sims/svd-forms-comparison/index.md
+    - SVD Geometric Interpretation: sims/svd-geometry/index.md
+    - SVD Image Compression: sims/svd-image-compression/index.md
+    - System of Equations Geometry: sims/system-geometry/index.md
+    - Transformation Composition: sims/transform-composition/index.md
+    - Vector Operations Playground: sims/vector-operations-playground/index.md
+    - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
 
   - Learning Graph:
     - Introduction: learning-graph/index.md

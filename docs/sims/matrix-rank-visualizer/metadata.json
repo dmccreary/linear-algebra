@@ -1,0 +1,54 @@
+{
+  "title": "Matrix Rank Visualizer",
+  "description": "Interactive 3D visualization showing how matrix rank relates to the column space, with column vectors displayed geometrically and row echelon form computation",
+  "creator": "Dan McCreary",
+  "subject": ["Linear Algebra", "Matrix Theory", "Vector Spaces"],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "gradeLevel": "Undergraduate",
+  "subjectArea": "Mathematics",
+  "topic": "Matrix Rank and Column Space",
+  "learningObjectives": [
+    "Visualize how matrix rank relates to column space dimension",
+    "Understand rank-deficient matrices geometrically",
+    "Connect row echelon form to linear independence",
+    "Identify pivot columns and their significance"
+  ],
+  "bloomsLevel": "Understand",
+  "duration": "10-15 minutes",
+  "prerequisites": [
+    "Matrix-vector multiplication",
+    "Linear independence",
+    "Row echelon form"
+  ],
+  "framework": "p5.js",
+  "canvasDimensions": "responsive × 550",
+  "responsive": true,
+  "dependencies": ["p5.js CDN"],
+  "accessibility": {
+    "screenReaderDescription": true,
+    "keyboardNavigable": false
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Preset",
+      "options": ["Full Rank", "Rank 2", "Rank 1", "Zero"],
+      "default": "Rank 2"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Vectors",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Column Space",
+      "default": true
+    }
+  ],
+  "chapter": "07-matrix-decompositions"
+}
