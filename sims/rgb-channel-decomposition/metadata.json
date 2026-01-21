@@ -1,0 +1,42 @@
+{
+  "title": "RGB Channel Decomposition",
+  "description": "Interactive visualization showing how RGB color channels combine to form color images. Features channel isolation, intensity controls, and pixel-level inspection.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Image Processing",
+    "Computer Vision",
+    "Color Theory",
+    "RGB Color Model",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/rgb-channel-decomposition/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Analyze",
+    "Apply"
+  ],
+  "concepts": [
+    "RGB Image",
+    "Color Channels",
+    "Additive Color Model",
+    "Image Tensor",
+    "Color Space"
+  ],
+  "prerequisites": [
+    "Image Matrix concept",
+    "Basic color theory"
+  ],
+  "library": "p5.js"
+}

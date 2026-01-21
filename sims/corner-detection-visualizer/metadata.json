@@ -1,0 +1,43 @@
+{
+  "title": "Corner Detection Visualizer",
+  "description": "Interactive Harris corner detection visualization showing structure tensor eigenvalue analysis and response heatmaps.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Computer Vision",
+    "Feature Detection",
+    "Harris Corner",
+    "Eigenvalues",
+    "Linear Algebra"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/corner-detection-visualizer/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Analyze",
+    "Apply"
+  ],
+  "concepts": [
+    "Feature Detection",
+    "Harris Corner",
+    "Structure Tensor",
+    "Eigenvalues",
+    "Image Gradients"
+  ],
+  "prerequisites": [
+    "Eigenvalues and eigenvectors",
+    "Image gradients",
+    "Matrix operations"
+  ],
+  "library": "p5.js"
+}
