@@ -89,6 +89,10 @@ A single LIDAR scan may contain 100,000+ points, producing a sparse but accurate
 
 #### Diagram: LIDAR Point Cloud Visualizer
 
+<iframe src="../../sims/lidar-point-cloud/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the LIDAR Point Cloud Visualizer Fullscreen](../../sims/lidar-point-cloud/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>LIDAR Point Cloud Visualizer</summary>
 Type: microsim
@@ -143,6 +147,10 @@ Plus distortion coefficients $(k_1, k_2, p_1, p_2, k_3)$ for radial and tangenti
 | Extrinsic (multi-camera) | Camera arrangement | Overlapping views |
 
 #### Diagram: Camera Calibration Visualizer
+
+<iframe src="../../sims/camera-calibration/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+[Run the Camera Calibration Visualizer Fullscreen](../../sims/camera-calibration/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Camera Calibration Visualizer</summary>
@@ -292,6 +300,10 @@ The Kalman gain minimizes the expected squared estimation error—it's the optim
 
 #### Diagram: Kalman Filter Visualizer
 
+<iframe src="../../sims/kalman-filter/main.html" height="602px" width="100%" scrolling="no"></iframe>
+
+[Run the Kalman Filter Visualizer Fullscreen](../../sims/kalman-filter/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Kalman Filter Visualizer</summary>
 Type: microsim
@@ -382,6 +394,10 @@ $\mathbf{z} = \begin{bmatrix} \mathbf{z}_{GPS} \\ \mathbf{z}_{IMU} \\ \vdots \en
 
 #### Diagram: Sensor Fusion Visualizer
 
+<iframe src="../../sims/sensor-fusion/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the Sensor Fusion Visualizer Fullscreen](../../sims/sensor-fusion/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Sensor Fusion Visualizer</summary>
 Type: microsim
@@ -455,6 +471,10 @@ $\mathbf{x}^* = \arg\min_{\mathbf{x}} \sum_{\langle i,j \rangle} \| \mathbf{z}_{
 where $\mathbf{z}_{ij}$ is the measurement between nodes $i$ and $j$, and $\mathbf{\Omega}_{ij}$ is the information matrix (inverse covariance).
 
 #### Diagram: SLAM Visualizer
+
+<iframe src="../../sims/slam-visualizer/main.html" height="702px" width="100%" scrolling="no"></iframe>
+
+[Run the SLAM Visualizer Fullscreen](../../sims/slam-visualizer/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>SLAM Visualizer</summary>
@@ -545,6 +565,10 @@ The tracking pipeline:
 The **Hungarian algorithm** finds optimal one-to-one assignment minimizing total cost.
 
 #### Diagram: Object Tracking Visualizer
+
+<iframe src="../../sims/object-tracking/main.html" height="652px" width="100%" scrolling="no"></iframe>
+
+[Run the Object Tracking Visualizer Fullscreen](../../sims/object-tracking/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Object Tracking Visualizer</summary>
@@ -639,6 +663,10 @@ This is solved using:
 
 #### Diagram: Path Planning Visualizer
 
+<iframe src="../../sims/path-planning/main.html" height="702px" width="100%" scrolling="no"></iframe>
+
+[Run the Path Planning Visualizer Fullscreen](../../sims/path-planning/main.html){ .md-button .md-button--primary }
+
 <details markdown="1">
 <summary>Path Planning Visualizer</summary>
 Type: microsim
@@ -673,6 +701,10 @@ Implementation: p5.js with grid-based and sampling-based planners
 </details>
 
 #### Diagram: Trajectory Optimization Visualizer
+
+<iframe src="../../sims/trajectory-optimization/main.html" height="702px" width="100%" scrolling="no"></iframe>
+
+[Run the Trajectory Optimization Visualizer Fullscreen](../../sims/trajectory-optimization/main.html){ .md-button .md-button--primary }
 
 <details markdown="1">
 <summary>Trajectory Optimization Visualizer</summary>

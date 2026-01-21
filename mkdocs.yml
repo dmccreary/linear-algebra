@@ -66,6 +66,7 @@ nav:
     - Backpropagation Visualizer: sims/backpropagation/index.md
     - Basis and Coordinate System Visualizer: sims/basis-coordinate-visualizer/index.md
     - Block Matrix Partitioning: sims/block-matrix/index.md
+    - Camera Calibration Visualizer: sims/camera-calibration/index.md
     - Camera Model Visualizer: sims/camera-model-visualizer/index.md
     - Change of Basis: sims/change-of-basis/index.md
     - Characteristic Polynomial Explorer: sims/characteristic-polynomial/index.md
@@ -109,11 +110,13 @@ nav:
     - Image Matrix Visualizer: sims/image-matrix-visualizer/index.md
     - Inner Product Space Visualizer: sims/inner-product-visualizer/index.md
     - Kernel and Range: sims/kernel-range/index.md
+    - Kalman Filter Visualizer: sims/kalman-filter/index.md
     - KKT Conditions Visualizer: sims/kkt-conditions-visualizer/index.md
     - Lagrange Multiplier Geometry: sims/lagrange-multiplier-geometry/index.md
     - Latent Space Interpolation: sims/latent-space-interpolation/index.md
     - Least Squares Visualizer: sims/least-squares-visualizer/index.md
     - Learning Rate Effect: sims/learning-rate-effect/index.md
+    - LIDAR Point Cloud Visualizer: sims/lidar-point-cloud/index.md
     - Linear Combination Explorer: sims/linear-combination-explorer/index.md
     - Linear Regression Visualizer: sims/linear-regression/index.md
     - Linear Transformation Fundamentals: sims/linear-transform-basics/index.md
@@ -138,6 +141,8 @@ nav:
     - Orthogonal Projection: sims/orthogonal-projection/index.md
     - Optimizer Comparison Arena: sims/optimizer-comparison-arena/index.md
     - Orthonormal Basis Finder: sims/orthonormal-basis-finder/index.md
+    - Object Tracking Visualizer: sims/object-tracking/index.md
+    - Path Planning Visualizer: sims/path-planning/index.md
     - PCA Explorer: sims/pca-explorer/index.md
     - Perceptron Decision Boundary: sims/perceptron-decision-boundary/index.md
     - Point Cloud Visualizer: sims/point-cloud-visualizer/index.md
@@ -154,8 +159,10 @@ nav:
     - Row Operations Practice: sims/row-operations/index.md
     - Rule of Sarrus Visualizer: sims/sarrus-rule/index.md
     - Scree Plot: sims/scree-plot/index.md
+    - Sensor Fusion Visualizer: sims/sensor-fusion/index.md
     - SGD Trajectory Visualizer: sims/sgd-trajectory-visualizer/index.md
     - Signed Area Visualizer: sims/signed-area/index.md
+    - SLAM Visualizer: sims/slam-visualizer/index.md
     - Singular Matrix Visualizer: sims/singular-matrix/index.md
     - Solution Set Visualizer: sims/solution-sets/index.md
     - Sparse vs Dense Matrices: sims/sparse-dense-matrices/index.md
@@ -170,6 +177,7 @@ nav:
     - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md
     - Transformer Block Visualizer: sims/transformer-block/index.md
+    - Trajectory Optimization Visualizer: sims/trajectory-optimization/index.md
     - Triangulation Visualizer: sims/triangulation-visualizer/index.md
     - Vector Operations Playground: sims/vector-operations-playground/index.md
     - Vector Space Axiom Explorer: sims/vector-space-axiom-explorer/index.md
