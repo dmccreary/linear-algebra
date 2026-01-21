@@ -1,0 +1,42 @@
+{
+  "title": "Image Matrix Visualizer",
+  "description": "Interactive visualization showing how pixel values in a matrix correspond to grayscale image appearance. Features hover highlighting, multiple sample images, and edit mode for modifying pixel values.",
+  "creator": "Dan McCreary",
+  "date": "2026-01-21",
+  "subject": [
+    "Image Processing",
+    "Computer Vision",
+    "Linear Algebra",
+    "Digital Images",
+    "Matrices"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY-NC-SA 4.0",
+  "contributor": [
+    "Claude Code"
+  ],
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/image-matrix-visualizer/",
+  "publisher": "Linear Algebra Intelligent Textbook",
+  "educationalLevel": "College Undergraduate",
+  "learningResourceType": "simulation",
+  "audience": "Students, Educators",
+  "version": "1.0.0",
+  "bloomLevel": [
+    "Understand",
+    "Apply"
+  ],
+  "concepts": [
+    "Image Matrix",
+    "Grayscale Image",
+    "Pixel Values",
+    "Matrix Representation",
+    "Digital Image Storage"
+  ],
+  "prerequisites": [
+    "Basic understanding of matrices",
+    "Coordinate systems"
+  ],
+  "library": "p5.js"
+}
