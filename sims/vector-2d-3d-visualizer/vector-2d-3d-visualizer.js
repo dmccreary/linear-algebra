@@ -9,7 +9,6 @@ let controlHeight = 110;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 20;
 let sliderLeftMargin = 120;
-let defaultTextSize = 16;
 
 // Vector components
 let vx = 3;
@@ -22,8 +21,8 @@ let showProjections = true;
 let showLabels = true;
 
 // 3D rotation angles (for mouse interaction)
-let rotationX = -0.4;
-let rotationY = 0.5;
+let viewRotationX = -0.4;
+let viewRotationY = 0.5;
 
 // UI elements
 let xSlider, ySlider, zSlider;
@@ -33,10 +32,6 @@ let toggleViewButton;
 // Scale for drawing
 let scale2D = 35; // pixels per unit in 2D
 let scale3D = 35; // pixels per unit in 3D
-
-// Mouse drag tracking
-let isDragging = false;
-let lastMouseX, lastMouseY;
 
 // Font for WEBGL text
 let font;
@@ -112,6 +107,8 @@ function toggleView() {
 }
 
 function draw() {
+
+  
     // Get slider values
     vx = xSlider.value();
     vy = ySlider.value();
@@ -120,8 +117,6 @@ function draw() {
     // Reset transformations for WEBGL
     resetMatrix();
 
-    // Draw background
-    background(240);
 
     // Translate to center for WEBGL coordinate system
     translate(0, 0, 0);
@@ -138,6 +133,10 @@ function draw() {
 }
 
 function draw2DView() {
+    // Make the background of the drawing area light blue
+    // Note we are not drawing over the control area
+    background('aliceblue');
+
     // Move origin to center of drawing area
     push();
     translate(0, -controlHeight/2, 0);
@@ -168,11 +167,14 @@ function draw2DView() {
 }
 
 function draw3DView() {
+    // Clear the background
+    background('aliceblue');
+
     // Apply rotation from mouse drag
     push();
     translate(0, -controlHeight/2, 0);
-    rotateX(rotationX);
-    rotateY(rotationY);
+    rotateX(viewRotationX);
+    rotateY(viewRotationY);
 
     // Draw 3D grid
     drawGrid3D();
@@ -244,7 +246,7 @@ function drawAxes2D() {
 }
 
 function drawProjections2D() {
-    stroke(100, 100, 200);
+    stroke(10128, 0, 128);
     strokeWeight(1);
 
     let px = vx * scale2D;
@@ -256,7 +258,7 @@ function drawProjections2D() {
     drawDashedLine2D(px, py, 0, py);
 
     // Projection points
-    fill(100, 100, 200);
+    fill(10128, 0, 128);
     noStroke();
     ellipse(px, 0, 6, 6);
     ellipse(0, py, 6, 6);
@@ -280,7 +282,7 @@ function drawVector2D() {
     let py = -vy * scale2D; // Invert Y for screen
 
     // Draw vector line
-    stroke(0, 100, 200);
+    stroke(128, 0, 128);
     strokeWeight(3);
     line(0, 0, px, py);
 
@@ -289,13 +291,13 @@ function drawVector2D() {
     translate(px, py);
     let angle = atan2(py, px);
     rotate(angle);
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     triangle(0, 0, -15, -7, -15, 7);
     pop();
 
     // Draw endpoint
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     ellipse(px, py, 10, 10);
 }
@@ -323,7 +325,7 @@ function drawLabels2D() {
     text('y', centerX - 20, centerY - 5.5 * scale2D);
 
     // Component values
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     let px = centerX + vx * scale2D;
     let py = centerY - vy * scale2D;
     text('(' + vx.toFixed(1) + ', ' + vy.toFixed(1) + ')', px + 30, py - 15);
@@ -335,6 +337,7 @@ function drawInfo2D() {
     push();
     resetMatrix();
     translate(-canvasWidth/2, -canvasHeight/2);
+    
 
     // Title
     fill(0);
@@ -342,6 +345,7 @@ function drawInfo2D() {
     textAlign(CENTER, TOP);
     noStroke();
     text('2D Vector Visualization', canvasWidth/2, 10);
+
 
     // Magnitude display
     let magnitude = sqrt(vx*vx + vy*vy);
@@ -373,6 +377,7 @@ function drawAxes3D() {
     line(0, 0, 0, 6 * scale3D, 0, 0);
     push();
     translate(6 * scale3D, 0, 0);
+    rotateZ(-PI/2);  // Rotate cone to point along +X
     fill(200, 50, 50);
     noStroke();
     cone(5, 15);
@@ -453,7 +458,7 @@ function drawVector3D() {
     let pz = vz * scale3D;
 
     // Draw vector line
-    stroke(0, 100, 200);
+    stroke(128, 0, 128);
     strokeWeight(3);
     line(0, 0, 0, px, py, pz);
 
@@ -461,22 +466,22 @@ function drawVector3D() {
     push();
     translate(px, py, pz);
 
-    // Calculate rotation to point cone along vector
+    // Calculate rotation to point cone away from origin along vector
     let mag = sqrt(px*px + py*py + pz*pz);
     if (mag > 0) {
-        // Default cone points in -Y direction, we need to rotate it
+        // Default cone points in -Y direction (tip down), rotate to point along vector
         let v = createVector(px, py, pz).normalize();
-        let up = createVector(0, -1, 0);
-        let axis = up.cross(v);
-        let angle = acos(up.dot(v));
+        let down = createVector(0, 1, 0);  // Cone base direction
+        let axis = down.cross(v);
+        let angle = acos(down.dot(v));
         if (axis.mag() > 0.001) {
             rotate(angle, axis);
-        } else if (py > 0) {
+        } else if (py < 0) {
             rotateX(PI);
         }
     }
 
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     cone(6, 18);
     pop();
@@ -484,7 +489,7 @@ function drawVector3D() {
     // Endpoint sphere
     push();
     translate(px, py, pz);
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     sphere(5);
     pop();
@@ -499,23 +504,23 @@ function drawLabels3D() {
     // Draw axis labels at endpoints
     push();
     translate(6.5 * scale3D, 0, 0);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     text('x', 0, 0);
     pop();
 
     push();
     translate(0, -6.5 * scale3D, 0);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     fill(50, 150, 50);
     text('y', 0, 0);
     pop();
 
     push();
     translate(0, 0, 6.5 * scale3D);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     fill(50, 50, 200);
     text('z', 0, 0);
     pop();
@@ -584,10 +589,10 @@ function mouseDragged() {
     if (is3DView && mouseY < drawHeight) {
         let dx = mouseX - pmouseX;
         let dy = mouseY - pmouseY;
-        rotationY += dx * 0.01;
-        rotationX += dy * 0.01;
-        // Clamp rotationX to avoid flipping
-        rotationX = constrain(rotationX, -PI/2, PI/2);
+        viewRotationY += dx * 0.01;
+        viewRotationX += dy * 0.01;
+        // Clamp viewRotationX to avoid flipping
+        viewRotationX = constrain(viewRotationX, -PI/2, PI/2);
     }
 }
 

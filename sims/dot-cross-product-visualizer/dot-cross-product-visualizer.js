@@ -378,14 +378,35 @@ function drawAxes3D() {
     // X-axis (red)
     stroke(200, 100, 100);
     line(0, 0, 0, 6 * scale3D, 0, 0);
+    push();
+    translate(6 * scale3D, 0, 0);
+    rotateZ(-PI/2);  // Rotate cone to point along +X
+    fill(200, 100, 100);
+    noStroke();
+    cone(5, 15);
+    pop();
 
     // Y-axis (green)
     stroke(100, 200, 100);
     line(0, 0, 0, 0, -6 * scale3D, 0);
+    push();
+    translate(0, -6 * scale3D, 0);
+    rotateX(PI);  // Rotate cone to point along -Y (up in screen coords)
+    fill(100, 200, 100);
+    noStroke();
+    cone(5, 15);
+    pop();
 
     // Z-axis (blue)
     stroke(100, 100, 200);
     line(0, 0, 0, 0, 0, 6 * scale3D);
+    push();
+    translate(0, 0, 6 * scale3D);
+    rotateX(PI/2);  // Rotate cone to point along +Z
+    fill(100, 100, 200);
+    noStroke();
+    cone(5, 15);
+    pop();
 }
 
 function drawParallelogram3D() {
@@ -421,17 +442,17 @@ function drawVector3D(x1, y1, z1, x2, y2, z2, col, label) {
     strokeWeight(3);
     line(sx1, sy1, sz1, sx2, sy2, sz2);
 
-    // Draw cone at tip
+    // Draw cone at tip pointing away from origin
     push();
     translate(sx2, sy2, sz2);
 
     let v = createVector(sx2 - sx1, sy2 - sy1, sz2 - sz1).normalize();
-    let up = createVector(0, -1, 0);
-    let axis = up.cross(v);
-    let angle = acos(constrain(up.dot(v), -1, 1));
+    let down = createVector(0, 1, 0);  // Cone base direction
+    let axis = down.cross(v);
+    let angle = acos(constrain(down.dot(v), -1, 1));
     if (axis.mag() > 0.001) {
         rotate(angle, axis);
-    } else if (sy2 > sy1) {
+    } else if (sy2 < sy1) {
         rotateX(PI);
     }
 

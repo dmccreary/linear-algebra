@@ -2,6 +2,7 @@
 // Shows how rotation matrices transform vectors and shapes
 // Demonstrates relationship between angle and matrix entries (cos/sin)
 // MicroSim template version 2026.02
+/// 
 
 // Canvas dimensions
 let containerWidth;

@@ -1,6 +1,7 @@
 // Activation Functions Visualizer
 // Compare activation functions by their shape, range, and gradient behavior
 // MicroSim template version 2026.02
+/// 
 
 // Canvas dimensions
 let containerWidth;
