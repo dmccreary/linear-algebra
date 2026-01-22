@@ -120,7 +120,7 @@ The additional $z$-component allows us to represent quantities in our three-dime
 
 #### Diagram: 2D and 3D Vector Visualization
 
-<iframe src="../../sims/vector-2d-3d-visualizer/main.html" width="100%" height="500px" scrolling="no"></iframe>
+<iframe src="../../sims/vector-2d-3d-visualizer/main.html" width="100%" height="560px" scrolling="no"></iframe>
 
 <details markdown="1">
 <summary>2D and 3D Vector Visualization MicroSim</summary>
