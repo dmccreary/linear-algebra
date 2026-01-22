@@ -10,7 +10,7 @@ social:
 
 # Cramer's Rule Interactive Solver
 
-<iframe src="main.html" height="502px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="552px" width="100%" scrolling="no"></iframe>
 
 [Run the Cramer's Rule Solver Fullscreen](./main.html){ .md-button .md-button--primary }
 

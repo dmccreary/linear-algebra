@@ -31,6 +31,8 @@ let showProjections = true;
 // Animation
 let animating = false;
 let animProgress = 0;
+let animStartB1, animStartB2;
+let animEndB1, animEndB2;
 
 // Scale
 let scale = 35;
@@ -84,7 +86,7 @@ function createControls() {
 
     // Animate button
     animateButton = createButton('Animate Morph');
-    animateButton.position(150, drawHeight + 60);
+    animateButton.position(170, drawHeight + 60);
     animateButton.mousePressed(startAnimation);
 }
 
@@ -112,6 +114,12 @@ function setPreset(preset) {
 }
 
 function startAnimation() {
+    // Store current custom basis as end target
+    animEndB1 = { x: b1.x, y: b1.y };
+    animEndB2 = { x: b2.x, y: b2.y };
+    // Start from standard basis
+    animStartB1 = { x: 1, y: 0 };
+    animStartB2 = { x: 0, y: 1 };
     animating = true;
     animProgress = 0;
 }
@@ -148,7 +156,7 @@ function draw() {
     panelWidth = (canvasWidth - panelGap - 40) / 2;
 
     // Background
-    background(248);
+    background('aliceblue');
 
     // Draw panels
     drawStandardPanel();
@@ -213,11 +221,37 @@ function drawStandardPanel() {
     pop();
 }
 
+function getAnimatedBasis() {
+    // Returns the current basis to display (interpolated during animation)
+    if (!animating) {
+        return { b1: b1, b2: b2 };
+    }
+    // Ease-in-out interpolation
+    let t = animProgress < 0.5
+        ? 2 * animProgress * animProgress
+        : 1 - pow(-2 * animProgress + 2, 2) / 2;
+    return {
+        b1: {
+            x: lerp(animStartB1.x, animEndB1.x, t),
+            y: lerp(animStartB1.y, animEndB1.y, t)
+        },
+        b2: {
+            x: lerp(animStartB2.x, animEndB2.x, t),
+            y: lerp(animStartB2.y, animEndB2.y, t)
+        }
+    };
+}
+
 function drawCustomPanel() {
     let x = 20 + panelWidth + panelGap;
     let y = 10;
     let centerX = x + panelWidth / 2;
     let centerY = y + (drawHeight - 20) / 2;
+
+    // Get current basis (animated or static)
+    let currentBasis = getAnimatedBasis();
+    let currB1 = currentBasis.b1;
+    let currB2 = currentBasis.b2;
 
     // Panel background
     fill(252, 254, 255);
@@ -237,7 +271,7 @@ function drawCustomPanel() {
 
     // Draw custom grid
     if (showGrid) {
-        drawCustomGrid();
+        drawCustomGridAnimated(currB1, currB2);
     }
 
     // Draw standard axes (faint)
@@ -247,20 +281,22 @@ function drawCustomPanel() {
     line(0, -drawHeight/2 + 30, 0, drawHeight/2 - 30);
 
     // Draw projections in custom basis
-    if (showProjections && !isNaN(customCoords.c1)) {
-        drawCustomProjections();
+    if (showProjections) {
+        drawCustomProjectionsAnimated(currB1, currB2);
     }
 
     // Draw custom basis vectors
-    drawBasisVector(b1.x, b1.y, color(200, 100, 100), 'b₁');
-    drawBasisVector(b2.x, b2.y, color(100, 100, 200), 'b₂');
+    drawBasisVector(currB1.x, currB1.y, color(200, 100, 100), 'b₁');
+    drawBasisVector(currB2.x, currB2.y, color(100, 100, 200), 'b₂');
 
     // Draw vector (same geometric position)
     drawMainVector(vector.x, vector.y);
 
-    // Draw drag points for basis vectors
-    drawDragPoint(b1.x * scale, -b1.y * scale, color(200, 100, 100));
-    drawDragPoint(b2.x * scale, -b2.y * scale, color(100, 100, 200));
+    // Draw drag points for basis vectors (only when not animating)
+    if (!animating) {
+        drawDragPoint(b1.x * scale, -b1.y * scale, color(200, 100, 100));
+        drawDragPoint(b2.x * scale, -b2.y * scale, color(100, 100, 200));
+    }
 
     pop();
 }
@@ -372,6 +408,69 @@ function drawCustomProjections() {
     ellipse(c2b2x, c2b2y, 6, 6);
 }
 
+function drawCustomGridAnimated(currB1, currB2) {
+    stroke(235);
+    strokeWeight(1);
+
+    // Draw grid lines parallel to currB1 and currB2
+    for (let i = -5; i <= 5; i++) {
+        // Lines parallel to currB1 (starting from i*currB2)
+        let startX = i * currB2.x * scale;
+        let startY = -i * currB2.y * scale;
+        let endX = startX + 5 * currB1.x * scale;
+        let endY = startY - 5 * currB1.y * scale;
+        let endX2 = startX - 5 * currB1.x * scale;
+        let endY2 = startY + 5 * currB1.y * scale;
+        line(endX2, endY2, endX, endY);
+
+        // Lines parallel to currB2 (starting from i*currB1)
+        startX = i * currB1.x * scale;
+        startY = -i * currB1.y * scale;
+        endX = startX + 5 * currB2.x * scale;
+        endY = startY - 5 * currB2.y * scale;
+        endX2 = startX - 5 * currB2.x * scale;
+        endY2 = startY + 5 * currB2.y * scale;
+        line(endX2, endY2, endX, endY);
+    }
+}
+
+function drawCustomProjectionsAnimated(currB1, currB2) {
+    // Compute coordinates in the current animated basis
+    let det = currB1.x * currB2.y - currB2.x * currB1.y;
+    if (abs(det) < 0.0001) return;
+
+    let c1 = (vector.x * currB2.y - vector.y * currB2.x) / det;
+    let c2 = (vector.y * currB1.x - vector.x * currB1.y) / det;
+
+    let vx = vector.x * scale;
+    let vy = -vector.y * scale;
+
+    // c1*currB1 point
+    let c1b1x = c1 * currB1.x * scale;
+    let c1b1y = -c1 * currB1.y * scale;
+
+    // c2*currB2 point
+    let c2b2x = c2 * currB2.x * scale;
+    let c2b2y = -c2 * currB2.y * scale;
+
+    stroke(150, 150, 200);
+    strokeWeight(1);
+    drawingContext.setLineDash([4, 4]);
+
+    // Line from tip to c1*currB1 (parallel to currB2)
+    line(vx, vy, c1b1x, c1b1y);
+    // Line from tip to c2*currB2 (parallel to currB1)
+    line(vx, vy, c2b2x, c2b2y);
+
+    drawingContext.setLineDash([]);
+
+    // Projection points on basis directions
+    fill(150, 150, 200);
+    noStroke();
+    ellipse(c1b1x, c1b1y, 6, 6);
+    ellipse(c2b2x, c2b2y, 6, 6);
+}
+
 function drawBasisVector(bx, by, col, label) {
     let vx = bx * scale;
     let vy = -by * scale;
@@ -435,8 +534,21 @@ function drawDragPoint(sx, sy, col) {
 }
 
 function drawCoordinateComparison() {
-    let x = 300;
+    let x = 320;
     let y = drawHeight + 15;
+
+    // Get current animated basis
+    let currentBasis = getAnimatedBasis();
+    let currB1 = currentBasis.b1;
+    let currB2 = currentBasis.b2;
+
+    // Compute coordinates for current animated basis
+    let det = currB1.x * currB2.y - currB2.x * currB1.y;
+    let animC1 = NaN, animC2 = NaN;
+    if (abs(det) >= 0.0001) {
+        animC1 = (vector.x * currB2.y - vector.y * currB2.x) / det;
+        animC2 = (vector.y * currB1.x - vector.x * currB1.y) / det;
+    }
 
     fill(0);
     textSize(14);
@@ -448,30 +560,30 @@ function drawCoordinateComparison() {
     fill(50, 150, 50);
     text('v = (' + vector.x.toFixed(2) + ', ' + vector.y.toFixed(2) + ')', x, y + 18);
 
-    // Custom coordinates
+    // Custom coordinates (animated)
     fill(0);
     text('Custom basis coordinates:', x, y + 45);
-    if (isNaN(customCoords.c1)) {
+    if (isNaN(animC1)) {
         fill(200, 50, 50);
         text('Undefined (parallel basis)', x, y + 63);
     } else {
         fill(50, 150, 50);
-        text('[v]_B = (' + customCoords.c1.toFixed(2) + ', ' + customCoords.c2.toFixed(2) + ')', x, y + 63);
+        text('[v]_B = (' + animC1.toFixed(2) + ', ' + animC2.toFixed(2) + ')', x, y + 63);
     }
 
     // Verification
-    if (!isNaN(customCoords.c1)) {
+    if (!isNaN(animC1)) {
         fill(100);
         textSize(11);
-        let verify = customCoords.c1.toFixed(1) + '·b₁ + ' + customCoords.c2.toFixed(1) + '·b₂ = v';
+        let verify = animC1.toFixed(1) + '·b₁ + ' + animC2.toFixed(1) + '·b₂ = v';
         text(verify, x, y + 85);
     }
 
-    // Custom basis values
+    // Custom basis values (animated)
     fill(0);
     textSize(12);
-    text('b₁ = (' + b1.x.toFixed(1) + ', ' + b1.y.toFixed(1) + ')', x + 250, y + 15);
-    text('b₂ = (' + b2.x.toFixed(1) + ', ' + b2.y.toFixed(1) + ')', x + 250, y + 35);
+    text('b₁ = (' + currB1.x.toFixed(1) + ', ' + currB1.y.toFixed(1) + ')', x + 250, y + 15);
+    text('b₂ = (' + currB2.x.toFixed(1) + ', ' + currB2.y.toFixed(1) + ')', x + 250, y + 35);
 }
 
 function mousePressed() {
