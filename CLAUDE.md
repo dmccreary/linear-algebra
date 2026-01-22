@@ -184,3 +184,61 @@ translate(-canvasWidth/2, -canvasHeight/2);  // Move origin to top-left
 text('Title', x, y);
 pop();
 ```
+
+### 5. 3D Axis Cone Orientation
+In p5.js WEBGL, `cone()` draws with its tip pointing in the **-Y direction** (downward) by default. To create arrowheads pointing along each axis:
+
+```javascript
+// X-axis cone: rotate to point along +X
+push();
+translate(6 * scale3D, 0, 0);
+rotateZ(-PI/2);  // Tip now points along +X
+fill(200, 100, 100);
+noStroke();
+cone(5, 15);
+pop();
+
+// Y-axis cone: rotate to point along -Y (up in screen coords)
+push();
+translate(0, -6 * scale3D, 0);
+rotateX(PI);  // Tip now points along -Y (upward on screen)
+fill(100, 200, 100);
+noStroke();
+cone(5, 15);
+pop();
+
+// Z-axis cone: rotate to point along +Z
+push();
+translate(0, 0, 6 * scale3D);
+rotateX(PI/2);  // Tip now points along +Z
+fill(100, 100, 200);
+noStroke();
+cone(5, 15);
+pop();
+```
+
+### 6. 3D Vector Cone Orientation (Dynamic)
+For vectors pointing in arbitrary directions, the cone must be rotated to point **away from the origin**. The default cone points in -Y, so use `(0, 1, 0)` as the reference direction (cone base direction):
+
+```javascript
+// Draw cone at tip pointing away from origin
+push();
+translate(tipX, tipY, tipZ);
+
+let v = createVector(tipX - baseX, tipY - baseY, tipZ - baseZ).normalize();
+let down = createVector(0, 1, 0);  // Cone BASE direction (tip points -Y)
+let axis = down.cross(v);
+let angle = acos(constrain(down.dot(v), -1, 1));
+if (axis.mag() > 0.001) {
+    rotate(angle, axis);
+} else if (tipY < baseY) {  // Vector pointing up, flip cone
+    rotateX(PI);
+}
+
+fill(col);
+noStroke();
+cone(6, 18);
+pop();
+```
+
+**Common mistake:** Using `createVector(0, -1, 0)` makes the cone point toward the origin instead of away from it.
