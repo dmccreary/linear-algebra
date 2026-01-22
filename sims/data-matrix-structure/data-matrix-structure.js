@@ -222,7 +222,7 @@ function drawMatrix() {
   textAlign(CENTER, BOTTOM);
   for (let j = 0; j < cols; j++) {
     let x = matrixX + j * cellWidth + cellWidth / 2;
-    let y = matrixY - 35;
+    let y = matrixY - 25;
 
     push();
     translate(x, y);
