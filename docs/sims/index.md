@@ -234,7 +234,7 @@ for learning Applied Linear Algebra for AI and Machine Learning.
 
 - **[Cramer's Rule](./cramers-rule/index.md)**
 
-    ![Cramer's Rule](./cramers-rule/cramers-rule.png)
+    ![Cramer's Rule](./cramers-rule/cramers-rule.jpg)
     Step-by-step visualization of solving systems of equations using Cramer's Rule with determinants.
 
 - **[Volume Scaling 3D](./volume-scaling-3d/index.md)**
