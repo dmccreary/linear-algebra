@@ -2,11 +2,10 @@
 // Step-by-step visualization of solving systems using determinants
 
 let canvasWidth = 400;
-let drawHeight = 420;
+let drawHeight = 470;
 let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
-let margin = 25;
-let defaultTextSize = 16;
+let margin = 30;
 
 // System: Ax = b
 // Default: 2x + 3y = 7, x + 4y = 9
@@ -73,9 +72,11 @@ function draw() {
 
     // Auto-advance if playing
     if (isPlaying && millis() - lastStepTime > stepInterval) {
-        nextStep();
-        lastStepTime = millis();
-        if (currentStep === 0) {
+        if (currentStep < totalSteps) {
+            nextStep();
+            lastStepTime = millis();
+        } else {
+            // Stop at final step, keep solution visible
             isPlaying = false;
             playButton.html('Play');
         }
@@ -101,32 +102,32 @@ function draw() {
     fill(100);
     textSize(12);
     textAlign(RIGHT, TOP);
-    text('Step ' + currentStep + '/' + totalSteps, canvasWidth - 20, drawHeight - 20);
+    noStroke();
+    text('Step ' + currentStep + '/' + totalSteps, canvasWidth - margin, drawHeight - margin);
 }
 
 function drawSystemOfEquations() {
-    let x = 20;
     let y = 45;
 
     fill(0);
     noStroke();
     textSize(14);
     textAlign(LEFT, TOP);
-    text('System of Equations:', x, y);
+    text('System of Equations:', margin, y);
 
     textSize(13);
     // First equation
     let eq1 = formatTerm(A[0][0], 'x', true) + formatTerm(A[0][1], 'y', false) + ' = ' + b[0];
-    text(eq1, x + 10, y + 22);
+    text(eq1, margin + 10, y + 22);
 
     // Second equation
     let eq2 = formatTerm(A[1][0], 'x', true) + formatTerm(A[1][1], 'y', false) + ' = ' + b[1];
-    text(eq2, x + 10, y + 40);
+    text(eq2, margin + 10, y + 40);
 
     // Matrix form
     textSize(12);
     fill(100);
-    text('Matrix form: Ax = b', x, y + 65);
+    text('Matrix form: Ax = b', margin, y + 65);
 }
 
 function formatTerm(coef, varName, isFirst) {
@@ -140,8 +141,9 @@ function formatTerm(coef, varName, isFirst) {
 }
 
 function drawSolutionSteps() {
-    let x = 20;
     let y = 130;
+    let stepSpacing = 85;  // Vertical spacing between steps
+    let indent = margin + 20;  // Indentation for sub-items
 
     let detA = A[0][0] * A[1][1] - A[0][1] * A[1][0];
     let A1 = [[b[0], A[0][1]], [b[1], A[1][1]]];
@@ -151,53 +153,60 @@ function drawSolutionSteps() {
 
     // Step 1: det(A)
     fill(currentStep >= 1 ? 0 : 180);
+    noStroke();
     textSize(13);
     textAlign(LEFT, TOP);
-    text('Step 1: Compute det(A)', x, y);
+    text('Step 1: Compute det(A)', margin, y);
 
     if (currentStep >= 1) {
         textSize(12);
-        drawMiniMatrix(A, x + 20, y + 18, currentStep === 1);
-        text('= ' + A[0][0] + '×' + A[1][1] + ' - ' + A[0][1] + '×' + A[1][0] + ' = ' + detA, x + 90, y + 32);
+        drawMiniMatrix(A, indent, y + 22, currentStep === 1);
+        noStroke();
+        text('= ' + A[0][0] + '×' + A[1][1] + ' - ' + A[0][1] + '×' + A[1][0] + ' = ' + detA, indent + 75, y + 36);
 
         if (detA === 0) {
             fill(200, 0, 0);
             textSize(11);
-            text('det(A) = 0: No unique solution!', x + 20, y + 52);
+            text('det(A) = 0: No unique solution!', indent, y + 58);
         }
     }
 
     // Step 2: det(A₁)
-    y += 70;
+    y += stepSpacing;
     fill(currentStep >= 2 ? 0 : 180);
+    noStroke();
     textSize(13);
-    text('Step 2: Compute det(A₁) [replace col 1 with b]', x, y);
+    text('Step 2: Compute det(A₁) [replace col 1 with b]', margin, y);
 
     if (currentStep >= 2) {
         textSize(12);
-        drawMiniMatrix(A1, x + 20, y + 18, currentStep === 2, 0);
+        drawMiniMatrix(A1, indent, y + 22, currentStep === 2, 0);
         fill(currentStep === 2 ? color(0, 100, 200) : 0);
-        text('= ' + detA1, x + 90, y + 32);
+        noStroke();
+        text('= ' + detA1, indent + 75, y + 36);
     }
 
     // Step 3: det(A₂)
-    y += 60;
+    y += stepSpacing;
     fill(currentStep >= 3 ? 0 : 180);
+    noStroke();
     textSize(13);
-    text('Step 3: Compute det(A₂) [replace col 2 with b]', x, y);
+    text('Step 3: Compute det(A₂) [replace col 2 with b]', margin, y);
 
     if (currentStep >= 3) {
         textSize(12);
-        drawMiniMatrix(A2, x + 20, y + 18, currentStep === 3, 1);
+        drawMiniMatrix(A2, indent, y + 22, currentStep === 3, 1);
         fill(currentStep === 3 ? color(0, 100, 200) : 0);
-        text('= ' + detA2, x + 90, y + 32);
+        noStroke();
+        text('= ' + detA2, indent + 75, y + 36);
     }
 
     // Step 4: Solution
-    y += 60;
+    y += stepSpacing;
     fill(currentStep >= 4 ? 0 : 180);
+    noStroke();
     textSize(13);
-    text('Step 4: Apply Cramer\'s Rule', x, y);
+    text('Step 4: Apply Cramer\'s Rule', margin, y);
 
     if (currentStep >= 4) {
         textSize(12);
@@ -206,15 +215,17 @@ function drawSolutionSteps() {
             let ySol = detA2 / detA;
 
             fill(0, 100, 200);
-            text('x = det(A₁)/det(A) = ' + detA1 + '/' + detA + ' = ' + xSol.toFixed(3), x + 20, y + 18);
-            text('y = det(A₂)/det(A) = ' + detA2 + '/' + detA + ' = ' + ySol.toFixed(3), x + 20, y + 35);
+            noStroke();
+            text('x = det(A₁)/det(A) = ' + detA1 + '/' + detA + ' = ' + xSol.toFixed(3), indent, y + 22);
+            text('y = det(A₂)/det(A) = ' + detA2 + '/' + detA + ' = ' + ySol.toFixed(3), indent, y + 40);
 
             fill(0, 150, 0);
             textSize(14);
-            text('Solution: (' + xSol.toFixed(2) + ', ' + ySol.toFixed(2) + ')', x + 20, y + 55);
+            text('Solution: (' + xSol.toFixed(2) + ', ' + ySol.toFixed(2) + ')', indent, y + 62);
         } else {
             fill(200, 0, 0);
-            text('No unique solution (det(A) = 0)', x + 20, y + 18);
+            noStroke();
+            text('No unique solution (det(A) = 0)', indent, y + 22);
         }
     }
 }
@@ -257,83 +268,104 @@ function drawMiniMatrix(mat, x, y, highlight, replacedCol) {
             text(mat[i][j], cx, cy);
         }
     }
+    // Reset text alignment
+    textAlign(LEFT, TOP);
 }
 
 function drawGeometricView() {
     let detA = A[0][0] * A[1][1] - A[0][1] * A[1][0];
 
-    // Only draw if we have a solution
-    if (currentStep < 4 || detA === 0) return;
-
-    let detA1 = b[0] * A[1][1] - A[0][1] * b[1];
-    let detA2 = A[0][0] * b[1] - b[0] * A[1][0];
-    let xSol = detA1 / detA;
-    let ySol = detA2 / detA;
-
-    // Draw mini coordinate system
-    let viewX = canvasWidth - 130;
-    let viewY = 60;
-    let viewW = 120;
-    let viewH = 100;
-    let scale = 12;
+    // Fill right half of drawing area
+    let viewX = canvasWidth / 2 + 10;
+    let viewY = 40;
+    let viewW = canvasWidth / 2 - 20;
+    let viewH = drawHeight - 90;
+    let scale = min(viewW, viewH) / 16;  // Scale based on view size
 
     // Background
     fill(255, 255, 255, 230);
     stroke(200);
     strokeWeight(1);
-    rect(viewX - 10, viewY - 15, viewW, viewH + 20, 10);
+    rect(viewX, viewY, viewW, viewH, 10);
 
     // Title
     fill(0);
-    noStroke();
-    textSize(11);
+    textSize(14);
     textAlign(CENTER, TOP);
-    text('Geometric View', viewX + viewW/2 - 10, viewY - 12);
+    noStroke();
+    text('Geometric View', viewX + viewW / 2, viewY + 10);
 
-    let centerX = viewX + 40;
-    let centerY = viewY + 50;
+    let centerX = viewX + viewW / 2;
+    let centerY = viewY + viewH / 2 + 10;
+    let axisLen = min(viewW, viewH) / 2 - 30;
 
     // Axes
     stroke(180);
     strokeWeight(1);
-    line(centerX - 40, centerY, centerX + 60, centerY);
-    line(centerX, centerY - 40, centerX, centerY + 40);
+    line(centerX - axisLen, centerY, centerX + axisLen, centerY);
+    line(centerX, centerY - axisLen, centerX, centerY + axisLen);
+
+    // Axis labels
+    fill(100);
+    textSize(12);
+    textAlign(CENTER, TOP);
+    noStroke();
+    text('x', centerX + axisLen - 5, centerY + 5);
+    textAlign(RIGHT, CENTER);
+    text('y', centerX - 5, centerY - axisLen + 5);
+
+    // Clip lines to panel bounds
+    drawingContext.save();
+    drawingContext.beginPath();
+    drawingContext.rect(viewX, viewY, viewW, viewH);
+    drawingContext.clip();
 
     // Draw the two lines
     // Line 1: A[0][0]*x + A[0][1]*y = b[0]
     stroke(200, 80, 80);
     strokeWeight(2);
-    drawLine2D(A[0][0], A[0][1], b[0], centerX, centerY, scale);
+    drawLine2D(A[0][0], A[0][1], b[0], centerX, centerY, scale, axisLen);
 
     // Line 2: A[1][0]*x + A[1][1]*y = b[1]
     stroke(80, 80, 200);
     strokeWeight(2);
-    drawLine2D(A[1][0], A[1][1], b[1], centerX, centerY, scale);
+    drawLine2D(A[1][0], A[1][1], b[1], centerX, centerY, scale, axisLen);
 
-    // Solution point
-    fill(0, 180, 0);
-    noStroke();
-    ellipse(centerX + xSol * scale, centerY - ySol * scale, 10, 10);
+    drawingContext.restore();
 
-    // Label
-    fill(0, 150, 0);
-    textSize(9);
-    textAlign(LEFT, TOP);
-    text('(' + xSol.toFixed(1) + ',' + ySol.toFixed(1) + ')', centerX + xSol * scale + 5, centerY - ySol * scale - 5);
+    // Solution point - only show at step 4 if unique solution exists
+    if (currentStep >= 4 && detA !== 0) {
+        let detA1 = b[0] * A[1][1] - A[0][1] * b[1];
+        let detA2 = A[0][0] * b[1] - b[0] * A[1][0];
+        let xSol = detA1 / detA;
+        let ySol = detA2 / detA;
+
+        fill(0, 180, 0);
+        noStroke();
+        ellipse(centerX + xSol * scale, centerY - ySol * scale, 12, 12);
+
+        // Label
+        fill(0, 150, 0);
+        textSize(12);
+        textAlign(LEFT, TOP);
+        noStroke();
+        text('(' + xSol.toFixed(1) + ', ' + ySol.toFixed(1) + ')', centerX + xSol * scale + 8, centerY - ySol * scale - 8);
+    }
 }
 
-function drawLine2D(a, b, c, cx, cy, scale) {
+function drawLine2D(a, b, c, cx, cy, scale, axisLen) {
     // Draw line ax + by = c
+    let extent = axisLen / scale;
     if (Math.abs(b) > 0.01) {
         // y = (c - ax) / b
-        let x1 = -5, x2 = 8;
+        let x1 = -extent, x2 = extent;
         let y1 = (c - a * x1) / b;
         let y2 = (c - a * x2) / b;
         line(cx + x1 * scale, cy - y1 * scale, cx + x2 * scale, cy - y2 * scale);
     } else if (Math.abs(a) > 0.01) {
         // Vertical line x = c/a
         let x = c / a;
-        line(cx + x * scale, cy - 50, cx + x * scale, cy + 50);
+        line(cx + x * scale, cy - axisLen, cx + x * scale, cy + axisLen);
     }
 }
 

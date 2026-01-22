@@ -217,6 +217,7 @@ function drawMatrix() {
   let range = maxVal - minVal || 1;
 
   // Draw column labels (features)
+  noStroke();
   textSize(11);
   textAlign(CENTER, BOTTOM);
   for (let j = 0; j < cols; j++) {
@@ -241,6 +242,7 @@ function drawMatrix() {
   }
 
   // Draw row labels (samples)
+  noStroke();
   textSize(11);
   textAlign(RIGHT, CENTER);
   textStyle(NORMAL);
@@ -360,6 +362,7 @@ function drawDimensionAnnotations() {
   line(nX - 5, nY, nX - 15, nY + 10);
 
   // Draw d (columns) annotation
+  noStroke();
   fill('#e65100');
   textAlign(CENTER, TOP);
   let dX = matrixX + matrixWidth / 2;

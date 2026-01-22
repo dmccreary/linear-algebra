@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D)">
+        <meta name="description" content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="System of Equations Geometry - Linear Algebra" >
       
-        <meta  property="og:description"  content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D)" >
+        <meta  property="og:description"  content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines" >
       
         <meta property="og:image" content="https://dmccreary.github.io/linear-algebra/sims/system-geometry/system-geometry.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="System of Equations Geometry - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D)" >
+        <meta  name="twitter:description"  content="Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines" >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/linear-algebra/sims/system-geometry/system-geometry.png">
       
@@ -3983,21 +3983,19 @@
 <p><a class="md-button md-button--primary" href="main.html">Run the System of Equations Geometry MicroSim Fullscreen</a></p>
 <p><a href="https://editor.p5js.org/">Edit the MicroSim with the p5.js editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>This interactive visualization helps students understand how the solution to a system of linear equations corresponds to the geometric intersection of lines (in 2D) or planes (in 3D).</p>
+<p>This interactive visualization helps students understand how the solution to a system of linear equations corresponds to the geometric intersection of lines on a coordinate plane.</p>
 <p><strong>Key Features:</strong></p>
 <ul>
-<li><strong>2D Mode</strong>: Visualize two linear equations as lines on a coordinate plane</li>
-<li><strong>3D Mode</strong>: See the same equations extended as planes in 3D space</li>
+<li><strong>Line Visualization</strong>: See two linear equations displayed as colored lines on a coordinate grid</li>
 <li><strong>Real-time Updates</strong>: Adjust coefficients with sliders and watch the geometry change instantly</li>
 <li><strong>Solution Detection</strong>: Automatically identifies unique solutions, infinite solutions (coincident lines), or no solution (parallel lines)</li>
-<li><strong>Random Generator</strong>: Create random systems to explore different scenarios</li>
+<li><strong>Random Generator</strong>: Create random systems that always have solutions within the visible grid</li>
 </ul>
 <h2 id="how-to-use">How to Use</h2>
 <ol>
 <li><strong>Adjust Coefficients</strong>: Use the sliders to change the values of a, b, and c for each equation in the form ax + by = c</li>
 <li><strong>View Solution</strong>: The green point marks the intersection (solution) when one exists</li>
-<li><strong>Toggle Modes</strong>: Switch between 2D and 3D views with the mode button</li>
-<li><strong>Generate Random</strong>: Click "Random" to create a new system</li>
+<li><strong>Generate Random</strong>: Click "Random" to create a new system with a guaranteed solution</li>
 <li><strong>Explore Cases</strong>: Try creating parallel lines (no solution) or coincident lines (infinite solutions)</li>
 </ol>
 <h2 id="solution-types">Solution Types</h2>
@@ -4046,7 +4044,7 @@
 <ul>
 <li>How does changing the constant term c affect the line's position?</li>
 <li>What coefficient patterns lead to parallel lines?</li>
-<li>In 3D mode, what does the intersection of two planes look like?</li>
+<li>Why does the determinant being zero correspond to parallel or coincident lines?</li>
 </ul>
 
 
