@@ -45,7 +45,7 @@ export default [
         frameRate: "readonly",
         setFrameRate: "readonly",
         getTargetFrameRate: "readonly",
-        windowResized: "readonly",
+        // Note: windowResized is a callback YOU define - not a global
 
         // ===== Canvas & Rendering =====
         createCanvas: "readonly",
@@ -240,6 +240,8 @@ export default [
         print: "readonly",
 
         // ===== Mouse Events =====
+        // Note: mouseMoved, mouseDragged, mousePressed, mouseReleased, mouseClicked,
+        // doubleClicked, mouseWheel are callbacks YOU define - not globals
         mouseX: "readonly",
         mouseY: "readonly",
         pmouseX: "readonly",
@@ -250,34 +252,24 @@ export default [
         pwinMouseY: "readonly",
         mouseButton: "readonly",
         mouseIsPressed: "readonly",
-        mouseMoved: "readonly",
-        mouseDragged: "readonly",
-        mousePressed: "readonly",
-        mouseReleased: "readonly",
-        mouseClicked: "readonly",
-        doubleClicked: "readonly",
-        mouseWheel: "readonly",
         requestPointerLock: "readonly",
         exitPointerLock: "readonly",
         movedX: "readonly",
         movedY: "readonly",
 
         // ===== Keyboard Events =====
+        // Note: keyPressed, keyReleased, keyTyped are callbacks YOU define - not globals
         keyIsPressed: "readonly",
         key: "readonly",
         keyCode: "readonly",
-        keyPressed: "readonly",
-        keyReleased: "readonly",
-        keyTyped: "readonly",
         keyIsDown: "readonly",
 
         // ===== Touch Events =====
+        // Note: touchStarted, touchMoved, touchEnded are callbacks YOU define - not globals
         touches: "readonly",
-        touchStarted: "readonly",
-        touchMoved: "readonly",
-        touchEnded: "readonly",
 
         // ===== Acceleration Events =====
+        // Note: deviceMoved, deviceTurned, deviceShaken are callbacks YOU define - not globals
         deviceOrientation: "readonly",
         accelerationX: "readonly",
         accelerationY: "readonly",
@@ -294,9 +286,6 @@ export default [
         turnAxis: "readonly",
         setMoveThreshold: "readonly",
         setShakeThreshold: "readonly",
-        deviceMoved: "readonly",
-        deviceTurned: "readonly",
-        deviceShaken: "readonly",
 
         // ===== DOM =====
         select: "readonly",
