@@ -57,6 +57,7 @@ nav:
       - Quiz: chapters/15-autonomous-systems-and-sensor-fusion/quiz.md
  
   - MicroSims:
+    - List of MicroSims: sims/index.md
     - 2D and 3D Vector Visualization: sims/vector-2d-3d-visualizer/index.md
     - 2D Rotation Matrix: sims/2d-rotation/index.md
     - 2x2 Determinant Calculator: sims/det-2x2-calculator/index.md
