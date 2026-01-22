@@ -9,7 +9,6 @@ let controlHeight = 110;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 20;
 let sliderLeftMargin = 120;
-let defaultTextSize = 16;
 
 // Vector components
 let vx = 3;
@@ -22,8 +21,8 @@ let showProjections = true;
 let showLabels = true;
 
 // 3D rotation angles (for mouse interaction)
-let rotationX = -0.4;
-let rotationY = 0.5;
+let viewRotationX = -0.4;
+let viewRotationY = 0.5;
 
 // UI elements
 let xSlider, ySlider, zSlider;
@@ -33,10 +32,6 @@ let toggleViewButton;
 // Scale for drawing
 let scale2D = 35; // pixels per unit in 2D
 let scale3D = 35; // pixels per unit in 3D
-
-// Mouse drag tracking
-let isDragging = false;
-let lastMouseX, lastMouseY;
 
 // Font for WEBGL text
 let font;
@@ -112,6 +107,8 @@ function toggleView() {
 }
 
 function draw() {
+
+  
     // Get slider values
     vx = xSlider.value();
     vy = ySlider.value();
@@ -120,8 +117,6 @@ function draw() {
     // Reset transformations for WEBGL
     resetMatrix();
 
-    // Draw background
-    background(240);
 
     // Translate to center for WEBGL coordinate system
     translate(0, 0, 0);
@@ -138,6 +133,10 @@ function draw() {
 }
 
 function draw2DView() {
+    // Make the background of the drawing area light blue
+    // Note we are not drawing over the control area
+    background('aliceblue');
+
     // Move origin to center of drawing area
     push();
     translate(0, -controlHeight/2, 0);
@@ -168,11 +167,14 @@ function draw2DView() {
 }
 
 function draw3DView() {
+    // Clear the background
+    background('aliceblue');
+
     // Apply rotation from mouse drag
     push();
     translate(0, -controlHeight/2, 0);
-    rotateX(rotationX);
-    rotateY(rotationY);
+    rotateX(viewRotationX);
+    rotateY(viewRotationY);
 
     // Draw 3D grid
     drawGrid3D();
@@ -335,6 +337,7 @@ function drawInfo2D() {
     push();
     resetMatrix();
     translate(-canvasWidth/2, -canvasHeight/2);
+    
 
     // Title
     fill(0);
@@ -342,6 +345,7 @@ function drawInfo2D() {
     textAlign(CENTER, TOP);
     noStroke();
     text('2D Vector Visualization', canvasWidth/2, 10);
+
 
     // Magnitude display
     let magnitude = sqrt(vx*vx + vy*vy);
@@ -499,23 +503,23 @@ function drawLabels3D() {
     // Draw axis labels at endpoints
     push();
     translate(6.5 * scale3D, 0, 0);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     text('x', 0, 0);
     pop();
 
     push();
     translate(0, -6.5 * scale3D, 0);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     fill(50, 150, 50);
     text('y', 0, 0);
     pop();
 
     push();
     translate(0, 0, 6.5 * scale3D);
-    rotateY(-rotationY);
-    rotateX(-rotationX);
+    rotateY(-viewRotationY);
+    rotateX(-viewRotationX);
     fill(50, 50, 200);
     text('z', 0, 0);
     pop();
@@ -584,10 +588,10 @@ function mouseDragged() {
     if (is3DView && mouseY < drawHeight) {
         let dx = mouseX - pmouseX;
         let dy = mouseY - pmouseY;
-        rotationY += dx * 0.01;
-        rotationX += dy * 0.01;
-        // Clamp rotationX to avoid flipping
-        rotationX = constrain(rotationX, -PI/2, PI/2);
+        viewRotationY += dx * 0.01;
+        viewRotationX += dy * 0.01;
+        // Clamp viewRotationX to avoid flipping
+        viewRotationX = constrain(viewRotationX, -PI/2, PI/2);
     }
 }
 
