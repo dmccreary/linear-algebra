@@ -9,7 +9,7 @@ for learning Applied Linear Algebra for AI and Machine Learning.
 
 - **[2D/3D Vector Visualizer](./vector-2d-3d-visualizer/index.md)**
 
-    ![2D/3D Vector Visualizer](./vector-2d-3d-visualizer/vector-2d-3d-visualizer.png)
+    ![2D/3D Vector Visualizer](./vector-2d-3d-visualizer/vector-2d-3d-visualizer.jpg)
     Interactive visualization of vectors in 2D and 3D coordinate systems with adjustable components, projection lines, and component labels.
 
 - **[Vector Operations Playground](./vector-operations-playground/index.md)**
