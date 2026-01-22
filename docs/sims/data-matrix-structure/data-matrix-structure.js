@@ -4,8 +4,8 @@
 
 // Canvas dimensions
 let canvasWidth = 600;
-let drawHeight = 450;
-let controlHeight = 50;
+let drawHeight = 500;
+let controlHeight = 30;
 let canvasHeight = drawHeight + controlHeight;
 
 let margin = 15;
@@ -179,7 +179,7 @@ function calculateMatrixLayout() {
   // Calculate available space
   let leftMargin = 80;  // Space for row labels
   let rightMargin = 60; // Space for dimension annotation
-  let topMargin = 80;   // Space for column labels
+  let topMargin = 100;   // Space for column labels
   let bottomMargin = 90; // Space for info panel
 
   maxMatrixWidth = canvasWidth - leftMargin - rightMargin;
@@ -222,7 +222,7 @@ function drawMatrix() {
   textAlign(CENTER, BOTTOM);
   for (let j = 0; j < cols; j++) {
     let x = matrixX + j * cellWidth + cellWidth / 2;
-    let y = matrixY - 5;
+    let y = matrixY - 35;
 
     push();
     translate(x, y);

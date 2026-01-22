@@ -11,7 +11,7 @@ social:
 
 # Data Matrix Structure Visualizer
 
-<iframe src="main.html" height="520px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="540px" width="100%" scrolling="no"></iframe>
 
 [Run the Data Matrix Structure Visualizer Fullscreen](./main.html){ .md-button .md-button--primary }
 
