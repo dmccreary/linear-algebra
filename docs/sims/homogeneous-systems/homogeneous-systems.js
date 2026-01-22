@@ -252,6 +252,7 @@ function draw3DVisualization() {
 
     // Draw 3D scene
     push();
+    resetMatrix();  // Clear the 2D translation before 3D drawing
     translate(viewX + viewW/2 - canvasWidth/2, viewY + viewH/2 + 20 - canvasHeight/2);
 
     // Apply rotation

@@ -29,7 +29,7 @@ for learning Applied Linear Algebra for AI and Machine Learning.
 
 - **[Dot and Cross Product](./dot-cross-product-visualizer/index.md)**
 
-    ![Dot and Cross Product](./dot-cross-product-visualizer/dot-cross-product-visualizer.png)
+    ![Dot and Cross Product](./dot-cross-product-visualizer/dot-cross-product-visualizer.jpg)
     Interactive visualization comparing dot product (projection and angle) with cross product (perpendicular vector and parallelogram area).
 
 - **[Linear Combination Explorer](./linear-combination-explorer/index.md)**
@@ -112,7 +112,7 @@ for learning Applied Linear Algebra for AI and Machine Learning.
 
 - **[System Geometry](./system-geometry/index.md)**
 
-    ![System Geometry](./system-geometry/system-geometry.png)
+    ![System Geometry](./system-geometry/system-geometry.jpg)
     Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D).
 
 - **[Gaussian Elimination](./gaussian-elimination/index.md)**
@@ -137,7 +137,7 @@ for learning Applied Linear Algebra for AI and Machine Learning.
 
 - **[Homogeneous Systems](./homogeneous-systems/index.md)**
 
-    ![Homogeneous Systems](./homogeneous-systems/homogeneous-systems.png)
+    ![Homogeneous Systems](./homogeneous-systems/homogeneous-systems.jpg)
     Explore homogeneous systems Ax = 0 and visualize their null spaces as subspaces through the origin.
 
 - **[Numerical Stability](./numerical-stability/index.md)**

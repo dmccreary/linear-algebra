@@ -1,6 +1,6 @@
 ---
 title: System of Equations Geometry
-description: Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines (2D) or planes (3D)
+description: Interactive visualization showing how systems of linear equations correspond to geometric intersections of lines
 image: /sims/system-geometry/system-geometry.png
 ---
 # System of Equations Geometry
@@ -13,23 +13,21 @@ image: /sims/system-geometry/system-geometry.png
 
 ## About This MicroSim
 
-This interactive visualization helps students understand how the solution to a system of linear equations corresponds to the geometric intersection of lines (in 2D) or planes (in 3D).
+This interactive visualization helps students understand how the solution to a system of linear equations corresponds to the geometric intersection of lines on a coordinate plane.
 
 **Key Features:**
 
-- **2D Mode**: Visualize two linear equations as lines on a coordinate plane
-- **3D Mode**: See the same equations extended as planes in 3D space
+- **Line Visualization**: See two linear equations displayed as colored lines on a coordinate grid
 - **Real-time Updates**: Adjust coefficients with sliders and watch the geometry change instantly
 - **Solution Detection**: Automatically identifies unique solutions, infinite solutions (coincident lines), or no solution (parallel lines)
-- **Random Generator**: Create random systems to explore different scenarios
+- **Random Generator**: Create random systems that always have solutions within the visible grid
 
 ## How to Use
 
 1. **Adjust Coefficients**: Use the sliders to change the values of a, b, and c for each equation in the form ax + by = c
 2. **View Solution**: The green point marks the intersection (solution) when one exists
-3. **Toggle Modes**: Switch between 2D and 3D views with the mode button
-4. **Generate Random**: Click "Random" to create a new system
-5. **Explore Cases**: Try creating parallel lines (no solution) or coincident lines (infinite solutions)
+3. **Generate Random**: Click "Random" to create a new system with a guaranteed solution
+4. **Explore Cases**: Try creating parallel lines (no solution) or coincident lines (infinite solutions)
 
 ## Solution Types
 
@@ -60,4 +58,4 @@ After using this MicroSim, students will be able to:
 
 - How does changing the constant term c affect the line's position?
 - What coefficient patterns lead to parallel lines?
-- In 3D mode, what does the intersection of two planes look like?
+- Why does the determinant being zero correspond to parallel or coincident lines?
