@@ -246,7 +246,7 @@ function drawAxes2D() {
 }
 
 function drawProjections2D() {
-    stroke(100, 100, 200);
+    stroke(10128, 0, 128);
     strokeWeight(1);
 
     let px = vx * scale2D;
@@ -258,7 +258,7 @@ function drawProjections2D() {
     drawDashedLine2D(px, py, 0, py);
 
     // Projection points
-    fill(100, 100, 200);
+    fill(10128, 0, 128);
     noStroke();
     ellipse(px, 0, 6, 6);
     ellipse(0, py, 6, 6);
@@ -282,7 +282,7 @@ function drawVector2D() {
     let py = -vy * scale2D; // Invert Y for screen
 
     // Draw vector line
-    stroke(0, 100, 200);
+    stroke(128, 0, 128);
     strokeWeight(3);
     line(0, 0, px, py);
 
@@ -291,13 +291,13 @@ function drawVector2D() {
     translate(px, py);
     let angle = atan2(py, px);
     rotate(angle);
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     triangle(0, 0, -15, -7, -15, 7);
     pop();
 
     // Draw endpoint
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     ellipse(px, py, 10, 10);
 }
@@ -325,7 +325,7 @@ function drawLabels2D() {
     text('y', centerX - 20, centerY - 5.5 * scale2D);
 
     // Component values
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     let px = centerX + vx * scale2D;
     let py = centerY - vy * scale2D;
     text('(' + vx.toFixed(1) + ', ' + vy.toFixed(1) + ')', px + 30, py - 15);
@@ -377,6 +377,7 @@ function drawAxes3D() {
     line(0, 0, 0, 6 * scale3D, 0, 0);
     push();
     translate(6 * scale3D, 0, 0);
+    rotateZ(-PI/2);  // Rotate cone to point along +X
     fill(200, 50, 50);
     noStroke();
     cone(5, 15);
@@ -457,7 +458,7 @@ function drawVector3D() {
     let pz = vz * scale3D;
 
     // Draw vector line
-    stroke(0, 100, 200);
+    stroke(128, 0, 128);
     strokeWeight(3);
     line(0, 0, 0, px, py, pz);
 
@@ -465,22 +466,22 @@ function drawVector3D() {
     push();
     translate(px, py, pz);
 
-    // Calculate rotation to point cone along vector
+    // Calculate rotation to point cone away from origin along vector
     let mag = sqrt(px*px + py*py + pz*pz);
     if (mag > 0) {
-        // Default cone points in -Y direction, we need to rotate it
+        // Default cone points in -Y direction (tip down), rotate to point along vector
         let v = createVector(px, py, pz).normalize();
-        let up = createVector(0, -1, 0);
-        let axis = up.cross(v);
-        let angle = acos(up.dot(v));
+        let down = createVector(0, 1, 0);  // Cone base direction
+        let axis = down.cross(v);
+        let angle = acos(down.dot(v));
         if (axis.mag() > 0.001) {
             rotate(angle, axis);
-        } else if (py > 0) {
+        } else if (py < 0) {
             rotateX(PI);
         }
     }
 
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     cone(6, 18);
     pop();
@@ -488,7 +489,7 @@ function drawVector3D() {
     // Endpoint sphere
     push();
     translate(px, py, pz);
-    fill(0, 100, 200);
+    fill(128, 0, 128);
     noStroke();
     sphere(5);
     pop();
