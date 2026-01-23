@@ -1,0 +1,42 @@
+{
+  "title": "Multi-Head Attention Visualizer",
+  "description": "Interactive visualization showing how multiple attention heads capture different relationship patterns and combine their outputs",
+  "subject": "Mathematics",
+  "topic": "Multi-Head Attention Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/multi-head-attention/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/multi-head-attention/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "multi-head-attention",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/multi-head-attention",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Biology",
+    "Statistics",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "simulation",
+    "interactive-demo",
+    "network",
+    "map"
+  ]
+}

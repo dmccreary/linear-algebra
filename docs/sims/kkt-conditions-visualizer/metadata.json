@@ -1,0 +1,41 @@
+{
+  "title": "KKT Conditions Visualizer",
+  "description": "Interactive visualization of Karush-Kuhn-Tucker conditions for inequality-constrained optimization",
+  "subject": "Mathematics",
+  "topic": "KKT Conditions Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/kkt-conditions-visualizer/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/kkt-conditions-visualizer/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "kkt-conditions-visualizer",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/kkt-conditions-visualizer",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network",
+    "map"
+  ]
+}

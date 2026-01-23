@@ -1,0 +1,42 @@
+{
+  "title": "SGD Trajectory Visualizer",
+  "description": "Interactive visualization showing how batch size affects stochastic gradient descent convergence",
+  "subject": "Mathematics",
+  "topic": "SGD Trajectory Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/sgd-trajectory-visualizer/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/sgd-trajectory-visualizer/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "sgd-trajectory-visualizer",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/sgd-trajectory-visualizer",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Statistics",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "simulation",
+    "graph",
+    "interactive-demo",
+    "timeline",
+    "map"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": "LoRA Low-Rank Adaptation Visualizer",
+  "description": "Interactive visualization of LoRA showing how low-rank matrices enable parameter-efficient fine-tuning of large models",
+  "subject": "Mathematics",
+  "topic": "LoRA Low-Rank Adaptation Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/lora-visualizer/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/lora-visualizer/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "lora-visualizer",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/lora-visualizer",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Chemistry",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "simulation",
+    "chart",
+    "interactive-demo"
+  ]
+}

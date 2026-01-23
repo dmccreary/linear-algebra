@@ -1,0 +1,43 @@
+{
+  "title": "Attention Mechanism Step-by-Step",
+  "description": "Interactive visualization showing how transformer attention computes weighted combinations through QKV projections",
+  "subject": "Mathematics",
+  "topic": "Attention Mechanism Step-by-Step",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/attention-mechanism/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/attention-mechanism/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "attention-mechanism",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/attention-mechanism",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Biology",
+    "Statistics",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "animation",
+    "simulation",
+    "chart",
+    "interactive-demo",
+    "map"
+  ]
+}

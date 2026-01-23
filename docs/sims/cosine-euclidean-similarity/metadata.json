@@ -1,0 +1,39 @@
+{
+  "title": "Cosine vs Euclidean Similarity",
+  "description": "Interactive comparison of cosine similarity and Euclidean distance showing when each metric is appropriate",
+  "subject": "Mathematics",
+  "topic": "Cosine vs Euclidean Similarity",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/cosine-euclidean-similarity/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/cosine-euclidean-similarity/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "cosine-euclidean-similarity",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/cosine-euclidean-similarity",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Statistics",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "simulation",
+    "interactive-demo"
+  ]
+}
