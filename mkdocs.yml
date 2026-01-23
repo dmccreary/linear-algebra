@@ -4,6 +4,9 @@ site_url: https://dmccreary.github.io/linear-algebra/
 site_description: An in-depth exploration of linear algebra concepts and their applications in machine learning, computer vision, and autonomous systems.
 site_author: Dan McCreary
 
+exclude_docs: |
+  old-sections/
+
 nav:
   - Home: index.md
   - Course Description: course-description.md
