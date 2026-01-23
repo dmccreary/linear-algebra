@@ -11,7 +11,7 @@ social:
 
 # Sparse vs Dense Matrices
 
-<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="402px" width="100%" scrolling="no"></iframe>
 
 [Run the Sparse vs Dense MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 
@@ -20,7 +20,7 @@ social:
 You can include this MicroSim on your website using the following `iframe`:
 
 ```html
-<iframe src="https://dmccreary.github.io/linear-algebra/sims/sparse-dense-matrices/main.html" height="452px" scrolling="no"></iframe>
+<iframe src="https://dmccreary.github.io/linear-algebra/sims/sparse-dense-matrices/main.html" height="402px" scrolling="no"></iframe>
 ```
 
 ## Description

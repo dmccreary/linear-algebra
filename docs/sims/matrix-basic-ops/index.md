@@ -11,7 +11,7 @@ social:
 
 # Matrix Addition and Scalar Multiplication
 
-<iframe src="main.html" height="482px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="350px" width="100%" scrolling="no"></iframe>
 
 [Run the Matrix Basic Operations MicroSim Fullscreen](./main.html){ .md-button .md-button--primary }
 
