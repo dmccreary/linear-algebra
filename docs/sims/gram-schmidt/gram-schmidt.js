@@ -3,11 +3,12 @@
 // Learning objective: Understand Gram-Schmidt through geometric visualization
 
 let canvasWidth = 900;
-let drawHeight = 480;
-let controlHeight = 70;
+let drawHeight = 460;
+let controlHeight = 50;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
 let defaultTextSize = 16;
+let sliderLeftMargin = 200;
 
 // Original vectors (3 vectors in 3D)
 let originalVectors = [
@@ -72,26 +73,27 @@ function setup() {
   ];
 
   // Buttons
+  let buttonYoffset = drawHeight + 10;
   stepButton = createButton('Step');
-  stepButton.position(10, drawHeight + 15);
+  stepButton.position(10, buttonYoffset);
   stepButton.mousePressed(nextStep);
 
   runAllButton = createButton('Run All');
-  runAllButton.position(65, drawHeight + 15);
+  runAllButton.position(65, buttonYoffset);
   runAllButton.mousePressed(toggleAuto);
 
   resetButton = createButton('Reset');
-  resetButton.position(135, drawHeight + 15);
+  resetButton.position(135, buttonYoffset);
   resetButton.mousePressed(resetSimulation);
 
   // Speed slider
   speedSlider = createSlider(300, 2000, 1200, 100);
-  speedSlider.position(300, drawHeight + 15);
-  speedSlider.size(120);
+  speedSlider.position(sliderLeftMargin, drawHeight + 15);
+  speedSlider.size(canvasWidth - sliderLeftMargin - margin*2);
 
   // Show projections checkbox
   showProjectionsCheckbox = createCheckbox('Show Projections', true);
-  showProjectionsCheckbox.position(10, drawHeight + 45);
+  showProjectionsCheckbox.position(10, drawHeight + 35);
   showProjectionsCheckbox.style('font-size', '14px');
 
   initializeAlgorithm();
@@ -104,14 +106,14 @@ function draw() {
 
   // Auto-run logic
   if (autoRun && !isComplete) {
-    autoSpeed = speedSlider.value();
+    autoSpeed = 2300 - speedSlider.value();  // Invert so left=slow, right=fast
     if (millis() - lastAutoTime > autoSpeed) {
       nextStep();
       lastAutoTime = millis();
     }
   }
 
-  background(240);
+  background('aliceblue');
 
   // Draw 3D content
   push();
@@ -184,7 +186,7 @@ function drawOriginalVectors() {
     translate(x * 1.1, y * 1.1, z * 1.1);
     fill(red(c), green(c), blue(c), 150);
     noStroke();
-    textSize(14);
+    textSize(defaultTextSize);
     text('a' + (i + 1), 0, 0);
     pop();
   }
@@ -277,7 +279,7 @@ function drawCurrentState() {
     translate(x * 1.1, y * 1.1, z * 1.1);
     fill(255, 180, 0);
     noStroke();
-    textSize(14);
+    textSize(defaultTextSize);
     text('v', 0, 0);
     pop();
   }
@@ -323,7 +325,7 @@ function draw2DOverlay() {
   fill(255, 255, 255, 240);
   stroke(200);
   strokeWeight(1);
-  rect(10, 45, 180, 120, 8);
+  rect(10, 45, 180, 170, 8);
 
   fill(0);
   noStroke();
@@ -344,7 +346,7 @@ function draw2DOverlay() {
   // Right panel - R values
   fill(255, 255, 255, 240);
   stroke(200);
-  rect(canvasWidth - 160, 45, 150, 100, 8);
+  rect(canvasWidth - 160, 45, 150, 150, 8);
 
   fill(0);
   noStroke();
@@ -357,28 +359,38 @@ function draw2DOverlay() {
     text(rValues[i].label + ' = ' + rValues[i].value.toFixed(3), canvasWidth - 150, rY + i * 15);
   }
 
-  // Description box
+  // Step Description box
   fill(255, 255, 220);
   stroke(200);
-  rect(200, drawHeight - 60, canvasWidth - 400, 45, 5);
+  let descBoxX = 20;
+  let descBoxWidth = 500;
+  rect(descBoxX, drawHeight - 40, descBoxWidth, 30, 5);
 
   fill(0);
   noStroke();
   textSize(13);
-  textAlign(CENTER, CENTER);
-  text(stepDescription, canvasWidth/2, drawHeight - 38);
+  textAlign(LEFT, CENTER);
+  text(stepDescription, descBoxX + 10, drawHeight - 30);
 
   // Control area background
-  fill(255);
-  stroke(200);
-  rect(0, drawHeight, canvasWidth, controlHeight);
+  fill('white');
+  stroke('sliver');
+  rect(0, drawHeight, canvasWidth, drawHeight + controlHeight);
 
   // Slider label
   noStroke();
   fill(80);
-  textSize(12);
+  textSize(14);
   textAlign(LEFT, CENTER);
-  text('Speed: ' + (speedSlider.value()/1000).toFixed(1) + 's', 220, drawHeight + 25);
+  text('Animation Speed: delay per step ' + ((2300 - speedSlider.value())/1000).toFixed(1) + 's', sliderLeftMargin, drawHeight + 9);
+
+  // Slower/Faster labels under slider
+  textSize(11);
+  fill(100);
+  textAlign(LEFT, CENTER);
+  text('slower', sliderLeftMargin, drawHeight + 38);
+  textAlign(RIGHT, CENTER);
+  text('faster', canvasWidth - margin * 2, drawHeight + 38);
 
   // Instructions
   fill(100);
@@ -542,6 +554,6 @@ function windowResized() {
 function updateCanvasSize() {
   const container = document.querySelector('main');
   if (container) {
-    canvasWidth = Math.max(600, Math.floor(container.offsetWidth));
+    canvasWidth = container.offsetWidth;
   }
 }

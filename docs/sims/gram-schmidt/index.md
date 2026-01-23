@@ -6,7 +6,7 @@ image: /sims/gram-schmidt/gram-schmidt.png
 
 # Gram-Schmidt Process Visualizer
 
-<iframe src="main.html" height="552px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="522px" width="100%" scrolling="no"></iframe>
 
 [Run the Gram-Schmidt Visualizer Fullscreen](./main.html){ .md-button .md-button--primary }
 

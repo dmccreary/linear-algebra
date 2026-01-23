@@ -27,6 +27,7 @@ export default [
         // ===== Environment =====
         frameCount: "readonly",
         deltaTime: "readonly",
+        millis: "readonly",
         focused: "readonly",
         cursor: "readonly",
         noCursor: "readonly",
