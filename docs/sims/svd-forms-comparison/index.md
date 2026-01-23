@@ -6,7 +6,7 @@ image: /sims/svd-forms-comparison/svd-forms-comparison.png
 
 # SVD Forms Comparison
 
-<iframe src="main.html" height="552px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="452px" width="100%" scrolling="no"></iframe>
 
 [Run the SVD Forms Comparison Fullscreen](./main.html){ .md-button .md-button--primary }
 

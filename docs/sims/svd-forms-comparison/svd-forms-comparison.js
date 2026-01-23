@@ -3,7 +3,7 @@
 // Learning objective: Understand when to use each SVD form
 
 let canvasWidth = 900;
-let drawHeight = 500;
+let drawHeight = 400;
 let controlHeight = 50;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
@@ -32,22 +32,22 @@ function setup() {
 
   // Sliders
   mSlider = createSlider(3, 8, m, 1);
-  mSlider.position(80, drawHeight + 15);
+  mSlider.position(40, drawHeight + 15);
   mSlider.size(80);
   mSlider.input(updateDimensions);
 
   nSlider = createSlider(3, 8, n, 1);
-  nSlider.position(230, drawHeight + 15);
+  nSlider.position(190, drawHeight + 15);
   nSlider.size(80);
   nSlider.input(updateDimensions);
 
   rSlider = createSlider(1, 4, r, 1);
-  rSlider.position(380, drawHeight + 15);
+  rSlider.position(340, drawHeight + 15);
   rSlider.size(80);
   rSlider.input(updateDimensions);
 
   kSlider = createSlider(1, 3, k, 1);
-  kSlider.position(530, drawHeight + 15);
+  kSlider.position(490, drawHeight + 15);
   kSlider.size(80);
   kSlider.input(updateDimensions);
 
@@ -57,7 +57,7 @@ function setup() {
 function draw() {
   updateCanvasSize();
 
-  background(250);
+  background('aliceblue');
 
   // Title
   fill(0);
@@ -68,7 +68,7 @@ function draw() {
 
   // Three columns
   let colWidth = (canvasWidth - 80) / 3;
-  let colX = [30, 30 + colWidth + 20, 30 + 2 * (colWidth + 20)];
+  let colX = [30, 30 + colWidth + 20, 30 + 2 * colWidth + 25];
 
   // Draw each SVD form
   drawFullSVD(colX[0], 50, colWidth);
@@ -86,40 +86,44 @@ function draw() {
   fill(80);
   textSize(13);
   textAlign(RIGHT, CENTER);
-  text('m:', 75, drawHeight + 25);
-  text('n:', 225, drawHeight + 25);
-  text('rank:', 375, drawHeight + 25);
-  text('k:', 525, drawHeight + 25);
+  text('m:', 35, drawHeight + 25);
+  text('n:', 185, drawHeight + 25);
+  text('rank:', 335, drawHeight + 25);
+  text('k:', 485, drawHeight + 25);
 
   textAlign(LEFT, CENTER);
-  text(m, 165, drawHeight + 25);
-  text(n, 315, drawHeight + 25);
-  text(r, 465, drawHeight + 25);
-  text(k, 615, drawHeight + 25);
+  text(m, 125, drawHeight + 25);
+  text(n, 275, drawHeight + 25);
+  text(r, 425, drawHeight + 25);
+  text(k, 575, drawHeight + 25);
 
   // Legend
   fill(80);
   textSize(11);
   textAlign(LEFT, CENTER);
-  text('Legend:', 660, drawHeight + 12);
+  // Legend in lower right of drawing area
+  fill(80);
+  textSize(11);
+  textAlign(LEFT, CENTER);
+  text('Legend:', canvasWidth - 240, drawHeight - 35);
 
   fill(keptColor);
   noStroke();
-  rect(660, drawHeight + 22, 15, 12);
+  rect(canvasWidth - 240, drawHeight - 25, 15, 12);
   fill(80);
-  text('Kept', 680, drawHeight + 28);
+  text('Kept', canvasWidth - 220, drawHeight - 19);
 
   fill(discardedColor);
-  rect(720, drawHeight + 22, 15, 12);
+  rect(canvasWidth - 180, drawHeight - 25, 15, 12);
   fill(80);
-  text('Discarded', 740, drawHeight + 28);
+  text('Discarded', canvasWidth - 160, drawHeight - 19);
 
   fill(zeroColor);
   stroke(200);
-  rect(800, drawHeight + 22, 15, 12);
+  rect(canvasWidth - 100, drawHeight - 25, 15, 12);
   noStroke();
   fill(80);
-  text('Zero', 820, drawHeight + 28);
+  text('Zero', canvasWidth - 80, drawHeight - 19);
 }
 
 function drawFullSVD(x, y, w) {
