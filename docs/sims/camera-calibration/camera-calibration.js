@@ -7,8 +7,9 @@ let drawHeight = 500;
 let controlHeight = 100;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
-let sliderLeftMargin = 100;
 let defaultTextSize = 16;
+let sliderWidth = 150;
+let labelWidth = 80;
 
 // View panels
 let leftPanelWidth, rightPanelWidth;
@@ -60,11 +61,11 @@ function setup() {
     // Calculate panel widths
     updatePanelSizes();
 
+    // Create controls first (sliders needed by generateCorners -> updateDistortion)
+    createControls();
+
     // Generate checkerboard corners
     generateCorners();
-
-    // Create controls
-    createControls();
 
     describe('Camera calibration visualizer showing distortion effects and correction', LABEL);
 }
@@ -72,24 +73,24 @@ function setup() {
 function createControls() {
     const container = document.querySelector('main');
 
-    // Row 1: Sliders for distortion parameters
+    // Row 1: Sliders for distortion parameters (evenly spaced)
     k1Slider = createSlider(-0.5, 0.5, 0, 0.01);
     k1Slider.parent(container);
-    k1Slider.position(sliderLeftMargin, drawHeight + 8);
-    k1Slider.size(150);
+    k1Slider.size(sliderWidth);
     k1Slider.input(updateDistortion);
 
     k2Slider = createSlider(-0.3, 0.3, 0, 0.01);
     k2Slider.parent(container);
-    k2Slider.position(330, drawHeight + 8);
-    k2Slider.size(150);
+    k2Slider.size(sliderWidth);
     k2Slider.input(updateDistortion);
 
     focalSlider = createSlider(300, 800, 500, 10);
     focalSlider.parent(container);
-    focalSlider.position(590, drawHeight + 8);
-    focalSlider.size(150);
+    focalSlider.size(sliderWidth);
     focalSlider.input(updateDistortion);
+
+    // Position sliders evenly
+    positionSliders();
 
     // Row 2: Checkboxes and button
     showCornersCheckbox = createCheckbox(' Show Corners', true);
@@ -115,6 +116,24 @@ function createControls() {
     resetButton.mousePressed(resetCalibration);
     resetButton.style('font-size', '14px');
     resetButton.style('padding', '5px 15px');
+}
+
+function positionSliders() {
+    // Evenly space 3 sliders across the canvas width
+    let sectionWidth = canvasWidth / 3;
+    let controlWidth = labelWidth + sliderWidth;
+
+    // Slider 1 (k1)
+    let sliderX1 = sectionWidth / 2 - controlWidth / 2 + labelWidth;
+    k1Slider.position(sliderX1, drawHeight + 8);
+
+    // Slider 2 (k2)
+    let sliderX2 = sectionWidth + sectionWidth / 2 - controlWidth / 2 + labelWidth;
+    k2Slider.position(sliderX2, drawHeight + 8);
+
+    // Slider 3 (focal)
+    let sliderX3 = 2 * sectionWidth + sectionWidth / 2 - controlWidth / 2 + labelWidth;
+    focalSlider.position(sliderX3, drawHeight + 8);
 }
 
 function generateCorners() {
@@ -437,18 +456,20 @@ function drawLabels() {
     fill(0);
     noStroke();
     textSize(defaultTextSize);
-    textAlign(LEFT, CENTER);
-
-    // Row 1 labels
-    text('k1:', 10, drawHeight + 18);
-    text('k2:', 260, drawHeight + 18);
-    text('Focal:', 520, drawHeight + 18);
-
-    // Values
     textAlign(RIGHT, CENTER);
-    text(k1.toFixed(2), sliderLeftMargin - 10, drawHeight + 18);
-    text(k2.toFixed(2), 320, drawHeight + 18);
-    text(focalLength, 580, drawHeight + 18);
+
+    // Evenly spaced labels with values
+    let sectionWidth = canvasWidth / 3;
+    let controlWidth = labelWidth + sliderWidth;
+
+    // Label positions (right-aligned before each slider)
+    let labelX1 = sectionWidth / 2 - controlWidth / 2 + labelWidth - 5;
+    let labelX2 = sectionWidth + sectionWidth / 2 - controlWidth / 2 + labelWidth - 5;
+    let labelX3 = 2 * sectionWidth + sectionWidth / 2 - controlWidth / 2 + labelWidth - 5;
+
+    text('k1: ' + k1.toFixed(2), labelX1, drawHeight + 18);
+    text('k2: ' + k2.toFixed(2), labelX2, drawHeight + 18);
+    text('Focal: ' + focalLength, labelX3, drawHeight + 18);
 
     // Title
     textSize(14);
@@ -471,9 +492,7 @@ function windowResized() {
     generateCorners();
 
     // Reposition controls
-    k1Slider.position(sliderLeftMargin, drawHeight + 8);
-    k2Slider.position(330, drawHeight + 8);
-    focalSlider.position(590, drawHeight + 8);
+    positionSliders();
     showCornersCheckbox.position(10, drawHeight + 45);
     showErrorsCheckbox.position(140, drawHeight + 45);
 }

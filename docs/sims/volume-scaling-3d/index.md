@@ -14,7 +14,13 @@ social:
 
 [Run the 3D Volume Scaling Visualizer Fullscreen](./main.html){ .md-button .md-button--primary }
 
-[Edit the MicroSim with the p5.js editor](https://editor.p5js.org/)
+[Edit the 3D Volume Scaling Visualizer MicroSim with the p5.js editor](https://editor.p5js.org/dmccreary/sketches/yGHOTnL2v)
+
+## Embedding
+
+```html
+<iframe src="https://dmccreary.github.io/linear-algebra/sims/volume-scaling-3d/main.html" height="392px" scrolling="no"></iframe>
+```
 
 ## About This MicroSim
 
@@ -34,12 +40,6 @@ This 3D visualization extends the concept of signed area to **signed volume** in
 2. **Drag to rotate**: Click and drag in the 3D view to rotate camera
 3. **Use morph slider**: Animate from identity to target matrix
 4. **Toggle unit cube**: Show/hide the reference unit cube
-
-## Embedding
-
-```html
-<iframe src="https://dmccreary.github.io/linear-algebra/sims/volume-scaling-3d/main.html" height="482px" scrolling="no"></iframe>
-```
 
 ## Lesson Plan
 
