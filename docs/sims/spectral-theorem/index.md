@@ -10,7 +10,7 @@ social:
 
 # Spectral Theorem Demonstration
 
-<iframe src="main.html" height="532px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="432px" width="100%" scrolling="no"></iframe>
 
 [Run the Spectral Theorem Demo Fullscreen](./main.html){ .md-button .md-button--primary }
 

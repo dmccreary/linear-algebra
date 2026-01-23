@@ -2,7 +2,7 @@
 // Shows how symmetric matrices decompose into orthogonal eigenvectors and real eigenvalues
 
 let canvasWidth = 400;
-let drawHeight = 450;
+let drawHeight = 350;
 let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
@@ -51,7 +51,7 @@ function setup() {
     randomButton.mousePressed(setRandomSymmetric);
 
     identityButton = createButton('Identity');
-    identityButton.position(135, drawHeight + 10);
+    identityButton.position(155, drawHeight + 10);
     identityButton.mousePressed(setIdentityMatrix);
 
     animateButton = createButton('Animate Decomposition');
@@ -220,6 +220,7 @@ function drawDecompositionFormula() {
     // Eigenvalues
     let evY = matrixY + 60;
     fill(0);
+    noStroke();
     textSize(10);
     textAlign(LEFT, TOP);
     text('Eigenvalues (all real):', 15, evY);
@@ -338,7 +339,7 @@ function drawGeometricView() {
         let angle = atan2(-uy, ux);
         push();
         translate(endX, endY);
-        rotate(-angle);
+        rotate(angle);
         triangle(0, 0, -10, -5, -10, 5);
         pop();
 
