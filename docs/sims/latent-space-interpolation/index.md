@@ -82,5 +82,5 @@ where $\theta = \arccos(\mathbf{z}_1 \cdot \mathbf{z}_2)$
 ## References
 
 - [Understanding Latent Space](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [Spherical Linear Interpolation](https://en.wikipedia.org/wiki/Slerp)

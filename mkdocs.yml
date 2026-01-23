@@ -9,6 +9,7 @@ exclude_docs: |
 
 nav:
   - Home: index.md
+  - About the Course: about.md
   - Course Description: course-description.md
   
   - Chapters:
@@ -202,7 +203,7 @@ nav:
     - prompts/index.md
     - prompts/cover-image.md
     - prompts/generate-microsims-for-a-chapter.md
-      - prompts/logo.md
+    - prompts/logo.md
 
   - Glossary: glossary.md
   - FAQ: faq.md

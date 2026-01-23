@@ -71,5 +71,5 @@ $$A_{ij} = \frac{\exp(S_{ij})}{\sum_k \exp(S_{ik})}$$
 ## References
 
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762) - Original transformer paper
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)

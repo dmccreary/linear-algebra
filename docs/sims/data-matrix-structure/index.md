@@ -110,5 +110,5 @@ After using this MicroSim, students will be able to:
 ## References
 
 - [Chapter 2: Matrices and Matrix Operations](../../chapters/02-matrices-and-matrix-operations/index.md) - Matrix fundamentals
-- [Chapter 9: Machine Learning Fundamentals](../../chapters/09-ml-fundamentals/index.md) - Data representation in ML
+- [Chapter 9: Machine Learning Foundations](../../chapters/09-machine-learning-foundations/index.md) - Data representation in ML
 - [UCI Machine Learning Repository](https://archive.ics.uci.edu/) - Source for example datasets

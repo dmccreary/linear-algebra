@@ -105,6 +105,6 @@ Students will be able to:
 
 ## References
 
-- [Chapter 10: PCA and Dimensionality Reduction](../../chapters/10-pca/index.md)
-- [Chapter 11: Linear Regression](../../chapters/11-linear-regression/index.md)
+- [Chapter 9: Machine Learning Foundations](../../chapters/09-machine-learning-foundations/index.md)
+- [Chapter 7: Matrix Decompositions](../../chapters/07-matrix-decompositions/index.md)
 - [Linear Algebra Learning Graph](../../learning-graph/index.md)

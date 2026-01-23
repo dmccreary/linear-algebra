@@ -78,5 +78,5 @@ With $d_{model} = 512$ and $h = 8$ heads:
 ## References
 
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762) - Original transformer paper
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [BertViz: Attention Head Visualization](https://github.com/jessevig/bertviz)

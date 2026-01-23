@@ -97,5 +97,5 @@ Output
 ## References
 
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762) - Original transformer paper
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [The Annotated Transformer](https://nlp.seas.harvard.edu/2018/04/03/attention.html)

@@ -80,5 +80,5 @@ $$d(\mathbf{u}, \mathbf{v}) = \sqrt{\sum_{i=1}^n (u_i - v_i)^2}$$
 
 ## References
 
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [Cosine Similarity on Wikipedia](https://en.wikipedia.org/wiki/Cosine_similarity)

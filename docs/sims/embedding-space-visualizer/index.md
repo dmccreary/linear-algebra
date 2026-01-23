@@ -68,4 +68,4 @@ Words with similar meanings have vectors that are close in the embedding space. 
 
 - [Word2Vec Paper](https://arxiv.org/abs/1301.3781) - Original word embedding method
 - [GloVe: Global Vectors](https://nlp.stanford.edu/projects/glove/) - Stanford NLP word vectors
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)

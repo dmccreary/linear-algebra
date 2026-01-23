@@ -119,6 +119,6 @@ Students will be able to:
 
 ## References
 
-- [Chapter 9: Statistics and Linear Algebra](../../chapters/09-statistics-and-linear-algebra/index.md)
-- [Chapter 7: Matrix Decomposition](../../chapters/07-matrix-decomposition/index.md)
+- [Chapter 9: Machine Learning Foundations](../../chapters/09-machine-learning-foundations/index.md)
+- [Chapter 7: Matrix Decompositions](../../chapters/07-matrix-decompositions/index.md)
 - [Linear Algebra Learning Graph](../../learning-graph/index.md)

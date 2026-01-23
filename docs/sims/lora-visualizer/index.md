@@ -80,5 +80,5 @@ Research suggests that model adaptation often lies in a **low-dimensional subspa
 ## References
 
 - [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685) - Original paper
-- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/)
+- [Chapter 11: Generative AI and LLMs](../../chapters/11-generative-ai-and-llms/index.md)
 - [Hugging Face PEFT Library](https://huggingface.co/docs/peft)
