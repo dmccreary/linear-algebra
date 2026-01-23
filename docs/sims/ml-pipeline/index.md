@@ -107,4 +107,4 @@ Students will be able to:
 
 - [Chapter 10: PCA and Dimensionality Reduction](../../chapters/10-pca/index.md)
 - [Chapter 11: Linear Regression](../../chapters/11-linear-regression/index.md)
-- [Linear Algebra Learning Graph](/learning-graph/)
+- [Linear Algebra Learning Graph](../../learning-graph/index.md)

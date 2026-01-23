@@ -67,4 +67,4 @@ Students will be able to:
 ## References
 
 - Chapter 5: Determinants and Matrix Properties - The 2×2 Determinant section
-- [Linear Algebra Learning Graph](/learning-graph/)
+- [Linear Algebra Learning Graph](../../learning-graph/index.md)

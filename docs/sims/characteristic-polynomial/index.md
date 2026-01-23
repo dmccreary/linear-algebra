@@ -82,4 +82,4 @@ Students will be able to:
 ## References
 
 - [Chapter 6: Eigenvalues and Eigenvectors](../../chapters/06-eigenvalues-and-eigenvectors/index.md)
-- [Linear Algebra Learning Graph](/learning-graph/)
+- [Linear Algebra Learning Graph](../../learning-graph/index.md)

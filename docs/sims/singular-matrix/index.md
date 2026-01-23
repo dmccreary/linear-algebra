@@ -69,4 +69,4 @@ Students will be able to:
 ## References
 
 - Chapter 5: Determinants and Matrix Properties - Singular Matrices section
-- [Linear Algebra Learning Graph](/learning-graph/)
+- [Linear Algebra Learning Graph](../../learning-graph/index.md)

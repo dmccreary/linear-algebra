@@ -121,4 +121,4 @@ Students will be able to:
 
 - [Chapter 9: Statistics and Linear Algebra](../../chapters/09-statistics-and-linear-algebra/index.md)
 - [Chapter 7: Matrix Decomposition](../../chapters/07-matrix-decomposition/index.md)
-- [Linear Algebra Learning Graph](/learning-graph/)
+- [Linear Algebra Learning Graph](../../learning-graph/index.md)
