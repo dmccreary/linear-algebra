@@ -2,11 +2,11 @@
 // Shows how 3×3 matrix transformations scale volume using WEBGL
 
 let canvasWidth = 400;
-let drawHeight = 400;
+let drawHeight = 300;
 let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
 let margin = 25;
-let sliderLeftMargin = 140;
+let sliderLeftMargin = 240;
 let defaultTextSize = 16;
 
 // 3×3 matrix (diagonal scaling by default)
@@ -24,6 +24,7 @@ let lastMouseX, lastMouseY;
 
 // Animation
 let morphT = 1.0;
+let currentState = 'Scaling';
 
 // Controls
 let morphSlider;
@@ -82,24 +83,24 @@ function draw() {
 
     morphT = morphSlider.value();
 
+    rectMode(CORNER);
     // Background
-    background(240, 248, 255); // aliceblue
-
+    fill('aliceblue');
+    // draw a thin light gray border around both the drawing and control areas
+    
+    // rect(0, 0, canvasWidth, canvasHeight);
+    // rect(-canvasWidth/2, -canvasHeight/2, canvasWidth, canvasHeight);
+    background('aliceblue'); 
+    
     // Draw 2D control area overlay
     push();
     resetMatrix();
     translate(-canvasWidth/2, -canvasHeight/2);
-
     // Control area background
-    fill(255);
-    noStroke();
+    fill('white');
+    stroke('sliver');
     rect(0, drawHeight, canvasWidth, controlHeight);
-
-    // Border for drawing area
-    stroke(192, 192, 192);
-    strokeWeight(1);
-    noFill();
-    rect(0, 0, canvasWidth, drawHeight);
+    noStroke();
 
     // Draw title
     fill(0);
@@ -108,15 +109,21 @@ function draw() {
     textSize(18);
     text('3D Volume Scaling Visualizer', canvasWidth / 2, 10);
 
+    // Draw current state above buttons
+    textSize(20);
+    textAlign(LEFT, BOTTOM);
+    fill(0);
+    text('Mode: ' + currentState, 10, drawHeight - 5);
+
     // Draw control labels
     textSize(12);
     textAlign(LEFT, CENTER);
-    text('Morph: ' + (morphT * 100).toFixed(0) + '%', sliderLeftMargin - 60, drawHeight + 55);
+    text('Morph: ' + (morphT * 100).toFixed(0) + '%', sliderLeftMargin - 70, drawHeight + 55);
 
     pop();
 
     // Setup 3D view
-    translate(0, -40, 0);
+    translate(0, 0, 0);
 
     // Apply camera rotation
     rotateX(rotX);
@@ -134,7 +141,7 @@ function draw() {
 
     // Draw unit cube if enabled
     if (showCubeCheckbox.checked()) {
-        drawUnitCube(0.3);
+        drawUnitCube(0.7);
     }
 
     // Draw transformed parallelepiped
@@ -193,8 +200,8 @@ function drawAxes3D() {
 function drawUnitCube(alpha) {
     let s = 50; // scale
 
-    stroke(100, 100, 100, alpha * 255);
-    strokeWeight(1);
+    stroke(60, 60, 60, alpha * 255);
+    strokeWeight(2);
     noFill();
 
     // Draw edges of unit cube
@@ -387,6 +394,7 @@ function det3x3(m) {
 function setScaling() {
     matrix = [[2, 0, 0], [0, 1.5, 0], [0, 0, 1]];
     morphSlider.value(0);
+    currentState = 'Scaling';
 }
 
 function setRotation() {
@@ -395,12 +403,14 @@ function setRotation() {
     let s = sin(PI/4);
     matrix = [[c, -s, 0], [s, c, 0], [0, 0, 1]];
     morphSlider.value(0);
+    currentState = 'Rotation';
 }
 
 function setSingular() {
     // Singular: third column is sum of first two
     matrix = [[1, 0, 1], [0, 1, 1], [1, 1, 2]];
     morphSlider.value(0);
+    currentState = 'Singular';
 }
 
 function mousePressed() {

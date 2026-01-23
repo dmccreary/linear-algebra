@@ -10,7 +10,7 @@ social:
 
 # 3D Volume Scaling Interactive Visualizer
 
-<iframe src="main.html" height="482px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="392px" width="100%" scrolling="no"></iframe>
 
 [Run the 3D Volume Scaling Visualizer Fullscreen](./main.html){ .md-button .md-button--primary }
 
