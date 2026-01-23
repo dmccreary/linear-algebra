@@ -178,6 +178,7 @@ nav:
     - SVD Geometric Interpretation: sims/svd-geometry/index.md
     - SVD Image Compression: sims/svd-image-compression/index.md
     - SVD Compression Visualizer: sims/svd-compression-visualizer/index.md
+    - Symmetric Matrix Visualizer: sims/symmetric-matrix/index.md
     - System of Equations Geometry: sims/system-geometry/index.md
     - Tensor Operations Visualizer: sims/tensor-operations/index.md
     - Transformation Composition: sims/transform-composition/index.md
@@ -204,6 +205,7 @@ nav:
     - prompts/cover-image.md
     - prompts/generate-microsims-for-a-chapter.md
     - prompts/logo.md
+    - prompts/sims-index-grid.md
 
   - Glossary: glossary.md
   - FAQ: faq.md
