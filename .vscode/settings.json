@@ -24,6 +24,7 @@
         "explainability",
         "frontmatter",
         "genertic",
+        "Glorot",
         "homography",
         "Homography",
         "interpretability",
@@ -46,6 +47,7 @@
         "sarrus",
         "scikit",
         "seagreen",
+        "Softplus",
         "superfences"
     ]
 }

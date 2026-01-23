@@ -23,7 +23,7 @@ This visualization compares common neural network activation functions, showing 
 
 | Function | Formula | Range | Key Property |
 |----------|---------|-------|--------------|
-| ReLU | max(0, x) | [0, ∞) | Efficient, sparse |
+| ReLU | max(0, x) | \[0, ∞\) | Efficient, sparse |
 | Sigmoid | 1/(1+e⁻ˣ) | (0, 1) | Probability output |
 | Tanh | (eˣ-e⁻ˣ)/(eˣ+e⁻ˣ) | (-1, 1) | Zero-centered |
 | Leaky ReLU | max(0.1x, x) | (-∞, ∞) | No dead neurons |
