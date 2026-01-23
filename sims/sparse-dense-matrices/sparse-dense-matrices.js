@@ -4,7 +4,7 @@
 
 // Canvas dimensions
 let canvasWidth = 400;
-let drawHeight = 370;
+let drawHeight = 320;
 let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
 
@@ -54,14 +54,14 @@ function setup() {
 
   // Create size slider
   sizeSlider = createSlider(10, 50, 20, 5);
-  sizeSlider.position(sliderLeftMargin, drawHeight + 8);
-  sizeSlider.size(100);
+  sizeSlider.position(sliderLeftMargin, drawHeight + 18);
+  sizeSlider.size(200);
   sizeSlider.input(onSizeChange);
 
   // Create sparsity slider
   sparsitySlider = createSlider(50, 99, 85, 1);
-  sparsitySlider.position(sliderLeftMargin + 130, drawHeight + 8);
-  sparsitySlider.size(canvasWidth - sliderLeftMargin - 160);
+  sparsitySlider.position(sliderLeftMargin + 220, drawHeight + 18);
+  sparsitySlider.size(200);
   sparsitySlider.input(onSparsityChange);
 
   describe('Side-by-side comparison of dense and sparse matrices showing storage efficiency and sparsity patterns.', LABEL);
@@ -72,13 +72,13 @@ function draw() {
 
   // Drawing area background
   fill('aliceblue');
+  // draw thin gray border around both the drawing and control areas
   stroke('silver');
   strokeWeight(1);
   rect(0, 0, canvasWidth, drawHeight);
 
   // Control area background
   fill('white');
-  noStroke();
   rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title
@@ -102,17 +102,17 @@ function draw() {
   // Draw statistics
   drawStatistics();
 
-  // Control labels
+  // Control labels (above sliders)
   fill('black');
   noStroke();
-  textAlign(LEFT, CENTER);
+  textAlign(LEFT, BOTTOM);
   textSize(12);
-  text('Size: ' + matrixSize, sliderLeftMargin + 105, drawHeight + 20);
-  text('Sparsity: ' + sparsityLevel + '%', sliderLeftMargin + 235, drawHeight + 20);
+  text('Size: ' + matrixSize, sliderLeftMargin + 3, drawHeight + 18);
+  text('Sparsity: ' + sparsityLevel + '%', sliderLeftMargin + 223, drawHeight + 18);
 
   // Second row label
   textAlign(LEFT, TOP);
-  text('Storage comparison:', 10, drawHeight + 45);
+  text('Storage comparison:', 10, drawHeight + 55);
 
   // Draw storage bar chart
   drawStorageChart();
@@ -198,7 +198,7 @@ function drawStatistics() {
 
 function drawStorageChart() {
   let chartX = 150;
-  let chartY = drawHeight + 43;
+  let chartY = drawHeight + 53;
   let chartWidth = canvasWidth - chartX - 20;
   let chartHeight = 20;
 
@@ -339,7 +339,6 @@ function onPatternChange() {
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
-  sparsitySlider.size(canvasWidth - sliderLeftMargin - 160);
 }
 
 function updateCanvasSize() {

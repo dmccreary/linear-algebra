@@ -34,7 +34,7 @@ function buildDecisionTree() {
 
   // Root node
   let rootX = canvasWidth / 2;
-  let rootY = 50;
+  let rootY = 80;
 
   // Level 0 - Start
   nodes.push({
@@ -287,7 +287,7 @@ function drawInfoPanel() {
   let panelW = 280;
   let panelH = node.type === 'answer' ? 100 : 70;
   let panelX = canvasWidth - panelW - 20;
-  let panelY = drawHeight - panelH - 20;
+  let panelY = drawHeight - panelH - 120;
 
   // Panel background
   fill(255, 255, 240);
