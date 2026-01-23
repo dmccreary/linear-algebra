@@ -38,5 +38,23 @@
     "Image Convolution concept",
     "Basic image processing"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "3d-model",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of filter effects gallery",
+    "Explore filter effects gallery through interactive visualization",
+    "Apply knowledge of filter effects gallery to solve problems",
+    "Test understanding of filter effects gallery through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

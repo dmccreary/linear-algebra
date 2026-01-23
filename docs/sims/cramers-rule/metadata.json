@@ -5,7 +5,7 @@
   "topic": "Cramer's Rule for Solving Systems",
   "gradeLevel": "Undergraduate",
   "learningObjectives": [
-    "Apply Cramer's Rule to solve 2×2 systems of equations",
+    "Apply Cramer's Rule to solve 2\u00d72 systems of equations",
     "Identify when Cramer's Rule cannot be applied (singular matrices)",
     "Connect algebraic solution to geometric line intersection"
   ],
@@ -13,7 +13,7 @@
   "bloomVerb": "solve",
   "duration": "10-15 minutes",
   "prerequisites": [
-    "2×2 determinants",
+    "2\u00d72 determinants",
     "Systems of linear equations",
     "Matrix notation"
   ],
@@ -50,8 +50,21 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 500",
+  "canvasDimensions": "responsive \u00d7 500",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

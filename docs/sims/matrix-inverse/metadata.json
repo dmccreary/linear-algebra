@@ -1,8 +1,12 @@
 {
   "title": "Matrix Inverse Explorer",
-  "description": "Interactive exploration of 2×2 matrix inversion with real-time computation, verification that AA⁻¹ = I, and visualization of singular matrices.",
+  "description": "Interactive exploration of 2\u00d72 matrix inversion with real-time computation, verification that AA\u207b\u00b9 = I, and visualization of singular matrices.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Matrix Inverse"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Matrix Inverse"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -13,21 +17,30 @@
     "subjectArea": "Mathematics",
     "topic": "Linear Algebra - Matrix Inverse",
     "learningObjectives": [
-      "Apply the 2×2 inverse formula to compute A⁻¹",
-      "Verify that AA⁻¹ = I for invertible matrices",
+      "Apply the 2\u00d72 inverse formula to compute A\u207b\u00b9",
+      "Verify that AA\u207b\u00b9 = I for invertible matrices",
       "Identify singular matrices by their zero determinant",
       "Explain why singular matrices have no inverse"
     ],
     "bloomsLevel": "Apply",
-    "bloomsVerb": ["calculate", "demonstrate", "verify"],
+    "bloomsVerb": [
+      "calculate",
+      "demonstrate",
+      "verify"
+    ],
     "duration": "5-7 minutes",
-    "prerequisites": ["Matrix multiplication", "Determinant concept"]
+    "prerequisites": [
+      "Matrix multiplication",
+      "Determinant concept"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 450",
+    "canvasDimensions": "responsive \u00d7 450",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -49,5 +62,22 @@
       "step": 1,
       "description": "Smoothly vary matrix toward singular state"
     }
+  ],
+  "visualizationType": [
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of matrix inverse explorer",
+    "Explore matrix inverse explorer through interactive visualization",
+    "Apply knowledge of matrix inverse explorer to solve problems",
+    "Experiment with parameters to observe their effects on matrix inverse explorer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

@@ -2,7 +2,11 @@
   "title": "SVD Image Compression",
   "description": "Interactive demonstration of image compression using truncated SVD",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "SVD", "Image Compression"],
+  "subject": [
+    "Linear Algebra",
+    "SVD",
+    "Image Compression"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,7 +22,20 @@
   ],
   "bloomsLevel": "Evaluate",
   "duration": "10-15 minutes",
-  "prerequisites": ["SVD basics", "Truncated SVD"],
+  "prerequisites": [
+    "SVD basics",
+    "Truncated SVD"
+  ],
   "framework": "p5.js",
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "chart",
+    "interactive-demo",
+    "map"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

@@ -2,7 +2,11 @@
   "title": "SVD Geometric Interpretation",
   "description": "Visualize SVD as a sequence of rotation-scaling-rotation transformations on the unit circle",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "SVD", "Matrix Decomposition"],
+  "subject": [
+    "Linear Algebra",
+    "SVD",
+    "Matrix Decomposition"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -25,9 +29,11 @@
     "Orthogonal matrices"
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 500",
+  "canvasDimensions": "responsive \u00d7 500",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "button",
@@ -46,28 +52,28 @@
     },
     {
       "type": "slider",
-      "label": "a₁₁",
+      "label": "a\u2081\u2081",
       "min": -4,
       "max": 4,
       "default": 3
     },
     {
       "type": "slider",
-      "label": "a₁₂",
+      "label": "a\u2081\u2082",
       "min": -4,
       "max": 4,
       "default": 1
     },
     {
       "type": "slider",
-      "label": "a₂₁",
+      "label": "a\u2082\u2081",
       "min": -4,
       "max": 4,
       "default": 1
     },
     {
       "type": "slider",
-      "label": "a₂₂",
+      "label": "a\u2082\u2082",
       "min": -4,
       "max": 4,
       "default": 3
@@ -78,5 +84,18 @@
       "default": true
     }
   ],
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

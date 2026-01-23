@@ -1,69 +1,93 @@
 {
-    "title": "Covariance and Correlation Matrix Visualizer",
-    "description": "Interactive exploration of how covariance and correlation capture relationships between features through scatter plots and heatmaps.",
-    "creator": "Claude AI",
-    "subject": "Linear Algebra",
-    "date": "2026-01-21",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Covariance and Correlation",
-        "learningObjectives": [
-            "Understand how covariance measures joint variability between features",
-            "Calculate and interpret Pearson correlation coefficient",
-            "Explain the relationship between covariance and correlation matrices",
-            "Analyze how standardization affects covariance",
-            "Connect eigenvalues of covariance matrix to principal components"
-        ],
-        "bloomsLevel": "Analyze",
-        "duration": "15-20 minutes",
-        "prerequisites": [
-            "Mean and variance",
-            "Matrix operations",
-            "Eigenvalues and eigenvectors"
-        ]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 580",
-        "responsive": true,
-        "dependencies": ["p5.js CDN"],
-        "accessibility": ["describe() function", "high contrast colors"]
-    },
-    "controls": [
-        {
-            "type": "select",
-            "label": "Dataset",
-            "description": "Choose preset correlation patterns"
-        },
-        {
-            "type": "checkbox",
-            "label": "Standardize Data",
-            "description": "Transform data to zero mean and unit variance"
-        },
-        {
-            "type": "slider",
-            "label": "Correlation",
-            "description": "Adjust target correlation from -0.95 to 0.95"
-        },
-        {
-            "type": "button",
-            "label": "Reset",
-            "description": "Regenerate data with current settings"
-        },
-        {
-            "type": "interaction",
-            "label": "Drag points",
-            "description": "Drag data points in scatter plot to modify dataset"
-        },
-        {
-            "type": "interaction",
-            "label": "Click matrix cells",
-            "description": "Highlight cells to see corresponding relationships"
-        }
+  "title": "Covariance and Correlation Matrix Visualizer",
+  "description": "Interactive exploration of how covariance and correlation capture relationships between features through scatter plots and heatmaps.",
+  "creator": "Claude AI",
+  "subject": "Linear Algebra",
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Covariance and Correlation",
+    "learningObjectives": [
+      "Understand how covariance measures joint variability between features",
+      "Calculate and interpret Pearson correlation coefficient",
+      "Explain the relationship between covariance and correlation matrices",
+      "Analyze how standardization affects covariance",
+      "Connect eigenvalues of covariance matrix to principal components"
+    ],
+    "bloomsLevel": "Analyze",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Mean and variance",
+      "Matrix operations",
+      "Eigenvalues and eigenvectors"
     ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 580",
+    "responsive": true,
+    "dependencies": [
+      "p5.js CDN"
+    ],
+    "accessibility": [
+      "describe() function",
+      "high contrast colors"
+    ]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Dataset",
+      "description": "Choose preset correlation patterns"
+    },
+    {
+      "type": "checkbox",
+      "label": "Standardize Data",
+      "description": "Transform data to zero mean and unit variance"
+    },
+    {
+      "type": "slider",
+      "label": "Correlation",
+      "description": "Adjust target correlation from -0.95 to 0.95"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "description": "Regenerate data with current settings"
+    },
+    {
+      "type": "interaction",
+      "label": "Drag points",
+      "description": "Drag data points in scatter plot to modify dataset"
+    },
+    {
+      "type": "interaction",
+      "label": "Click matrix cells",
+      "description": "Highlight cells to see corresponding relationships"
+    }
+  ],
+  "visualizationType": [
+    "3d-model",
+    "graph",
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of covariance and correlation matrix visualizer",
+    "Explore covariance and correlation matrix visualizer through interactive visualization",
+    "Apply knowledge of covariance and correlation matrix visualizer to solve problems",
+    "Experiment with parameters to observe their effects on covariance and correlation matrix visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

@@ -2,7 +2,12 @@
   "title": "Pseudoinverse Solver MicroSim",
   "description": "Interactive exploration of the Moore-Penrose pseudoinverse for solving least squares problems, including overdetermined, underdetermined, and rank-deficient systems with SVD visualization.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Pseudoinverse", "Least Squares", "SVD"],
+  "subject": [
+    "Linear Algebra",
+    "Pseudoinverse",
+    "Least Squares",
+    "SVD"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -20,21 +25,37 @@
       "Connect the pseudoinverse to SVD computation"
     ],
     "bloomsLevel": "Apply",
-    "bloomsVerb": ["compute", "solve", "compare", "verify"],
+    "bloomsVerb": [
+      "compute",
+      "solve",
+      "compare",
+      "verify"
+    ],
     "duration": "7-10 minutes",
-    "prerequisites": ["Matrix multiplication", "SVD basics", "Least squares concept"]
+    "prerequisites": [
+      "Matrix multiplication",
+      "SVD basics",
+      "Least squares concept"
+    ]
   },
   "technical": {
     "framework": "p5.js",
     "canvasDimensions": "responsive x 540",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
       "type": "select",
       "label": "Preset Examples",
-      "options": ["Overdetermined (3x2)", "Rank Deficient (3x2)", "Underdetermined (2x3)", "Full Rank (2x2)"],
+      "options": [
+        "Overdetermined (3x2)",
+        "Rank Deficient (3x2)",
+        "Underdetermined (2x3)",
+        "Full Rank (2x2)"
+      ],
       "description": "Choose preset system configurations"
     },
     {
@@ -53,5 +74,24 @@
       "label": "Matrix A and Vector b",
       "description": "Editable matrix entries for custom systems"
     }
+  ],
+  "visualizationType": [
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of pseudoinverse solver",
+    "Explore pseudoinverse solver through interactive visualization",
+    "Apply knowledge of pseudoinverse solver to solve problems",
+    "Experiment with parameters to observe their effects on pseudoinverse solver"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
   ]
 }

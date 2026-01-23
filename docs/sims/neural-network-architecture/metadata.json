@@ -2,7 +2,14 @@
   "title": "Neural Network Architecture",
   "description": "Interactive visualization of neural network architecture showing layers, neurons, weight matrix dimensions, and parameter counts.",
   "subject": "Neural Networks, Deep Learning",
-  "keywords": ["neural network", "architecture", "layers", "weight matrix", "parameters", "deep learning"],
+  "keywords": [
+    "neural network",
+    "architecture",
+    "layers",
+    "weight matrix",
+    "parameters",
+    "deep learning"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,7 +23,10 @@
     "Calculate total parameters in a network"
   ],
   "duration": "10-15 minutes",
-  "prerequisites": ["Matrix dimensions", "Basic neural network concepts"],
+  "prerequisites": [
+    "Matrix dimensions",
+    "Basic neural network concepts"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 480",
   "controls": [
@@ -53,5 +63,10 @@
       "label": "Show Dimensions",
       "default": true
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "network"
   ]
 }

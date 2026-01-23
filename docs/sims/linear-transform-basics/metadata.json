@@ -38,7 +38,14 @@
       "type": "select",
       "name": "presetSelect",
       "label": "Presets",
-      "options": ["Identity", "Rotation 45°", "Scale 2×", "Shear X", "Reflect Y", "Stretch"],
+      "options": [
+        "Identity",
+        "Rotation 45\u00b0",
+        "Scale 2\u00d7",
+        "Shear X",
+        "Reflect Y",
+        "Stretch"
+      ],
       "description": "Select common transformation presets"
     },
     {
@@ -58,19 +65,33 @@
     {
       "type": "drag",
       "name": "te1Handle",
-      "label": "T(e₁)",
-      "description": "Drag to set where e₁ maps to"
+      "label": "T(e\u2081)",
+      "description": "Drag to set where e\u2081 maps to"
     },
     {
       "type": "drag",
       "name": "te2Handle",
-      "label": "T(e₂)",
-      "description": "Drag to set where e₂ maps to"
+      "label": "T(e\u2082)",
+      "description": "Drag to set where e\u2082 maps to"
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

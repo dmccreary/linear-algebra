@@ -39,5 +39,25 @@
     "Coordinate geometry",
     "Linear transformations"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "3d-model",
+    "diagram",
+    "graph",
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of homography transformation demo",
+    "Explore homography transformation demo through interactive visualization",
+    "Apply knowledge of homography transformation demo to solve problems",
+    "Test understanding of homography transformation demo through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

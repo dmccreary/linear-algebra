@@ -2,7 +2,12 @@
   "title": "Data Matrix Structure Visualizer",
   "description": "Interactive visualization showing the structure of data matrices with rows as samples and columns as features, including heat map coloring and click-to-highlight functionality.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Data Science", "Machine Learning", "Data Matrices"],
+  "subject": [
+    "Linear Algebra",
+    "Data Science",
+    "Machine Learning",
+    "Data Matrices"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -19,21 +24,36 @@
       "Recognize the dimensions n (samples) and d (features)"
     ],
     "bloomsLevel": "Understand",
-    "bloomsVerb": ["identify", "explain", "interpret", "classify"],
+    "bloomsVerb": [
+      "identify",
+      "explain",
+      "interpret",
+      "classify"
+    ],
     "duration": "5-10 minutes",
-    "prerequisites": ["Understanding of matrices as arrays of numbers", "Basic understanding of data and features"]
+    "prerequisites": [
+      "Understanding of matrices as arrays of numbers",
+      "Basic understanding of data and features"
+    ]
   },
   "technical": {
     "framework": "p5.js",
     "canvasDimensions": "responsive x 500",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
       "type": "select",
       "label": "Dataset",
-      "options": ["Iris Dataset", "MNIST Digit", "Housing Dataset", "Generic Matrix"],
+      "options": [
+        "Iris Dataset",
+        "MNIST Digit",
+        "Housing Dataset",
+        "Generic Matrix"
+      ],
       "default": "Iris Dataset",
       "description": "Choose an example dataset to visualize"
     },
@@ -72,5 +92,24 @@
       "displaySize": "6 x 5",
       "description": "Boston housing socioeconomic features"
     }
+  ],
+  "visualizationType": [
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of data matrix structure visualizer",
+    "Explore data matrix structure visualizer through interactive visualization",
+    "Apply knowledge of data matrix structure visualizer to solve problems",
+    "Experiment with parameters to observe their effects on data matrix structure visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
   ]
 }

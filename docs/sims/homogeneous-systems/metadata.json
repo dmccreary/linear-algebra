@@ -8,14 +8,52 @@
   "learningObjective": "Help students understand that homogeneous systems always have the trivial solution and may have additional solutions forming a subspace through the origin",
   "gradeLevel": "Undergraduate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Matrix rank", "Linear equations", "Vector spaces"],
+  "prerequisites": [
+    "Matrix rank",
+    "Linear equations",
+    "Vector spaces"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "controls": [
-    {"type": "select", "label": "Example", "options": ["Only Trivial Solution", "1D Null Space", "2D Null Space", "More Vars than Eqs"], "description": "Choose a preset example"},
-    {"type": "checkbox", "label": "Show null space basis", "default": true, "description": "Display basis vectors for the null space"}
+    {
+      "type": "select",
+      "label": "Example",
+      "options": [
+        "Only Trivial Solution",
+        "1D Null Space",
+        "2D Null Space",
+        "More Vars than Eqs"
+      ],
+      "description": "Choose a preset example"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show null space basis",
+      "default": true,
+      "description": "Display basis vectors for the null space"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "3d-model",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of homogeneous systems",
+    "Explore homogeneous systems through interactive visualization",
+    "Apply knowledge of homogeneous systems to solve problems"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

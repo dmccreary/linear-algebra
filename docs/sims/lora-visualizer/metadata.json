@@ -36,5 +36,11 @@
     "simulation",
     "chart",
     "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of lora low-rank adaptation visualizer",
+    "Apply lora low-rank adaptation visualizer to solve problems",
+    "Visualize and interpret lora low-rank adaptation visualizer relationships",
+    "Experiment with parameters to observe their effects on lora low-rank adaptation visualizer"
   ]
 }

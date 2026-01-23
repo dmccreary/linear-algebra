@@ -2,7 +2,11 @@
   "title": "Gram-Schmidt Process Visualizer",
   "description": "Step-by-step 3D visualization of Gram-Schmidt orthonormalization showing projections and construction of orthonormal vectors",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "QR Decomposition", "Orthogonalization"],
+  "subject": [
+    "Linear Algebra",
+    "QR Decomposition",
+    "Orthogonalization"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -25,9 +29,11 @@
     "Linear independence"
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 550",
+  "canvasDimensions": "responsive \u00d7 550",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "button",
@@ -55,5 +61,20 @@
       "default": true
     }
   ],
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

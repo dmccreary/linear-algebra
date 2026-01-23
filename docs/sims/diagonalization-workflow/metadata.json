@@ -1,52 +1,77 @@
 {
-    "title": "Diagonalization Process Workflow",
-    "description": "Interactive flowchart guiding through the step-by-step process of diagonalizing a matrix with decision points.",
-    "creator": "Claude AI",
-    "subject": "Linear Algebra",
-    "date": "2026-01-21",
-    "type": "Interactive Flowchart",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Matrix Diagonalization",
-        "learningObjectives": [
-            "Follow the systematic process for diagonalizing a matrix",
-            "Identify decision points in the diagonalization process",
-            "Determine when a matrix cannot be diagonalized"
-        ],
-        "bloomsLevel": "Apply",
-        "duration": "10-15 minutes",
-        "prerequisites": [
-            "Characteristic polynomial",
-            "Eigenvalues and eigenvectors",
-            "Geometric multiplicity"
-        ]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive × 570",
-        "responsive": true,
-        "dependencies": ["p5.js CDN"],
-        "accessibility": ["describe() function", "color-coded nodes", "step descriptions"]
-    },
-    "controls": [
-        {
-            "type": "button",
-            "label": "Next Step",
-            "description": "Advance to the next step in the workflow"
-        },
-        {
-            "type": "button",
-            "label": "Reset",
-            "description": "Reset to the beginning of the workflow"
-        },
-        {
-            "type": "checkbox",
-            "label": "Auto-advance",
-            "description": "Automatically advance through steps"
-        }
+  "title": "Diagonalization Process Workflow",
+  "description": "Interactive flowchart guiding through the step-by-step process of diagonalizing a matrix with decision points.",
+  "creator": "Claude AI",
+  "subject": "Linear Algebra",
+  "date": "2026-01-21",
+  "type": "Interactive Flowchart",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Matrix Diagonalization",
+    "learningObjectives": [
+      "Follow the systematic process for diagonalizing a matrix",
+      "Identify decision points in the diagonalization process",
+      "Determine when a matrix cannot be diagonalized"
+    ],
+    "bloomsLevel": "Apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Characteristic polynomial",
+      "Eigenvalues and eigenvectors",
+      "Geometric multiplicity"
     ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive \u00d7 570",
+    "responsive": true,
+    "dependencies": [
+      "p5.js CDN"
+    ],
+    "accessibility": [
+      "describe() function",
+      "color-coded nodes",
+      "step descriptions"
+    ]
+  },
+  "controls": [
+    {
+      "type": "button",
+      "label": "Next Step",
+      "description": "Advance to the next step in the workflow"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "description": "Reset to the beginning of the workflow"
+    },
+    {
+      "type": "checkbox",
+      "label": "Auto-advance",
+      "description": "Automatically advance through steps"
+    }
+  ],
+  "visualizationType": [
+    "animation",
+    "diagram",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of diagonalization process workflow",
+    "Explore diagonalization process workflow through interactive visualization",
+    "Apply knowledge of diagonalization process workflow to solve problems",
+    "Test understanding of diagonalization process workflow through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

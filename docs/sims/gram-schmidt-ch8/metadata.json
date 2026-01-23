@@ -2,7 +2,11 @@
   "title": "Gram-Schmidt Step-by-Step Visualizer",
   "description": "Detailed step-by-step 3D visualization of Gram-Schmidt orthonormalization showing projection computation, subtraction, and normalization phases",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Orthogonalization", "Inner Product Spaces"],
+  "subject": [
+    "Linear Algebra",
+    "Orthogonalization",
+    "Inner Product Spaces"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -28,7 +32,9 @@
   "framework": "p5.js",
   "canvasDimensions": "responsive x 550",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "button",
@@ -66,8 +72,38 @@
       "dimensions": "3x3",
       "min": -3,
       "max": 3,
-      "default": [[2, 0, 0], [1, 2, 0], [1, 1, 2]]
+      "default": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          2
+        ]
+      ]
     }
   ],
-  "chapter": "08-vector-spaces"
+  "chapter": "08-vector-spaces",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

@@ -1,69 +1,92 @@
 {
-    "title": "Trajectory Optimization Visualizer",
-    "description": "Interactive trajectory optimization demonstration showing smoothness constraints, velocity limits, obstacle avoidance, and cost convergence via gradient descent.",
-    "subject": "Motion Planning, Optimization, Autonomous Systems",
-    "topic": "Trajectory Optimization",
-    "bloom_level": "Apply",
-    "learning_objectives": [
-        "Understand multi-objective trajectory optimization",
-        "Recognize tradeoffs between smoothness, speed, and safety",
-        "Apply gradient descent to motion planning problems"
-    ],
-    "prerequisites": [
-        "Path planning basics",
-        "Gradient descent optimization",
-        "Calculus (derivatives)"
-    ],
-    "estimated_time": "15-20 minutes",
-    "grade_level": "Undergraduate",
-    "keywords": [
-        "trajectory optimization",
-        "motion planning",
-        "gradient descent",
-        "smoothness",
-        "obstacle avoidance",
-        "velocity constraints",
-        "autonomous vehicles"
-    ],
-    "creator": "Claude AI",
-    "date_created": "2026-01-21",
-    "framework": "p5.js",
-    "canvas_size": "900x700",
-    "responsive": true,
-    "controls": [
-        {
-            "type": "slider",
-            "label": "Smoothness Weight",
-            "min": 0.1,
-            "max": 3,
-            "default": 1
-        },
-        {
-            "type": "slider",
-            "label": "Speed Limit",
-            "min": 1,
-            "max": 10,
-            "default": 5
-        },
-        {
-            "type": "slider",
-            "label": "Obstacle Clearance",
-            "min": 10,
-            "max": 60,
-            "default": 30
-        },
-        {
-            "type": "button",
-            "label": "Optimize"
-        },
-        {
-            "type": "button",
-            "label": "Reset"
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Profiles",
-            "default": true
-        }
-    ]
+  "title": "Trajectory Optimization Visualizer",
+  "description": "Interactive trajectory optimization demonstration showing smoothness constraints, velocity limits, obstacle avoidance, and cost convergence via gradient descent.",
+  "subject": "Motion Planning, Optimization, Autonomous Systems",
+  "topic": "Trajectory Optimization",
+  "bloom_level": "Apply",
+  "learning_objectives": [
+    "Understand multi-objective trajectory optimization",
+    "Recognize tradeoffs between smoothness, speed, and safety",
+    "Apply gradient descent to motion planning problems"
+  ],
+  "prerequisites": [
+    "Path planning basics",
+    "Gradient descent optimization",
+    "Calculus (derivatives)"
+  ],
+  "estimated_time": "15-20 minutes",
+  "grade_level": "Undergraduate",
+  "keywords": [
+    "trajectory optimization",
+    "motion planning",
+    "gradient descent",
+    "smoothness",
+    "obstacle avoidance",
+    "velocity constraints",
+    "autonomous vehicles"
+  ],
+  "creator": "Claude AI",
+  "date_created": "2026-01-21",
+  "framework": "p5.js",
+  "canvas_size": "900x700",
+  "responsive": true,
+  "controls": [
+    {
+      "type": "slider",
+      "label": "Smoothness Weight",
+      "min": 0.1,
+      "max": 3,
+      "default": 1
+    },
+    {
+      "type": "slider",
+      "label": "Speed Limit",
+      "min": 1,
+      "max": 10,
+      "default": 5
+    },
+    {
+      "type": "slider",
+      "label": "Obstacle Clearance",
+      "min": 10,
+      "max": 60,
+      "default": 30
+    },
+    {
+      "type": "button",
+      "label": "Optimize"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Profiles",
+      "default": true
+    }
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation",
+    "timeline"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of trajectory optimization",
+    "Explore trajectory optimization through interactive visualization",
+    "Apply knowledge of trajectory optimization to solve problems",
+    "Experiment with parameters to observe their effects on trajectory optimization"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

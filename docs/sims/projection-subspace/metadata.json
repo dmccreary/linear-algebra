@@ -2,7 +2,11 @@
   "title": "Projection onto Subspace Visualizer",
   "description": "3D visualization of vector projection onto subspaces showing the projection as the closest point and the orthogonal error vector",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Projections", "Orthogonality"],
+  "subject": [
+    "Linear Algebra",
+    "Projections",
+    "Orthogonality"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -28,33 +32,50 @@
   "framework": "p5.js",
   "canvasDimensions": "responsive x 530",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "slider",
       "label": "Vector v (x, y, z)",
       "min": -4,
       "max": 4,
-      "default": [2, 3, 2]
+      "default": [
+        2,
+        3,
+        2
+      ]
     },
     {
       "type": "slider",
       "label": "Basis u1 (x, y, z)",
       "min": -2,
       "max": 2,
-      "default": [1, 0, 0]
+      "default": [
+        1,
+        0,
+        0
+      ]
     },
     {
       "type": "slider",
       "label": "Basis u2 (x, y, z)",
       "min": -2,
       "max": 2,
-      "default": [0, 1, 0]
+      "default": [
+        0,
+        1,
+        0
+      ]
     },
     {
       "type": "select",
       "label": "Subspace Type",
-      "options": ["2D Plane", "1D Line"],
+      "options": [
+        "2D Plane",
+        "1D Line"
+      ],
       "default": "2D Plane"
     },
     {
@@ -72,5 +93,20 @@
       "label": "Reset"
     }
   ],
-  "chapter": "08-orthogonality"
+  "chapter": "08-orthogonality",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

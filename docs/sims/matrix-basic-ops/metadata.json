@@ -2,7 +2,11 @@
   "title": "Matrix Addition and Scalar Multiplication",
   "description": "Interactive visualization demonstrating element-wise matrix addition and scalar multiplication with step-by-step calculation highlighting.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Matrix Operations"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Matrix Operations"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -19,21 +23,33 @@
       "Understand the element-wise nature of these operations"
     ],
     "bloomsLevel": "Apply",
-    "bloomsVerb": ["calculate", "demonstrate", "apply"],
+    "bloomsVerb": [
+      "calculate",
+      "demonstrate",
+      "apply"
+    ],
     "duration": "5-10 minutes",
-    "prerequisites": ["Understanding of matrices as arrays of numbers", "Basic arithmetic"]
+    "prerequisites": [
+      "Understanding of matrices as arrays of numbers",
+      "Basic arithmetic"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 480",
+    "canvasDimensions": "responsive \u00d7 480",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
       "type": "select",
       "label": "Operation",
-      "options": ["Addition", "Scalar Multiply"],
+      "options": [
+        "Addition",
+        "Scalar Multiply"
+      ],
       "default": "Addition",
       "description": "Choose between matrix addition and scalar multiplication"
     },
@@ -56,5 +72,22 @@
       "label": "Step",
       "description": "Highlight the next entry calculation in sequence"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of matrix addition and scalar multiplication",
+    "Explore matrix addition and scalar multiplication through interactive visualization",
+    "Apply knowledge of matrix addition and scalar multiplication to solve problems",
+    "Experiment with parameters to observe their effects on matrix addition and scalar multiplication"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

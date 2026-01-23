@@ -1,11 +1,11 @@
 {
-  "title": "2×2 Determinant Calculator",
-  "description": "Interactive calculator for computing 2×2 determinants with step-by-step visualization and geometric interpretation.",
+  "title": "2\u00d72 Determinant Calculator",
+  "description": "Interactive calculator for computing 2\u00d72 determinants with step-by-step visualization and geometric interpretation.",
   "subject": "Linear Algebra",
-  "topic": "2×2 Determinant Computation",
+  "topic": "2\u00d72 Determinant Computation",
   "gradeLevel": "Undergraduate",
   "learningObjectives": [
-    "Calculate 2×2 determinants using the formula ad - bc",
+    "Calculate 2\u00d72 determinants using the formula ad - bc",
     "Identify main diagonal and anti-diagonal elements",
     "Connect algebraic computation to geometric signed area"
   ],
@@ -51,8 +51,21 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

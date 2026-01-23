@@ -1,85 +1,127 @@
 {
-    "title": "Linear Combination Explorer",
-    "description": "Interactive visualization of linear combinations with adjustable coefficients, target challenges, and span visualization.",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vectors", "Linear Combinations", "Span"],
-    "date": "2026-01-17",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Linear Combinations and Span",
-        "learningObjectives": [
-            "Apply linear combinations by adjusting scalar coefficients",
-            "Understand the concept of span through visualization",
-            "Recognize when vectors span a plane vs. a line",
-            "Find coefficients to reach target points"
-        ],
-        "bloomsLevel": ["Apply", "Analyze"],
-        "duration": "20-25 minutes",
-        "prerequisites": ["Vector addition", "Scalar multiplication"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 550",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["Drag-and-drop", "Challenge mode", "Real-time calculation"]
-    },
-    "controls": [
-        {
-            "type": "slider",
-            "name": "c₁",
-            "min": -3,
-            "max": 3,
-            "default": 1,
-            "step": 0.1,
-            "description": "Coefficient for basis vector v₁"
-        },
-        {
-            "type": "slider",
-            "name": "c₂",
-            "min": -3,
-            "max": 3,
-            "default": 1,
-            "step": 0.1,
-            "description": "Coefficient for basis vector v₂"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Span",
-            "default": true,
-            "description": "Toggles span region visualization"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Components",
-            "default": true,
-            "description": "Toggles tip-to-tail component arrows"
-        },
-        {
-            "type": "button",
-            "name": "New Challenge",
-            "description": "Generates a random target point to reach"
-        },
-        {
-            "type": "button",
-            "name": "Show Solution",
-            "description": "Reveals the coefficients needed to reach the target"
-        },
-        {
-            "type": "button",
-            "name": "Reset",
-            "description": "Resets all vectors and coefficients to defaults"
-        },
-        {
-            "type": "drag",
-            "name": "Basis vector endpoints",
-            "description": "Drag to reposition basis vectors v₁ and v₂"
-        }
+  "title": "Linear Combination Explorer",
+  "description": "Interactive visualization of linear combinations with adjustable coefficients, target challenges, and span visualization.",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vectors",
+    "Linear Combinations",
+    "Span"
+  ],
+  "date": "2026-01-17",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Linear Combinations and Span",
+    "learningObjectives": [
+      "Apply linear combinations by adjusting scalar coefficients",
+      "Understand the concept of span through visualization",
+      "Recognize when vectors span a plane vs. a line",
+      "Find coefficients to reach target points"
     ],
-    "keywords": ["linear combination", "span", "basis vectors", "coefficients", "vector space", "linear algebra"]
+    "bloomsLevel": [
+      "Apply",
+      "Analyze"
+    ],
+    "duration": "20-25 minutes",
+    "prerequisites": [
+      "Vector addition",
+      "Scalar multiplication"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "Drag-and-drop",
+      "Challenge mode",
+      "Real-time calculation"
+    ]
+  },
+  "controls": [
+    {
+      "type": "slider",
+      "name": "c\u2081",
+      "min": -3,
+      "max": 3,
+      "default": 1,
+      "step": 0.1,
+      "description": "Coefficient for basis vector v\u2081"
+    },
+    {
+      "type": "slider",
+      "name": "c\u2082",
+      "min": -3,
+      "max": 3,
+      "default": 1,
+      "step": 0.1,
+      "description": "Coefficient for basis vector v\u2082"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Span",
+      "default": true,
+      "description": "Toggles span region visualization"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Components",
+      "default": true,
+      "description": "Toggles tip-to-tail component arrows"
+    },
+    {
+      "type": "button",
+      "name": "New Challenge",
+      "description": "Generates a random target point to reach"
+    },
+    {
+      "type": "button",
+      "name": "Show Solution",
+      "description": "Reveals the coefficients needed to reach the target"
+    },
+    {
+      "type": "button",
+      "name": "Reset",
+      "description": "Resets all vectors and coefficients to defaults"
+    },
+    {
+      "type": "drag",
+      "name": "Basis vector endpoints",
+      "description": "Drag to reposition basis vectors v\u2081 and v\u2082"
+    }
+  ],
+  "keywords": [
+    "linear combination",
+    "span",
+    "basis vectors",
+    "coefficients",
+    "vector space",
+    "linear algebra"
+  ],
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of linear combination explorer",
+    "Explore linear combination explorer through interactive visualization",
+    "Apply knowledge of linear combination explorer to solve problems",
+    "Experiment with parameters to observe their effects on linear combination explorer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

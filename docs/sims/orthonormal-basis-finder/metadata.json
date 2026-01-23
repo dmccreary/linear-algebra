@@ -2,7 +2,12 @@
   "title": "Orthonormal Basis Coordinate Finder",
   "description": "Interactive visualization demonstrating how orthonormal bases simplify coordinate finding through inner products",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Orthonormal Bases", "Inner Products", "Coordinates"],
+  "subject": [
+    "Linear Algebra",
+    "Orthonormal Bases",
+    "Inner Products",
+    "Coordinates"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -27,7 +32,9 @@
   "framework": "p5.js",
   "canvasDimensions": "responsive x 480",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "slider",
@@ -70,7 +77,22 @@
   "defaultParameters": {
     "mode": "2D",
     "basisAngle": 45,
-    "targetVector": [3, 2]
+    "targetVector": [
+      3,
+      2
+    ]
   },
-  "chapter": "08-vector-spaces"
+  "chapter": "08-vector-spaces",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

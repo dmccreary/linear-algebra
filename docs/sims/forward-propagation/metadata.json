@@ -2,7 +2,13 @@
   "title": "Forward Propagation",
   "description": "Step-by-step visualization of forward propagation through a neural network showing matrix operations at each layer.",
   "subject": "Neural Networks, Deep Learning, Linear Algebra",
-  "keywords": ["forward propagation", "neural network", "matrix multiplication", "activation function", "feedforward"],
+  "keywords": [
+    "forward propagation",
+    "neural network",
+    "matrix multiplication",
+    "activation function",
+    "feedforward"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,7 +22,11 @@
     "Apply forward propagation algorithm step by step"
   ],
   "duration": "15-20 minutes",
-  "prerequisites": ["Matrix multiplication", "Activation functions", "Neural network architecture"],
+  "prerequisites": [
+    "Matrix multiplication",
+    "Activation functions",
+    "Neural network architecture"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 500",
   "controls": [
@@ -56,5 +66,10 @@
       "max": 2,
       "default": 0.5
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "network"
   ]
 }

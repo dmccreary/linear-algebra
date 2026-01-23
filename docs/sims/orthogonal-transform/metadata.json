@@ -2,7 +2,11 @@
   "title": "Orthogonal Matrix Transformation",
   "description": "Interactive visualization demonstrating how orthogonal matrices (rotations and reflections) preserve lengths and angles when transforming shapes.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Transformations"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Transformations"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -14,20 +18,29 @@
     "topic": "Linear Algebra - Orthogonal Matrices",
     "learningObjectives": [
       "Explain why orthogonal matrices preserve lengths and angles",
-      "Write the 2D rotation matrix for any angle θ",
+      "Write the 2D rotation matrix for any angle \u03b8",
       "Distinguish between rotation and reflection",
       "Verify that Q^T Q = I for rotation matrices"
     ],
     "bloomsLevel": "Understand",
-    "bloomsVerb": ["explain", "interpret", "demonstrate"],
+    "bloomsVerb": [
+      "explain",
+      "interpret",
+      "demonstrate"
+    ],
     "duration": "5-7 minutes",
-    "prerequisites": ["Matrix multiplication", "Trigonometry basics"]
+    "prerequisites": [
+      "Matrix multiplication",
+      "Trigonometry basics"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 500",
+    "canvasDimensions": "responsive \u00d7 500",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -37,7 +50,7 @@
       "max": 360,
       "default": 45,
       "step": 1,
-      "description": "Rotation angle θ in degrees"
+      "description": "Rotation angle \u03b8 in degrees"
     },
     {
       "type": "checkbox",
@@ -56,5 +69,24 @@
       "label": "Reflect",
       "description": "Toggle reflection transformation (det = -1)"
     }
+  ],
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of orthogonal matrix transformation",
+    "Explore orthogonal matrix transformation through interactive visualization",
+    "Apply knowledge of orthogonal matrix transformation to solve problems",
+    "Experiment with parameters to observe their effects on orthogonal matrix transformation"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

@@ -2,7 +2,14 @@
   "title": "Backpropagation",
   "description": "Step-by-step visualization of backpropagation showing how gradients flow backward through a neural network via the chain rule.",
   "subject": "Neural Networks, Deep Learning, Calculus",
-  "keywords": ["backpropagation", "gradient", "chain rule", "neural network", "training", "learning"],
+  "keywords": [
+    "backpropagation",
+    "gradient",
+    "chain rule",
+    "neural network",
+    "training",
+    "learning"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,7 +23,11 @@
     "Calculate weight gradients from activations and error signals"
   ],
   "duration": "15-20 minutes",
-  "prerequisites": ["Forward propagation", "Chain rule", "Matrix transpose"],
+  "prerequisites": [
+    "Forward propagation",
+    "Chain rule",
+    "Matrix transpose"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 500",
   "controls": [
@@ -47,5 +58,11 @@
       "max": 1,
       "default": 1.0
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "map",
+    "network"
   ]
 }

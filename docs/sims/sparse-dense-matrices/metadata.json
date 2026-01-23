@@ -2,7 +2,11 @@
   "title": "Sparse vs Dense Matrices",
   "description": "Side-by-side comparison of sparse and dense matrices showing structural differences, storage efficiency, and common sparsity patterns.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Data Structures"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Data Structures"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -19,21 +23,34 @@
       "Explain why sparse storage formats save memory"
     ],
     "bloomsLevel": "Analyze",
-    "bloomsVerb": ["compare", "contrast", "differentiate"],
+    "bloomsVerb": [
+      "compare",
+      "contrast",
+      "differentiate"
+    ],
     "duration": "5 minutes",
-    "prerequisites": ["Basic understanding of matrix structure"]
+    "prerequisites": [
+      "Basic understanding of matrix structure"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 450",
+    "canvasDimensions": "responsive \u00d7 450",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
       "type": "select",
       "label": "Pattern",
-      "options": ["Random", "Diagonal", "Banded", "Block"],
+      "options": [
+        "Random",
+        "Diagonal",
+        "Banded",
+        "Block"
+      ],
       "default": "Random",
       "description": "Sparsity pattern for the sparse matrix"
     },
@@ -44,7 +61,7 @@
       "max": 50,
       "default": 20,
       "step": 5,
-      "description": "Matrix dimension (n×n)"
+      "description": "Matrix dimension (n\u00d7n)"
     },
     {
       "type": "slider",
@@ -55,5 +72,25 @@
       "step": 1,
       "description": "Percentage of zero entries in sparse matrix"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "chart",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of sparse vs dense matrices",
+    "Explore sparse vs dense matrices through interactive visualization",
+    "Apply knowledge of sparse vs dense matrices to solve problems",
+    "Experiment with parameters to observe their effects on sparse vs dense matrices"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
   ]
 }

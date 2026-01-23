@@ -39,5 +39,11 @@
     "chart",
     "interactive-demo",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of attention mechanism step-by-step",
+    "Apply attention mechanism step-by-step to solve problems",
+    "Visualize and interpret attention mechanism step-by-step relationships",
+    "Experiment with parameters to observe their effects on attention mechanism step-by-step"
   ]
 }

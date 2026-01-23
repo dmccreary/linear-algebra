@@ -1,77 +1,122 @@
 {
-    "title": "Basis and Coordinate System Visualizer",
-    "description": "Side-by-side comparison of standard and custom basis coordinate systems showing how the same vector has different coordinate representations.",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vectors", "Basis", "Coordinate Systems"],
-    "date": "2026-01-17",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Basis and Coordinate Systems",
-        "learningObjectives": [
-            "Interpret how the same vector has different coordinates in different bases",
-            "Understand the relationship between basis vectors and coordinate grids",
-            "Recognize when a basis is valid vs. degenerate (parallel vectors)",
-            "Apply change of basis concepts visually"
-        ],
-        "bloomsLevel": ["Understand", "Apply"],
-        "duration": "20-25 minutes",
-        "prerequisites": ["Vector basics", "Linear combinations", "Basis vectors"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 500",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["Side-by-side panels", "Drag-and-drop", "Preset buttons", "Real-time coordinate calculation"]
-    },
-    "controls": [
-        {
-            "type": "button",
-            "name": "Standard",
-            "description": "Sets custom basis to match standard basis"
-        },
-        {
-            "type": "button",
-            "name": "Rotated 45°",
-            "description": "Rotates the custom basis by 45 degrees"
-        },
-        {
-            "type": "button",
-            "name": "Skewed",
-            "description": "Sets a non-orthogonal skewed basis"
-        },
-        {
-            "type": "button",
-            "name": "Stretched",
-            "description": "Sets basis vectors with different lengths"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Grid",
-            "default": true,
-            "description": "Toggles grid lines in both panels"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Projections",
-            "default": true,
-            "description": "Toggles projection lines to basis directions"
-        },
-        {
-            "type": "drag",
-            "name": "Vector",
-            "description": "Drag to move the vector (synced in both panels)"
-        },
-        {
-            "type": "drag",
-            "name": "Basis vectors b₁, b₂",
-            "description": "Drag to modify the custom basis"
-        }
+  "title": "Basis and Coordinate System Visualizer",
+  "description": "Side-by-side comparison of standard and custom basis coordinate systems showing how the same vector has different coordinate representations.",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vectors",
+    "Basis",
+    "Coordinate Systems"
+  ],
+  "date": "2026-01-17",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Basis and Coordinate Systems",
+    "learningObjectives": [
+      "Interpret how the same vector has different coordinates in different bases",
+      "Understand the relationship between basis vectors and coordinate grids",
+      "Recognize when a basis is valid vs. degenerate (parallel vectors)",
+      "Apply change of basis concepts visually"
     ],
-    "keywords": ["basis", "coordinate system", "change of basis", "linear algebra", "vector representation", "standard basis", "custom basis"]
+    "bloomsLevel": [
+      "Understand",
+      "Apply"
+    ],
+    "duration": "20-25 minutes",
+    "prerequisites": [
+      "Vector basics",
+      "Linear combinations",
+      "Basis vectors"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "Side-by-side panels",
+      "Drag-and-drop",
+      "Preset buttons",
+      "Real-time coordinate calculation"
+    ]
+  },
+  "controls": [
+    {
+      "type": "button",
+      "name": "Standard",
+      "description": "Sets custom basis to match standard basis"
+    },
+    {
+      "type": "button",
+      "name": "Rotated 45\u00b0",
+      "description": "Rotates the custom basis by 45 degrees"
+    },
+    {
+      "type": "button",
+      "name": "Skewed",
+      "description": "Sets a non-orthogonal skewed basis"
+    },
+    {
+      "type": "button",
+      "name": "Stretched",
+      "description": "Sets basis vectors with different lengths"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Grid",
+      "default": true,
+      "description": "Toggles grid lines in both panels"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Projections",
+      "default": true,
+      "description": "Toggles projection lines to basis directions"
+    },
+    {
+      "type": "drag",
+      "name": "Vector",
+      "description": "Drag to move the vector (synced in both panels)"
+    },
+    {
+      "type": "drag",
+      "name": "Basis vectors b\u2081, b\u2082",
+      "description": "Drag to modify the custom basis"
+    }
+  ],
+  "keywords": [
+    "basis",
+    "coordinate system",
+    "change of basis",
+    "linear algebra",
+    "vector representation",
+    "standard basis",
+    "custom basis"
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of basis and coordinate system visualizer",
+    "Explore basis and coordinate system visualizer through interactive visualization",
+    "Apply knowledge of basis and coordinate system visualizer to solve problems",
+    "Test understanding of basis and coordinate system visualizer through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

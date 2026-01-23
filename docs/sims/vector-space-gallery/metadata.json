@@ -1,45 +1,94 @@
 {
-    "title": "Vector Space Examples Gallery",
-    "description": "Interactive gallery showcasing six diverse vector space examples with visual representations, zero vectors, and operation examples.",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vector Spaces", "Mathematical Structures"],
-    "date": "2026-01-21",
-    "type": "Interactive Infographic",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Vector Space Examples",
-        "learningObjectives": [
-            "Recognize diverse examples of vector spaces beyond R^n",
-            "Identify the zero vector and its role in each vector space",
-            "Distinguish finite dimensional from infinite dimensional spaces",
-            "Understand vector addition and scalar multiplication in different contexts"
-        ],
-        "bloomsLevel": ["Understand"],
-        "duration": "10-15 minutes",
-        "prerequisites": ["Vector addition", "Scalar multiplication", "Vector space axioms"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 500",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["Hover interactions", "Animated icons", "Card-based layout", "Color-coded dimensions"]
-    },
-    "controls": [
-        {
-            "type": "hover",
-            "name": "Card hover",
-            "description": "Hover over cards to see vector addition and scalar multiplication examples"
-        },
-        {
-            "type": "click",
-            "name": "Card selection",
-            "description": "Click to highlight a card for discussion"
-        }
+  "title": "Vector Space Examples Gallery",
+  "description": "Interactive gallery showcasing six diverse vector space examples with visual representations, zero vectors, and operation examples.",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vector Spaces",
+    "Mathematical Structures"
+  ],
+  "date": "2026-01-21",
+  "type": "Interactive Infographic",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Vector Space Examples",
+    "learningObjectives": [
+      "Recognize diverse examples of vector spaces beyond R^n",
+      "Identify the zero vector and its role in each vector space",
+      "Distinguish finite dimensional from infinite dimensional spaces",
+      "Understand vector addition and scalar multiplication in different contexts"
     ],
-    "keywords": ["vector space", "R2", "R3", "polynomials", "continuous functions", "matrices", "null space", "zero vector", "dimension", "linear algebra"]
+    "bloomsLevel": [
+      "Understand"
+    ],
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Vector addition",
+      "Scalar multiplication",
+      "Vector space axioms"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "Hover interactions",
+      "Animated icons",
+      "Card-based layout",
+      "Color-coded dimensions"
+    ]
+  },
+  "controls": [
+    {
+      "type": "hover",
+      "name": "Card hover",
+      "description": "Hover over cards to see vector addition and scalar multiplication examples"
+    },
+    {
+      "type": "click",
+      "name": "Card selection",
+      "description": "Click to highlight a card for discussion"
+    }
+  ],
+  "keywords": [
+    "vector space",
+    "R2",
+    "R3",
+    "polynomials",
+    "continuous functions",
+    "matrices",
+    "null space",
+    "zero vector",
+    "dimension",
+    "linear algebra"
+  ],
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "data-visualization",
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of vector space examples gallery",
+    "Explore vector space examples gallery through interactive visualization",
+    "Apply knowledge of vector space examples gallery to solve problems",
+    "Test understanding of vector space examples gallery through interactive exercises"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

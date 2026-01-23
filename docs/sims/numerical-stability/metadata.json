@@ -8,15 +8,60 @@
   "learningObjective": "Demonstrate how small changes in matrix entries can cause large changes in solutions for ill-conditioned systems, and how partial pivoting improves stability",
   "gradeLevel": "Undergraduate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Gaussian elimination", "Linear systems", "Matrix operations"],
+  "prerequisites": [
+    "Gaussian elimination",
+    "Linear systems",
+    "Matrix operations"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "controls": [
-    {"type": "select", "label": "Example", "options": ["Well-Conditioned", "Moderately Ill-Conditioned", "Severely Ill-Conditioned", "Near-Singular"], "description": "Choose a system with different condition numbers"},
-    {"type": "slider", "label": "Perturbation magnitude", "min": "10^-4", "max": "10^-1", "default": "10^-3", "description": "Size of random perturbation applied to system"},
-    {"type": "button", "label": "New Random Perturbation", "description": "Apply a new random perturbation to the system"}
+    {
+      "type": "select",
+      "label": "Example",
+      "options": [
+        "Well-Conditioned",
+        "Moderately Ill-Conditioned",
+        "Severely Ill-Conditioned",
+        "Near-Singular"
+      ],
+      "description": "Choose a system with different condition numbers"
+    },
+    {
+      "type": "slider",
+      "label": "Perturbation magnitude",
+      "min": "10^-4",
+      "max": "10^-1",
+      "default": "10^-3",
+      "description": "Size of random perturbation applied to system"
+    },
+    {
+      "type": "button",
+      "label": "New Random Perturbation",
+      "description": "Apply a new random perturbation to the system"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of numerical stability",
+    "Explore numerical stability through interactive visualization",
+    "Apply knowledge of numerical stability to solve problems",
+    "Experiment with parameters to observe their effects on numerical stability"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

@@ -37,5 +37,11 @@
     "simulation",
     "interactive-demo",
     "network"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of transformer block visualizer",
+    "Apply transformer block visualizer to solve problems",
+    "Visualize and interpret transformer block visualizer relationships",
+    "Experiment with parameters to observe their effects on transformer block visualizer"
   ]
 }

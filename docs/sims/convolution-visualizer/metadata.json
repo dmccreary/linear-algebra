@@ -38,5 +38,23 @@
     "Image Matrix concept",
     "Matrix multiplication basics"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of convolution visualizer",
+    "Explore convolution visualizer through interactive visualization",
+    "Apply knowledge of convolution visualizer to solve problems",
+    "Experiment with parameters to observe their effects on convolution visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

@@ -61,5 +61,18 @@
   "canvasDimensions": "responsive x 540",
   "dateCreated": "2026-01-21",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "map"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

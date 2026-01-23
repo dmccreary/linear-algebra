@@ -8,19 +8,84 @@
   "learningObjective": "Enable students to practice applying the three elementary row operations and observe how they transform the augmented matrix while preserving solutions",
   "gradeLevel": "Undergraduate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Matrix notation", "Linear equations", "Basic algebra"],
+  "prerequisites": [
+    "Matrix notation",
+    "Linear equations",
+    "Basic algebra"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "controls": [
-    {"type": "select", "label": "Operation", "options": ["Swap Rows", "Scale Row", "Add Multiple"], "description": "Choose which row operation to perform"},
-    {"type": "select", "label": "Row 1", "options": ["R₁", "R₂", "R₃"], "description": "Select the first row"},
-    {"type": "select", "label": "Row 2", "options": ["R₁", "R₂", "R₃"], "description": "Select the second row (for swap/add)"},
-    {"type": "input", "label": "Scalar", "default": "2", "description": "Multiplier for scale/add operations"},
-    {"type": "button", "label": "Apply Operation", "description": "Execute the selected operation"},
-    {"type": "button", "label": "Undo", "description": "Reverse the last operation"},
-    {"type": "button", "label": "Reset", "description": "Return to the original matrix"}
+    {
+      "type": "select",
+      "label": "Operation",
+      "options": [
+        "Swap Rows",
+        "Scale Row",
+        "Add Multiple"
+      ],
+      "description": "Choose which row operation to perform"
+    },
+    {
+      "type": "select",
+      "label": "Row 1",
+      "options": [
+        "R\u2081",
+        "R\u2082",
+        "R\u2083"
+      ],
+      "description": "Select the first row"
+    },
+    {
+      "type": "select",
+      "label": "Row 2",
+      "options": [
+        "R\u2081",
+        "R\u2082",
+        "R\u2083"
+      ],
+      "description": "Select the second row (for swap/add)"
+    },
+    {
+      "type": "input",
+      "label": "Scalar",
+      "default": "2",
+      "description": "Multiplier for scale/add operations"
+    },
+    {
+      "type": "button",
+      "label": "Apply Operation",
+      "description": "Execute the selected operation"
+    },
+    {
+      "type": "button",
+      "label": "Undo",
+      "description": "Reverse the last operation"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "description": "Return to the original matrix"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "timeline"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of row operations",
+    "Explore row operations through interactive visualization",
+    "Apply knowledge of row operations to solve problems",
+    "Experiment with parameters to observe their effects on row operations"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

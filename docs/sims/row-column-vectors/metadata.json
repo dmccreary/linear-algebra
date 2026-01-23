@@ -1,8 +1,12 @@
 {
   "title": "Row and Column Vectors",
-  "description": "Interactive visualization comparing row vectors (horizontal, 1×n) and column vectors (vertical, m×1) to help students understand how orientation affects matrix operations.",
+  "description": "Interactive visualization comparing row vectors (horizontal, 1\u00d7n) and column vectors (vertical, m\u00d71) to help students understand how orientation affects matrix operations.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Vectors"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Vectors"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -14,19 +18,28 @@
     "topic": "Linear Algebra - Vectors and Matrices",
     "learningObjectives": [
       "Visually distinguish between row vectors and column vectors",
-      "Correctly identify dimensions of row vectors (1×n) and column vectors (m×1)",
+      "Correctly identify dimensions of row vectors (1\u00d7n) and column vectors (m\u00d71)",
       "Understand that vector orientation affects matrix multiplication compatibility"
     ],
     "bloomsLevel": "Understand",
-    "bloomsVerb": ["compare", "contrast", "identify"],
+    "bloomsVerb": [
+      "compare",
+      "contrast",
+      "identify"
+    ],
     "duration": "5-10 minutes",
-    "prerequisites": ["Basic understanding of vectors", "Familiarity with ordered lists of numbers"]
+    "prerequisites": [
+      "Basic understanding of vectors",
+      "Familiarity with ordered lists of numbers"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 480",
+    "canvasDimensions": "responsive \u00d7 480",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -47,7 +60,25 @@
       "type": "checkbox",
       "label": "Show Dimensions",
       "default": true,
-      "description": "Toggle display of dimension annotations (1×n and m×1)"
+      "description": "Toggle display of dimension annotations (1\u00d7n and m\u00d71)"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of row and column vectors",
+    "Explore row and column vectors through interactive visualization",
+    "Apply knowledge of row and column vectors to solve problems",
+    "Experiment with parameters to observe their effects on row and column vectors"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

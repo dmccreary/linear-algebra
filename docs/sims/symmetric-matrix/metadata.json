@@ -1,8 +1,12 @@
 {
   "title": "Symmetric Matrix",
-  "description": "Interactive visualization demonstrating symmetric matrices where A[i,j] = A[j,i], with adjustable size from 2×2 to 10×10.",
+  "description": "Interactive visualization demonstrating symmetric matrices where A[i,j] = A[j,i], with adjustable size from 2\u00d72 to 10\u00d710.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Symmetric Matrices"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Symmetric Matrices"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,15 +22,24 @@
       "Recognize that symmetric matrices equal their transpose"
     ],
     "bloomsLevel": "Understand",
-    "bloomsVerb": ["identify", "explain", "recognize"],
+    "bloomsVerb": [
+      "identify",
+      "explain",
+      "recognize"
+    ],
     "duration": "5-10 minutes",
-    "prerequisites": ["Basic understanding of matrices", "Familiarity with matrix indices"]
+    "prerequisites": [
+      "Basic understanding of matrices",
+      "Familiarity with matrix indices"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 500",
+    "canvasDimensions": "responsive \u00d7 500",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -36,12 +49,30 @@
       "max": 10,
       "default": 4,
       "step": 1,
-      "description": "Matrix dimensions (n×n)"
+      "description": "Matrix dimensions (n\u00d7n)"
     },
     {
       "type": "button",
       "label": "Regenerate",
       "description": "Generate new random symmetric matrix with values 0-9"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of symmetric matrix",
+    "Explore symmetric matrix through interactive visualization",
+    "Apply knowledge of symmetric matrix to solve problems",
+    "Experiment with parameters to observe their effects on symmetric matrix"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

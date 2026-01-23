@@ -37,5 +37,11 @@
     "interactive-demo",
     "network",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of kkt conditions visualizer",
+    "Apply kkt conditions visualizer to solve problems",
+    "Visualize and interpret kkt conditions visualizer relationships",
+    "Experiment with parameters to observe their effects on kkt conditions visualizer"
   ]
 }

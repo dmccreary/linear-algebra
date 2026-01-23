@@ -8,17 +8,66 @@
   "learningObjective": "Guide students through the complete Gaussian elimination algorithm, showing each row operation and explaining why it is performed",
   "gradeLevel": "Undergraduate",
   "duration": "15-20 minutes",
-  "prerequisites": ["Row operations", "Augmented matrices", "Linear equations"],
+  "prerequisites": [
+    "Row operations",
+    "Augmented matrices",
+    "Linear equations"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "controls": [
-    {"type": "select", "label": "Example", "options": ["3×3 System", "3×3 Easy", "2×2 System"], "description": "Choose a system to solve"},
-    {"type": "button", "label": "Next Step", "description": "Advance one step in the algorithm"},
-    {"type": "button", "label": "Auto Solve", "description": "Automatically run through all steps"},
-    {"type": "button", "label": "Reset", "description": "Return to initial state"},
-    {"type": "slider", "label": "Speed", "min": 0.5, "max": 3, "default": 1, "description": "Control auto-solve animation speed"}
+    {
+      "type": "select",
+      "label": "Example",
+      "options": [
+        "3\u00d73 System",
+        "3\u00d73 Easy",
+        "2\u00d72 System"
+      ],
+      "description": "Choose a system to solve"
+    },
+    {
+      "type": "button",
+      "label": "Next Step",
+      "description": "Advance one step in the algorithm"
+    },
+    {
+      "type": "button",
+      "label": "Auto Solve",
+      "description": "Automatically run through all steps"
+    },
+    {
+      "type": "button",
+      "label": "Reset",
+      "description": "Return to initial state"
+    },
+    {
+      "type": "slider",
+      "label": "Speed",
+      "min": 0.5,
+      "max": 3,
+      "default": 1,
+      "description": "Control auto-solve animation speed"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "animation",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of gaussian elimination",
+    "Explore gaussian elimination through interactive visualization",
+    "Apply knowledge of gaussian elimination to solve problems",
+    "Experiment with parameters to observe their effects on gaussian elimination"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

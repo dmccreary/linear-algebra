@@ -2,7 +2,11 @@
   "title": "Neural Network Layer",
   "description": "Interactive visualization of a neural network layer showing how matrix-vector multiplication implements the forward pass with various activation functions.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Neural Networks", "Deep Learning"],
+  "subject": [
+    "Linear Algebra",
+    "Neural Networks",
+    "Deep Learning"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -19,15 +23,24 @@
       "Connect linear algebra concepts to deep learning"
     ],
     "bloomsLevel": "Apply",
-    "bloomsVerb": ["implement", "demonstrate", "calculate"],
+    "bloomsVerb": [
+      "implement",
+      "demonstrate",
+      "calculate"
+    ],
     "duration": "7-10 minutes",
-    "prerequisites": ["Matrix-vector multiplication", "Basic function concepts"]
+    "prerequisites": [
+      "Matrix-vector multiplication",
+      "Basic function concepts"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 500",
+    "canvasDimensions": "responsive \u00d7 500",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -51,7 +64,12 @@
     {
       "type": "select",
       "label": "Activation",
-      "options": ["None", "ReLU", "Sigmoid", "Tanh"],
+      "options": [
+        "None",
+        "ReLU",
+        "Sigmoid",
+        "Tanh"
+      ],
       "default": "ReLU",
       "description": "Activation function applied to outputs"
     },
@@ -71,5 +89,24 @@
       "default": true,
       "description": "Include bias term in computation"
     }
+  ],
+  "visualizationType": [
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of neural network layer",
+    "Explore neural network layer through interactive visualization",
+    "Apply knowledge of neural network layer to solve problems",
+    "Experiment with parameters to observe their effects on neural network layer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "title": "3D Volume Scaling Interactive Visualizer",
-  "description": "Visualize how 3×3 matrix transformations scale 3D volumes, connecting the determinant to geometric volume change.",
+  "description": "Visualize how 3\u00d73 matrix transformations scale 3D volumes, connecting the determinant to geometric volume change.",
   "subject": "Linear Algebra",
   "topic": "Determinants and Volume Scaling",
   "gradeLevel": "Undergraduate",
@@ -13,7 +13,7 @@
   "bloomVerb": "explain",
   "duration": "10-15 minutes",
   "prerequisites": [
-    "3×3 determinants",
+    "3\u00d73 determinants",
     "Linear transformations",
     "3D coordinate systems"
   ],
@@ -60,9 +60,24 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "renderer": "WEBGL",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

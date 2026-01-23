@@ -2,7 +2,12 @@
   "title": "Linear Regression Interactive Visualizer",
   "description": "Interactive visualization of linear regression showing how the best-fit line minimizes squared errors with draggable data points, parameter sliders, and a loss surface heatmap",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Linear Regression", "Least Squares", "Optimization"],
+  "subject": [
+    "Linear Algebra",
+    "Linear Regression",
+    "Least Squares",
+    "Optimization"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -29,7 +34,9 @@
   "framework": "p5.js",
   "canvasDimensions": "responsive x 530",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "slider",
@@ -96,5 +103,20 @@
       "description": "Current and optimal parameters, loss, and R-squared"
     }
   ],
-  "chapter": "08-vector-spaces"
+  "chapter": "08-vector-spaces",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

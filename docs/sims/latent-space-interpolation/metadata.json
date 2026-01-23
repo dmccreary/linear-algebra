@@ -36,5 +36,11 @@
     "simulation",
     "graph",
     "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of latent space interpolation visualizer",
+    "Apply latent space interpolation visualizer to solve problems",
+    "Visualize and interpret latent space interpolation visualizer relationships",
+    "Experiment with parameters to observe their effects on latent space interpolation visualizer"
   ]
 }

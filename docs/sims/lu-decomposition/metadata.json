@@ -2,7 +2,11 @@
   "title": "LU Decomposition Algorithm Visualizer",
   "description": "Step-by-step visualization of LU decomposition showing how Gaussian elimination produces L and U matrices",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrix Factorization", "Numerical Methods"],
+  "subject": [
+    "Linear Algebra",
+    "Matrix Factorization",
+    "Numerical Methods"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -25,9 +29,11 @@
     "Triangular matrices"
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 530",
+  "canvasDimensions": "responsive \u00d7 530",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "button",
@@ -43,13 +49,16 @@
     },
     {
       "type": "button",
-      "label": "Verify L×U=A"
+      "label": "Verify L\u00d7U=A"
     },
     {
       "type": "select",
       "label": "Matrix size",
-      "options": ["3×3", "4×4"],
-      "default": "3×3"
+      "options": [
+        "3\u00d73",
+        "4\u00d74"
+      ],
+      "default": "3\u00d73"
     },
     {
       "type": "slider",
@@ -60,5 +69,17 @@
       "unit": "ms"
     }
   ],
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "simulation",
+    "timeline"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

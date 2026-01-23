@@ -1,86 +1,112 @@
 {
-    "title": "Scree Plot and Component Selection",
-    "description": "Interactive visualization for learning to use scree plots and cumulative variance to select the optimal number of principal components in PCA analysis.",
-    "creator": "Claude AI",
-    "subject": "Linear Algebra",
-    "date": "2026-01-21",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics / Machine Learning",
-        "topic": "PCA Component Selection",
-        "learningObjectives": [
-            "Interpret scree plots to identify natural dimensionality of data",
-            "Apply the elbow method to select number of principal components",
-            "Set and justify variance thresholds for component selection",
-            "Understand and apply Kaiser criterion for standardized data",
-            "Recognize when dimensionality reduction is appropriate",
-            "Evaluate trade-offs between compression and reconstruction quality"
-        ],
-        "bloomsLevel": "Evaluate",
-        "duration": "15-20 minutes",
-        "prerequisites": [
-            "Principal Component Analysis basics",
-            "Eigenvalues and eigenvectors",
-            "Variance and covariance concepts",
-            "Dimensionality reduction motivation"
-        ]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 480",
-        "responsive": true,
-        "dependencies": ["p5.js CDN"],
-        "accessibility": ["describe() function", "high contrast colors", "clear labeling"]
-    },
-    "controls": [
-        {
-            "type": "select",
-            "label": "Dataset",
-            "description": "Choose dataset pattern: Synthetic (clear elbow), Gradual Decay, Uniform, or Two Groups"
-        },
-        {
-            "type": "slider",
-            "label": "Components (k)",
-            "description": "Number of principal components to keep (1-10)"
-        },
-        {
-            "type": "slider",
-            "label": "Variance Target",
-            "description": "Target cumulative variance threshold (70-99%)"
-        },
-        {
-            "type": "checkbox",
-            "label": "Kaiser Line",
-            "description": "Show Kaiser criterion line (eigenvalue = 1)"
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Elbow",
-            "description": "Highlight detected elbow point on scree plot"
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Reconstruction Error",
-            "description": "Display reconstruction error bar showing variance kept vs lost"
-        },
-        {
-            "type": "drag",
-            "label": "Threshold Drag",
-            "description": "Draggable handle to interactively adjust variance threshold"
-        }
+  "title": "Scree Plot and Component Selection",
+  "description": "Interactive visualization for learning to use scree plots and cumulative variance to select the optimal number of principal components in PCA analysis.",
+  "creator": "Claude AI",
+  "subject": "Linear Algebra",
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics / Machine Learning",
+    "topic": "PCA Component Selection",
+    "learningObjectives": [
+      "Interpret scree plots to identify natural dimensionality of data",
+      "Apply the elbow method to select number of principal components",
+      "Set and justify variance thresholds for component selection",
+      "Understand and apply Kaiser criterion for standardized data",
+      "Recognize when dimensionality reduction is appropriate",
+      "Evaluate trade-offs between compression and reconstruction quality"
     ],
-    "visualElements": [
-        "Scree plot bar chart of eigenvalues",
-        "Cumulative variance line plot",
-        "Kaiser criterion horizontal line",
-        "Elbow point highlight",
-        "Draggable variance threshold line",
-        "Reconstruction error bar visualization",
-        "Summary box comparing selection methods",
-        "Color-coded selected vs discarded components"
+    "bloomsLevel": "Evaluate",
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Principal Component Analysis basics",
+      "Eigenvalues and eigenvectors",
+      "Variance and covariance concepts",
+      "Dimensionality reduction motivation"
     ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 480",
+    "responsive": true,
+    "dependencies": [
+      "p5.js CDN"
+    ],
+    "accessibility": [
+      "describe() function",
+      "high contrast colors",
+      "clear labeling"
+    ]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "label": "Dataset",
+      "description": "Choose dataset pattern: Synthetic (clear elbow), Gradual Decay, Uniform, or Two Groups"
+    },
+    {
+      "type": "slider",
+      "label": "Components (k)",
+      "description": "Number of principal components to keep (1-10)"
+    },
+    {
+      "type": "slider",
+      "label": "Variance Target",
+      "description": "Target cumulative variance threshold (70-99%)"
+    },
+    {
+      "type": "checkbox",
+      "label": "Kaiser Line",
+      "description": "Show Kaiser criterion line (eigenvalue = 1)"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Elbow",
+      "description": "Highlight detected elbow point on scree plot"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Reconstruction Error",
+      "description": "Display reconstruction error bar showing variance kept vs lost"
+    },
+    {
+      "type": "drag",
+      "label": "Threshold Drag",
+      "description": "Draggable handle to interactively adjust variance threshold"
+    }
+  ],
+  "visualElements": [
+    "Scree plot bar chart of eigenvalues",
+    "Cumulative variance line plot",
+    "Kaiser criterion horizontal line",
+    "Elbow point highlight",
+    "Draggable variance threshold line",
+    "Reconstruction error bar visualization",
+    "Summary box comparing selection methods",
+    "Color-coded selected vs discarded components"
+  ],
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of scree plot and component selection",
+    "Explore scree plot and component selection through interactive visualization",
+    "Apply knowledge of scree plot and component selection to solve problems",
+    "Experiment with parameters to observe their effects on scree plot and component selection"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

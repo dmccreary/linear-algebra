@@ -52,8 +52,20 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 450",
+  "canvasDimensions": "responsive \u00d7 450",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

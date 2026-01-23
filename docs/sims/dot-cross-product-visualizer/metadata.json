@@ -1,68 +1,117 @@
 {
-    "title": "Dot Product and Cross Product Visualizer",
-    "description": "Interactive visualization comparing dot product (projection and angle) with cross product (perpendicular vector and parallelogram area).",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vectors", "Dot Product", "Cross Product"],
-    "date": "2026-01-17",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Vector Products",
-        "learningObjectives": [
-            "Analyze the geometric meaning of dot product as projection",
-            "Understand the relationship between dot product and angle",
-            "Analyze the cross product as a perpendicular vector",
-            "Understand cross product magnitude as parallelogram area"
-        ],
-        "bloomsLevel": ["Analyze", "Evaluate"],
-        "duration": "25-30 minutes",
-        "prerequisites": ["Vector basics", "Trigonometry", "Perpendicularity"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 550",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["WEBGL 3D rendering", "Drag-and-drop", "Animation", "Toggle views"]
-    },
-    "controls": [
-        {
-            "type": "button",
-            "name": "Toggle View",
-            "description": "Switch between 2D dot product and 3D cross product views"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Projection",
-            "default": true,
-            "description": "Toggles projection visualization in dot product view"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Parallelogram",
-            "default": true,
-            "description": "Toggles parallelogram visualization in cross product view"
-        },
-        {
-            "type": "checkbox",
-            "name": "Show Formula",
-            "default": true,
-            "description": "Toggles step-by-step formula calculation"
-        },
-        {
-            "type": "button",
-            "name": "Animate Angle Sweep",
-            "description": "Animates vector v from 0° to 180° relative to u"
-        },
-        {
-            "type": "drag",
-            "name": "Vector endpoints",
-            "description": "Drag to reposition vectors u and v"
-        }
+  "title": "Dot Product and Cross Product Visualizer",
+  "description": "Interactive visualization comparing dot product (projection and angle) with cross product (perpendicular vector and parallelogram area).",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vectors",
+    "Dot Product",
+    "Cross Product"
+  ],
+  "date": "2026-01-17",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Vector Products",
+    "learningObjectives": [
+      "Analyze the geometric meaning of dot product as projection",
+      "Understand the relationship between dot product and angle",
+      "Analyze the cross product as a perpendicular vector",
+      "Understand cross product magnitude as parallelogram area"
     ],
-    "keywords": ["dot product", "cross product", "inner product", "projection", "angle", "perpendicular", "parallelogram area", "linear algebra"]
+    "bloomsLevel": [
+      "Analyze",
+      "Evaluate"
+    ],
+    "duration": "25-30 minutes",
+    "prerequisites": [
+      "Vector basics",
+      "Trigonometry",
+      "Perpendicularity"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 550",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "WEBGL 3D rendering",
+      "Drag-and-drop",
+      "Animation",
+      "Toggle views"
+    ]
+  },
+  "controls": [
+    {
+      "type": "button",
+      "name": "Toggle View",
+      "description": "Switch between 2D dot product and 3D cross product views"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Projection",
+      "default": true,
+      "description": "Toggles projection visualization in dot product view"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Parallelogram",
+      "default": true,
+      "description": "Toggles parallelogram visualization in cross product view"
+    },
+    {
+      "type": "checkbox",
+      "name": "Show Formula",
+      "default": true,
+      "description": "Toggles step-by-step formula calculation"
+    },
+    {
+      "type": "button",
+      "name": "Animate Angle Sweep",
+      "description": "Animates vector v from 0\u00b0 to 180\u00b0 relative to u"
+    },
+    {
+      "type": "drag",
+      "name": "Vector endpoints",
+      "description": "Drag to reposition vectors u and v"
+    }
+  ],
+  "keywords": [
+    "dot product",
+    "cross product",
+    "inner product",
+    "projection",
+    "angle",
+    "perpendicular",
+    "parallelogram area",
+    "linear algebra"
+  ],
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of dot product and cross product visualizer",
+    "Explore dot product and cross product visualizer through interactive visualization",
+    "Apply knowledge of dot product and cross product visualizer to solve problems",
+    "Experiment with parameters to observe their effects on dot product and cross product visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

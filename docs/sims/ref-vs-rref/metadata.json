@@ -8,15 +8,53 @@
   "learningObjective": "Help students understand the difference between row echelon form and reduced row echelon form, and when each is preferable",
   "gradeLevel": "Undergraduate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Row operations", "Gaussian elimination", "Matrix reduction"],
+  "prerequisites": [
+    "Row operations",
+    "Gaussian elimination",
+    "Matrix reduction"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 450",
+  "canvasDimensions": "responsive \u00d7 450",
   "controls": [
-    {"type": "select", "label": "Size", "options": ["2×2", "3×3", "4×4"], "default": "3×3", "description": "Choose matrix size"},
-    {"type": "button", "label": "New Random System", "description": "Generate a new random matrix"},
-    {"type": "checkbox", "label": "Show operation counts", "default": true, "description": "Display number of operations to reach each form"}
+    {
+      "type": "select",
+      "label": "Size",
+      "options": [
+        "2\u00d72",
+        "3\u00d73",
+        "4\u00d74"
+      ],
+      "default": "3\u00d73",
+      "description": "Choose matrix size"
+    },
+    {
+      "type": "button",
+      "label": "New Random System",
+      "description": "Generate a new random matrix"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show operation counts",
+      "default": true,
+      "description": "Display number of operations to reach each form"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of row echelon forms",
+    "Explore row echelon forms through interactive visualization",
+    "Apply knowledge of row echelon forms to solve problems"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

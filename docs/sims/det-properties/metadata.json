@@ -13,7 +13,7 @@
   "bloomVerb": "examine",
   "duration": "10-15 minutes",
   "prerequisites": [
-    "2×2 determinants",
+    "2\u00d72 determinants",
     "Row operations",
     "Matrix arithmetic"
   ],
@@ -59,8 +59,19 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 500",
+  "canvasDimensions": "responsive \u00d7 500",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

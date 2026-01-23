@@ -38,5 +38,21 @@
     "Image Convolution",
     "Basic calculus (derivatives)"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of edge detection visualizer",
+    "Explore edge detection visualizer through interactive visualization",
+    "Apply knowledge of edge detection visualizer to solve problems",
+    "Experiment with parameters to observe their effects on edge detection visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

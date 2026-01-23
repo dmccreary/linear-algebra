@@ -2,7 +2,15 @@
   "title": "Tensor Operations",
   "description": "Interactive visualization of common tensor operations including reshape, transpose, flatten, squeeze, and unsqueeze.",
   "subject": "Deep Learning, Linear Algebra",
-  "keywords": ["tensor", "reshape", "transpose", "flatten", "squeeze", "unsqueeze", "deep learning"],
+  "keywords": [
+    "tensor",
+    "reshape",
+    "transpose",
+    "flatten",
+    "squeeze",
+    "unsqueeze",
+    "deep learning"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,14 +24,23 @@
     "Choose appropriate operations for shape transformations"
   ],
   "duration": "10-15 minutes",
-  "prerequisites": ["Arrays", "Matrix dimensions"],
+  "prerequisites": [
+    "Arrays",
+    "Matrix dimensions"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 480",
   "controls": [
     {
       "type": "select",
       "label": "Operation",
-      "options": ["Reshape", "Transpose", "Flatten", "Squeeze", "Unsqueeze"]
+      "options": [
+        "Reshape",
+        "Transpose",
+        "Flatten",
+        "Squeeze",
+        "Unsqueeze"
+      ]
     },
     {
       "type": "button",
@@ -51,5 +68,11 @@
       "max": 6,
       "default": 4
     }
+  ],
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "interactive-demo",
+    "network"
   ]
 }

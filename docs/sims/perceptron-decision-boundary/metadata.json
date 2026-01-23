@@ -2,7 +2,14 @@
   "title": "Perceptron Decision Boundary",
   "description": "Interactive visualization showing how perceptron weights and bias define a linear decision boundary for binary classification.",
   "subject": "Neural Networks, Machine Learning, Linear Algebra",
-  "keywords": ["perceptron", "decision boundary", "classification", "weights", "bias", "linear separability"],
+  "keywords": [
+    "perceptron",
+    "decision boundary",
+    "classification",
+    "weights",
+    "bias",
+    "linear separability"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,14 +23,23 @@
     "Observe the perceptron learning algorithm in action"
   ],
   "duration": "10-15 minutes",
-  "prerequisites": ["Vectors", "Dot product", "Linear equations"],
+  "prerequisites": [
+    "Vectors",
+    "Dot product",
+    "Linear equations"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 480",
   "controls": [
     {
       "type": "select",
       "label": "Dataset",
-      "options": ["Linearly Separable", "XOR (Not Separable)", "Clustered", "Clear"]
+      "options": [
+        "Linearly Separable",
+        "XOR (Not Separable)",
+        "Clustered",
+        "Clear"
+      ]
     },
     {
       "type": "button",
@@ -53,5 +69,13 @@
       "label": "Weight Vector",
       "action": "Drag to change weight direction"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
   ]
 }

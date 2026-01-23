@@ -39,5 +39,26 @@
     "Image gradients",
     "Matrix operations"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "3d-model",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of corner detection visualizer",
+    "Explore corner detection visualizer through interactive visualization",
+    "Apply knowledge of corner detection visualizer to solve problems",
+    "Experiment with parameters to observe their effects on corner detection visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

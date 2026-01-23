@@ -38,5 +38,11 @@
     "interactive-demo",
     "timeline",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of sgd trajectory visualizer",
+    "Apply sgd trajectory visualizer to solve problems",
+    "Visualize and interpret sgd trajectory visualizer relationships",
+    "Experiment with parameters to observe their effects on sgd trajectory visualizer"
   ]
 }

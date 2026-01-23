@@ -13,7 +13,7 @@
   "bloomVerb": "explain",
   "duration": "10-15 minutes",
   "prerequisites": [
-    "2×2 determinants",
+    "2\u00d72 determinants",
     "Linear transformations",
     "Matrix invertibility"
   ],
@@ -54,8 +54,22 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

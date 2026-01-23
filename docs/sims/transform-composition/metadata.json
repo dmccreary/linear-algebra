@@ -22,7 +22,11 @@
       "type": "select",
       "name": "type1Select",
       "label": "Transform T",
-      "options": ["Rotation", "Scale", "Shear"],
+      "options": [
+        "Rotation",
+        "Scale",
+        "Shear"
+      ],
       "description": "First transformation type"
     },
     {
@@ -35,7 +39,11 @@
       "type": "select",
       "name": "type2Select",
       "label": "Transform S",
-      "options": ["Rotation", "Scale", "Shear"],
+      "options": [
+        "Rotation",
+        "Scale",
+        "Shear"
+      ],
       "description": "Second transformation type"
     },
     {
@@ -59,8 +67,22 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 500",
+  "canvasDimensions": "responsive \u00d7 500",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

@@ -1,71 +1,91 @@
 {
-    "title": "Object Tracking Visualizer",
-    "description": "Interactive multi-object tracking demonstration showing the predict-associate-update cycle with bounding boxes, track IDs, and data association.",
-    "subject": "Computer Vision, Autonomous Systems, Linear Algebra",
-    "topic": "Multi-Object Tracking",
-    "bloom_level": "Apply",
-    "learning_objectives": [
-        "Understand the multi-object tracking pipeline",
-        "Recognize the role of prediction in data association",
-        "Apply tracking concepts to handle missed detections"
-    ],
-    "prerequisites": [
-        "Kalman filter basics",
-        "Bounding box representation",
-        "State estimation"
-    ],
-    "estimated_time": "10-15 minutes",
-    "grade_level": "Undergraduate",
-    "keywords": [
-        "object tracking",
-        "multi-object tracking",
-        "data association",
-        "bounding box",
-        "Kalman filter",
-        "autonomous vehicles",
-        "Hungarian algorithm"
-    ],
-    "creator": "Claude AI",
-    "date_created": "2026-01-21",
-    "framework": "p5.js",
-    "canvas_size": "800x650",
-    "responsive": true,
-    "controls": [
-        {
-            "type": "button",
-            "label": "Step"
-        },
-        {
-            "type": "button",
-            "label": "Run/Pause"
-        },
-        {
-            "type": "button",
-            "label": "Reset"
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Predictions",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Trails",
-            "default": true
-        },
-        {
-            "type": "slider",
-            "label": "Detection Noise",
-            "min": 1,
-            "max": 25,
-            "default": 8
-        },
-        {
-            "type": "slider",
-            "label": "Miss Rate",
-            "min": 0,
-            "max": 0.5,
-            "default": 0.15
-        }
-    ]
+  "title": "Object Tracking Visualizer",
+  "description": "Interactive multi-object tracking demonstration showing the predict-associate-update cycle with bounding boxes, track IDs, and data association.",
+  "subject": "Computer Vision, Autonomous Systems, Linear Algebra",
+  "topic": "Multi-Object Tracking",
+  "bloom_level": "Apply",
+  "learning_objectives": [
+    "Understand the multi-object tracking pipeline",
+    "Recognize the role of prediction in data association",
+    "Apply tracking concepts to handle missed detections"
+  ],
+  "prerequisites": [
+    "Kalman filter basics",
+    "Bounding box representation",
+    "State estimation"
+  ],
+  "estimated_time": "10-15 minutes",
+  "grade_level": "Undergraduate",
+  "keywords": [
+    "object tracking",
+    "multi-object tracking",
+    "data association",
+    "bounding box",
+    "Kalman filter",
+    "autonomous vehicles",
+    "Hungarian algorithm"
+  ],
+  "creator": "Claude AI",
+  "date_created": "2026-01-21",
+  "framework": "p5.js",
+  "canvas_size": "800x650",
+  "responsive": true,
+  "controls": [
+    {
+      "type": "button",
+      "label": "Step"
+    },
+    {
+      "type": "button",
+      "label": "Run/Pause"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Predictions",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Trails",
+      "default": true
+    },
+    {
+      "type": "slider",
+      "label": "Detection Noise",
+      "min": 1,
+      "max": 25,
+      "default": 8
+    },
+    {
+      "type": "slider",
+      "label": "Miss Rate",
+      "min": 0,
+      "max": 0.5,
+      "default": 0.15
+    }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "network",
+    "simulation",
+    "timeline"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of multi-object tracking",
+    "Explore multi-object tracking through interactive visualization",
+    "Apply knowledge of multi-object tracking to solve problems",
+    "Experiment with parameters to observe their effects on multi-object tracking"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

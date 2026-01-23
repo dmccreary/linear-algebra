@@ -37,5 +37,11 @@
     "interactive-demo",
     "network",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of hessian and curvature visualizer",
+    "Apply hessian and curvature visualizer to solve problems",
+    "Visualize and interpret hessian and curvature visualizer relationships",
+    "Experiment with parameters to observe their effects on hessian and curvature visualizer"
   ]
 }

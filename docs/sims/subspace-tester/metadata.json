@@ -1,75 +1,126 @@
 {
-    "title": "Subspace Tester",
-    "description": "Interactive visualization to test whether sets are subspaces by checking closure under linear combinations.",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vector Spaces", "Subspaces", "Linear Combinations"],
-    "date": "2026-01-21",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Subspaces and Closure Properties",
-        "learningObjectives": [
-            "Test whether sets are subspaces by checking closure under linear combinations",
-            "Identify counter-examples that prove a set is not a subspace",
-            "Understand the three properties required for a subspace",
-            "Visualize why certain common sets fail the subspace test"
-        ],
-        "bloomsLevel": ["Apply", "Analyze"],
-        "duration": "20-25 minutes",
-        "prerequisites": ["Vector addition", "Scalar multiplication", "Linear combinations", "Basic set theory"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 500",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["Drag-and-drop", "Preset sets", "Real-time calculation", "Visual feedback"]
-    },
-    "controls": [
-        {
-            "type": "select",
-            "name": "Set Type",
-            "options": ["Line through origin", "Line not through origin", "First quadrant", "Circle", "All of R^2"],
-            "default": "Line through origin",
-            "description": "Choose the set to test for subspace properties"
-        },
-        {
-            "type": "slider",
-            "name": "c",
-            "min": -2,
-            "max": 2,
-            "default": 1,
-            "step": 0.1,
-            "description": "Scalar coefficient for vector u"
-        },
-        {
-            "type": "slider",
-            "name": "d",
-            "min": -2,
-            "max": 2,
-            "default": 1,
-            "step": 0.1,
-            "description": "Scalar coefficient for vector v"
-        },
-        {
-            "type": "button",
-            "name": "Check if Subspace",
-            "description": "Evaluates whether the current linear combination stays in the set and explains the result"
-        },
-        {
-            "type": "button",
-            "name": "Reset",
-            "description": "Resets all vectors, scalars, and set selection to defaults"
-        },
-        {
-            "type": "drag",
-            "name": "Vector endpoints",
-            "description": "Drag to reposition vectors u and v (constrained to the selected set)"
-        }
+  "title": "Subspace Tester",
+  "description": "Interactive visualization to test whether sets are subspaces by checking closure under linear combinations.",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vector Spaces",
+    "Subspaces",
+    "Linear Combinations"
+  ],
+  "date": "2026-01-21",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Subspaces and Closure Properties",
+    "learningObjectives": [
+      "Test whether sets are subspaces by checking closure under linear combinations",
+      "Identify counter-examples that prove a set is not a subspace",
+      "Understand the three properties required for a subspace",
+      "Visualize why certain common sets fail the subspace test"
     ],
-    "keywords": ["subspace", "closure", "linear combination", "vector space", "counter-example", "subspace test", "linear algebra"]
+    "bloomsLevel": [
+      "Apply",
+      "Analyze"
+    ],
+    "duration": "20-25 minutes",
+    "prerequisites": [
+      "Vector addition",
+      "Scalar multiplication",
+      "Linear combinations",
+      "Basic set theory"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "Drag-and-drop",
+      "Preset sets",
+      "Real-time calculation",
+      "Visual feedback"
+    ]
+  },
+  "controls": [
+    {
+      "type": "select",
+      "name": "Set Type",
+      "options": [
+        "Line through origin",
+        "Line not through origin",
+        "First quadrant",
+        "Circle",
+        "All of R^2"
+      ],
+      "default": "Line through origin",
+      "description": "Choose the set to test for subspace properties"
+    },
+    {
+      "type": "slider",
+      "name": "c",
+      "min": -2,
+      "max": 2,
+      "default": 1,
+      "step": 0.1,
+      "description": "Scalar coefficient for vector u"
+    },
+    {
+      "type": "slider",
+      "name": "d",
+      "min": -2,
+      "max": 2,
+      "default": 1,
+      "step": 0.1,
+      "description": "Scalar coefficient for vector v"
+    },
+    {
+      "type": "button",
+      "name": "Check if Subspace",
+      "description": "Evaluates whether the current linear combination stays in the set and explains the result"
+    },
+    {
+      "type": "button",
+      "name": "Reset",
+      "description": "Resets all vectors, scalars, and set selection to defaults"
+    },
+    {
+      "type": "drag",
+      "name": "Vector endpoints",
+      "description": "Drag to reposition vectors u and v (constrained to the selected set)"
+    }
+  ],
+  "keywords": [
+    "subspace",
+    "closure",
+    "linear combination",
+    "vector space",
+    "counter-example",
+    "subspace test",
+    "linear algebra"
+  ],
+  "visualizationType": [
+    "graph",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of subspace tester",
+    "Explore subspace tester through interactive visualization",
+    "Apply knowledge of subspace tester to solve problems",
+    "Experiment with parameters to observe their effects on subspace tester"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

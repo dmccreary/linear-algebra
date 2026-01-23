@@ -2,7 +2,11 @@
   "title": "SVD Forms Comparison",
   "description": "Visual comparison of Full, Compact, and Truncated SVD showing matrix dimensions and storage requirements",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "SVD", "Matrix Decomposition"],
+  "subject": [
+    "Linear Algebra",
+    "SVD",
+    "Matrix Decomposition"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Infographic",
   "format": "text/html",
@@ -18,7 +22,20 @@
   ],
   "bloomsLevel": "Analyze",
   "duration": "5-10 minutes",
-  "prerequisites": ["SVD basics", "Matrix dimensions"],
+  "prerequisites": [
+    "SVD basics",
+    "Matrix dimensions"
+  ],
   "framework": "p5.js",
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "data-visualization",
+    "interactive-demo"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

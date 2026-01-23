@@ -38,5 +38,11 @@
     "interactive-demo",
     "network",
     "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of multi-head attention visualizer",
+    "Apply multi-head attention visualizer to solve problems",
+    "Visualize and interpret multi-head attention visualizer relationships",
+    "Experiment with parameters to observe their effects on multi-head attention visualizer"
   ]
 }

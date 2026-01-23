@@ -8,15 +8,55 @@
   "learningObjective": "Enable students to explore how different systems produce unique solutions, infinite solutions, or no solution, and to identify the determining factors",
   "gradeLevel": "Undergraduate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Row echelon form", "Gaussian elimination", "Linear equations"],
+  "prerequisites": [
+    "Row echelon form",
+    "Gaussian elimination",
+    "Linear equations"
+  ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "controls": [
-    {"type": "select", "label": "Example", "options": ["Unique Solution", "Infinite (1 free)", "Infinite (2 free)", "No Solution"], "description": "Choose a preset example"},
-    {"type": "checkbox", "label": "Show REF", "default": false, "description": "Display Row Echelon Form"},
-    {"type": "checkbox", "label": "Show RREF", "default": true, "description": "Display Reduced Row Echelon Form"}
+    {
+      "type": "select",
+      "label": "Example",
+      "options": [
+        "Unique Solution",
+        "Infinite (1 free)",
+        "Infinite (2 free)",
+        "No Solution"
+      ],
+      "description": "Choose a preset example"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show REF",
+      "default": false,
+      "description": "Display Row Echelon Form"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show RREF",
+      "default": true,
+      "description": "Display Reduced Row Echelon Form"
+    }
   ],
   "dateCreated": "2026-01-19",
   "creator": "Claude AI",
-  "rights": "CC BY-NC-SA 4.0"
+  "rights": "CC BY-NC-SA 4.0",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of solution sets",
+    "Explore solution sets through interactive visualization",
+    "Apply knowledge of solution sets to solve problems"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Analyze",
+    "Create"
+  ]
 }

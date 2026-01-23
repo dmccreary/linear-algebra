@@ -39,5 +39,22 @@
     "Understanding of SVD",
     "Image matrices"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of svd compression visualizer",
+    "Explore svd compression visualizer through interactive visualization",
+    "Apply knowledge of svd compression visualizer to solve problems",
+    "Experiment with parameters to observe their effects on svd compression visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

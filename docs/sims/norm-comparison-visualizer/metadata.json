@@ -1,72 +1,120 @@
 {
-    "title": "Norm Comparison Visualizer",
-    "description": "Interactive visualization comparing L1 (Manhattan), L2 (Euclidean), and L-infinity (Maximum) norms through their unit shapes and distance measurements.",
-    "creator": "Claude AI",
-    "subject": ["Linear Algebra", "Vectors", "Norms", "Distance"],
-    "date": "2026-01-17",
-    "type": "Interactive Simulation",
-    "format": "text/html",
-    "language": "en",
-    "rights": "CC BY-NC-SA 4.0",
-    "educational": {
-        "gradeLevel": "Undergraduate",
-        "subjectArea": "Mathematics",
-        "topic": "Vector Norms",
-        "learningObjectives": [
-            "Compare and contrast L1, L2, and L-infinity norms",
-            "Understand the geometric meaning of unit shapes for each norm",
-            "Recognize how different norms measure distance differently",
-            "Apply norm concepts to machine learning contexts"
-        ],
-        "bloomsLevel": ["Analyze", "Compare"],
-        "duration": "15-20 minutes",
-        "prerequisites": ["Basic vectors", "Absolute value"]
-    },
-    "technical": {
-        "framework": "p5.js",
-        "canvasDimensions": "responsive x 500",
-        "responsive": true,
-        "dependencies": ["p5.js 1.11.10"],
-        "features": ["Drag-and-drop", "Real-time calculation", "Animation"]
-    },
-    "controls": [
-        {
-            "type": "checkbox",
-            "name": "L1 (Manhattan)",
-            "default": true,
-            "description": "Toggles visibility of L1 norm unit diamond"
-        },
-        {
-            "type": "checkbox",
-            "name": "L2 (Euclidean)",
-            "default": true,
-            "description": "Toggles visibility of L2 norm unit circle"
-        },
-        {
-            "type": "checkbox",
-            "name": "L∞ (Maximum)",
-            "default": true,
-            "description": "Toggles visibility of L-infinity norm unit square"
-        },
-        {
-            "type": "slider",
-            "name": "Radius",
-            "min": 0.5,
-            "max": 2,
-            "default": 1,
-            "step": 0.1,
-            "description": "Scales all unit shapes"
-        },
-        {
-            "type": "button",
-            "name": "Animate",
-            "description": "Moves the point around the L2 unit circle"
-        },
-        {
-            "type": "drag",
-            "name": "Point",
-            "description": "Drag to select any vector position"
-        }
+  "title": "Norm Comparison Visualizer",
+  "description": "Interactive visualization comparing L1 (Manhattan), L2 (Euclidean), and L-infinity (Maximum) norms through their unit shapes and distance measurements.",
+  "creator": "Claude AI",
+  "subject": [
+    "Linear Algebra",
+    "Vectors",
+    "Norms",
+    "Distance"
+  ],
+  "date": "2026-01-17",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "CC BY-NC-SA 4.0",
+  "educational": {
+    "gradeLevel": "Undergraduate",
+    "subjectArea": "Mathematics",
+    "topic": "Vector Norms",
+    "learningObjectives": [
+      "Compare and contrast L1, L2, and L-infinity norms",
+      "Understand the geometric meaning of unit shapes for each norm",
+      "Recognize how different norms measure distance differently",
+      "Apply norm concepts to machine learning contexts"
     ],
-    "keywords": ["L1 norm", "L2 norm", "L-infinity norm", "Manhattan distance", "Euclidean distance", "maximum norm", "unit circle", "regularization"]
+    "bloomsLevel": [
+      "Analyze",
+      "Compare"
+    ],
+    "duration": "15-20 minutes",
+    "prerequisites": [
+      "Basic vectors",
+      "Absolute value"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "canvasDimensions": "responsive x 500",
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10"
+    ],
+    "features": [
+      "Drag-and-drop",
+      "Real-time calculation",
+      "Animation"
+    ]
+  },
+  "controls": [
+    {
+      "type": "checkbox",
+      "name": "L1 (Manhattan)",
+      "default": true,
+      "description": "Toggles visibility of L1 norm unit diamond"
+    },
+    {
+      "type": "checkbox",
+      "name": "L2 (Euclidean)",
+      "default": true,
+      "description": "Toggles visibility of L2 norm unit circle"
+    },
+    {
+      "type": "checkbox",
+      "name": "L\u221e (Maximum)",
+      "default": true,
+      "description": "Toggles visibility of L-infinity norm unit square"
+    },
+    {
+      "type": "slider",
+      "name": "Radius",
+      "min": 0.5,
+      "max": 2,
+      "default": 1,
+      "step": 0.1,
+      "description": "Scales all unit shapes"
+    },
+    {
+      "type": "button",
+      "name": "Animate",
+      "description": "Moves the point around the L2 unit circle"
+    },
+    {
+      "type": "drag",
+      "name": "Point",
+      "description": "Drag to select any vector position"
+    }
+  ],
+  "keywords": [
+    "L1 norm",
+    "L2 norm",
+    "L-infinity norm",
+    "Manhattan distance",
+    "Euclidean distance",
+    "maximum norm",
+    "unit circle",
+    "regularization"
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of norm comparison visualizer",
+    "Explore norm comparison visualizer through interactive visualization",
+    "Apply knowledge of norm comparison visualizer to solve problems",
+    "Experiment with parameters to observe their effects on norm comparison visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Evaluate",
+    "Create"
+  ]
 }

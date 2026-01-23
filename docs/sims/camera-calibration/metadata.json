@@ -1,74 +1,95 @@
 {
-    "title": "Camera Calibration Visualizer",
-    "description": "Interactive demonstration of camera calibration showing lens distortion effects, checkerboard corner detection, and distortion correction using intrinsic parameters.",
-    "subject": "Computer Vision, Autonomous Systems, Linear Algebra",
-    "topic": "Camera Calibration",
-    "bloom_level": "Apply",
-    "learning_objectives": [
-        "Understand camera intrinsic parameters and the camera matrix",
-        "Recognize barrel and pincushion lens distortion",
-        "Apply calibration to correct image distortion"
-    ],
-    "prerequisites": [
-        "Coordinate transformations",
-        "Matrix operations",
-        "Basic optics concepts"
-    ],
-    "estimated_time": "10-15 minutes",
-    "grade_level": "Undergraduate",
-    "keywords": [
-        "camera calibration",
-        "lens distortion",
-        "intrinsic matrix",
-        "radial distortion",
-        "checkerboard",
-        "computer vision",
-        "autonomous vehicles"
-    ],
-    "creator": "Claude AI",
-    "date_created": "2026-01-21",
-    "framework": "p5.js",
-    "canvas_size": "900x600",
-    "responsive": true,
-    "controls": [
-        {
-            "type": "slider",
-            "label": "k1 (Radial Distortion)",
-            "min": -0.5,
-            "max": 0.5,
-            "default": 0
-        },
-        {
-            "type": "slider",
-            "label": "k2 (Higher-order Distortion)",
-            "min": -0.3,
-            "max": 0.3,
-            "default": 0
-        },
-        {
-            "type": "slider",
-            "label": "Focal Length",
-            "min": 300,
-            "max": 800,
-            "default": 500
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Corners",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "label": "Show Errors",
-            "default": true
-        },
-        {
-            "type": "button",
-            "label": "Calibrate"
-        },
-        {
-            "type": "button",
-            "label": "Reset"
-        }
-    ]
+  "title": "Camera Calibration Visualizer",
+  "description": "Interactive demonstration of camera calibration showing lens distortion effects, checkerboard corner detection, and distortion correction using intrinsic parameters.",
+  "subject": "Computer Vision, Autonomous Systems, Linear Algebra",
+  "topic": "Camera Calibration",
+  "bloom_level": "Apply",
+  "learning_objectives": [
+    "Understand camera intrinsic parameters and the camera matrix",
+    "Recognize barrel and pincushion lens distortion",
+    "Apply calibration to correct image distortion"
+  ],
+  "prerequisites": [
+    "Coordinate transformations",
+    "Matrix operations",
+    "Basic optics concepts"
+  ],
+  "estimated_time": "10-15 minutes",
+  "grade_level": "Undergraduate",
+  "keywords": [
+    "camera calibration",
+    "lens distortion",
+    "intrinsic matrix",
+    "radial distortion",
+    "checkerboard",
+    "computer vision",
+    "autonomous vehicles"
+  ],
+  "creator": "Claude AI",
+  "date_created": "2026-01-21",
+  "framework": "p5.js",
+  "canvas_size": "900x600",
+  "responsive": true,
+  "controls": [
+    {
+      "type": "slider",
+      "label": "k1 (Radial Distortion)",
+      "min": -0.5,
+      "max": 0.5,
+      "default": 0
+    },
+    {
+      "type": "slider",
+      "label": "k2 (Higher-order Distortion)",
+      "min": -0.3,
+      "max": 0.3,
+      "default": 0
+    },
+    {
+      "type": "slider",
+      "label": "Focal Length",
+      "min": 300,
+      "max": 800,
+      "default": 500
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Corners",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Errors",
+      "default": true
+    },
+    {
+      "type": "button",
+      "label": "Calibrate"
+    },
+    {
+      "type": "button",
+      "label": "Reset"
+    }
+  ],
+  "visualizationType": [
+    "3d-model",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of camera calibration",
+    "Explore camera calibration through interactive visualization",
+    "Apply knowledge of camera calibration to solve problems",
+    "Experiment with parameters to observe their effects on camera calibration"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

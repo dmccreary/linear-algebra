@@ -2,7 +2,11 @@
   "title": "Condition Number Visualizer",
   "description": "Visualize how condition number affects the sensitivity of linear system solutions to perturbations",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Numerical Analysis", "Condition Number"],
+  "subject": [
+    "Linear Algebra",
+    "Numerical Analysis",
+    "Condition Number"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,7 +22,22 @@
   ],
   "bloomsLevel": "Evaluate",
   "duration": "10-15 minutes",
-  "prerequisites": ["Singular values", "Linear systems"],
+  "prerequisites": [
+    "Singular values",
+    "Linear systems"
+  ],
   "framework": "p5.js",
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "chart",
+    "graph",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

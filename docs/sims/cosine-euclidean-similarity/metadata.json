@@ -35,5 +35,11 @@
   "visualizationType": [
     "simulation",
     "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of cosine vs euclidean similarity",
+    "Apply cosine vs euclidean similarity to solve problems",
+    "Visualize and interpret cosine vs euclidean similarity relationships",
+    "Experiment with parameters to observe their effects on cosine vs euclidean similarity"
   ]
 }

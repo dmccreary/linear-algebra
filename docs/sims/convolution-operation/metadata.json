@@ -2,7 +2,15 @@
   "title": "Convolution Operation",
   "description": "Interactive visualization of the convolution operation showing how kernels slide across images with stride and padding controls.",
   "subject": "Convolutional Neural Networks, Image Processing",
-  "keywords": ["convolution", "kernel", "filter", "stride", "padding", "CNN", "image processing"],
+  "keywords": [
+    "convolution",
+    "kernel",
+    "filter",
+    "stride",
+    "padding",
+    "CNN",
+    "image processing"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,24 +24,39 @@
     "Observe the effect of different kernel patterns"
   ],
   "duration": "15 minutes",
-  "prerequisites": ["Matrix multiplication", "Image representation"],
+  "prerequisites": [
+    "Matrix multiplication",
+    "Image representation"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 500",
   "controls": [
     {
       "type": "select",
       "label": "Kernel",
-      "options": ["Edge Detect", "Blur", "Sharpen", "Sobel X", "Identity"]
+      "options": [
+        "Edge Detect",
+        "Blur",
+        "Sharpen",
+        "Sobel X",
+        "Identity"
+      ]
     },
     {
       "type": "select",
       "label": "Stride",
-      "options": ["Stride 1", "Stride 2"]
+      "options": [
+        "Stride 1",
+        "Stride 2"
+      ]
     },
     {
       "type": "select",
       "label": "Padding",
-      "options": ["Valid", "Same"]
+      "options": [
+        "Valid",
+        "Same"
+      ]
     },
     {
       "type": "button",
@@ -50,5 +73,10 @@
       "label": "Reset",
       "action": "Reset convolution"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo",
+    "network"
   ]
 }

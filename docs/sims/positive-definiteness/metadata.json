@@ -2,7 +2,11 @@
   "title": "Positive Definiteness Visualizer",
   "description": "Interactive 3D visualization of quadratic forms showing how eigenvalue signs determine positive definiteness",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Eigenvalues", "Quadratic Forms"],
+  "subject": [
+    "Linear Algebra",
+    "Eigenvalues",
+    "Quadratic Forms"
+  ],
   "date": "2026-01-21",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -25,32 +29,39 @@
     "Quadratic functions"
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 550",
+  "canvasDimensions": "responsive \u00d7 550",
   "responsive": true,
-  "dependencies": ["p5.js CDN"],
+  "dependencies": [
+    "p5.js CDN"
+  ],
   "controls": [
     {
       "type": "select",
       "label": "Preset",
-      "options": ["Positive Definite", "Negative Definite", "Indefinite", "Positive Semi-Definite"]
+      "options": [
+        "Positive Definite",
+        "Negative Definite",
+        "Indefinite",
+        "Positive Semi-Definite"
+      ]
     },
     {
       "type": "slider",
-      "label": "a₁₁",
+      "label": "a\u2081\u2081",
       "min": -5,
       "max": 5,
       "default": 3
     },
     {
       "type": "slider",
-      "label": "a₁₂",
+      "label": "a\u2081\u2082",
       "min": -5,
       "max": 5,
       "default": 1
     },
     {
       "type": "slider",
-      "label": "a₂₂",
+      "label": "a\u2082\u2082",
       "min": -5,
       "max": 5,
       "default": 2
@@ -61,5 +72,19 @@
       "default": true
     }
   ],
-  "chapter": "07-matrix-decompositions"
+  "chapter": "07-matrix-decompositions",
+  "visualizationType": [
+    "3d-model",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
+  ]
 }

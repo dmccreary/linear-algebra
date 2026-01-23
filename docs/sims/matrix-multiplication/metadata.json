@@ -2,7 +2,11 @@
   "title": "Matrix Multiplication Visualizer",
   "description": "Step-by-step visualization of matrix multiplication showing row-by-column dot product calculations with animation and highlighting.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Matrix Multiplication"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Matrix Multiplication"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -19,28 +23,44 @@
       "Calculate individual entries of a matrix product"
     ],
     "bloomsLevel": "Understand",
-    "bloomsVerb": ["explain", "interpret", "demonstrate"],
+    "bloomsVerb": [
+      "explain",
+      "interpret",
+      "demonstrate"
+    ],
     "duration": "7-10 minutes",
-    "prerequisites": ["Matrix notation and dimensions", "Dot product concept"]
+    "prerequisites": [
+      "Matrix notation and dimensions",
+      "Dot product concept"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 500",
+    "canvasDimensions": "responsive \u00d7 500",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
       "type": "select",
       "label": "Matrix A Dimensions",
-      "options": ["2×2", "2×3", "3×2", "3×3"],
-      "default": "2×3",
+      "options": [
+        "2\u00d72",
+        "2\u00d73",
+        "3\u00d72",
+        "3\u00d73"
+      ],
+      "default": "2\u00d73",
       "description": "Set the dimensions of matrix A"
     },
     {
       "type": "select",
       "label": "Matrix B Dimensions",
-      "options": ["dynamic based on A"],
+      "options": [
+        "dynamic based on A"
+      ],
       "description": "Set the dimensions of matrix B (rows must match columns of A)"
     },
     {
@@ -67,5 +87,22 @@
       "step": 100,
       "description": "Animation speed in milliseconds per step"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of matrix multiplication visualizer",
+    "Explore matrix multiplication visualizer through interactive visualization",
+    "Apply knowledge of matrix multiplication visualizer to solve problems",
+    "Experiment with parameters to observe their effects on matrix multiplication visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Evaluate",
+    "Create"
   ]
 }

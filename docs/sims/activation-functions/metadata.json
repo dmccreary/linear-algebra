@@ -2,7 +2,15 @@
   "title": "Activation Functions",
   "description": "Interactive comparison of neural network activation functions including ReLU, Sigmoid, Tanh, Leaky ReLU, and Softplus with derivative visualization.",
   "subject": "Neural Networks, Machine Learning",
-  "keywords": ["activation function", "ReLU", "sigmoid", "tanh", "derivative", "gradient", "vanishing gradient"],
+  "keywords": [
+    "activation function",
+    "ReLU",
+    "sigmoid",
+    "tanh",
+    "derivative",
+    "gradient",
+    "vanishing gradient"
+  ],
   "author": "Dan McCreary",
   "dateCreated": "2026-01-21",
   "language": "en",
@@ -16,14 +24,24 @@
     "Understand why nonlinear activations enable deep learning"
   ],
   "duration": "10-15 minutes",
-  "prerequisites": ["Functions", "Derivatives", "Neural network basics"],
+  "prerequisites": [
+    "Functions",
+    "Derivatives",
+    "Neural network basics"
+  ],
   "framework": "p5.js",
   "canvasDimensions": "responsive x 480",
   "controls": [
     {
       "type": "select",
       "label": "Function",
-      "options": ["ReLU", "Sigmoid", "Tanh", "Leaky ReLU", "Softplus"]
+      "options": [
+        "ReLU",
+        "Sigmoid",
+        "Tanh",
+        "Leaky ReLU",
+        "Softplus"
+      ]
     },
     {
       "type": "checkbox",
@@ -43,5 +61,11 @@
       "default": 0,
       "step": 0.01
     }
+  ],
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map",
+    "network"
   ]
 }

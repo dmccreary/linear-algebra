@@ -38,5 +38,23 @@
     "Image Matrix concept",
     "Basic color theory"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "interactive-demo",
+    "map",
+    "simulation"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of rgb channel decomposition",
+    "Explore rgb channel decomposition through interactive visualization",
+    "Apply knowledge of rgb channel decomposition to solve problems",
+    "Experiment with parameters to observe their effects on rgb channel decomposition"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }

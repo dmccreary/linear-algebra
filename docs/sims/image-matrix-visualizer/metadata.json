@@ -38,5 +38,22 @@
     "Basic understanding of matrices",
     "Coordinate systems"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of image matrix visualizer",
+    "Explore image matrix visualizer through interactive visualization",
+    "Apply knowledge of image matrix visualizer to solve problems",
+    "Experiment with parameters to observe their effects on image matrix visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ]
 }

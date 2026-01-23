@@ -2,7 +2,11 @@
   "title": "Special Matrix Types Gallery",
   "description": "Visual gallery of special matrix types including identity, diagonal, upper triangular, and lower triangular matrices with interactive size control.",
   "creator": "Dan McCreary",
-  "subject": ["Linear Algebra", "Matrices", "Special Matrices"],
+  "subject": [
+    "Linear Algebra",
+    "Matrices",
+    "Special Matrices"
+  ],
   "date": "2026-01-19",
   "type": "Interactive Simulation",
   "format": "text/html",
@@ -18,15 +22,23 @@
       "Recognize these patterns in computational contexts"
     ],
     "bloomsLevel": "Remember",
-    "bloomsVerb": ["identify", "recognize", "recall"],
+    "bloomsVerb": [
+      "identify",
+      "recognize",
+      "recall"
+    ],
     "duration": "3-5 minutes",
-    "prerequisites": ["Basic understanding of matrix structure"]
+    "prerequisites": [
+      "Basic understanding of matrix structure"
+    ]
   },
   "technical": {
     "framework": "p5.js",
-    "canvasDimensions": "responsive × 450",
+    "canvasDimensions": "responsive \u00d7 450",
     "responsive": "Width-responsive",
-    "dependencies": ["p5.js 1.11.10"]
+    "dependencies": [
+      "p5.js 1.11.10"
+    ]
   },
   "controls": [
     {
@@ -36,7 +48,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "description": "Matrix dimension (n×n)"
+      "description": "Matrix dimension (n\u00d7n)"
     },
     {
       "type": "checkbox",
@@ -44,5 +56,21 @@
       "default": true,
       "description": "Toggle visibility of zero entries"
     }
+  ],
+  "visualizationType": [
+    "animation",
+    "interactive-demo"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of special matrix types gallery",
+    "Explore special matrix types gallery through interactive visualization",
+    "Apply knowledge of special matrix types gallery to solve problems",
+    "Experiment with parameters to observe their effects on special matrix types gallery"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
   ]
 }

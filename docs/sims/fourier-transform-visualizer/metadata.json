@@ -39,5 +39,23 @@
     "Trigonometric functions",
     "Image matrices"
   ],
-  "library": "p5.js"
+  "library": "p5.js",
+  "visualizationType": [
+    "graph",
+    "interactive-demo",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the key concepts of fourier transform visualizer",
+    "Explore fourier transform visualizer through interactive visualization",
+    "Apply knowledge of fourier transform visualizer to solve problems",
+    "Experiment with parameters to observe their effects on fourier transform visualizer"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Analyze",
+    "Create"
+  ]
 }
