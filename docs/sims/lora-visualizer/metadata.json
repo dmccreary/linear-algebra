@@ -42,5 +42,28 @@
     "Apply lora low-rank adaptation visualizer to solve problems",
     "Visualize and interpret lora low-rank adaptation visualizer relationships",
     "Experiment with parameters to observe their effects on lora low-rank adaptation visualizer"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "calculate",
+      "demonstrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

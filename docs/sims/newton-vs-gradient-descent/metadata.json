@@ -41,5 +41,29 @@
     "Apply newton vs gradient descent to solve problems",
     "Visualize and interpret newton vs gradient descent relationships",
     "Experiment with parameters to observe their effects on newton vs gradient descent"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "apply",
+      "illustrate",
+      "solve"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "construct"
+  }
 }

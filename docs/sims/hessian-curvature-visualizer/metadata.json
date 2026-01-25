@@ -43,5 +43,28 @@
     "Apply hessian and curvature visualizer to solve problems",
     "Visualize and interpret hessian and curvature visualizer relationships",
     "Experiment with parameters to observe their effects on hessian and curvature visualizer"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "describe",
+      "interpret",
+      "calculate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

@@ -43,5 +43,27 @@
     "Apply transformer block visualizer to solve problems",
     "Visualize and interpret transformer block visualizer relationships",
     "Experiment with parameters to observe their effects on transformer block visualizer"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "illustrate",
+      "use"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
 }

@@ -41,5 +41,28 @@
     "Apply cosine vs euclidean similarity to solve problems",
     "Visualize and interpret cosine vs euclidean similarity relationships",
     "Experiment with parameters to observe their effects on cosine vs euclidean similarity"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "exploration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "calculate",
+      "illustrate",
+      "use"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "construct"
+  }
 }

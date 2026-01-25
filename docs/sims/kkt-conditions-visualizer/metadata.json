@@ -43,5 +43,28 @@
     "Apply kkt conditions visualizer to solve problems",
     "Visualize and interpret kkt conditions visualizer relationships",
     "Experiment with parameters to observe their effects on kkt conditions visualizer"
-  ]
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "identify",
+      "list",
+      "state",
+      "describe",
+      "interpret"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "immediate",
+      "corrective"
+    ],
+    "interactionStyle": "construct"
+  }
 }
