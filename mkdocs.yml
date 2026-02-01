@@ -260,6 +260,9 @@ watch:
   - mkdocs.yml
 
 extra:
+  schema: https://dmccreary.github.io/intelligent-textbooks/ns/textbook/v1
+  textbook_name: Linear Algebra
+  textbook_version: "1.0"
   analytics:
     provider: google
     property: G-KC2L3G6KXH
