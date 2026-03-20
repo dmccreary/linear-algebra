@@ -1,0 +1,70 @@
+{
+  "title": "Hessian and Curvature Visualizer",
+  "description": "3D visualization connecting Hessian eigenvalues to geometric curvature of functions",
+  "subject": "Mathematics",
+  "topic": "Hessian and Curvature Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/hessian-curvature-visualizer/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/hessian-curvature-visualizer/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "hessian-curvature-visualizer",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/hessian-curvature-visualizer",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Chemistry",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "animation",
+    "graph",
+    "interactive-demo",
+    "network",
+    "map"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of hessian and curvature visualizer",
+    "Apply hessian and curvature visualizer to solve problems",
+    "Visualize and interpret hessian and curvature visualizer relationships",
+    "Experiment with parameters to observe their effects on hessian and curvature visualizer"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "classify",
+      "compare",
+      "describe",
+      "interpret",
+      "calculate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "immediate",
+      "corrective"
+    ],
+    "interactionStyle": "manipulate"
+  }
+}

@@ -52,7 +52,11 @@
       "type": "select",
       "name": "lossSelect",
       "label": "Loss Function",
-      "options": ["Quadratic Bowl", "Rosenbrock", "Saddle Point"],
+      "options": [
+        "Quadratic Bowl",
+        "Rosenbrock",
+        "Saddle Point"
+      ],
       "default": "Quadratic Bowl",
       "description": "Choose the loss function landscape"
     },
@@ -109,5 +113,44 @@
   "renderer": "WEBGL",
   "dateCreated": "2026-01-21",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "graph",
+    "interactive-demo",
+    "map",
+    "network",
+    "simulation",
+    "timeline"
+  ],
+  "bloomsTaxonomy": [
+    "Remember",
+    "Understand",
+    "Apply",
+    "Create"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "remember",
+      "understand",
+      "apply"
+    ],
+    "bloomVerbs": [
+      "identify",
+      "recognize",
+      "state",
+      "describe",
+      "explain"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": true,
+    "dataVisibility": "medium",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "manipulate"
+  }
 }

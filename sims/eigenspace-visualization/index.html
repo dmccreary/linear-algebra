@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="3D visualization of eigenspaces showing how geometric multiplicity determines whether eigenspaces are lines or planes through the origin.">
+        <meta name="description" content="Interactive 2D visualization of eigenspaces showing eigenvectors, eigenvalues, and how matrices transform vectors along eigenspace directions.">
       
       
         <meta name="author" content="Dan McCreary">
@@ -75,7 +75,7 @@
       
         <meta  property="og:title"  content="Eigenspace Visualization - Linear Algebra" >
       
-        <meta  property="og:description"  content="3D visualization of eigenspaces showing how geometric multiplicity determines whether eigenspaces are lines or planes through the origin." >
+        <meta  property="og:description"  content="Interactive 2D visualization of eigenspaces showing eigenvectors, eigenvalues, and how matrices transform vectors along eigenspace directions." >
       
         <meta property="og:image" content="https://dmccreary.github.io/linear-algebra/sims/eigenspace-visualization/eigenspace-visualization.png">
       
@@ -91,7 +91,7 @@
       
         <meta  name="twitter:title"  content="Eigenspace Visualization - Linear Algebra" >
       
-        <meta  name="twitter:description"  content="3D visualization of eigenspaces showing how geometric multiplicity determines whether eigenspaces are lines or planes through the origin." >
+        <meta  name="twitter:description"  content="Interactive 2D visualization of eigenspaces showing eigenvectors, eigenvalues, and how matrices transform vectors along eigenspace directions." >
       
         <meta name="twitter:image" content="https://dmccreary.github.io/linear-algebra/sims/eigenspace-visualization/eigenspace-visualization.png">
       
@@ -1650,6 +1650,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#understanding-the-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#embedding" class="md-nav__link">
     <span class="md-ellipsis">
       Embedding
@@ -1681,6 +1690,15 @@
   <a href="#suggested-activities" class="md-nav__link">
     <span class="md-ellipsis">
       Suggested Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Questions
     </span>
   </a>
   
@@ -3998,6 +4016,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#understanding-the-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Visualization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#embedding" class="md-nav__link">
     <span class="md-ellipsis">
       Embedding
@@ -4029,6 +4056,15 @@
   <a href="#suggested-activities" class="md-nav__link">
     <span class="md-ellipsis">
       Suggested Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Questions
     </span>
   </a>
   
@@ -4086,63 +4122,89 @@
 <p><a class="md-button md-button--primary" href="main.html">Run the Eigenspace Visualization Fullscreen</a></p>
 <p><a href="https://editor.p5js.org/">Edit the MicroSim with the p5.js editor</a></p>
 <h2 id="about-this-microsim">About This MicroSim</h2>
-<p>This 3D visualization demonstrates how eigenspaces are vector subspaces containing all eigenvectors for a given eigenvalue. The dimension of an eigenspace (geometric multiplicity) determines whether it appears as a line (1D) or plane (2D) through the origin.</p>
+<p>This 2D visualization demonstrates how eigenspaces are vector subspaces containing all eigenvectors for a given eigenvalue. Eigenvectors are shown as colored arrows, and their corresponding eigenspaces are displayed as semi-transparent lines extending through the origin.</p>
 <p><strong>Key Features:</strong></p>
 <ul>
-<li><strong>3D rotation</strong>: Drag to rotate the view and explore from different angles</li>
-<li><strong>Multiple examples</strong>: Browse through matrices with different eigenspace structures</li>
-<li><strong>Visual eigenspaces</strong>: Lines and planes shown as semi-transparent colored regions</li>
-<li><strong>Eigenvector arrows</strong>: Toggle to see individual eigenvector directions</li>
-<li><strong>Color-coded</strong>: Each eigenvalue has a distinct color</li>
+<li><strong>Multiple matrix examples</strong>: Browse through different 2×2 matrices with varying eigenspace structures</li>
+<li><strong>Visual eigenspaces</strong>: Extended lines through the origin showing the full eigenspace</li>
+<li><strong>Eigenvector arrows</strong>: Solid arrows showing unit eigenvector directions</li>
+<li><strong>Transformed vectors</strong>: Optional dashed arrows showing how eigenvalues scale eigenvectors</li>
+<li><strong>Matrix display</strong>: Current matrix A shown in the corner</li>
+<li><strong>Color-coded legend</strong>: Each eigenvalue and eigenvector pair has a distinct color</li>
 </ul>
 <h2 id="how-to-use">How to Use</h2>
 <ol>
-<li><strong>Drag the 3D view</strong> to rotate and examine eigenspaces from different angles</li>
 <li><strong>Use Prev/Next buttons</strong> to browse through different matrix examples</li>
 <li><strong>Toggle "Show Grid"</strong> to see or hide the coordinate grid</li>
-<li><strong>Toggle "Show Vectors"</strong> to see eigenvector arrows</li>
+<li><strong>Toggle "Show Transformed"</strong> to see how the matrix scales eigenvectors by their eigenvalues</li>
+<li><strong>Examine the legend</strong> to see eigenvalue and eigenvector component values</li>
 </ol>
 <h2 id="mathematical-background">Mathematical Background</h2>
 <p>The <strong>eigenspace</strong> for eigenvalue λ is defined as:</p>
-<p><strong>E_λ = null(A - λI) = {v ∈ ℝⁿ : Av = λv}</strong></p>
+<div class="arithmatex">\[E_λ = \text{null}(A - λI) = \{v ∈ ℝ^n : Av = λv\}\]</div>
 <p>Key properties:</p>
 <ul>
-<li>Every eigenspace is a vector subspace</li>
-<li>The dimension equals the <strong>geometric multiplicity</strong> of λ</li>
-<li>If geometric multiplicity = 1, eigenspace is a line</li>
-<li>If geometric multiplicity = 2, eigenspace is a plane</li>
-<li>Eigenvectors from different eigenspaces are linearly independent</li>
+<li>Every eigenspace is a vector subspace passing through the origin</li>
+<li>For 2×2 matrices, eigenspaces are lines through the origin</li>
+<li>The eigenvalue λ determines how much vectors in that eigenspace are scaled</li>
+<li>If λ &gt; 1, vectors are stretched; if 0 &lt; λ &lt; 1, vectors are compressed</li>
+<li>If λ &lt; 0, vectors are reflected and scaled</li>
 </ul>
 <h2 id="examples-included">Examples Included</h2>
 <ol>
-<li><strong>3 Distinct Eigenvalues</strong>: Diagonal matrix with three 1D eigenspaces (lines along axes)</li>
-<li><strong>Repeated Eigenvalue</strong>: λ=3 has multiplicity 2 with a 2D eigenspace (xy-plane)</li>
-<li><strong>General Symmetric</strong>: Orthogonal eigenvectors in arbitrary directions</li>
-<li><strong>Rotation-like</strong>: Single real eigenvalue, complex pair causes rotation</li>
+<li>
+<p><strong>Diagonal Matrix</strong> <span class="arithmatex">\(\begin{bmatrix} 2 &amp; 0 \\ 0 &amp; 3 \end{bmatrix}\)</span>: Eigenspaces along the x and y axes with λ=2 and λ=3</p>
+</li>
+<li>
+<p><strong>Symmetric Matrix</strong> <span class="arithmatex">\(\begin{bmatrix} 3 &amp; 1 \\ 1 &amp; 3 \end{bmatrix}\)</span>: Orthogonal eigenvectors along the diagonals with λ=4 and λ=2</p>
+</li>
+<li>
+<p><strong>Shear-like Matrix</strong> <span class="arithmatex">\(\begin{bmatrix} 2 &amp; 1 \\ 0 &amp; 2 \end{bmatrix}\)</span>: Repeated eigenvalue λ=2 with only one linearly independent eigenvector (defective matrix)</p>
+</li>
+<li>
+<p><strong>Reflection Matrix</strong> <span class="arithmatex">\(\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}\)</span>: Reflection across y=x line with λ=1 and λ=-1</p>
+</li>
 </ol>
+<h2 id="understanding-the-visualization">Understanding the Visualization</h2>
+<ul>
+<li><strong>Solid arrows</strong>: Unit eigenvectors showing the direction of each eigenspace</li>
+<li><strong>Semi-transparent lines</strong>: The full eigenspace (all scalar multiples of the eigenvector)</li>
+<li><strong>Dashed arrows</strong> (when enabled): Show Av = λv, demonstrating how the matrix scales eigenvectors</li>
+</ul>
+<p>The dashed transformed vectors illustrate the fundamental eigenvector equation: when a matrix multiplies an eigenvector, it only scales the vector by the eigenvalue—it doesn't change its direction.</p>
 <h2 id="embedding">Embedding</h2>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/linear-algebra/sims/eigenspace-visualization/main.html&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;502px&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://dmccreary.github.io/linear-algebra/sims/eigenspace-visualization/main.html&quot;</span>
+        <span class="na">height</span><span class="o">=</span><span class="s">&quot;502px&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="lesson-plan">Lesson Plan</h2>
 <h3 id="learning-objectives">Learning Objectives</h3>
 <p>Students will be able to:</p>
 <ol>
-<li>Visualize eigenspaces as subspaces (lines or planes) through the origin</li>
-<li>Connect geometric multiplicity to eigenspace dimension</li>
-<li>Understand why eigenvectors from different eigenspaces are linearly independent</li>
+<li>Visualize eigenspaces as lines through the origin in 2D</li>
+<li>Understand how eigenvalues scale vectors within their eigenspaces</li>
+<li>Recognize the relationship between matrix structure and eigenvector directions</li>
+<li>Identify when matrices have orthogonal vs. non-orthogonal eigenvectors</li>
 </ol>
 <h3 id="suggested-activities">Suggested Activities</h3>
 <ol>
-<li><strong>Identify dimensions</strong>: For each example, count the dimension of each eigenspace</li>
-<li><strong>Predict eigenspaces</strong>: Given a diagonal matrix, predict what the eigenspaces will look like</li>
-<li><strong>Orthogonality check</strong>: Verify that symmetric matrices have orthogonal eigenspaces</li>
-<li><strong>Basis vectors</strong>: Identify basis vectors for each eigenspace</li>
+<li><strong>Predict eigenspaces</strong>: Given a diagonal matrix, predict what directions the eigenvectors will point</li>
+<li><strong>Verify Av = λv</strong>: Use the "Show Transformed" option to verify that transformed eigenvectors are scalar multiples of the original</li>
+<li><strong>Compare symmetric vs. non-symmetric</strong>: Note that symmetric matrices always have orthogonal eigenvectors</li>
+<li><strong>Defective matrices</strong>: Observe how the shear-like matrix has only one eigenspace despite having algebraic multiplicity 2</li>
+</ol>
+<h3 id="discussion-questions">Discussion Questions</h3>
+<ol>
+<li>Why do diagonal matrices always have eigenvectors along the coordinate axes?</li>
+<li>What does it mean geometrically when an eigenvalue is negative?</li>
+<li>Why can't two different eigenspaces (for different eigenvalues) overlap except at the origin?</li>
+<li>What happens to a vector that is NOT an eigenvector when multiplied by the matrix?</li>
 </ol>
 <h3 id="assessment-questions">Assessment Questions</h3>
 <ol>
-<li>If a 3×3 matrix has eigenvalue λ=2 with algebraic multiplicity 2 and geometric multiplicity 1, what does the eigenspace look like?</li>
-<li>Why can't eigenspaces from different eigenvalues overlap (except at the origin)?</li>
-<li>What is the maximum possible dimension for an eigenspace of a 4×4 matrix?</li>
+<li>If a 2×2 matrix has eigenvalues λ₁=3 and λ₂=-1, describe what happens to eigenvectors in each eigenspace when multiplied by the matrix.</li>
+<li>Why does a symmetric matrix always have orthogonal eigenvectors?</li>
+<li>For the reflection matrix, explain why λ=1 corresponds to vectors on the line y=x and λ=-1 corresponds to vectors on the line y=-x.</li>
 </ol>
 <h2 id="references">References</h2>
 <ul>

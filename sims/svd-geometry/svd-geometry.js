@@ -57,33 +57,34 @@ function setup() {
   // Phase slider
   phaseSlider = createSlider(0, 300, 0, 1);
   phaseSlider.position(200, drawHeight + 15);
-  phaseSlider.size(150);
+  phaseSlider.size(120);
   phaseSlider.input(onPhaseSliderChange);
 
   // Matrix sliders
+  let matrixSliderX = 370;
   a11Slider = createSlider(-4, 4, a11, 0.1);
-  a11Slider.position(420, drawHeight + 10);
+  a11Slider.position(matrixSliderX, drawHeight + 10);
   a11Slider.size(80);
   a11Slider.input(updateMatrix);
 
   a12Slider = createSlider(-4, 4, a12, 0.1);
-  a12Slider.position(540, drawHeight + 10);
+  a12Slider.position(515, drawHeight + 10);
   a12Slider.size(80);
   a12Slider.input(updateMatrix);
 
   a21Slider = createSlider(-4, 4, a21, 0.1);
-  a21Slider.position(420, drawHeight + 45);
+  a21Slider.position(matrixSliderX, drawHeight + 45);
   a21Slider.size(80);
   a21Slider.input(updateMatrix);
 
   a22Slider = createSlider(-4, 4, a22, 0.1);
-  a22Slider.position(540, drawHeight + 45);
+  a22Slider.position(515, drawHeight + 45);
   a22Slider.size(80);
   a22Slider.input(updateMatrix);
 
   // Show vectors checkbox
   showVectorsCheckbox = createCheckbox('Show Singular Vectors', true);
-  showVectorsCheckbox.position(660, drawHeight + 15);
+  showVectorsCheckbox.position(canvasWidth - 90, drawHeight + 15);
   showVectorsCheckbox.style('font-size', '14px');
 
   computeSVD();
@@ -167,16 +168,11 @@ function draw() {
   // Matrix labels
   fill(80);
   textAlign(RIGHT, CENTER);
-  text('a₁₁:', 415, drawHeight + 20);
-  text('a₂₁:', 415, drawHeight + 55);
-  text('a₁₂:', 535, drawHeight + 20);
-  text('a₂₂:', 535, drawHeight + 55);
+  text('a₁₁:'+a11.toFixed(1), 370, drawHeight + 20);
+  text('a₂₁:'+a21.toFixed(1), 370, drawHeight + 55);
+  text('a₁₂:'+a12.toFixed(1), 510, drawHeight + 20);
+  text('a₂₂:'+a22.toFixed(1), 510, drawHeight + 55);
 
-  textAlign(LEFT, CENTER);
-  text(a11.toFixed(1), 505, drawHeight + 20);
-  text(a21.toFixed(1), 505, drawHeight + 55);
-  text(a12.toFixed(1), 625, drawHeight + 20);
-  text(a22.toFixed(1), 625, drawHeight + 55);
 }
 
 function drawPanel(panelIdx, x, y, w, h) {
@@ -197,7 +193,7 @@ function drawPanel(panelIdx, x, y, w, h) {
   // Coordinate system
   let cx = x + w/2;
   let cy = y + h/2 + 10;
-  let scale = 35;
+  let scale = (panelIdx === 3) ? 17.5 : 35;
 
   // Draw grid
   stroke(230);
@@ -303,8 +299,44 @@ function drawSingularVectors(panelIdx, cx, cy, scale) {
     stroke(80, 180, 80);
     drawArrow(cx, cy, cx + v2[0] * scale * 1.3, cy - v2[1] * scale * 1.3);
   }
+  else if (panelIdx === 1) {
+    // After V^T: vectors are now aligned with axes (unit vectors)
+    let t = (animPhase === 0) ? animT : 1;
+
+    // v1 transforms to e1 (1,0), v2 transforms to e2 (0,1)
+    let v1 = [Vt[0][0], Vt[1][0]];
+    let v2 = [Vt[0][1], Vt[1][1]];
+
+    let v1x = lerp(v1[0], 1, t);
+    let v1y = lerp(v1[1], 0, t);
+    let v2x = lerp(v2[0], 0, t);
+    let v2y = lerp(v2[1], 1, t);
+
+    stroke(220, 80, 80);
+    drawArrow(cx, cy, cx + v1x * scale * 1.3, cy - v1y * scale * 1.3);
+
+    stroke(80, 180, 80);
+    drawArrow(cx, cy, cx + v2x * scale * 1.3, cy - v2y * scale * 1.3);
+  }
+  else if (panelIdx === 2) {
+    // After Σ: vectors are scaled by singular values
+    let t = (animPhase === 1) ? animT : (animPhase > 1 ? 1 : 0);
+    if (animPhase < 1) t = 0;
+
+    // Start from unit vectors, scale to σ1 and σ2
+    let v1x = lerp(1, S[0], t);
+    let v1y = 0;
+    let v2x = 0;
+    let v2y = lerp(1, S[1], t);
+
+    stroke(220, 80, 80);
+    drawArrow(cx, cy, cx + v1x * scale, cy - v1y * scale);
+
+    stroke(80, 180, 80);
+    drawArrow(cx, cy, cx + v2x * scale, cy - v2y * scale);
+  }
   else if (panelIdx === 3) {
-    // Draw u1, u2 (columns of U)
+    // Draw u1, u2 (columns of U) scaled by singular values
     stroke(220, 80, 80);
     drawArrow(cx, cy, cx + U[0][0] * S[0] * scale, cy - U[1][0] * S[0] * scale);
 
@@ -342,25 +374,28 @@ function drawMatrixEquation() {
   // Draw A matrix
   drawSmallMatrix([[a11, a12], [a21, a22]], startX + 30, eqY - 15);
 
-  text('=', startX + 95, eqY);
+  text('=', startX + 100, eqY);
 
   // Draw U
   drawSmallMatrix(U, startX + 115, eqY - 15);
+  text("U", startX + 140, eqY + 25);
 
-  text('×', startX + 175, eqY);
+  text('×', startX + 183, eqY);
 
   // Draw Σ (diagonal)
-  drawSmallMatrix([[S[0].toFixed(2), '0'], ['0', S[1].toFixed(2)]], startX + 195, eqY - 15);
+  drawSmallMatrix([[S[0].toFixed(2), '0'], ['0', S[1].toFixed(2)]], startX + 200, eqY - 15);
+  text('Σ', startX + 225, eqY + 25);
 
   text('×', startX + 275, eqY);
 
   // Draw V^T
   drawSmallMatrix(Vt, startX + 295, eqY - 15);
+  text('Vᵀ', startX + 320, eqY + 25);
 
   // Singular values display
   fill(100);
   textSize(12);
-  text('σ₁ = ' + S[0].toFixed(3) + ', σ₂ = ' + S[1].toFixed(3), startX + 380, eqY);
+  text('σ₁ = ' + S[0].toFixed(3) + ', σ₂ = ' + S[1].toFixed(3), startX + 440, eqY);
 }
 
 function drawSmallMatrix(mat, x, y) {
@@ -381,14 +416,14 @@ function drawSmallMatrix(mat, x, y) {
   // Values
   noStroke();
   fill(0);
-  textSize(10);
+  textSize(12);
   textAlign(CENTER, CENTER);
 
   for (let i = 0; i < 2; i++) {
     for (let j = 0; j < 2; j++) {
       let val = mat[i][j];
       let str = (typeof val === 'number') ? val.toFixed(2) : val;
-      text(str, x + j * cellW + cellW/2, y + i * cellH + cellH + 1);
+      text(str, x + j * cellW + cellW/2, y + i * cellH + cellH -5);
     }
   }
 }
@@ -480,6 +515,6 @@ function windowResized() {
 function updateCanvasSize() {
   const container = document.querySelector('main');
   if (container) {
-    canvasWidth = Math.max(700, Math.floor(container.offsetWidth));
+    canvasWidth = container.offsetWidth;
   }
 }

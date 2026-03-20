@@ -21,7 +21,7 @@
     {
       "type": "slider",
       "name": "angleSlider",
-      "label": "Angle θ",
+      "label": "Angle \u03b8",
       "min": -360,
       "max": 360,
       "default": 45,
@@ -38,7 +38,12 @@
       "type": "select",
       "name": "shapeSelect",
       "label": "Shape",
-      "options": ["F-Shape", "Arrow", "Square", "Triangle"],
+      "options": [
+        "F-Shape",
+        "Arrow",
+        "Square",
+        "Triangle"
+      ],
       "description": "Shape to rotate"
     },
     {
@@ -57,8 +62,42 @@
     }
   ],
   "framework": "p5.js",
-  "canvasDimensions": "responsive × 480",
+  "canvasDimensions": "responsive \u00d7 480",
   "dateCreated": "2026-01-20",
   "creator": "Claude AI",
-  "license": "MIT"
+  "license": "MIT",
+  "visualizationType": [
+    "3d-model",
+    "animation",
+    "interactive-demo",
+    "network"
+  ],
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply",
+    "Create"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "describe",
+      "explain",
+      "calculate",
+      "demonstrate",
+      "illustrate"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "corrective",
+      "explanatory"
+    ],
+    "interactionStyle": "construct"
+  }
 }

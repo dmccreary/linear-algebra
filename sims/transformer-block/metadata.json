@@ -1,0 +1,69 @@
+{
+  "title": "Transformer Block Visualizer",
+  "description": "Interactive visualization of transformer architecture showing data flow through attention, feedforward networks, residuals, and layer normalization",
+  "subject": "Mathematics",
+  "topic": "Transformer Block Visualizer",
+  "gradeLevel": "6-12",
+  "bloomsTaxonomy": [
+    "Understand",
+    "Apply"
+  ],
+  "author": "Dan McCreary",
+  "dateCreated": "2026-01-23",
+  "dateModified": "2026-01-23",
+  "version": "1.0.0",
+  "license": "MIT",
+  "language": "en",
+  "format": "text/html",
+  "type": "Interactive Simulation",
+  "framework": "p5.js",
+  "url": "https://dmccreary.github.io/linear-algebra/sims/transformer-block/",
+  "identifier": "https://dmccreary.github.io/linear-algebra/sims/transformer-block/",
+  "_source": {
+    "repo": "linear-algebra",
+    "sim": "transformer-block",
+    "github_url": "https://github.com/dmccreary/linear-algebra/tree/main/docs/sims/transformer-block",
+    "auto_generated": true,
+    "generation_date": "2026-01-23"
+  },
+  "subjects": [
+    "Mathematics",
+    "Computer Science",
+    "Chemistry",
+    "Engineering"
+  ],
+  "visualizationType": [
+    "animation",
+    "simulation",
+    "interactive-demo",
+    "network"
+  ],
+  "learningObjectives": [
+    "Understand the mathematical concept of transformer block visualizer",
+    "Apply transformer block visualizer to solve problems",
+    "Visualize and interpret transformer block visualizer relationships",
+    "Experiment with parameters to observe their effects on transformer block visualizer"
+  ],
+  "pedagogical": {
+    "pattern": "demonstration",
+    "bloomAlignment": [
+      "understand",
+      "apply",
+      "analyze"
+    ],
+    "bloomVerbs": [
+      "compare",
+      "describe",
+      "explain",
+      "illustrate",
+      "use"
+    ],
+    "pacing": "self-paced",
+    "supportsPrediction": false,
+    "dataVisibility": "high",
+    "feedbackType": [
+      "explanatory"
+    ],
+    "interactionStyle": "respond"
+  }
+}
