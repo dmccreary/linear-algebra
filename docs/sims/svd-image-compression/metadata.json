@@ -61,5 +61,8 @@
       "explanatory"
     ],
     "interactionStyle": "construct"
+  },
+  "search": {
+    "showcase": true
   }
 }
